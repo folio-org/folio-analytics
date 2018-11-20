@@ -2,6 +2,8 @@
 
 Brief description: A report summarizing the count of items charged by library, patron group, and date range.
 
+Associated FOLIO JIRA Issue: [REP-195](https://issues.folio.org/browse/REP-195)
+
 This report was formatted based on the following specification:
 
 |Checkout Date Range|Library|Faculty|Graduate|Staff|Undergrad|Other|Total for Library|
