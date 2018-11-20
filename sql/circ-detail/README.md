@@ -21,6 +21,6 @@ This report was formatted based on the following specification:
 |8/1/18 -  8/31/18|RMC Circ Group||||| 5 | 5 |
 |8/1/18 -  8/31/18|Uris Circ Group| 49 | 258 | 200 | 170 | 178 | 855 |
 |8/1/18 -  8/31/18|Vet Circ Group| 3 | 89 | 16 | 6 | 9 | 123 |
-|Total for Patron Group| 2,001 | 4,737 | 2,234 | 2,654 | 3,487 | 15,113 
+||Total for Patron Group| 2,001 | 4,737 | 2,234 | 2,654 | 3,487 | 15,113 |
 
 The SQL queries in this folder produce either this report exactly or similar data in different arrangements and levels of complexity.
