@@ -1,6 +1,6 @@
 SELECT tll.location_name AS location_name,
        g.group_name AS group_name,
-       count(l.id) AS count
+       count(l.id) AS ct
     FROM (
         SELECT id, user_id
             FROM loans
