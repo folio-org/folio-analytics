@@ -9,6 +9,16 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 Reports, queries and other data analysis code for the Library Data Platform ([LDP](https://github.com/folio-org/ldp)).
 
+## Reports
+
+### Circulation
+
+* Circulation Detail Report: [Circulation Detail Cross-tab Query](https://github.com/folio-org/ldp-analytics/tree/master/sql/circ-detail)
+
+### Inventory
+
+### Users
+
 ## Additional information
 
 ### Issue tracker
