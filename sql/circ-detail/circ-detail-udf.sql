@@ -1,6 +1,7 @@
-
+---------------------------------------------------------------------
 -- To call this function, e.g.:
 --     SELECT * FROM circ_detail('2017-06-01', '2017-10-01');
+--
 
 CREATE FUNCTION circ_detail(start_date DATE, end_date DATE)
     RETURNS TABLE(location_name TEXT, group_name TEXT, ct BIGINT)
