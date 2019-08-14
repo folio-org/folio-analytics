@@ -57,5 +57,6 @@ SELECT
           ON ipl.institution_id to inst.id*/
     /* ORDER BY inst.name, ipl.name, l.loan_date */
     ORDER BY ipl.name, l.loan_date
+    /* THIS CAN BE A LARGE QUERY; ADJUST LIMIT AS NEEDED OR ADD ADDITIONAL FILTERS */
     LIMIT 50
 ;
