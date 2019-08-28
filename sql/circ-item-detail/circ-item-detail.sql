@@ -17,13 +17,20 @@ EXTRA FIELDS MENTIONED IN PROTOTYPE DESCRIPTION
 
 Note: no aggregation
 FILTERS: loan date, item status
-
 */
 
+/* Change the lines below to adjust the date and item status filters */
+WITH parameters AS (
+    SELECT
+        TEXT('2000-01-01') AS start_date,
+        TEXT('2020-01-01') AS end_date,
+        TEXT('Checked out') AS item_status_filter
+)
 SELECT
-    /* change default text for date_range column to match filter below */
-    '2017-01-01 to 2018-12-31' AS date_range,
-    /* inst.name AS institution_name, */
+    (SELECT start_date FROM parameters) ||
+    TEXT(' to ') ||
+    (SELECT end_date FROM parameters) AS date_range,
+    inst.name AS institution_name,
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
     h.shelving_title AS holdings_shelving_title,
@@ -31,8 +38,14 @@ SELECT
     i.item_level_call_number AS item_call_number,
     i.barcode AS item_barcode,
     i.enumeration AS item_enumeration,
-    /* line below returns an array */
+    /* returns "copyNumbers" as an array in JSON syntax */
     json_extract_path_text(i.data, 'copyNumbers') AS copy_numbers,
+    /* alternative: code below converts elements of "copyNumbers" to
+       pipe-delimited list. does not work on Redshift. */
+    /*array_to_string(
+        ARRAY[
+            json_array_elements_text(
+                json_extract_path(i.data, 'copyNumbers'))],'|') AS copy_numbers,*/
     json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
     m.name AS material_type,
     g.group AS group_name
@@ -44,22 +57,26 @@ FROM (
         item_id,
         loan_date
     FROM loans
-    /* Change the line below to adjust the date filter */
-    WHERE loan_date >= '2017-01-01' AND loan_date <= '2018-12-31'
+    WHERE
+        loan_date BETWEEN (SELECT DATE(start_date) FROM parameters)
+        AND (SELECT DATE(end_date) FROM parameters)
 ) AS l
 
-/* Review this proposed join to items:
-   Right now, using left join, so will get loans that connect to
-   items without this status. May need to filter by item status elsewhere. */
-
-/*LEFT JOIN (
-    SELECT *
+/* Using INNER JOIN because we want to enforce the item status filter */
+INNER JOIN (
+    SELECT
+        id,
+        item_level_call_number,
+        barcode,
+        enumeration,
+        data,
+        holdings_record_id,
+        permanent_location_id,
+        material_type_id
     FROM items
-    WHERE json_extract_path_text(i.data, 'status', 'name')  = 'Checked out'
+    WHERE json_extract_path_text(items.data, 'status', 'name') =
+        (SELECT item_status_filter FROM parameters)
 ) AS i
-    ON l.item_id = i.id*/
-
-LEFT JOIN items AS i
     ON l.item_id = i.id
 
 LEFT JOIN users AS u
@@ -77,10 +94,8 @@ LEFT JOIN locations AS ipl
 LEFT JOIN material_types AS m
     ON i.material_type_id = m.id
 
-/*LEFT JOIN institutions AS inst
-    ON ipl.institution_id to inst.id*/
+LEFT JOIN institutions AS inst
+    ON ipl.institution_id = inst.id
 
-/* ORDER BY inst.name, ipl.name, l.loan_date */
-ORDER BY ipl.name, l.loan_date
-/* THIS CAN BE A LARGE QUERY. REMOVE LIMIT BELOW FOR COMPLETE RESULTS. */
-LIMIT 50;
+ORDER BY inst.name, ipl.name, l.loan_date
+;

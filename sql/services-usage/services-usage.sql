@@ -49,17 +49,31 @@ json_extract_path_text(i.data, 'status', 'name') AS item_status_name
 
 */
 
-
-SELECT * FROM (
+WITH parameters AS (
     SELECT
-        sp.name AS service_point_name,
-        sp.discovery_display_name AS service_point_display_name,
-        DATE(l.loan_date) AS action_date,
-        to_char(l.loan_date, 'Day') AS day_of_week,
-        date_part('hour',l.loan_date) AS hour_of_day,
-        m.name AS material_type,
-        'Checkout' AS action_type,
-        count(l.id) AS ct
+        TEXT('2000-01-01') AS start_date,
+        TEXT('2020-01-01') AS end_date
+),
+
+checkout_actions (
+    service_point_name,
+    service_point_display_name,
+    action_date,
+    day_of_week,
+    hour_of_day,
+    material_type,
+    action_type,
+    ct
+) AS (
+    SELECT
+        sp.name,
+        sp.discovery_display_name,
+        DATE(l.loan_date),
+        to_char(l.loan_date, 'Day'),
+        date_part('hour',l.loan_date),
+        m.name,
+        'Checkout',
+        count(l.id)
     FROM (
         SELECT
             id,
@@ -67,8 +81,9 @@ SELECT * FROM (
             loan_date,
             item_id
         FROM loans
-        WHERE loan_date >= '2017-01-01'
-            AND loan_date <= '2018-12-31'
+        WHERE
+            loan_date BETWEEN (SELECT DATE(start_date) FROM parameters)
+            AND (SELECT DATE(end_date) FROM parameters)
     ) AS l
 
     LEFT JOIN items AS i
@@ -81,19 +96,28 @@ SELECT * FROM (
         ON i.material_type_id = m.id
 
     GROUP BY sp.name, sp.discovery_display_name, l.loan_date, m.name
+),
 
-    UNION ALL
-
+checkin_actions (
+    service_point_name,
+    service_point_display_name,
+    action_date,
+    day_of_week,
+    hour_of_day,
+    material_type,
+    action_type,
+    ct
+) AS (
     SELECT
-        sp.name AS service_point_name,
-        sp.discovery_display_name AS service_point_display_name,
+        sp.name,
+        sp.discovery_display_name,
         /*  convert all due_date to system_return_date*/
-        DATE(l.due_date) AS action_date,
-        to_char(l.due_date, 'Day') AS day_of_week,
-        date_part('hour',l.due_date) AS hour_of_day,
-        m.name AS material_type,
-        'Checkin' AS action_type,
-        count(l.id) AS ct
+        DATE(l.due_date),
+        to_char(l.due_date, 'Day'),
+        date_part('hour',l.due_date),
+        m.name,
+        'Checkin',
+        count(l.id)
     FROM (
         /* SELECT
             id,
@@ -108,8 +132,9 @@ SELECT * FROM (
         FROM loans
         /* WHERE system_return_date >= '2017-01-01'
         AND system_return_date <= '2018-12-31'*/
-        WHERE due_date >= '2017-01-01'
-            AND due_date <= '2018-12-31'
+        WHERE
+            due_date BETWEEN (SELECT DATE(start_date) FROM parameters)
+            AND (SELECT DATE(end_date) FROM parameters)
        ) AS l
 
     LEFT JOIN items i
@@ -132,8 +157,41 @@ SELECT * FROM (
         sp.discovery_display_name,
         l.due_date,
         m.name
-) AS q
+),
 
+union_of_results AS (
+    SELECT
+        service_point_name,
+        service_point_display_name,
+        action_date,
+        day_of_week,
+        hour_of_day,
+        material_type,
+        action_type,
+        ct
+    FROM checkout_actions
+    UNION ALL
+    SELECT
+        service_point_name,
+        service_point_display_name,
+        action_date,
+        day_of_week,
+        hour_of_day,
+        material_type,
+        action_type,
+        ct
+    FROM checkin_actions
+)
+SELECT
+    service_point_name,
+    service_point_display_name,
+    action_date,
+    day_of_week,
+    hour_of_day,
+    material_type,
+    action_type,
+    ct
+FROM union_of_results
 ORDER BY
     service_point_name,
     service_point_display_name,
