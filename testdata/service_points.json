@@ -1,0 +1,37 @@
+{
+    "servicepoints": [
+        {
+            "code": "cd1",
+            "discoveryDisplayName": "Circulation Desk -- Hallway",
+            "holdShelfExpiryPeriod": {
+                "duration": 3,
+                "intervalId": "Weeks"
+            },
+            "id": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+            "name": "Circ Desk 1",
+            "pickupLocation": true,
+            "staffSlips": []
+        },
+        {
+            "code": "Online",
+            "discoveryDisplayName": "Online",
+            "id": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "name": "Online",
+            "pickupLocation": false,
+            "shelvingLagTime": 0,
+            "staffSlips": []
+        },
+        {
+            "code": "cd2",
+            "discoveryDisplayName": "Circulation Desk -- Back Entrance",
+            "holdShelfExpiryPeriod": {
+                "duration": 5,
+                "intervalId": "Days"
+            },
+            "id": "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+            "name": "Circ Desk 2",
+            "pickupLocation": true,
+            "staffSlips": []
+        }
+    ]
+}
