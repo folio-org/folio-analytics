@@ -1,0 +1,24 @@
+{
+    "usergroups": [
+        {
+            "desc": "Faculty Member",
+            "group": "faculty",
+            "id": "503a81cd-6c26-400f-b620-14c08943697c"
+        },
+        {
+            "desc": "Undergraduate Student",
+            "group": "undergrad",
+            "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e"
+        },
+        {
+            "desc": "Staff Member",
+            "group": "staff",
+            "id": "3684a786-6671-4268-8ed0-9db82ebca60b"
+        },
+        {
+            "desc": "Graduate Student",
+            "group": "graduate",
+            "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b"
+        }
+    ]
+}
