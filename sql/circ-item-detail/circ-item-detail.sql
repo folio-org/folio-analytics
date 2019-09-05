@@ -22,14 +22,14 @@ FILTERS: loan date, item status
 /* Change the lines below to adjust the date and item status filters */
 WITH parameters AS (
     SELECT
-        TEXT('2000-01-01') AS start_date,
-        TEXT('2020-01-01') AS end_date,
-        TEXT('Checked out') AS item_status_filter
+        DATE('2000-01-01') AS start_date,
+        DATE('2020-01-01') AS end_date,
+        'Checked out'::varchar AS item_status_filter
 )
 SELECT
-    (SELECT start_date FROM parameters) ||
-    TEXT(' to ') ||
-    (SELECT end_date FROM parameters) AS date_range,
+    (SELECT start_date::varchar FROM parameters) ||
+    ' to '::varchar ||
+    (SELECT end_date::varchar FROM parameters) AS date_range,
     inst.name AS institution_name,
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
@@ -58,8 +58,8 @@ FROM (
         loan_date
     FROM loans
     WHERE
-        loan_date BETWEEN (SELECT DATE(start_date) FROM parameters)
-        AND (SELECT DATE(end_date) FROM parameters)
+        loan_date BETWEEN (SELECT start_date FROM parameters)
+        AND (SELECT end_date FROM parameters)
 ) AS l
 
 /* Using INNER JOIN because we want to enforce the item status filter */

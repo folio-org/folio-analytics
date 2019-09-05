@@ -20,39 +20,10 @@ date filter, then checkout actions that match, then just unions them together
 
 */
 
-/* still needed:
-    loans:returnDate
-    loans:systemReturnDate
-    loans:checkinServicePointId
-    effective locations
-    record-effective and historical data to do comparison between current state
-      and state before checkout
-
-    would like loan_date to include times throughout the day
-*/
-
-/* TO DO:
-
-Need to wait for "record-effective" and multiple states of each item before can
-do the item status and effective location calculations
-
-also need effective location
-
-for item status before action, will have to grab all item records (just for
-items in selected loans??), calculate previous status and previous effective
-location for each row where status is checked out, then join back to loans using
-date somehow? loan links to item but not to a specific item state, so need to
-find a record-effective date on a status = checked out that is close to the loan
-date (or system_return_date close to status != checked out)???
-
-json_extract_path_text(i.data, 'status', 'name') AS item_status_name
-
-*/
-
 WITH parameters AS (
     SELECT
-        TEXT('2000-01-01') AS start_date,
-        TEXT('2020-01-01') AS end_date
+        DATE('2000-01-01') AS start_date,
+        DATE('2020-01-01') AS end_date
 ),
 
 checkout_actions (
@@ -63,6 +34,8 @@ checkout_actions (
     hour_of_day,
     material_type,
     action_type,
+    effective_location,
+    item_status,
     ct
 ) AS (
     SELECT
@@ -70,21 +43,27 @@ checkout_actions (
         sp.discovery_display_name,
         DATE(l.loan_date),
         to_char(l.loan_date, 'Day'),
-        date_part('hour',l.loan_date),
+        date_part('hour',l.loan_date::timestamp),
         m.name,
-        'Checkout',
+        'Checkout'::varchar,
+        tl.temp_location,
+        l.item_status,
         count(l.id)
     FROM (
         SELECT
             id,
             checkout_service_point_id,
             loan_date,
-            item_id
+            item_id,
+            item_status
         FROM loans
         WHERE
-            loan_date BETWEEN (SELECT DATE(start_date) FROM parameters)
-            AND (SELECT DATE(end_date) FROM parameters)
+            loan_date BETWEEN (SELECT start_date FROM parameters)
+            AND (SELECT end_date FROM parameters)
     ) AS l
+
+    LEFT JOIN temp_loans AS tl
+        ON l.id = tl.id
 
     LEFT JOIN items AS i
         ON l.item_id = i.id
@@ -95,7 +74,13 @@ checkout_actions (
     LEFT JOIN material_types AS m
         ON i.material_type_id = m.id
 
-    GROUP BY sp.name, sp.discovery_display_name, l.loan_date, m.name
+    GROUP BY
+        sp.name,
+        sp.discovery_display_name,
+        l.loan_date,
+        m.name,
+        tl.temp_location,
+        l.item_status        
 ),
 
 checkin_actions (
@@ -106,57 +91,53 @@ checkin_actions (
     hour_of_day,
     material_type,
     action_type,
+    effective_location,
+    item_status,
     ct
 ) AS (
     SELECT
         sp.name,
         sp.discovery_display_name,
-        /*  convert all due_date to system_return_date*/
-        DATE(l.due_date),
-        to_char(l.due_date, 'Day'),
-        date_part('hour',l.due_date),
+        DATE(l.system_return_date),
+        to_char(l.system_return_date, 'Day'),
+        date_part('hour',l.system_return_date::timestamp),
         m.name,
-        'Checkin',
+        'Checkin'::varchar,
+        tl.temp_location,
+	    l.item_status,
         count(l.id)
     FROM (
-        /* SELECT
+        SELECT
             id,
             checkin_service_point_id,
             system_return_date,
-            item_id */
-        SELECT
-            id,
-            checkout_service_point_id,
-            due_date,
-            item_id
+            item_id,
+            item_status
         FROM loans
-        /* WHERE system_return_date >= '2017-01-01'
-        AND system_return_date <= '2018-12-31'*/
         WHERE
-            due_date BETWEEN (SELECT DATE(start_date) FROM parameters)
-            AND (SELECT DATE(end_date) FROM parameters)
-       ) AS l
+            system_return_date BETWEEN (SELECT start_date FROM parameters)
+            AND (SELECT end_date FROM parameters)
+    ) AS l
+
+    LEFT JOIN temp_loans AS tl
+        ON l.id = tl.id
 
     LEFT JOIN items i
         ON l.item_id = i.id
 
     LEFT JOIN service_points sp
-        /* ON l.checkin_service_point_id = sp.id*/
-        ON l.checkout_service_point_id = sp.id
+        ON l.checkin_service_point_id = sp.id
 
     LEFT JOIN material_types m
         ON i.material_type_id = m.id
 
-    /*GROUP BY
-        sp.name,
-        sp.discovery_display_name,
-        l.system_return_date,
-        m.name*/
     GROUP BY
         sp.name,
         sp.discovery_display_name,
-        l.due_date,
-        m.name
+        l.system_return_date,
+        m.name,
+        tl.temp_location,
+	    l.item_status
 ),
 
 union_of_results AS (
@@ -168,6 +149,8 @@ union_of_results AS (
         hour_of_day,
         material_type,
         action_type,
+        effective_location,
+        item_status,
         ct
     FROM checkout_actions
     UNION ALL
@@ -179,6 +162,8 @@ union_of_results AS (
         hour_of_day,
         material_type,
         action_type,
+        effective_location,
+        item_status,
         ct
     FROM checkin_actions
 )
@@ -190,6 +175,8 @@ SELECT
     hour_of_day,
     material_type,
     action_type,
+    effective_location,
+    item_status,
     ct
 FROM union_of_results
 ORDER BY
@@ -198,4 +185,7 @@ ORDER BY
     action_date,
     hour_of_day,
     material_type,
-    action_type;
+    action_type,
+    effective_location,
+    item_status
+    ;
