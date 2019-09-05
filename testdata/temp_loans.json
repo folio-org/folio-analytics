@@ -1,0 +1,223 @@
+{
+    "loans": [
+        {
+            "action": "checkedout",
+            "borrower": {
+                "barcode": "344058867767195",
+                "firstName": "Justen",
+                "lastName": "Hilll",
+                "middleName": "Else"
+            },
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "40f5e9d9-38ac-458e-ade7-7795bd821652",
+            "item": {
+                "barcode": "453987605438",
+                "callNumber": "PR6056.I4588 B749 2016",
+                "contributors": [
+                    {
+                        "name": "Fielding, Helen"
+                    }
+                ],
+                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Bridget Jones's Baby: the diaries"
+            },
+            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "loanDate": "2017-03-05T18:32:31Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "renewalCount": 0,
+            "status": {
+                "name": "Open"
+            },
+            "userId": "47f7eaea-1a18-4058-907c-62b7d095c61b"
+        },
+        {
+            "action": "holdrequested",
+            "borrower": {
+                "barcode": "508444097915063",
+                "firstName": "Velva",
+                "lastName": "Brakus",
+                "middleName": "Kendall"
+            },
+            "dueDate": "2017-01-19T12:42:21.000+0000",
+            "id": "3fd2d7aa-a6fe-4794-9d34-837a6bd31a8b",
+            "item": {
+                "barcode": "326547658598",
+                "callNumber": "D15.H63 A3 2002",
+                "contributors": [
+                    {
+                        "name": "Pratchett, Terry"
+                    }
+                ],
+                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+                "location": {
+                    "name": "SECOND FLOOR"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Interesting Times"
+            },
+            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "loanDate": "2017-01-05T12:42:21Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "724600319597122",
+                "firstName": "Foster",
+                "lastName": "McDermott",
+                "middleName": null
+            },
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Available"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2017-03-05T18:32:31Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "renewalCount": 0,
+            "status": {
+                "name": "Closed"
+            },
+            "userId": "9ad09b01-7429-455f-9f64-e3897027db61"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "508444097915063",
+                "firstName": "Velva",
+                "lastName": "Brakus",
+                "middleName": "Kendall"
+            },
+            "dueDate": "2017-02-17T08:43:15.000+0000",
+            "id": "0bab56e5-1ab6-4ac2-afdf-8b2df0434378",
+            "item": {
+                "barcode": "765475420716",
+                "callNumber": "MCN FICTION",
+                "contributors": [
+                    {
+                        "name": "Creator A"
+                    },
+                    {
+                        "name": "Creator B"
+                    }
+                ],
+                "holdingsRecordId": "65032151-39a5-4cef-8810-5350eb316300",
+                "id": "459afaba-5b39-468d-9072-eb1685e0ddf4",
+                "instanceId": "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+                "location": {
+                    "name": "Annex"
+                },
+                "materialType": {
+                    "name": "dvd"
+                },
+                "status": {
+                    "name": "Available"
+                },
+                "title": "The Girl on the Train"
+            },
+            "itemId": "459afaba-5b39-468d-9072-eb1685e0ddf4",
+            "loanDate": "2017-02-03T08:43:15Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "proxyUserId": "a13dda6b-51ce-4543-be9c-eff894c0c2d0",
+            "renewalCount": 0,
+            "returnDate": "2017-03-01T11:35:12Z",
+            "status": {
+                "name": "Closed"
+            },
+            "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
+        },
+        {
+            "action": "recallrequested",
+            "borrower": {
+                "barcode": "109322966933845",
+                "firstName": "Penelope",
+                "lastName": "Feil",
+                "middleName": "Myrna"
+            },
+            "dueDate": "2017-03-17T15:41:54.000+0000",
+            "id": "959f65f6-ce51-4984-99fa-5e11c1f5661c",
+            "item": {
+                "barcode": "697685458679",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Barnes, Adrian"
+                    }
+                ],
+                "holdingsRecordId": "68872d8a-bf16-420b-829f-206da38f6c10",
+                "id": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+                "instanceId": "6506b79b-7702-48b2-9774-a1c538fdd34e",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Nod"
+            },
+            "itemId": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+            "loanDate": "2017-03-03T15:41:54Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "renewalCount": 1,
+            "status": {
+                "name": "Open"
+            },
+            "userId": "d0fc4228-2e42-49b2-a5b0-9df48897e8c0"
+        }
+    ]
+}
