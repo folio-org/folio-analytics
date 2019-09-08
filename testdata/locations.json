@@ -2,12 +2,16 @@
     "locations": [
         {
             "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
-            "code": "KU/CC/DI/2",
-            "id": "f34d27c6-a8eb-461b-acd6-5dea81771e70",
+            "code": "KU/CC/DI/O",
+            "id": "758258bc-ecc1-41b8-abca-f7b610822ffd",
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "isActive": true,
             "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
-            "name": "SECOND FLOOR",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.363+0000",
+                "updatedDate": "2019-09-08T03:33:20.363+0000"
+            },
+            "name": "ORWIG ETHNO CD",
             "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
             "servicePointIds": [
                 "3a40852d-49fd-4df2-a1f9-6e2641a6e91f"
@@ -15,12 +19,16 @@
         },
         {
             "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
-            "code": "KU/CC/DI/O",
-            "id": "758258bc-ecc1-41b8-abca-f7b610822ffd",
+            "code": "KU/CC/DI/P",
+            "id": "b241764c-1466-4e1d-a028-1a3684a5da87",
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "isActive": true,
             "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
-            "name": "ORWIG ETHNO CD",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.367+0000",
+                "updatedDate": "2019-09-08T03:33:20.367+0000"
+            },
+            "name": "Popular Reading Collection",
             "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
             "servicePointIds": [
                 "3a40852d-49fd-4df2-a1f9-6e2641a6e91f"
@@ -33,6 +41,10 @@
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "isActive": true,
             "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.369+0000",
+                "updatedDate": "2019-09-08T03:33:20.369+0000"
+            },
             "name": "Main Library",
             "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
             "servicePointIds": [
@@ -48,10 +60,31 @@
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "isActive": true,
             "libraryId": "c2549bb4-19c7-4fcc-8b52-39e612fb7dbe",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.373+0000",
+                "updatedDate": "2019-09-08T03:33:20.373+0000"
+            },
             "name": "Online",
             "primaryServicePoint": "bba36e5d-d567-45fa-81cd-b25874472e30",
             "servicePointIds": [
                 "bba36e5d-d567-45fa-81cd-b25874472e30"
+            ]
+        },
+        {
+            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
+            "code": "KU/CC/DI/2",
+            "id": "f34d27c6-a8eb-461b-acd6-5dea81771e70",
+            "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
+            "isActive": true,
+            "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.385+0000",
+                "updatedDate": "2019-09-08T03:33:20.385+0000"
+            },
+            "name": "SECOND FLOOR",
+            "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+            "servicePointIds": [
+                "3a40852d-49fd-4df2-a1f9-6e2641a6e91f"
             ]
         },
         {
@@ -61,20 +94,11 @@
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "isActive": true,
             "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:20.387+0000",
+                "updatedDate": "2019-09-08T03:33:20.387+0000"
+            },
             "name": "Annex",
-            "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
-            "servicePointIds": [
-                "3a40852d-49fd-4df2-a1f9-6e2641a6e91f"
-            ]
-        },
-        {
-            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
-            "code": "KU/CC/DI/P",
-            "id": "b241764c-1466-4e1d-a028-1a3684a5da87",
-            "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
-            "isActive": true,
-            "libraryId": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
-            "name": "Popular Reading Collection",
             "primaryServicePoint": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
             "servicePointIds": [
                 "3a40852d-49fd-4df2-a1f9-6e2641a6e91f"

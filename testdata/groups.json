@@ -1,24 +1,40 @@
 {
     "usergroups": [
         {
-            "desc": "Faculty Member",
-            "group": "faculty",
-            "id": "503a81cd-6c26-400f-b620-14c08943697c"
-        },
-        {
             "desc": "Undergraduate Student",
             "group": "undergrad",
-            "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e"
-        },
-        {
-            "desc": "Staff Member",
-            "group": "staff",
-            "id": "3684a786-6671-4268-8ed0-9db82ebca60b"
+            "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:06.018+0000",
+                "updatedDate": "2019-09-08T03:33:06.018+0000"
+            }
         },
         {
             "desc": "Graduate Student",
             "group": "graduate",
-            "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b"
+            "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:06.026+0000",
+                "updatedDate": "2019-09-08T03:33:06.026+0000"
+            }
+        },
+        {
+            "desc": "Faculty Member",
+            "group": "faculty",
+            "id": "503a81cd-6c26-400f-b620-14c08943697c",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:06.029+0000",
+                "updatedDate": "2019-09-08T03:33:06.029+0000"
+            }
+        },
+        {
+            "desc": "Staff Member",
+            "group": "staff",
+            "id": "3684a786-6671-4268-8ed0-9db82ebca60b",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:06.047+0000",
+                "updatedDate": "2019-09-08T03:33:06.047+0000"
+            }
         }
     ]
 }

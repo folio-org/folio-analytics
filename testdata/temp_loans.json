@@ -1,49 +1,6 @@
 {
     "loans": [
         {
-            "action": "checkedout",
-            "borrower": {
-                "barcode": "344058867767195",
-                "firstName": "Justen",
-                "lastName": "Hilll",
-                "middleName": "Else"
-            },
-            "dueDate": "2017-03-19T18:32:31.000+0000",
-            "id": "40f5e9d9-38ac-458e-ade7-7795bd821652",
-            "item": {
-                "barcode": "453987605438",
-                "callNumber": "PR6056.I4588 B749 2016",
-                "contributors": [
-                    {
-                        "name": "Fielding, Helen"
-                    }
-                ],
-                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
-                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
-                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
-                "location": {
-                    "name": "Main Library"
-                },
-                "materialType": {
-                    "name": "book"
-                },
-                "status": {
-                    "name": "Checked out"
-                },
-                "title": "Bridget Jones's Baby: the diaries"
-            },
-            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
-            "loanDate": "2017-03-05T18:32:31Z",
-            "loanPolicy": {
-                "name": null
-            },
-            "renewalCount": 0,
-            "status": {
-                "name": "Open"
-            },
-            "userId": "47f7eaea-1a18-4058-907c-62b7d095c61b"
-        },
-        {
             "action": "holdrequested",
             "borrower": {
                 "barcode": "508444097915063",
@@ -86,26 +43,26 @@
             "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
         },
         {
-            "action": "checkedin",
+            "action": "recallrequested",
             "borrower": {
-                "barcode": "724600319597122",
-                "firstName": "Foster",
-                "lastName": "McDermott",
-                "middleName": null
+                "barcode": "109322966933845",
+                "firstName": "Penelope",
+                "lastName": "Feil",
+                "middleName": "Myrna"
             },
-            "dueDate": "2017-03-19T18:32:31.000+0000",
-            "id": "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+            "dueDate": "2017-03-17T15:41:54.000+0000",
+            "id": "959f65f6-ce51-4984-99fa-5e11c1f5661c",
             "item": {
-                "barcode": "653285216743",
+                "barcode": "697685458679",
                 "callNumber": "some-callnumber",
                 "contributors": [
                     {
-                        "name": "Novik, Naomi"
+                        "name": "Barnes, Adrian"
                     }
                 ],
-                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
-                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
-                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "holdingsRecordId": "68872d8a-bf16-420b-829f-206da38f6c10",
+                "id": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+                "instanceId": "6506b79b-7702-48b2-9774-a1c538fdd34e",
                 "location": {
                     "name": "Main Library"
                 },
@@ -113,20 +70,20 @@
                     "name": "book"
                 },
                 "status": {
-                    "name": "Available"
+                    "name": "Checked out"
                 },
-                "title": "Temeraire"
+                "title": "Nod"
             },
-            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
-            "loanDate": "2017-03-05T18:32:31Z",
+            "itemId": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+            "loanDate": "2017-03-03T15:41:54Z",
             "loanPolicy": {
                 "name": null
             },
-            "renewalCount": 0,
+            "renewalCount": 1,
             "status": {
-                "name": "Closed"
+                "name": "Open"
             },
-            "userId": "9ad09b01-7429-455f-9f64-e3897027db61"
+            "userId": "d0fc4228-2e42-49b2-a5b0-9df48897e8c0"
         },
         {
             "action": "checkedin",
@@ -177,26 +134,26 @@
             "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
         },
         {
-            "action": "recallrequested",
+            "action": "checkedout",
             "borrower": {
-                "barcode": "109322966933845",
-                "firstName": "Penelope",
-                "lastName": "Feil",
-                "middleName": "Myrna"
+                "barcode": "344058867767195",
+                "firstName": "Justen",
+                "lastName": "Hilll",
+                "middleName": "Else"
             },
-            "dueDate": "2017-03-17T15:41:54.000+0000",
-            "id": "959f65f6-ce51-4984-99fa-5e11c1f5661c",
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "40f5e9d9-38ac-458e-ade7-7795bd821652",
             "item": {
-                "barcode": "697685458679",
-                "callNumber": "some-callnumber",
+                "barcode": "453987605438",
+                "callNumber": "PR6056.I4588 B749 2016",
                 "contributors": [
                     {
-                        "name": "Barnes, Adrian"
+                        "name": "Fielding, Helen"
                     }
                 ],
-                "holdingsRecordId": "68872d8a-bf16-420b-829f-206da38f6c10",
-                "id": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
-                "instanceId": "6506b79b-7702-48b2-9774-a1c538fdd34e",
+                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
                 "location": {
                     "name": "Main Library"
                 },
@@ -206,18 +163,61 @@
                 "status": {
                     "name": "Checked out"
                 },
-                "title": "Nod"
+                "title": "Bridget Jones's Baby: the diaries"
             },
-            "itemId": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
-            "loanDate": "2017-03-03T15:41:54Z",
+            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "loanDate": "2017-03-05T18:32:31Z",
             "loanPolicy": {
                 "name": null
             },
-            "renewalCount": 1,
+            "renewalCount": 0,
             "status": {
                 "name": "Open"
             },
-            "userId": "d0fc4228-2e42-49b2-a5b0-9df48897e8c0"
+            "userId": "47f7eaea-1a18-4058-907c-62b7d095c61b"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "724600319597122",
+                "firstName": "Foster",
+                "lastName": "McDermott",
+                "middleName": null
+            },
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Available"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2017-03-05T18:32:31Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "renewalCount": 0,
+            "status": {
+                "name": "Closed"
+            },
+            "userId": "9ad09b01-7429-455f-9f64-e3897027db61"
         }
     ]
 }

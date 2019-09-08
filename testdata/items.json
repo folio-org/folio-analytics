@@ -12,6 +12,231 @@
             "hrid": "it00000001",
             "id": "645549b1-2a73-4251-b8bb-39598f773a93",
             "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.108+0000",
+                "updatedDate": "2019-09-08T03:33:25.108+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "326547658598",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+            "hrid": "it00000002",
+            "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.115+0000",
+                "updatedDate": "2019-09-08T03:33:25.115+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Checked out"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "765475420716",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "65032151-39a5-4cef-8810-5350eb316300",
+            "hrid": "it00000003",
+            "id": "459afaba-5b39-468d-9072-eb1685e0ddf4",
+            "materialTypeId": "5ee11d91-f7e8-481d-b079-65d708582ccc",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.119+0000",
+                "updatedDate": "2019-09-08T03:33:25.119+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "temporaryLocationId": "53cf956f-c1df-410b-8bea-27f712cca7c0",
+            "yearCaption": []
+        },
+        {
+            "barcode": "000111222333444",
+            "circulationNotes": [],
+            "copyNumbers": [
+                "c.1"
+            ],
+            "electronicAccess": [],
+            "enumeration": "v. 30 1961",
+            "formerIds": [],
+            "holdingsRecordId": "133a7916-f05e-4df4-8f7f-09eb2a7076d1",
+            "hrid": "it00000004",
+            "id": "1714f71f-b845-444b-a79e-a577487a6f7d",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.120+0000",
+                "updatedDate": "2019-09-08T03:33:25.120+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210a4",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "temporaryLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "yearCaption": []
+        },
+        {
+            "barcode": "4539876054383",
+            "circulationNotes": [],
+            "copyNumbers": [
+                "Copy 3"
+            ],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "fb7b70f1-b898-4924-a991-0e4b6312bb5f",
+            "hrid": "it00000005",
+            "id": "d6f7c1ba-a237-465e-94ed-f37e91bc64bd",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.120+0000",
+                "updatedDate": "2019-09-08T03:33:25.120+0000"
+            },
+            "notes": [],
+            "numberOfPieces": "1",
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "temporaryLoanTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0e",
+            "yearCaption": []
+        },
+        {
+            "barcode": "453987605438",
+            "circulationNotes": [],
+            "copyNumbers": [
+                "Copy 1"
+            ],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+            "hrid": "it00000006",
+            "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.122+0000",
+                "updatedDate": "2019-09-08T03:33:25.122+0000"
+            },
+            "notes": [
+                {
+                    "itemNoteTypeId": "8d0a5eca-25de-4391-81a9-236eeefdd20b",
+                    "note": "Signed by the author",
+                    "staffOnly": false
+                }
+            ],
+            "numberOfPieces": "1",
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Checked out"
+            },
+            "temporaryLoanTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0e",
+            "yearCaption": []
+        },
+        {
+            "barcode": "697685458679",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "68872d8a-bf16-420b-829f-206da38f6c10",
+            "hrid": "it00000007",
+            "id": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.123+0000",
+                "updatedDate": "2019-09-08T03:33:25.123+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210a4",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Checked out"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "A14837334314",
+            "chronology": "1984:July-Dec.",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "enumeration": "v.70:no.7-12",
+            "formerIds": [],
+            "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+            "hrid": "it00000008",
+            "id": "9428231b-dd31-4f70-8406-fe22fbdeabc2",
+            "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.124+0000",
+                "updatedDate": "2019-09-08T03:33:25.124+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "645398607547",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "formerIds": [],
+            "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+            "hrid": "it00000009",
+            "id": "0b96a642-5e7f-452d-9cae-9cee66c9a892",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.128+0000",
+                "updatedDate": "2019-09-08T03:33:25.128+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "A14811392645",
+            "chronology": "1986:Jan.-June",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [],
+            "enumeration": "v.72:no.1-6",
+            "formerIds": [],
+            "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+            "hrid": "it00000011",
+            "id": "f8b6d973-60d4-41ce-a57b-a3884471a6d6",
+            "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.130+0000",
+                "updatedDate": "2019-09-08T03:33:25.130+0000"
+            },
             "notes": [],
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
             "statisticalCodeIds": [],
@@ -39,10 +264,14 @@
             "enumeration": "",
             "formerIds": [],
             "holdingsRecordId": "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
-            "hrid": "it00000002",
+            "hrid": "it00000010",
             "id": "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
             "itemLevelCallNumber": "TK5105.88815 . A58 2004 FT MEADE",
             "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.129+0000",
+                "updatedDate": "2019-09-08T03:33:25.129+0000"
+            },
             "notes": [],
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
             "permanentLocationId": "fcd64ce1-6995-48f0-840e-89ffa2288371",
@@ -55,40 +284,58 @@
             "yearCaption": []
         },
         {
-            "barcode": "000111222333444",
-            "circulationNotes": [],
-            "copyNumbers": [
-                "c.1"
-            ],
-            "electronicAccess": [],
-            "enumeration": "v. 30 1961",
-            "formerIds": [],
-            "holdingsRecordId": "133a7916-f05e-4df4-8f7f-09eb2a7076d1",
-            "hrid": "it00000003",
-            "id": "1714f71f-b845-444b-a79e-a577487a6f7d",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-            "notes": [],
-            "permanentLoanTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210a4",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
-            },
-            "temporaryLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "yearCaption": []
-        },
-        {
             "barcode": "653285216743",
             "circulationNotes": [],
             "copyNumbers": [],
             "electronicAccess": [],
             "formerIds": [],
             "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
-            "hrid": "it00000004",
+            "hrid": "it00000014",
             "id": "23fdb0bc-ab58-442a-b326-577a96204487",
             "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.136+0000",
+                "updatedDate": "2019-09-08T03:33:25.136+0000"
+            },
             "notes": [],
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
             "statisticalCodeIds": [],
+            "status": {
+                "name": "Available"
+            },
+            "yearCaption": []
+        },
+        {
+            "barcode": "90000",
+            "chronology": "",
+            "circulationNotes": [],
+            "copyNumbers": [],
+            "electronicAccess": [
+                {
+                    "linkText": "Links available",
+                    "materialsSpecification": "Table of contents",
+                    "publicNote": "Table of contents only",
+                    "relationshipId": "3b430592-2e09-4b48-9a0c-0636d66b9fb3",
+                    "uri": "http://www.loc.gov/catdir/toc/ecip0718/2007020429.html"
+                }
+            ],
+            "enumeration": "",
+            "formerIds": [],
+            "holdingsRecordId": "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
+            "hrid": "it00000012",
+            "id": "100d10bf-2f06-4aa0-be15-0b95b2d9f9e3",
+            "itemLevelCallNumber": "TK5105.88815 . A58 2004 FT MEADE",
+            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.130+0000",
+                "updatedDate": "2019-09-08T03:33:25.130+0000"
+            },
+            "notes": [],
+            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
+            "permanentLocationId": "fcd64ce1-6995-48f0-840e-89ffa2288371",
+            "statisticalCodeIds": [
+                "b5968c9e-cddc-4576-99e3-8e60aed8b0dd"
+            ],
             "status": {
                 "name": "Available"
             },
@@ -103,9 +350,13 @@
             "enumeration": "v.72:no.6-7,10-12",
             "formerIds": [],
             "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
-            "hrid": "it00000005",
+            "hrid": "it00000017",
             "id": "eedd13c4-7d40-4b1e-8f77-b0b9d19a896b",
             "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.141+0000",
+                "updatedDate": "2019-09-08T03:33:25.141+0000"
+            },
             "notes": [],
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
             "statisticalCodeIds": [],
@@ -115,124 +366,30 @@
             "yearCaption": []
         },
         {
-            "barcode": "A14837334314",
-            "chronology": "1984:July-Dec.",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "enumeration": "v.70:no.7-12",
-            "formerIds": [],
-            "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
-            "hrid": "it00000006",
-            "id": "9428231b-dd31-4f70-8406-fe22fbdeabc2",
-            "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
-            },
-            "yearCaption": []
-        },
-        {
-            "barcode": "A14811392695",
-            "chronology": "1987:Jan.-June",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "enumeration": "v.73:no.1-6",
-            "formerIds": [],
-            "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
-            "hrid": "it00000007",
-            "id": "bc90a3c9-26c9-4519-96bc-d9d44995afef",
-            "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
-            },
-            "yearCaption": []
-        },
-        {
-            "barcode": "453987605438",
+            "barcode": "A14837334306",
+            "chronology": "1984:Jan.-June",
             "circulationNotes": [],
             "copyNumbers": [
-                "Copy 1"
+                "1"
             ],
             "electronicAccess": [],
-            "formerIds": [],
-            "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
-            "hrid": "it00000008",
-            "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-            "notes": [
-                {
-                    "itemNoteTypeId": "8d0a5eca-25de-4391-81a9-236eeefdd20b",
-                    "note": "Signed by the author",
-                    "staffOnly": false
-                }
+            "enumeration": "v.70:no.1-6",
+            "formerIds": [
+                "3806267"
             ],
-            "numberOfPieces": "1",
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Checked out"
-            },
-            "temporaryLoanTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0e",
-            "yearCaption": []
-        },
-        {
-            "barcode": "326547658598",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "formerIds": [],
-            "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
-            "hrid": "it00000009",
-            "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Checked out"
-            },
-            "yearCaption": []
-        },
-        {
-            "barcode": "A14811392645",
-            "chronology": "1986:Jan.-June",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "enumeration": "v.72:no.1-6",
-            "formerIds": [],
             "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
-            "hrid": "it00000010",
-            "id": "f8b6d973-60d4-41ce-a57b-a3884471a6d6",
+            "hrid": "it00000013",
+            "id": "9ea1fd0b-0259-4edb-95a3-eb2f9a063e20",
             "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.131+0000",
+                "updatedDate": "2019-09-08T03:33:25.131+0000"
             },
-            "yearCaption": []
-        },
-        {
-            "barcode": "645398607547",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "formerIds": [],
-            "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
-            "hrid": "it00000011",
-            "id": "0b96a642-5e7f-452d-9cae-9cee66c9a892",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
             "notes": [],
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
+            "statisticalCodeIds": [
+                "775b6ad4-9c35-4d29-bf78-8775a9b42226"
+            ],
             "status": {
                 "name": "Available"
             },
@@ -247,9 +404,13 @@
             "electronicAccess": [],
             "formerIds": [],
             "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
-            "hrid": "it00000012",
+            "hrid": "it00000015",
             "id": "4428a37c-8bae-4f0d-865d-970d83d5ad55",
             "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.137+0000",
+                "updatedDate": "2019-09-08T03:33:25.137+0000"
+            },
             "notes": [
                 {
                     "itemNoteTypeId": "8d0a5eca-25de-4391-81a9-236eeefdd20b",
@@ -287,117 +448,24 @@
             "yearCaption": []
         },
         {
-            "barcode": "697685458679",
+            "barcode": "A14811392695",
+            "chronology": "1987:Jan.-June",
             "circulationNotes": [],
             "copyNumbers": [],
             "electronicAccess": [],
+            "enumeration": "v.73:no.1-6",
             "formerIds": [],
-            "holdingsRecordId": "68872d8a-bf16-420b-829f-206da38f6c10",
-            "hrid": "it00000017",
-            "id": "23f2c8e1-bd5d-4f27-9398-a688c998808a",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-            "notes": [],
-            "permanentLoanTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210a4",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Checked out"
-            },
-            "yearCaption": []
-        },
-        {
-            "barcode": "765475420716",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [],
-            "formerIds": [],
-            "holdingsRecordId": "65032151-39a5-4cef-8810-5350eb316300",
-            "hrid": "it00000013",
-            "id": "459afaba-5b39-468d-9072-eb1685e0ddf4",
-            "materialTypeId": "5ee11d91-f7e8-481d-b079-65d708582ccc",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
-            },
-            "temporaryLocationId": "53cf956f-c1df-410b-8bea-27f712cca7c0",
-            "yearCaption": []
-        },
-        {
-            "barcode": "A14837334306",
-            "chronology": "1984:Jan.-June",
-            "circulationNotes": [],
-            "copyNumbers": [
-                "1"
-            ],
-            "electronicAccess": [],
-            "enumeration": "v.70:no.1-6",
-            "formerIds": [
-                "3806267"
-            ],
             "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
-            "hrid": "it00000014",
-            "id": "9ea1fd0b-0259-4edb-95a3-eb2f9a063e20",
+            "hrid": "it00000016",
+            "id": "bc90a3c9-26c9-4519-96bc-d9d44995afef",
             "materialTypeId": "d9acad2f-2aac-4b48-9097-e6ab85906b25",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "statisticalCodeIds": [
-                "775b6ad4-9c35-4d29-bf78-8775a9b42226"
-            ],
-            "status": {
-                "name": "Available"
+            "metadata": {
+                "createdDate": "2019-09-08T03:33:25.139+0000",
+                "updatedDate": "2019-09-08T03:33:25.139+0000"
             },
-            "yearCaption": []
-        },
-        {
-            "barcode": "4539876054383",
-            "circulationNotes": [],
-            "copyNumbers": [
-                "Copy 3"
-            ],
-            "electronicAccess": [],
-            "formerIds": [],
-            "holdingsRecordId": "fb7b70f1-b898-4924-a991-0e4b6312bb5f",
-            "hrid": "it00000015",
-            "id": "d6f7c1ba-a237-465e-94ed-f37e91bc64bd",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
             "notes": [],
-            "numberOfPieces": "1",
             "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
             "statisticalCodeIds": [],
-            "status": {
-                "name": "Available"
-            },
-            "temporaryLoanTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0e",
-            "yearCaption": []
-        },
-        {
-            "barcode": "90000",
-            "chronology": "",
-            "circulationNotes": [],
-            "copyNumbers": [],
-            "electronicAccess": [
-                {
-                    "linkText": "Links available",
-                    "materialsSpecification": "Table of contents",
-                    "publicNote": "Table of contents only",
-                    "relationshipId": "3b430592-2e09-4b48-9a0c-0636d66b9fb3",
-                    "uri": "http://www.loc.gov/catdir/toc/ecip0718/2007020429.html"
-                }
-            ],
-            "enumeration": "",
-            "formerIds": [],
-            "holdingsRecordId": "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
-            "hrid": "it00000016",
-            "id": "100d10bf-2f06-4aa0-be15-0b95b2d9f9e3",
-            "itemLevelCallNumber": "TK5105.88815 . A58 2004 FT MEADE",
-            "materialTypeId": "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-            "notes": [],
-            "permanentLoanTypeId": "2b94c631-fca9-4892-a730-03ee529ffe27",
-            "permanentLocationId": "fcd64ce1-6995-48f0-840e-89ffa2288371",
-            "statisticalCodeIds": [
-                "b5968c9e-cddc-4576-99e3-8e60aed8b0dd"
-            ],
             "status": {
                 "name": "Available"
             },
