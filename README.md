@@ -31,13 +31,13 @@ If an existing query does not match your needs, you can use the existing query a
 
 ## Queries
 
-SQL queries are stored in the [sql directory](https://github.com/folio-org/ldp-analytics/tree/master/sql) of this repository. Each query has a separate directory. A full report may contain separate individual queries, so the queries are grouped into reports using the list below.
+SQL queries are stored in the [sql directory](sql) of this repository. Each query has a separate directory. A full report may contain separate individual queries, so the queries are grouped into reports using the list below.
 
 ### Circulation
 
-* Circulation Detail Report: [Circulation Detail Query](https://github.com/folio-org/ldp-analytics/tree/master/sql/circ-detail)
-* Circulation Item Detail Report: [Circulation Item Detail Query](https://github.com/folio-org/ldp-analytics/tree/master/sql/circ-item-detail)
-* Services Usage Report: [Services Usage Report](https://github.com/folio-org/ldp-analytics/tree/master/sql/services-usage)
+* Circulation Detail Report: [Circulation Detail Query](sql/circ-detail)
+* Circulation Item Detail Report: [Circulation Item Detail Query](sql/circ-item-detail)
+* Services Usage Report: [Services Usage Report](sql/services-usage)
 
 ### Inventory
 
