@@ -20,14 +20,11 @@ LDP queries are written in SQL and are designed to execute correctly on either t
 * BIRT
 * Tableau
 
-If an existing query does not match your needs, you can use the existing query as a starting point and edit the query to create the desired output. The [LDP User Guide](https://github.com/folio-org/ldp/blob/master/USER_GUIDE.md) includes advice for query writing.
-
-## How to learn more about SQL
-
-* [Self-paced course on Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
-* [Self-paced course on SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
-* [SQL for Data Science](https://www.coursera.org/learn/sql-for-data-science)
-* [PostgreSQL JSON](http://www.postgresqltutorial.com/postgresql-json/)
+If none of the queries provided match your needs, you can look for an existing
+query to use as a starting point and edit the query to create the desired
+output.  The [LDP User
+Guide](https://github.com/folio-org/ldp/blob/master/USER_GUIDE.md) includes
+LDP-specific guidelines for query writing.
 
 ## Queries
 
@@ -47,9 +44,8 @@ SQL queries are stored in the [sql directory](sql) of this repository. Each quer
 
 ### Users
 
-## Additional information
+## How to learn more about SQL
 
-### Issue tracker
+* [Self-paced course on Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
+* [Self-paced course on SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
 
-See projects [REP](https://issues.folio.org/browse/REP) and [LDP](https://issues.folio.org/browse/LDP)
-at the [FOLIO issue tracker](https://dev.folio.org/guidelines/issue-tracker).
