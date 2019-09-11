@@ -1,134 +1,6 @@
 {
     "loans": [
         {
-            "action": "checkedout",
-            "borrower": {
-                "barcode": "344058867767195",
-                "firstName": "Justen",
-                "lastName": "Hilll",
-                "middleName": "Else"
-            },
-            "dueDate": "2017-03-19T18:32:31.000+0000",
-            "id": "40f5e9d9-38ac-458e-ade7-7795bd821652",
-            "item": {
-                "barcode": "453987605438",
-                "callNumber": "PR6056.I4588 B749 2016",
-                "contributors": [
-                    {
-                        "name": "Fielding, Helen"
-                    }
-                ],
-                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
-                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
-                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
-                "location": {
-                    "name": "Main Library"
-                },
-                "materialType": {
-                    "name": "book"
-                },
-                "status": {
-                    "name": "Checked out"
-                },
-                "title": "Bridget Jones's Baby: the diaries"
-            },
-            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
-            "loanDate": "2017-03-05T18:32:31Z",
-            "loanPolicy": {
-                "name": null
-            },
-            "renewalCount": 0,
-            "status": {
-                "name": "Open"
-            },
-            "userId": "47f7eaea-1a18-4058-907c-62b7d095c61b"
-        },
-        {
-            "action": "holdrequested",
-            "borrower": {
-                "barcode": "508444097915063",
-                "firstName": "Velva",
-                "lastName": "Brakus",
-                "middleName": "Kendall"
-            },
-            "dueDate": "2017-01-19T12:42:21.000+0000",
-            "id": "3fd2d7aa-a6fe-4794-9d34-837a6bd31a8b",
-            "item": {
-                "barcode": "326547658598",
-                "callNumber": "D15.H63 A3 2002",
-                "contributors": [
-                    {
-                        "name": "Pratchett, Terry"
-                    }
-                ],
-                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
-                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
-                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
-                "location": {
-                    "name": "SECOND FLOOR"
-                },
-                "materialType": {
-                    "name": "book"
-                },
-                "status": {
-                    "name": "Checked out"
-                },
-                "title": "Interesting Times"
-            },
-            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
-            "loanDate": "2017-01-05T12:42:21Z",
-            "loanPolicy": {
-                "name": null
-            },
-            "status": {
-                "name": "Open"
-            },
-            "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
-        },
-        {
-            "action": "checkedin",
-            "borrower": {
-                "barcode": "724600319597122",
-                "firstName": "Foster",
-                "lastName": "McDermott",
-                "middleName": null
-            },
-            "dueDate": "2017-03-19T18:32:31.000+0000",
-            "id": "21b34ab5-fdb1-4922-88ba-4f32750f61da",
-            "item": {
-                "barcode": "653285216743",
-                "callNumber": "some-callnumber",
-                "contributors": [
-                    {
-                        "name": "Novik, Naomi"
-                    }
-                ],
-                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
-                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
-                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
-                "location": {
-                    "name": "Main Library"
-                },
-                "materialType": {
-                    "name": "book"
-                },
-                "status": {
-                    "name": "Available"
-                },
-                "title": "Temeraire"
-            },
-            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
-            "loanDate": "2017-03-05T18:32:31Z",
-            "loanPolicy": {
-                "name": null
-            },
-            "renewalCount": 0,
-            "status": {
-                "name": "Closed"
-            },
-            "userId": "9ad09b01-7429-455f-9f64-e3897027db61"
-        },
-        {
             "action": "checkedin",
             "borrower": {
                 "barcode": "508444097915063",
@@ -218,6 +90,1094 @@
                 "name": "Open"
             },
             "userId": "d0fc4228-2e42-49b2-a5b0-9df48897e8c0"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "724600319597122",
+                "firstName": "Foster",
+                "lastName": "McDermott",
+                "middleName": null
+            },
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2017-03-05T18:32:31Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "renewalCount": 0,
+            "status": {
+                "name": "Closed"
+            },
+            "userId": "9ad09b01-7429-455f-9f64-e3897027db61"
+        },
+        {
+            "action": "checkedout",
+            "borrower": {
+                "barcode": "721408137069396",
+                "firstName": "Perry",
+                "lastName": "Jast",
+                "middleName": "Drake"
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "7be59e21-73b2-4801-bb8e-43213f483b51",
+            "item": {
+                "barcode": "645398607547",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "0b96a642-5e7f-452d-9cae-9cee66c9a892",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "0b96a642-5e7f-452d-9cae-9cee66c9a892",
+            "loanDate": "2019-09-11T08:16:28Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T08:16:28.975+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T08:16:28.975+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "3684a786-6671-4268-8ed0-9db82ebca60b",
+                "name": "staff"
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "e63273e7-48f5-4c43-ab4e-1751ecacaa21"
+        },
+        {
+            "action": "checkedout",
+            "borrower": {
+                "barcode": "194710970216014",
+                "firstName": "Jazmin",
+                "lastName": "Becker",
+                "middleName": null
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "9a091cbd-b335-4db6-94d7-b405c386a357",
+            "item": {
+                "barcode": "000111222333444",
+                "callNumber": "R11.A38",
+                "holdingsRecordId": "133a7916-f05e-4df4-8f7f-09eb2a7076d1",
+                "id": "1714f71f-b845-444b-a79e-a577487a6f7d",
+                "instanceId": "30fcc8e7-a019-43f4-b642-2edc389f4501",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "The American Journal of Medicine"
+            },
+            "itemId": "1714f71f-b845-444b-a79e-a577487a6f7d",
+            "loanDate": "2019-09-11T08:17:50Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T08:17:51.525+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T08:17:51.525+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "503a81cd-6c26-400f-b620-14c08943697c",
+                "name": "faculty"
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "a49cefad-7447-4f2f-9004-de32e7a6cc53"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "508444097915063",
+                "firstName": "Velva",
+                "lastName": "Brakus",
+                "middleName": "Kendall"
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2017-01-19T12:42:21.000+0000",
+            "id": "3fd2d7aa-a6fe-4794-9d34-837a6bd31a8b",
+            "item": {
+                "barcode": "326547658598",
+                "callNumber": "D15.H63 A3 2002",
+                "contributors": [
+                    {
+                        "name": "Pratchett, Terry"
+                    }
+                ],
+                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+                "location": {
+                    "name": "SECOND FLOOR"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Interesting Times"
+            },
+            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "loanDate": "2017-01-05T12:42:21Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T08:31:44.805+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T08:31:44.805+0000"
+            },
+            "returnDate": "2019-09-11T08:31:44.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T08:31:44.741+0000",
+            "userId": "ab579dc3-219b-4f5b-8068-ab1c7a55c402"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "394156228501504",
+                "firstName": "Khalil",
+                "lastName": "Kemmer",
+                "middleName": "Camylle"
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "0c3d1397-b9c1-4cac-9cbf-2c207b37b4d3",
+            "item": {
+                "barcode": "326547658598",
+                "callNumber": "D15.H63 A3 2002",
+                "contributors": [
+                    {
+                        "name": "Pratchett, Terry"
+                    }
+                ],
+                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+                "location": {
+                    "name": "SECOND FLOOR"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Interesting Times"
+            },
+            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "loanDate": "2019-09-11T08:31:56Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T08:31:57.163+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:01:16.604+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "503a81cd-6c26-400f-b620-14c08943697c",
+                "name": "faculty"
+            },
+            "returnDate": "2019-09-11T09:01:16.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T09:01:16.545+0000",
+            "userId": "f6cd72ab-3e89-44c0-99aa-54ab4844f167"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "109322966933845",
+                "firstName": "Penelope",
+                "lastName": "Feil",
+                "middleName": "Myrna"
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "9917ed7b-114f-4612-828d-3185e0580713",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2019-09-11T07:36:26Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T07:36:26.407+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:46:12.370+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+                "name": "graduate"
+            },
+            "returnDate": "2019-09-11T09:46:11.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T09:46:12.310+0000",
+            "userId": "d0fc4228-2e42-49b2-a5b0-9df48897e8c0"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "344058867767195",
+                "firstName": "Justen",
+                "lastName": "Hilll",
+                "middleName": "Else"
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2017-03-19T18:32:31.000+0000",
+            "id": "40f5e9d9-38ac-458e-ade7-7795bd821652",
+            "item": {
+                "barcode": "453987605438",
+                "callNumber": "PR6056.I4588 B749 2016",
+                "contributors": [
+                    {
+                        "name": "Fielding, Helen"
+                    }
+                ],
+                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+                "inTransitDestinationServicePointId": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "In transit"
+                },
+                "title": "Bridget Jones's Baby: the diaries"
+            },
+            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "loanDate": "2017-03-05T18:32:31Z",
+            "loanPolicy": {
+                "name": null
+            },
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:48:32.616+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:48:32.616+0000"
+            },
+            "renewalCount": 0,
+            "returnDate": "2019-09-11T09:48:32.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T09:48:32.555+0000",
+            "userId": "47f7eaea-1a18-4058-907c-62b7d095c61b"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "883315883746696",
+                "firstName": "Hailey",
+                "lastName": "Okuneva",
+                "middleName": "Ronny"
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "17245ff3-868f-4e3a-bbc0-9043e61164b0",
+            "item": {
+                "barcode": "326547658598",
+                "callNumber": "D15.H63 A3 2002",
+                "contributors": [
+                    {
+                        "name": "Pratchett, Terry"
+                    }
+                ],
+                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+                "location": {
+                    "name": "SECOND FLOOR"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Interesting Times"
+            },
+            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "loanDate": "2019-09-11T09:01:28Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:01:28.679+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:01:50.422+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "3684a786-6671-4268-8ed0-9db82ebca60b",
+                "name": "staff"
+            },
+            "returnDate": "2019-09-11T09:01:49.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T09:01:50.364+0000",
+            "userId": "50e30476-ee93-4b16-a53c-27ce2c4b49d7"
+        },
+        {
+            "action": "checkedout",
+            "borrower": {
+                "barcode": "883315883746696",
+                "firstName": "Hailey",
+                "lastName": "Okuneva",
+                "middleName": "Ronny"
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-11T09:04:41.000+0000",
+            "id": "0d8e3cac-c7b5-49d0-be39-136cd2d6615c",
+            "item": {
+                "barcode": "326547658598",
+                "callNumber": "D15.H63 A3 2002",
+                "contributors": [
+                    {
+                        "name": "Pratchett, Terry"
+                    }
+                ],
+                "holdingsRecordId": "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+                "id": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+                "instanceId": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+                "location": {
+                    "name": "SECOND FLOOR"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Interesting Times"
+            },
+            "itemId": "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+            "loanDate": "2019-09-11T09:02:41Z",
+            "loanPolicy": {
+                "name": "test-policy-8059"
+            },
+            "loanPolicyId": "b3e67ea2-54a5-495a-ac4d-86b8a2e7f30e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:02:42.489+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:02:42.489+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "3684a786-6671-4268-8ed0-9db82ebca60b",
+                "name": "staff"
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "50e30476-ee93-4b16-a53c-27ce2c4b49d7"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-11T09:48:17.000+0000",
+            "id": "a546ed1b-ff03-43f4-a468-4fd2fccc174f",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2019-09-11T09:46:17Z",
+            "loanPolicy": {
+                "name": "test-policy-8059"
+            },
+            "loanPolicyId": "b3e67ea2-54a5-495a-ac4d-86b8a2e7f30e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:46:18.174+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:46:27.659+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "returnDate": "2019-09-11T09:46:27.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T09:46:27.602+0000",
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-11-11T04:59:59.000+0000",
+            "id": "a2dd9538-8ae8-475e-bb9d-f7e76049b3b8",
+            "item": {
+                "barcode": "453987605438",
+                "callNumber": "PR6056.I4588 B749 2016",
+                "contributors": [
+                    {
+                        "name": "Fielding, Helen"
+                    }
+                ],
+                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+                "inTransitDestinationServicePointId": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "In transit"
+                },
+                "title": "Bridget Jones's Baby: the diaries"
+            },
+            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "loanDate": "2019-09-11T09:48:41Z",
+            "loanPolicy": {
+                "name": "Example Loan Policy"
+            },
+            "loanPolicyId": "d9cd0bed-1b49-4b5e-a7bd-064b8d177231",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:48:42.189+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T10:29:40.111+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "returnDate": "2019-09-11T10:29:39.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T10:29:40.051+0000",
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
+        },
+        {
+            "action": "renewedThroughOverride",
+            "actionComment": "21",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-11T18:34:00.000+0000",
+            "id": "894ff520-feba-4014-adcf-d8cbd6afdac9",
+            "item": {
+                "barcode": "653285216743",
+                "callNumber": "some-callnumber",
+                "contributors": [
+                    {
+                        "name": "Novik, Naomi"
+                    }
+                ],
+                "holdingsRecordId": "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+                "id": "23fdb0bc-ab58-442a-b326-577a96204487",
+                "instanceId": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "Temeraire"
+            },
+            "itemId": "23fdb0bc-ab58-442a-b326-577a96204487",
+            "loanDate": "2019-09-11T09:47:06Z",
+            "loanPolicy": {
+                "name": "test-policy-8059"
+            },
+            "loanPolicyId": "b3e67ea2-54a5-495a-ac4d-86b8a2e7f30e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:47:07.511+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T11:34:54.205+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "renewalCount": 2,
+            "status": {
+                "name": "Open"
+            },
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
+        },
+        {
+            "action": "renewedThroughOverride",
+            "actionComment": "21",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-10-27T03:59:59.000+0000",
+            "id": "9291c7a9-4f3d-43f8-8083-2437bf85ebe2",
+            "item": {
+                "barcode": "A14813848587",
+                "callNumber": "K1 .M44",
+                "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+                "id": "645549b1-2a73-4251-b8bb-39598f773a93",
+                "instanceId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "text"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "ABA Journal"
+            },
+            "itemId": "645549b1-2a73-4251-b8bb-39598f773a93",
+            "loanDate": "2019-09-11T10:10:01Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T10:10:02.192+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T11:34:54.214+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "renewalCount": 2,
+            "status": {
+                "name": "Open"
+            },
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
+        },
+        {
+            "action": "checkedin",
+            "borrower": {
+                "barcode": "267941186130073",
+                "firstName": "Meredith",
+                "lastName": "Kovacek",
+                "middleName": null
+            },
+            "checkinServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkinServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "checkoutServicePoint": {
+                "code": "cd1",
+                "description": null,
+                "discoveryDisplayName": "Circulation Desk -- Hallway",
+                "name": "Circ Desk 1",
+                "pickupLocation": true,
+                "shelvingLagTime": null
+            },
+            "checkoutServicePointId": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+            "dueDate": "2019-09-13T03:59:00.000+0000",
+            "id": "1e15e20d-5395-4694-b282-acc3cdd79aa0",
+            "item": {
+                "barcode": "453987605438",
+                "callNumber": "PR6056.I4588 B749 2016",
+                "contributors": [
+                    {
+                        "name": "Fielding, Helen"
+                    }
+                ],
+                "holdingsRecordId": "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+                "id": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+                "inTransitDestinationServicePointId": "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+                "instanceId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "In transit"
+                },
+                "title": "Bridget Jones's Baby: the diaries"
+            },
+            "itemId": "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+            "loanDate": "2019-09-11T10:31:47.584Z",
+            "loanPolicy": {
+                "name": "test-policy-8059"
+            },
+            "loanPolicyId": "b3e67ea2-54a5-495a-ac4d-86b8a2e7f30e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T10:31:47.930+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T13:19:12.430+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+                "name": "graduate"
+            },
+            "returnDate": "2019-09-11T13:19:11.000Z",
+            "status": {
+                "name": "Closed"
+            },
+            "systemReturnDate": "2019-09-11T13:19:12.187+0000",
+            "userId": "a98abce3-be00-4d9a-a66a-0593d27b41e0"
+        },
+        {
+            "action": "renewedThroughOverride",
+            "actionComment": "21",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-11T18:34:00.000+0000",
+            "id": "296273d3-ee92-497c-a25a-71eb01e181c1",
+            "item": {
+                "barcode": "10101",
+                "callNumber": "TK5105.88815 . A58 2004 FT MEADE",
+                "contributors": [
+                    {
+                        "name": "Antoniou, Grigoris"
+                    },
+                    {
+                        "name": "Van Harmelen, Frank"
+                    }
+                ],
+                "holdingsRecordId": "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
+                "id": "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
+                "instanceId": "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "book"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "A semantic web primer"
+            },
+            "itemId": "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
+            "loanDate": "2019-09-11T09:45:55Z",
+            "loanPolicy": {
+                "name": "test-policy-8059"
+            },
+            "loanPolicyId": "b3e67ea2-54a5-495a-ac4d-86b8a2e7f30e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:45:56.004+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T11:34:54.196+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "renewalCount": 2,
+            "status": {
+                "name": "Open"
+            },
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
+        },
+        {
+            "action": "recallrequested",
+            "borrower": {
+                "barcode": "631888472578232",
+                "firstName": "Cordell",
+                "lastName": "Bernhard",
+                "middleName": "Mafalda"
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-17T03:59:59.000+0000",
+            "id": "6cfdc7a9-4409-4afb-aee9-2bc2dc9d71ce",
+            "item": {
+                "barcode": "A14811392645",
+                "callNumber": "K1 .M44",
+                "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+                "id": "f8b6d973-60d4-41ce-a57b-a3884471a6d6",
+                "instanceId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "text"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "ABA Journal"
+            },
+            "itemId": "f8b6d973-60d4-41ce-a57b-a3884471a6d6",
+            "loanDate": "2019-09-11T07:12:45Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T07:12:45.698+0000",
+                "updatedByUserId": "cba3f9de-be4f-4ba2-9b14-5ab1fd885d42",
+                "updatedDate": "2019-09-11T14:30:50.372+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "503a81cd-6c26-400f-b620-14c08943697c",
+                "name": "faculty"
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "2a81b279-d459-4022-82f6-69a569d196b9"
+        },
+        {
+            "action": "checkedout",
+            "borrower": {
+                "barcode": "509575459201574",
+                "firstName": "Dagmar",
+                "lastName": "Borer",
+                "middleName": null
+            },
+            "checkoutServicePoint": {
+                "code": "Online",
+                "description": null,
+                "discoveryDisplayName": "Online",
+                "name": "Online",
+                "pickupLocation": false,
+                "shelvingLagTime": 1
+            },
+            "checkoutServicePointId": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "dueDate": "2019-09-27T03:59:59.000+0000",
+            "id": "843695a2-3fbe-4497-a1f2-bcebb5d5fc6a",
+            "item": {
+                "barcode": "A1429864347",
+                "callNumber": "K1 .M44",
+                "holdingsRecordId": "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+                "id": "eedd13c4-7d40-4b1e-8f77-b0b9d19a896b",
+                "instanceId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+                "location": {
+                    "name": "Main Library"
+                },
+                "materialType": {
+                    "name": "text"
+                },
+                "status": {
+                    "name": "Checked out"
+                },
+                "title": "ABA Journal"
+            },
+            "itemId": "eedd13c4-7d40-4b1e-8f77-b0b9d19a896b",
+            "loanDate": "2019-09-11T15:59:04Z",
+            "loanPolicy": {
+                "name": "15/5"
+            },
+            "loanPolicyId": "cb8efa37-4c01-4ec7-b45c-c935447628ff",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T15:59:05.221+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T15:59:05.221+0000"
+            },
+            "patronGroupAtCheckout": {
+                "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+                "name": "undergrad"
+            },
+            "status": {
+                "name": "Open"
+            },
+            "userId": "16757efe-86ac-40bb-bdd6-fafee02463c7"
         }
     ]
 }

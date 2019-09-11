@@ -1,0 +1,31 @@
+{
+    "fiscalYears": [
+        {
+            "acqUnitIds": [],
+            "code": "18",
+            "currency": "USD",
+            "description": "Fiscal year 2018-2019",
+            "id": "8da275b8-e099-49a1-9a31-b8241ff26ffc",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.118+0000",
+                "updatedDate": "2019-09-11T03:34:18.118+0000"
+            },
+            "name": "FY18",
+            "periodEnd": "2018-12-31T23:59:59.000+0000",
+            "periodStart": "2018-01-01T00:00:00.000+0000"
+        },
+        {
+            "acqUnitIds": [],
+            "code": "FY19",
+            "description": "Fiscal year for 2019",
+            "id": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.121+0000",
+                "updatedDate": "2019-09-11T03:34:18.121+0000"
+            },
+            "name": "Fiscal Year 2019",
+            "periodEnd": "2019-12-31T23:59:59.000+0000",
+            "periodStart": "2019-01-01T00:00:00.000+0000"
+        }
+    ]
+}

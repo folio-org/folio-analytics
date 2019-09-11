@@ -1,0 +1,123 @@
+{
+    "transactions": [
+        {
+            "amount": 25,
+            "currency": "USD",
+            "description": "PO_Line: History of Incas",
+            "fiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "fromFundId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+            "id": "a0b1e290-c42f-435a-b9d7-4ae7f77eb4ef",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.837+0000",
+                "updatedDate": "2019-09-11T03:34:18.837+0000"
+            },
+            "paymentEncumbranceId": "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+            "source": "Voucher",
+            "sourceFiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "sourceInvoiceId": "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+            "tags": {
+                "tagList": [
+                    "important"
+                ]
+            },
+            "toFundId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+            "transactionType": "Allocation"
+        },
+        {
+            "amount": 25,
+            "currency": "USD",
+            "description": "PO_Line: History of Incas",
+            "fiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "fromFundId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+            "id": "e24d0bae-0528-403d-8ce2-0d821a6e57e7",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.839+0000",
+                "updatedDate": "2019-09-11T03:34:18.839+0000"
+            },
+            "paymentEncumbranceId": "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+            "source": "Voucher",
+            "sourceFiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "sourceInvoiceId": "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+            "tags": {
+                "tagList": [
+                    "important"
+                ]
+            },
+            "toFundId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+            "transactionType": "Transfer"
+        },
+        {
+            "amount": 25,
+            "currency": "USD",
+            "description": "PO_Line: History of Incas",
+            "fiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "fromFundId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+            "id": "21425789-acdb-44b2-b44f-f2291cc48b42",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.841+0000",
+                "updatedDate": "2019-09-11T03:34:18.841+0000"
+            },
+            "paymentEncumbranceId": "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+            "source": "Voucher",
+            "sourceFiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "sourceInvoiceId": "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+            "tags": {
+                "tagList": [
+                    "important"
+                ]
+            },
+            "toFundId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+            "transactionType": "Credit"
+        },
+        {
+            "amount": 86,
+            "currency": "USD",
+            "description": "PO_Line: History of Incas",
+            "encumbrance": {
+                "amountAwaitingPayment": 90,
+                "amountExpended": 74,
+                "initialAmountEncumbered": 250,
+                "status": "Unreleased"
+            },
+            "fiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "fromFundId": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+            "id": "1ee8204a-f0d9-4980-881e-8edb0d3ad69a",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.842+0000",
+                "updatedDate": "2019-09-11T03:34:18.842+0000"
+            },
+            "paymentEncumbranceId": "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+            "source": "Voucher",
+            "sourceFiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "sourceInvoiceId": "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+            "tags": {
+                "tagList": [
+                    "important"
+                ]
+            },
+            "toFundId": "69640328-788e-43fc-9c3c-af39e243f3b7",
+            "transactionType": "Encumbrance"
+        },
+        {
+            "amount": 25,
+            "currency": "USD",
+            "description": "PO_Line: History of Incas",
+            "fiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "id": "a4780d61-e9c7-4206-b203-a8b22a6d5c38",
+            "metadata": {
+                "createdDate": "2019-09-11T03:34:18.846+0000",
+                "updatedDate": "2019-09-11T03:34:18.846+0000"
+            },
+            "paymentEncumbranceId": "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+            "source": "Voucher",
+            "sourceFiscalYearId": "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+            "sourceInvoiceId": "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+            "tags": {
+                "tagList": [
+                    "important"
+                ]
+            },
+            "transactionType": "Payment"
+        }
+    ]
+}
