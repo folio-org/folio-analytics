@@ -1,24 +1,72 @@
 {
     "loclibs": [
         {
-            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
-            "code": "DI",
-            "id": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:20.232+0000",
-                "updatedDate": "2019-09-08T03:33:20.232+0000"
-            },
-            "name": "Datalogisk Institut"
-        },
-        {
             "campusId": "470ff1dd-937a-4195-bf9e-06bcfcd135df",
             "code": "E",
             "id": "c2549bb4-19c7-4fcc-8b52-39e612fb7dbe",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:20.234+0000",
-                "updatedDate": "2019-09-08T03:33:20.234+0000"
+                "createdDate": "2019-09-11T03:33:40.953+0000",
+                "updatedDate": "2019-09-11T03:33:40.953+0000"
             },
             "name": "Online"
+        },
+        {
+            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
+            "code": "DI",
+            "id": "5d78803e-ca04-4b4a-aeae-2c63b924518b",
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:40.955+0000",
+                "updatedDate": "2019-09-11T03:33:40.955+0000"
+            },
+            "name": "Datalogisk Institut"
+        },
+        {
+            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
+            "code": "ML",
+            "id": "3f0df16e-7fc3-4f8a-bbf1-b36343b7cc9c",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T14:26:24.000+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T14:26:24.000+0000"
+            },
+            "name": "Main Library"
+        },
+        {
+            "campusId": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
+            "code": "LL",
+            "id": "ed03752c-e982-4d8c-b266-fa48699f2cbf",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T14:26:30.563+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T14:26:30.563+0000"
+            },
+            "name": "Law Library"
+        },
+        {
+            "campusId": "f4bbfc5a-1578-4335-964d-3f3906a14f81",
+            "code": "UL",
+            "id": "12633a0c-9bba-4255-8a00-0a22939f1a91",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T14:26:57.057+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T14:26:57.057+0000"
+            },
+            "name": "Undergrad Library"
+        },
+        {
+            "campusId": "f4bbfc5a-1578-4335-964d-3f3906a14f81",
+            "code": "JO",
+            "id": "cd023ac0-b1cc-44fe-ac81-f00e8f327f4e",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T14:27:06.600+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T14:27:06.600+0000"
+            },
+            "name": "Jones Library"
         }
     ]
 }

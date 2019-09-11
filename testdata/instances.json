@@ -2,26 +2,26 @@
     "instances": [
         {
             "alternativeTitles": [],
-            "classifications": [
+            "classifications": [],
+            "contributors": [
                 {
-                    "classificationNumber": "300",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Stavrou, C.N"
                 }
             ],
-            "contributors": [],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000003",
-            "id": "f7e82a1e-fc06-4b82-bb1d-da326cb378ce",
+            "hrid": "in00000002",
+            "id": "62ca5b43-0f11-40af-a6b4-1a9ee2db33cb",
             "identifiers": [
                 {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)981117973"
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "53957015X"
                 },
                 {
                     "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)ZDB2905315-8"
+                    "value": "(DE-599)GBV53957015X"
                 }
             ],
             "instanceFormatIds": [],
@@ -30,19 +30,25 @@
                 "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.607+0000",
-                "updatedDate": "2019-09-08T03:33:24.607+0000"
+                "createdDate": "2019-09-11T03:33:45.575+0000",
+                "updatedDate": "2019-09-11T03:33:45.575+0000"
             },
             "natureOfContentTermIds": [],
-            "notes": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Mikrofilm-Ausg. 1957 1 Mikrofilm",
+                    "staffOnly": false
+                }
+            ],
             "physicalDescriptions": [
-                "Bände"
+                "1 Mikrofilm 26-34 S."
             ],
             "publication": [
                 {
-                    "dateOfPublication": "2017-",
-                    "place": "London New York",
-                    "publisher": "Routledge, Taylor \u0026 Francis Group"
+                    "dateOfPublication": "1955",
+                    "place": "New York",
+                    "publisher": "Columbia University"
                 }
             ],
             "publicationFrequency": [],
@@ -50,97 +56,66 @@
             "series": [],
             "source": "MARC",
             "statisticalCodeIds": [],
-            "subjects": [
-                "Monografische Reihe"
-            ],
-            "title": "Global Africa"
+            "subjects": [],
+            "title": "The Neurotic Heroine in Tennessee Williams microform C.N. Stavrou"
         },
         {
             "alternativeTitles": [
                 {
-                    "alternativeTitle": "First alternative title"
+                    "alternativeTitle": "Ich habe genung"
                 },
                 {
-                    "alternativeTitle": "Second alternative title"
+                    "alternativeTitle": "Abweichender Titel Ich habe genung"
                 }
             ],
             "classifications": [],
             "contributors": [
                 {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Creator A"
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Bach, Johann Sebastian"
                 },
                 {
-                    "contributorNameTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0a",
-                    "name": "Creator B"
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Arfken, Katharina"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Goltz, Gottfried von der"
+                },
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Freiburger Barockorchester"
                 }
             ],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
             "hrid": "in00000006",
-            "id": "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+            "id": "ce00bca2-9270-4c6b-b096-b83a2e56e8e9",
             "identifiers": [
                 {
-                    "identifierTypeId": "7f907515-a1bf-4513-8a38-92e1a07c539d",
-                    "value": "B01LO7PJOE"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.621+0000",
-                "updatedDate": "2019-09-08T03:33:24.621+0000"
-            },
-            "natureOfContentTermIds": [
-                "44cd89f3-2e76-469f-a955-cc57cb9e0395"
-            ],
-            "notes": [],
-            "physicalDescriptions": [],
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "The Girl on the Train"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Pratchett, Terry"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000013",
-            "id": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
-            "identifiers": [
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "0552142352"
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "1011162431"
                 },
                 {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9780552142352"
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV1011162431"
                 }
             ],
             "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [],
+            "instanceTypeId": "3be24c14-3551-4180-9292-26a786649c8b",
+            "languages": [
+                "ger"
+            ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.635+0000",
-                "updatedDate": "2019-09-08T03:33:24.635+0000"
+                "createdDate": "2019-09-11T03:33:45.588+0000",
+                "updatedDate": "2019-09-11T03:33:45.588+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
-            "physicalDescriptions": [],
+            "physicalDescriptions": [
+                "Track 10-14"
+            ],
             "publication": [],
             "publicationFrequency": [],
             "publicationRange": [],
@@ -148,53 +123,7 @@
             "source": "MARC",
             "statisticalCodeIds": [],
             "subjects": [],
-            "title": "Interesting Times"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000016",
-            "id": "69640328-788e-43fc-9c3c-af39e243f3b7",
-            "identifiers": [
-                {
-                    "identifierTypeId": "913300b2-03ed-469a-8179-c1092c991227",
-                    "value": "0747-0088"
-                },
-                {
-                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
-                    "value": "84641839"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.643+0000",
-                "updatedDate": "2019-09-08T03:33:24.643+0000"
-            },
-            "natureOfContentTermIds": [
-                "0abeee3d-8ad2-4b04-92ff-221b4fce1075"
-            ],
-            "notes": [],
-            "physicalDescriptions": [],
-            "publication": [
-                {
-                    "dateOfPublication": "1915-1983",
-                    "place": "Chicago, Ill.",
-                    "publisher": "American Bar Association"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "ABA Journal"
+            "title": "Cantatas for bass 4 Ich habe genug : BWV 82 / Johann Sebastian Bach ; Matthias Goerne, baritone ; Freiburger Barockorchester, Gottfried von der Goltz, violin and conductor"
         },
         {
             "alternativeTitles": [],
@@ -208,7 +137,7 @@
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000021",
+            "hrid": "in00000011",
             "id": "bbd4a5e1-c9f3-44b9-bfdf-d184e04f0ba0",
             "identifiers": [],
             "instanceFormatIds": [
@@ -217,8 +146,8 @@
             "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
             "languages": [],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.654+0000",
-                "updatedDate": "2019-09-08T03:33:24.654+0000"
+                "createdDate": "2019-09-11T03:33:45.599+0000",
+                "updatedDate": "2019-09-11T03:33:45.599+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
@@ -238,30 +167,293 @@
             "contributors": [
                 {
                     "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Novik, Naomi"
+                    "name": "Ris, Robert"
+                },
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "ChessBase GmbH Hamburg"
                 }
             ],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000026",
-            "id": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+            "hrid": "in00000015",
+            "id": "3c4ae3f3-b460-4a89-a2f9-78ce3145e4fc",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "858092093"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV858092093"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "c208544b-9e28-44fa-a13c-f4093d72f798",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.610+0000",
+                "updatedDate": "2019-09-11T03:33:45.610+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [
+                {
+                    "dateOfPublication": "[2016]-",
+                    "place": "Hamburg",
+                    "publisher": "Chessbase GmbH"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Fritztrainer Tactics"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "DVD-ROM"
+            ],
+            "title": "The chess player’s mating guide Computer Datei Robert Ris"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "K1 .M385",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "KB1 .A437",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "347.05 A512",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "American Bar Association"
+                },
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "contributorTypeId": "06b2cbd8-66bf-4956-9d90-97c9776365a4",
+                    "contributorTypeText": "",
+                    "name": "American Bar Association. Journal"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000020",
+            "id": "00f10ab9-d845-4334-92d2-ff55862bf4f9",
+            "identifiers": [
+                {
+                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+                    "value": "15017355"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "1964851"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "236213576"
+                },
+                {
+                    "identifierTypeId": "913300b2-03ed-469a-8179-c1092c991227",
+                    "value": "0002-7596"
+                },
+                {
+                    "identifierTypeId": "913300b2-03ed-469a-8179-c1092c991227",
+                    "value": "0002-7596"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(ICU)BID9651294"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)1479565"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)1964851"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)236213576"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "2363771"
+                }
+            ],
+            "indexTitle": "American Bar Association journal.",
+            "instanceFormatIds": [
+                "volume nc rdacarrier"
+            ],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.621+0000",
+                "updatedDate": "2019-09-11T03:33:45.621+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "69 v. : ill. ; 23-30 cm."
+            ],
+            "publication": [
+                {
+                    "place": "Chicago, Ill.",
+                    "publisher": "American Bar Association"
+                }
+            ],
+            "publicationFrequency": [
+                "Monthly, 1921-83",
+                "Quarterly, 1915-20"
+            ],
+            "publicationRange": [
+                "Began with vol. 1, no. 1 (Jan. 1915); ceased with v. 69, [no.12] (Dec. 1983)"
+            ],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Law--United States--Periodicals",
+                "Advocatuur.--gtt",
+                "Droit--Périodiques",
+                "LAW--unbist",
+                "LAWYERS--unbist",
+                "UNITED STATES--unbist",
+                "Law.--fast",
+                "United States.--fast"
+            ],
+            "title": "American Bar Association journal."
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "PR6056.I4588",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Fielding, Helen"
+                }
+            ],
+            "discoverySuppress": true,
+            "editions": [
+                "First American Edition"
+            ],
+            "electronicAccess": [
+                {
+                    "linkText": "Electronic resource (audio streaming)",
+                    "materialsSpecification": "Novel",
+                    "publicNote": "Access to audio file",
+                    "uri": "http://www.folio.org/"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000024",
+            "id": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "ocn956625961"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.634+0000",
+                "updatedDate": "2019-09-11T03:33:45.634+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Bridget Jones finds herself unexpectedly pregnant at the eleventh hour. However, her joyful pregnancy is dominated by one crucial but awkward question --who is the father? Could it be honorable, decent, notable human rights lawyer, Mark Darcy? Or, is it charming, witty, and totally despicable, Daniel Cleaver?",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "219 pages ; 20 cm."
+            ],
+            "previouslyHeld": true,
+            "publication": [
+                {
+                    "dateOfPublication": "2016",
+                    "place": "New York",
+                    "publisher": "Alfred A. Knopf"
+                }
+            ],
+            "publicationFrequency": [
+                "A frequency description"
+            ],
+            "publicationRange": [
+                "A publication range"
+            ],
+            "series": [],
+            "source": "MARC",
+            "staffSuppress": true,
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Jones, Bridget",
+                "Pregnant women",
+                "England",
+                "Humorous fiction",
+                "Diary fiction"
+            ],
+            "title": "Bridget Jones's Baby: the diaries"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Pratchett, Terry"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000001",
+            "id": "a89eccf0-57a6-495e-898d-32b9b2210f2f",
             "identifiers": [
                 {
                     "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "1447294130"
+                    "value": "0552142352"
                 },
                 {
                     "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9781447294130"
+                    "value": "9780552142352"
                 }
             ],
             "instanceFormatIds": [],
             "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
             "languages": [],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.664+0000",
-                "updatedDate": "2019-09-08T03:33:24.664+0000"
+                "createdDate": "2019-09-11T03:33:45.574+0000",
+                "updatedDate": "2019-09-11T03:33:45.574+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
@@ -273,7 +465,7 @@
             "source": "MARC",
             "statisticalCodeIds": [],
             "subjects": [],
-            "title": "Temeraire"
+            "title": "Interesting Times"
         },
         {
             "alternativeTitles": [
@@ -301,7 +493,7 @@
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000004",
+            "hrid": "in00000007",
             "id": "30fcc8e7-a019-43f4-b642-2edc389f4501",
             "identifiers": [
                 {
@@ -323,8 +515,8 @@
                 "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.606+0000",
-                "updatedDate": "2019-09-08T03:33:24.606+0000"
+                "createdDate": "2019-09-11T03:33:45.589+0000",
+                "updatedDate": "2019-09-11T03:33:45.589+0000"
             },
             "natureOfContentTermIds": [
                 "0abeee3d-8ad2-4b04-92ff-221b4fce1075"
@@ -385,22 +577,213 @@
         },
         {
             "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "HN773",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "303.6/9096",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Mbah, Emmanuel M"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Falola, Toyin"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "linkText": "Electronic resource (PDF)",
+                    "publicNote": "Address for accessing the table of content. PDF file",
+                    "uri": "https://external.dandelon.com/download/attachments/dandelon/ids/DE0069AE502CCFE91E537C1258123001D0DCA.pdf"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000013",
+            "id": "81825729-e824-4d52-9d15-1695e9bf1831",
+            "identifiers": [
+                {
+                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+                    "value": "2016022536"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781138220034"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781315413099"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV86011306X"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.604+0000",
+                "updatedDate": "2019-09-11T03:33:45.604+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "note": "Literaturangaben",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Introduction: Dissent, protest and dispute Africa / Emmanuel M. Mbah and Toyin Falola -- The music of heaven, the music of Earth, and the music of brats: Tuareg Islam, the Devil, and musical performance / Susan J. Rasmussen -- Finding social change backstage and behind the scenes in South African theatre / Nathanael Vlachos -- Soccer and political (ex)pression in Africa: the case of Cameroon / Alain Lawo-Sukam -- Child labor resistance in southern Nigeria, 1916-1938 / Adam Paddock -- M'Fain goes home: African soldiers in the Gabon campaign of 1940 / Mark Reeves -- \\\"Disgraceful disturbances\\\": TANU, the Tanganyikan Rifles, and the 1964 mutiny / Charles Thomas -- The role of ethnicity in political formation in Kenya: 1963-2007 / Tade O. Okediji and Wahutu J. Siguru -- Land, boundaries, chiefs and wars / Toyin Falola -- Borders and boundaries within Ethiopia: dilemmas of group identity, representation and agency / Alexander Meckelburg -- Rural agrarian land conflicts in postcolonial Nigeria's central region / Sati Fwatshak -- The evolution of the Mungiki militia in Kenya, 1990 to 2010 / Felix Kiruthu -- Refugee-warriors and other people's wars in post-colonial Africa: the experience of Rwandese and South African military exiles (1960-94) / Tim Stapleton -- Oiling the guns and gunning for oil: the youth and Niger Delta oil conflicts in Nigeria / Christian C. Madubuko.",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "xi, 293 Seiten"
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2017",
+                    "place": "London New York",
+                    "publisher": "Routledge, Taylor \u0026 Francis Group"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Global Africa 1"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Social conflict--Africa--History--20th century",
+                "Social conflict--Africa--History--21st century",
+                "Political participation--Africa",
+                "Land tenure--Africa",
+                "Africa--Social conditions--20th century",
+                "Africa--Social conditions--21st century",
+                "Africa--Politics and government--20th century",
+                "Africa--Politics and government--21st century",
+                "Africa Politics and government 20th century",
+                "Africa Politics and government 21st century",
+                "Africa Social conditions 20th century",
+                "Africa Social conditions 21st century",
+                "Land tenure Africa",
+                "Political participation Africa",
+                "Social conflict Africa History 20th century",
+                "Social conflict Africa History 21st century"
+            ],
+            "title": "Dissent, protest and dispute in Africa edited by Emmanuel M. Mbah and Toyin Falola"
+        },
+        {
+            "alternativeTitles": [],
             "classifications": [],
             "contributors": [
                 {
                     "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Augustin, Harald"
+                    "name": "Barnes, Adrian"
                 }
             ],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000009",
-            "id": "a317b304-528c-424f-961c-39174933b454",
+            "hrid": "in00000018",
+            "id": "6506b79b-7702-48b2-9774-a1c538fdd34e",
             "identifiers": [
                 {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "0956687695"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9780956687695"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.615+0000",
+                "updatedDate": "2019-09-11T03:33:45.615+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "title": "Nod"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "658.4013",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                },
+                {
+                    "classificationNumber": "650",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Augustin, Harald"
+                },
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Shaker Verlag GmbH"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "linkText": "Electronic resource (PDF)",
+                    "publicNote": "Address for accessing the table of content. PDF file",
+                    "uri": "http://d-nb.info/1150176652/04"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000023",
+            "id": "549fad9e-7f8e-4d8e-9a71-00d251817866",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "3844057439"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9783844057430"
+                },
+                {
+                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
+                    "value": "9783844057430"
+                },
+                {
                     "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV101484262X"
+                    "value": "(OCoLC)1024128245"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-101)1150176652"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)DNB1150176652"
                 }
             ],
             "instanceFormatIds": [],
@@ -409,12 +792,14 @@
                 "ger"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.625+0000",
-                "updatedDate": "2019-09-08T03:33:24.625+0000"
+                "createdDate": "2019-09-11T03:33:45.628+0000",
+                "updatedDate": "2019-09-11T03:33:45.628+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
-            "physicalDescriptions": [],
+            "physicalDescriptions": [
+                "x, 148 Seiten Illustrationen 21 cm, 188 g"
+            ],
             "publication": [
                 {
                     "dateOfPublication": "2017",
@@ -425,137 +810,22 @@
             "publicationFrequency": [],
             "publicationRange": [],
             "series": [
-                "Berichte aus der Betriebswirtschaft"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Ris, Robert"
-                },
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "ChessBase GmbH Hamburg"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000014",
-            "id": "3c4ae3f3-b460-4a89-a2f9-78ce3145e4fc",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "858092093"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV858092093"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "c208544b-9e28-44fa-a13c-f4093d72f798",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.637+0000",
-                "updatedDate": "2019-09-08T03:33:24.637+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "publication": [
-                {
-                    "dateOfPublication": "[2016]-",
-                    "place": "Hamburg",
-                    "publisher": "Chessbase GmbH"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Fritztrainer Tactics"
+                "Umsetzung der DIN EN ISO 9001:2015  / Harald Augustin (Hrsg.) ; Band 2",
+                "Berichte aus der Betriebswirtschaft",
+                "Umsetzung der DIN EN ISO 9001:2015 Band 2"
             ],
             "source": "MARC",
             "statisticalCodeIds": [],
             "subjects": [
-                "DVD-ROM"
+                "DIN EN ISO 9001:2015",
+                "Standard",
+                "Risikomanagement",
+                "Einführung",
+                "Organisatorischer Wandel",
+                "Industrie",
+                "Deutschland"
             ],
-            "title": "The chess player’s mating guide Computer Datei Robert Ris"
-        },
-        {
-            "alternativeTitles": [
-                {
-                    "alternativeTitle": "Ich habe genung"
-                },
-                {
-                    "alternativeTitle": "Abweichender Titel Ich habe genung"
-                }
-            ],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Bach, Johann Sebastian"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Arfken, Katharina"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Goltz, Gottfried von der"
-                },
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Freiburger Barockorchester"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000019",
-            "id": "ce00bca2-9270-4c6b-b096-b83a2e56e8e9",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "1011162431"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV1011162431"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "3be24c14-3551-4180-9292-26a786649c8b",
-            "languages": [
-                "ger"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.648+0000",
-                "updatedDate": "2019-09-08T03:33:24.648+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [
-                "Track 10-14"
-            ],
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "Cantatas for bass 4 Ich habe genug : BWV 82 / Johann Sebastian Bach ; Matthias Goerne, baritone ; Freiburger Barockorchester, Gottfried von der Goltz, violin and conductor"
+            "title": "Agile Organisation, Risiko- und Change Management Harald Augustin (Hrsg.)"
         },
         {
             "alternativeTitles": [],
@@ -588,7 +858,7 @@
                 }
             ],
             "holdingsRecords2": [],
-            "hrid": "in00000024",
+            "hrid": "in00000028",
             "id": "7ab22f0a-c9cd-449a-9137-c76e5055ca37",
             "identifiers": [
                 {
@@ -614,8 +884,8 @@
                 "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.659+0000",
-                "updatedDate": "2019-09-08T03:33:24.659+0000"
+                "createdDate": "2019-09-11T03:33:45.640+0000",
+                "updatedDate": "2019-09-11T03:33:45.640+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [
@@ -672,6 +942,228 @@
             "contributors": [
                 {
                     "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Augustin, Harald"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000004",
+            "id": "a317b304-528c-424f-961c-39174933b454",
+            "identifiers": [
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV101484262X"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "ger"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.577+0000",
+                "updatedDate": "2019-09-11T03:33:45.577+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [
+                {
+                    "dateOfPublication": "2017",
+                    "place": "Aachen",
+                    "publisher": "Shaker Verlag"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Berichte aus der Betriebswirtschaft"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "title": "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Novik, Naomi"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000009",
+            "id": "cf23adf0-61ba-4887-bf82-956c4aae2260",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1447294130"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781447294130"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.595+0000",
+                "updatedDate": "2019-09-11T03:33:45.595+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "title": "Temeraire"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Werner, Herbert"
+                },
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Technische Universität Hamburg-Harburg Institut für Regelungstechnik"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000014",
+            "id": "6eee8eb9-db1a-46e2-a8ad-780f19974efa",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "727867881"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV727867881"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "c1e95c2b-4efc-48cf-9e71-edb622cf0c22",
+            "languages": [
+                "ger"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.608+0000",
+                "updatedDate": "2019-09-11T03:33:45.608+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "1 Koffer (Inhalt: 1 Motor mit Platine auf Plattform, 1 Netzteil, 1 USB-Kabel)"
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "[2016]",
+                    "place": "Hamburg",
+                    "publisher": "Techn. Univ., Inst. für Regelungstechnik"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "title": "DC Motor Control Experiment Objekt for introduction to control systems Herbert Werner"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Europäische Kommission Generaldirektion Mobilität und Verkehr"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000019",
+            "id": "1b74ab75-9f41-4837-8662-a1d99118008d",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "643935371"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9789279164316"
+                },
+                {
+                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
+                    "value": "10.2768/21035"
+                },
+                {
+                    "identifierTypeId": "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+                    "value": "MI-32-10-386-57-Z"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV643935371"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "225faa14-f9bf-4ecd-990d-69433c912434",
+            "languages": [
+                "ger",
+                "eng",
+                "spa",
+                "fre",
+                "ita",
+                "dut",
+                "por"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.619+0000",
+                "updatedDate": "2019-09-11T03:33:45.619+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "1 DVD-Video (14 Min.) farb. 12 cm"
+            ],
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Europäische Union",
+                "Hochgeschwindigkeitszug",
+                "Verkehrsnetz",
+                "Hochgeschwindigkeitsverkehr",
+                "Schienenverkehr",
+                "EU-Verkehrspolitik",
+                "EU-Staaten"
+            ],
+            "title": "A journey through Europe Bildtontraeger high-speed lines European Commission, Directorate-General for Mobility and Transport"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
                     "name": "Lucas, Peter J"
                 },
                 {
@@ -682,7 +1174,7 @@
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000005",
+            "hrid": "in00000025",
             "id": "8be05cf5-fb4f-4752-8094-8e179d08fb99",
             "identifiers": [
                 {
@@ -730,8 +1222,8 @@
                 "lat"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.612+0000",
-                "updatedDate": "2019-09-08T03:33:24.612+0000"
+                "createdDate": "2019-09-11T03:33:45.633+0000",
+                "updatedDate": "2019-09-11T03:33:45.633+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [
@@ -773,30 +1265,232 @@
             "contributors": [
                 {
                     "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Barnes, Adrian"
+                    "name": "Moutinho, Luiz"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Sokele, Mladen"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "linkText": "Electronic resource (PDF)",
+                    "publicNote": "Address for accessing the table of content. PDF file",
+                    "uri": "http://www.gbv.de/dms/zbw/101073931X.pdf"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000005",
+            "id": "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "101073931X"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "3319643991"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9783319643991"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9783319644004"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)ocn992783736"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)992783736"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV101073931X"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.581+0000",
+                "updatedDate": "2019-09-11T03:33:45.581+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Enthält 9 Beiträge",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "xxix, 224 Seiten Illustrationen"
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "[2018]",
+                    "place": "Cham",
+                    "publisher": "Palgrave Macmillan"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Innovative research methodologies in management  / Luiz Moutinho, Mladen Sokele ; Volume 2",
+                "Innovative research methodologies in management Volume 2"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Betriebswirtschaftslehre",
+                "Management",
+                "Wissenschaftliche Methode"
+            ],
+            "title": "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors"
+        },
+        {
+            "alternativeTitles": [],
+            "catalogedDate": "2019-04-05",
+            "classifications": [
+                {
+                    "classificationNumber": "025.04",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                },
+                {
+                    "classificationNumber": "TK5105.88815 .A58 2004",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "Antoniou, Grigoris"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "Van Harmelen, Frank"
                 }
             ],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
             "hrid": "in00000010",
-            "id": "6506b79b-7702-48b2-9774-a1c538fdd34e",
+            "id": "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
             "identifiers": [
                 {
                     "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "0956687695"
+                    "value": "0262012103"
                 },
                 {
                     "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9780956687695"
+                    "value": "9780262012102"
+                },
+                {
+                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+                    "value": "2003065165"
+                }
+            ],
+            "indexTitle": "Semantic web primer",
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.596+0000",
+                "updatedDate": "2019-09-11T03:33:45.596+0000"
+            },
+            "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Includes bibliographical references and index.",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "The development of the Semantic Web, with machine-readable content, has the potential to revolutionize the World Wide Web and its uses. A Semantic Web Primer provides an introduction and guide to this continuously evolving field, describing its key ideas, languages, and technologies. Suitable for use as a textbook or for independent study by professionals, it concentrates on undergraduate-level fundamental concepts and techniques that will enable readers to proceed with building applications on their own and includes exercises, project descriptions, and annotated references to relevant online materials. The third edition of this widely used text has been thoroughly updated, with significant new material that reflects a rapidly developing field. Treatment of the different languages (OWL2, rules) expands the coverage of RDF and OWL, defining the data model independently of XML and including coverage of N3/Turtle and RDFa. A chapter is devoted to OWL2, the new W3C standard. This edition also features additional coverage of the query language SPARQL, the rule language RIF and the possibility of interaction between rules and ontology languages and applications. The chapter on Semantic Web applications reflects the rapid developments of the past few years. A new chapter offers ideas for term projects",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "xx, 238 p. : ill. ; 24 cm."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "c2004",
+                    "place": "Cambridge, Mass. ",
+                    "publisher": "MIT Press",
+                    "role": "Publisher"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Cooperative information systems"
+            ],
+            "source": "manual",
+            "statisticalCodeIds": [
+                "b5968c9e-cddc-4576-99e3-8e60aed8b0dd"
+            ],
+            "statusId": "9634a5ab-9228-4703-baf2-4d12ebc77d56",
+            "subjects": [
+                "Semantic Web"
+            ],
+            "title": "A semantic web primer"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Da, Gaofeng"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Chan, Ping Shing"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Xu, Maochao"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000016",
+            "id": "54cc0262-76df-4cac-acca-b10e9bc5c79a",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "1011184508"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV1011184508"
                 }
             ],
             "instanceFormatIds": [],
             "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [],
+            "languages": [
+                "eng"
+            ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.629+0000",
-                "updatedDate": "2019-09-08T03:33:24.629+0000"
+                "createdDate": "2019-09-11T03:33:45.609+0000",
+                "updatedDate": "2019-09-11T03:33:45.609+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
@@ -808,7 +1502,1294 @@
             "source": "MARC",
             "statisticalCodeIds": [],
             "subjects": [],
-            "title": "Nod"
+            "title": "On the signature of complex system a decomposed approach Gaofeng Da, Ping Shing Chan, Maochao Xu"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "M1366.S67",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "9f0a2cf0-7a9b-45a2-a403-f68d2850d07c",
+                    "name": "Sosa, Omar"
+                },
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "9f0a2cf0-7a9b-45a2-a403-f68d2850d07c",
+                    "name": "Keita, Seckou, 1977-"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000021",
+            "id": "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "ocn968777846"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9786316800312"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "6316800312"
+                },
+                {
+                    "identifierTypeId": "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+                    "value": "OTA-1031 Otá Records"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)968777846"
+                }
+            ],
+            "instanceFormatIds": [
+                "5cb91d15-96b1-4b8a-bf60-ec310538da66"
+            ],
+            "instanceTypeId": "3be24c14-3551-4180-9292-26a786649c8b",
+            "languages": [
+                "und"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.624+0000",
+                "updatedDate": "2019-09-11T03:33:45.624+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "note": "Title from disc label.",
+                    "staffOnly": false
+                },
+                {
+                    "note": "All compositions written by Omar Sosa and Seckou Keita, except tracks 6, 8 and 10 written by Omar Sosa.",
+                    "staffOnly": false
+                },
+                {
+                    "note": "Produced by Steve Argüelles and Omar Sosa.",
+                    "staffOnly": false
+                },
+                {
+                    "note": "Omar Sosa, grand piano, Fender Rhodes, sampler, microKorg, vocals ; Seckou Keita, kora, talking drum, djembe, sabar, vocals ; Wu Tong, sheng, bawu ; Mieko Miyazaki, koto ; Gustavo Ovalles, bata drums, culo'e puya, maracas, guataca, calabaza, clave ; E'Joung-Ju, geojungo ; Mosin Khan Kawa, nagadi ; Dominique Huchet, bird effects.",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 audio disc: digital; 4 3/4 in."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "[2017]",
+                    "place": "[Place of publication not identified]: ",
+                    "publisher": "Otá Records, "
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "World music.",
+                "Jazz"
+            ],
+            "title": "Transparent water"
+        },
+        {
+            "alternativeTitles": [
+                {
+                    "alternativeTitle": "First alternative title"
+                },
+                {
+                    "alternativeTitle": "Second alternative title"
+                }
+            ],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Creator A"
+                },
+                {
+                    "contributorNameTypeId": "e8b311a6-3b21-43f2-a269-dd9310cb2d0a",
+                    "name": "Creator B"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000026",
+            "id": "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+            "identifiers": [
+                {
+                    "identifierTypeId": "7f907515-a1bf-4513-8a38-92e1a07c539d",
+                    "value": "B01LO7PJOE"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.635+0000",
+                "updatedDate": "2019-09-11T03:33:45.635+0000"
+            },
+            "natureOfContentTermIds": [
+                "44cd89f3-2e76-469f-a955-cc57cb9e0395"
+            ],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "title": "The Girl on the Train"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "658.4013",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                },
+                {
+                    "classificationNumber": "650",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Augustin, Harald"
+                },
+                {
+                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
+                    "name": "Shaker Verlag GmbH"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "linkText": "Electronic resource (PDF)",
+                    "publicNote": "Address for accessing the table of content. PDF file",
+                    "uri": "http://d-nb.info/1150175923/04"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000029",
+            "id": "e6bc03c6-c137-4221-b679-a7c5c31f986c",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "3844057420"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9783844057423"
+                },
+                {
+                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
+                    "value": "9783844057423"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)1024095011"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-101)1150175923"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)DNB1150175923"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "ger"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.644+0000",
+                "updatedDate": "2019-09-11T03:33:45.644+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "x, 113 Seiten Illustrationen 21 cm, 223 g"
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2017",
+                    "place": "Aachen",
+                    "publisher": "Shaker Verlag"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Umsetzung der DIN EN ISO 9001:2015  / Harald Augustin (Hrsg.) ; Band 1",
+                "Berichte aus der Betriebswirtschaft",
+                "Umsetzung der DIN EN ISO 9001:2015 Band 1"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "DIN EN ISO 9001:2015",
+                "Standard",
+                "Organisatorischer Wandel",
+                "Prozessmanagement",
+                "Einführung",
+                "Industrie",
+                "Deutschland"
+            ],
+            "title": "Organisations- und Prozessentwicklung Harald Augustin (Hrsg.)"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [],
+            "discoverySuppress": false,
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000030",
+            "id": "58fdcda9-b261-4472-879e-8e6fefced53e",
+            "identifiers": [],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T03:43:09.064+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T03:43:09.064+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "previouslyHeld": false,
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Soul station / Hank Mobley1568173359013"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [],
+            "discoverySuppress": false,
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000031",
+            "id": "b1da3382-0a66-4283-9b7b-9c75b8bee7e6",
+            "identifiers": [],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T03:49:44.072+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T03:49:44.072+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "previouslyHeld": false,
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Soul station / Hank Mobley1568173359020"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [],
+            "discoverySuppress": false,
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000032",
+            "id": "bb53aeab-01f1-424f-b417-e518dc7815b1",
+            "identifiers": [],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T04:01:16.291+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T04:01:16.291+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "previouslyHeld": false,
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Request title1568173359031"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeText": "",
+                    "name": "Moritz Küng",
+                    "primary": false
+                }
+            ],
+            "discoverySuppress": false,
+            "editions": [
+                "[1st ed.]"
+            ],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000033",
+            "id": "2d80955c-289d-4939-8786-066fdcd4b788",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8e3dd25e-db82-4b06-8311-90d41998c109",
+                    "value": "foo_1568173359043"
+                },
+                {
+                    "identifierTypeId": "27fd35a6-b8f6-41f2-aa0e-9c663ceb250c",
+                    "value": "9789072828279"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [
+                "dut",
+                "eng"
+            ],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T04:06:00.638+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T04:06:00.638+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Catalog of two exhibitions, \"Paramount basics\" held at the 25th Biennale of São Paulo, 23 March-2 June 2002, and \"Paramount basics (extended),\" held at MUHKA, Museum van Hedendaagse Kunst Antwerpen, 21 September-24 November 2002.",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Cover title.",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Includes folded sheet of list of works in the exhibition held at MUHKA.",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "230 pages : chiefly illustrations (some color) ; 28 cm + 1 folded sheet"
+            ],
+            "previouslyHeld": false,
+            "publication": [
+                {
+                    "dateOfPublication": "©2002",
+                    "place": "Antwerpen",
+                    "publisher": "MUHKA"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "Catalogus (Museum van Hedendaagse Kunst Antwerpen), 92"
+            ],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Venlet, Richard -- Exhibitions",
+                "Installations (Art) -- Exhibitions",
+                "Installations (Art)"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "qwer"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "author 644139059247567",
+                    "primary": false
+                }
+            ],
+            "discoverySuppress": false,
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000034",
+            "id": "144f1601-71f9-4d38-b876-24fcf97525f0",
+            "identifiers": [],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T04:06:51.241+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T04:06:51.241+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "previouslyHeld": false,
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "supercalifragilisticexpialidocious 4511027592787363"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "supercalifragilisticexpialidocious 1836831901169177",
+                    "primary": false
+                }
+            ],
+            "discoverySuppress": false,
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000035",
+            "id": "3d4cb30f-9f47-45fb-b505-c61a3b5e7956",
+            "identifiers": [],
+            "instanceFormatIds": [],
+            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+            "languages": [],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T04:06:54.301+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T04:06:54.301+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [],
+            "previouslyHeld": false,
+            "publication": [],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "title 4294320729553213"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "PS3537.A618 A88 1993",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "811.52",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Sandburg, Carl, 1878-1967",
+                    "primary": true
+                },
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Rand, Ted,",
+                    "primary": false
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000036",
+            "id": "c5f7130f-7eba-4dc1-b042-47b00d3a3df6",
+            "identifiers": [
+                {
+                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+                    "value": "92005291"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "0152038655 : $15.95"
+                }
+            ],
+            "indexTitle": "Arithmetic /",
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "One Mylar sheet included in pocket",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "A poem about numbers and their characteristics. Features anamorphic, or distorted, drawings which can be restored to normal by viewing from a particular angle or by viewing the image's reflection in the provided Mylar cone",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 v. (unpaged) : ill. (some col.) ; 26 cm."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "c1993.",
+                    "place": "San Diego",
+                    "publisher": "Harcourt Brace Jovanovich"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Arithmetic--Juvenile poetry",
+                "Children's poetry, American",
+                "Arithmetic--Poetry",
+                "American poetry",
+                "Visual perception"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Arithmetic / Carl Sandburg ; illustrated as an anamorphic adventure by Ted Rand."
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "P96.I84 R36 2014",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "070.449297",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Rane, Halim, 1976-",
+                    "primary": true
+                },
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Ewart, Jacqui,",
+                    "primary": false
+                },
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Martinkus, John,",
+                    "primary": false
+                },
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "name": "Palgrave (Firm)",
+                    "primary": false
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "publicNote": "Online access",
+                    "uri": "http://er.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://www.palgraveconnect.com/doifinder/10.1057/9781137334831"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000037",
+            "id": "ff63293b-2738-4b3d-bf9f-50f40c6254e9",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137334831 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137334835 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137334817 (hardback)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137334819 (hardback)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137334824 (paperback)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137334827 (paperback)"
+                }
+            ],
+            "indexTitle": "Media framing of the Muslim world : conflicts, crises and contexts /",
+            "instanceFormatIds": [
+                "online resource cr rdacarrier"
+            ],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Includes bibliographical references and index",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Restricted to authenticated UNSW users",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Electronic reproduction. Basingstoke, England Available via World Wide Web",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 online resource."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2014.",
+                    "place": "Houndmills, Basingstoke, Hampshire",
+                    "publisher": "Palgrave Macmillan",
+                    "role": "Publication"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Islam in mass media",
+                "Mass media--Social aspects"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Media framing of the Muslim world : conflicts, crises and contexts / Halim Rane, Jacqui Ewart, John Martinkus."
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "HV6626 .H39 2014",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "362.8292",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Hayes, Sharon,",
+                    "primary": true
+                },
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "name": "Palgrave (Firm)",
+                    "primary": false
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "publicNote": "Online access",
+                    "uri": "http://er.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://www.palgraveconnect.com/doifinder/10.1057/9781137008817"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000038",
+            "id": "eecda4d2-d246-49e9-b0ae-8e11353cbc30",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137008814 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137008817 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137008800"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137008806"
+                }
+            ],
+            "indexTitle": "Sex, love and abuse : discourses on domestic violence and sexual assault /",
+            "instanceFormatIds": [
+                "online resource cr rdacarrier"
+            ],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Includes bibliographical references and index",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Restricted to authenticated UNSW users",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Electronic reproduction. Basingstoke, England Available via World Wide Web",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 online resource."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2014.",
+                    "place": "Houndmills, Basingstoke, Hampshire",
+                    "publisher": "Palgrave Macmillan",
+                    "role": "Publication"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Family violence",
+                "Sex crimes",
+                "Sexual abuse victims"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Sex, love and abuse : discourses on domestic violence and sexual assault / Sharon Hayes."
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "HV866.G7 S53 2014",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "362.7320941",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Shaw, Julie, 1945-",
+                    "primary": true
+                },
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "name": "Palgrave (Firm)",
+                    "primary": false
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "publicNote": "Online access",
+                    "uri": "http://er.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://www.palgraveconnect.com/doifinder/10.1057/9781137319616"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000040",
+            "id": "8608c2f6-ea99-4246-aca8-86a3167a0fdb",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137319615 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137319616 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137319609 (hardback)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137319607 (hardback)"
+                }
+            ],
+            "indexTitle": "Residential children's homes and the youth justice system : identity, power and perceptions /",
+            "instanceFormatIds": [
+                "online resource cr rdacarrier"
+            ],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Restricted to authenticated UNSW users",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Electronic reproduction. Basingstoke, England Available via World Wide Web",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 online resource."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2014.",
+                    "place": "Houndmills, Basingstoke, Hampshire",
+                    "publisher": "Palgrave Macmillan",
+                    "role": "Publication"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Children--Institutional care--Great Britain"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Residential children's homes and the youth justice system : identity, power and perceptions / Julie Shaw."
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "JC423 .D3813554 2014",
+                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+                },
+                {
+                    "classificationNumber": "321.8",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Ugarriza, Juan Esteban,",
+                    "primary": false
+                },
+                {
+                    "contributorNameTypeId": "fcdfeefb-4d51-4702-bc3a-af6f5b7a4e17",
+                    "name": "Caluwaerts, Didier",
+                    "primary": false
+                },
+                {
+                    "contributorNameTypeId": "d376e36c-b759-4fed-8502-7130d1eeff39",
+                    "name": "Palgrave (Firm)",
+                    "primary": false
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [
+                {
+                    "publicNote": "Online access",
+                    "uri": "http://er.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://www.palgraveconnect.com/doifinder/10.1057/9781137357816"
+                }
+            ],
+            "holdingsRecords2": [],
+            "hrid": "in00000039",
+            "id": "c0a41143-cdc2-4de0-ac4b-f675380aeb80",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137357819 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137357816 (electronic bk.)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781137357809 (hardback)"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "1137357800 (hardback)"
+                }
+            ],
+            "indexTitle": "Democratic deliberation in deeply divided societies: : from conflict to common ground /",
+            "instanceFormatIds": [
+                "online resource cr rdacarrier"
+            ],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Restricted to authenticated UNSW users",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Machine generated contents note: -- 1. Deliberation in Contexts of Conflict. An Introduction; Juan E. Ugarriza and Didier Caluwaerts PART I: OBSTACLES AND OPPORTUNITIES FOR DELIBERATION IN DIVIDED SOCIETIES 2. Deliberative Democracy in Northern Ireland. Opportunities and Challenges for Consensus in a Consociational System; Katy Hayward 3. Deliberative Stress in Linguistically Divided Belgium; Didier Caluwaerts and Min Reuchamps 4. Deliberation and Democracy at the End of Armed Conflict. Post-Conflict Opportunities in the Basque Country; Sanjay Jeram and Daniele Conversi 5. The Citizens, the Politicians and the Courts: A Preliminary Assessment of Deliberative Capacity in Colombia; Margarita M. Orozco and Juan E. Ugarriza 6. Barriers to Inter-Group Deliberation in Divided Ukraine; Anastasiya Salnykova 7. Federalist Deliberative Democracy in Nigeria: Challenges and Prospects; Olabanji Akinola 8. Manipulative Deliberation in Turkey: Alevis' Defective Political Engagement and Remedying Strategies; Kivanc Ulusoy 9. Language Policy and Inter-group Deliberation in Israel; Aviad Rubin 10. Experiences with Deliberation in the Islamic Republic of Iran; Sahar Aurore Saeidnia PART II: WHAT DOES A DELIBERATIVE DEMOCRACY LOOK LIKE IN A DIVIDED SOCIETY? 11. When Deliberation Remains out of Reach: The Role of Agonistic Engagement in Divided Societies; Sarah Maddison 12. Beating the Odds: Confrontational Deliberative Democracy; Didier Caluwaerts and Juan E. Ugarriza",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Electronic reproduction. Basingstoke, England Available via World Wide Web",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": null,
+                    "note": "Description based on print version record",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [
+                "1 online resource."
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2014.",
+                    "place": "Houndmills, Basingstoke, Hampshire ; New York, NY",
+                    "publisher": "Palgrave Macmillan",
+                    "role": "Publication"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Deliberative democracy--Case studies",
+                "Representative government and representation--Case studies",
+                "Polarization (Social sciences)--Case studies"
+            ],
+            "tags": {
+                "tagList": []
+            },
+            "title": "Democratic deliberation in deeply divided societies: : from conflict to common ground / edited by Juan Ugarriza, Didier Caluwaerts."
+        },
+        {
+            "alternativeTitles": [
+                {
+                    "alternativeTitle": "History of America",
+                    "alternativeTitleTypeId": "5c364ce4-c8fd-4891-a28d-bb91c9bcdbfb"
+                }
+            ],
+            "catalogedDate": "2019-09-11",
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+                    "contributorTypeText": "",
+                    "name": "Kelly, Francis",
+                    "primary": true
+                }
+            ],
+            "discoverySuppress": false,
+            "editions": [
+                "Second edition"
+            ],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000041",
+            "id": "b5a3c176-b684-409c-9004-4fbda4fcaa46",
+            "identifiers": [
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "888854564544646466"
+                }
+            ],
+            "indexTitle": "American history",
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "ita"
+            ],
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T09:54:55.712+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T09:54:55.712+0000"
+            },
+            "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "256 pages : illustration ; 20 cm"
+            ],
+            "previouslyHeld": false,
+            "publication": [
+                {
+                    "dateOfPublication": "2018",
+                    "place": "Milano",
+                    "publisher": "Mondadori",
+                    "role": "publisher"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "History series"
+            ],
+            "source": "FOLIO",
+            "staffSuppress": false,
+            "statisticalCodeIds": [],
+            "statusId": "9634a5ab-9228-4703-baf2-4d12ebc77d56",
+            "subjects": [],
+            "tags": {
+                "tagList": []
+            },
+            "title": "The American history"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [
+                {
+                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
+                    "name": "Matwiejczyk-Montgomery, Marian Ann J"
+                }
+            ],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000003",
+            "id": "5b1eb450-ff9f-412d-a9e7-887f6eaeb5b4",
+            "identifiers": [
+                {
+                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+                    "value": "1008673218"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)GBV1008673218"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.576+0000",
+                "updatedDate": "2019-09-11T03:33:45.576+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [
+                {
+                    "note": "Dissertation New York University 1993",
+                    "staffOnly": false
+                },
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Mikrofiche-Ausgabe",
+                    "staffOnly": false
+                }
+            ],
+            "physicalDescriptions": [],
+            "publication": [
+                {
+                    "dateOfPublication": "1993",
+                    "place": "Ann Arbor, MI",
+                    "publisher": "University Microfims International"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Hochschulschrift"
+            ],
+            "title": "Concepts of fashion 1921 - 1987 microform a study of garments worn by selected winners of the Miss America Pageant Marian Ann J. Matwiejczyk-Montgomery"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [
+                {
+                    "classificationNumber": "300",
+                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+                }
+            ],
+            "contributors": [],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000008",
+            "id": "f7e82a1e-fc06-4b82-bb1d-da326cb378ce",
+            "identifiers": [
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(OCoLC)981117973"
+                },
+                {
+                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+                    "value": "(DE-599)ZDB2905315-8"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [
+                "eng"
+            ],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.590+0000",
+                "updatedDate": "2019-09-11T03:33:45.590+0000"
+            },
+            "natureOfContentTermIds": [],
+            "notes": [],
+            "physicalDescriptions": [
+                "Bände"
+            ],
+            "publication": [
+                {
+                    "dateOfPublication": "2017-",
+                    "place": "London New York",
+                    "publisher": "Routledge, Taylor \u0026 Francis Group"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Monografische Reihe"
+            ],
+            "title": "Global Africa"
         },
         {
             "alternativeTitles": [
@@ -854,7 +2835,7 @@
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000015",
+            "hrid": "in00000012",
             "id": "6b4ae089-e1ee-431f-af83-e1133f8e3da0",
             "identifiers": [
                 {
@@ -876,8 +2857,8 @@
                 "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.640+0000",
-                "updatedDate": "2019-09-08T03:33:24.640+0000"
+                "createdDate": "2019-09-11T03:33:45.600+0000",
+                "updatedDate": "2019-09-11T03:33:45.600+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [],
@@ -893,554 +2874,116 @@
         },
         {
             "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Da, Gaofeng"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Chan, Ping Shing"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Xu, Maochao"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000020",
-            "id": "54cc0262-76df-4cac-acca-b10e9bc5c79a",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "1011184508"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV1011184508"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.650+0000",
-                "updatedDate": "2019-09-08T03:33:24.650+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "On the signature of complex system a decomposed approach Gaofeng Da, Ping Shing Chan, Maochao Xu"
-        },
-        {
-            "alternativeTitles": [],
             "classifications": [
                 {
-                    "classificationNumber": "M1366.S67",
+                    "classificationNumber": "H",
                     "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "9f0a2cf0-7a9b-45a2-a403-f68d2850d07c",
-                    "name": "Sosa, Omar"
                 },
                 {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "9f0a2cf0-7a9b-45a2-a403-f68d2850d07c",
-                    "name": "Keita, Seckou, 1977-"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000025",
-            "id": "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "ocn968777846"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9786316800312"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "6316800312"
-                },
-                {
-                    "identifierTypeId": "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
-                    "value": "OTA-1031 Otá Records"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)968777846"
-                }
-            ],
-            "instanceFormatIds": [
-                "5cb91d15-96b1-4b8a-bf60-ec310538da66"
-            ],
-            "instanceTypeId": "3be24c14-3551-4180-9292-26a786649c8b",
-            "languages": [
-                "und"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.662+0000",
-                "updatedDate": "2019-09-08T03:33:24.662+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "note": "Title from disc label.",
-                    "staffOnly": false
-                },
-                {
-                    "note": "All compositions written by Omar Sosa and Seckou Keita, except tracks 6, 8 and 10 written by Omar Sosa.",
-                    "staffOnly": false
-                },
-                {
-                    "note": "Produced by Steve Argüelles and Omar Sosa.",
-                    "staffOnly": false
-                },
-                {
-                    "note": "Omar Sosa, grand piano, Fender Rhodes, sampler, microKorg, vocals ; Seckou Keita, kora, talking drum, djembe, sabar, vocals ; Wu Tong, sheng, bawu ; Mieko Miyazaki, koto ; Gustavo Ovalles, bata drums, culo'e puya, maracas, guataca, calabaza, clave ; E'Joung-Ju, geojungo ; Mosin Khan Kawa, nagadi ; Dominique Huchet, bird effects.",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "1 audio disc: digital; 4 3/4 in."
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "[2017]",
-                    "place": "[Place of publication not identified]: ",
-                    "publisher": "Otá Records, "
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "World music.",
-                "Jazz"
-            ],
-            "title": "Transparent water"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [],
-            "discoverySuppress": false,
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000029",
-            "id": "354b5bff-aedd-4b99-8429-63bbf7dc9b60",
-            "identifiers": [],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T03:42:03.028+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T03:42:03.028+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "previouslyHeld": false,
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "tags": {
-                "tagList": []
-            },
-            "title": "Soul station / Hank Mobley1567914096301"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [],
-            "discoverySuppress": false,
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000030",
-            "id": "537754b6-22f8-46a0-a289-82980a8cfad8",
-            "identifiers": [],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T03:48:37.125+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T03:48:37.125+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "previouslyHeld": false,
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "tags": {
-                "tagList": []
-            },
-            "title": "Soul station / Hank Mobley1567914096309"
-        },
-        {
-            "alternativeTitles": [],
-            "catalogedDate": "2019-04-05",
-            "classifications": [
-                {
-                    "classificationNumber": "025.04",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                },
-                {
-                    "classificationNumber": "TK5105.88815 .A58 2004",
-                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-                    "contributorTypeText": "",
-                    "name": "Antoniou, Grigoris"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-                    "contributorTypeText": "",
-                    "name": "Van Harmelen, Frank"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000002",
-            "id": "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
-            "identifiers": [
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "0262012103"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9780262012102"
-                },
-                {
-                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
-                    "value": "2003065165"
-                }
-            ],
-            "indexTitle": "Semantic web primer",
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.605+0000",
-                "updatedDate": "2019-09-08T03:33:24.605+0000"
-            },
-            "modeOfIssuanceId": "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Includes bibliographical references and index.",
-                    "staffOnly": false
-                },
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "The development of the Semantic Web, with machine-readable content, has the potential to revolutionize the World Wide Web and its uses. A Semantic Web Primer provides an introduction and guide to this continuously evolving field, describing its key ideas, languages, and technologies. Suitable for use as a textbook or for independent study by professionals, it concentrates on undergraduate-level fundamental concepts and techniques that will enable readers to proceed with building applications on their own and includes exercises, project descriptions, and annotated references to relevant online materials. The third edition of this widely used text has been thoroughly updated, with significant new material that reflects a rapidly developing field. Treatment of the different languages (OWL2, rules) expands the coverage of RDF and OWL, defining the data model independently of XML and including coverage of N3/Turtle and RDFa. A chapter is devoted to OWL2, the new W3C standard. This edition also features additional coverage of the query language SPARQL, the rule language RIF and the possibility of interaction between rules and ontology languages and applications. The chapter on Semantic Web applications reflects the rapid developments of the past few years. A new chapter offers ideas for term projects",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "xx, 238 p. : ill. ; 24 cm."
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "c2004",
-                    "place": "Cambridge, Mass. ",
-                    "publisher": "MIT Press",
-                    "role": "Publisher"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Cooperative information systems"
-            ],
-            "source": "manual",
-            "statisticalCodeIds": [
-                "b5968c9e-cddc-4576-99e3-8e60aed8b0dd"
-            ],
-            "statusId": "9634a5ab-9228-4703-baf2-4d12ebc77d56",
-            "subjects": [
-                "Semantic Web"
-            ],
-            "title": "A semantic web primer"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [
-                {
-                    "classificationNumber": "PR6056.I4588",
-                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Fielding, Helen"
-                }
-            ],
-            "discoverySuppress": true,
-            "editions": [
-                "First American Edition"
-            ],
-            "electronicAccess": [
-                {
-                    "linkText": "Electronic resource (audio streaming)",
-                    "materialsSpecification": "Novel",
-                    "publicNote": "Access to audio file",
-                    "uri": "http://www.folio.org/"
-                }
-            ],
-            "holdingsRecords2": [],
-            "hrid": "in00000007",
-            "id": "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "ocn956625961"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.623+0000",
-                "updatedDate": "2019-09-08T03:33:24.623+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Bridget Jones finds herself unexpectedly pregnant at the eleventh hour. However, her joyful pregnancy is dominated by one crucial but awkward question --who is the father? Could it be honorable, decent, notable human rights lawyer, Mark Darcy? Or, is it charming, witty, and totally despicable, Daniel Cleaver?",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "219 pages ; 20 cm."
-            ],
-            "previouslyHeld": true,
-            "publication": [
-                {
-                    "dateOfPublication": "2016",
-                    "place": "New York",
-                    "publisher": "Alfred A. Knopf"
-                }
-            ],
-            "publicationFrequency": [
-                "A frequency description"
-            ],
-            "publicationRange": [
-                "A publication range"
-            ],
-            "series": [],
-            "source": "MARC",
-            "staffSuppress": true,
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Jones, Bridget",
-                "Pregnant women",
-                "England",
-                "Humorous fiction",
-                "Diary fiction"
-            ],
-            "title": "Bridget Jones's Baby: the diaries"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [
-                {
-                    "classificationNumber": "658.4013",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                },
-                {
-                    "classificationNumber": "650",
+                    "classificationNumber": "300",
                     "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
                 }
             ],
             "contributors": [
                 {
                     "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Augustin, Harald"
-                },
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Shaker Verlag GmbH"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [
-                {
-                    "linkText": "Electronic resource (PDF)",
-                    "publicNote": "Address for accessing the table of content. PDF file",
-                    "uri": "http://d-nb.info/1150176652/04"
-                }
-            ],
-            "holdingsRecords2": [],
-            "hrid": "in00000011",
-            "id": "549fad9e-7f8e-4d8e-9a71-00d251817866",
-            "identifiers": [
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "3844057439"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9783844057430"
-                },
-                {
-                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
-                    "value": "9783844057430"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)1024128245"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-101)1150176652"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)DNB1150176652"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "ger"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.634+0000",
-                "updatedDate": "2019-09-08T03:33:24.634+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [
-                "x, 148 Seiten Illustrationen 21 cm, 188 g"
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "2017",
-                    "place": "Aachen",
-                    "publisher": "Shaker Verlag"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Umsetzung der DIN EN ISO 9001:2015  / Harald Augustin (Hrsg.) ; Band 2",
-                "Berichte aus der Betriebswirtschaft",
-                "Umsetzung der DIN EN ISO 9001:2015 Band 2"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "DIN EN ISO 9001:2015",
-                "Standard",
-                "Risikomanagement",
-                "Einführung",
-                "Organisatorischer Wandel",
-                "Industrie",
-                "Deutschland"
-            ],
-            "title": "Agile Organisation, Risiko- und Change Management Harald Augustin (Hrsg.)"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Werner, Herbert"
-                },
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Technische Universität Hamburg-Harburg Institut für Regelungstechnik"
+                    "name": "Latham, Alan"
                 }
             ],
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
             "hrid": "in00000017",
-            "id": "6eee8eb9-db1a-46e2-a8ad-780f19974efa",
+            "id": "c1d3be12-ecec-4fab-9237-baf728575185",
             "identifiers": [
                 {
                     "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "727867881"
+                    "value": "1010770160"
+                },
+                {
+                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
+                    "value": "9781473937703"
                 },
                 {
                     "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV727867881"
+                    "value": "(DE-599)GBV1010770160"
                 }
             ],
             "instanceFormatIds": [],
-            "instanceTypeId": "c1e95c2b-4efc-48cf-9e71-edb622cf0c22",
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
             "languages": [
-                "ger"
+                "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.644+0000",
-                "updatedDate": "2019-09-08T03:33:24.644+0000"
+                "createdDate": "2019-09-11T03:33:45.614+0000",
+                "updatedDate": "2019-09-11T03:33:45.614+0000"
             },
             "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [
-                "1 Koffer (Inhalt: 1 Motor mit Platine auf Plattform, 1 Netzteil, 1 USB-Kabel)"
+            "notes": [
+                {
+                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
+                    "note": "Cities are sites of great wealth and poverty, of hope and despair, of social and economic dynamism, as well as tradition and established power. Social scientists and humanities scholars have over the past three decades generated an impressive range of perspectives for making sense of the vast complexities of cities. These perspectives tell both of the economic, social and political dynamism cities generate, and point to possible lines of future development. The four volumes, The City: Post-Modernity, will focus more exclusively on the contemporary city, looking at the subject through the lenses of globalization and post-colonialism, amongst others",
+                    "staffOnly": false
+                }
             ],
+            "physicalDescriptions": [],
             "publication": [
                 {
-                    "dateOfPublication": "[2016]",
-                    "place": "Hamburg",
-                    "publisher": "Techn. Univ., Inst. für Regelungstechnik"
+                    "dateOfPublication": "2018",
+                    "place": "Los Angeles London New Delhi Singapore Washington DC Melbourne",
+                    "publisher": "SAGE"
+                }
+            ],
+            "publicationFrequency": [],
+            "publicationRange": [],
+            "series": [
+                "SAGE benchmarks in culture and society"
+            ],
+            "source": "MARC",
+            "statisticalCodeIds": [],
+            "subjects": [
+                "Stadt",
+                "Postmoderne",
+                "Aufsatzsammlung"
+            ],
+            "title": "The city post-modernity edited by Alan Latham"
+        },
+        {
+            "alternativeTitles": [],
+            "classifications": [],
+            "contributors": [],
+            "editions": [],
+            "electronicAccess": [],
+            "holdingsRecords2": [],
+            "hrid": "in00000022",
+            "id": "69640328-788e-43fc-9c3c-af39e243f3b7",
+            "identifiers": [
+                {
+                    "identifierTypeId": "913300b2-03ed-469a-8179-c1092c991227",
+                    "value": "0747-0088"
+                },
+                {
+                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+                    "value": "84641839"
+                }
+            ],
+            "instanceFormatIds": [],
+            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+            "languages": [],
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:45.627+0000",
+                "updatedDate": "2019-09-11T03:33:45.627+0000"
+            },
+            "natureOfContentTermIds": [
+                "0abeee3d-8ad2-4b04-92ff-221b4fce1075"
+            ],
+            "notes": [],
+            "physicalDescriptions": [],
+            "publication": [
+                {
+                    "dateOfPublication": "1915-1983",
+                    "place": "Chicago, Ill.",
+                    "publisher": "American Bar Association"
                 }
             ],
             "publicationFrequency": [],
@@ -1449,7 +2992,7 @@
             "source": "MARC",
             "statisticalCodeIds": [],
             "subjects": [],
-            "title": "DC Motor Control Experiment Objekt for introduction to control systems Herbert Werner"
+            "title": "ABA Journal"
         },
         {
             "alternativeTitles": [],
@@ -1472,7 +3015,7 @@
             "editions": [],
             "electronicAccess": [],
             "holdingsRecords2": [],
-            "hrid": "in00000022",
+            "hrid": "in00000027",
             "id": "04489a01-f3cd-4f9e-9be4-d9c198703f45",
             "identifiers": [
                 {
@@ -1502,8 +3045,8 @@
                 "eng"
             ],
             "metadata": {
-                "createdDate": "2019-09-08T03:33:24.655+0000",
-                "updatedDate": "2019-09-08T03:33:24.655+0000"
+                "createdDate": "2019-09-11T03:33:45.639+0000",
+                "updatedDate": "2019-09-11T03:33:45.639+0000"
             },
             "natureOfContentTermIds": [],
             "notes": [
@@ -1562,797 +3105,6 @@
                 "Geschichte 1916-1960"
             ],
             "title": "Environment and identity politics in colonial Africa Fulani migrations and land conflict by Emmanuel M. Mbah"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Europäische Kommission Generaldirektion Mobilität und Verkehr"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000027",
-            "id": "1b74ab75-9f41-4837-8662-a1d99118008d",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "643935371"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9789279164316"
-                },
-                {
-                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
-                    "value": "10.2768/21035"
-                },
-                {
-                    "identifierTypeId": "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
-                    "value": "MI-32-10-386-57-Z"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV643935371"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "225faa14-f9bf-4ecd-990d-69433c912434",
-            "languages": [
-                "ger",
-                "eng",
-                "spa",
-                "fre",
-                "ita",
-                "dut",
-                "por"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.666+0000",
-                "updatedDate": "2019-09-08T03:33:24.666+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [
-                "1 DVD-Video (14 Min.) farb. 12 cm"
-            ],
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Europäische Union",
-                "Hochgeschwindigkeitszug",
-                "Verkehrsnetz",
-                "Hochgeschwindigkeitsverkehr",
-                "Schienenverkehr",
-                "EU-Verkehrspolitik",
-                "EU-Staaten"
-            ],
-            "title": "A journey through Europe Bildtontraeger high-speed lines European Commission, Directorate-General for Mobility and Transport"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [],
-            "discoverySuppress": false,
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000031",
-            "id": "570031d9-e79f-4b3b-b073-f125c3d633e0",
-            "identifiers": [],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T04:00:08.247+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T04:00:08.247+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "previouslyHeld": false,
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "tags": {
-                "tagList": []
-            },
-            "title": "Request title1567914096318"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeText": "",
-                    "name": "Moritz Küng",
-                    "primary": false
-                }
-            ],
-            "discoverySuppress": false,
-            "editions": [
-                "[1st ed.]"
-            ],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000032",
-            "id": "396748fc-bd56-477a-8ed4-5f0946cf42a5",
-            "identifiers": [
-                {
-                    "identifierTypeId": "8e3dd25e-db82-4b06-8311-90d41998c109",
-                    "value": "foo_1567914096330"
-                },
-                {
-                    "identifierTypeId": "27fd35a6-b8f6-41f2-aa0e-9c663ceb250c",
-                    "value": "9789072828279"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [
-                "dut",
-                "eng"
-            ],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T04:06:39.118+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T04:06:39.118+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": null,
-                    "note": "Catalog of two exhibitions, \"Paramount basics\" held at the 25th Biennale of São Paulo, 23 March-2 June 2002, and \"Paramount basics (extended),\" held at MUHKA, Museum van Hedendaagse Kunst Antwerpen, 21 September-24 November 2002.",
-                    "staffOnly": false
-                },
-                {
-                    "instanceNoteTypeId": null,
-                    "note": "Cover title.",
-                    "staffOnly": false
-                },
-                {
-                    "instanceNoteTypeId": null,
-                    "note": "Includes folded sheet of list of works in the exhibition held at MUHKA.",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "230 pages : chiefly illustrations (some color) ; 28 cm + 1 folded sheet"
-            ],
-            "previouslyHeld": false,
-            "publication": [
-                {
-                    "dateOfPublication": "©2002",
-                    "place": "Antwerpen",
-                    "publisher": "MUHKA"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Catalogus (Museum van Hedendaagse Kunst Antwerpen), 92"
-            ],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Venlet, Richard -- Exhibitions",
-                "Installations (Art) -- Exhibitions",
-                "Installations (Art)"
-            ],
-            "tags": {
-                "tagList": []
-            },
-            "title": "qwer"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-                    "contributorTypeText": "",
-                    "name": "author 5942409304728871",
-                    "primary": false
-                }
-            ],
-            "discoverySuppress": false,
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000033",
-            "id": "8a042847-6faf-4961-b7a1-37ef47f7bc7d",
-            "identifiers": [],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T04:07:27.920+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T04:07:27.920+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "previouslyHeld": false,
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "tags": {
-                "tagList": []
-            },
-            "title": "supercalifragilisticexpialidocious 8387344853075303"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "contributorTypeId": "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-                    "contributorTypeText": "",
-                    "name": "supercalifragilisticexpialidocious 41171418707791",
-                    "primary": false
-                }
-            ],
-            "discoverySuppress": false,
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000034",
-            "id": "7676f869-8b0d-4925-a747-1c3f00ab9d18",
-            "identifiers": [],
-            "instanceFormatIds": [],
-            "instanceTypeId": "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-            "languages": [],
-            "metadata": {
-                "createdByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "createdDate": "2019-09-08T04:07:30.880+0000",
-                "updatedByUserId": "2ca59db3-bd48-59c0-88ae-62f87df7c0c0",
-                "updatedDate": "2019-09-08T04:07:30.880+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [],
-            "previouslyHeld": false,
-            "publication": [],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "FOLIO",
-            "staffSuppress": false,
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "tags": {
-                "tagList": []
-            },
-            "title": "title 4806334606307017"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [
-                {
-                    "classificationNumber": "658.4013",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                },
-                {
-                    "classificationNumber": "650",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Augustin, Harald"
-                },
-                {
-                    "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa",
-                    "name": "Shaker Verlag GmbH"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [
-                {
-                    "linkText": "Electronic resource (PDF)",
-                    "publicNote": "Address for accessing the table of content. PDF file",
-                    "uri": "http://d-nb.info/1150175923/04"
-                }
-            ],
-            "holdingsRecords2": [],
-            "hrid": "in00000001",
-            "id": "e6bc03c6-c137-4221-b679-a7c5c31f986c",
-            "identifiers": [
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "3844057420"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9783844057423"
-                },
-                {
-                    "identifierTypeId": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
-                    "value": "9783844057423"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)1024095011"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-101)1150175923"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)DNB1150175923"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "ger"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.604+0000",
-                "updatedDate": "2019-09-08T03:33:24.604+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [],
-            "physicalDescriptions": [
-                "x, 113 Seiten Illustrationen 21 cm, 223 g"
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "2017",
-                    "place": "Aachen",
-                    "publisher": "Shaker Verlag"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Umsetzung der DIN EN ISO 9001:2015  / Harald Augustin (Hrsg.) ; Band 1",
-                "Berichte aus der Betriebswirtschaft",
-                "Umsetzung der DIN EN ISO 9001:2015 Band 1"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "DIN EN ISO 9001:2015",
-                "Standard",
-                "Organisatorischer Wandel",
-                "Prozessmanagement",
-                "Einführung",
-                "Industrie",
-                "Deutschland"
-            ],
-            "title": "Organisations- und Prozessentwicklung Harald Augustin (Hrsg.)"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Moutinho, Luiz"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Sokele, Mladen"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [
-                {
-                    "linkText": "Electronic resource (PDF)",
-                    "publicNote": "Address for accessing the table of content. PDF file",
-                    "uri": "http://www.gbv.de/dms/zbw/101073931X.pdf"
-                }
-            ],
-            "holdingsRecords2": [],
-            "hrid": "in00000008",
-            "id": "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "101073931X"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "3319643991"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9783319643991"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9783319644004"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)ocn992783736"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(OCoLC)992783736"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV101073931X"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.625+0000",
-                "updatedDate": "2019-09-08T03:33:24.625+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Enthält 9 Beiträge",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "xxix, 224 Seiten Illustrationen"
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "[2018]",
-                    "place": "Cham",
-                    "publisher": "Palgrave Macmillan"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Innovative research methodologies in management  / Luiz Moutinho, Mladen Sokele ; Volume 2",
-                "Innovative research methodologies in management Volume 2"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Betriebswirtschaftslehre",
-                "Management",
-                "Wissenschaftliche Methode"
-            ],
-            "title": "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [
-                {
-                    "classificationNumber": "H",
-                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-                },
-                {
-                    "classificationNumber": "300",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Latham, Alan"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000012",
-            "id": "c1d3be12-ecec-4fab-9237-baf728575185",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "1010770160"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9781473937703"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV1010770160"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.635+0000",
-                "updatedDate": "2019-09-08T03:33:24.635+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Cities are sites of great wealth and poverty, of hope and despair, of social and economic dynamism, as well as tradition and established power. Social scientists and humanities scholars have over the past three decades generated an impressive range of perspectives for making sense of the vast complexities of cities. These perspectives tell both of the economic, social and political dynamism cities generate, and point to possible lines of future development. The four volumes, The City: Post-Modernity, will focus more exclusively on the contemporary city, looking at the subject through the lenses of globalization and post-colonialism, amongst others",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [],
-            "publication": [
-                {
-                    "dateOfPublication": "2018",
-                    "place": "Los Angeles London New Delhi Singapore Washington DC Melbourne",
-                    "publisher": "SAGE"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "SAGE benchmarks in culture and society"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Stadt",
-                "Postmoderne",
-                "Aufsatzsammlung"
-            ],
-            "title": "The city post-modernity edited by Alan Latham"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Matwiejczyk-Montgomery, Marian Ann J"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000018",
-            "id": "5b1eb450-ff9f-412d-a9e7-887f6eaeb5b4",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "1008673218"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV1008673218"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.647+0000",
-                "updatedDate": "2019-09-08T03:33:24.647+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "note": "Dissertation New York University 1993",
-                    "staffOnly": false
-                },
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Mikrofiche-Ausgabe",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [],
-            "publication": [
-                {
-                    "dateOfPublication": "1993",
-                    "place": "Ann Arbor, MI",
-                    "publisher": "University Microfims International"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Hochschulschrift"
-            ],
-            "title": "Concepts of fashion 1921 - 1987 microform a study of garments worn by selected winners of the Miss America Pageant Marian Ann J. Matwiejczyk-Montgomery"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [
-                {
-                    "classificationNumber": "HN773",
-                    "classificationTypeId": "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-                },
-                {
-                    "classificationNumber": "303.6/9096",
-                    "classificationTypeId": "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-                }
-            ],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Mbah, Emmanuel M"
-                },
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Falola, Toyin"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [
-                {
-                    "linkText": "Electronic resource (PDF)",
-                    "publicNote": "Address for accessing the table of content. PDF file",
-                    "uri": "https://external.dandelon.com/download/attachments/dandelon/ids/DE0069AE502CCFE91E537C1258123001D0DCA.pdf"
-                }
-            ],
-            "holdingsRecords2": [],
-            "hrid": "in00000023",
-            "id": "81825729-e824-4d52-9d15-1695e9bf1831",
-            "identifiers": [
-                {
-                    "identifierTypeId": "c858e4f2-2b6b-4385-842b-60732ee14abb",
-                    "value": "2016022536"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9781138220034"
-                },
-                {
-                    "identifierTypeId": "8261054f-be78-422d-bd51-4ed9f33c3422",
-                    "value": "9781315413099"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV86011306X"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.658+0000",
-                "updatedDate": "2019-09-08T03:33:24.658+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "note": "Literaturangaben",
-                    "staffOnly": false
-                },
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Introduction: Dissent, protest and dispute Africa / Emmanuel M. Mbah and Toyin Falola -- The music of heaven, the music of Earth, and the music of brats: Tuareg Islam, the Devil, and musical performance / Susan J. Rasmussen -- Finding social change backstage and behind the scenes in South African theatre / Nathanael Vlachos -- Soccer and political (ex)pression in Africa: the case of Cameroon / Alain Lawo-Sukam -- Child labor resistance in southern Nigeria, 1916-1938 / Adam Paddock -- M'Fain goes home: African soldiers in the Gabon campaign of 1940 / Mark Reeves -- \\\"Disgraceful disturbances\\\": TANU, the Tanganyikan Rifles, and the 1964 mutiny / Charles Thomas -- The role of ethnicity in political formation in Kenya: 1963-2007 / Tade O. Okediji and Wahutu J. Siguru -- Land, boundaries, chiefs and wars / Toyin Falola -- Borders and boundaries within Ethiopia: dilemmas of group identity, representation and agency / Alexander Meckelburg -- Rural agrarian land conflicts in postcolonial Nigeria's central region / Sati Fwatshak -- The evolution of the Mungiki militia in Kenya, 1990 to 2010 / Felix Kiruthu -- Refugee-warriors and other people's wars in post-colonial Africa: the experience of Rwandese and South African military exiles (1960-94) / Tim Stapleton -- Oiling the guns and gunning for oil: the youth and Niger Delta oil conflicts in Nigeria / Christian C. Madubuko.",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "xi, 293 Seiten"
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "2017",
-                    "place": "London New York",
-                    "publisher": "Routledge, Taylor \u0026 Francis Group"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [
-                "Global Africa 1"
-            ],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [
-                "Social conflict--Africa--History--20th century",
-                "Social conflict--Africa--History--21st century",
-                "Political participation--Africa",
-                "Land tenure--Africa",
-                "Africa--Social conditions--20th century",
-                "Africa--Social conditions--21st century",
-                "Africa--Politics and government--20th century",
-                "Africa--Politics and government--21st century",
-                "Africa Politics and government 20th century",
-                "Africa Politics and government 21st century",
-                "Africa Social conditions 20th century",
-                "Africa Social conditions 21st century",
-                "Land tenure Africa",
-                "Political participation Africa",
-                "Social conflict Africa History 20th century",
-                "Social conflict Africa History 21st century"
-            ],
-            "title": "Dissent, protest and dispute in Africa edited by Emmanuel M. Mbah and Toyin Falola"
-        },
-        {
-            "alternativeTitles": [],
-            "classifications": [],
-            "contributors": [
-                {
-                    "contributorNameTypeId": "2b94c631-fca9-4892-a730-03ee529ffe2a",
-                    "name": "Stavrou, C.N"
-                }
-            ],
-            "editions": [],
-            "electronicAccess": [],
-            "holdingsRecords2": [],
-            "hrid": "in00000028",
-            "id": "62ca5b43-0f11-40af-a6b4-1a9ee2db33cb",
-            "identifiers": [
-                {
-                    "identifierTypeId": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
-                    "value": "53957015X"
-                },
-                {
-                    "identifierTypeId": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
-                    "value": "(DE-599)GBV53957015X"
-                }
-            ],
-            "instanceFormatIds": [],
-            "instanceTypeId": "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-            "languages": [
-                "eng"
-            ],
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:24.667+0000",
-                "updatedDate": "2019-09-08T03:33:24.667+0000"
-            },
-            "natureOfContentTermIds": [],
-            "notes": [
-                {
-                    "instanceNoteTypeId": "6a2533a7-4de2-4e64-8466-074c2fa9308c",
-                    "note": "Mikrofilm-Ausg. 1957 1 Mikrofilm",
-                    "staffOnly": false
-                }
-            ],
-            "physicalDescriptions": [
-                "1 Mikrofilm 26-34 S."
-            ],
-            "publication": [
-                {
-                    "dateOfPublication": "1955",
-                    "place": "New York",
-                    "publisher": "Columbia University"
-                }
-            ],
-            "publicationFrequency": [],
-            "publicationRange": [],
-            "series": [],
-            "source": "MARC",
-            "statisticalCodeIds": [],
-            "subjects": [],
-            "title": "The Neurotic Heroine in Tennessee Williams microform C.N. Stavrou"
         }
     ]
 }

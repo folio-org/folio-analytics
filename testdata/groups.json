@@ -1,12 +1,12 @@
 {
     "usergroups": [
         {
-            "desc": "Undergraduate Student",
-            "group": "undergrad",
-            "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+            "desc": "Faculty Member",
+            "group": "faculty",
+            "id": "503a81cd-6c26-400f-b620-14c08943697c",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:06.018+0000",
-                "updatedDate": "2019-09-08T03:33:06.018+0000"
+                "createdDate": "2019-09-11T03:33:27.356+0000",
+                "updatedDate": "2019-09-11T03:33:27.356+0000"
             }
         },
         {
@@ -14,17 +14,17 @@
             "group": "graduate",
             "id": "ad0bc554-d5bc-463c-85d1-5562127ae91b",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:06.026+0000",
-                "updatedDate": "2019-09-08T03:33:06.026+0000"
+                "createdDate": "2019-09-11T03:33:27.363+0000",
+                "updatedDate": "2019-09-11T03:33:27.363+0000"
             }
         },
         {
-            "desc": "Faculty Member",
-            "group": "faculty",
-            "id": "503a81cd-6c26-400f-b620-14c08943697c",
+            "desc": "Undergraduate Student",
+            "group": "undergrad",
+            "id": "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:06.029+0000",
-                "updatedDate": "2019-09-08T03:33:06.029+0000"
+                "createdDate": "2019-09-11T03:33:27.366+0000",
+                "updatedDate": "2019-09-11T03:33:27.366+0000"
             }
         },
         {
@@ -32,8 +32,19 @@
             "group": "staff",
             "id": "3684a786-6671-4268-8ed0-9db82ebca60b",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:06.047+0000",
-                "updatedDate": "2019-09-08T03:33:06.047+0000"
+                "createdDate": "2019-09-11T03:33:27.379+0000",
+                "updatedDate": "2019-09-11T03:33:27.379+0000"
+            }
+        },
+        {
+            "desc": "Student member",
+            "group": "Student",
+            "id": "9ec50b60-847b-491d-8ea2-6e60bd9b609a",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T10:11:49.859+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T10:11:49.859+0000"
             }
         }
     ]

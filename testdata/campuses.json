@@ -1,24 +1,36 @@
 {
     "loccamps": [
         {
-            "code": "E",
-            "id": "470ff1dd-937a-4195-bf9e-06bcfcd135df",
-            "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
-            "metadata": {
-                "createdDate": "2019-09-08T03:33:20.172+0000",
-                "updatedDate": "2019-09-08T03:33:20.172+0000"
-            },
-            "name": "Online"
-        },
-        {
             "code": "CC",
             "id": "62cf76b7-cca5-4d33-9217-edf42ce1a848",
             "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
             "metadata": {
-                "createdDate": "2019-09-08T03:33:20.174+0000",
-                "updatedDate": "2019-09-08T03:33:20.174+0000"
+                "createdDate": "2019-09-11T03:33:40.909+0000",
+                "updatedDate": "2019-09-11T03:33:40.909+0000"
             },
             "name": "City Campus"
+        },
+        {
+            "code": "E",
+            "id": "470ff1dd-937a-4195-bf9e-06bcfcd135df",
+            "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
+            "metadata": {
+                "createdDate": "2019-09-11T03:33:40.911+0000",
+                "updatedDate": "2019-09-11T03:33:40.911+0000"
+            },
+            "name": "Online"
+        },
+        {
+            "code": "SC",
+            "id": "f4bbfc5a-1578-4335-964d-3f3906a14f81",
+            "institutionId": "40ee00ca-a518-4b49-be01-0638d0a4ac57",
+            "metadata": {
+                "createdByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "createdDate": "2019-09-11T14:26:44.317+0000",
+                "updatedByUserId": "cc0e2396-2024-59bf-93ce-018b273dc405",
+                "updatedDate": "2019-09-11T14:26:44.317+0000"
+            },
+            "name": "Suburban Campus"
         }
     ]
 }
