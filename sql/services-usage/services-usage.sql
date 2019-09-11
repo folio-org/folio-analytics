@@ -22,33 +22,22 @@ date filter, then checkout actions that match, then just unions them together
 
 WITH parameters AS (
     SELECT
-        DATE('2000-01-01') AS start_date,
-        DATE('2020-01-01') AS end_date
+        '2000-01-01' :: date AS start_date,
+        '2020-01-01' :: date AS end_date
 ),
-
-checkout_actions (
-    service_point_name,
-    service_point_display_name,
-    action_date,
-    day_of_week,
-    hour_of_day,
-    material_type,
-    action_type,
-    effective_location,
-    item_status,
-    ct
-) AS (
+checkout_actions AS (
     SELECT
-        sp.name,
-        sp.discovery_display_name,
-        DATE(l.loan_date),
-        to_char(l.loan_date, 'Day'),
-        date_part('hour',l.loan_date::timestamp),
-        m.name,
-        'Checkout'::varchar,
-        tl.temp_location,
-        l.item_status,
-        count(l.id)
+        sp.name AS service_point_name,
+        sp.discovery_display_name AS service_point_display_name,
+        --TODO: make exceptions for null loan_date
+        DATE(l.loan_date) AS action_date,
+        to_char(l.loan_date, 'Day') AS day_of_week,
+        date_part('hour',l.loan_date :: timestamp) AS hour_of_day,
+        m.name AS material_type,
+        'Checkout' :: varchar AS action_type,
+        tl.temp_location AS effective_location,
+        l.item_status AS item_status,
+        count(l.id) AS ct
     FROM (
         SELECT
             id,
@@ -61,19 +50,14 @@ checkout_actions (
             loan_date BETWEEN (SELECT start_date FROM parameters)
             AND (SELECT end_date FROM parameters)
     ) AS l
-
     LEFT JOIN temp_loans AS tl
         ON l.id = tl.id
-
     LEFT JOIN items AS i
         ON l.item_id = i.id
-
     LEFT JOIN service_points AS sp
         ON l.checkout_service_point_id = sp.id
-
     LEFT JOIN material_types AS m
         ON i.material_type_id = m.id
-
     GROUP BY
         sp.name,
         sp.discovery_display_name,
@@ -82,30 +66,19 @@ checkout_actions (
         tl.temp_location,
         l.item_status        
 ),
-
-checkin_actions (
-    service_point_name,
-    service_point_display_name,
-    action_date,
-    day_of_week,
-    hour_of_day,
-    material_type,
-    action_type,
-    effective_location,
-    item_status,
-    ct
-) AS (
+checkin_actions AS (
     SELECT
-        sp.name,
-        sp.discovery_display_name,
-        DATE(l.system_return_date),
-        to_char(l.system_return_date, 'Day'),
-        date_part('hour',l.system_return_date::timestamp),
-        m.name,
-        'Checkin'::varchar,
-        tl.temp_location,
-	    l.item_status,
-        count(l.id)
+        sp.name AS service_point_name,
+        sp.discovery_display_name AS service_point_display_name,
+        --TODO: make exceptions for null system_return_date
+        DATE(l.system_return_date) AS action_date,
+        to_char(l.system_return_date, 'Day') AS day_of_week,
+        date_part('hour',l.system_return_date :: timestamp) AS hour_of_day,
+        m.name AS material_type,
+        'Checkin' :: varchar AS action_type,
+        tl.temp_location AS effective_location,
+	    l.item_status AS item_status,
+        count(l.id) AS ct
     FROM (
         SELECT
             id,
@@ -118,19 +91,14 @@ checkin_actions (
             system_return_date BETWEEN (SELECT start_date FROM parameters)
             AND (SELECT end_date FROM parameters)
     ) AS l
-
     LEFT JOIN temp_loans AS tl
         ON l.id = tl.id
-
     LEFT JOIN items i
         ON l.item_id = i.id
-
     LEFT JOIN service_points sp
         ON l.checkin_service_point_id = sp.id
-
     LEFT JOIN material_types m
         ON i.material_type_id = m.id
-
     GROUP BY
         sp.name,
         sp.discovery_display_name,
@@ -138,34 +106,6 @@ checkin_actions (
         m.name,
         tl.temp_location,
 	    l.item_status
-),
-
-union_of_results AS (
-    SELECT
-        service_point_name,
-        service_point_display_name,
-        action_date,
-        day_of_week,
-        hour_of_day,
-        material_type,
-        action_type,
-        effective_location,
-        item_status,
-        ct
-    FROM checkout_actions
-    UNION ALL
-    SELECT
-        service_point_name,
-        service_point_display_name,
-        action_date,
-        day_of_week,
-        hour_of_day,
-        material_type,
-        action_type,
-        effective_location,
-        item_status,
-        ct
-    FROM checkin_actions
 )
 SELECT
     service_point_name,
@@ -178,7 +118,20 @@ SELECT
     effective_location,
     item_status,
     ct
-FROM union_of_results
+FROM checkout_actions
+UNION ALL
+SELECT
+    service_point_name,
+    service_point_display_name,
+    action_date,
+    day_of_week,
+    hour_of_day,
+    material_type,
+    action_type,
+    effective_location,
+    item_status,
+    ct
+FROM checkin_actions
 ORDER BY
     service_point_name,
     service_point_display_name,
@@ -188,4 +141,4 @@ ORDER BY
     action_type,
     effective_location,
     item_status
-    ;
+;

@@ -22,14 +22,14 @@ FILTERS: loan date, item status
 /* Change the lines below to adjust the date and item status filters */
 WITH parameters AS (
     SELECT
-        DATE('2000-01-01') AS start_date,
-        DATE('2020-01-01') AS end_date,
-        'Checked out'::varchar AS item_status_filter
+        '2000-01-01' :: date AS start_date,
+        '2020-01-01' :: date AS end_date,
+        'Checked out' :: varchar AS item_status_filter
 )
 SELECT
-    (SELECT start_date::varchar FROM parameters) ||
-    ' to '::varchar ||
-    (SELECT end_date::varchar FROM parameters) AS date_range,
+    (SELECT start_date :: varchar FROM parameters) ||
+        ' to ' :: varchar ||
+        (SELECT end_date :: varchar FROM parameters) AS date_range,
     inst.name AS institution_name,
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
@@ -39,7 +39,9 @@ SELECT
     i.barcode AS item_barcode,
     i.enumeration AS item_enumeration,
     /* returns "copyNumbers" as an array in JSON syntax */
-    json_extract_path_text(i.data, 'copyNumbers') AS copy_numbers,
+    '{ "copyNumbers": ' :: varchar || 
+        COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: varchar) ||
+        '}' :: varchar AS copy_numbers,
     /* alternative: code below converts elements of "copyNumbers" to
        pipe-delimited list. does not work on Redshift. */
     /*array_to_string(
@@ -49,7 +51,6 @@ SELECT
     json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
     m.name AS material_type,
     g.group AS group_name
-
 FROM (
     SELECT
         id,
@@ -57,11 +58,11 @@ FROM (
         item_id,
         loan_date
     FROM loans
+    --remove the WHERE clause below to ignore date range filter
     WHERE
         loan_date BETWEEN (SELECT start_date FROM parameters)
         AND (SELECT end_date FROM parameters)
 ) AS l
-
 /* Using INNER JOIN because we want to enforce the item status filter */
 INNER JOIN (
     SELECT
@@ -74,28 +75,22 @@ INNER JOIN (
         permanent_location_id,
         material_type_id
     FROM items
+    --remove the WHERE clause below to ignore item status filter
     WHERE json_extract_path_text(items.data, 'status', 'name') =
         (SELECT item_status_filter FROM parameters)
 ) AS i
     ON l.item_id = i.id
-
 LEFT JOIN users AS u
     ON l.user_id = u.id
-
 LEFT JOIN groups AS g
     ON u.patron_group = g.id
-
 LEFT JOIN holdings AS h
     ON i.holdings_record_id = h.id
-
 LEFT JOIN locations AS ipl
     ON i.permanent_location_id = ipl.id
-
 LEFT JOIN material_types AS m
     ON i.material_type_id = m.id
-
 LEFT JOIN institutions AS inst
     ON ipl.institution_id = inst.id
-
 ORDER BY inst.name, ipl.name, l.loan_date
 ;
