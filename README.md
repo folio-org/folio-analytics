@@ -45,9 +45,3 @@ SQL queries are stored in the [sql directory](sql) of this repository. Each quer
 
 ### Users
 
-## Additional information
-
-### Issue tracker
-
-See projects [REP](https://issues.folio.org/browse/REP) and [LDP](https://issues.folio.org/browse/LDP)
-at the [FOLIO issue tracker](https://dev.folio.org/guidelines/issue-tracker).
