@@ -26,7 +26,6 @@ If an existing query does not match your needs, you can use the existing query a
 
 * [Self-paced course on Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
 * [Self-paced course on SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
-* [PostgreSQL JSON](http://www.postgresqltutorial.com/postgresql-json/)
 
 ## Queries
 
