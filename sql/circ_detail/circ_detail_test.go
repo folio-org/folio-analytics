@@ -8,6 +8,6 @@ import (
 
 func TestQuery(t *testing.T) {
 
-	gotest.RunTest(t, "circ-detail.sql", "circ_detail_result.csv")
+	gotest.RunTest(t, "circ_detail.sql", "circ_detail_result.csv")
 
 }

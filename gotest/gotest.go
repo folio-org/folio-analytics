@@ -116,9 +116,13 @@ func runDB(queryPath string, resultPath string, section string,
 
 	if !match {
 
-		fn, err := writeResult(filepath.Dir(queryPath), result)
+		f1, err := writeResult(queryPath, expectedResult, "want")
 		if err != nil {
-			fn = "(Unable to write file)"
+			return err
+		}
+		f2, err := writeResult(queryPath, result, "got")
+		if err != nil {
+			return err
 		}
 
 		return fmt.Errorf(
@@ -131,14 +135,14 @@ func runDB(queryPath string, resultPath string, section string,
 				"%s\n\n"+
 				"Want:\n"+
 				"%s\n\n"+
-				"Unexpected result written to:\n"+
-				"%s\n\n",
+				"Compare results with:\n"+
+				"diff -u %s %s\n\n",
 			queryPath,
 			resultPath,
 			section,
 			strings.TrimSpace(result),
 			strings.TrimSpace(expectedResult),
-			fn)
+			f1, f2)
 
 	}
 
@@ -162,24 +166,20 @@ func normalizeResult(result string) string {
 			newresult = append(newresult, r)
 		}
 	}
-	return strings.TrimSpace(strings.Join(newresult, "\n"))
+	return strings.TrimSpace(strings.Join(newresult, "\n")) + "\n"
 }
 
 // writeResult writes the unexpected result to a file and returns the file
 // name.
-func writeResult(dir string, result string) (string, error) {
-	f, err := ioutil.TempFile(dir, "test-result-*.csv")
+func writeResult(queryPath string, result string, suffix string) (string,
+	error) {
+	dir := filepath.Dir(queryPath)
+	queryFile := filepath.Base(queryPath)
+	base := strings.TrimSuffix(queryFile, ".sql")
+	resultfile := filepath.Join(dir, "tmp_"+base+"_"+suffix+".csv")
+	err := ioutil.WriteFile(resultfile, []byte(result), 0644)
 	if err != nil {
 		return "", err
 	}
-	_, err = f.Write([]byte(result))
-	if err != nil {
-		f.Close()
-		return "", err
-	}
-	err = f.Close()
-	if err != nil {
-		return "", err
-	}
-	return f.Name(), nil
+	return filepath.Base(resultfile), nil
 }
