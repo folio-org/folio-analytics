@@ -31,7 +31,7 @@ $ export GOPATH=$HOME/go
 Also set `GO111MODULE` to `on` to enable Go dependency management:
 
 ```shell
-export GO111MODULE=on
+$ export GO111MODULE=on
 ```
 
 Next create a configuration file called `.ldptestsql` in your home directory.
@@ -102,7 +102,7 @@ func TestQuery(t *testing.T) {
 }
 ```
 
-Note the first line `package circ_detail`.  The package name should match the
+Note the first line: `package circ_detail`.  The package name should match the
 name of the directory where this file (and the query) are located.
 
 The test is run by the line:
@@ -118,7 +118,7 @@ should contain the expected result in CSV.
 The expected result can be generated using `psql`, e.g.:
 
 ```shell
-$ psql ldpqdev -U ldp -f circ_detail.sql --csv > circ_detail_result.csv
+$ psql ldpqdev -U ldp --csv -f circ_detail.sql -o circ_detail_result.csv
 ```
 
 The testing code called by `gotest.RunTest()` runs the query and confirms that
