@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"testing"
 )
@@ -69,20 +70,18 @@ func runDB(queryPath string, resultPath string, section string,
 	}
 	defer rows.Close()
 
-	var b strings.Builder
-
+	var rb strings.Builder
 	columns, err := rows.Columns()
 	if err != nil {
 		return fmt.Errorf("Error running query: %v", err)
 	}
 	for x, c := range columns {
 		if x > 0 {
-			fmt.Fprintf(&b, ",")
+			rb.WriteRune(',')
 		}
-		fmt.Fprintf(&b, "%s", c)
+		rb.WriteString(c)
 	}
-	fmt.Fprintf(&b, "\n")
-
+	rb.WriteRune('\n')
 	data := make([]interface{}, len(columns))
 	rdata := make([][]byte, len(columns))
 	for x := range rdata {
@@ -96,23 +95,24 @@ func runDB(queryPath string, resultPath string, section string,
 		}
 		for x, r := range rdata {
 			if x > 0 {
-				fmt.Fprintf(&b, ",")
+				rb.WriteRune(',')
 			}
 			if r != nil {
-				fmt.Fprintf(&b, "%s", string(r))
+				rb.WriteString(string(r))
 			}
 		}
-		fmt.Fprintf(&b, "\n")
+		rb.WriteRune('\n')
 	}
+	result := rb.String()
 
 	err = rows.Err()
 	if err != nil {
 		return fmt.Errorf("Error running query: %v", err)
 	}
 
-	result := b.String()
-
-	match := strings.TrimSpace(result) == strings.TrimSpace(expectedResult)
+	result = normalizeResult(result)
+	expectedResult = normalizeResult(expectedResult)
+	match := (result == expectedResult)
 
 	if !match {
 
@@ -143,6 +143,26 @@ func runDB(queryPath string, resultPath string, section string,
 	}
 
 	return nil
+}
+
+// normalizeResult converts a query result into a normalized form, including
+// sorting the rows, so that it can be compared with another result.
+func normalizeResult(result string) string {
+	sp := strings.Split(result, "\n")
+	cols := sp[0]
+	rows := sp[1:]
+	sp = nil
+	sort.Slice(rows, func(i, j int) bool {
+		return rows[i] < rows[j]
+	})
+	var newresult []string
+	newresult = append(newresult, cols)
+	for _, r := range rows {
+		if strings.TrimSpace(r) != "" {
+			newresult = append(newresult, r)
+		}
+	}
+	return strings.TrimSpace(strings.Join(newresult, "\n"))
 }
 
 // writeResult writes the unexpected result to a file and returns the file
