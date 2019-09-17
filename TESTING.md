@@ -74,7 +74,7 @@ To run all tests, change to the top level directory:
 
 ```shell
 $ cd ldp-analytics
-$ go test ./...
+$ go test -count=1 ./...
 ```
 
 
