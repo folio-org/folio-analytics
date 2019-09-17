@@ -17,6 +17,10 @@ System requirements
     [CentOS/RHEL](https://yum.postgresql.org/))
   * Redshift 1.0.8995 or later
 
+
+Configuration
+-------------
+
 The `GOPATH` environment variable should be set to specify a path that can
 serve as the build workspace for Go, e.g.:
 
@@ -28,6 +32,30 @@ Also set `GO111MODULE` to `on` to enable Go dependency management:
 
 ```shell
 export GO111MODULE=on
+```
+
+Next create a configuration file called `.ldptestsql` in your home directory.
+This file provides connection details for the database to be used for testing,
+e.g.:
+
+```ini
+databases = ldpqdev,rs-ldpqdev
+
+[ldpqdev]
+dbtype = postgres
+host = localhost
+port = 5432
+user = ldp
+password = <password_goes_here>
+dbname = ldpqdev
+
+[rs-ldpqdev]
+dbtype = redshift
+host = ldpqdev.hfwgaxcbvs5t.us-east-2.redshift.amazonaws.com
+port = 5439
+user = ldp
+password = <password_goes_here>
+dbname = ldpqev
 ```
 
 
