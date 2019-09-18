@@ -35,18 +35,31 @@ $ export GO111MODULE=on
 ```
 
 Next create a configuration file called `.ldptestsql` in your home directory.
-This file provides connection details for the database to be used for testing,
-e.g.:
+This file provides connection details for the database to be used for testing:
+
+```ini
+databases = <section_name>,[...]
+
+[<section_name>]
+dbtype = <database_type>
+host = <host_name>
+port = <port_number>
+user = <user_name>
+password = <password>
+dbname = <database_name>
+```
+
+For example:
 
 ```ini
 databases = ldpqdev,rs-ldpqdev
 
 [ldpqdev]
-dbtype = postgres
+dbtype = postgresql
 host = localhost
 port = 5432
 user = ldp
-password = <password_goes_here>
+password = YS4p4EkJGWJqbO9w
 dbname = ldpqdev
 
 [rs-ldpqdev]
@@ -54,8 +67,8 @@ dbtype = redshift
 host = ldpqdev.hfwgaxcbvs5t.us-east-2.redshift.amazonaws.com
 port = 5439
 user = ldp
-password = <password_goes_here>
-dbname = ldpqev
+password = z3HjUZhkSaQPdt43
+dbname = ldpqqev
 ```
 
 
