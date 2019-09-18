@@ -10,7 +10,7 @@ System requirements
 -------------------
 
 * Linux or macOS
-* [Go](https://golang.org) 1.12 or later
+* [Go](https://golang.org) 1.13 or later
 * Database systems supported:
   * PostgreSQL 12 or later
     ([Debian](https://wiki.postgresql.org/wiki/Apt),
@@ -21,15 +21,14 @@ System requirements
 Configuration
 -------------
 
-The `GOPATH` environment variable should be set to specify a path that can
-serve as the build workspace for Go, e.g.:
+First set the `GOPATH` environment variable to specify a path that can serve
+as the build workspace for Go, e.g.:
 
 ```shell
 $ export GOPATH=$HOME/go
 ```
 
-Then check the version of Go by entering `go version`.  If the version is 1.13
-or later, then set `GO111MODULE` to `on` to enable Go dependency management:
+Then set `GO111MODULE` to `on` to enable Go dependency management:
 
 ```shell
 $ export GO111MODULE=on
