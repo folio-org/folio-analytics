@@ -15,6 +15,7 @@ System requirements
   * PostgreSQL 12 or later
     ([Debian](https://wiki.postgresql.org/wiki/Apt),
     [CentOS/RHEL](https://yum.postgresql.org/))
+  * PostgreSQL 9 or later may also work
   * Redshift 1.0.8995 or later
 
 
