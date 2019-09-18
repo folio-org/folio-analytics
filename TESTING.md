@@ -111,7 +111,7 @@ The test is run by the line:
 	gotest.RunTest(t, "circ_detail.sql", "circ_detail_result.csv")
 ```
 
-The first file, in this example `"circ-detail.sql"`, should contain the query
+The first file, in this example `"circ_detail.sql"`, should contain the query
 to be tested.  The second file, in this case `"circ_detail_result.csv"`,
 should contain the expected result in CSV.
 
