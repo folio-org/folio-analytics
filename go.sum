@@ -1,0 +1,4 @@
+github.com/lib/pq v1.2.0 h1:LXpIM/LZ5xGFhOpXAQUIMM1HdyqzVYM13zNdjCEEcA0=
+github.com/lib/pq v1.2.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
+github.com/nassibnassar/goconfig v0.1.0 h1:T+TRnqhi2jKyM6EClc/fcxF0SZ88yhN9cQVuf/SEaLs=
+github.com/nassibnassar/goconfig v0.1.0/go.mod h1:opcdYVSH3KaZ7VOAzLo2VD9dDsa4i5YCDRmoOuVRQew=

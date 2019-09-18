@@ -5,9 +5,11 @@ Copyright (C) 2018-2019 The Open Library Foundation
 This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
+
 ## Introduction
 
 This repository contains reports, queries and other data analysis code for the Library Data Platform ([LDP](https://github.com/folio-org/ldp)). The queries contained herein have been developed by the [FOLIO Reporting Special Interest Group](https://wiki.folio.org/display/RPT/) according to specifications submitted by [FOLIO partner libraries](https://www.folio.org/community/support/).
+
 
 ## How to use this repository
 
@@ -25,6 +27,7 @@ query to use as a starting point and edit the query to create the desired
 output.  The [LDP User
 Guide](https://github.com/folio-org/ldp/blob/master/USER_GUIDE.md) includes
 LDP-specific guidelines for query writing.
+
 
 ## Queries
 
@@ -44,8 +47,15 @@ SQL queries are stored in the [sql directory](sql) of this repository. Each quer
 
 ### Users
 
+
+## Testing
+
+This repository includes [a framework for testing queries](TESTING.md).
+
+
 ## How to learn more about SQL
 
 * [Self-paced course on Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
 * [Self-paced course on SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
+
 
