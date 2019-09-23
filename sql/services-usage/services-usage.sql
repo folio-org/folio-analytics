@@ -30,9 +30,9 @@ checkout_actions AS (
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
         --TODO: make exceptions for null loan_date
-        DATE(l.loan_date) AS action_date,
+        l.loan_date :: DATE AS action_date,
         to_char(l.loan_date, 'Day') AS day_of_week,
-        date_part('hour',l.loan_date :: timestamp) AS hour_of_day,
+        date_part('hour',l.loan_date :: TIMESTAMP) AS hour_of_day,
         m.name AS material_type,
         'Checkout' :: varchar AS action_type,
         tl.temp_location AS effective_location,
@@ -71,9 +71,9 @@ checkin_actions AS (
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
         --TODO: make exceptions for null system_return_date
-        DATE(l.system_return_date) AS action_date,
+        l.system_return_date :: DATE AS action_date,
         to_char(l.system_return_date, 'Day') AS day_of_week,
-        date_part('hour',l.system_return_date :: timestamp) AS hour_of_day,
+        date_part('hour',l.system_return_date :: TIMESTAMP) AS hour_of_day,
         m.name AS material_type,
         'Checkin' :: varchar AS action_type,
         tl.temp_location AS effective_location,
