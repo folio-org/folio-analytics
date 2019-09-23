@@ -1,0 +1,38 @@
+{
+    "locations": [
+        {
+            "campusId": "c167989d-d8f0-4ce7-8be6-7ece07fcec94",
+            "code": "BC/MC/SL/SS",
+            "id": "541d3d5d-5995-416b-ae9a-cd163452257f",
+            "institutionId": "940b8361-73df-43d1-8b1b-e72339ebc09d",
+            "isActive": true,
+            "libraryId": "96605a62-3621-4a0c-8910-9ae6b1e969c7",
+            "metadata": {
+                "createdDate": "2019-09-11T16:33:41.079+0000",
+                "updatedDate": "2019-09-11T16:33:41.079+0000"
+            },
+            "name": "Simon Stacks",
+            "primaryServicePoint": "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+            "servicePointIds": [
+                "c4c90014-c8c9-4ade-8f24-b5e313319f4b"
+            ]
+        },
+        {
+            "campusId": "c167989d-d8f0-4ce7-8be6-7ece07fcec94",
+            "code": "BC/MC/AL/AS",
+            "id": "8c2de481-964f-4f1d-85bf-7628392c1254",
+            "institutionId": "940b8361-73df-43d1-8b1b-e72339ebc09d",
+            "isActive": true,
+            "libraryId": "80001257-e8d1-42ec-9e62-e97d6c57be8a",
+            "metadata": {
+                "createdDate": "2019-09-11T16:33:41.079+0000",
+                "updatedDate": "2019-09-11T16:33:41.079+0000"
+            },
+            "name": "Adelaide Stacks",
+            "primaryServicePoint": "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+            "servicePointIds": [
+                "7c5abc9f-f3d7-4856-b8d7-6712462ca007"
+            ]
+        }
+    ]
+}
