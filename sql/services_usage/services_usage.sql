@@ -20,21 +20,22 @@ date filter, then checkout actions that match, then just unions them together
 
 */
 
+/* Change the lines below to adjust the date filter */
 WITH parameters AS (
     SELECT
-        '2000-01-01' :: date AS start_date,
-        '2020-01-01' :: date AS end_date
+        '2000-01-01' :: DATE AS start_date,
+        '2020-01-01' :: DATE AS end_date
 ),
 checkout_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        --TODO: make exceptions for null loan_date
         l.loan_date :: DATE AS action_date,
         to_char(l.loan_date, 'Day') AS day_of_week,
-        date_part('hour',l.loan_date :: TIMESTAMP) AS hour_of_day,
+        --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
+        EXTRACT(hours from l.loan_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
         m.name AS material_type,
-        'Checkout' :: varchar AS action_type,
+        'Checkout' :: VARCHAR AS action_type,
         tl.temp_location AS effective_location,
         l.item_status AS item_status,
         count(l.id) AS ct
@@ -46,9 +47,10 @@ checkout_actions AS (
             item_id,
             item_status
         FROM loans
+        --remove the WHERE clause below to ignore date range filter
         WHERE
-            loan_date BETWEEN (SELECT start_date FROM parameters)
-            AND (SELECT end_date FROM parameters)
+            loan_date >= (SELECT start_date FROM parameters)
+        AND loan_date <  (SELECT end_date FROM parameters)
     ) AS l
     LEFT JOIN temp_loans AS tl
         ON l.id = tl.id
@@ -70,12 +72,12 @@ checkin_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        --TODO: make exceptions for null system_return_date
         l.system_return_date :: DATE AS action_date,
         to_char(l.system_return_date, 'Day') AS day_of_week,
-        date_part('hour',l.system_return_date :: TIMESTAMP) AS hour_of_day,
+        --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
+        EXTRACT(hours from l.system_return_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
         m.name AS material_type,
-        'Checkin' :: varchar AS action_type,
+        'Checkin' :: VARCHAR AS action_type,
         tl.temp_location AS effective_location,
 	    l.item_status AS item_status,
         count(l.id) AS ct
@@ -87,9 +89,10 @@ checkin_actions AS (
             item_id,
             item_status
         FROM loans
+        --remove the WHERE clause below to ignore date range filter
         WHERE
-            system_return_date BETWEEN (SELECT start_date FROM parameters)
-            AND (SELECT end_date FROM parameters)
+            system_return_date >= (SELECT start_date FROM parameters)
+        AND system_return_date <  (SELECT end_date FROM parameters)
     ) AS l
     LEFT JOIN temp_loans AS tl
         ON l.id = tl.id

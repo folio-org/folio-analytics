@@ -39,9 +39,9 @@ SELECT
     i.barcode AS item_barcode,
     i.enumeration AS item_enumeration,
     /* returns "copyNumbers" as an array in JSON syntax */
-    '{ "copyNumbers": ' :: varchar || 
-        COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: varchar) ||
-        '}' :: varchar AS copy_numbers,
+    '{ "copyNumbers": ' :: VARCHAR || 
+        COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: VARCHAR) ||
+        '}' :: VARCHAR AS copy_numbers,
     /* alternative: code below converts elements of "copyNumbers" to
        pipe-delimited list. does not work on Redshift. */
     /*array_to_string(
