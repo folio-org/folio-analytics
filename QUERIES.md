@@ -17,26 +17,26 @@ SQL Style
 
    ```
    SELECT 
-        sp.name AS service_point_name,
-        m.name AS material_type,
-        i.barcode AS item_barcode,
-        ...
+       sp.name AS service_point_name,
+       m.name AS material_type,
+       i.barcode AS item_barcode,
+       ...
    ```
 
    * alternate: keep first element on same line, then indent remaining elements to the location of the first element
 
    ```
    SELECT sp.name AS service_point_name,
-           m.name AS material_type,
-           i.barcode AS item_barcode,
-           ...
+          m.name AS material_type,
+          i.barcode AS item_barcode,
+          ...
    ```
    
    * if you have parallel expressions, you may wish to use spacing to align similar elements
 
    ```
    loan_date BETWEEN (SELECT start_date FROM parameters) AND
-                      (SELECT end_date FROM parameters)
+                     (SELECT end_date FROM parameters)
    ```
 
 * keywords
@@ -105,7 +105,7 @@ Details on Specific Strategies
 * `BETWEEN`
 	* note that using `BETWEEN` for dates is risky because it only includes records up to midnight of the end date (essentially, the end of the day before, but it will include items exactly at midnight of the end date)
 	* if you do use `BETWEEN`, try to educate people about its behavior in comments and set default values that make sense for the behavior (e.g., the first day of one year and the first day of the following year, instead of the last day of the year)
-	* if you do not want to risk including values from midnight of the end date, you can use `>= start_date` and `< end_date` instead of `BETWEEN`
+	* if you do not want to risk including values from midnight of the end date, you can use `>= start_date` and `< end_date` instead of `BETWEEN`. This is like using `BETWEEN` except that you use `<` instead of `<=`. You still have to use an end date that will not be included in the date range (i.e., the day after the last day you want included).
 	* [stack overflow question on querying between date ranges](https://stackoverflow.com/questions/23335970/postgresql-query-between-date-ranges)
 * DRY - Don't Repeat Yourself
 	* as with any programming, the more repetition you have in your query, the more likely you are to forget to update something or make a mistake the second time around
