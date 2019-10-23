@@ -1,0 +1,14 @@
+{
+    "loccamps": [
+        {
+            "code": "MC",
+            "id": "c167989d-d8f0-4ce7-8be6-7ece07fcec94",
+            "institutionId": "940b8361-73df-43d1-8b1b-e72339ebc09d",
+            "metadata": {
+                "createdDate": "2019-09-11T16:33:40.909+0000",
+                "updatedDate": "2019-09-11T16:33:40.909+0000"
+            },
+            "name": "Main Campus"
+        }
+    ]
+}

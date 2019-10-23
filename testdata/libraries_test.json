@@ -1,0 +1,24 @@
+{
+    "loclibs": [
+        {
+            "campusId": "c167989d-d8f0-4ce7-8be6-7ece07fcec94",
+            "code": "SL",
+            "id": "96605a62-3621-4a0c-8910-9ae6b1e969c7",
+            "metadata": {
+                "createdDate": "2019-09-11T16:33:40.953+0000",
+                "updatedDate": "2019-09-11T16:33:40.953+0000"
+            },
+            "name": "Simon Library"
+        },
+        {
+            "campusId": "c167989d-d8f0-4ce7-8be6-7ece07fcec94",
+            "code": "AL",
+            "id": "80001257-e8d1-42ec-9e62-e97d6c57be8a",
+            "metadata": {
+                "createdDate": "2019-09-11T16:33:40.955+0000",
+                "updatedDate": "2019-09-11T16:33:40.955+0000"
+            },
+            "name": "Adelaide Library"
+        }
+    ]
+}
