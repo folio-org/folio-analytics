@@ -1,0 +1,112 @@
+{
+    "callNumberTypes": [
+        {
+            "id": "5ba6b62e-6858-490a-8102-5b1369873835",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.731+0000",
+                "updatedDate": "2019-10-15T03:32:42.731+0000"
+            },
+            "name": "Title",
+            "source": "folio"
+        },
+        {
+            "id": "95467209-6d7b-468b-94df-0f5d7ad2747d",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.732+0000",
+                "updatedDate": "2019-10-15T03:32:42.732+0000"
+            },
+            "name": "Library of Congress classification",
+            "source": "folio"
+        },
+        {
+            "id": "828ae637-dfa3-4265-a1af-5279c436edff",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.735+0000",
+                "updatedDate": "2019-10-15T03:32:42.735+0000"
+            },
+            "name": "MOYS",
+            "source": "folio"
+        },
+        {
+            "id": "28927d76-e097-4f63-8510-e56f2b7a3ad0",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.740+0000",
+                "updatedDate": "2019-10-15T03:32:42.740+0000"
+            },
+            "name": "Shelving control number",
+            "source": "folio"
+        },
+        {
+            "id": "d644be8f-deb5-4c4d-8c9e-2291b7c0f46f",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.742+0000",
+                "updatedDate": "2019-10-15T03:32:42.742+0000"
+            },
+            "name": "UDC",
+            "source": "folio"
+        },
+        {
+            "id": "cd70562c-dd0b-42f6-aa80-ce803d24d4a1",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.742+0000",
+                "updatedDate": "2019-10-15T03:32:42.742+0000"
+            },
+            "name": "Shelved separately",
+            "source": "folio"
+        },
+        {
+            "id": "827a2b64-cbf5-4296-8545-130876e4dfc0",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.742+0000",
+                "updatedDate": "2019-10-15T03:32:42.742+0000"
+            },
+            "name": "Source specified in subfield $2",
+            "source": "folio"
+        },
+        {
+            "id": "054d460d-d6b9-4469-9e37-7a78a2266655",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.743+0000",
+                "updatedDate": "2019-10-15T03:32:42.743+0000"
+            },
+            "name": "National Library of Medicine classification",
+            "source": "folio"
+        },
+        {
+            "id": "512173a7-bd09-490e-b773-17d83f2b63fe",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.745+0000",
+                "updatedDate": "2019-10-15T03:32:42.745+0000"
+            },
+            "name": "LC Modified",
+            "source": "folio"
+        },
+        {
+            "id": "03dd64d0-5626-4ecd-8ece-4531e0069f35",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.749+0000",
+                "updatedDate": "2019-10-15T03:32:42.749+0000"
+            },
+            "name": "Dewey Decimal classification",
+            "source": "folio"
+        },
+        {
+            "id": "6caca63e-5651-4db6-9247-3205156e9699",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.749+0000",
+                "updatedDate": "2019-10-15T03:32:42.749+0000"
+            },
+            "name": "Other scheme",
+            "source": "folio"
+        },
+        {
+            "id": "fc388041-6cd0-4806-8a74-ebe3b9ab4c6e",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:42.749+0000",
+                "updatedDate": "2019-10-15T03:32:42.749+0000"
+            },
+            "name": "Superintendent of Documents classification",
+            "source": "folio"
+        }
+    ]
+}

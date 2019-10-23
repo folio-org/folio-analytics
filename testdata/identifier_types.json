@@ -1,0 +1,220 @@
+{
+    "identifierTypes": [
+        {
+            "id": "5069054d-bc3a-4212-a4e8-e2013a02386f",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.231+0000",
+                "updatedDate": "2019-10-15T03:32:39.231+0000"
+            },
+            "name": "Cancelled GPO item number",
+            "source": "folio"
+        },
+        {
+            "id": "650ef996-35e3-48ec-bf3a-a0d078a0ca37",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.243+0000",
+                "updatedDate": "2019-10-15T03:32:39.243+0000"
+            },
+            "name": "UkMac",
+            "source": "folio"
+        },
+        {
+            "id": "913300b2-03ed-469a-8179-c1092c991227",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.246+0000",
+                "updatedDate": "2019-10-15T03:32:39.246+0000"
+            },
+            "name": "ISSN",
+            "source": "folio"
+        },
+        {
+            "id": "37b65e79-0392-450d-adc6-e2a1f47de452",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.245+0000",
+                "updatedDate": "2019-10-15T03:32:39.245+0000"
+            },
+            "name": "Report number",
+            "source": "folio"
+        },
+        {
+            "id": "5130aed5-1095-4fb6-8f6f-caa3d6cc7aae",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.247+0000",
+                "updatedDate": "2019-10-15T03:32:39.247+0000"
+            },
+            "name": "Local identifier",
+            "source": "folio"
+        },
+        {
+            "id": "351ebc1c-3aae-4825-8765-c6d50dbf011f",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.250+0000",
+                "updatedDate": "2019-10-15T03:32:39.250+0000"
+            },
+            "name": "GPO item number",
+            "source": "folio"
+        },
+        {
+            "id": "27fd35a6-b8f6-41f2-aa0e-9c663ceb250c",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.259+0000",
+                "updatedDate": "2019-10-15T03:32:39.259+0000"
+            },
+            "name": "Invalid ISSN",
+            "source": "folio"
+        },
+        {
+            "id": "593b78cb-32f3-44d1-ba8c-63fd5e6989e6",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.260+0000",
+                "updatedDate": "2019-10-15T03:32:39.260+0000"
+            },
+            "name": "CODEN",
+            "source": "folio"
+        },
+        {
+            "id": "3187432f-9434-40a8-8782-35a111a1491e",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.261+0000",
+                "updatedDate": "2019-10-15T03:32:39.261+0000"
+            },
+            "name": "BNB",
+            "source": "folio"
+        },
+        {
+            "id": "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.262+0000",
+                "updatedDate": "2019-10-15T03:32:39.262+0000"
+            },
+            "name": "Other standard identifier",
+            "source": "folio"
+        },
+        {
+            "id": "39554f54-d0bb-4f0a-89a4-e422f6136316",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.263+0000",
+                "updatedDate": "2019-10-15T03:32:39.263+0000"
+            },
+            "name": "DOI",
+            "source": "folio"
+        },
+        {
+            "id": "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.274+0000",
+                "updatedDate": "2019-10-15T03:32:39.274+0000"
+            },
+            "name": "OCLC",
+            "source": "folio"
+        },
+        {
+            "id": "8e3dd25e-db82-4b06-8311-90d41998c109",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.276+0000",
+                "updatedDate": "2019-10-15T03:32:39.276+0000"
+            },
+            "name": "Standard technical report number",
+            "source": "folio"
+        },
+        {
+            "id": "216b156b-215e-4839-a53e-ade35cb5702a",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.277+0000",
+                "updatedDate": "2019-10-15T03:32:39.277+0000"
+            },
+            "name": "Handle",
+            "source": "folio"
+        },
+        {
+            "id": "5860f255-a27f-4916-a830-262aa900a6b9",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.278+0000",
+                "updatedDate": "2019-10-15T03:32:39.278+0000"
+            },
+            "name": "Linking ISSN",
+            "source": "folio"
+        },
+        {
+            "id": "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.279+0000",
+                "updatedDate": "2019-10-15T03:32:39.279+0000"
+            },
+            "name": "Control number",
+            "source": "folio"
+        },
+        {
+            "id": "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.290+0000",
+                "updatedDate": "2019-10-15T03:32:39.290+0000"
+            },
+            "name": "System control number",
+            "source": "folio"
+        },
+        {
+            "id": "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.291+0000",
+                "updatedDate": "2019-10-15T03:32:39.291+0000"
+            },
+            "name": "Publisher or distributor number",
+            "source": "folio"
+        },
+        {
+            "id": "fcca2643-406a-482a-b760-7a7f8aec640e",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.292+0000",
+                "updatedDate": "2019-10-15T03:32:39.292+0000"
+            },
+            "name": "Invalid ISBN",
+            "source": "folio"
+        },
+        {
+            "id": "7f907515-a1bf-4513-8a38-92e1a07c539d",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.293+0000",
+                "updatedDate": "2019-10-15T03:32:39.293+0000"
+            },
+            "name": "ASIN",
+            "source": "folio"
+        },
+        {
+            "id": "eb7b2717-f149-4fec-81a3-deefb8f5ee6b",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.294+0000",
+                "updatedDate": "2019-10-15T03:32:39.294+0000"
+            },
+            "name": "URN",
+            "source": "folio"
+        },
+        {
+            "id": "c858e4f2-2b6b-4385-842b-60732ee14abb",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.304+0000",
+                "updatedDate": "2019-10-15T03:32:39.304+0000"
+            },
+            "name": "LCCN",
+            "source": "folio"
+        },
+        {
+            "id": "3fbacad6-0240-4823-bce8-bb122cfdf229",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.305+0000",
+                "updatedDate": "2019-10-15T03:32:39.305+0000"
+            },
+            "name": "StEdNL",
+            "source": "folio"
+        },
+        {
+            "id": "8261054f-be78-422d-bd51-4ed9f33c3422",
+            "metadata": {
+                "createdDate": "2019-10-15T03:32:39.307+0000",
+                "updatedDate": "2019-10-15T03:32:39.307+0000"
+            },
+            "name": "ISBN",
+            "source": "folio"
+        }
+    ]
+}
