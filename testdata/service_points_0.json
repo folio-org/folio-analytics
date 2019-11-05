@@ -1,0 +1,46 @@
+{
+  "servicepoints" : [ {
+    "id" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "name" : "Circ Desk 1",
+    "code" : "cd1",
+    "discoveryDisplayName" : "Circulation Desk -- Hallway",
+    "pickupLocation" : true,
+    "holdShelfExpiryPeriod" : {
+      "duration" : 3,
+      "intervalId" : "Weeks"
+    },
+    "staffSlips" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:58.872+0000",
+      "updatedDate" : "2019-11-05T03:33:58.872+0000"
+    }
+  }, {
+    "id" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+    "name" : "Online",
+    "code" : "Online",
+    "discoveryDisplayName" : "Online",
+    "shelvingLagTime" : 0,
+    "pickupLocation" : false,
+    "staffSlips" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:58.872+0000",
+      "updatedDate" : "2019-11-05T03:33:58.872+0000"
+    }
+  }, {
+    "id" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "name" : "Circ Desk 2",
+    "code" : "cd2",
+    "discoveryDisplayName" : "Circulation Desk -- Back Entrance",
+    "pickupLocation" : true,
+    "holdShelfExpiryPeriod" : {
+      "duration" : 5,
+      "intervalId" : "Days"
+    },
+    "staffSlips" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:58.871+0000",
+      "updatedDate" : "2019-11-05T03:33:58.871+0000"
+    }
+  } ],
+  "totalRecords" : 3
+}

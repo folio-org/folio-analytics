@@ -1,0 +1,196 @@
+{
+  "identifierTypes" : [ {
+    "id" : "216b156b-215e-4839-a53e-ade35cb5702a",
+    "name" : "Handle",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.352+0000",
+      "updatedDate" : "2019-11-05T03:33:57.352+0000"
+    }
+  }, {
+    "id" : "27fd35a6-b8f6-41f2-aa0e-9c663ceb250c",
+    "name" : "Invalid ISSN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.341+0000",
+      "updatedDate" : "2019-11-05T03:33:57.341+0000"
+    }
+  }, {
+    "id" : "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5",
+    "name" : "Other standard identifier",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.345+0000",
+      "updatedDate" : "2019-11-05T03:33:57.345+0000"
+    }
+  }, {
+    "id" : "3187432f-9434-40a8-8782-35a111a1491e",
+    "name" : "BNB",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.342+0000",
+      "updatedDate" : "2019-11-05T03:33:57.342+0000"
+    }
+  }, {
+    "id" : "351ebc1c-3aae-4825-8765-c6d50dbf011f",
+    "name" : "GPO item number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.340+0000",
+      "updatedDate" : "2019-11-05T03:33:57.340+0000"
+    }
+  }, {
+    "id" : "37b65e79-0392-450d-adc6-e2a1f47de452",
+    "name" : "Report number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.332+0000",
+      "updatedDate" : "2019-11-05T03:33:57.332+0000"
+    }
+  }, {
+    "id" : "39554f54-d0bb-4f0a-89a4-e422f6136316",
+    "name" : "DOI",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.349+0000",
+      "updatedDate" : "2019-11-05T03:33:57.349+0000"
+    }
+  }, {
+    "id" : "3fbacad6-0240-4823-bce8-bb122cfdf229",
+    "name" : "StEdNL",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.384+0000",
+      "updatedDate" : "2019-11-05T03:33:57.384+0000"
+    }
+  }, {
+    "id" : "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef",
+    "name" : "OCLC",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.353+0000",
+      "updatedDate" : "2019-11-05T03:33:57.353+0000"
+    }
+  }, {
+    "id" : "5069054d-bc3a-4212-a4e8-e2013a02386f",
+    "name" : "Cancelled GPO item number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.327+0000",
+      "updatedDate" : "2019-11-05T03:33:57.327+0000"
+    }
+  }, {
+    "id" : "5130aed5-1095-4fb6-8f6f-caa3d6cc7aae",
+    "name" : "Local identifier",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.326+0000",
+      "updatedDate" : "2019-11-05T03:33:57.326+0000"
+    }
+  }, {
+    "id" : "5860f255-a27f-4916-a830-262aa900a6b9",
+    "name" : "Linking ISSN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.354+0000",
+      "updatedDate" : "2019-11-05T03:33:57.354+0000"
+    }
+  }, {
+    "id" : "593b78cb-32f3-44d1-ba8c-63fd5e6989e6",
+    "name" : "CODEN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.336+0000",
+      "updatedDate" : "2019-11-05T03:33:57.336+0000"
+    }
+  }, {
+    "id" : "5d164f4b-0b15-4e42-ae75-cfcf85318ad9",
+    "name" : "Control number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.362+0000",
+      "updatedDate" : "2019-11-05T03:33:57.362+0000"
+    }
+  }, {
+    "id" : "650ef996-35e3-48ec-bf3a-a0d078a0ca37",
+    "name" : "UkMac",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.321+0000",
+      "updatedDate" : "2019-11-05T03:33:57.321+0000"
+    }
+  }, {
+    "id" : "7e591197-f335-4afb-bc6d-a6d76ca3bace",
+    "name" : "System control number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.367+0000",
+      "updatedDate" : "2019-11-05T03:33:57.367+0000"
+    }
+  }, {
+    "id" : "7f907515-a1bf-4513-8a38-92e1a07c539d",
+    "name" : "ASIN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.368+0000",
+      "updatedDate" : "2019-11-05T03:33:57.368+0000"
+    }
+  }, {
+    "id" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "name" : "ISBN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.386+0000",
+      "updatedDate" : "2019-11-05T03:33:57.386+0000"
+    }
+  }, {
+    "id" : "8e3dd25e-db82-4b06-8311-90d41998c109",
+    "name" : "Standard technical report number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.358+0000",
+      "updatedDate" : "2019-11-05T03:33:57.358+0000"
+    }
+  }, {
+    "id" : "913300b2-03ed-469a-8179-c1092c991227",
+    "name" : "ISSN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.325+0000",
+      "updatedDate" : "2019-11-05T03:33:57.325+0000"
+    }
+  }, {
+    "id" : "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+    "name" : "Publisher or distributor number",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.366+0000",
+      "updatedDate" : "2019-11-05T03:33:57.366+0000"
+    }
+  }, {
+    "id" : "c858e4f2-2b6b-4385-842b-60732ee14abb",
+    "name" : "LCCN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.383+0000",
+      "updatedDate" : "2019-11-05T03:33:57.383+0000"
+    }
+  }, {
+    "id" : "eb7b2717-f149-4fec-81a3-deefb8f5ee6b",
+    "name" : "URN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.381+0000",
+      "updatedDate" : "2019-11-05T03:33:57.381+0000"
+    }
+  }, {
+    "id" : "fcca2643-406a-482a-b760-7a7f8aec640e",
+    "name" : "Invalid ISBN",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:33:57.376+0000",
+      "updatedDate" : "2019-11-05T03:33:57.376+0000"
+    }
+  } ],
+  "totalRecords" : 24
+}

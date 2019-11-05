@@ -1,0 +1,81 @@
+{
+  "loanPolicies" : [ {
+    "id" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "name" : "One Hour",
+    "loanable" : true,
+    "loansPolicy" : {
+      "profileId" : "Rolling",
+      "period" : {
+        "duration" : 1,
+        "intervalId" : "Hours"
+      },
+      "closedLibraryDueDateManagementId" : "CURRENT_DUE_DATE_TIME"
+    },
+    "renewable" : true,
+    "renewalsPolicy" : {
+      "unlimited" : false,
+      "numberAllowed" : 3.0,
+      "renewFromId" : "SYSTEM_DATE",
+      "differentPeriod" : false
+    }
+  }, {
+    "id" : "d9cd0bed-1b49-4b5e-a7bd-064b8d177231",
+    "name" : "Example Loan Policy",
+    "description" : "An example loan policy",
+    "loanable" : true,
+    "loansPolicy" : {
+      "profileId" : "Rolling",
+      "period" : {
+        "duration" : 60,
+        "intervalId" : "Days"
+      },
+      "closedLibraryDueDateManagementId" : "CURRENT_DUE_DATE",
+      "gracePeriod" : {
+        "duration" : 7,
+        "intervalId" : "Days"
+      }
+    },
+    "renewable" : true,
+    "renewalsPolicy" : {
+      "unlimited" : true,
+      "renewFromId" : "CURRENT_DUE_DATE",
+      "differentPeriod" : true,
+      "period" : {
+        "duration" : 30,
+        "intervalId" : "Days"
+      }
+    },
+    "requestManagement" : {
+      "recalls" : {
+        "minimumGuaranteedLoanPeriod" : {
+          "duration" : 30,
+          "intervalId" : "Days"
+        },
+        "recallReturnInterval" : {
+          "duration" : 5,
+          "intervalId" : "Days"
+        }
+      }
+    }
+  }, {
+    "id" : "f0464c54-05ae-44ed-b4b9-5b1375ac3c05",
+    "name" : "My test policy",
+    "loanable" : true,
+    "loansPolicy" : {
+      "profileId" : "Rolling",
+      "period" : {
+        "duration" : 3,
+        "intervalId" : "Days"
+      },
+      "closedLibraryDueDateManagementId" : "CURRENT_DUE_DATE"
+    },
+    "renewable" : false,
+    "metadata" : {
+      "createdDate" : "2019-11-05T09:04:16.372+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T09:05:35.475+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  } ],
+  "totalRecords" : 3
+}

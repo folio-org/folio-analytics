@@ -1,0 +1,316 @@
+{
+  "invoiceLines" : [ {
+    "id" : "0155fee2-9b2d-4020-9b91-060d0d102209",
+    "adjustments" : [ {
+      "description" : "Sales Tax",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Percentage",
+      "value" : 5.0
+    } ],
+    "adjustmentsTotal" : 100.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "UNIV-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08007",
+      "fundId" : "4428a37c-8bae-4f0d-865d-970d83d5ad55",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "859c2cd1-420a-4d3b-abbb-dfcb3a3087fd",
+    "invoiceLineNumber" : "123invoicenumber57-1",
+    "invoiceLineStatus" : "Reviewed",
+    "poLineId" : "90fb53f2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "productId" : "9780552142352",
+    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "quantity" : 4,
+    "releaseEncumbrance" : true,
+    "subTotal" : 2000.0,
+    "total" : 2100.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.770+0000",
+      "updatedDate" : "2019-11-05T03:35:11.770+0000"
+    }
+  }, {
+    "id" : "1bafe8ac-e7fd-437e-bfe6-4a94a01fb16e",
+    "adjustments" : [ {
+      "description" : "Service Fee",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : 5.0
+    } ],
+    "adjustmentsTotal" : 5.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "USHIST",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08005",
+      "fundId" : "65032151-39a5-4cef-8810-5350eb316300",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "6b8bc989-834d-4a14-945b-4c5442ae09af",
+    "invoiceLineNumber" : "12345-1",
+    "invoiceLineStatus" : "Paid",
+    "poLineId" : "852d0f06-290a-279c-92cf-aee87befc6be",
+    "productId" : "9781450351430",
+    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "quantity" : 1,
+    "releaseEncumbrance" : true,
+    "subTotal" : 20.0,
+    "total" : 25.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.803+0000",
+      "updatedDate" : "2019-11-05T03:35:11.803+0000"
+    }
+  }, {
+    "id" : "33dc5f4c-0387-4359-919b-9f654c757b54",
+    "adjustments" : [ {
+      "description" : "Shipping",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : 10.0
+    }, {
+      "description" : "Discount",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : -20.0
+    } ],
+    "adjustmentsTotal" : -10.0,
+    "description" : "With shipping",
+    "fundDistributions" : [ {
+      "code" : "STATE-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08011",
+      "fundId" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "38d25803-e6f8-497d-af62-3b0df46948ef",
+    "invoiceLineNumber" : "82912-1",
+    "invoiceLineStatus" : "Open",
+    "poLineId" : "abbd1cef-a8ee-3d07-93b2-71c1387e61b1",
+    "productId" : "9780866989732",
+    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "quantity" : 1,
+    "releaseEncumbrance" : true,
+    "subTotal" : 800.0,
+    "total" : 790.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.777+0000",
+      "updatedDate" : "2019-11-05T03:35:11.777+0000"
+    }
+  }, {
+    "id" : "48c217a2-29d9-48b2-a0c9-bcfb3859cbf0",
+    "adjustments" : [ ],
+    "adjustmentsTotal" : 0.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "GIFTS-ONE-TIME",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08016",
+      "fundId" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "07bb89be-dd4a-42f8-bbd0-a648e14bac5d",
+    "invoiceLineNumber" : "45723-1",
+    "invoiceLineStatus" : "Cancelled",
+    "poLineId" : "67df7bd0-ff70-2ad2-9162-54acb3e9180e",
+    "productId" : "5456",
+    "productIdType" : "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+    "quantity" : 1,
+    "releaseEncumbrance" : false,
+    "subTotal" : 3000.0,
+    "total" : 3000.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.774+0000",
+      "updatedDate" : "2019-11-05T03:35:11.774+0000"
+    }
+  }, {
+    "id" : "9b0b32e3-ef48-4bb8-91a5-750a850cc63c",
+    "adjustments" : [ {
+      "description" : "Discount",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : -200.0
+    } ],
+    "adjustmentsTotal" : -200.0,
+    "description" : "With shipping",
+    "fundDistributions" : [ {
+      "code" : "ENDOW-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08008",
+      "fundId" : "1714f71f-b845-444b-a79e-a577487a6f7d",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "40796c4a-ff0a-40ba-9a1d-c24c12dd4424",
+    "invoiceLineNumber" : "30121-1",
+    "invoiceLineStatus" : "Paid",
+    "poLineId" : "a0fb5514-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "productId" : "807922",
+    "productIdType" : "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+    "quantity" : 1,
+    "releaseEncumbrance" : false,
+    "subTotal" : 200000.0,
+    "total" : 199800.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.796+0000",
+      "updatedDate" : "2019-11-05T03:35:11.796+0000"
+    }
+  }, {
+    "id" : "b940547c-000f-4be0-a778-8f57f8794566",
+    "adjustments" : [ {
+      "description" : "Shipping",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : 10.0
+    } ],
+    "adjustmentsTotal" : 10.0,
+    "description" : "With shipping",
+    "fundDistributions" : [ {
+      "code" : "STATE-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08001",
+      "fundId" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "50129fe1-ca11-43be-a2dd-e1adfb0ead29",
+    "invoiceLineNumber" : "19284-1",
+    "invoiceLineStatus" : "Paid",
+    "poLineId" : "57ae37a8-dbfa-2e6f-aecd-dcc24d784b0b",
+    "productId" : "0956687695",
+    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "quantity" : 1,
+    "releaseEncumbrance" : false,
+    "subTotal" : 342.0,
+    "total" : 352.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.745+0000",
+      "updatedDate" : "2019-11-05T03:35:11.745+0000"
+    }
+  }, {
+    "id" : "c8e41fdc-ae66-44a1-a194-bed0066672b6",
+    "adjustments" : [ {
+      "description" : "Service Fee",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : 11.0
+    }, {
+      "description" : "Discount",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : -21.0
+    } ],
+    "adjustmentsTotal" : -10.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "UNIV-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08018",
+      "fundId" : "4428a37c-8bae-4f0d-865d-970d83d5ad55",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "733cafd3-895f-4e33-87b7-bf40dc3c8069",
+    "invoiceLineNumber" : "123invoicenumber45-1",
+    "invoiceLineStatus" : "Approved",
+    "poLineId" : "fe09e437-e487-1d59-bffb-dca466e3f2ef",
+    "productId" : "3257204",
+    "productIdType" : "b5d8cdc4-9441-487c-90cf-0c7ec97728eb",
+    "quantity" : 1,
+    "releaseEncumbrance" : true,
+    "subTotal" : 150.0,
+    "total" : 140.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.762+0000",
+      "updatedDate" : "2019-11-05T03:35:11.762+0000"
+    }
+  }, {
+    "id" : "e0d08448-343b-118a-8c2f-4fb50248d672",
+    "adjustments" : [ {
+      "description" : "Service Fee",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Amount",
+      "value" : 5.0
+    }, {
+      "description" : "Sales Tax",
+      "fundDistributions" : [ ],
+      "prorate" : "Not prorated",
+      "relationToTotal" : "In addition to",
+      "type" : "Percentage",
+      "value" : 5.0
+    } ],
+    "adjustmentsTotal" : 55.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "USHIST",
+      "encumbrance" : "1c8fc9f4-d2cc-4bd1-aa9a-cb02291cbe65",
+      "fundId" : "1d1574f1-9196-4a57-8d1f-3b2e4309eb81",
+      "distributionType" : "percentage",
+      "value" : 50.0
+    }, {
+      "code" : "EUHIST",
+      "encumbrance" : "5f9bfc74-f6ff-4877-be1f-793f8ce90ade",
+      "fundId" : "63157e96-0693-426d-b0df-948bacdfdb08",
+      "distributionType" : "percentage",
+      "value" : 50.0
+    } ],
+    "invoiceId" : "733cafd3-895f-4e33-87b7-bf40dc3c8069",
+    "invoiceLineNumber" : "123invoicenumber45-1",
+    "invoiceLineStatus" : "Approved",
+    "poLineId" : "90fb53f2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "productId" : "0552142352",
+    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+    "quantity" : 3,
+    "releaseEncumbrance" : false,
+    "subscriptionInfo" : "Subscription information",
+    "subscriptionStart" : "2018-08-01T00:00:00.000+0000",
+    "subscriptionEnd" : "2019-01-01T00:00:00.000+0000",
+    "subTotal" : 1000.0,
+    "total" : 1055.0,
+    "vendorRefNo" : "1",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.800+0000",
+      "updatedDate" : "2019-11-05T03:35:11.800+0000"
+    }
+  }, {
+    "id" : "ee60ee78-f487-4940-adcf-fa0726989823",
+    "adjustments" : [ ],
+    "adjustmentsTotal" : 0.0,
+    "description" : "Some description",
+    "fundDistributions" : [ {
+      "code" : "MISCHIST",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08015",
+      "fundId" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "invoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "invoiceLineNumber" : "10411-1",
+    "invoiceLineStatus" : "Paid",
+    "poLineId" : "c5ced39d-672f-3cba-a13a-ceb06a5d4c6b",
+    "quantity" : 1,
+    "releaseEncumbrance" : true,
+    "subTotal" : 75.0,
+    "total" : 75.0,
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:11.779+0000",
+      "updatedDate" : "2019-11-05T03:35:11.779+0000"
+    }
+  } ],
+  "totalRecords" : 9
+}

@@ -1,0 +1,390 @@
+{
+  "purchaseOrders" : [ {
+    "id" : "05bdf3c8-01f0-4ddb-bd6c-6efd465f9e33",
+    "approved" : false,
+    "dateOrdered" : "2018-07-24T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ "DVD plus 3 years streaming" ],
+    "poNumber" : "313000",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "c0fb5956-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ "0ebb1f7d-983f-3026-8a4c-5318e0ebc041" ]
+  }, {
+    "id" : "0610be6d-0ddd-494b-b867-19f63d8b5d6d",
+    "approved" : false,
+    "manualPo" : false,
+    "notes" : [ "2 titles received: Publication and London topographical record" ],
+    "poNumber" : "52590",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "f0fb6130-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "07f65192-44a4-483d-97aa-b137bbd96390",
+    "approved" : false,
+    "closeReason" : {
+      "reason" : "Complete"
+    },
+    "dateOrdered" : "2018-07-24T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "S60402",
+    "orderType" : "Ongoing",
+    "reEncumber" : false,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : true,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Closed",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "1ca2c51d-08eb-4809-b01f-778fb7dbb9b0",
+    "approved" : false,
+    "approvedById" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+    "approvalDate" : "2019-11-05T14:10:36.670+0000",
+    "dateOrdered" : "2019-11-05T14:10:36.670+0000",
+    "notes" : [ ],
+    "poNumber" : "10020",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "template" : "c1d7f8ec-25c2-4dd4-b0d5-dee90192d43e",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "requests_order" ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:10:29.011+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:10:37.086+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "1cdb8431-2ab3-4671-983f-2ad904260e4f",
+    "approved" : false,
+    "notes" : [ ],
+    "poNumber" : "10018",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "template" : "c1d7f8ec-25c2-4dd4-b0d5-dee90192d43e",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:08:34.577+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:10:16.799+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "1d6a455f-29c5-4e51-84d9-e28450ef86ad",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2019-05-17T00:00:00.000+0000",
+    "closeReason" : {
+      "reason" : "Complete"
+    },
+    "dateOrdered" : "2019-05-17T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "36547",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "13fb64dc-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Closed",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "259241a0-7507-406d-af23-2166f81ffb41",
+    "approved" : true,
+    "approvedById" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+    "approvalDate" : "2019-11-05T13:41:09.690+0000",
+    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
+    "dateOrdered" : "2019-11-05T13:41:09.690+0000",
+    "notes" : [ "Check credit card statement to make sure payment shows up" ],
+    "poNumber" : "10013",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
+    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "amazon" ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T13:40:20.232+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T13:41:09.963+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "54f75994-0b28-40d1-af63-fbac4bf358cf",
+    "approved" : false,
+    "approvedById" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+    "approvalDate" : "2019-11-05T14:16:42.553+0000",
+    "dateOrdered" : "2019-11-05T14:16:42.553+0000",
+    "notes" : [ ],
+    "poNumber" : "10022",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "template" : "c1d7f8ec-25c2-4dd4-b0d5-dee90192d43e",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "requests_order" ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:16:34.066+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:16:42.611+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "55b97a4a-6601-4488-84e1-8b0d47a3f523",
+    "approved" : false,
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "101113",
+    "orderType" : "Ongoing",
+    "reEncumber" : false,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : false,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "d0fb5aa0-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "589a6016-3463-49f6-8aa2-dc315d0665fd",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2018-07-30T00:00:00.000+0000",
+    "manualPo" : true,
+    "notes" : [ ],
+    "poNumber" : "101101",
+    "orderType" : "Ongoing",
+    "reEncumber" : false,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : true,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "14fb6608-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "8c328a18-5761-4329-95f6-599412c32310",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2018-07-23T00:00:00.000+0000",
+    "dateOrdered" : "2018-07-24T00:00:00.000+0000",
+    "manualPo" : true,
+    "notes" : [ ],
+    "poNumber" : "14383007",
+    "orderType" : "Ongoing",
+    "reEncumber" : false,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : true,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "15fb695a-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "9447d062-89ec-486e-a14b-572f3efb9f8c",
+    "approved" : false,
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "101125",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "13fb64dc-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "c27e60f9-6361-44c1-976e-0c4821a33a7d",
+    "approved" : false,
+    "manualPo" : true,
+    "notes" : [ "Cataloging record service" ],
+    "poNumber" : "38434",
+    "orderType" : "Ongoing",
+    "reEncumber" : true,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : true,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "c9937e06-236c-4e19-b75e-efeceabc7c74",
+    "approved" : true,
+    "approvedById" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+    "approvalDate" : "2019-11-05T14:50:19.920+0000",
+    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
+    "dateOrdered" : "2019-11-05T14:50:19.920+0000",
+    "notes" : [ "Check credit card statement to make sure payment shows up" ],
+    "poNumber" : "10032",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
+    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "amazon" ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:47:58.670+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:50:20.160+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "cf4bfd64-e609-4ecb-b3e6-7a5a1ced1645",
+    "approved" : false,
+    "manualPo" : false,
+    "notes" : [ "DVD plus 3 years streaming" ],
+    "poNumber" : "313110",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "c0fb5956-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Pending",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "dfdda986-98f5-4fcc-947d-1e91afbc0b8f",
+    "approved" : false,
+    "approvedById" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+    "approvalDate" : "2019-11-05T13:32:07.281+0000",
+    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
+    "dateOrdered" : "2019-11-05T13:32:07.281+0000",
+    "notes" : [ "Check credit card statement to make sure payment shows up" ],
+    "poNumber" : "10012",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
+    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
+    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "amazon" ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-05T13:31:21.496+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T13:32:07.665+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "e20af8c8-b07d-47a1-9ebd-f1187e9335bd",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2018-06-18T00:00:00.000+0000",
+    "closeReason" : {
+      "reason" : "Low quality"
+    },
+    "dateOrdered" : "2018-06-20T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ "CAC one time funding proposal by Bob Barker" ],
+    "poNumber" : "306251",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "11fb627a-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Closed",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "e41e0161-2bc6-41f3-a6e7-34fc13250bf1",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2018-07-24T00:00:00.000+0000",
+    "dateOrdered" : "2018-07-24T00:00:00.000+0000",
+    "manualPo" : true,
+    "notes" : [ "Published twice a year" ],
+    "poNumber" : "306857",
+    "orderType" : "Ongoing",
+    "reEncumber" : true,
+    "renewal" : {
+      "cycle" : "6 Months",
+      "interval" : 182,
+      "manualRenewal" : false,
+      "reviewPeriod" : 30,
+      "renewalDate" : "2019-04-09T00:00:00.000+0000"
+    },
+    "vendor" : "50fb6ae0-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "e5ae4afd-3fa9-494e-a972-f541df9b877e",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2014-07-09T00:00:00.000+0000",
+    "closeReason" : {
+      "reason" : "Complete"
+    },
+    "dateOrdered" : "2014-07-10T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "268879",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "60fb4bfa-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Closed",
+    "acqUnitIds" : [ ]
+  }, {
+    "id" : "efff3ffe-5469-1f8f-aa3a-7afc933f9eff",
+    "approved" : true,
+    "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
+    "approvalDate" : "2018-06-29T00:00:00.000+0000",
+    "dateOrdered" : "2018-06-30T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ ],
+    "poNumber" : "268758",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "15fb695a-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ],
+    "tags" : {
+      "tagList" : [ "important" ]
+    }
+  }, {
+    "id" : "f4dc647c-ec82-442e-b13d-f9505b7ce8e9",
+    "approved" : false,
+    "dateOrdered" : "2018-07-14T00:00:00.000+0000",
+    "manualPo" : false,
+    "notes" : [ "DXiao", "DHalling", "Mary Ann Barker barker@tamu.edu", "Licensing <1-year streaming license>" ],
+    "poNumber" : "312325",
+    "orderType" : "One-Time",
+    "reEncumber" : false,
+    "vendor" : "c0fb5956-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "workflowStatus" : "Open",
+    "acqUnitIds" : [ ]
+  } ],
+  "totalRecords" : 21
+}

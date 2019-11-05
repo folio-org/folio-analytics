@@ -1,0 +1,31 @@
+{
+  "fiscalYears" : [ {
+    "id" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "acqUnitIds" : [ ],
+    "name" : "Fiscal Year 2019",
+    "code" : "FY2019",
+    "description" : "Fiscal year for 2019",
+    "periodStart" : "2019-01-01T00:00:00.000+0000",
+    "periodEnd" : "2019-12-31T23:59:59.000+0000",
+    "series" : "FY",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:06.860+0000",
+      "updatedDate" : "2019-11-05T03:35:06.860+0000"
+    }
+  }, {
+    "id" : "8da275b8-e099-49a1-9a31-b8241ff26ffc",
+    "acqUnitIds" : [ ],
+    "name" : "FY18",
+    "code" : "FY2018",
+    "currency" : "USD",
+    "description" : "Fiscal year 2018-2019",
+    "periodStart" : "2018-01-01T00:00:00.000+0000",
+    "periodEnd" : "2018-12-31T23:59:59.000+0000",
+    "series" : "FY",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:35:06.858+0000",
+      "updatedDate" : "2019-11-05T03:35:06.858+0000"
+    }
+  } ],
+  "totalRecords" : 2
+}

@@ -1,0 +1,280 @@
+{
+  "requests" : [ {
+    "id" : "1aa17867-54e5-4209-88eb-fefc139dc1fc",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:18:15.000+0000",
+    "requesterId" : "acf8aab2-91ee-4210-bb7c-b688d66a9de4",
+    "itemId" : "bc90a3c9-26c9-4519-96bc-d9d44995afef",
+    "status" : "Open - Not yet filled",
+    "position" : 2,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14811392695"
+    },
+    "requester" : {
+      "firstName" : "Maximo",
+      "lastName" : "Koelpin",
+      "middleName" : "Jacquelyn",
+      "barcode" : "184798638159936"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:18:30.715+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:18:30.737+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "1d031d26-37a9-49a8-b69f-e0bfd3661571",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:13:48.000+0000",
+    "requesterId" : "71104d8e-a11c-4296-8b0d-1dbac453eb03",
+    "itemId" : "0c54cfe6-9ef7-4ae9-8650-b76b9ee47f91",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
+      "barcode" : "barcode3"
+    },
+    "requester" : {
+      "firstName" : "Olivia",
+      "lastName" : "Brown",
+      "barcode" : "1572925368182"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:13:49.157+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:13:49.174+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "32ed18cc-b451-467f-b6d3-e6da8c0f0bd5",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T03:48:17.000+0000",
+    "requesterId" : "16757efe-86ac-40bb-bdd6-fafee02463c7",
+    "itemId" : "3048456a-2d3e-48ca-9f3e-2d01d83fcefc",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Request title",
+      "barcode" : "157292536817450622"
+    },
+    "requester" : {
+      "firstName" : "Dagmar",
+      "lastName" : "Borer",
+      "barcode" : "509575459201574"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "metadata" : {
+      "createdDate" : "2019-11-05T03:48:18.197+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T03:48:18.225+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "5f3db846-553e-4274-a3a6-0e814b7c1de2",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:27:23.000+0000",
+    "requesterId" : "ffce08d4-c08d-4ff8-8ff8-060a5015aa2a",
+    "itemId" : "9428231b-dd31-4f70-8406-fe22fbdeabc2",
+    "status" : "Open - Not yet filled",
+    "position" : 3,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14837334314"
+    },
+    "requester" : {
+      "firstName" : "Hildegard",
+      "lastName" : "Donnelly",
+      "barcode" : "851232198188977"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:27:38.306+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:27:38.324+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "88912023-aa82-439d-9ec9-4cf91583ae5c",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:15:47.000+0000",
+    "requesterId" : "bc048122-1914-4971-ab0f-62303fef71aa",
+    "itemId" : "61bebfe2-cdac-479d-ae07-ad5ab27c9682",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+    },
+    "requester" : {
+      "firstName" : "Jolie",
+      "lastName" : "Koss",
+      "barcode" : "962507858300576"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:15:48.005+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:15:48.026+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "9247c647-37cb-4931-82b8-a8ac46d37ad3",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:13:30.000+0000",
+    "requesterId" : "16757efe-86ac-40bb-bdd6-fafee02463c7",
+    "itemId" : "faf5c7b8-2e7b-4756-a82c-50f046bc4c9e",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
+      "barcode" : "bardcode1"
+    },
+    "requester" : {
+      "firstName" : "Dagmar",
+      "lastName" : "Borer",
+      "barcode" : "509575459201574"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:13:30.916+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:13:30.938+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "97290d5a-5036-423f-8b63-e9e7d79ed5ba",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:18:26.000+0000",
+    "requesterId" : "975256dc-abdc-45d1-b51a-f9f9ca15a491",
+    "itemId" : "de434038-6d6e-4072-b811-e79faa4992b7",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+    },
+    "requester" : {
+      "firstName" : "Ryann",
+      "lastName" : "Kulas",
+      "middleName" : "Mayra",
+      "barcode" : "375669381232857"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:18:27.178+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:18:27.196+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "a21ee6b1-8e92-444d-b6ca-da9cb55df3ff",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:26:37.000+0000",
+    "requesterId" : "e546d50a-926a-421f-8400-a041a2e9db79",
+    "itemId" : "9428231b-dd31-4f70-8406-fe22fbdeabc2",
+    "status" : "Open - Not yet filled",
+    "position" : 4,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14837334314"
+    },
+    "requester" : {
+      "firstName" : "Name",
+      "lastName" : "Will",
+      "middleName" : "Jettie",
+      "barcode" : "40187925817754"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:26:51.851+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:26:51.888+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "a65a9168-e876-43ff-9a64-d86ca6569973",
+    "requestType" : "Page",
+    "requestDate" : "2019-11-05T09:21:54.000+0000",
+    "requesterId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "itemId" : "9428231b-dd31-4f70-8406-fe22fbdeabc2",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14837334314"
+    },
+    "requester" : {
+      "firstName" : "Jazmin",
+      "lastName" : "Becker",
+      "barcode" : "194710970216014"
+    },
+    "fulfilmentPreference" : "Delivery",
+    "deliveryAddressTypeId" : "1c4b225f-f669-4e9b-afcd-ebc0e273a34e",
+    "metadata" : {
+      "createdDate" : "2019-11-05T09:21:55.090+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T09:21:55.114+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "ba9786a4-0dd7-4017-9f42-ed9b6baf36d0",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-05T14:25:44.000+0000",
+    "requesterId" : "259d55dc-015d-420a-b13d-8706018305b1",
+    "itemId" : "9428231b-dd31-4f70-8406-fe22fbdeabc2",
+    "status" : "Open - Not yet filled",
+    "position" : 2,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14837334314"
+    },
+    "requester" : {
+      "firstName" : "Sherman",
+      "lastName" : "Mraz",
+      "barcode" : "696296117207797"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
+    "metadata" : {
+      "createdDate" : "2019-11-05T14:25:59.419+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T14:25:59.440+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  }, {
+    "id" : "d4cd1b10-d663-47f0-a268-3afb9a550691",
+    "requestType" : "Page",
+    "requestDate" : "2019-11-05T09:23:03.000+0000",
+    "requesterId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "itemId" : "bc90a3c9-26c9-4519-96bc-d9d44995afef",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "ABA Journal",
+      "barcode" : "A14811392695"
+    },
+    "requester" : {
+      "firstName" : "Jazmin",
+      "lastName" : "Becker",
+      "barcode" : "194710970216014"
+    },
+    "fulfilmentPreference" : "Delivery",
+    "deliveryAddressTypeId" : "1c4b225f-f669-4e9b-afcd-ebc0e273a34e",
+    "metadata" : {
+      "createdDate" : "2019-11-05T09:23:04.513+0000",
+      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
+      "updatedDate" : "2019-11-05T09:23:04.535+0000",
+      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+    }
+  } ],
+  "totalRecords" : 11
+}
