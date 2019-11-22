@@ -1,0 +1,115 @@
+{
+  "transactions" : [ {
+    "id" : "1ee8204a-f0d9-4980-881e-8edb0d3ad69a",
+    "amount" : 86.0,
+    "currency" : "USD",
+    "description" : "PO_Line: History of Incas",
+    "encumbrance" : {
+      "amountAwaitingPayment" : 90.0,
+      "amountExpended" : 74.0,
+      "initialAmountEncumbered" : 250.0,
+      "status" : "Unreleased",
+      "orderType" : "One-Time",
+      "subscription" : false,
+      "reEncumber" : false,
+      "sourcePurchaseOrderId" : "e5ae4afd-3fa9-494e-a972-f541df9b877e",
+      "sourcePoLineId" : "c5ced39d-672f-3cba-a13a-ceb06a5d4c6b"
+    },
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "fromFundId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "paymentEncumbranceId" : "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+    "source" : "Voucher",
+    "sourceFiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "sourceInvoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "tags" : {
+      "tagList" : [ "important" ]
+    },
+    "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "transactionType" : "Encumbrance",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:35:53.401+0000",
+      "updatedDate" : "2019-11-22T03:35:53.401+0000"
+    }
+  }, {
+    "id" : "21425789-acdb-44b2-b44f-f2291cc48b42",
+    "amount" : 25.0,
+    "currency" : "USD",
+    "description" : "PO_Line: History of Incas",
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "fromFundId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "paymentEncumbranceId" : "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+    "source" : "Voucher",
+    "sourceFiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "sourceInvoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "sourceInvoiceLineId" : "ee60ee78-f487-4940-adcf-fa0726989823",
+    "tags" : {
+      "tagList" : [ "important" ]
+    },
+    "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "transactionType" : "Credit",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:35:53.395+0000",
+      "updatedDate" : "2019-11-22T03:35:53.395+0000"
+    }
+  }, {
+    "id" : "a0b1e290-c42f-435a-b9d7-4ae7f77eb4ef",
+    "amount" : 25.17,
+    "currency" : "USD",
+    "description" : "PO_Line: History of Incas",
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "fromFundId" : "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+    "paymentEncumbranceId" : "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+    "source" : "Voucher",
+    "sourceFiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "sourceInvoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "tags" : {
+      "tagList" : [ "important" ]
+    },
+    "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "transactionType" : "Allocation",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:35:53.397+0000",
+      "updatedDate" : "2019-11-22T03:35:53.397+0000"
+    }
+  }, {
+    "id" : "a4780d61-e9c7-4206-b203-a8b22a6d5c38",
+    "amount" : 25.0,
+    "currency" : "USD",
+    "description" : "PO_Line: History of Incas",
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "paymentEncumbranceId" : "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+    "source" : "Voucher",
+    "sourceFiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "sourceInvoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "sourceInvoiceLineId" : "ee60ee78-f487-4940-adcf-fa0726989823",
+    "tags" : {
+      "tagList" : [ "important" ]
+    },
+    "transactionType" : "Payment",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:35:53.400+0000",
+      "updatedDate" : "2019-11-22T03:35:53.400+0000"
+    }
+  }, {
+    "id" : "e24d0bae-0528-403d-8ce2-0d821a6e57e7",
+    "amount" : 25.0,
+    "currency" : "USD",
+    "description" : "PO_Line: History of Incas",
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "fromFundId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "paymentEncumbranceId" : "80c28fb4-c34e-48d6-b8c2-de6660c3e0aa",
+    "source" : "Voucher",
+    "sourceFiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "sourceInvoiceId" : "041c1fe8-adfa-44eb-b6b3-f85acdd71f81",
+    "tags" : {
+      "tagList" : [ "important" ]
+    },
+    "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "transactionType" : "Transfer",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:35:53.398+0000",
+      "updatedDate" : "2019-11-22T03:35:53.398+0000"
+    }
+  } ],
+  "totalRecords" : 5
+}

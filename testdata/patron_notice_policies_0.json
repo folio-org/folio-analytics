@@ -1,0 +1,12 @@
+{
+  "patronNoticePolicies" : [ {
+    "id" : "122b3d2b-4788-4f1e-9117-56daa91cb75c",
+    "name" : "Send No Notices",
+    "description" : "A basic notice policy that does not define any notices",
+    "active" : true,
+    "loanNotices" : [ ],
+    "feeFineNotices" : [ ],
+    "requestNotices" : [ ]
+  } ],
+  "totalRecords" : 1
+}
