@@ -1,0 +1,658 @@
+{
+  "loans" : [ {
+    "id" : "0bab56e5-1ab6-4ac2-afdf-8b2df0434378",
+    "userId" : "ab579dc3-219b-4f5b-8068-ab1c7a55c402",
+    "proxyUserId" : "a13dda6b-51ce-4543-be9c-eff894c0c2d0",
+    "itemId" : "459afaba-5b39-468d-9072-eb1685e0ddf4",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2017-02-03T08:43:15Z",
+    "dueDate" : "2017-02-17T08:43:15.000+0000",
+    "returnDate" : "2017-03-01T11:35:12Z",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "renewalCount" : 0
+  }, {
+    "id" : "1f3691ae-b770-471d-98c2-1317e85636d5",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "d68bf85d-943e-4a44-9db5-3f041e80085e",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:00Z",
+    "dueDate" : "2019-11-22T04:47:00.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:01.070+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:01.070+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+    "userId" : "9ad09b01-7429-455f-9f64-e3897027db61",
+    "itemId" : "23fdb0bc-ab58-442a-b326-577a96204487",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2017-03-05T18:32:31Z",
+    "dueDate" : "2017-03-19T18:32:31.000+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "renewalCount" : 0
+  }, {
+    "id" : "2ba4e311-c5cf-4bb4-b6c8-57e86b8b4eca",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "9fea1167-f287-41e6-ba2a-6efb52477380",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:57Z",
+    "dueDate" : "2019-11-22T04:46:57.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:58.494+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:58.494+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "3fd2d7aa-a6fe-4794-9d34-837a6bd31a8b",
+    "userId" : "ab579dc3-219b-4f5b-8068-ab1c7a55c402",
+    "itemId" : "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-01-05T12:42:21Z",
+    "dueDate" : "2017-01-19T12:42:21.000+0000",
+    "action" : "holdrequested",
+    "itemStatus" : "Checked out"
+  }, {
+    "id" : "40f5e9d9-38ac-458e-ade7-7795bd821652",
+    "userId" : "47f7eaea-1a18-4058-907c-62b7d095c61b",
+    "itemId" : "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-03-05T18:32:31Z",
+    "dueDate" : "2017-03-19T18:32:31.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "renewalCount" : 0
+  }, {
+    "id" : "5d6856c0-4366-4def-a646-b13c1f60c0e3",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "784d0c19-b6eb-46e3-8637-5334f823d6f3",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:07Z",
+    "dueDate" : "2019-11-22T04:47:07.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:07.799+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:07.799+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "6b9e5eb3-7655-4e9d-a1c5-fa12dbbb8320",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "7943ddda-1519-4552-b514-4e8ca7fa1fbe",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:05Z",
+    "dueDate" : "2019-11-22T04:47:05.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:06.370+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:06.370+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "6c052868-109d-45d6-a1d1-59c8027c93b3",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "3a151314-1eec-4efd-ab3c-39875495b448",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:53Z",
+    "dueDate" : "2019-11-22T04:46:53.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:53.680+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:53.680+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "6f62dbf4-383f-4740-bd4f-e29aeeefe032",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "b0f2218f-a8bf-43ac-bb42-4475004159b0",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:50Z",
+    "dueDate" : "2019-11-22T04:46:50.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:51.476+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:51.476+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "73daa177-4d15-4467-bd3f-6d3700198e62",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "b10da77a-d30a-41a2-8ae9-a714a03f01bb",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:13Z",
+    "dueDate" : "2019-11-22T04:47:13.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:13.745+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:13.745+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "75e8a35b-5cbf-4316-82d1-06bc8e51ffb5",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "c344d67e-82af-4ccc-8487-522beda342d2",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:18Z",
+    "dueDate" : "2019-11-22T04:47:18.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:18.945+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:18.945+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "7a327c16-8443-4cb2-9d24-490f37f39cf9",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "60bbf7ed-9d33-40f9-9c51-8fcc8547232f",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:04Z",
+    "dueDate" : "2019-11-22T04:47:04.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:05.030+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:05.030+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "7ba8462c-958c-4ef9-a84e-da5848303796",
+    "userId" : "a5fb6646-3e42-46ed-b686-e009e1490d2c",
+    "itemId" : "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T10:51:05Z",
+    "dueDate" : "2019-11-22T11:51:05.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "3684a786-6671-4268-8ed0-9db82ebca60b",
+    "metadata" : {
+      "createdDate" : "2019-11-22T10:51:06.362+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T10:51:06.362+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "7e26dfa5-0ed3-48c5-a928-f1639cb014e3",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "cc0cd960-ee94-42c3-9312-cf4dc8bb54ef",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:10Z",
+    "dueDate" : "2019-11-22T04:47:10.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:10.703+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:10.703+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "7fd30990-0b83-4ff9-bbd4-46e06af63140",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "0bab2570-348e-49ff-b1d2-4425d33b3931",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:52Z",
+    "dueDate" : "2019-11-22T04:46:52.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:52.542+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:52.542+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "901c5b6e-c6a3-4308-894a-7cd9fd359440",
+    "userId" : "e546d50a-926a-421f-8400-a041a2e9db79",
+    "itemId" : "100d10bf-2f06-4aa0-be15-0b95b2d9f9e3",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T14:25:55Z",
+    "dueDate" : "2019-11-22T15:25:55.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "3684a786-6671-4268-8ed0-9db82ebca60b",
+    "metadata" : {
+      "createdDate" : "2019-11-22T14:25:56.047+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T14:25:56.047+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "959f65f6-ce51-4984-99fa-5e11c1f5661c",
+    "userId" : "d0fc4228-2e42-49b2-a5b0-9df48897e8c0",
+    "itemId" : "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-03-03T15:41:54Z",
+    "dueDate" : "2017-03-17T15:41:54.000+0000",
+    "action" : "recallrequested",
+    "itemStatus" : "Checked out",
+    "renewalCount" : 1
+  }, {
+    "id" : "a1576211-e0ce-4b2d-b22b-c75a2aed7600",
+    "userId" : "5f9bb63a-66f1-47eb-bc19-f182af2fc3e7",
+    "itemId" : "0b96a642-5e7f-452d-9cae-9cee66c9a892",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2019-11-22T08:00:25Z",
+    "dueDate" : "2019-11-22T09:00:25.000+0000",
+    "returnDate" : "2019-11-22T08:00:48.000Z",
+    "systemReturnDate" : "2019-11-22T08:00:49.274+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "checkinServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+    "metadata" : {
+      "createdDate" : "2019-11-22T08:00:26.209+0000",
+      "createdByUserId" : "214630dd-0bfa-4dda-bfd4-0ee1d9028a1d",
+      "updatedDate" : "2019-11-22T08:00:49.362+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "a4647af5-6c1e-4f71-956d-87f2e500f419",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "7f8ad458-37e7-47c7-a303-4f8e47891878",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:56Z",
+    "dueDate" : "2019-11-22T04:46:56.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:57.300+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:57.300+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "a78080d3-27e7-4a38-864d-4065a5f7653d",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "b571183f-fc13-4f4f-a231-19d82f7d3781",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:55Z",
+    "dueDate" : "2019-11-22T04:46:55.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:56.019+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:56.019+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "abce9140-1330-4df4-ae87-8d374fdd80a8",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "7b0296d4-5488-4391-97d0-f4acae8a20c8",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:11Z",
+    "dueDate" : "2019-11-22T04:47:11.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:12.181+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:12.181+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "aff8f512-0bee-4ad6-a977-0c367b864c8a",
+    "userId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "itemId" : "d53be2cd-bc47-45d7-bde1-1bd42a16cef2",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2019-11-22T03:47:57Z",
+    "dueDate" : "2019-11-22T04:48:38.173+0000",
+    "returnDate" : "2019-11-22T03:49:16.000Z",
+    "systemReturnDate" : "2019-11-22T03:49:17.145+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "renewalCount" : 3,
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "checkinServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "503a81cd-6c26-400f-b620-14c08943697c",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:57.783+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:49:17.241+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "b1dddb4c-770b-4190-8cb8-ee2a1e3aa441",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "a184a290-3560-4082-83d0-7b0103f12b60",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:16Z",
+    "dueDate" : "2019-11-22T04:47:16.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:17.161+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:17.161+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "ba2d0b5b-ad0a-4bd2-b414-607aa71bdb1d",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "b4031177-890d-433c-b2c7-a7b680086ef5",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:54Z",
+    "dueDate" : "2019-11-22T04:46:54.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:54.831+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:54.831+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "c1e50117-dae5-4a82-ac81-80a0038c1271",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "91464302-d05b-4697-8027-f36c2af3bddc",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:01Z",
+    "dueDate" : "2019-11-22T04:47:01.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:02.404+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:02.404+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "ca81c81e-5547-4483-890c-1c1d83935592",
+    "userId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "itemId" : "20539aed-b85e-43ee-a02f-3ddb35249d1f",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2019-11-22T03:44:31Z",
+    "dueDate" : "2019-11-22T04:44:31.000+0000",
+    "returnDate" : "2019-11-22T03:44:41.000Z",
+    "systemReturnDate" : "2019-11-22T03:44:41.553+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "checkinServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "503a81cd-6c26-400f-b620-14c08943697c",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:44:34.510+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:44:41.669+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "e1c3b862-3d85-4a0e-8e0d-0dd8b5306e6e",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "7e6a8306-8096-4e10-8a34-5b05bb846929",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:08Z",
+    "dueDate" : "2019-11-22T04:47:08.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:09.234+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:09.234+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "e770f23e-677e-4d9b-8d1b-2a988e32f046",
+    "userId" : "f1c2d681-faba-4950-918f-bf58d914ba1f",
+    "itemId" : "23fdb0bc-ab58-442a-b326-577a96204487",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T14:55:25Z",
+    "dueDate" : "2020-01-22T04:59:59.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "d9cd0bed-1b49-4b5e-a7bd-064b8d177231",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+    "metadata" : {
+      "createdDate" : "2019-11-22T14:55:26.389+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T14:55:26.389+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "ef748d08-f336-45c6-bf0b-743209d08665",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "135c4123-86e3-40a1-9906-b27f8a912445",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:03Z",
+    "dueDate" : "2019-11-22T04:47:03.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:03.714+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:03.714+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "f29dd4e4-2916-4ba5-9589-461669c07945",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "9fd747a3-2828-4da7-9619-1d238dc14b4f",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:47:14Z",
+    "dueDate" : "2019-11-22T04:47:14.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:47:15.352+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:47:15.352+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "fa7239c3-c07e-4db8-b87c-4e3a86ef062f",
+    "userId" : "4f0e711c-d583-41e0-9555-b62f1725023f",
+    "itemId" : "36f90e1c-79c7-4dbf-b857-13f02ee46225",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:46:59Z",
+    "dueDate" : "2019-11-22T04:46:59.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:46:59.787+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:46:59.787+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "fedbc3f2-eaed-4354-9185-923ea60dc546",
+    "userId" : "5f9bb63a-66f1-47eb-bc19-f182af2fc3e7",
+    "itemId" : "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2019-11-22T08:00:33Z",
+    "dueDate" : "2019-11-22T09:00:33.000+0000",
+    "returnDate" : "2019-11-22T08:00:42.000Z",
+    "systemReturnDate" : "2019-11-22T08:00:43.117+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "checkinServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+    "metadata" : {
+      "createdDate" : "2019-11-22T08:00:33.827+0000",
+      "createdByUserId" : "214630dd-0bfa-4dda-bfd4-0ee1d9028a1d",
+      "updatedDate" : "2019-11-22T08:00:43.203+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  }, {
+    "id" : "ffa5d108-b012-4141-bef2-a30701be58f8",
+    "userId" : "f308aadb-9403-44de-9b5a-06792b78bb3a",
+    "itemId" : "30c7474c-80e7-4019-992a-a0d17c961a2c",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2019-11-22T03:50:19Z",
+    "dueDate" : "2019-11-22T04:50:19.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "patronGroupIdAtCheckout" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:50:20.287+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:50:20.287+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  } ],
+  "totalRecords" : 34
+}

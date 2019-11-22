@@ -1,0 +1,44 @@
+{
+  "electronicAccessRelationships" : [ {
+    "id" : "3b430592-2e09-4b48-9a0c-0636d66b9fb3",
+    "name" : "Version of resource",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:34:44.409+0000",
+      "updatedDate" : "2019-11-22T03:34:44.409+0000"
+    },
+    "source" : "folio"
+  }, {
+    "id" : "5bfe1b7b-f151-4501-8cfa-23b321d5cd1e",
+    "name" : "Related resource",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:34:44.408+0000",
+      "updatedDate" : "2019-11-22T03:34:44.408+0000"
+    },
+    "source" : "folio"
+  }, {
+    "id" : "ef03d582-219c-4221-8635-bc92f1107021",
+    "name" : "No display constant generated",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:34:44.410+0000",
+      "updatedDate" : "2019-11-22T03:34:44.410+0000"
+    },
+    "source" : "folio"
+  }, {
+    "id" : "f50c90c9-bae0-4add-9cd0-db9092dbc9dd",
+    "name" : "No information provided",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:34:44.410+0000",
+      "updatedDate" : "2019-11-22T03:34:44.410+0000"
+    },
+    "source" : "folio"
+  }, {
+    "id" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa",
+    "name" : "Resource",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:34:44.411+0000",
+      "updatedDate" : "2019-11-22T03:34:44.411+0000"
+    },
+    "source" : "folio"
+  } ],
+  "totalRecords" : 5
+}

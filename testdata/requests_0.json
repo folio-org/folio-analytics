@@ -1,0 +1,29 @@
+{
+  "requests" : [ {
+    "id" : "f52254d4-9527-42c2-873d-e607c5da1df6",
+    "requestType" : "Hold",
+    "requestDate" : "2019-11-22T03:50:23.000+0000",
+    "requesterId" : "16757efe-86ac-40bb-bdd6-fafee02463c7",
+    "itemId" : "30c7474c-80e7-4019-992a-a0d17c961a2c",
+    "status" : "Open - Not yet filled",
+    "position" : 1,
+    "item" : {
+      "title" : "Request title",
+      "barcode" : "1574394230454382133"
+    },
+    "requester" : {
+      "firstName" : "Dagmar",
+      "lastName" : "Borer",
+      "barcode" : "509575459201574"
+    },
+    "fulfilmentPreference" : "Hold Shelf",
+    "pickupServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "metadata" : {
+      "createdDate" : "2019-11-22T03:50:24.279+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T03:50:24.279+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+    }
+  } ],
+  "totalRecords" : 1
+}
