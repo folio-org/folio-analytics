@@ -122,43 +122,6 @@
     "paymentStatus" : "Payment Not Required",
     "shipTo" : "a3a02de3-c31a-4c2b-a2ce-8db9590ea90c"
   }, {
-    "id" : "c1d7f8ec-25c2-4dd4-b0d5-dee90192d43e",
-    "templateName" : "Requests template",
-    "orderType" : "One-Time",
-    "cost" : {
-      "listUnitPrice" : 10,
-      "quantityPhysical" : 10
-    },
-    "acquisitionMethod" : "Demand Driven Acquisitions (DDA)",
-    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "publisher" : "Shaker Verlag",
-    "poTags" : {
-      "tagList" : [ "requests_order" ]
-    },
-    "details" : {
-      "productIds" : [ ]
-    },
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantityPhysical" : 10
-    } ],
-    "polTags" : {
-      "tagList" : [ "requests_order" ]
-    },
-    "contributors" : [ {
-      "contributor" : "Augustin, Harald",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "physical" : {
-      "materialType" : "fd6c6515-d470-4561-9c32-3e3290d4ca98",
-      "createInventory" : "Instance, Holding, Item",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "publicationDate" : "2017",
-    "orderFormat" : "Physical Resource"
-  }, {
     "id" : "cc637c23-d1fb-47b9-bcda-1d6f0812dc01",
     "templateName" : "German sound recordings",
     "templateCode" : "German music",
@@ -195,5 +158,5 @@
     "orderFormat" : "Physical Resource",
     "shipTo" : "a3a02de3-c31a-4c2b-a2ce-8db9590ea90c"
   } ],
-  "totalRecords" : 6
+  "totalRecords" : 5
 }

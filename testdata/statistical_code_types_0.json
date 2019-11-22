@@ -4,32 +4,32 @@
     "name" : "RECM (Record management)",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-05T03:34:00.214+0000",
-      "updatedDate" : "2019-11-05T03:34:00.214+0000"
+      "createdDate" : "2019-11-22T03:34:43.870+0000",
+      "updatedDate" : "2019-11-22T03:34:43.870+0000"
     }
   }, {
     "id" : "3abd6fc2-b3e4-4879-b1e1-78be41769fe3",
     "name" : "ARL (Collection stats)",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-05T03:34:00.215+0000",
-      "updatedDate" : "2019-11-05T03:34:00.215+0000"
+      "createdDate" : "2019-11-22T03:34:43.869+0000",
+      "updatedDate" : "2019-11-22T03:34:43.869+0000"
     }
   }, {
     "id" : "d816175b-578f-4056-af61-689f449c3c45",
     "name" : "DISC (Discovery)",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-05T03:34:00.213+0000",
-      "updatedDate" : "2019-11-05T03:34:00.213+0000"
+      "createdDate" : "2019-11-22T03:34:43.869+0000",
+      "updatedDate" : "2019-11-22T03:34:43.869+0000"
     }
   }, {
     "id" : "e2ab27f9-a726-4e5e-9963-fff9e6128680",
     "name" : "SERM (Serial management)",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-05T03:34:00.214+0000",
-      "updatedDate" : "2019-11-05T03:34:00.214+0000"
+      "createdDate" : "2019-11-22T03:34:43.868+0000",
+      "updatedDate" : "2019-11-22T03:34:43.868+0000"
     }
   } ],
   "totalRecords" : 4

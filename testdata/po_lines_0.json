@@ -1,134 +1,9 @@
 {
   "poLines" : [ {
-    "id" : "02b9cb81-52cf-4782-8d4c-636777e5a060",
+    "id" : "2d1d3a8b-fe3a-4289-953f-3a98e0da0265",
     "checkinItems" : false,
-    "instanceId" : "88e124a8-4e7d-4775-87c9-00dfd11994e8",
-    "acquisitionMethod" : "Purchase At Vendor System",
+    "acquisitionMethod" : "Depository",
     "alerts" : [ ],
-    "cancellationRestriction" : true,
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ ],
-    "cost" : {
-      "listUnitPrice" : 10.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 1,
-      "poLineEstimatedPrice" : 10.0
-    },
-    "details" : {
-      "receivingNote" : "test",
-      "productIds" : [ ],
-      "subscriptionInterval" : 0
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 1,
-      "quantityPhysical" : 1
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Awaiting Payment",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10012-1",
-    "purchaseOrderId" : "dfdda986-98f5-4fcc-947d-1e91afbc0b8f",
-    "receiptStatus" : "Awaiting Receipt",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "title" : "test",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : "1234"
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-05T13:32:06.519+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T13:32:56.248+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    }
-  }, {
-    "id" : "2a5648df-aa02-49d4-89fd-2ef3906d3df9",
-    "checkinItems" : false,
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "acquisitionMethod" : "Demand Driven Acquisitions (DDA)",
-    "alerts" : [ ],
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ {
-      "contributor" : "Augustin, Harald",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "cost" : {
-      "listUnitPrice" : 10.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 10,
-      "poLineEstimatedPrice" : 100.0
-    },
-    "details" : {
-      "productIds" : [ ]
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "80fb5168-cdf1-11e8-a8d5-c2801f1b9f21"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 10,
-      "quantityPhysical" : 10
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Pending",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "fd6c6515-d470-4561-9c32-3e3290d4ca98",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10018-1",
-    "publicationDate" : "2017",
-    "publisher" : "Shaker Verlag",
-    "purchaseOrderId" : "1cdb8431-2ab3-4671-983f-2ad904260e4f",
-    "receiptStatus" : "Pending",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "tags" : {
-      "tagList" : [ "requests_order" ]
-    },
-    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : ""
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-05T14:08:49.780+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T14:10:16.779+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    }
-  }, {
-    "id" : "4d78a90a-4ad3-43d5-986b-ce8b5ec46209",
-    "checkinItems" : false,
-    "instanceId" : "2087c599-3a4f-4f78-b70d-09eddd037eca",
-    "acquisitionMethod" : "Purchase At Vendor System",
-    "alerts" : [ ],
-    "cancellationRestriction" : true,
     "claims" : [ ],
     "collection" : false,
     "contributors" : [ ],
@@ -156,29 +31,29 @@
       "quantityPhysical" : 1
     } ],
     "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Awaiting Payment",
+    "paymentStatus" : "Pending",
     "physical" : {
       "createInventory" : "Instance, Holding, Item",
       "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
       "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
       "volumes" : [ ]
     },
-    "poLineNumber" : "10013-1",
-    "purchaseOrderId" : "259241a0-7507-406d-af23-2166f81ffb41",
-    "receiptStatus" : "Awaiting Receipt",
+    "poLineNumber" : "10014-1",
+    "purchaseOrderId" : "891bd0ee-97da-4295-8cd7-9333228bd6c5",
+    "receiptStatus" : "Pending",
     "reportingCodes" : [ ],
     "rush" : false,
     "source" : "User",
-    "title" : "Test title",
+    "title" : "something",
     "vendorDetail" : {
       "instructions" : "",
       "vendorAccount" : "1234"
     },
     "metadata" : {
-      "createdDate" : "2019-11-05T13:41:09.148+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T13:41:09.930+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
+      "createdDate" : "2019-11-22T09:01:54.334+0000",
+      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
+      "updatedDate" : "2019-11-22T09:01:54.334+0000",
+      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
     }
   }, {
     "id" : "556abc25-ebbf-3fb2-b478-1bfaff0af4dc",
@@ -238,7 +113,7 @@
       "volumes" : [ "vol. 1" ]
     },
     "poLineDescription" : "",
-    "poLineNumber" : "38434-1",
+    "poLineNumber" : "81-1",
     "publicationDate" : "1915",
     "publisher" : "American Bar Association",
     "purchaseOrderId" : "c27e60f9-6361-44c1-976e-0c4821a33a7d",
@@ -755,7 +630,7 @@
       "volumes" : [ "vol. 1" ]
     },
     "poLineDescription" : "",
-    "poLineNumber" : "36547-1",
+    "poLineNumber" : "79-1",
     "purchaseOrderId" : "1d6a455f-29c5-4e51-84d9-e28450ef86ad",
     "receiptStatus" : "Fully Received",
     "reportingCodes" : [ ],
@@ -771,71 +646,6 @@
       "instructions" : "",
       "noteFromVendor" : "",
       "vendorAccount" : ""
-    }
-  }, {
-    "id" : "8878f0a8-8906-4b70-97dd-86978e023266",
-    "checkinItems" : false,
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "acquisitionMethod" : "Demand Driven Acquisitions (DDA)",
-    "alerts" : [ ],
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ {
-      "contributor" : "Augustin, Harald",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "cost" : {
-      "listUnitPrice" : 10.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 10,
-      "poLineEstimatedPrice" : 100.0
-    },
-    "details" : {
-      "productIds" : [ ],
-      "subscriptionInterval" : 0
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 10,
-      "quantityPhysical" : 10
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Awaiting Payment",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "fd6c6515-d470-4561-9c32-3e3290d4ca98",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10020-1",
-    "publicationDate" : "2017",
-    "publisher" : "Shaker Verlag",
-    "purchaseOrderId" : "1ca2c51d-08eb-4809-b01f-778fb7dbb9b0",
-    "receiptStatus" : "Awaiting Receipt",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "tags" : {
-      "tagList" : [ "requests_order" ]
-    },
-    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : "1234"
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-05T14:10:35.712+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T14:16:19.259+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
     }
   }, {
     "id" : "90fb53f2-cdf1-11e8-a8d5-f2801f1b9fd1",
@@ -1480,130 +1290,6 @@
       "vendorAccount" : "12345-50"
     }
   }, {
-    "id" : "dd57c6d9-e26f-4095-bca0-bd37f79da009",
-    "checkinItems" : false,
-    "instanceId" : "8abb89cf-7b97-4af9-9d85-b274ca11c727",
-    "acquisitionMethod" : "Purchase At Vendor System",
-    "alerts" : [ ],
-    "cancellationRestriction" : true,
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ ],
-    "cost" : {
-      "listUnitPrice" : 12.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 1,
-      "poLineEstimatedPrice" : 12.0
-    },
-    "details" : {
-      "receivingNote" : "note",
-      "productIds" : [ ],
-      "subscriptionInterval" : 0
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 1,
-      "quantityPhysical" : 1
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Awaiting Payment",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10032-1",
-    "purchaseOrderId" : "c9937e06-236c-4e19-b75e-efeceabc7c74",
-    "receiptStatus" : "Awaiting Receipt",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "title" : "test",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : "1234"
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-05T14:50:19.278+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T14:50:46.976+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    }
-  }, {
-    "id" : "de3b2386-b515-4fd6-9ae0-20e46ae082fc",
-    "checkinItems" : true,
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "acquisitionMethod" : "Demand Driven Acquisitions (DDA)",
-    "alerts" : [ ],
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ {
-      "contributor" : "Augustin, Harald",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "cost" : {
-      "listUnitPrice" : 10.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 10,
-      "poLineEstimatedPrice" : 100.0
-    },
-    "details" : {
-      "productIds" : [ ],
-      "subscriptionInterval" : 0
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 10,
-      "quantityPhysical" : 10
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Awaiting Payment",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "fd6c6515-d470-4561-9c32-3e3290d4ca98",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10022-1",
-    "publicationDate" : "2017",
-    "publisher" : "Shaker Verlag",
-    "purchaseOrderId" : "54f75994-0b28-40d1-af63-fbac4bf358cf",
-    "receiptStatus" : "Awaiting Receipt",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "tags" : {
-      "tagList" : [ "requests_order" ]
-    },
-    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : "1234"
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-05T14:16:41.752+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T14:19:04.177+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    }
-  }, {
     "id" : "ee0b9edb-5508-5f3e-a33b-0adb42fdcdc5",
     "edition" : "First edition",
     "checkinItems" : true,
@@ -1766,5 +1452,5 @@
       "vendorAccount" : ""
     }
   } ],
-  "totalRecords" : 22
+  "totalRecords" : 17
 }

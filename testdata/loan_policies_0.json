@@ -57,25 +57,6 @@
         }
       }
     }
-  }, {
-    "id" : "f0464c54-05ae-44ed-b4b9-5b1375ac3c05",
-    "name" : "My test policy",
-    "loanable" : true,
-    "loansPolicy" : {
-      "profileId" : "Rolling",
-      "period" : {
-        "duration" : 3,
-        "intervalId" : "Days"
-      },
-      "closedLibraryDueDateManagementId" : "CURRENT_DUE_DATE"
-    },
-    "renewable" : false,
-    "metadata" : {
-      "createdDate" : "2019-11-05T09:04:16.372+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T09:05:35.475+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    }
   } ],
-  "totalRecords" : 3
+  "totalRecords" : 2
 }

@@ -1,23 +1,10 @@
 {
   "patronNoticePolicies" : [ {
     "id" : "122b3d2b-4788-4f1e-9117-56daa91cb75c",
-    "name" : "Send Notices",
+    "name" : "Send No Notices",
     "description" : "A basic notice policy that does not define any notices",
     "active" : true,
-    "metadata" : {
-      "createdDate" : "2019-11-05T13:58:35.608+0000",
-      "createdByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d",
-      "updatedDate" : "2019-11-05T13:58:35.608+0000",
-      "updatedByUserId" : "e0aafae2-e564-5d22-9653-bb08746eda9d"
-    },
-    "loanNotices" : [ {
-      "templateId" : "c093d46e-3482-4c02-8c0c-64d673a96ab4",
-      "format" : "Email",
-      "realTime" : true,
-      "sendOptions" : {
-        "sendWhen" : "Check out"
-      }
-    } ],
+    "loanNotices" : [ ],
     "feeFineNotices" : [ ],
     "requestNotices" : [ ]
   } ],
