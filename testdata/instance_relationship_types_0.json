@@ -3,29 +3,29 @@
     "id" : "30773a27-b485-4dab-aeb6-b8c04fa3cb17",
     "name" : "monographic series",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.765+0000",
-      "updatedDate" : "2019-11-22T03:34:42.765+0000"
+      "createdDate" : "2019-11-25T05:44:28.492+0000",
+      "updatedDate" : "2019-11-25T05:44:28.492+0000"
     }
   }, {
     "id" : "758f13db-ffb4-440e-bb10-8a364aa6cb4a",
     "name" : "bound-with",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.764+0000",
-      "updatedDate" : "2019-11-22T03:34:42.764+0000"
+      "createdDate" : "2019-11-25T05:44:28.493+0000",
+      "updatedDate" : "2019-11-25T05:44:28.493+0000"
     }
   }, {
     "id" : "a17daf0a-f057-43b3-9997-13d0724cdf51",
     "name" : "multipart monograph",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.764+0000",
-      "updatedDate" : "2019-11-22T03:34:42.764+0000"
+      "createdDate" : "2019-11-25T05:44:28.494+0000",
+      "updatedDate" : "2019-11-25T05:44:28.494+0000"
     }
   }, {
     "id" : "cde80cc2-0c8b-4672-82d4-721e51dcb990",
     "name" : "preceding-succeeding",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.763+0000",
-      "updatedDate" : "2019-11-22T03:34:42.763+0000"
+      "createdDate" : "2019-11-25T05:44:28.495+0000",
+      "updatedDate" : "2019-11-25T05:44:28.495+0000"
     }
   } ],
   "totalRecords" : 4

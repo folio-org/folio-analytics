@@ -4,40 +4,40 @@
     "name" : "Monograph",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.640+0000",
-      "updatedDate" : "2019-11-22T03:34:44.640+0000"
+      "createdDate" : "2019-11-25T05:44:31.381+0000",
+      "updatedDate" : "2019-11-25T05:44:31.381+0000"
     }
   }, {
     "id" : "0c422f92-0f4d-4d32-8cbe-390ebc33a3e5",
     "name" : "Physical",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.641+0000",
-      "updatedDate" : "2019-11-22T03:34:44.641+0000"
+      "createdDate" : "2019-11-25T05:44:31.382+0000",
+      "updatedDate" : "2019-11-25T05:44:31.382+0000"
     }
   }, {
     "id" : "996f93e2-5b5e-4cf2-9168-33ced1f95eed",
     "name" : "Electronic",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.638+0000",
-      "updatedDate" : "2019-11-22T03:34:44.638+0000"
+      "createdDate" : "2019-11-25T05:44:31.377+0000",
+      "updatedDate" : "2019-11-25T05:44:31.377+0000"
     }
   }, {
     "id" : "dc35d0ae-e877-488b-8e97-6e41444e6d0a",
     "name" : "Multi-part monograph",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.641+0000",
-      "updatedDate" : "2019-11-22T03:34:44.641+0000"
+      "createdDate" : "2019-11-25T05:44:31.380+0000",
+      "updatedDate" : "2019-11-25T05:44:31.380+0000"
     }
   }, {
     "id" : "e6da6c98-6dd0-41bc-8b4b-cfd4bbd9c3ae",
     "name" : "Serial",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.640+0000",
-      "updatedDate" : "2019-11-22T03:34:44.640+0000"
+      "createdDate" : "2019-11-25T05:44:31.380+0000",
+      "updatedDate" : "2019-11-25T05:44:31.380+0000"
     }
   } ],
   "totalRecords" : 5

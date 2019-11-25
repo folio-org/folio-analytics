@@ -7,13 +7,13 @@
     "fiscalYearOneId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "ledgerStatus" : "Active",
     "allocated" : 1974.83,
-    "available" : 889.0,
+    "available" : 888.83,
     "unavailable" : 1111.0,
     "currency" : "USD",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.293+0000",
-      "updatedDate" : "2019-11-22T03:35:52.293+0000"
+      "createdDate" : "2019-11-25T05:45:38.075+0000",
+      "updatedDate" : "2019-11-25T05:45:38.075+0000"
     }
   }, {
     "id" : "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
@@ -28,8 +28,8 @@
     "currency" : "USD",
     "acqUnitIds" : [ "0ebb1f7d-983f-3026-8a4c-5318e0ebc041" ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.294+0000",
-      "updatedDate" : "2019-11-22T03:35:52.294+0000"
+      "createdDate" : "2019-11-25T05:45:38.079+0000",
+      "updatedDate" : "2019-11-25T05:45:38.079+0000"
     }
   }, {
     "id" : "7cef8378-7cbd-1fae-bcdd-8b9d7c0af9de",
@@ -44,9 +44,24 @@
     "currency" : "USD",
     "acqUnitIds" : [ "0ebb1f7d-983f-3026-8a4c-5318e0ebc041" ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.291+0000",
-      "updatedDate" : "2019-11-22T03:35:52.291+0000"
+      "createdDate" : "2019-11-25T05:45:38.077+0000",
+      "updatedDate" : "2019-11-25T05:45:38.077+0000"
+    }
+  }, {
+    "id" : "e6c0f7f9-a90e-48be-b8ec-c35b9d77665e",
+    "name" : "Dennis Ledger",
+    "code" : "DL",
+    "fiscalYearOneId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "ledgerStatus" : "Active",
+    "allocated" : 12345.0,
+    "available" : 12345.0,
+    "acqUnitIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:05:04.872+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:05:04.872+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   } ],
-  "totalRecords" : 3
+  "totalRecords" : 4
 }

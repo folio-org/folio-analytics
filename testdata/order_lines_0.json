@@ -1,18 +1,23 @@
 {
   "poLines" : [ {
-    "id" : "2d1d3a8b-fe3a-4289-953f-3a98e0da0265",
-    "checkinItems" : false,
-    "acquisitionMethod" : "Depository",
+    "id" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "checkinItems" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "acquisitionMethod" : "Purchase At Vendor System",
     "alerts" : [ ],
+    "cancellationRestriction" : true,
     "claims" : [ ],
     "collection" : false,
-    "contributors" : [ ],
+    "contributors" : [ {
+      "contributor" : "Augustin, Harald",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
     "cost" : {
-      "listUnitPrice" : 20.0,
+      "listUnitPrice" : 45.0,
       "currency" : "USD",
       "discountType" : "percentage",
-      "quantityPhysical" : 1,
-      "poLineEstimatedPrice" : 20.0
+      "quantityPhysical" : 2,
+      "poLineEstimatedPrice" : 90.0
     },
     "details" : {
       "productIds" : [ ],
@@ -29,6 +34,145 @@
       "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
       "quantity" : 1,
       "quantityPhysical" : 1
+    }, {
+      "locationId" : "184aae84-a5bf-4c6a-85ba-4a7c73026cd5",
+      "quantity" : 1,
+      "quantityPhysical" : 1
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Awaiting Payment",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10013-1",
+    "publicationDate" : "2017",
+    "publisher" : "Shaker Verlag",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receiptDate" : "2019-11-25T20:24:49.129+0000",
+    "receiptStatus" : "Partially Received",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:18:14.369+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:24:49.199+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
+    "id" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "checkinItems" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "cancellationRestriction" : true,
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ {
+      "contributor" : "Augustin, Harald",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "cost" : {
+      "listUnitPrice" : 34.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 8,
+      "poLineEstimatedPrice" : 272.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 2,
+      "quantityPhysical" : 2
+    }, {
+      "locationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
+      "quantity" : 2,
+      "quantityPhysical" : 2
+    }, {
+      "locationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
+      "quantity" : 2,
+      "quantityPhysical" : 2
+    }, {
+      "locationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
+      "quantity" : 2,
+      "quantityPhysical" : 2
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Awaiting Payment",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10012-1",
+    "publicationDate" : "2017",
+    "publisher" : "Shaker Verlag",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receiptStatus" : "Partially Received",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:14:54.583+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:16:21.475+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
+    "id" : "42cf7bcd-f5d8-4d7c-a25a-4862c7ea8454",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "cancellationRestriction" : true,
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 20.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 3,
+      "poLineEstimatedPrice" : 60.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 3,
+      "quantityPhysical" : 3
     } ],
     "orderFormat" : "Physical Resource",
     "paymentStatus" : "Pending",
@@ -38,22 +182,23 @@
       "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
       "volumes" : [ ]
     },
-    "poLineNumber" : "10014-1",
-    "purchaseOrderId" : "891bd0ee-97da-4295-8cd7-9333228bd6c5",
+    "poLineNumber" : "10009-1",
+    "publicationDate" : "2019",
+    "purchaseOrderId" : "7f30e4a7-c66f-4b39-8708-ac32df203c5d",
     "receiptStatus" : "Pending",
     "reportingCodes" : [ ],
     "rush" : false,
     "source" : "User",
-    "title" : "something",
+    "title" : "An important Swedish book",
     "vendorDetail" : {
       "instructions" : "",
       "vendorAccount" : "1234"
     },
     "metadata" : {
-      "createdDate" : "2019-11-22T09:01:54.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T09:01:54.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T18:37:36.508+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T18:37:42.831+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   }, {
     "id" : "556abc25-ebbf-3fb2-b478-1bfaff0af4dc",
@@ -308,6 +453,68 @@
       "vendorAccount" : ""
     }
   }, {
+    "id" : "6787c5ad-6656-45ea-a41a-c905bd038090",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "cancellationRestriction" : true,
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 20.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 3,
+      "poLineEstimatedPrice" : 60.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ {
+      "fundId" : "68872d8a-bf16-420b-829f-206da38f6c10",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 3,
+      "quantityPhysical" : 3
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Pending",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10006-1",
+    "publicationDate" : "2020",
+    "purchaseOrderId" : "55e50ab2-7fcb-41c8-a707-61a85c4767f8",
+    "receiptStatus" : "Pending",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "Another important Swedish book",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T16:56:43.409+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T16:56:55.946+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
     "id" : "67df7bd0-ff70-2ad2-9162-54acb3e9180e",
     "edition" : "First edition",
     "checkinItems" : false,
@@ -547,6 +754,67 @@
       "vendorAccount" : ""
     }
   }, {
+    "id" : "850638a3-b227-4520-a7fa-bd6b2e610549",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 20.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 3,
+      "poLineEstimatedPrice" : 60.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ {
+      "fundId" : "68872d8a-bf16-420b-829f-206da38f6c10",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 3,
+      "quantityPhysical" : 3
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Pending",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10011-1",
+    "publicationDate" : "2019",
+    "purchaseOrderId" : "2b2eb34e-cf3b-41fc-8913-da917bc7673e",
+    "receiptStatus" : "Pending",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "A book about Alabama",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T18:40:12.011+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T18:40:17.226+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
     "id" : "852d0f06-290a-279c-92cf-aee87befc6be",
     "edition" : "",
     "checkinItems" : true,
@@ -758,6 +1026,67 @@
       "vendorAccount" : ""
     }
   }, {
+    "id" : "9806f69a-8709-4f18-8d42-e8c226622e5c",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 20.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 3,
+      "poLineEstimatedPrice" : 60.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 365
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ {
+      "fundId" : "68872d8a-bf16-420b-829f-206da38f6c10",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 3,
+      "quantityPhysical" : 3
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Pending",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10007-1",
+    "publicationDate" : "2020",
+    "purchaseOrderId" : "90cb38fa-7786-4bf3-9dd0-d8228c163765",
+    "receiptStatus" : "Pending",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "An important Swedish book",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "xxxx2149"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T16:58:14.775+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T16:58:20.398+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
     "id" : "a0fb5514-cdf1-11e8-a8d5-f2801f1b9fd1",
     "edition" : "First edition",
     "checkinItems" : false,
@@ -839,6 +1168,83 @@
       "instructions" : "",
       "noteFromVendor" : "",
       "vendorAccount" : ""
+    }
+  }, {
+    "id" : "a86fceea-934c-43c6-90bd-97d9ede2ba2e",
+    "checkinItems" : false,
+    "instanceId" : "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
+    "acquisitionMethod" : "Demand Driven Acquisitions (DDA)",
+    "alerts" : [ ],
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ {
+      "contributor" : "Moutinho, Luiz",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    }, {
+      "contributor" : "Sokele, Mladen",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "cost" : {
+      "listUnitPrice" : 123.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 1,
+      "poLineEstimatedPrice" : 123.0
+    },
+    "details" : {
+      "productIds" : [ {
+        "productId" : "9783319643991",
+        "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+        "qualifier" : ""
+      }, {
+        "productId" : "9783319644004",
+        "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
+        "qualifier" : ""
+      } ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ {
+      "fundId" : "68872d8a-bf16-420b-829f-206da38f6c10",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 1,
+      "quantityPhysical" : 1
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Awaiting Payment",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10008-1",
+    "publisher" : "Palgrave Macmillan",
+    "purchaseOrderId" : "8464b5ee-7b8b-4078-a15f-f23306630305",
+    "receiptDate" : "2019-11-25T17:19:53.260+0000",
+    "receiptStatus" : "Fully Received",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T17:19:23.349+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T17:19:53.328+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   }, {
     "id" : "abbd1cef-a8ee-3d07-93b2-71c1387e61b1",
@@ -1290,6 +1696,127 @@
       "vendorAccount" : "12345-50"
     }
   }, {
+    "id" : "cce0ae24-35f9-4575-a335-41471b89ecc4",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "cancellationRestriction" : true,
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 23.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 1,
+      "poLineEstimatedPrice" : 23.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 1,
+      "quantityPhysical" : 1
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Pending",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10014-1",
+    "publicationDate" : "2019",
+    "publisher" : "to",
+    "purchaseOrderId" : "97891f06-f681-473f-b5c1-e7ef062bdc69",
+    "receiptStatus" : "Pending",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "twergwdfgse",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:27:35.818+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:27:43.726+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
+    "id" : "deaf4a1a-241e-49b8-bd0e-df694fd8175d",
+    "checkinItems" : false,
+    "acquisitionMethod" : "Purchase At Vendor System",
+    "alerts" : [ ],
+    "cancellationRestriction" : true,
+    "claims" : [ ],
+    "collection" : false,
+    "contributors" : [ ],
+    "cost" : {
+      "listUnitPrice" : 20.0,
+      "currency" : "USD",
+      "discountType" : "percentage",
+      "quantityPhysical" : 3,
+      "poLineEstimatedPrice" : 60.0
+    },
+    "details" : {
+      "productIds" : [ ],
+      "subscriptionInterval" : 0
+    },
+    "eresource" : {
+      "activated" : false,
+      "createInventory" : "Instance, Holding",
+      "trial" : false,
+      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
+    },
+    "fundDistribution" : [ {
+      "fundId" : "68872d8a-bf16-420b-829f-206da38f6c10",
+      "distributionType" : "percentage",
+      "value" : 100.0
+    } ],
+    "locations" : [ {
+      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+      "quantity" : 3,
+      "quantityPhysical" : 3
+    } ],
+    "orderFormat" : "Physical Resource",
+    "paymentStatus" : "Pending",
+    "physical" : {
+      "createInventory" : "Instance, Holding, Item",
+      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+      "volumes" : [ ]
+    },
+    "poLineNumber" : "10000-1",
+    "publicationDate" : "2020",
+    "purchaseOrderId" : "ca3317a8-0602-41ec-8dca-1dcbf26065b7",
+    "receiptStatus" : "Pending",
+    "reportingCodes" : [ ],
+    "rush" : false,
+    "source" : "User",
+    "title" : "Some important Swedish book",
+    "vendorDetail" : {
+      "instructions" : "",
+      "vendorAccount" : "1234"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T16:51:01.234+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T16:53:59.929+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
     "id" : "ee0b9edb-5508-5f3e-a33b-0adb42fdcdc5",
     "edition" : "First edition",
     "checkinItems" : true,
@@ -1452,5 +1979,5 @@
       "vendorAccount" : ""
     }
   } ],
-  "totalRecords" : 17
+  "totalRecords" : 25
 }

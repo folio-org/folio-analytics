@@ -1,6 +1,7 @@
 {
   "instances" : [ {
     "id" : "00f10ab9-d845-4334-92d2-ff55862bf4f9",
+    "hrid" : "in00000019",
     "source" : "FOLIO",
     "title" : "American Bar Association journal.",
     "indexTitle" : "American Bar Association journal.",
@@ -74,13 +75,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.876+0000",
-      "updatedDate" : "2019-11-22T03:34:45.876+0000"
+      "createdDate" : "2019-11-25T05:44:32.682+0000",
+      "updatedDate" : "2019-11-25T05:44:32.682+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "04489a01-f3cd-4f9e-9be4-d9c198703f45",
+    "hrid" : "in00000028",
     "source" : "FOLIO",
     "title" : "Environment and identity politics in colonial Africa Fulani migrations and land conflict by Emmanuel M. Mbah",
     "alternativeTitles" : [ ],
@@ -136,13 +138,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.915+0000",
-      "updatedDate" : "2019-11-22T03:34:45.915+0000"
+      "createdDate" : "2019-11-25T05:44:32.724+0000",
+      "updatedDate" : "2019-11-25T05:44:32.724+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
+    "hrid" : "in00000002",
     "source" : "FOLIO",
     "title" : "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors",
     "alternativeTitles" : [ ],
@@ -202,13 +205,50 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.819+0000",
-      "updatedDate" : "2019-11-22T03:34:45.819+0000"
+      "createdDate" : "2019-11-25T05:44:32.622+0000",
+      "updatedDate" : "2019-11-25T05:44:32.622+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "1aba2ead-8f4c-489c-b468-a202cc307f6d",
+    "hrid" : "in00000033",
+    "source" : "FOLIO",
+    "title" : "Request title",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:59:48.122+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T05:59:48.122+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "1b74ab75-9f41-4837-8662-a1d99118008d",
+    "hrid" : "in00000018",
     "source" : "FOLIO",
     "title" : "A journey through Europe Bildtontraeger high-speed lines European Commission, Directorate-General for Mobility and Transport",
     "alternativeTitles" : [ ],
@@ -247,425 +287,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.889+0000",
-      "updatedDate" : "2019-11-22T03:34:45.889+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "2461618e-5414-4253-a649-53f314e1416a",
-    "hrid" : "ybp12029119",
-    "source" : "MARC",
-    "title" : "Doctors of empire : medical and cultural encounters between imperial Germany and Meiji Japan / Hoi-eun Kim.",
-    "indexTitle" : "Doctors of empire : medical and cultural encounters between imperial Germany and Meiji Japan /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "German and European studies." ],
-    "identifiers" : [ {
-      "value" : "9781442660472 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1442660473 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781442660489 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781442644403",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1442644400",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Kim, Hoi-eun, 1976-",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Medicine--Japan--International cooperation--History--19th century", "Medicine--Germany--International cooperation--History--19th century", "Medicine--Japan--History--19th century", "Medicine--Germany--History--19th century", "Physicians--Japan--History--19th century", "Physicians--Germany--History--19th century", "Medical education--Japan--History--19th century", "Medical education--Germany--History--19th century", "Japan--Relations--Germany--History--19th century", "Germany--Relations--Japan--History--19th century", "Japan--History--Meiji period, 1868-1912", "History, 19th Century--Japan", "History, 19th Century--Germany" ],
-    "classifications" : [ {
-      "classificationNumber" : "WZ 70 JJ3",
-      "classificationTypeId" : "a7f4d03f-b0d8-496c-aebf-4e9cdb678200"
-    }, {
-      "classificationNumber" : "610.95209034",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "University of Toronto Press",
-      "place" : "Toronto",
-      "dateOfPublication" : "[2014]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=827493",
-      "publicNote" : "Connect to eBook online (EBSCOhost three user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource ( xiv, 249 pages.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on online resource; title from digital title page (viewed on Sept. 3, 2014)",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "24cdd487-ebe3-433b-a18a-9bfb138e24a8",
-    "hrid" : "ybp12758680",
-    "source" : "MARC",
-    "title" : "Modernity and its discontents : making and unmaking the bourgeois from Machiavelli to Bellow / Steven B. Smith.",
-    "indexTitle" : "Modernity and its discontents : making and unmaking the bourgeois from Machiavelli to Bellow /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9780300220988 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "0300220987 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "0300198396",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "9780300198393",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Smith, Steven B., 1951-",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Civilization, Modern--Philosophy" ],
-    "classifications" : [ {
-      "classificationNumber" : "909.0801",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Yale University Press",
-      "place" : "New Haven",
-      "dateOfPublication" : "[2016]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4612473",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xiv, 402 pages.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "269e18f2-6065-457c-8aa0-0ce83ea55955",
-    "hrid" : "ybp13400950",
-    "source" : "MARC",
-    "title" : "Barthes : a biography / Tiphaine Samoyault ; translated by Andrew Brown.",
-    "indexTitle" : "Barthes : a biography /",
-    "alternativeTitles" : [ {
-      "alternativeTitleTypeId" : "30512027-cdc9-4c79-af75-1565b3bd888d",
-      "alternativeTitle" : "Roland Barthes Biographie. English"
-    } ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9781509505692 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1509505695 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781509505654",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1509505652",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Samoyault, Tiphaine,",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Barthes, Roland", "Linguists--France--Biography", "Critics--France--Biography" ],
-    "classifications" : [ {
-      "classificationNumber" : "410.92 B",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Polity Press",
-      "place" : "Cambridge, UK ; Malden, MA, USA",
-      "dateOfPublication" : "[2017]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4789435",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xiv, 586 pages ): illustrations." ],
-    "languages" : [ "eng", "eng" ],
-    "notes" : [ {
-      "note" : "First published in French as Roland Barthes. Biographie, © Éditions du Seuil, 2015",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
-    }, {
-      "note" : "Includes bibliographical references (pages 499-564) and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Setting off -- 'Gochokissime' -- His whole life ahead of him -- Barthes and Gide -- His whole life behind him -- New vistas -- Sorties -- Barthes and Sartre -- Scenes -- Structures -- Literature -- Events -- Barthes and Sollers -- The body -- Legitimacy -- Barthes and Foucault -- Heartbreak -- 'Vita Nova'",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Translated from the French",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "7356cde5-ec6b-4961-9cb0-961c48a37af4"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "2d7c6af7-23fd-4610-bf0f-456da948121d",
-    "source" : "FOLIO",
-    "title" : "Soul station / Hank Mobley",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:47:43.685+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T10:42:34.277+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "2e1bf3d5-5a69-4d3d-9c50-1ba2f2520e45",
-    "source" : "FOLIO",
-    "title" : "The Girl on the Train 2",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "B01LO7PJOE",
-      "identifierTypeId" : "7f907515-a1bf-4513-8a38-92e1a07c539d"
-    } ],
-    "contributors" : [ {
-      "name" : "Creator A",
-      "contributorNameTypeId" : "2e48e713-17f3-4c13-a9f8-23845bb210aa"
-    }, {
-      "name" : "Creator B",
-      "contributorNameTypeId" : "e8b311a6-3b21-43f2-a269-dd9310cb2d0a"
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "statisticalCodeIds" : [ ],
-    "statusId" : "febf0ba1-07a8-4bb9-938d-15f3a6bc8e0c",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T15:33:58.419+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T15:33:58.419+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ "44cd89f3-2e76-469f-a955-cc57cb9e0395" ]
-  }, {
-    "id" : "2f429e2a-b634-4739-9257-3f046a1f8ad5",
-    "hrid" : "ybp12534739",
-    "source" : "MARC",
-    "title" : "The 'Poor Child' : the cultural politics of education, development and childhood / edited by Lucy Hopkins and Arathi Sriprakash",
-    "indexTitle" : "'Poor Child' : the cultural politics of education, development and childhood /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "Education, poverty, and international development series." ],
-    "identifiers" : [ {
-      "value" : "9781315815336 electronic bk.",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1315815338 electronic bk.",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780415741293",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Sriprakash, Arathi,",
-      "contributorTypeText" : "editor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    }, {
-      "name" : "Hopkins, Lucy,",
-      "contributorTypeText" : "editor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "Students with social disabilities", "Poor children--Education", "Poor children--Social conditions", "Educational sociology", "Poor children -- Education", "Poor children -- Social conditions" ],
-    "classifications" : [ {
-      "classificationNumber" : "371.82694",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Routledge",
-      "place" : "London",
-      "dateOfPublication" : "2015."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=1028844",
-      "publicNote" : "Connect to eBook online (EBSCOhost single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource ( ): illustrations" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on online resource; title from PDF title page (EBSCO, viewed July 20, 2015)",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    }, {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "The 'Poor Child'- Front Cover ; The 'Poor Child'; Title page; Copyright; Contents; Illustrations; Contributors; Acknowledgements; Introduction; Chapter 1: Unsettling the global child: Rethinking child subjectivity in education and international development; Introduction; Unsettling the universal child; Development discourses and the universal child; Reimagining the 'poor child' and new insights into global development(s); Notes; References; Part I: Cultural representations of childhood and poverty",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Chapter 2: 'It shouldn't happen here': Cultural and relational dynamics structured around the 'poor child'Framing the analysis; Why this text?; The context; Save The Children's 2012 campaign: 'It shouldn't happen here'; The campaign; The reception; To what ends?; Post-script; Notes; References; Websites cited; Chapter 3: 'Black kid burden': Cultural representations of Indigenous childhood and poverty in Australian cinema; Introduction; The politics of interpretation and film as pedagogy; The politics of Indigenous childhoods in Australia; The Indigenous Australian child of Australian cinema",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Representations of Indigenous childhoods in filmConcluding thoughts; Notes; References; Part II: Contextualising the'poor child': Children's voices as modes of resistance; Chapter 4: Child labour, schooling and the reconstruction of childhood: A case study from Kenya; Introduction; The social construction of childhood; From the socialised child to the labouring child to the schooled child: a case study of a reconstructed childhood in Kenya; Contemporary childhood in Kiratu; Working and schooling: a balancing act; Implications for social policy; Notes; References",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Chapter 5: Victims of what? Misunderstandings of anti-trafficking child protection policies in BeninIntroduction; Western discourses and Beninese conceptualisations of the child; Western intervention: a restrictive law as response to two scandals; Are vidomègons trafficking victims?; Listening to presumed victims' voices; Conclusion; Notes; References; Chapter 6: The construction of resilience: Voices of poor children in Mexico; Introduction; Challenging the concept of childhood; Researching childhoods in Mexico: an ethnographic approach; Understanding resilience",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Interactions of resilience: the lived realities of four childrenConclusions and implications; Notes; References; Part III: Questioning the project of schooling and the politics of development; Chapter 7: Policy constructions of childhoods: Impacts of multi-level education and development policy processes in Southeast Asia and the South Pacific; Investigating multi-level policies through critical discourse analysis; EFA and MDG representations of education and childhoods; Policy contexts for EFA in Southeast Asia and the South Pacific; Conclusions; Notes; References",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.681+0000",
+      "updatedDate" : "2019-11-25T05:44:32.681+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "30fcc8e7-a019-43f4-b642-2edc389f4501",
+    "hrid" : "in00000010",
     "source" : "FOLIO",
     "title" : "The American Journal of Medicine",
     "alternativeTitles" : [ {
@@ -735,13 +364,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.838+0000",
-      "updatedDate" : "2019-11-22T03:34:45.838+0000"
+      "createdDate" : "2019-11-25T05:44:32.652+0000",
+      "updatedDate" : "2019-11-25T05:44:32.652+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "0abeee3d-8ad2-4b04-92ff-221b4fce1075" ]
   }, {
     "id" : "3c4ae3f3-b460-4a89-a2f9-78ce3145e4fc",
+    "hrid" : "in00000015",
     "source" : "FOLIO",
     "title" : "The chess player’s mating guide Computer Datei Robert Ris",
     "alternativeTitles" : [ ],
@@ -778,13 +408,50 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.853+0000",
-      "updatedDate" : "2019-11-22T03:34:45.853+0000"
+      "createdDate" : "2019-11-25T05:44:32.666+0000",
+      "updatedDate" : "2019-11-25T05:44:32.666+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "4d06b77c-88c3-4edb-96ec-06d57306e939",
+    "hrid" : "in00000035",
+    "source" : "FOLIO",
+    "title" : "New test title",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T06:01:17.502+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T06:01:17.502+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "549fad9e-7f8e-4d8e-9a71-00d251817866",
+    "hrid" : "in00000021",
     "source" : "FOLIO",
     "title" : "Agile Organisation, Risiko- und Change Management Harald Augustin (Hrsg.)",
     "alternativeTitles" : [ ],
@@ -843,13 +510,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.891+0000",
-      "updatedDate" : "2019-11-22T03:34:45.891+0000"
+      "createdDate" : "2019-11-25T05:44:32.692+0000",
+      "updatedDate" : "2019-11-25T05:44:32.692+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "54cc0262-76df-4cac-acca-b10e9bc5c79a",
+    "hrid" : "in00000013",
     "source" : "FOLIO",
     "title" : "On the signature of complex system a decomposed approach Gaofeng Da, Ping Shing Chan, Maochao Xu",
     "alternativeTitles" : [ ],
@@ -885,13 +553,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.868+0000",
-      "updatedDate" : "2019-11-22T03:34:45.868+0000"
+      "createdDate" : "2019-11-25T05:44:32.668+0000",
+      "updatedDate" : "2019-11-25T05:44:32.668+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "5b1eb450-ff9f-412d-a9e7-887f6eaeb5b4",
+    "hrid" : "in00000005",
     "source" : "FOLIO",
     "title" : "Concepts of fashion 1921 - 1987 microform a study of garments worn by selected winners of the Miss America Pageant Marian Ann J. Matwiejczyk-Montgomery",
     "alternativeTitles" : [ ],
@@ -932,13 +601,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.827+0000",
-      "updatedDate" : "2019-11-22T03:34:45.827+0000"
+      "createdDate" : "2019-11-25T05:44:32.625+0000",
+      "updatedDate" : "2019-11-25T05:44:32.625+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
+    "hrid" : "in00000009",
     "source" : "FOLIO",
     "title" : "A semantic web primer",
     "indexTitle" : "Semantic web primer",
@@ -1000,19 +670,20 @@
     "catalogedDate" : "2019-04-05",
     "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
     "statusId" : "2a340d34-6b70-443a-bb1b-1b8d1c65d862",
-    "statusUpdatedDate" : "2019-11-22T15:18:22.363",
+    "statusUpdatedDate" : "2019-11-25T11:41:40.206",
     "tags" : {
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.845+0000",
-      "updatedDate" : "2019-11-22T15:18:22.362+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.653+0000",
+      "updatedDate" : "2019-11-25T11:41:40.204+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "62ca5b43-0f11-40af-a6b4-1a9ee2db33cb",
+    "hrid" : "in00000004",
     "source" : "FOLIO",
     "title" : "The Neurotic Heroine in Tennessee Williams microform C.N. Stavrou",
     "alternativeTitles" : [ ],
@@ -1050,132 +721,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.822+0000",
-      "updatedDate" : "2019-11-22T03:34:45.822+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "62d7ffc9-d1e7-4ab6-b911-c599feb078e9",
-    "source" : "FOLIO",
-    "title" : "New test title",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:51:38.221+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:51:38.221+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "63ebf6b2-0776-47f5-9a18-d1b24620768a",
-    "hrid" : "ybp12758631",
-    "source" : "MARC",
-    "title" : "Liberty or death : the French Revolution / Peter McPhee.",
-    "indexTitle" : "Liberty or death : the French Revolution /",
-    "alternativeTitles" : [ {
-      "alternativeTitleTypeId" : "fe19bae4-da28-472b-be90-d442e2428ead",
-      "alternativeTitle" : "French Revolution"
-    } ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9780300219500 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "0300219504 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780300189933",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "0300189931",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "9780300189933",
-      "identifierTypeId" : "2e8b3b6c-0e7d-4e48-bca2-b0b23b376af5"
-    } ],
-    "contributors" : [ {
-      "name" : "McPhee, Peter, 1948-",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "France--History--Revolution, 1789-1799" ],
-    "classifications" : [ {
-      "classificationNumber" : "944.04",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Yale University Press",
-      "place" : "New Haven",
-      "dateOfPublication" : "[2016]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=1227503",
-      "publicNote" : "Connect to eBook online (EBSCOhost unlimited access)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xiii, 468 pages, 24 unnumbered pages of plates ): illustrations (some color), maps, portraits." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references (pages 434-454) and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Patchworks of power and privilege: France in the 1780s -- A world of intellectual ferment -- Mismanaging crisis, 1785-88 -- The people's revolution, 1789 -- Regenerating the nation, 1789-90 -- The revolution triumphant, 1790 -- Fracturing Christ's family: religious schism and the king's flight, 1790-91 -- Fear and fury, 1791-92, and a second revolution -- Republicans at the crossroads, 1792-93 -- Liberty or death: choosing sides in violent times, 1793 -- 'Terror until the peace', July-October 1793 -- Saving a republic of virtue, October 1793-April 1794 -- Terror, victory and collapse, April-July 1794 -- Settling scores: the Thermidorian reaction, 1794-95 -- Men with a stake in society, 1795-97 -- The great nation and its enemies, 1797-99 -- The significance of the French Revolution",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.623+0000",
+      "updatedDate" : "2019-11-25T05:44:32.623+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
+    "hrid" : "in00000017",
     "source" : "FOLIO",
     "title" : "Nod",
     "alternativeTitles" : [ ],
@@ -1205,13 +758,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.871+0000",
-      "updatedDate" : "2019-11-22T03:34:45.871+0000"
+      "createdDate" : "2019-11-25T05:44:32.679+0000",
+      "updatedDate" : "2019-11-25T05:44:32.679+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "hrid" : "in00000024",
     "source" : "FOLIO",
     "title" : "ABA Journal",
     "alternativeTitles" : [ ],
@@ -1242,13 +796,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.906+0000",
-      "updatedDate" : "2019-11-22T03:34:45.906+0000"
+      "createdDate" : "2019-11-25T05:44:32.696+0000",
+      "updatedDate" : "2019-11-25T05:44:32.696+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "0abeee3d-8ad2-4b04-92ff-221b4fce1075" ]
   }, {
     "id" : "6b4ae089-e1ee-431f-af83-e1133f8e3da0",
+    "hrid" : "in00000014",
     "source" : "FOLIO",
     "title" : "MobiCom'17 5 mmNets'17, October 16, 2017, Snowbird, UT, USA / general chairs: Haitham Hassanieh (University of Illinois at Urbana Champaign, USA), Xinyu Zhang (University of California San Diego, USA)",
     "alternativeTitles" : [ {
@@ -1304,13 +859,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.849+0000",
-      "updatedDate" : "2019-11-22T03:34:45.849+0000"
+      "createdDate" : "2019-11-25T05:44:32.667+0000",
+      "updatedDate" : "2019-11-25T05:44:32.667+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "6eee8eb9-db1a-46e2-a8ad-780f19974efa",
+    "hrid" : "in00000016",
     "source" : "FOLIO",
     "title" : "DC Motor Control Experiment Objekt for introduction to control systems Herbert Werner",
     "alternativeTitles" : [ ],
@@ -1347,132 +903,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.872+0000",
-      "updatedDate" : "2019-11-22T03:34:45.872+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "6f786527-0d0c-4f98-9a07-d917fc27cb91",
-    "hrid" : "ybp11560577",
-    "source" : "MARC",
-    "title" : "Vodka politics : alcohol, autocracy, and the secret history of the Russian state / Mark Lawrence Schrad.",
-    "indexTitle" : "Vodka politics : alcohol, autocracy, and the secret history of the Russian state /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "0199389470 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780199389476 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780199755592 (hardback : acid-free paper)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "0199755590 (hardback : acid-free paper)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Schrad, Mark Lawrence,",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Drinking of alcoholic beverages--Political aspects--Russia--History", "Drinking of alcoholic beverages--Political aspects--Soviet Union--History", "Drinking of alcoholic beverages--Political aspects--Russia (Federation)", "Vodka industry--Political aspects--Russia--History", "Vodka industry--Political aspects--Soviet Union--History", "Vodka industry--Political aspects--Russia (Federation)", "Prohibition--Political aspects--Russia--History", "Prohibition--Political aspects--Soviet Union--History", "Prohibition--Political aspects--Russia (Federation)" ],
-    "classifications" : [ {
-      "classificationNumber" : "362.2920947",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Oxford University Press",
-      "place" : "Oxford ; New York",
-      "dateOfPublication" : "[2014]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=1591070",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xvii, 492 pages ): illustrations." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references (pages 393-472) and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Vodka politics -- Cruel liquor: Ivan the Terrible and alcohol in the Muscovite court -- Peter the Great: modernization and intoxication -- Russia's empresses: power, conspiracy, and vodka -- Murder, intrigue, and the mysterious origins of vodka -- Why vodka? Russian statecraft and the origins of addiction -- Vodka and the origins of corruption in Russia -- Vodka domination, vodka resistance...Vodka emancipation? -- The pen, the sword, and the bottle -- Drunk at the front: alcohol and the imperial Russian army -- Nicholas the Drunk, Nicholas the Sober -- Did prohibition cause the Russian revolution? -- Vodka communism -- Industrialization, collectivization, alcoholization -- Vodka and dissent in the Soviet Union -- Gorbachev and the (vodka) politics of reform -- Did alcohol make the Soviets collapse? -- The bottle and Boris Yeltsin -- Alcohol and the demodernization of Russia -- The Russian cross -- The rise and fall of Putin's champion -- Medvedev against history -- An end to vodka politics?",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "75377f94-a0bc-4855-9bed-945f861c58e2",
-    "source" : "FOLIO",
-    "title" : "title 7403767601659659",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ {
-      "name" : "supercalifragilisticexpialidocious 800715371342761",
-      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-      "contributorTypeText" : "",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:54:07.119+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:54:07.119+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.678+0000",
+      "updatedDate" : "2019-11-25T05:44:32.678+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "7ab22f0a-c9cd-449a-9137-c76e5055ca37",
+    "hrid" : "in00000026",
     "source" : "FOLIO",
     "title" : "Poverty reduction strategies in Africa edited by Toyin Falola and Mike Odugbo Odey",
     "alternativeTitles" : [ ],
@@ -1537,69 +975,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.909+0000",
-      "updatedDate" : "2019-11-22T03:34:45.909+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "7b30a48b-a846-4e86-a94d-e536212c8512",
-    "hrid" : "ybp13398108",
-    "source" : "MARC",
-    "title" : "AUTOMATIC SOCIETY; [electronic resource] : THE FUTURE OF WORK",
-    "indexTitle" : "AUTOMATIC SOCIETY; THE FUTURE OF WORK",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "1509506349 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781509506347 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    } ],
-    "contributors" : [ {
-      "name" : "STIEGLER, BERNARD",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ {
-      "publisher" : "POLITY PRESS",
-      "place" : "CAMBRIDGE",
-      "dateOfPublication" : "2016."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4789974",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ "1 online resource (v.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.718+0000",
+      "updatedDate" : "2019-11-25T05:44:32.718+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "hrid" : "in00000023",
     "source" : "FOLIO",
     "title" : "Bridget Jones's Baby: the diaries",
     "alternativeTitles" : [ ],
@@ -1640,22 +1023,19 @@
       "staffOnly" : false,
       "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
     } ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
+    "previouslyHeld" : true,
+    "staffSuppress" : true,
+    "discoverySuppress" : true,
     "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.907+0000",
-      "updatedDate" : "2019-11-22T13:39:57.431+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.698+0000",
+      "updatedDate" : "2019-11-25T05:44:32.698+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "81825729-e824-4d52-9d15-1695e9bf1831",
+    "hrid" : "in00000012",
     "source" : "FOLIO",
     "title" : "Dissent, protest and dispute in Africa edited by Emmanuel M. Mbah and Toyin Falola",
     "alternativeTitles" : [ ],
@@ -1715,48 +1095,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.852+0000",
-      "updatedDate" : "2019-11-22T03:34:45.852+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "83e75efd-d439-44de-a1ea-a7ef363e42c9",
-    "source" : "FOLIO",
-    "title" : "Charlotte Test",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "3363cdb1-e644-446c-82a4-dc3a1d4395b9",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T15:19:03.283+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T15:19:03.283+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.666+0000",
+      "updatedDate" : "2019-11-25T05:44:32.666+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "8be05cf5-fb4f-4752-8094-8e179d08fb99",
+    "hrid" : "in00000027",
     "source" : "FOLIO",
     "title" : "Anglo-Saxon manuscripts in microfiche facsimile Volume 25 Corpus Christi College, Cambridge II, MSS 12, 144, 162, 178, 188, 198, 265, 285, 322, 326, 449 microform A. N. Doane (editor and director), Matthew T. Hussey (associate editor), Phillip Pulsiano (founding editor)",
     "alternativeTitles" : [ ],
@@ -1822,577 +1168,21 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.910+0000",
-      "updatedDate" : "2019-11-22T03:34:45.910+0000"
+      "createdDate" : "2019-11-25T05:44:32.720+0000",
+      "updatedDate" : "2019-11-25T05:44:32.720+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
-    "id" : "8c6b8734-3abf-44c5-b350-3f16d708e377",
-    "source" : "FOLIO",
-    "title" : "Request title",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:50:06.503+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:50:06.503+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "9241720a-8a0f-41c5-bb0f-93d40b8f82ef",
-    "hrid" : "ybp13304618",
-    "source" : "MARC",
-    "title" : "Research methods in psychology / Dennis Howitt, Loughborough University, Duncan Cramer, Loughborough University.",
-    "indexTitle" : "Research methods in psychology /",
-    "alternativeTitles" : [ {
-      "alternativeTitleTypeId" : "30512027-cdc9-4c79-af75-1565b3bd888d",
-      "alternativeTitle" : "Introduction to research methods in psychology"
-    } ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9781292134307 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1292134305 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781292134277 (book)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1292134275 (book)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Howitt, Dennis,",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    }, {
-      "name" : "Cramer, Duncan,",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "Psychology--Research--Methodology" ],
-    "classifications" : [ {
-      "classificationNumber" : "150.721",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Pearson",
-      "place" : "Harlow, England ; New York",
-      "dateOfPublication" : "[2017]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=1419871",
-      "publicNote" : "Connect to eBook online (EBSCOhost single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (pages cm.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "95f75efb-e37c-477d-b52d-ce3ba66de6e6",
-    "hrid" : "589780",
-    "source" : "MARC",
-    "title" : "The American journal of clinical medicine.",
-    "indexTitle" : "American journal of clinical medicine.",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "sn 79004250",
-      "identifierTypeId" : "c858e4f2-2b6b-4385-842b-60732ee14abb"
-    }, {
-      "value" : "0097-1847",
-      "identifierTypeId" : "913300b2-03ed-469a-8179-c1092c991227"
-    }, {
-      "value" : "(ICU)BID7822352",
-      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
-    }, {
-      "value" : "(OCoLC)1426556",
-      "identifierTypeId" : "439bfbae-75bc-4f74-9fc7-b2a2d47ce3ef"
-    }, {
-      "value" : "2308474",
-      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
-    } ],
-    "contributors" : [ ],
-    "subjects" : [ "Medicine--Periodicals", "Medicine" ],
-    "classifications" : [ {
-      "classificationNumber" : "W1 AM45H",
-      "classificationTypeId" : "a7f4d03f-b0d8-496c-aebf-4e9cdb678200"
-    } ],
-    "publication" : [ {
-      "publisher" : "American journal of clinical medicine.",
-      "place" : "Chicago"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ "Ceased in 1924" ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ "v. ill. 26 cm." ],
-    "languages" : [ "eng", "eng" ],
-    "notes" : [ ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T14:06:44.121+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T14:06:44.121+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "a11edbf9-8525-4c01-904c-0fa9d1471cdc",
-    "hrid" : "ybp12015984",
-    "source" : "MARC",
-    "title" : "Small animal critical care medicine / [edited by] Deborah C. Silverstein, Kate Hopper.",
-    "indexTitle" : "Small animal critical care medicine /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9780323243520 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "0323243525 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781455703067 (hardcover)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1455703060 (hardcover)",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Silverstein, Deborah C.,",
-      "contributorTypeText" : "editor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    }, {
-      "name" : "Hopper, Kate,",
-      "contributorTypeText" : "editor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "Emergencies--veterinary", "Veterinary Medicine--methods", "Cat Diseases", "Critical Care--methods", "Dog Diseases", "Pet medicine", "Veterinary critical care" ],
-    "classifications" : [ {
-      "classificationNumber" : "SF 778 S635 2015",
-      "classificationTypeId" : "a7f4d03f-b0d8-496c-aebf-4e9cdb678200"
-    }, {
-      "classificationNumber" : "636.0896028",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Elsevier",
-      "place" : "St. Louis, Missouri",
-      "dateOfPublication" : "[2015]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=821972",
-      "publicNote" : "Connect to eBook online (EBSCOhost single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xxi, 1130 pages ): illustrations." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Part 1: Key critical care concepts -- II: Respiratory disorders -- III: Mechanical ventilation -- IV: Cardiac disorders -- V: Electrolyte and acid-base disturbances -- VI: Fluid therapy -- VII: Endocrine disorders -- VIII: Therapeutic drug overdose -- IX: Neurologic disorders -- X: Infectious disorders -- XI: Hematologic disorders -- XII: Intraabodiminal disorders -- XIII: Urogenital disorders -- XIV: Nutrition -- XV: Surgical and postoperative conditions -- XVI: Trauma -- XVII: Anesthesia and pain management -- XVIII: Environmental emergencies -- XIX: Miscellaneous disorders -- XX: Pharmacology -- XXI: Monitoring -- XXII: Procedures -- XXIII: ICU design and management",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "a317b304-528c-424f-961c-39174933b454",
-    "source" : "FOLIO",
-    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "Berichte aus der Betriebswirtschaft" ],
-    "identifiers" : [ {
-      "value" : "(DE-599)GBV101484262X",
-      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
-    } ],
-    "contributors" : [ {
-      "name" : "Augustin, Harald",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ {
-      "publisher" : "Shaker Verlag",
-      "place" : "Aachen",
-      "dateOfPublication" : "2017"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ "ger" ],
-    "notes" : [ ],
-    "statisticalCodeIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.836+0000",
-      "updatedDate" : "2019-11-22T03:34:45.836+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
-    "source" : "FOLIO",
-    "title" : "Interesting Times",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "0552142352",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780552142352",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    } ],
-    "contributors" : [ {
-      "name" : "Pratchett, Terry",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "statisticalCodeIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.823+0000",
-      "updatedDate" : "2019-11-22T03:34:45.823+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "bbcd0f47-966c-4715-812e-e3c3c7061505",
-    "hrid" : "ybp13250854",
-    "source" : "MARC",
-    "title" : "Offshore finance and global governance : disciplining the tax nomad / William Vlcek.",
-    "indexTitle" : "Offshore finance and global governance : disciplining the tax nomad /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "International political economy series." ],
-    "identifiers" : [ {
-      "value" : "9781137561817 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1137561815 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781137561800",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1137561807",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Vlcek, William, 1960-",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "International finance", "Banks and banking, International" ],
-    "classifications" : [ {
-      "classificationNumber" : "332.15",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Palgrave Macmillan",
-      "place" : "London",
-      "dateOfPublication" : "2017."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4731708",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource ( 190 pages.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Online resource; title from PDF title page (EBSCO, viewed December 5, 2016)",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    }, {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "bbd4a5e1-c9f3-44b9-bfdf-d184e04f0ba0",
-    "source" : "FOLIO",
-    "title" : "Water resources of East Feliciana Parish, Louisiana",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ {
-      "name" : "White, Vincent E.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "statisticalCodeIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.849+0000",
-      "updatedDate" : "2019-11-22T03:34:45.849+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "c1d3be12-ecec-4fab-9237-baf728575185",
-    "source" : "FOLIO",
-    "title" : "The city post-modernity edited by Alan Latham",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "SAGE benchmarks in culture and society" ],
-    "identifiers" : [ {
-      "value" : "1010770160",
-      "identifierTypeId" : "5d164f4b-0b15-4e42-ae75-cfcf85318ad9"
-    }, {
-      "value" : "9781473937703",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "(DE-599)GBV1010770160",
-      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
-    } ],
-    "contributors" : [ {
-      "name" : "Latham, Alan",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
-    } ],
-    "subjects" : [ "Stadt", "Postmoderne", "Aufsatzsammlung" ],
-    "classifications" : [ {
-      "classificationNumber" : "H",
-      "classificationTypeId" : "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
-    }, {
-      "classificationNumber" : "300",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "SAGE",
-      "place" : "Los Angeles London New Delhi Singapore Washington DC Melbourne",
-      "dateOfPublication" : "2018"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Cities are sites of great wealth and poverty, of hope and despair, of social and economic dynamism, as well as tradition and established power. Social scientists and humanities scholars have over the past three decades generated an impressive range of perspectives for making sense of the vast complexities of cities. These perspectives tell both of the economic, social and political dynamism cities generate, and point to possible lines of future development. The four volumes, The City: Post-Modernity, will focus more exclusively on the contemporary city, looking at the subject through the lenses of globalization and post-colonialism, amongst others",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.873+0000",
-      "updatedDate" : "2019-11-22T03:34:45.873+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "c3b883c6-eee9-4d93-bd8e-0213ad235d8a",
-    "hrid" : "ybp10703175",
-    "source" : "MARC",
-    "title" : "The triumph of emptiness [electronic resource] : consumption, higher education, and work organization / Mats Alvesson.",
-    "indexTitle" : "Triumph of emptiness consumption, higher education, and work organization /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9780191636721 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "019163672X (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780199660940",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "0199660948",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Alvesson, Mats, 1956-",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Corporate culture", "Organizational behavior--Social aspects", "Materialism", "Civilization, Modern--21st century", "Branding (Marketing)", "Consumption (Economics)" ],
-    "classifications" : [ {
-      "classificationNumber" : "302.35",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Oxford University Press",
-      "place" : "Oxford, United Kingdom",
-      "dateOfPublication" : "2013."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=576874",
-      "publicNote" : "Connect to eBook online (EBSCOhost single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ "1 online resource." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on online resource; title from digital title page (viewed on Sept. 4, 2013)",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "c8eed377-0fd3-4f3d-a640-40aff7344220",
+    "id" : "90067668-f1d9-4ad1-997a-8186c7450353",
+    "hrid" : "in00000034",
     "source" : "FOLIO",
     "title" : "qwer",
     "alternativeTitles" : [ ],
     "editions" : [ "[1st ed.]" ],
     "series" : [ "Catalogus (Museum van Hedendaagse Kunst Antwerpen), 92" ],
     "identifiers" : [ {
-      "value" : "foo_1574394230465",
+      "value" : "foo_1574661214794",
       "identifierTypeId" : "8e3dd25e-db82-4b06-8311-90d41998c109"
     }, {
       "value" : "9789072828279",
@@ -2439,15 +1229,16 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-22T03:51:35.085+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:51:35.085+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T06:01:14.475+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T06:01:14.475+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
-    "id" : "c9b5976c-936c-407b-b026-4e7858850647",
+    "id" : "9d710c2c-1a54-4562-8bfb-29ae19dc891f",
+    "hrid" : "in00000031",
     "source" : "FOLIO",
     "title" : "L’Apprenti sorcier / Paul Dukas",
     "alternativeTitles" : [ ],
@@ -2474,15 +1265,332 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-22T03:44:52.963+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:44:52.963+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:54:38.636+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T05:54:38.636+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "a317b304-528c-424f-961c-39174933b454",
+    "hrid" : "in00000003",
+    "source" : "FOLIO",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ "Berichte aus der Betriebswirtschaft" ],
+    "identifiers" : [ {
+      "value" : "(DE-599)GBV101484262X",
+      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
+    } ],
+    "contributors" : [ {
+      "name" : "Augustin, Harald",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ {
+      "publisher" : "Shaker Verlag",
+      "place" : "Aachen",
+      "dateOfPublication" : "2017"
+    } ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ "ger" ],
+    "notes" : [ ],
+    "statisticalCodeIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:44:32.624+0000",
+      "updatedDate" : "2019-11-25T05:44:32.624+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "a5b03b56-af9b-40c0-a8a2-d52f9bcd509a",
+    "hrid" : "in00000032",
+    "source" : "FOLIO",
+    "title" : "Soul station / Hank Mobley",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:57:26.915+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T05:57:26.915+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+    "hrid" : "in00000001",
+    "source" : "FOLIO",
+    "title" : "Interesting Times",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "0552142352",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "9780552142352",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "contributors" : [ {
+      "name" : "Pratchett, Terry",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "statisticalCodeIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:44:32.616+0000",
+      "updatedDate" : "2019-11-25T05:44:32.616+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "ae34ddd2-cb99-4b70-91b4-57f66ac97454",
+    "hrid" : "in00000030",
+    "source" : "FOLIO",
+    "title" : "Soul station / Hank Mobley",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:54:01.904+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T05:54:01.904+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "b0ca4662-3131-436f-8eac-3b214fb28e26",
+    "hrid" : "in00000037",
+    "source" : "FOLIO",
+    "title" : "title 8170081409148527",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ {
+      "name" : "supercalifragilisticexpialidocious 3913914859403693",
+      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+      "contributorTypeText" : "",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
+      "primary" : false
+    } ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T06:03:44.742+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T06:03:44.742+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "bbd4a5e1-c9f3-44b9-bfdf-d184e04f0ba0",
+    "hrid" : "in00000011",
+    "source" : "FOLIO",
+    "title" : "Water resources of East Feliciana Parish, Louisiana",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ {
+      "name" : "White, Vincent E.",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "statisticalCodeIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:44:32.660+0000",
+      "updatedDate" : "2019-11-25T05:44:32.660+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "c1d3be12-ecec-4fab-9237-baf728575185",
+    "hrid" : "in00000020",
+    "source" : "FOLIO",
+    "title" : "The city post-modernity edited by Alan Latham",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ "SAGE benchmarks in culture and society" ],
+    "identifiers" : [ {
+      "value" : "1010770160",
+      "identifierTypeId" : "5d164f4b-0b15-4e42-ae75-cfcf85318ad9"
+    }, {
+      "value" : "9781473937703",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "(DE-599)GBV1010770160",
+      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
+    } ],
+    "contributors" : [ {
+      "name" : "Latham, Alan",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a"
+    } ],
+    "subjects" : [ "Stadt", "Postmoderne", "Aufsatzsammlung" ],
+    "classifications" : [ {
+      "classificationNumber" : "H",
+      "classificationTypeId" : "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+    }, {
+      "classificationNumber" : "300",
+      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
+    } ],
+    "publication" : [ {
+      "publisher" : "SAGE",
+      "place" : "Los Angeles London New Delhi Singapore Washington DC Melbourne",
+      "dateOfPublication" : "2018"
+    } ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ "eng" ],
+    "notes" : [ {
+      "note" : "Cities are sites of great wealth and poverty, of hope and despair, of social and economic dynamism, as well as tradition and established power. Social scientists and humanities scholars have over the past three decades generated an impressive range of perspectives for making sense of the vast complexities of cities. These perspectives tell both of the economic, social and political dynamism cities generate, and point to possible lines of future development. The four volumes, The City: Post-Modernity, will focus more exclusively on the contemporary city, looking at the subject through the lenses of globalization and post-colonialism, amongst others",
+      "staffOnly" : false,
+      "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
+    } ],
+    "statisticalCodeIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T05:44:32.683+0000",
+      "updatedDate" : "2019-11-25T05:44:32.683+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "c55eaacb-0d5e-4094-bb8c-f414a0a6aca0",
+    "hrid" : "in00000036",
+    "source" : "FOLIO",
+    "title" : "supercalifragilisticexpialidocious 5007583748365627",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ {
+      "name" : "author 6527937165922297",
+      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
+      "contributorTypeText" : "",
+      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
+      "primary" : false
+    } ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T06:03:41.104+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T06:03:41.104+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "ce00bca2-9270-4c6b-b096-b83a2e56e8e9",
+    "hrid" : "in00000006",
     "source" : "FOLIO",
     "title" : "Cantatas for bass 4 Ich habe genug : BWV 82 / Johann Sebastian Bach ; Matthias Goerne, baritone ; Freiburger Barockorchester, Gottfried von der Goltz, violin and conductor",
     "alternativeTitles" : [ {
@@ -2525,13 +1633,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.826+0000",
-      "updatedDate" : "2019-11-22T03:34:45.826+0000"
+      "createdDate" : "2019-11-25T05:44:32.647+0000",
+      "updatedDate" : "2019-11-25T05:44:32.647+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "cf23adf0-61ba-4887-bf82-956c4aae2260",
+    "hrid" : "in00000007",
     "source" : "FOLIO",
     "title" : "Temeraire",
     "alternativeTitles" : [ ],
@@ -2561,92 +1670,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.841+0000",
-      "updatedDate" : "2019-11-22T03:34:45.841+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "e30dfec7-2a1c-48be-8c8b-ef44e74b762c",
-    "hrid" : "ybp13271631",
-    "source" : "MARC",
-    "title" : "Introduction to SPSS in psychology : for version 22 and earlier / Dennis Howitt, Duncan Cramer.",
-    "indexTitle" : "Introduction to SPSS in psychology : for version 22 and earlier /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ {
-      "value" : "9781292000732 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1292000732 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781292000695",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1292000694",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Howitt, Dennis",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    }, {
-      "name" : "Cramer, Duncan, 1948-",
-      "contributorTypeText" : "author.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "SPSS for Windows", "Psychometrics", "Psychometrics--Computer programs" ],
-    "classifications" : [ {
-      "classificationNumber" : "150.15195",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Pearson",
-      "place" : "Harlow, England",
-      "dateOfPublication" : "2014."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "https://ucd.idm.oclc.org/login?url=http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=nlebk&db=nlabk&AN=1419005",
-      "publicNote" : "Connect to eBook online (EBSCOhost single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xxxvi, 554 pages ): illustrations (colour." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
-    }, {
-      "note" : "Electronic reproduction. Ipswich, MA Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.649+0000",
+      "updatedDate" : "2019-11-25T05:44:32.649+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+    "hrid" : "in00000022",
     "source" : "FOLIO",
     "title" : "Transparent water",
     "alternativeTitles" : [ ],
@@ -2709,13 +1740,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.888+0000",
-      "updatedDate" : "2019-11-22T03:34:45.888+0000"
+      "createdDate" : "2019-11-25T05:44:32.694+0000",
+      "updatedDate" : "2019-11-25T05:44:32.694+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "e6bc03c6-c137-4221-b679-a7c5c31f986c",
+    "hrid" : "in00000029",
     "source" : "FOLIO",
     "title" : "Organisations- und Prozessentwicklung Harald Augustin (Hrsg.)",
     "alternativeTitles" : [ ],
@@ -2774,48 +1806,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.920+0000",
-      "updatedDate" : "2019-11-22T03:34:45.920+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "eceb075f-0108-484a-b274-6302f33521f0",
-    "source" : "FOLIO",
-    "title" : "Soul station / Hank Mobley",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:44:17.664+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:44:17.664+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.723+0000",
+      "updatedDate" : "2019-11-25T05:44:32.723+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+    "hrid" : "in00000025",
     "source" : "FOLIO",
     "title" : "The Girl on the Train",
     "alternativeTitles" : [ {
@@ -2849,54 +1847,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.906+0000",
-      "updatedDate" : "2019-11-22T03:34:45.906+0000"
+      "createdDate" : "2019-11-25T05:44:32.697+0000",
+      "updatedDate" : "2019-11-25T05:44:32.697+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "44cd89f3-2e76-469f-a955-cc57cb9e0395" ]
   }, {
-    "id" : "f51d7db3-2ad3-44c9-990e-b3471639eae2",
-    "source" : "FOLIO",
-    "title" : "supercalifragilisticexpialidocious 3461938886597895",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ {
-      "name" : "author 377037712128639",
-      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-      "contributorTypeText" : "",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T03:54:03.429+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T03:54:03.429+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
     "id" : "f7e82a1e-fc06-4b82-bb1d-da326cb378ce",
+    "hrid" : "in00000008",
     "source" : "FOLIO",
     "title" : "Global Africa",
     "alternativeTitles" : [ ],
@@ -2930,287 +1888,11 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:45.839+0000",
-      "updatedDate" : "2019-11-22T03:34:45.839+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "fc4ac64f-4817-471f-a915-6e33e8e4c46c",
-    "source" : "FOLIO",
-    "title" : "Highcharts Demo",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "3363cdb1-e644-446c-82a4-dc3a1d4395b9",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T14:20:40.988+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T14:20:40.988+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "fe989481-9d31-483e-9ed7-3f8106ea685b",
-    "hrid" : "ybp12362799",
-    "source" : "MARC",
-    "title" : "Chinese students, learning cultures and overseas study / Lihong Wang, George Mason University, USA.",
-    "indexTitle" : "Chinese students, learning cultures and overseas study /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "Palgrave studies on Chinese education in a global perspective." ],
-    "identifiers" : [ {
-      "value" : "9781137496591 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1137496592 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781137496584",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1137496584",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Wang, Lihong, 1968-",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Chinese students--Great Britain", "Graduate students--Great Britain", "Foreign study--Psychological aspects", "Education--China--Philosophy", "Education--Great Britain--Philosophy" ],
-    "classifications" : [ {
-      "classificationNumber" : "371.829951",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Palgrave Macmillan",
-      "place" : "New York, NY",
-      "dateOfPublication" : "2015."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4008795",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (x, 241 pages.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Machine generated contents note: -- Foreword; Michael Byram 1. Introduction 2. Chinese Inherited Beliefs About Learning 3. Initial Perceptions of British Learning Culture 4. Adjustment Resources and Initial Acculturative Methods 5. Changes in Learning Beliefs 6. Conclusions",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "fea0b7e3-36f1-470c-bc3b-55beebbd1c7e",
-    "hrid" : "ybp3491815",
-    "source" : "MARC",
-    "title" : "The Decembrist myth in Russian culture / Ludmilla A. Trigos.",
-    "indexTitle" : "Decembrist myth in Russian culture /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "Studies of the Harriman Institute." ],
-    "identifiers" : [ {
-      "value" : "9780230104716 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "0230104711 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9780230619166",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "0230619169",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Trigos, Ludmilla A",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : true
-    } ],
-    "subjects" : [ "Decembrists", "Russian literature--History and criticism", "Russian literature--Themes, motives", "Violence in literature", "Revolutions in literature", "Russia--History--December Uprising, 1825" ],
-    "classifications" : [ {
-      "classificationNumber" : "891.7093584707",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "Palgrave Macmillan",
-      "place" : "New York",
-      "dateOfPublication" : "2009."
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=599385",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xxviii, 239 pages ): illustrations." ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "Includes bibliographical references (pages 215-222) and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "The Decembrist myth in the nineteenth century -- Literariness and self-fashioning in the Decembrists' memoirs -- The image in flux in the early twentieth century -- The battle over representation during the centennial -- Centennial representations in fiction and film -- Rewriting Russian history : Stalin era representations -- The Decembrists and dissidence : myth and anti-myth from the 1960s-1980s -- The Decembrists' desacralization during the Glasnost and post-Soviet eras -- \"The Decembrists are our all.\"",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "fee758fc-03c4-49b4-b355-ebc07e18ffcf",
-    "hrid" : "ybp13315851",
-    "source" : "MARC",
-    "title" : "Managing knowledge resources and records in modern organizations / [editors] Priti Jain, Nathan Mnjama.",
-    "indexTitle" : "Managing knowledge resources and records in modern organizations /",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ "Advances in knowledge acquisition, transfer, and management (AKATM) book series." ],
-    "identifiers" : [ {
-      "value" : "9781522519669 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "1522519661 (electronic bk.)",
-      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
-    }, {
-      "value" : "9781522519652",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    }, {
-      "value" : "1522519653",
-      "identifierTypeId" : "fcca2643-406a-482a-b760-7a7f8aec640e"
-    } ],
-    "contributors" : [ {
-      "name" : "Jain, Priti,",
-      "contributorTypeText" : "editor, contributor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    }, {
-      "name" : "Mnjama, Nathan, 1950-",
-      "contributorTypeText" : "editor, contributor.",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "Knowledge management", "Business enterprises--Technological innovations", "Information technology--Management" ],
-    "classifications" : [ {
-      "classificationNumber" : "658.4038",
-      "classificationTypeId" : "42471af9-7d25-4f3a-bf78-60d29dcf463b"
-    } ],
-    "publication" : [ {
-      "publisher" : "IGI Global, Business Science Reference",
-      "place" : "Hershey, PA",
-      "dateOfPublication" : "[2017]"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ {
-      "uri" : "http://ebookcentral.proquest.com/lib/UCD/detail.action?docID=4774121",
-      "publicNote" : "Connect to eBook online (ProQuest eBook Central single user license)",
-      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
-    } ],
-    "instanceTypeId" : "6312d172-f0cf-40f6-b27d-9fa8feaf332f",
-    "instanceFormatIds" : [ "f5e8210f-7640-459b-a71f-552567f92369" ],
-    "physicalDescriptions" : [ "1 online resource (xvii, 280 pages.):" ],
-    "languages" : [ "eng" ],
-    "notes" : [ {
-      "note" : "\"Premier Reference Source\" -- book cover",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "6a2533a7-4de2-4e64-8466-074c2fa9308c"
-    }, {
-      "note" : "Includes bibliographical references and index",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "86b6e817-e1bc-42fb-bab0-70e7547de6c1"
-    }, {
-      "note" : "Preface -- Acknowledgements -- Knowledge sharing : at the heart of knowledge management / John Steven Edwards, University of Aston, England -- Knowledge management and records management and competitive advantage in business / Alphonce Juma, Moi University, Kenya, Nelly Mzera, Moi University, Kenya -- Social media : a potential technological tool in fostering knowledge sharing in government agencies / Gwakisa Andindilile Kamatula, Tanzania Public Service College, Tanzania -- Knowledge sharing in business organizations : leadership role in knowledge sharing at Turkish enterprises / Korhan Arun, Namik Kemal Uni, Turkey -- Governing social network knowledge activities : knowledge management governance or knowledge governance / Mohammad Reza Ghodoosi, University of Tehran, Iran -- Ethical and legal issues in knowledge management life-cycle in business / Priti Jain, University of Botswana, Botswana -- The nexus between knowledge management and electronic resources for public sector reform in Botswana / Kgomotso H. Moahi,, University of Botswana, Botswana, Shadrack B Rathapo, Public Enterprises Evaluation and Privatisation Agency (PEEPA), Botswana, Peter Mazebe II Mothataetsi Sebina, University of Botswana. Botswana -- The diffusion of the concept of knowledge management among African scholars : a bibliometrics perspective / Akakandelwa Akakandelwa, University of Zambia, Zambia -- Preservation of recorded information in public and private sector organizations / Nathan Mnjama, University of Botswana, Botswana -- The management of magistrate courts records in Namibia / Ruth, M. Abankwah, University of Namibia, Namibia, Nampa Hamutumwa, University of Namibia, Namibia -- Document description and coding as key elements in knowledge, records and information management / Olugbade S. Oladokun, University of Botswana, Botswana, Saul F C Zulu, University of Botswana, Botswana -- Managing indigenous knowledge in Tanzania : a business perspective / John Jackson Iwata , University of KwaZulu-Natal, South Africa, Ruth G M Hoskins University of KwaZulu-Natal, South Africa -- Cultural festivals of Botswana ethnic communities : business value & challenges of cultural festivals / Andy Chebanne, University of Botswana, Botswana",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "5ba8e385-0e27-462e-a571-ffa1fa34ea54"
-    }, {
-      "note" : "Electronic reproduction. Ann Arbor, MI Available via World Wide Web",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "d548fdff-b71c-4359-8055-f1c008c30f01"
-    }, {
-      "note" : "Description based on print version record",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : "66ea8f28-d5da-426a-a7c9-739a5d676347"
-    } ],
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T17:15:34.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T17:15:34.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:32.651+0000",
+      "updatedDate" : "2019-11-25T05:44:32.651+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   } ],
-  "totalRecords" : 56
+  "totalRecords" : 37
 }

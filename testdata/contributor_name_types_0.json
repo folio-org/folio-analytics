@@ -4,24 +4,24 @@
     "name" : "Personal name",
     "ordering" : "1",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.874+0000",
-      "updatedDate" : "2019-11-22T03:34:42.874+0000"
+      "createdDate" : "2019-11-25T05:44:28.748+0000",
+      "updatedDate" : "2019-11-25T05:44:28.748+0000"
     }
   }, {
     "id" : "2e48e713-17f3-4c13-a9f8-23845bb210aa",
     "name" : "Corporate name",
     "ordering" : "2",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.876+0000",
-      "updatedDate" : "2019-11-22T03:34:42.876+0000"
+      "createdDate" : "2019-11-25T05:44:28.747+0000",
+      "updatedDate" : "2019-11-25T05:44:28.747+0000"
     }
   }, {
     "id" : "e8b311a6-3b21-43f2-a269-dd9310cb2d0a",
     "name" : "Meeting name",
     "ordering" : "3",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:42.874+0000",
-      "updatedDate" : "2019-11-22T03:34:42.874+0000"
+      "createdDate" : "2019-11-25T05:44:28.746+0000",
+      "updatedDate" : "2019-11-25T05:44:28.746+0000"
     }
   } ],
   "totalRecords" : 3
