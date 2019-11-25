@@ -1,5 +1,32 @@
 {
   "loanPolicies" : [ {
+    "id" : "06e93efe-8076-4eb1-ba91-eec913cdb90a",
+    "name" : "Test",
+    "loanable" : true,
+    "loansPolicy" : {
+      "profileId" : "Rolling",
+      "period" : {
+        "duration" : 23,
+        "intervalId" : "Hours"
+      },
+      "closedLibraryDueDateManagementId" : "END_OF_THE_CURRENT_SERVICE_POINT_HOURS",
+      "gracePeriod" : {
+        "duration" : 23,
+        "intervalId" : "Hours"
+      }
+    },
+    "renewable" : true,
+    "renewalsPolicy" : {
+      "numberAllowed" : 12.0,
+      "renewFromId" : "CURRENT_DUE_DATE"
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-25T14:39:28.339+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T14:40:00.378+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+    }
+  }, {
     "id" : "43198de5-f56a-4a53-a0bd-5a324418967a",
     "name" : "One Hour",
     "loanable" : true,
@@ -58,5 +85,5 @@
       }
     }
   } ],
-  "totalRecords" : 2
+  "totalRecords" : 3
 }

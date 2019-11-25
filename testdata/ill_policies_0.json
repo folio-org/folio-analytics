@@ -4,64 +4,64 @@
     "name" : "Will reproduce",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.526+0000",
-      "updatedDate" : "2019-11-22T03:34:44.526+0000"
+      "createdDate" : "2019-11-25T05:44:31.130+0000",
+      "updatedDate" : "2019-11-25T05:44:31.130+0000"
     }
   }, {
     "id" : "2b870182-a23d-48e8-917d-9421e5c3ce13",
     "name" : "Will lend hard copy only",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.523+0000",
-      "updatedDate" : "2019-11-22T03:34:44.523+0000"
+      "createdDate" : "2019-11-25T05:44:31.131+0000",
+      "updatedDate" : "2019-11-25T05:44:31.131+0000"
     }
   }, {
     "id" : "37fc2702-7ec9-482a-a4e3-5ed9a122ece1",
     "name" : "Unknown lending policy",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.529+0000",
-      "updatedDate" : "2019-11-22T03:34:44.529+0000"
+      "createdDate" : "2019-11-25T05:44:31.143+0000",
+      "updatedDate" : "2019-11-25T05:44:31.143+0000"
     }
   }, {
     "id" : "46970b40-918e-47a4-a45d-b1677a2d3d46",
     "name" : "Will lend",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.524+0000",
-      "updatedDate" : "2019-11-22T03:34:44.524+0000"
+      "createdDate" : "2019-11-25T05:44:31.135+0000",
+      "updatedDate" : "2019-11-25T05:44:31.135+0000"
     }
   }, {
     "id" : "6bc6a71f-d6e2-4693-87f1-f495afddff00",
     "name" : "Will not reproduce",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.529+0000",
-      "updatedDate" : "2019-11-22T03:34:44.529+0000"
+      "createdDate" : "2019-11-25T05:44:31.135+0000",
+      "updatedDate" : "2019-11-25T05:44:31.135+0000"
     }
   }, {
     "id" : "9e49924b-f649-4b36-ab57-e66e639a9b0e",
     "name" : "Limited lending policy",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.536+0000",
-      "updatedDate" : "2019-11-22T03:34:44.536+0000"
+      "createdDate" : "2019-11-25T05:44:31.138+0000",
+      "updatedDate" : "2019-11-25T05:44:31.138+0000"
     }
   }, {
     "id" : "b0f97013-87f5-4bab-87f2-ac4a5191b489",
     "name" : "will not lend",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.526+0000",
-      "updatedDate" : "2019-11-22T03:34:44.526+0000"
+      "createdDate" : "2019-11-25T05:44:31.135+0000",
+      "updatedDate" : "2019-11-25T05:44:31.135+0000"
     }
   }, {
     "id" : "c51f7aa9-9997-45e6-94d6-b502445aae9d",
     "name" : "Unknown reproduction policy",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.532+0000",
-      "updatedDate" : "2019-11-22T03:34:44.532+0000"
+      "createdDate" : "2019-11-25T05:44:31.137+0000",
+      "updatedDate" : "2019-11-25T05:44:31.137+0000"
     }
   } ],
   "totalRecords" : 8

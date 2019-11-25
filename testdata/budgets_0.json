@@ -15,8 +15,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.933+0000",
-      "updatedDate" : "2019-11-22T03:35:52.933+0000"
+      "createdDate" : "2019-11-25T05:45:38.821+0000",
+      "updatedDate" : "2019-11-25T05:45:38.821+0000"
     }
   }, {
     "id" : "0916fde2-7a7d-4ff0-9069-37ee1ec0c068",
@@ -34,8 +34,8 @@
     "fiscalYearId" : "8da275b8-e099-49a1-9a31-b8241ff26ffc",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.948+0000",
-      "updatedDate" : "2019-11-22T03:35:52.948+0000"
+      "createdDate" : "2019-11-25T05:45:38.785+0000",
+      "updatedDate" : "2019-11-25T05:45:38.785+0000"
     }
   }, {
     "id" : "0bfc8ba0-b61f-4852-bc5b-1f63ec039550",
@@ -53,8 +53,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.954+0000",
-      "updatedDate" : "2019-11-22T03:35:52.954+0000"
+      "createdDate" : "2019-11-25T05:45:38.773+0000",
+      "updatedDate" : "2019-11-25T05:45:38.773+0000"
     }
   }, {
     "id" : "34fe0c8b-2b99-4fe2-81a5-4ed6872a32e6",
@@ -72,8 +72,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.902+0000",
-      "updatedDate" : "2019-11-22T03:35:52.902+0000"
+      "createdDate" : "2019-11-25T05:45:38.833+0000",
+      "updatedDate" : "2019-11-25T05:45:38.833+0000"
     }
   }, {
     "id" : "383c59f9-d420-4f37-87ad-c0f7ee0e0283",
@@ -91,8 +91,25 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.919+0000",
-      "updatedDate" : "2019-11-22T03:35:52.919+0000"
+      "createdDate" : "2019-11-25T05:45:38.827+0000",
+      "updatedDate" : "2019-11-25T05:45:38.827+0000"
+    }
+  }, {
+    "id" : "3e2560b9-ac89-4839-a1d8-dd3476a9b9c0",
+    "name" : "DF-FY2019",
+    "budgetStatus" : "Active",
+    "allowableEncumbrance" : 110.0,
+    "allowableExpenditure" : 110.0,
+    "allocated" : 12345.0,
+    "available" : 12345.0,
+    "fundId" : "ee9a30d1-68bb-4c46-bec8-b0fafda75ce8",
+    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
+    "acqUnitIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:06:38.976+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:06:38.976+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   }, {
     "id" : "400afc07-4aa6-4dbb-8f2c-40cf8e69b0e6",
@@ -110,8 +127,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.900+0000",
-      "updatedDate" : "2019-11-22T03:35:52.900+0000"
+      "createdDate" : "2019-11-25T05:45:38.809+0000",
+      "updatedDate" : "2019-11-25T05:45:38.809+0000"
     }
   }, {
     "id" : "4207567e-73c9-45c8-8850-8458389ae0ed",
@@ -129,8 +146,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.946+0000",
-      "updatedDate" : "2019-11-22T03:35:52.946+0000"
+      "createdDate" : "2019-11-25T05:45:38.828+0000",
+      "updatedDate" : "2019-11-25T05:45:38.828+0000"
     }
   }, {
     "id" : "47144c36-7180-4840-aff4-bc9788c78d89",
@@ -148,8 +165,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.920+0000",
-      "updatedDate" : "2019-11-22T03:35:52.920+0000"
+      "createdDate" : "2019-11-25T05:45:38.790+0000",
+      "updatedDate" : "2019-11-25T05:45:38.790+0000"
     }
   }, {
     "id" : "4eadbf22-e6dc-4ea4-9453-c6e9de2cb5a8",
@@ -167,8 +184,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.931+0000",
-      "updatedDate" : "2019-11-22T03:35:52.931+0000"
+      "createdDate" : "2019-11-25T05:45:38.779+0000",
+      "updatedDate" : "2019-11-25T05:45:38.779+0000"
     }
   }, {
     "id" : "5255e36f-4444-49d5-baa3-38f7f687f69d",
@@ -186,8 +203,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.928+0000",
-      "updatedDate" : "2019-11-22T03:35:52.928+0000"
+      "createdDate" : "2019-11-25T05:45:38.804+0000",
+      "updatedDate" : "2019-11-25T05:45:38.804+0000"
     }
   }, {
     "id" : "53c28e77-4623-4af7-ad3d-60a9ba470c45",
@@ -205,8 +222,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.941+0000",
-      "updatedDate" : "2019-11-22T03:35:52.941+0000"
+      "createdDate" : "2019-11-25T05:45:38.814+0000",
+      "updatedDate" : "2019-11-25T05:45:38.814+0000"
     }
   }, {
     "id" : "64a71a11-9143-4ebe-ac3a-b0ced57636ba",
@@ -224,8 +241,8 @@
     "fiscalYearId" : "8da275b8-e099-49a1-9a31-b8241ff26ffc",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.943+0000",
-      "updatedDate" : "2019-11-22T03:35:52.943+0000"
+      "createdDate" : "2019-11-25T05:45:38.801+0000",
+      "updatedDate" : "2019-11-25T05:45:38.801+0000"
     }
   }, {
     "id" : "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
@@ -235,17 +252,17 @@
     "allowableExpenditure" : 100.0,
     "allocated" : 21000.0,
     "awaitingPayment" : 126.5,
-    "available" : 12777.3,
+    "available" : 12752.3,
     "encumbered" : 6224.22,
     "expenditures" : 1871.98,
-    "unavailable" : 86.0,
+    "unavailable" : 111.0,
     "overEncumbrance" : 0.0,
     "fundId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.906+0000",
-      "updatedDate" : "2019-11-22T03:35:52.906+0000"
+      "createdDate" : "2019-11-25T05:45:38.826+0000",
+      "updatedDate" : "2019-11-25T05:45:38.826+0000"
     }
   }, {
     "id" : "735fdf73-592b-4967-85ef-e8b82d09382c",
@@ -263,8 +280,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.904+0000",
-      "updatedDate" : "2019-11-22T03:35:52.904+0000"
+      "createdDate" : "2019-11-25T05:45:38.786+0000",
+      "updatedDate" : "2019-11-25T05:45:38.786+0000"
     }
   }, {
     "id" : "a7c63802-4c1a-4646-9392-024e08df9c02",
@@ -282,8 +299,8 @@
     "fiscalYearId" : "8da275b8-e099-49a1-9a31-b8241ff26ffc",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.917+0000",
-      "updatedDate" : "2019-11-22T03:35:52.917+0000"
+      "createdDate" : "2019-11-25T05:45:38.783+0000",
+      "updatedDate" : "2019-11-25T05:45:38.783+0000"
     }
   }, {
     "id" : "bd444215-1ce4-4101-9f10-1534fa137495",
@@ -301,8 +318,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.934+0000",
-      "updatedDate" : "2019-11-22T03:35:52.934+0000"
+      "createdDate" : "2019-11-25T05:45:38.813+0000",
+      "updatedDate" : "2019-11-25T05:45:38.813+0000"
     }
   }, {
     "id" : "cdb8a544-8a7e-403a-a942-3ae3c9b41267",
@@ -320,8 +337,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.916+0000",
-      "updatedDate" : "2019-11-22T03:35:52.916+0000"
+      "createdDate" : "2019-11-25T05:45:38.824+0000",
+      "updatedDate" : "2019-11-25T05:45:38.824+0000"
     }
   }, {
     "id" : "d5e1df1e-3c55-42b9-bd22-82ff3157e29f",
@@ -339,8 +356,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.945+0000",
-      "updatedDate" : "2019-11-22T03:35:52.945+0000"
+      "createdDate" : "2019-11-25T05:45:38.812+0000",
+      "updatedDate" : "2019-11-25T05:45:38.812+0000"
     }
   }, {
     "id" : "de6761f6-1f64-4b5d-a5bc-98862c498c21",
@@ -358,8 +375,8 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.956+0000",
-      "updatedDate" : "2019-11-22T03:35:52.956+0000"
+      "createdDate" : "2019-11-25T05:45:38.799+0000",
+      "updatedDate" : "2019-11-25T05:45:38.799+0000"
     }
   }, {
     "id" : "eb3c3a49-0c6d-423d-bf60-ac6ad2f96221",
@@ -377,15 +394,15 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.930+0000",
-      "updatedDate" : "2019-11-22T03:35:52.930+0000"
+      "createdDate" : "2019-11-25T05:45:38.800+0000",
+      "updatedDate" : "2019-11-25T05:45:38.800+0000"
     }
   }, {
     "id" : "f6aea7f1-e614-4010-a2f7-913bb63d1561",
     "name" : "HIST-FY19",
     "budgetStatus" : "Active",
     "allowableEncumbrance" : 110.0,
-    "allowableExpenditure" : 100.0,
+    "allowableExpenditure" : 110.0,
     "allocated" : 200000.0,
     "awaitingPayment" : 0.0,
     "available" : 0.0,
@@ -396,9 +413,10 @@
     "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.914+0000",
-      "updatedDate" : "2019-11-22T03:35:52.914+0000"
+      "createdDate" : "2019-11-25T05:45:38.795+0000",
+      "updatedDate" : "2019-11-25T20:04:02.055+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   } ],
-  "totalRecords" : 21
+  "totalRecords" : 22
 }

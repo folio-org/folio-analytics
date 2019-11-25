@@ -5,8 +5,8 @@
     "name" : "Uncataloged",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.776+0000",
-      "updatedDate" : "2019-11-22T03:34:43.776+0000"
+      "createdDate" : "2019-11-25T05:44:29.941+0000",
+      "updatedDate" : "2019-11-25T05:44:29.941+0000"
     }
   }, {
     "id" : "2a340d34-6b70-443a-bb1b-1b8d1c65d862",
@@ -14,8 +14,8 @@
     "name" : "Other",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.769+0000",
-      "updatedDate" : "2019-11-22T03:34:43.769+0000"
+      "createdDate" : "2019-11-25T05:44:29.933+0000",
+      "updatedDate" : "2019-11-25T05:44:29.933+0000"
     }
   }, {
     "id" : "52a2ff34-2a12-420d-8539-21aa8d3cf5d8",
@@ -23,8 +23,8 @@
     "name" : "Batch Loaded",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.768+0000",
-      "updatedDate" : "2019-11-22T03:34:43.768+0000"
+      "createdDate" : "2019-11-25T05:44:29.936+0000",
+      "updatedDate" : "2019-11-25T05:44:29.936+0000"
     }
   }, {
     "id" : "9634a5ab-9228-4703-baf2-4d12ebc77d56",
@@ -32,8 +32,8 @@
     "name" : "Cataloged",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.767+0000",
-      "updatedDate" : "2019-11-22T03:34:43.767+0000"
+      "createdDate" : "2019-11-25T05:44:29.935+0000",
+      "updatedDate" : "2019-11-25T05:44:29.935+0000"
     }
   }, {
     "id" : "daf2681c-25af-4202-a3fa-e58fdf806183",
@@ -41,8 +41,8 @@
     "name" : "Temporary",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.770+0000",
-      "updatedDate" : "2019-11-22T03:34:43.770+0000"
+      "createdDate" : "2019-11-25T05:44:29.934+0000",
+      "updatedDate" : "2019-11-25T05:44:29.934+0000"
     }
   }, {
     "id" : "f5cc2ab6-bb92-4cab-b83f-5a3d09261a41",
@@ -50,20 +50,9 @@
     "name" : "Not yet assigned",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:43.769+0000",
-      "updatedDate" : "2019-11-22T03:34:43.769+0000"
-    }
-  }, {
-    "id" : "febf0ba1-07a8-4bb9-938d-15f3a6bc8e0c",
-    "code" : "fast",
-    "name" : "On the fly",
-    "source" : "local",
-    "metadata" : {
-      "createdDate" : "2019-11-22T15:29:00.436+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T15:34:15.045+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-25T05:44:29.933+0000",
+      "updatedDate" : "2019-11-25T05:44:29.933+0000"
     }
   } ],
-  "totalRecords" : 7
+  "totalRecords" : 6
 }

@@ -52,6 +52,21 @@
     "supplement" : false,
     "title" : "Nod"
   }, {
+    "id" : "21d4ec99-0168-432c-a814-1f4bfee3d331",
+    "caption" : "2",
+    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
+    "checkin" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "poLineNumber" : "10013-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receivedDate" : "2019-11-25T20:24:48.514+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "379a896e-33d7-44b1-b1bc-043cb3125a50",
     "caption" : "Tutorial Volume 15",
     "comment" : "Super Special Edition",
@@ -104,6 +119,21 @@
     "supplement" : true,
     "title" : "Cantatas for bass 4 Ich habe genug : BWV 82 / Johann Sebastian Bach ; Matthias Goerne, baritone ; Freiburger Barockorchester, Gottfried von der Goltz, violin and conductor"
   }, {
+    "id" : "592942de-1515-4c1b-8803-da20c0199adc",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "0bd27a9e-4bfb-4175-9ec4-56f29b51528b",
+    "locationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivedDate" : "2019-11-25T20:16:19.580+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "5e317dc2-deeb-4429-b2a1-91e5cd0fd5f7",
     "caption" : "Tutorial Volume 5",
     "comment" : "Special Edition",
@@ -122,6 +152,20 @@
     "supplement" : true,
     "title" : "Interesting Times"
   }, {
+    "id" : "607afe1c-4395-4ede-bb97-9d97e8539124",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "cb40766c-3f2c-425d-b1a9-85369495efc5",
+    "locationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivingStatus" : "Expected",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "85608b9b-1117-3e7e-a87d-c950ec0d1406",
     "caption" : "Tutorial Volume 4",
     "comment" : "Standard Edition",
@@ -138,6 +182,20 @@
     "receivingStatus" : "Received",
     "supplement" : true,
     "title" : "MobiCom'17 5 mmNets'17, October 16, 2017, Snowbird, UT, USA / general chairs: Haitham Hassanieh (University of Illinois at Urbana Champaign, USA), Xinyu Zhang (University of California San Diego, USA)"
+  }, {
+    "id" : "8d6c9d9b-1bea-4cfc-acca-013b84523376",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "d96c4444-36fe-4a92-b9af-461233df4101",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivingStatus" : "Expected",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
   }, {
     "id" : "98ecf23b-f61a-376c-b53b-a5fb3aa70f9f",
     "caption" : "Tutorial Volume 35",
@@ -174,6 +232,35 @@
     "supplement" : true,
     "title" : "Interesting Times"
   }, {
+    "id" : "9f6fac76-fb3d-408a-a33a-ef2b0c8fbea8",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "a6294602-cf45-417d-9070-2d9880b46326",
+    "locationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivingStatus" : "Expected",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
+    "id" : "a2f91bda-3bb8-4f2d-add5-096599085630",
+    "dateOrdered" : "2019-11-25T17:19:31.033+0000",
+    "checkin" : false,
+    "instanceId" : "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
+    "itemId" : "061714e7-22af-40fa-a673-b80dd7bd1d64",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "a86fceea-934c-43c6-90bd-97d9ede2ba2e",
+    "poLineNumber" : "10008-1",
+    "poLineReceiptStatus" : "Fully Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "8464b5ee-7b8b-4078-a15f-f23306630305",
+    "receivedDate" : "2019-11-25T17:19:52.960+0000",
+    "receivingStatus" : "Received",
+    "title" : "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors"
+  }, {
     "id" : "a77d270d-5a07-1161-b2cc-7fb993b16f19",
     "caption" : "Tutorial Volume 376",
     "comment" : "Special Edition 2",
@@ -204,6 +291,36 @@
     "supplement" : true,
     "title" : "At Berkeley"
   }, {
+    "id" : "b115e7d7-3be2-4cdb-9de2-a98ad374ccd5",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "0de65d68-1b04-4897-afcb-13f1a01d7068",
+    "locationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivedDate" : "2019-11-25T20:16:20.296+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
+    "id" : "b56c59cc-2dda-4c6b-83cd-76fc9cf6d3b1",
+    "caption" : "6",
+    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
+    "checkin" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "poLineNumber" : "10013-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receivedDate" : "2019-11-25T20:24:48.514+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "be74963f-549e-2215-a3b7-87497216d80b",
     "caption" : "Tutorial Volume 12",
     "comment" : "Special Edition",
@@ -221,6 +338,35 @@
     "receivingStatus" : "Expected",
     "supplement" : true,
     "title" : "Interesting Times"
+  }, {
+    "id" : "bf243ba0-d302-469d-b9b3-6e31347388e6",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "27ca6f5b-9973-4365-b1bc-fc026c5ec76e",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivingStatus" : "Expected",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
+    "id" : "c121b03f-d1b7-437b-bdf5-1c90623e456a",
+    "caption" : "5",
+    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
+    "checkin" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "locationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
+    "poLineId" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "poLineNumber" : "10013-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receivedDate" : "2019-11-25T20:24:48.514+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
   }, {
     "id" : "c323f8e4-6345-55cd-9c38-ffa207f9c51b",
     "caption" : "Tutorial Volume 132",
@@ -240,6 +386,36 @@
     "supplement" : true,
     "title" : "Interesting Times"
   }, {
+    "id" : "c3337e4a-61f6-4156-a3de-62db3f072ff2",
+    "caption" : "4",
+    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
+    "checkin" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "locationId" : "184aae84-a5bf-4c6a-85ba-4a7c73026cd5",
+    "poLineId" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "poLineNumber" : "10013-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receivedDate" : "2019-11-25T20:24:48.514+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
+    "id" : "c86295ad-508b-400e-971a-eefebef8091d",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "cc4c5cac-d14c-40f0-957b-53c8d2381f52",
+    "locationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivedDate" : "2019-11-25T20:16:20.416+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "d4a39cf3-ca07-113f-85e0-5a8acba3109f",
     "caption" : "Tutorial Volume 25",
     "comment" : "The best Edition",
@@ -256,6 +432,20 @@
     "receivingStatus" : "Expected",
     "supplement" : true,
     "title" : "Bridget Jones's Baby: the diaries"
+  }, {
+    "id" : "d570d32a-d67a-4ebf-9437-c6cbcd2c0845",
+    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
+    "checkin" : false,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "itemId" : "7f3b3a5b-1552-4c50-8e8e-5df3302787dd",
+    "locationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
+    "poLineId" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "poLineNumber" : "10012-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
+    "receivingStatus" : "Expected",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
   }, {
     "id" : "e3ee2084-ca6b-2614-8765-eb50c714ce44",
     "caption" : "Tutorial Volume 1",
@@ -290,6 +480,21 @@
     "supplement" : true,
     "title" : "MobiCom'17 5 mmNets'17, October 16, 2017, Snowbird, UT, USA / general chairs: Haitham Hassanieh (University of Illinois at Urbana Champaign, USA), Xinyu Zhang (University of California San Diego, USA)"
   }, {
+    "id" : "e9a68d06-f19d-4e23-8dff-ce51cd320682",
+    "caption" : "3",
+    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
+    "checkin" : true,
+    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
+    "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "poLineId" : "020ccfbb-d589-4092-be6b-8b3bb51c4d42",
+    "poLineNumber" : "10013-1",
+    "poLineReceiptStatus" : "Partially Received",
+    "pieceFormat" : "Physical",
+    "purchaseOrderId" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
+    "receivedDate" : "2019-11-25T20:24:48.514+0000",
+    "receivingStatus" : "Received",
+    "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)"
+  }, {
     "id" : "f23dfd82-ceff-2843-9cf6-ea2dc7e5dcaa",
     "caption" : "Tutorial Volume 12345",
     "comment" : "Special Edition",
@@ -308,5 +513,5 @@
     "supplement" : true,
     "title" : "Interesting Times"
   } ],
-  "totalRecords" : 18
+  "totalRecords" : 32
 }

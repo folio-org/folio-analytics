@@ -12,8 +12,8 @@
     "name" : "Endowments",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.651+0000",
-      "updatedDate" : "2019-11-22T03:35:52.651+0000"
+      "createdDate" : "2019-11-25T05:45:38.434+0000",
+      "updatedDate" : "2019-11-25T05:45:38.434+0000"
     }
   }, {
     "id" : "1b6d3338-186e-4e35-9e75-1b886b0da53e",
@@ -28,8 +28,8 @@
     "name" : "Grants",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.668+0000",
-      "updatedDate" : "2019-11-22T03:35:52.668+0000"
+      "createdDate" : "2019-11-25T05:45:38.478+0000",
+      "updatedDate" : "2019-11-25T05:45:38.478+0000"
     }
   }, {
     "id" : "30fcc8e7-a019-43f4-b642-2edc389f4501",
@@ -43,8 +43,8 @@
     "name" : "Middle Eastern History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.632+0000",
-      "updatedDate" : "2019-11-22T03:35:52.632+0000"
+      "createdDate" : "2019-11-25T05:45:38.464+0000",
+      "updatedDate" : "2019-11-25T05:45:38.464+0000"
     }
   }, {
     "id" : "4428a37c-8bae-4f0d-865d-970d83d5ad55",
@@ -59,8 +59,8 @@
     "name" : "University Allocation",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.619+0000",
-      "updatedDate" : "2019-11-22T03:35:52.619+0000"
+      "createdDate" : "2019-11-25T05:45:38.447+0000",
+      "updatedDate" : "2019-11-25T05:45:38.447+0000"
     }
   }, {
     "id" : "55f48dc6-efa7-4cfe-bc7c-4786efe493e3",
@@ -75,8 +75,8 @@
     "name" : "Asian History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.635+0000",
-      "updatedDate" : "2019-11-22T03:35:52.635+0000"
+      "createdDate" : "2019-11-25T05:45:38.431+0000",
+      "updatedDate" : "2019-11-25T05:45:38.431+0000"
     }
   }, {
     "id" : "65032151-39a5-4cef-8810-5350eb316300",
@@ -90,8 +90,8 @@
     "name" : "US History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.629+0000",
-      "updatedDate" : "2019-11-22T03:35:52.629+0000"
+      "createdDate" : "2019-11-25T05:45:38.476+0000",
+      "updatedDate" : "2019-11-25T05:45:38.476+0000"
     }
   }, {
     "id" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
@@ -106,8 +106,8 @@
     "name" : "Gifts (Non-recurring)",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.627+0000",
-      "updatedDate" : "2019-11-22T03:35:52.627+0000"
+      "createdDate" : "2019-11-25T05:45:38.426+0000",
+      "updatedDate" : "2019-11-25T05:45:38.426+0000"
     }
   }, {
     "id" : "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
@@ -121,8 +121,8 @@
     "name" : "Can/LatAm History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.686+0000",
-      "updatedDate" : "2019-11-22T03:35:52.686+0000"
+      "createdDate" : "2019-11-25T05:45:38.450+0000",
+      "updatedDate" : "2019-11-25T05:45:38.450+0000"
     }
   }, {
     "id" : "68872d8a-bf16-420b-829f-206da38f6c10",
@@ -136,8 +136,8 @@
     "name" : "Canadian History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.645+0000",
-      "updatedDate" : "2019-11-22T03:35:52.645+0000"
+      "createdDate" : "2019-11-25T05:45:38.453+0000",
+      "updatedDate" : "2019-11-25T05:45:38.453+0000"
     }
   }, {
     "id" : "69640328-788e-43fc-9c3c-af39e243f3b7",
@@ -152,8 +152,8 @@
     "name" : "Oceania History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.647+0000",
-      "updatedDate" : "2019-11-22T03:35:52.647+0000"
+      "createdDate" : "2019-11-25T05:45:38.438+0000",
+      "updatedDate" : "2019-11-25T05:45:38.438+0000"
     }
   }, {
     "id" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
@@ -168,8 +168,8 @@
     "name" : "African History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.666+0000",
-      "updatedDate" : "2019-11-22T03:35:52.666+0000"
+      "createdDate" : "2019-11-25T05:45:38.414+0000",
+      "updatedDate" : "2019-11-25T05:45:38.414+0000"
     }
   }, {
     "id" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
@@ -183,8 +183,8 @@
     "name" : "History Misc",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.664+0000",
-      "updatedDate" : "2019-11-22T03:35:52.664+0000"
+      "createdDate" : "2019-11-25T05:45:38.449+0000",
+      "updatedDate" : "2019-11-25T05:45:38.449+0000"
     }
   }, {
     "id" : "bbd4a5e1-c9f3-44b9-bfdf-d184e04f0ba0",
@@ -198,8 +198,8 @@
     "name" : "State-MonoSeries",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.684+0000",
-      "updatedDate" : "2019-11-22T03:35:52.684+0000"
+      "createdDate" : "2019-11-25T05:45:38.472+0000",
+      "updatedDate" : "2019-11-25T05:45:38.472+0000"
     }
   }, {
     "id" : "cf23adf0-61ba-4887-bf82-956c4aae2260",
@@ -214,8 +214,8 @@
     "name" : "FY Sweep Fund",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.617+0000",
-      "updatedDate" : "2019-11-22T03:35:52.617+0000"
+      "createdDate" : "2019-11-25T05:45:38.410+0000",
+      "updatedDate" : "2019-11-25T05:45:38.410+0000"
     }
   }, {
     "id" : "d6f7c1ba-a237-465e-94ed-f37e91bc64bd",
@@ -229,8 +229,25 @@
     "name" : "Exchanges",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.609+0000",
-      "updatedDate" : "2019-11-22T03:35:52.609+0000"
+      "createdDate" : "2019-11-25T05:45:38.428+0000",
+      "updatedDate" : "2019-11-25T05:45:38.428+0000"
+    }
+  }, {
+    "id" : "d8700c8e-73df-4cf3-9bef-6269a5ce3cc7",
+    "allocatedFromIds" : [ ],
+    "allocatedToIds" : [ ],
+    "code" : "DF2",
+    "externalAccountNo" : "235635685789",
+    "fundStatus" : "Active",
+    "fundTypeId" : "6d73d226-f56f-4338-9584-e91a83d5ecec",
+    "ledgerId" : "e6c0f7f9-a90e-48be-b8ec-c35b9d77665e",
+    "name" : "Dennis Fund 2",
+    "acqUnitIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:11:45.407+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:11:45.407+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   }, {
     "id" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
@@ -244,8 +261,8 @@
     "name" : "State-Subscriptions",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.615+0000",
-      "updatedDate" : "2019-11-22T03:35:52.615+0000"
+      "createdDate" : "2019-11-25T05:45:38.461+0000",
+      "updatedDate" : "2019-11-25T05:45:38.461+0000"
     }
   }, {
     "id" : "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
@@ -259,8 +276,8 @@
     "name" : "Latin American History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.649+0000",
-      "updatedDate" : "2019-11-22T03:35:52.649+0000"
+      "createdDate" : "2019-11-25T05:45:38.455+0000",
+      "updatedDate" : "2019-11-25T05:45:38.455+0000"
     }
   }, {
     "id" : "e9285a1c-1dfc-4380-868c-e74073003f43",
@@ -274,8 +291,8 @@
     "name" : "European History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.669+0000",
-      "updatedDate" : "2019-11-22T03:35:52.669+0000"
+      "createdDate" : "2019-11-25T05:45:38.474+0000",
+      "updatedDate" : "2019-11-25T05:45:38.474+0000"
     }
   }, {
     "id" : "e9f9bc2f-bad5-4613-9d6c-f55efa5805e7",
@@ -290,8 +307,25 @@
     "name" : "One-time Gifts",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.633+0000",
-      "updatedDate" : "2019-11-22T03:35:52.633+0000"
+      "createdDate" : "2019-11-25T05:45:38.412+0000",
+      "updatedDate" : "2019-11-25T05:45:38.412+0000"
+    }
+  }, {
+    "id" : "ee9a30d1-68bb-4c46-bec8-b0fafda75ce8",
+    "allocatedFromIds" : [ "55f48dc6-efa7-4cfe-bc7c-4786efe493e3" ],
+    "allocatedToIds" : [ "67cd0046-e4f1-4e4f-9024-adf0b0039d09" ],
+    "code" : "DF",
+    "externalAccountNo" : "324562456234",
+    "fundStatus" : "Active",
+    "fundTypeId" : "99595e88-954b-4f23-ae7e-afb063aae458",
+    "ledgerId" : "e6c0f7f9-a90e-48be-b8ec-c35b9d77665e",
+    "name" : "Dennis Fund",
+    "acqUnitIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-25T20:06:18.871+0000",
+      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
+      "updatedDate" : "2019-11-25T20:06:18.871+0000",
+      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
     }
   }, {
     "id" : "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
@@ -305,8 +339,8 @@
     "name" : "Slavic & Eastern European History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.653+0000",
-      "updatedDate" : "2019-11-22T03:35:52.653+0000"
+      "createdDate" : "2019-11-25T05:45:38.432+0000",
+      "updatedDate" : "2019-11-25T05:45:38.432+0000"
     }
   }, {
     "id" : "fb7b70f1-b898-4924-a991-0e4b6312bb5f",
@@ -320,9 +354,9 @@
     "name" : "History",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.662+0000",
-      "updatedDate" : "2019-11-22T03:35:52.662+0000"
+      "createdDate" : "2019-11-25T05:45:38.462+0000",
+      "updatedDate" : "2019-11-25T05:45:38.462+0000"
     }
   } ],
-  "totalRecords" : 21
+  "totalRecords" : 23
 }
