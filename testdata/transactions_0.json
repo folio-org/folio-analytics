@@ -24,8 +24,8 @@
     "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
     "transactionType" : "Encumbrance",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:45:39.412+0000",
-      "updatedDate" : "2019-11-25T05:45:39.412+0000"
+      "createdDate" : "2019-11-26T03:35:29.316+0000",
+      "updatedDate" : "2019-11-26T03:35:29.316+0000"
     }
   }, {
     "id" : "21425789-acdb-44b2-b44f-f2291cc48b42",
@@ -42,8 +42,8 @@
     "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
     "transactionType" : "Credit",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:45:39.421+0000",
-      "updatedDate" : "2019-11-25T05:45:39.421+0000"
+      "createdDate" : "2019-11-26T03:35:29.311+0000",
+      "updatedDate" : "2019-11-26T03:35:29.311+0000"
     }
   }, {
     "id" : "a0b1e290-c42f-435a-b9d7-4ae7f77eb4ef",
@@ -59,8 +59,8 @@
     "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
     "transactionType" : "Allocation",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:45:39.422+0000",
-      "updatedDate" : "2019-11-25T05:45:39.422+0000"
+      "createdDate" : "2019-11-26T03:35:29.313+0000",
+      "updatedDate" : "2019-11-26T03:35:29.313+0000"
     }
   }, {
     "id" : "a4780d61-e9c7-4206-b203-a8b22a6d5c38",
@@ -75,8 +75,8 @@
     "sourceInvoiceLineId" : "ee60ee78-f487-4940-adcf-fa0726989823",
     "transactionType" : "Payment",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:45:39.425+0000",
-      "updatedDate" : "2019-11-25T05:45:39.425+0000"
+      "createdDate" : "2019-11-26T03:35:29.314+0000",
+      "updatedDate" : "2019-11-26T03:35:29.314+0000"
     }
   }, {
     "id" : "e24d0bae-0528-403d-8ce2-0d821a6e57e7",
@@ -92,26 +92,9 @@
     "toFundId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
     "transactionType" : "Transfer",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:45:39.419+0000",
-      "updatedDate" : "2019-11-25T05:45:39.419+0000"
-    }
-  }, {
-    "id" : "f8d3a983-d987-4adc-bd6f-ac7aa5fea0fe",
-    "amount" : 12345.0,
-    "currency" : "USD",
-    "fiscalYearId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
-    "source" : "User",
-    "tags" : {
-      "tagList" : [ "important" ]
-    },
-    "toFundId" : "ee9a30d1-68bb-4c46-bec8-b0fafda75ce8",
-    "transactionType" : "Allocation",
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:07:08.262+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:07:08.262+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:35:29.309+0000",
+      "updatedDate" : "2019-11-26T03:35:29.309+0000"
     }
   } ],
-  "totalRecords" : 6
+  "totalRecords" : 5
 }

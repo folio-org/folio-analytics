@@ -1,30 +1,5 @@
 {
   "purchaseOrders" : [ {
-    "id" : "01e848ce-3720-4181-b67e-8cb1adeda8cf",
-    "approved" : true,
-    "approvedById" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-    "approvalDate" : "2019-11-25T20:19:50.792+0000",
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "dateOrdered" : "2019-11-25T20:19:50.792+0000",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10013",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Open",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:17:20.787+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:19:51.230+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
     "id" : "05bdf3c8-01f0-4ddb-bd6c-6efd465f9e33",
     "approved" : false,
     "dateOrdered" : "2018-07-24T00:00:00.000+0000",
@@ -87,48 +62,6 @@
     "workflowStatus" : "Closed",
     "acqUnitIds" : [ ]
   }, {
-    "id" : "2b2eb34e-cf3b-41fc-8913-da917bc7673e",
-    "approved" : false,
-    "notes" : [ ],
-    "poNumber" : "10011",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T18:39:06.484+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T18:39:06.484+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "3e381b9d-f4b9-4c33-9234-2a2a4a884f0f",
-    "approved" : true,
-    "approvedById" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-    "approvalDate" : "2019-11-25T20:15:39.446+0000",
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "dateOrdered" : "2019-11-25T20:15:39.446+0000",
-    "manualPo" : true,
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10012",
-    "orderType" : "One-Time",
-    "reEncumber" : true,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Open",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:14:38.360+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:40.167+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
     "id" : "55b97a4a-6601-4488-84e1-8b0d47a3f523",
     "approved" : false,
     "manualPo" : false,
@@ -146,28 +79,6 @@
     "vendor" : "d0fb5aa0-cdf1-11e8-a8d5-f2801f1b9fd1",
     "workflowStatus" : "Pending",
     "acqUnitIds" : [ ]
-  }, {
-    "id" : "55e50ab2-7fcb-41c8-a707-61a85c4767f8",
-    "approved" : true,
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10006",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T16:55:59.978+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T16:55:59.978+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
   }, {
     "id" : "589a6016-3463-49f6-8aa2-dc315d0665fd",
     "approved" : true,
@@ -188,47 +99,6 @@
     "vendor" : "14fb6608-cdf1-11e8-a8d5-f2801f1b9fd1",
     "workflowStatus" : "Pending",
     "acqUnitIds" : [ ]
-  }, {
-    "id" : "7f30e4a7-c66f-4b39-8708-ac32df203c5d",
-    "approved" : true,
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10009",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T18:36:47.625+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T18:36:47.625+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "8464b5ee-7b8b-4078-a15f-f23306630305",
-    "approved" : false,
-    "approvedById" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-    "approvalDate" : "2019-11-25T17:19:31.033+0000",
-    "dateOrdered" : "2019-11-25T17:19:31.033+0000",
-    "notes" : [ ],
-    "poNumber" : "10008",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Open",
-    "acqUnitIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T17:18:44.822+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T17:19:31.983+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
   }, {
     "id" : "8c328a18-5761-4329-95f6-599412c32310",
     "approved" : true,
@@ -251,22 +121,6 @@
     "workflowStatus" : "Open",
     "acqUnitIds" : [ ]
   }, {
-    "id" : "90cb38fa-7786-4bf3-9dd0-d8228c163765",
-    "approved" : false,
-    "notes" : [ ],
-    "poNumber" : "10007",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "vendor" : "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T16:57:16.321+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T16:57:16.321+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
     "id" : "9447d062-89ec-486e-a14b-572f3efb9f8c",
     "approved" : false,
     "manualPo" : false,
@@ -277,50 +131,6 @@
     "vendor" : "13fb64dc-cdf1-11e8-a8d5-f2801f1b9fd1",
     "workflowStatus" : "Pending",
     "acqUnitIds" : [ ]
-  }, {
-    "id" : "97891f06-f681-473f-b5c1-e7ef062bdc69",
-    "approved" : true,
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10014",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:27:05.652+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:27:05.652+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "9d44661b-25c4-42ca-bcfb-6d4b60682d75",
-    "approved" : true,
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10005",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ "amazon" ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T16:55:40.582+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T16:55:40.582+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
   }, {
     "id" : "c27e60f9-6361-44c1-976e-0c4821a33a7d",
     "approved" : false,
@@ -339,28 +149,6 @@
     "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
     "workflowStatus" : "Pending",
     "acqUnitIds" : [ ]
-  }, {
-    "id" : "ca3317a8-0602-41ec-8dca-1dcbf26065b7",
-    "approved" : true,
-    "billTo" : "5f8a321e-6b38-4d90-92d4-bf08f91a2242",
-    "notes" : [ "Check credit card statement to make sure payment shows up" ],
-    "poNumber" : "10000",
-    "orderType" : "One-Time",
-    "reEncumber" : false,
-    "shipTo" : "f7c36792-05f7-4c8c-969d-103ac6763187",
-    "template" : "4dee318b-f5b3-40dc-be93-cc89b8c45b6f",
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T16:50:26.222+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T16:53:55.355+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
   }, {
     "id" : "cf4bfd64-e609-4ecb-b3e6-7a5a1ced1645",
     "approved" : false,
@@ -457,5 +245,5 @@
     "workflowStatus" : "Open",
     "acqUnitIds" : [ ]
   } ],
-  "totalRecords" : 25
+  "totalRecords" : 15
 }
