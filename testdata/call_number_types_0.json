@@ -4,96 +4,96 @@
     "name" : "Dewey Decimal classification",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.763+0000",
-      "updatedDate" : "2019-11-22T03:34:44.763+0000"
+      "createdDate" : "2019-11-26T03:34:19.629+0000",
+      "updatedDate" : "2019-11-26T03:34:19.629+0000"
     }
   }, {
     "id" : "054d460d-d6b9-4469-9e37-7a78a2266655",
     "name" : "National Library of Medicine classification",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.762+0000",
-      "updatedDate" : "2019-11-22T03:34:44.762+0000"
+      "createdDate" : "2019-11-26T03:34:19.636+0000",
+      "updatedDate" : "2019-11-26T03:34:19.636+0000"
     }
   }, {
     "id" : "28927d76-e097-4f63-8510-e56f2b7a3ad0",
     "name" : "Shelving control number",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.771+0000",
-      "updatedDate" : "2019-11-22T03:34:44.771+0000"
+      "createdDate" : "2019-11-26T03:34:19.644+0000",
+      "updatedDate" : "2019-11-26T03:34:19.644+0000"
     }
   }, {
     "id" : "512173a7-bd09-490e-b773-17d83f2b63fe",
     "name" : "LC Modified",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.766+0000",
-      "updatedDate" : "2019-11-22T03:34:44.766+0000"
+      "createdDate" : "2019-11-26T03:34:19.631+0000",
+      "updatedDate" : "2019-11-26T03:34:19.631+0000"
     }
   }, {
     "id" : "5ba6b62e-6858-490a-8102-5b1369873835",
     "name" : "Title",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.774+0000",
-      "updatedDate" : "2019-11-22T03:34:44.774+0000"
+      "createdDate" : "2019-11-26T03:34:19.638+0000",
+      "updatedDate" : "2019-11-26T03:34:19.638+0000"
     }
   }, {
     "id" : "6caca63e-5651-4db6-9247-3205156e9699",
     "name" : "Other scheme",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.766+0000",
-      "updatedDate" : "2019-11-22T03:34:44.766+0000"
+      "createdDate" : "2019-11-26T03:34:19.637+0000",
+      "updatedDate" : "2019-11-26T03:34:19.637+0000"
     }
   }, {
     "id" : "827a2b64-cbf5-4296-8545-130876e4dfc0",
     "name" : "Source specified in subfield $2",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.775+0000",
-      "updatedDate" : "2019-11-22T03:34:44.775+0000"
+      "createdDate" : "2019-11-26T03:34:19.645+0000",
+      "updatedDate" : "2019-11-26T03:34:19.645+0000"
     }
   }, {
     "id" : "828ae637-dfa3-4265-a1af-5279c436edff",
     "name" : "MOYS",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.762+0000",
-      "updatedDate" : "2019-11-22T03:34:44.762+0000"
+      "createdDate" : "2019-11-26T03:34:19.629+0000",
+      "updatedDate" : "2019-11-26T03:34:19.629+0000"
     }
   }, {
     "id" : "95467209-6d7b-468b-94df-0f5d7ad2747d",
     "name" : "Library of Congress classification",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.770+0000",
-      "updatedDate" : "2019-11-22T03:34:44.770+0000"
+      "createdDate" : "2019-11-26T03:34:19.639+0000",
+      "updatedDate" : "2019-11-26T03:34:19.639+0000"
     }
   }, {
     "id" : "cd70562c-dd0b-42f6-aa80-ce803d24d4a1",
     "name" : "Shelved separately",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.770+0000",
-      "updatedDate" : "2019-11-22T03:34:44.770+0000"
+      "createdDate" : "2019-11-26T03:34:19.644+0000",
+      "updatedDate" : "2019-11-26T03:34:19.644+0000"
     }
   }, {
     "id" : "d644be8f-deb5-4c4d-8c9e-2291b7c0f46f",
     "name" : "UDC",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.775+0000",
-      "updatedDate" : "2019-11-22T03:34:44.775+0000"
+      "createdDate" : "2019-11-26T03:34:19.645+0000",
+      "updatedDate" : "2019-11-26T03:34:19.645+0000"
     }
   }, {
     "id" : "fc388041-6cd0-4806-8a74-ebe3b9ab4c6e",
     "name" : "Superintendent of Documents classification",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:44.774+0000",
-      "updatedDate" : "2019-11-22T03:34:44.774+0000"
+      "createdDate" : "2019-11-26T03:34:19.639+0000",
+      "updatedDate" : "2019-11-26T03:34:19.639+0000"
     }
   } ],
   "totalRecords" : 12

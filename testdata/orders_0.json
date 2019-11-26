@@ -100,27 +100,6 @@
     "workflowStatus" : "Pending",
     "acqUnitIds" : [ ]
   }, {
-    "id" : "891bd0ee-97da-4295-8cd7-9333228bd6c5",
-    "approved" : false,
-    "notes" : [ ],
-    "poNumber" : "10014",
-    "orderType" : "Ongoing",
-    "reEncumber" : false,
-    "renewal" : {
-      "interval" : 365,
-      "manualRenewal" : false,
-      "renewalDate" : "2019-11-22T00:00:00.000+0000"
-    },
-    "vendor" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-    "workflowStatus" : "Pending",
-    "acqUnitIds" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-22T08:44:47.266+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T08:44:47.266+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    }
-  }, {
     "id" : "8c328a18-5761-4329-95f6-599412c32310",
     "approved" : true,
     "approvedById" : "e63273e7-48f5-4c43-ab4e-1751ecacaa21",
@@ -266,5 +245,5 @@
     "workflowStatus" : "Open",
     "acqUnitIds" : [ ]
   } ],
-  "totalRecords" : 16
+  "totalRecords" : 15
 }

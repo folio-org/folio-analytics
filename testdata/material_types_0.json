@@ -4,85 +4,65 @@
     "name" : "book",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.696+0000",
-      "updatedDate" : "2019-11-22T03:34:40.696+0000"
+      "createdDate" : "2019-11-26T03:34:13.818+0000",
+      "updatedDate" : "2019-11-26T03:34:13.818+0000"
     }
   }, {
     "id" : "30b3e36a-d3b2-415e-98c2-47fbdf878862",
     "name" : "video recording",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.652+0000",
-      "updatedDate" : "2019-11-22T03:34:40.652+0000"
-    }
-  }, {
-    "id" : "353c9c7f-7d3b-4e30-a745-a6b89271f35a",
-    "name" : "werer",
-    "source" : "local",
-    "metadata" : {
-      "createdDate" : "2019-11-22T14:24:16.234+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T14:24:16.234+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-26T03:34:13.771+0000",
+      "updatedDate" : "2019-11-26T03:34:13.771+0000"
     }
   }, {
     "id" : "5ee11d91-f7e8-481d-b079-65d708582ccc",
     "name" : "dvd",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.673+0000",
-      "updatedDate" : "2019-11-22T03:34:40.673+0000"
+      "createdDate" : "2019-11-26T03:34:13.797+0000",
+      "updatedDate" : "2019-11-26T03:34:13.797+0000"
     }
   }, {
     "id" : "615b8413-82d5-4203-aa6e-e37984cb5ac3",
     "name" : "electronic resource",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.676+0000",
-      "updatedDate" : "2019-11-22T03:34:40.676+0000"
+      "createdDate" : "2019-11-26T03:34:13.796+0000",
+      "updatedDate" : "2019-11-26T03:34:13.796+0000"
     }
   }, {
     "id" : "71fbd940-1027-40a6-8a48-49b44d795e46",
     "name" : "unspecified",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.682+0000",
-      "updatedDate" : "2019-11-22T03:34:40.682+0000"
-    }
-  }, {
-    "id" : "9f862e35-84bb-4a2b-aa26-cb32e92769da",
-    "name" : "Test",
-    "source" : "local",
-    "metadata" : {
-      "createdDate" : "2019-11-22T14:23:24.001+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T14:23:24.001+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
+      "createdDate" : "2019-11-26T03:34:13.803+0000",
+      "updatedDate" : "2019-11-26T03:34:13.803+0000"
     }
   }, {
     "id" : "d9acad2f-2aac-4b48-9097-e6ab85906b25",
     "name" : "text",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.650+0000",
-      "updatedDate" : "2019-11-22T03:34:40.650+0000"
+      "createdDate" : "2019-11-26T03:34:13.769+0000",
+      "updatedDate" : "2019-11-26T03:34:13.769+0000"
     }
   }, {
     "id" : "dd0bf600-dbd9-44ab-9ff2-e2a61a6539f1",
     "name" : "sound recording",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.681+0000",
-      "updatedDate" : "2019-11-22T03:34:40.681+0000"
+      "createdDate" : "2019-11-26T03:34:13.801+0000",
+      "updatedDate" : "2019-11-26T03:34:13.801+0000"
     }
   }, {
     "id" : "fd6c6515-d470-4561-9c32-3e3290d4ca98",
     "name" : "microform",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:34:40.674+0000",
-      "updatedDate" : "2019-11-22T03:34:40.674+0000"
+      "createdDate" : "2019-11-26T03:34:13.794+0000",
+      "updatedDate" : "2019-11-26T03:34:13.794+0000"
     }
   } ],
-  "totalRecords" : 10
+  "totalRecords" : 8
 }

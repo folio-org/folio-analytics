@@ -7,13 +7,13 @@
     "fiscalYearOneId" : "684b5dc5-92f6-4db7-b996-b549d88f5e4e",
     "ledgerStatus" : "Active",
     "allocated" : 1974.83,
-    "available" : 889.0,
+    "available" : 888.83,
     "unavailable" : 1111.0,
     "currency" : "USD",
     "acqUnitIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.293+0000",
-      "updatedDate" : "2019-11-22T03:35:52.293+0000"
+      "createdDate" : "2019-11-26T03:35:27.833+0000",
+      "updatedDate" : "2019-11-26T03:35:27.833+0000"
     }
   }, {
     "id" : "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
@@ -28,8 +28,8 @@
     "currency" : "USD",
     "acqUnitIds" : [ "0ebb1f7d-983f-3026-8a4c-5318e0ebc041" ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.294+0000",
-      "updatedDate" : "2019-11-22T03:35:52.294+0000"
+      "createdDate" : "2019-11-26T03:35:27.830+0000",
+      "updatedDate" : "2019-11-26T03:35:27.830+0000"
     }
   }, {
     "id" : "7cef8378-7cbd-1fae-bcdd-8b9d7c0af9de",
@@ -44,8 +44,8 @@
     "currency" : "USD",
     "acqUnitIds" : [ "0ebb1f7d-983f-3026-8a4c-5318e0ebc041" ],
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:52.291+0000",
-      "updatedDate" : "2019-11-22T03:35:52.291+0000"
+      "createdDate" : "2019-11-26T03:35:27.834+0000",
+      "updatedDate" : "2019-11-26T03:35:27.834+0000"
     }
   } ],
   "totalRecords" : 3

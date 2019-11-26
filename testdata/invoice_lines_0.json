@@ -29,8 +29,8 @@
     "subTotal" : 2000.0,
     "total" : 2100.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.071+0000",
-      "updatedDate" : "2019-11-22T03:35:57.071+0000"
+      "createdDate" : "2019-11-26T03:35:32.962+0000",
+      "updatedDate" : "2019-11-26T03:35:32.962+0000"
     }
   }, {
     "id" : "1bafe8ac-e7fd-437e-bfe6-4a94a01fb16e",
@@ -62,8 +62,8 @@
     "subTotal" : 20.0,
     "total" : 25.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.104+0000",
-      "updatedDate" : "2019-11-22T03:35:57.104+0000"
+      "createdDate" : "2019-11-26T03:35:32.989+0000",
+      "updatedDate" : "2019-11-26T03:35:32.989+0000"
     }
   }, {
     "id" : "33dc5f4c-0387-4359-919b-9f654c757b54",
@@ -80,30 +80,30 @@
       "prorate" : "Not prorated",
       "relationToTotal" : "In addition to",
       "type" : "Amount",
-      "value" : -20.0
+      "value" : -5.0
     } ],
     "adjustmentsTotal" : -10.0,
     "description" : "With shipping",
     "fundDistributions" : [ {
-      "code" : "STATE-SUBN",
-      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08011",
-      "fundId" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+      "code" : "UNIV-SUBN",
+      "encumbrance" : "eb506834-6c70-4239-8d1a-6414a5b08014",
+      "fundId" : "4428a37c-8bae-4f0d-865d-970d83d5ad55",
       "distributionType" : "percentage",
       "value" : 100.0
     } ],
     "invoiceId" : "38d25803-e6f8-497d-af62-3b0df46948ef",
-    "invoiceLineNumber" : "82912-1",
+    "invoiceLineNumber" : "81-1",
     "invoiceLineStatus" : "Open",
-    "poLineId" : "abbd1cef-a8ee-3d07-93b2-71c1387e61b1",
-    "productId" : "9780866989732",
-    "productIdType" : "8261054f-be78-422d-bd51-4ed9f33c3422",
-    "quantity" : 1,
+    "poLineId" : "556abc25-ebbf-3fb2-b478-1bfaff0af4dc",
+    "productId" : "0747-0088",
+    "productIdType" : "913300b2-03ed-469a-8179-c1092c991227",
+    "quantity" : 2,
     "releaseEncumbrance" : true,
-    "subTotal" : 800.0,
-    "total" : 790.0,
+    "subTotal" : 0.0,
+    "total" : 5.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.078+0000",
-      "updatedDate" : "2019-11-22T03:35:57.078+0000"
+      "createdDate" : "2019-11-26T03:35:32.966+0000",
+      "updatedDate" : "2019-11-26T03:35:32.966+0000"
     }
   }, {
     "id" : "48c217a2-29d9-48b2-a0c9-bcfb3859cbf0",
@@ -128,8 +128,8 @@
     "subTotal" : 3000.0,
     "total" : 3000.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.075+0000",
-      "updatedDate" : "2019-11-22T03:35:57.075+0000"
+      "createdDate" : "2019-11-26T03:35:32.932+0000",
+      "updatedDate" : "2019-11-26T03:35:32.932+0000"
     }
   }, {
     "id" : "9b0b32e3-ef48-4bb8-91a5-750a850cc63c",
@@ -161,8 +161,8 @@
     "subTotal" : 200000.0,
     "total" : 199800.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.081+0000",
-      "updatedDate" : "2019-11-22T03:35:57.081+0000"
+      "createdDate" : "2019-11-26T03:35:32.956+0000",
+      "updatedDate" : "2019-11-26T03:35:32.956+0000"
     }
   }, {
     "id" : "b940547c-000f-4be0-a778-8f57f8794566",
@@ -194,8 +194,8 @@
     "subTotal" : 342.0,
     "total" : 352.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.046+0000",
-      "updatedDate" : "2019-11-22T03:35:57.046+0000"
+      "createdDate" : "2019-11-26T03:35:32.992+0000",
+      "updatedDate" : "2019-11-26T03:35:32.992+0000"
     }
   }, {
     "id" : "c8e41fdc-ae66-44a1-a194-bed0066672b6",
@@ -234,8 +234,8 @@
     "subTotal" : 150.0,
     "total" : 140.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.063+0000",
-      "updatedDate" : "2019-11-22T03:35:57.063+0000"
+      "createdDate" : "2019-11-26T03:35:32.986+0000",
+      "updatedDate" : "2019-11-26T03:35:32.986+0000"
     }
   }, {
     "id" : "e0d08448-343b-118a-8c2f-4fb50248d672",
@@ -284,8 +284,8 @@
     "total" : 1055.0,
     "vendorRefNo" : "1",
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.101+0000",
-      "updatedDate" : "2019-11-22T03:35:57.101+0000"
+      "createdDate" : "2019-11-26T03:35:32.950+0000",
+      "updatedDate" : "2019-11-26T03:35:32.950+0000"
     }
   }, {
     "id" : "ee60ee78-f487-4940-adcf-fa0726989823",
@@ -308,8 +308,8 @@
     "subTotal" : 75.0,
     "total" : 75.0,
     "metadata" : {
-      "createdDate" : "2019-11-22T03:35:57.098+0000",
-      "updatedDate" : "2019-11-22T03:35:57.098+0000"
+      "createdDate" : "2019-11-26T03:35:32.968+0000",
+      "updatedDate" : "2019-11-26T03:35:32.968+0000"
     }
   } ],
   "totalRecords" : 9

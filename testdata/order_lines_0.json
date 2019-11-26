@@ -1,61 +1,5 @@
 {
   "poLines" : [ {
-    "id" : "2d1d3a8b-fe3a-4289-953f-3a98e0da0265",
-    "checkinItems" : false,
-    "acquisitionMethod" : "Depository",
-    "alerts" : [ ],
-    "claims" : [ ],
-    "collection" : false,
-    "contributors" : [ ],
-    "cost" : {
-      "listUnitPrice" : 20.0,
-      "currency" : "USD",
-      "discountType" : "percentage",
-      "quantityPhysical" : 1,
-      "poLineEstimatedPrice" : 20.0
-    },
-    "details" : {
-      "productIds" : [ ],
-      "subscriptionInterval" : 0
-    },
-    "eresource" : {
-      "activated" : false,
-      "createInventory" : "Instance, Holding",
-      "trial" : false,
-      "accessProvider" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1"
-    },
-    "fundDistribution" : [ ],
-    "locations" : [ {
-      "locationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-      "quantity" : 1,
-      "quantityPhysical" : 1
-    } ],
-    "orderFormat" : "Physical Resource",
-    "paymentStatus" : "Pending",
-    "physical" : {
-      "createInventory" : "Instance, Holding, Item",
-      "materialType" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-      "materialSupplier" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
-      "volumes" : [ ]
-    },
-    "poLineNumber" : "10014-1",
-    "purchaseOrderId" : "891bd0ee-97da-4295-8cd7-9333228bd6c5",
-    "receiptStatus" : "Pending",
-    "reportingCodes" : [ ],
-    "rush" : false,
-    "source" : "User",
-    "title" : "something",
-    "vendorDetail" : {
-      "instructions" : "",
-      "vendorAccount" : "1234"
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-22T09:01:54.334+0000",
-      "createdByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd",
-      "updatedDate" : "2019-11-22T09:01:54.334+0000",
-      "updatedByUserId" : "b248d8aa-e9b0-53d7-a6dc-2acc8bfb8afd"
-    }
-  }, {
     "id" : "556abc25-ebbf-3fb2-b478-1bfaff0af4dc",
     "edition" : "First edition",
     "checkinItems" : false,
@@ -1452,5 +1396,5 @@
       "vendorAccount" : ""
     }
   } ],
-  "totalRecords" : 17
+  "totalRecords" : 16
 }
