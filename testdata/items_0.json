@@ -1,133 +1,5 @@
 {
   "items" : [ {
-    "id" : "061714e7-22af-40fa-a673-b80dd7bd1d64",
-    "holdingsRecordId" : "b162c9bd-9fbc-4251-9472-8b1750ceade1",
-    "formerIds" : [ ],
-    "barcode" : "23452343",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "In process",
-      "date" : "2019-11-25T17:19:52.942"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "a86fceea-934c-43c6-90bd-97d9ede2ba2e",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T17:19:31.440+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T17:19:52.932+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "076b3408-1a87-4709-a7ce-b00b08df01d5",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766267133",
-    "barcode" : "1574661214766267133",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766267133",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:47.369"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:39.070+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:47.367+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "0815955f-ffe5-4515-9425-cc90b96bf7ff",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766947050",
-    "barcode" : "1574661214766947050",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766947050",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:41.282"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:13.041+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:41.280+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "0a38694d-f4d8-4c42-bb83-942441cde02f",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-157466121476693393",
-    "barcode" : "157466121476693393",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-157466121476693393",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:38.923"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:02.689+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:38.921+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
     "id" : "0b96a642-5e7f-452d-9cae-9cee66c9a892",
     "holdingsRecordId" : "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
     "formerIds" : [ ],
@@ -148,66 +20,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.352+0000",
-      "updatedDate" : "2019-11-25T05:44:33.352+0000"
-    }
-  }, {
-    "id" : "0bd27a9e-4bfb-4175-9ec4-56f29b51528b",
-    "holdingsRecordId" : "c5997757-4cf9-412d-ad9f-048709599bec",
-    "formerIds" : [ ],
-    "barcode" : "356745673",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "In process",
-      "date" : "2019-11-25T20:16:19.307"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.785+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:19.304+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "0de65d68-1b04-4897-afcb-13f1a01d7068",
-    "holdingsRecordId" : "78c3f909-2dfd-47ae-867e-a0c11a858a95",
-    "formerIds" : [ ],
-    "barcode" : "54455633",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "In process",
-      "date" : "2019-11-25T20:16:20.241"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.820+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:20.239+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.439+0000",
+      "updatedDate" : "2019-11-26T03:34:21.439+0000"
     }
   }, {
     "id" : "100d10bf-2f06-4aa0-be15-0b95b2d9f9e3",
@@ -225,8 +39,7 @@
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T16:37:04.094"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -241,47 +54,8 @@
     } ],
     "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.363+0000",
-      "updatedDate" : "2019-11-25T16:37:04.092+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "lastCheckIn" : {
-      "dateTime" : "2019-11-25T16:36:42.000+0000",
-      "servicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
-      "staffMemberId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "10704991-467f-451f-9357-d09a95e83d70",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766577523",
-    "barcode" : "1574661214766577523",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766577523",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:58.858"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:56:20.900+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:58.856+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.453+0000",
+      "updatedDate" : "2019-11-26T03:34:21.453+0000"
     }
   }, {
     "id" : "1714f71f-b845-444b-a79e-a577487a6f7d",
@@ -306,8 +80,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.327+0000",
-      "updatedDate" : "2019-11-25T05:44:33.327+0000"
+      "createdDate" : "2019-11-26T03:34:21.417+0000",
+      "updatedDate" : "2019-11-26T03:34:21.417+0000"
     }
   }, {
     "id" : "1b6d3338-186e-4e35-9e75-1b886b0da53e",
@@ -336,41 +110,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.340+0000",
-      "updatedDate" : "2019-11-25T05:44:33.340+0000"
-    }
-  }, {
-    "id" : "1bafb297-2531-4271-beb5-5a362d447500",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766661731",
-    "barcode" : "1574661214766661731",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766661731",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:51.365"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:54.702+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:51.363+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.435+0000",
+      "updatedDate" : "2019-11-26T03:34:21.435+0000"
     }
   }, {
     "id" : "23f2c8e1-bd5d-4f27-9398-a688c998808a",
@@ -393,8 +134,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.365+0000",
-      "updatedDate" : "2019-11-25T05:44:33.365+0000"
+      "createdDate" : "2019-11-26T03:34:21.454+0000",
+      "updatedDate" : "2019-11-26T03:34:21.454+0000"
     }
   }, {
     "id" : "23fdb0bc-ab58-442a-b326-577a96204487",
@@ -417,220 +158,20 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.330+0000",
-      "updatedDate" : "2019-11-25T05:44:33.330+0000"
+      "createdDate" : "2019-11-26T03:34:21.427+0000",
+      "updatedDate" : "2019-11-26T03:34:21.427+0000"
     }
   }, {
-    "id" : "273e61ec-6b99-49a7-bfb9-c7e9f4e33520",
-    "holdingsRecordId" : "7b11cf95-c816-48d5-81da-c013bc5eef3b",
+    "id" : "242e70a3-f55a-401b-8b88-461e4f945888",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-157466121477427903",
-    "barcode" : "157466121477427903",
+    "accessionNumber" : "an-1574739805052291761",
+    "barcode" : "1574739805052291761",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-157466121477427903",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "In transit",
-      "date" : "2019-11-25T05:58:59.634"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "inTransitDestinationServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:57:36.528+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:58:59.632+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "lastCheckIn" : {
-      "dateTime" : "2019-11-25T05:58:59.000+0000",
-      "servicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
-      "staffMemberId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "27865398-5778-43cd-b294-fbed324ba40b",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766822734",
-    "barcode" : "1574661214766822734",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766822734",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:57:00.455"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:56:26.057+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:57:00.453+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "27ca6f5b-9973-4365-b1bc-fc026c5ec76e",
-    "holdingsRecordId" : "4429befa-088b-4ffb-8587-1fe65c12af1d",
-    "formerIds" : [ ],
-    "barcode" : "88335866",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "On order",
-      "date" : "2019-11-25T20:16:34.828"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.713+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:34.826+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "2950c8b7-b3d4-415f-ad0b-8d6152839bac",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766423682",
-    "barcode" : "1574661214766423682",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766423682",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:43.634"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:23.512+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:43.632+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "2af5da83-b08d-425f-b26e-b06128939c66",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766606731",
-    "barcode" : "1574661214766606731",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766606731",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:44.848"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:28.663+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:44.846+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "3bcece0e-fb32-4543-8878-825eb86afc17",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766996364",
-    "barcode" : "1574661214766996364",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766996364",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:55.714"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:56:10.347+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:55.712+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "3ff01152-aeec-4f5d-af5d-eb99b14c74d2",
-    "holdingsRecordId" : "c7600e96-7ef0-4970-b525-676bc5dfaa1d",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214795580870",
-    "barcode" : "1574661214795580870",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214795580870",
+    "itemIdentifier" : "iid-1574739805052291761",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
@@ -647,10 +188,74 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T06:01:25.397+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:01:25.397+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:44:54.799+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:54.799+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "3322dd9e-6544-4765-90a1-8f01a9ba222b",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052805531",
+    "barcode" : "1574739805052805531",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052805531",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:45:41.585+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:41.585+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "42fa7310-b1f9-429d-b432-e4f8e1301ef7",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052108658",
+    "barcode" : "1574739805052108658",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052108658",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:44:44.190+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:44.190+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "4428a37c-8bae-4f0d-865d-970d83d5ad55",
@@ -695,41 +300,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.356+0000",
-      "updatedDate" : "2019-11-25T05:44:33.356+0000"
-    }
-  }, {
-    "id" : "4501af82-cbfe-4965-9568-d4e2cbb05e52",
-    "holdingsRecordId" : "0589c5a7-66d1-4a58-a7f1-4f0a52e272ab",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214783456606",
-    "barcode" : "1574661214783456606",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214783456606",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T06:00:00.981"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:59:57.237+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:00:00.979+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.443+0000",
+      "updatedDate" : "2019-11-26T03:34:21.443+0000"
     }
   }, {
     "id" : "459afaba-5b39-468d-9072-eb1685e0ddf4",
@@ -753,27 +325,26 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.359+0000",
-      "updatedDate" : "2019-11-25T05:44:33.359+0000"
+      "createdDate" : "2019-11-26T03:34:21.449+0000",
+      "updatedDate" : "2019-11-26T03:34:21.449+0000"
     }
   }, {
-    "id" : "5213590f-b312-443d-803c-8d86993c26b5",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
+    "id" : "4baa48a5-92be-4a29-b181-7c7a5336b579",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766484940",
-    "barcode" : "1574661214766484940",
+    "accessionNumber" : "an-1574739805052641490",
+    "barcode" : "1574739805052641490",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766484940",
+    "itemIdentifier" : "iid-1574739805052641490",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:36.704"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -784,10 +355,106 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:54:52.146+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:36.702+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:15.830+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:15.830+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "4e8409c9-cf75-47c8-bb17-b32784875251",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052719658",
+    "barcode" : "1574739805052719658",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052719658",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:45:46.674+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:46.674+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "5a2d2879-3594-409b-92de-f65ef3ae2133",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052878074",
+    "barcode" : "1574739805052878074",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052878074",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:45:51.987+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:51.987+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "61d41076-2227-44e1-a4a6-cc0639d23d3f",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052580889",
+    "barcode" : "1574739805052580889",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052580889",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:45:10.647+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:10.647+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "645549b1-2a73-4251-b8bb-39598f773a93",
@@ -812,27 +479,26 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.319+0000",
-      "updatedDate" : "2019-11-25T05:44:33.319+0000"
+      "createdDate" : "2019-11-26T03:34:21.416+0000",
+      "updatedDate" : "2019-11-26T03:34:21.416+0000"
     }
   }, {
-    "id" : "69de7866-8c65-498f-914f-2e4c5145f46c",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
+    "id" : "718b0cc6-14d4-4a48-b953-00bbf5550812",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766982423",
-    "barcode" : "1574661214766982423",
+    "accessionNumber" : "an-1574739805052633",
+    "barcode" : "1574739805052633",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766982423",
+    "itemIdentifier" : "iid-1574739805052633",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:42.458"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -843,43 +509,10 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:55:18.243+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:42.456+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "6d3991cb-a1a8-41c3-b8bc-f16dcc1fa1cd",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766960947",
-    "barcode" : "1574661214766960947",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766960947",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:57.234"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:56:15.548+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:57.232+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:36.402+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:36.402+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "7212ba6a-8dcf-45a1-be9a-ffaa847c4423",
@@ -897,8 +530,7 @@
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T12:01:23.949"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -913,57 +545,26 @@
     } ],
     "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.318+0000",
-      "updatedDate" : "2019-11-25T12:01:23.946+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.414+0000",
+      "updatedDate" : "2019-11-26T03:34:21.414+0000"
     }
   }, {
-    "id" : "7f3b3a5b-1552-4c50-8e8e-5df3302787dd",
-    "holdingsRecordId" : "eb3f02ca-f524-4b18-9fd9-60540b5c6802",
-    "formerIds" : [ ],
-    "barcode" : "345735683",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "On order",
-      "date" : "2019-11-25T20:16:34.618"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.756+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:34.585+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "89e68099-e7a6-4cb6-8ded-61dc881b60e7",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
+    "id" : "77dadb07-3dba-4ac6-952e-5b320577e4e6",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766880545",
-    "barcode" : "1574661214766880545",
+    "accessionNumber" : "an-1574739805052447641",
+    "barcode" : "1574739805052447641",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766880545",
+    "itemIdentifier" : "iid-1574739805052447641",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:40.055"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -974,43 +575,10 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:55:07.882+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:40.053+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "8c369f20-af9d-4917-bdd6-835a0dfbf010",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766730269",
-    "barcode" : "1574661214766730269",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766730269",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:49.951"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:49.615+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:49.949+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:44:49.524+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:49.524+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "9428231b-dd31-4f70-8406-fe22fbdeabc2",
@@ -1027,24 +595,16 @@
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "In transit",
-      "date" : "2019-11-25T09:20:39.244"
+      "name" : "Available"
     },
     "materialTypeId" : "d9acad2f-2aac-4b48-9097-e6ab85906b25",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
     "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
     "electronicAccess" : [ ],
-    "inTransitDestinationServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.349+0000",
-      "updatedDate" : "2019-11-25T09:20:39.242+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "lastCheckIn" : {
-      "dateTime" : "2019-11-25T09:20:38.000+0000",
-      "servicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
-      "staffMemberId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.434+0000",
+      "updatedDate" : "2019-11-26T03:34:21.434+0000"
     }
   }, {
     "id" : "9ea1fd0b-0259-4edb-95a3-eb2f9a063e20",
@@ -1069,27 +629,26 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ "775b6ad4-9c35-4d29-bf78-8775a9b42226" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.361+0000",
-      "updatedDate" : "2019-11-25T05:44:33.361+0000"
+      "createdDate" : "2019-11-26T03:34:21.451+0000",
+      "updatedDate" : "2019-11-26T03:34:21.451+0000"
     }
   }, {
-    "id" : "a482299b-62a2-4d06-b654-50651beb0fa2",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
+    "id" : "a71f1ec1-b76a-45af-8b1a-fc87cf919756",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-157466121476656898",
-    "barcode" : "157466121476656898",
+    "accessionNumber" : "an-1574739805052576706",
+    "barcode" : "1574739805052576706",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-157466121476656898",
+    "itemIdentifier" : "iid-1574739805052576706",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:54.248"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -1100,58 +659,28 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:56:05.180+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:54.246+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:26.137+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:26.137+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
-    "id" : "a6294602-cf45-417d-9070-2d9880b46326",
-    "holdingsRecordId" : "eb3f02ca-f524-4b18-9fd9-60540b5c6802",
-    "formerIds" : [ ],
-    "barcode" : "63456",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "On order",
-      "date" : "2019-11-25T20:16:34.734"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.770+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:34.732+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "b5dbcb5b-f6db-462e-8e32-da5d228f299b",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
+    "id" : "ab599e95-75d1-41b7-945c-97e91efc8916",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-157466121476692873",
-    "barcode" : "157466121476692873",
+    "accessionNumber" : "an-1574739805052427787",
+    "barcode" : "1574739805052427787",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-157466121476692873",
+    "itemIdentifier" : "iid-1574739805052427787",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:46.094"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -1162,40 +691,42 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:55:33.738+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:46.092+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:00.172+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:00.172+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
-    "id" : "b9dce642-68a6-4297-8b9e-ed8b56ac30b2",
-    "holdingsRecordId" : "68872d8a-bf16-420b-829f-206da38f6c10",
-    "formerIds" : [ ],
-    "barcode" : "1111",
+    "id" : "ac5d62aa-542f-4cdf-8cbf-80a2376fb16d",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052243964",
+    "barcode" : "1574739805052243964",
     "effectiveCallNumberComponents" : {
-      "callNumber" : "some-callnumber"
+      "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052243964",
     "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T18:05:29.934"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2e48e713-17f3-4c13-a9f8-23845bb210a4",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
     "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
     "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
+    "statisticalCodeIds" : [ null ],
     "tags" : {
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T18:05:03.845+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T18:05:29.931+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:31.508+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:31.508+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "bb5a6689-c008-4c96-8f8f-b666850ee12d",
@@ -1218,8 +749,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.349+0000",
-      "updatedDate" : "2019-11-25T05:44:33.349+0000"
+      "createdDate" : "2019-11-26T03:34:21.436+0000",
+      "updatedDate" : "2019-11-26T03:34:21.436+0000"
     }
   }, {
     "id" : "bc90a3c9-26c9-4519-96bc-d9d44995afef",
@@ -1244,165 +775,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.351+0000",
-      "updatedDate" : "2019-11-25T05:44:33.351+0000"
-    }
-  }, {
-    "id" : "c99a5b67-1b62-46d7-91ef-dc85b55571aa",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766848591",
-    "barcode" : "1574661214766848591",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766848591",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:57:02.05"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:56:31.280+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:57:02.048+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "cb40766c-3f2c-425d-b1a9-85369495efc5",
-    "holdingsRecordId" : "c5997757-4cf9-412d-ad9f-048709599bec",
-    "formerIds" : [ ],
-    "barcode" : "3356865556",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "On order",
-      "date" : "2019-11-25T20:16:34.619"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.784+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:34.617+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "cc4c5cac-d14c-40f0-957b-53c8d2381f52",
-    "holdingsRecordId" : "78c3f909-2dfd-47ae-867e-a0c11a858a95",
-    "formerIds" : [ ],
-    "barcode" : "35738883",
-    "effectiveCallNumberComponents" : { },
-    "yearCaption" : [ ],
-    "copyNumbers" : [ ],
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "In process",
-      "date" : "2019-11-25T20:16:20.35"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.834+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:16:20.348+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "cf36ea74-c0da-42e3-abb9-ffe6c8994261",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766722269",
-    "barcode" : "1574661214766722269",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766722269",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:35.631"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:54:46.876+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:35.629+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "d11a0583-456a-42fc-a831-3177e6bae56d",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766525803",
-    "barcode" : "1574661214766525803",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766525803",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:52.791"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:59.882+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:52.789+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.438+0000",
+      "updatedDate" : "2019-11-26T03:34:21.438+0000"
     }
   }, {
     "id" : "d6f7c1ba-a237-465e-94ed-f37e91bc64bd",
@@ -1427,32 +801,111 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.359+0000",
-      "updatedDate" : "2019-11-25T05:44:33.359+0000"
+      "createdDate" : "2019-11-26T03:34:21.449+0000",
+      "updatedDate" : "2019-11-26T03:34:21.449+0000"
     }
   }, {
-    "id" : "d96c4444-36fe-4a92-b9af-461233df4101",
-    "holdingsRecordId" : "4429befa-088b-4ffb-8587-1fe65c12af1d",
-    "formerIds" : [ ],
-    "effectiveCallNumberComponents" : { },
+    "id" : "d8700996-4235-44e9-92e8-40fc43009934",
+    "holdingsRecordId" : "93f123e7-58c9-4f40-ada5-aff4cf011eba",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805051615239",
+    "barcode" : "1574739805051615239",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
     "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805051615239",
     "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "On order"
+      "name" : "In transit",
+      "date" : "2019-11-26T03:44:18.655Z"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
     "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
     "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ ],
-    "purchaseOrderLineIdentifier" : "0b3401e7-db26-47b9-a799-d193817ff02d",
+    "inTransitDestinationServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
     "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.737+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:39.737+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:44:04.798+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:18.651+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    },
+    "lastCheckIn" : {
+      "dateTime" : "2019-11-26T03:44:18.000+0000",
+      "servicePointId" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+      "staffMemberId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "dfc529ca-90f5-428d-a01d-0139f201340d",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052305538",
+    "barcode" : "1574739805052305538",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052305538",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:45:20.978+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:20.978+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "ed372edf-3d87-4969-8f1a-89bb043a3588",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ null ],
+    "accessionNumber" : "an-1574739805052555803",
+    "barcode" : "1574739805052555803",
+    "effectiveCallNumberComponents" : {
+      "callNumber" : "ZZ39.50"
+    },
+    "yearCaption" : [ ],
+    "itemIdentifier" : "iid-1574739805052555803",
+    "copyNumbers" : [ ],
+    "numberOfPieces" : "1",
+    "notes" : [ ],
+    "circulationNotes" : [ ],
+    "status" : {
+      "name" : "Available"
+    },
+    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
+    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
+    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "statisticalCodeIds" : [ null ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:44:39.014+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:39.014+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "eedd13c4-7d40-4b1e-8f77-b0b9d19a896b",
@@ -1469,8 +922,7 @@
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T12:23:37.308"
+      "name" : "Available"
     },
     "materialTypeId" : "d9acad2f-2aac-4b48-9097-e6ab85906b25",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -1478,42 +930,8 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.320+0000",
-      "updatedDate" : "2019-11-25T12:23:37.306+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "efa3ef81-4f58-48d7-92fb-fb7953bb992e",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766980166",
-    "barcode" : "1574661214766980166",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766980166",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:48.665"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:55:44.240+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:48.663+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.425+0000",
+      "updatedDate" : "2019-11-26T03:34:21.425+0000"
     }
   }, {
     "id" : "f8b6d973-60d4-41ce-a57b-a3884471a6d6",
@@ -1538,66 +956,26 @@
     "electronicAccess" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.352+0000",
-      "updatedDate" : "2019-11-25T05:44:33.352+0000"
+      "createdDate" : "2019-11-26T03:34:21.442+0000",
+      "updatedDate" : "2019-11-26T03:34:21.442+0000"
     }
   }, {
-    "id" : "fa43ba4c-9785-48ce-b0ec-96d2d7841d60",
-    "holdingsRecordId" : "06274f74-d88a-481b-8cfa-24946719d214",
+    "id" : "fb68554d-c583-48b5-abb5-1cd11d9e4917",
+    "holdingsRecordId" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214765497531",
-    "barcode" : "1574661214765497531",
+    "accessionNumber" : "an-1574739805052469743",
+    "barcode" : "1574739805052469743",
     "effectiveCallNumberComponents" : {
       "callNumber" : "ZZ39.50"
     },
     "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214765497531",
+    "itemIdentifier" : "iid-1574739805052469743",
     "copyNumbers" : [ ],
     "numberOfPieces" : "1",
     "notes" : [ ],
     "circulationNotes" : [ ],
     "status" : {
-      "name" : "In transit",
-      "date" : "2019-11-25T05:54:26.717"
-    },
-    "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
-    "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
-    "effectiveLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "inTransitDestinationServicePointId" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
-    "statisticalCodeIds" : [ null ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:54:12.920+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:54:26.713+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "lastCheckIn" : {
-      "dateTime" : "2019-11-25T05:54:26.000+0000",
-      "servicePointId" : "c4c90014-c8c9-4ade-8f24-b5e313319f4b",
-      "staffMemberId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "fb93c259-037b-4e0e-8367-ce375e14aa82",
-    "holdingsRecordId" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ null ],
-    "accessionNumber" : "an-1574661214766671993",
-    "barcode" : "1574661214766671993",
-    "effectiveCallNumberComponents" : {
-      "callNumber" : "ZZ39.50"
-    },
-    "yearCaption" : [ ],
-    "itemIdentifier" : "iid-1574661214766671993",
-    "copyNumbers" : [ ],
-    "numberOfPieces" : "1",
-    "notes" : [ ],
-    "circulationNotes" : [ ],
-    "status" : {
-      "name" : "Checked out",
-      "date" : "2019-11-25T05:56:37.804"
+      "name" : "Available"
     },
     "materialTypeId" : "1a54b431-2e4f-452d-9cae-9cee66c9a892",
     "permanentLoanTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe27",
@@ -1608,11 +986,11 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:54:57.500+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:56:37.802+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:45:05.430+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:45:05.430+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   } ],
-  "totalRecords" : 52
+  "totalRecords" : 33
 }

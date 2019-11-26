@@ -12,8 +12,8 @@
     "primaryServicePoint" : "bba36e5d-d567-45fa-81cd-b25874472e30",
     "servicePointIds" : [ "bba36e5d-d567-45fa-81cd-b25874472e30" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.375+0000",
-      "updatedDate" : "2019-11-25T05:44:26.375+0000"
+      "createdDate" : "2019-11-26T03:34:14.617+0000",
+      "updatedDate" : "2019-11-26T03:34:14.617+0000"
     }
   }, {
     "id" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
@@ -26,8 +26,8 @@
     "primaryServicePoint" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "servicePointIds" : [ "3a40852d-49fd-4df2-a1f9-6e2641a6e91f" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.364+0000",
-      "updatedDate" : "2019-11-25T05:44:26.364+0000"
+      "createdDate" : "2019-11-26T03:34:14.622+0000",
+      "updatedDate" : "2019-11-26T03:34:14.622+0000"
     }
   }, {
     "id" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
@@ -40,8 +40,8 @@
     "primaryServicePoint" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "servicePointIds" : [ "3a40852d-49fd-4df2-a1f9-6e2641a6e91f" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.357+0000",
-      "updatedDate" : "2019-11-25T05:44:26.357+0000"
+      "createdDate" : "2019-11-26T03:34:14.614+0000",
+      "updatedDate" : "2019-11-26T03:34:14.614+0000"
     }
   }, {
     "id" : "b241764c-1466-4e1d-a028-1a3684a5da87",
@@ -54,8 +54,8 @@
     "primaryServicePoint" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "servicePointIds" : [ "3a40852d-49fd-4df2-a1f9-6e2641a6e91f" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.378+0000",
-      "updatedDate" : "2019-11-25T05:44:26.378+0000"
+      "createdDate" : "2019-11-26T03:34:14.759+0000",
+      "updatedDate" : "2019-11-26T03:34:14.759+0000"
     }
   }, {
     "id" : "f34d27c6-a8eb-461b-acd6-5dea81771e70",
@@ -68,8 +68,8 @@
     "primaryServicePoint" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "servicePointIds" : [ "3a40852d-49fd-4df2-a1f9-6e2641a6e91f" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.362+0000",
-      "updatedDate" : "2019-11-25T05:44:26.362+0000"
+      "createdDate" : "2019-11-26T03:34:14.619+0000",
+      "updatedDate" : "2019-11-26T03:34:14.619+0000"
     }
   }, {
     "id" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
@@ -82,8 +82,8 @@
     "primaryServicePoint" : "3a40852d-49fd-4df2-a1f9-6e2641a6e91f",
     "servicePointIds" : [ "3a40852d-49fd-4df2-a1f9-6e2641a6e91f" ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:26.360+0000",
-      "updatedDate" : "2019-11-25T05:44:26.360+0000"
+      "createdDate" : "2019-11-26T03:34:14.629+0000",
+      "updatedDate" : "2019-11-26T03:34:14.629+0000"
     }
   } ],
   "totalRecords" : 6

@@ -4,40 +4,40 @@
     "name" : "Serial",
     "source" : "rdamodeissue",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:30.568+0000",
-      "updatedDate" : "2019-11-25T05:44:30.568+0000"
+      "createdDate" : "2019-11-26T03:34:18.686+0000",
+      "updatedDate" : "2019-11-26T03:34:18.686+0000"
     }
   }, {
     "id" : "4fc0f4fe-06fd-490a-a078-c4da1754e03a",
     "name" : "Integrating Resource",
     "source" : "rdamodeissue",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:30.573+0000",
-      "updatedDate" : "2019-11-25T05:44:30.573+0000"
+      "createdDate" : "2019-11-26T03:34:18.687+0000",
+      "updatedDate" : "2019-11-26T03:34:18.687+0000"
     }
   }, {
     "id" : "612bbd3d-c16b-4bfb-8517-2afafc60204a",
     "name" : "Other",
     "source" : "rdamodeissue",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:30.568+0000",
-      "updatedDate" : "2019-11-25T05:44:30.568+0000"
+      "createdDate" : "2019-11-26T03:34:18.686+0000",
+      "updatedDate" : "2019-11-26T03:34:18.686+0000"
     }
   }, {
     "id" : "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
     "name" : "Monograph",
     "source" : "rdamodeissue",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:30.567+0000",
-      "updatedDate" : "2019-11-25T05:44:30.567+0000"
+      "createdDate" : "2019-11-26T03:34:18.685+0000",
+      "updatedDate" : "2019-11-26T03:34:18.685+0000"
     }
   }, {
     "id" : "f5cc2ab6-bb92-4cab-b83f-5a3d09261a41",
     "name" : "Sequential Monograph",
     "source" : "rdamodeissue",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:30.574+0000",
-      "updatedDate" : "2019-11-25T05:44:30.574+0000"
+      "createdDate" : "2019-11-26T03:34:18.686+0000",
+      "updatedDate" : "2019-11-26T03:34:18.686+0000"
     }
   } ],
   "totalRecords" : 5

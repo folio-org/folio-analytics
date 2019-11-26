@@ -1,0 +1,1293 @@
+{
+  "organizations" : [ {
+    "id" : "11fb627a-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Alexander Street Press",
+    "code" : "ALEXS",
+    "description" : "AV streaming services",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Alexander Street",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "3212 Duke Street",
+      "addressLine2" : "",
+      "city" : "Alexandria",
+      "stateRegion" : "VA",
+      "zipCode" : "22314",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-800-889-5937",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "customerservice@alexanderstreet.com",
+      "description" : "main customer service email",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "https://alexanderstreet.com/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "11fb627a-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "library access",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74828",
+    "paymentMethod" : "Physical Check",
+    "accessProvider" : true,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 1,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 365,
+    "subscriptionInterval" : 365,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "14e81009-0f98-45a0-b8e6-e25547beb22f" ],
+    "accounts" : [ {
+      "name" : "Library account",
+      "accountNo" : "1234",
+      "description" : "Main library account",
+      "appSystemNo" : "",
+      "paymentMethod" : "Physical Check",
+      "accountStatus" : "Active",
+      "contactInfo" : "customerservice@alexanderstreet.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "12fb63b0-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Taylor & Francis Group, LLC ",
+    "code" : "TAFG",
+    "description" : "Serials - Domestic",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Taylor & Francis ",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "Suite 300, 6000 Broken Sound Parkway, NW",
+      "addressLine2" : "",
+      "city" : "Boca Raton",
+      "stateRegion" : "FL",
+      "zipCode" : "33487",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195", "ab760714-4185-4859-b0dd-3e72f01c5c52", "cbfaec07-5df1-4197-bfa5-1bc91f9073cf" ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-800-634-7064",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "enquiries@taylorandfrancis.com",
+      "description" : "Customer Servicel",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "http://taylorandfrancis.com/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "12fb63b0-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "Association of Digital Humanities Journal Package",
+      "discount" : 40.0,
+      "referenceUrl" : "https://www.acs.org/content/acs/en.html",
+      "notes" : "Amendment to Multiyear Master Agreement (2015-2019)"
+    } ],
+    "erpCode" : "G64758-74832",
+    "paymentMethod" : "EFT",
+    "accessProvider" : true,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 30,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 365,
+    "subscriptionInterval" : 365,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "92289a36-5d83-4794-9f45-97eda8938064" ],
+    "accounts" : [ {
+      "name" : "Serialst",
+      "accountNo" : "xxxx4962",
+      "description" : "Libraries",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "Richard.Plantagenet@taylorandfrancis.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "13fb64dc-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "United States Geological Survey",
+    "code" : "USGS",
+    "description" : "Maps and materials from the USGS",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "USGS",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "12201 Sunrise Valley Drive",
+      "addressLine2" : "P.O. Box 15550",
+      "city" : "Reston",
+      "stateRegion" : "VA",
+      "zipCode" : "20192",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-888-ASK-USGS",
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "usgsstore@usgs.gov",
+      "description" : "main customer service email",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "https://www.usgs.gov/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "13fb64dc-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74833",
+    "paymentMethod" : "Credit Card",
+    "accessProvider" : false,
+    "governmental" : true,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 45,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 0,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "766e42dc-386b-4710-897d-2ad226fa3679" ],
+    "accounts" : [ {
+      "name" : "Cartographic account",
+      "accountNo" : "1234",
+      "description" : "Monographic ordering unit accountt",
+      "appSystemNo" : "",
+      "paymentMethod" : "Credit Card",
+      "accountStatus" : "Active",
+      "contactInfo" : "usgsstore@usgs.gov",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "14fb6608-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Ro*Co films",
+    "code" : "ZROCO$",
+    "description" : "Distributor of documentary films",
+    "status" : "Inactive",
+    "language" : "English",
+    "aliases" : [ {
+      "value" : "Ro*Co Films Educational",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "80 LIBERTY SHIP WAY7",
+      "addressLine2" : "SUITE 5",
+      "city" : "SAUSALITO",
+      "stateRegion" : "CA",
+      "zipCode" : "94965",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-415-332-6471",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "info@rocofilms.com",
+      "description" : "initial contact address",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "http://www.rocofilms.com/",
+      "description" : "main website",
+      "language" : "English",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "14fb6608-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "50% discount if buying DVD (PPR included) + streaming license",
+      "discount" : 50.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74825",
+    "paymentMethod" : "EFT",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 30,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ ],
+    "accounts" : [ {
+      "name" : "library orders",
+      "accountNo" : "library orders 5000",
+      "description" : "DVD/PPR/Streaming movies",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "dana@rocofilms.com",
+      "libraryCode" : "pfirm",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "15fb695a-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Susan Bach Books (Brazil)",
+    "code" : "ZSUSANBA$*",
+    "description" : "Print monographs in Spanish, books from Brazil",
+    "status" : "Active",
+    "language" : "Portuguese/Spanish",
+    "aliases" : [ {
+      "value" : "Susan Bach Books from Brazil",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "RUA VISCONDE DE CARAVELAS, Nº 17",
+      "addressLine2" : "BOTAFOGO",
+      "city" : "RIO DE JANEIRO",
+      "stateRegion" : "",
+      "zipCode" : "22271-021",
+      "country" : "Brazil",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "Portuguese"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "55-55-21-2539-3590",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "Portuguese"
+    } ],
+    "emails" : [ {
+      "value" : "sbach@sbachbooks.com.br",
+      "description" : "Customer Service",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "http://www.sbachbooks.com.br/",
+      "description" : "main website",
+      "language" : "English/Portuguese",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "15fb695a-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74827",
+    "paymentMethod" : "EFT",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 60,
+    "discountPercent" : 20.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 0,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ ],
+    "accounts" : [ {
+      "name" : "Monograph",
+      "accountNo" : "852-987",
+      "description" : "one time monographs",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "service@naxosusa.com",
+      "libraryCode" : "pfirm",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "50fb6ae0-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "EBSCO SUBSCRIPTION SERVICES",
+    "code" : "SREBSCO",
+    "description" : "Use for single title subscriptions.",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "EBSCO",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "10 ESTES ST",
+      "addressLine2" : "PO BOX 682",
+      "city" : "Ipswich",
+      "stateRegion" : "MA",
+      "zipCode" : "01938",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "en"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-800-653-2726",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "en-us"
+    } ],
+    "emails" : [ {
+      "value" : "jbeck@ebsco.com",
+      "description" : "Customer Service Rep",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "en-us"
+    } ],
+    "urls" : [ {
+      "value" : "http://www.ebsco.com",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "50fb6ae0-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "XXXXXX credit",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74837",
+    "paymentMethod" : "EFT",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : false,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 60,
+    "discountPercent" : 10.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "edi" : {
+      "vendorEdiCode" : "xx-xxx014186",
+      "vendorEdiType" : "31B/US-SAN",
+      "libEdiCode" : "VOY0081",
+      "libEdiType" : "31B/US-SAN",
+      "prorateTax" : true,
+      "prorateFees" : false,
+      "ediNamingConvention" : "*.edu",
+      "sendAcctNum" : true,
+      "supportOrder" : false,
+      "supportInvoice" : true,
+      "notes" : "",
+      "ediFtp" : {
+        "ftpFormat" : "SFTP",
+        "serverAddress" : "ftps://ftp.ebsco.com",
+        "username" : "edi_username",
+        "password" : "ediPassword",
+        "ftpMode" : "Binary",
+        "ftpConnMode" : "Passive",
+        "ftpPort" : 22,
+        "orderDirectory" : "",
+        "invoiceDirectory" : "",
+        "notes" : ""
+      },
+      "ediJob" : {
+        "scheduleEdi" : false,
+        "isMonday" : false,
+        "isTuesday" : false,
+        "isWednesday" : false,
+        "isThursday" : false,
+        "isFriday" : false,
+        "isSaturday" : false,
+        "isSunday" : false,
+        "sendToEmails" : "bobbarker@priceisright.com",
+        "notifyAllEdi" : false,
+        "notifyInvoiceOnly" : true,
+        "notifyErrorOnly" : false
+      }
+    },
+    "interfaces" : [ "ddfd8661-896d-4ffc-be57-d0f466cb790b" ],
+    "accounts" : [ {
+      "name" : "Serials",
+      "accountNo" : "BRXXXXX-01",
+      "description" : "Print serial subscriptions",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "Some basic contact information note.",
+      "libraryCode" : "-01, -02, -03",
+      "libraryEdiCode" : "VOY0081",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "60fb4bfa-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Jean Simmons",
+    "code" : "SJEAN",
+    "description" : "Individual donor to library archives",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Sister Jean",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "1032 W. Sheridan Rd",
+      "addressLine2" : "",
+      "city" : "Chicago",
+      "stateRegion" : "IL",
+      "zipCode" : "60660",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-773-274-3000",
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "sister@luc.edu",
+      "description" : "personal email ",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "",
+      "description" : "",
+      "language" : "",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "60fb4bfa-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ ],
+    "erpCode" : "G64758-74830",
+    "paymentMethod" : "Physical Check",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 0,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ ],
+    "accounts" : [ {
+      "name" : "SJean account",
+      "accountNo" : "1234",
+      "description" : "Donor account",
+      "appSystemNo" : "",
+      "paymentMethod" : "Physical Check",
+      "accountStatus" : "Active",
+      "contactInfo" : "sister@luc.edu",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "70fb4e66-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Naxos of America, Inc.",
+    "code" : "NAXO",
+    "description" : "AV streaming services, other onilne content",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Naxos",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "416 Mary Lindsay Polk Dr.",
+      "addressLine2" : "",
+      "city" : "Franklin",
+      "stateRegion" : "TN",
+      "zipCode" : "37067",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-615-771-9393",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "service@naxosusa.com",
+      "description" : "Customer Service",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "https://www.naxos.com/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "70fb4e66-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "Naxos Music Library, Naxos Video Library",
+      "discount" : 0.0,
+      "referenceUrl" : "https://www.acs.org/content/acs/en.html",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74827",
+    "paymentMethod" : "EFT",
+    "accessProvider" : true,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 30,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 365,
+    "subscriptionInterval" : 365,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "fae74b9c-5338-4cd6-8a17-47c750d40b7b" ],
+    "accounts" : [ {
+      "name" : "Serials",
+      "accountNo" : "xxxx4367",
+      "description" : "Libraries",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "service@naxosusa.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "80fb5168-cdf1-11e8-a8d5-c2801f1b9f21",
+    "name" : "Bibsam",
+    "code" : "consortia1",
+    "description" : "The Bibsam consortium is operated by Kungl. biblioteket, the National Library of Sweden. It has 79 active member institutions including universities, university colleges, and government funded research institutions. It manages about 40 licenses for approx. 100 e-resources, including \"big deal\" agreements with scholarly journal publishers as well as agreements for encyclopaedias and abstract and indexing databases.",
+    "status" : "Active",
+    "aliases" : [ {
+      "value" : "Kungl biblioteket"
+    }, {
+      "value" : "National Library of Sweden"
+    } ],
+    "addresses" : [ ],
+    "phoneNumbers" : [ ],
+    "emails" : [ ],
+    "urls" : [ ],
+    "contacts" : [ ],
+    "agreements" : [ ],
+    "vendorCurrencies" : [ ],
+    "interfaces" : [ "cd5926fa-77aa-4eb3-ac34-c9a1747ba21a" ],
+    "accounts" : [ ],
+    "isVendor" : false,
+    "changelogs" : [ ]
+  }, {
+    "id" : "80fb5168-cdf1-11e8-a8d5-c2801f1b9f22",
+    "name" : "Minuteman Library",
+    "code" : "consortia2",
+    "description" : "The Minuteman Library Network is comprised of 41 public and academic libraries in the MetroWest region of Massachusetts.",
+    "status" : "Active",
+    "aliases" : [ {
+      "value" : "MLN"
+    } ],
+    "addresses" : [ ],
+    "phoneNumbers" : [ ],
+    "emails" : [ ],
+    "urls" : [ ],
+    "contacts" : [ ],
+    "agreements" : [ ],
+    "vendorCurrencies" : [ ],
+    "interfaces" : [ "cd5926fa-77aa-4eb3-ac34-c9a1747ba21b" ],
+    "accounts" : [ ],
+    "isVendor" : false,
+    "changelogs" : [ ]
+  }, {
+    "id" : "80fb5168-cdf1-11e8-a8d5-c2801f1b9f23",
+    "name" : "Royal Society of Chemistry",
+    "code" : "content_provider1",
+    "status" : "Active",
+    "aliases" : [ {
+      "value" : "RSC"
+    } ],
+    "addresses" : [ ],
+    "phoneNumbers" : [ ],
+    "emails" : [ ],
+    "urls" : [ ],
+    "contacts" : [ ],
+    "agreements" : [ ],
+    "vendorCurrencies" : [ ],
+    "interfaces" : [ "cd5926fa-77aa-4eb3-ac34-c9a1747ba21c" ],
+    "accounts" : [ ],
+    "isVendor" : false,
+    "changelogs" : [ ]
+  }, {
+    "id" : "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "American Chemical Society",
+    "code" : "ACSO",
+    "description" : "Serials - Domestic",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "ACS",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "1155 Sixteenth Street, NW",
+      "addressLine2" : "",
+      "city" : "Washington",
+      "stateRegion" : "DC",
+      "zipCode" : "20036",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-800-333-9511",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "service@acs.org",
+      "description" : "Customer Service",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "https://www.acs.org/content/acs/en.html",
+      "description" : "main English language website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "80fb5168-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "ACS Web Editions",
+      "discount" : 0.0,
+      "referenceUrl" : "https://www.acs.org/content/acs/en.html",
+      "notes" : "Multiyear agreement (2018-2020)"
+    } ],
+    "erpCode" : "G64758-74831",
+    "paymentMethod" : "EFT",
+    "accessProvider" : true,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 30,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 365,
+    "subscriptionInterval" : 365,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "60b952a6-5570-44f3-9972-f00c9dcb098e" ],
+    "accounts" : [ {
+      "name" : "Serialst",
+      "accountNo" : "xxxx2149",
+      "description" : "Libraries",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "liblink@acs.org",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "c0fb5956-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Otto Harrassowitz GmbH & Co. KG",
+    "code" : "HARRA",
+    "description" : "Use for monographs, approval plans, firms orders, and standing orders",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Harrassowitz",
+      "description" : "shorter name"
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "Kreuzberger Ring 6 b-d",
+      "addressLine2" : "",
+      "city" : "Wiesbaden",
+      "stateRegion" : "",
+      "zipCode" : "65205",
+      "country" : "Germany",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195", "ab760714-4185-4859-b0dd-3e72f01c5c52", "cbfaec07-5df1-4197-bfa5-1bc91f9073cf" ],
+      "language" : "German"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "49-611-530 ext. 0",
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195", "ab760714-4185-4859-b0dd-3e72f01c5c52", "cbfaec07-5df1-4197-bfa5-1bc91f9073cf" ],
+      "isPrimary" : true,
+      "language" : "German"
+    } ],
+    "emails" : [ {
+      "value" : "service@harrassowitz.de",
+      "description" : "customer service",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "German and English"
+    } ],
+    "urls" : [ {
+      "value" : "https://www.harrassowitz.de/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "c0fb5956-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "No formal agreement",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74835",
+    "paymentMethod" : "Physical Check",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 75,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "edi" : {
+      "vendorEdiCode" : "v10063",
+      "libEdiCode" : "COB",
+      "prorateTax" : false,
+      "prorateFees" : false,
+      "ediNamingConvention" : "****.edu",
+      "sendAcctNum" : true,
+      "supportOrder" : true,
+      "supportInvoice" : true,
+      "notes" : "",
+      "ediFtp" : {
+        "ftpFormat" : "SFTP",
+        "serverAddress" : "ftps://ftp.harrassowitz.de",
+        "username" : "sample",
+        "password" : "password",
+        "ftpMode" : "Binary",
+        "ftpConnMode" : "Passive",
+        "ftpPort" : 22,
+        "orderDirectory" : "/orders",
+        "invoiceDirectory" : "/invoices",
+        "notes" : ""
+      },
+      "ediJob" : {
+        "scheduleEdi" : true,
+        "isMonday" : false,
+        "isTuesday" : false,
+        "isWednesday" : false,
+        "isThursday" : false,
+        "isFriday" : false,
+        "isSaturday" : false,
+        "isSunday" : false,
+        "sendToEmails" : "",
+        "notifyAllEdi" : true,
+        "notifyInvoiceOnly" : false,
+        "notifyErrorOnly" : false
+      }
+    },
+    "interfaces" : [ "00b1c903-38f2-45c7-a427-30a141cf643a" ],
+    "accounts" : [ {
+      "name" : "Main library account",
+      "accountNo" : "xxxx34",
+      "description" : "Main library account",
+      "appSystemNo" : "",
+      "paymentMethod" : "Physical Check",
+      "accountStatus" : "Active",
+      "contactInfo" : "service@harrassowitz.de",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : "different account numbers for serials and standing orders"
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "d0fb5aa0-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "GOBI Library Solutions",
+    "code" : "GOBI",
+    "description" : "Use for print and eBooks, approval plans, firm orders, standing orders, DDA",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "YBP Library Services",
+      "description" : "former name"
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "999 Maple Street",
+      "addressLine2" : "2",
+      "city" : "Contoocook",
+      "stateRegion" : "NH",
+      "zipCode" : "03229",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195", "ab760714-4185-4859-b0dd-3e72f01c5c52", "cbfaec07-5df1-4197-bfa5-1bc91f9073cf" ],
+      "language" : "en"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-800-258-3774",
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "isPrimary" : true,
+      "language" : "en-us"
+    } ],
+    "emails" : [ {
+      "value" : "gobiserviceissue@ebsco.com",
+      "description" : "for general questions",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "language" : "en-us"
+    } ],
+    "urls" : [ {
+      "value" : "https://gobi.ebsco.com/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "d0fb5aa0-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "No formal agreement",
+      "discount" : 10.0,
+      "referenceUrl" : "",
+      "notes" : "Review SLAs & fulfillment stats 2 months before end of FY"
+    } ],
+    "erpCode" : "G64758-74836",
+    "paymentMethod" : "EFT",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 45,
+    "discountPercent" : 10.0,
+    "expectedActivationInterval" : 3,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "888888888",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "edi" : {
+      "vendorEdiCode" : "1694510",
+      "vendorEdiType" : "31B/US-SAN",
+      "libEdiCode" : "7659876",
+      "libEdiType" : "31B/US-SAN",
+      "prorateTax" : true,
+      "prorateFees" : false,
+      "ediNamingConvention" : "*.edi",
+      "sendAcctNum" : true,
+      "supportOrder" : true,
+      "supportInvoice" : true,
+      "notes" : "no EDI invoices for our tech services invoices",
+      "ediFtp" : {
+        "ftpFormat" : "SFTP",
+        "serverAddress" : "ftps://ftp.ybp.com",
+        "username" : "sample",
+        "password" : "password",
+        "ftpMode" : "Binary",
+        "ftpConnMode" : "Passive",
+        "ftpPort" : 22,
+        "orderDirectory" : "/dropoff",
+        "invoiceDirectory" : "/invoices",
+        "notes" : "separate directories for EOCRs and cat records"
+      },
+      "ediJob" : {
+        "scheduleEdi" : true,
+        "isMonday" : false,
+        "isTuesday" : false,
+        "isWednesday" : false,
+        "isThursday" : false,
+        "isFriday" : false,
+        "isSaturday" : false,
+        "isSunday" : false,
+        "sendToEmails" : "bobbarker@priceisright.com",
+        "notifyAllEdi" : true,
+        "notifyInvoiceOnly" : false,
+        "notifyErrorOnly" : false
+      }
+    },
+    "interfaces" : [ "793b9d42-ae12-41d7-a36a-f33e5b9e82c5" ],
+    "accounts" : [ {
+      "name" : "US print orders",
+      "accountNo" : "99999-10",
+      "description" : "Main library orders for print books, shipped from US office",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "jlegier@ebsco.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : "separate accounts for eBooks and UK orders"
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Amazon.com",
+    "code" : "AMAZ",
+    "description" : "Use for rush orders, replacement requests, and second hand market",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Amazon",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "1 Centerpiece Blvd.",
+      "addressLine2" : "P.O. Box 15550",
+      "city" : "New Castle",
+      "stateRegion" : "DE",
+      "zipCode" : "19720-5550",
+      "country" : "USA",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "1-888-238-22090",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "cust.service03@amazon.com",
+      "description" : "customer service",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "https://www.amazon.com",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "e0fb5df2-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "test",
+      "discount" : 0.0,
+      "referenceUrl" : "",
+      "notes" : ""
+    } ],
+    "erpCode" : "G64758-74834",
+    "paymentMethod" : "Credit Card",
+    "accessProvider" : false,
+    "governmental" : false,
+    "licensor" : false,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "USD" ],
+    "claimingInterval" : 45,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 0,
+    "expectedInvoiceInterval" : 0,
+    "renewalActivationInterval" : 0,
+    "subscriptionInterval" : 0,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "",
+    "liableForVat" : false,
+    "taxPercentage" : 0.0,
+    "interfaces" : [ "cd592659-77aa-4eb3-ac34-c9a4657bb20f" ],
+    "accounts" : [ {
+      "name" : "Monographic ordering unit account",
+      "accountNo" : "1234",
+      "description" : "Monographic ordering unit account",
+      "appSystemNo" : "",
+      "paymentMethod" : "Credit Card",
+      "accountStatus" : "Active",
+      "contactInfo" : "cust.service03@amazon.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "1234567",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  }, {
+    "id" : "f0fb6130-cdf1-11e8-a8d5-f2801f1b9fd1",
+    "name" : "Magnolia Press",
+    "code" : "MGNP",
+    "description" : "Serials-Foreign",
+    "status" : "Active",
+    "language" : "en-us",
+    "aliases" : [ {
+      "value" : "Mangolia Press NZ",
+      "description" : ""
+    } ],
+    "addresses" : [ {
+      "addressLine1" : "Saint Lukes",
+      "addressLine2" : "P.O. Box 41383",
+      "city" : "Auckland",
+      "stateRegion" : "",
+      "zipCode" : "1346",
+      "country" : "New Zealand",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "phoneNumbers" : [ {
+      "phoneNumber" : "64-95-783-996",
+      "categories" : [ ],
+      "isPrimary" : true,
+      "language" : "English"
+    } ],
+    "emails" : [ {
+      "value" : "magnolia@mapress.com",
+      "description" : "Customer Service",
+      "isPrimary" : true,
+      "categories" : [ ],
+      "language" : "English"
+    } ],
+    "urls" : [ {
+      "value" : "http://www.mapress.com/j/",
+      "description" : "main website",
+      "language" : "en-us",
+      "isPrimary" : true,
+      "categories" : [ "f52ceea4-8e35-404b-9ebd-5c7db6613195" ],
+      "notes" : ""
+    } ],
+    "contacts" : [ "f0fb6130-cdf1-11e8-a8d5-f2801f1b9fd1" ],
+    "agreements" : [ {
+      "name" : "Zootaxa ",
+      "discount" : 10.0,
+      "referenceUrl" : "https://www.acs.org/content/acs/en.html",
+      "notes" : "Acquisition of 2008-2010 Journal Archives"
+    } ],
+    "erpCode" : "G64758-74829",
+    "paymentMethod" : "EFT",
+    "accessProvider" : true,
+    "governmental" : false,
+    "licensor" : true,
+    "materialSupplier" : true,
+    "vendorCurrencies" : [ "NZD" ],
+    "claimingInterval" : 0,
+    "discountPercent" : 0.0,
+    "expectedActivationInterval" : 30,
+    "expectedInvoiceInterval" : 30,
+    "renewalActivationInterval" : 365,
+    "subscriptionInterval" : 365,
+    "expectedReceiptInterval" : 30,
+    "taxId" : "1819468",
+    "liableForVat" : false,
+    "taxPercentage" : 5.0,
+    "interfaces" : [ "6c862414-a87c-4c19-b4dc-c9c2b68f296c" ],
+    "accounts" : [ {
+      "name" : "Serials",
+      "accountNo" : "xxxx7859",
+      "description" : "Libraries",
+      "appSystemNo" : "",
+      "paymentMethod" : "EFT",
+      "accountStatus" : "Active",
+      "contactInfo" : "magnolia@mapress.com",
+      "libraryCode" : "COB",
+      "libraryEdiCode" : "765987610",
+      "notes" : ""
+    } ],
+    "isVendor" : true,
+    "sanCode" : "",
+    "changelogs" : [ {
+      "description" : "This is a sample note.",
+      "timestamp" : "2008-05-15T10:53:00.000+0000"
+    } ]
+  } ],
+  "totalRecords" : 16
+}

@@ -1,7 +1,7 @@
 {
   "instances" : [ {
     "id" : "00f10ab9-d845-4334-92d2-ff55862bf4f9",
-    "hrid" : "in00000019",
+    "hrid" : "in00000017",
     "source" : "FOLIO",
     "title" : "American Bar Association journal.",
     "indexTitle" : "American Bar Association journal.",
@@ -75,14 +75,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.682+0000",
-      "updatedDate" : "2019-11-25T05:44:32.682+0000"
+      "createdDate" : "2019-11-26T03:34:20.762+0000",
+      "updatedDate" : "2019-11-26T03:34:20.762+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "04489a01-f3cd-4f9e-9be4-d9c198703f45",
-    "hrid" : "in00000028",
+    "hrid" : "in00000027",
     "source" : "FOLIO",
     "title" : "Environment and identity politics in colonial Africa Fulani migrations and land conflict by Emmanuel M. Mbah",
     "alternativeTitles" : [ ],
@@ -138,14 +138,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.724+0000",
-      "updatedDate" : "2019-11-25T05:44:32.724+0000"
+      "createdDate" : "2019-11-26T03:34:20.809+0000",
+      "updatedDate" : "2019-11-26T03:34:20.809+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
-    "hrid" : "in00000002",
+    "hrid" : "in00000003",
     "source" : "FOLIO",
     "title" : "Futures, biometrics and neuroscience research Luiz Moutinho, Mladen Sokele, editors",
     "alternativeTitles" : [ ],
@@ -205,50 +205,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.622+0000",
-      "updatedDate" : "2019-11-25T05:44:32.622+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "1aba2ead-8f4c-489c-b468-a202cc307f6d",
-    "hrid" : "in00000033",
-    "source" : "FOLIO",
-    "title" : "Request title",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:59:48.122+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:59:48.122+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.704+0000",
+      "updatedDate" : "2019-11-26T03:34:20.704+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "1b74ab75-9f41-4837-8662-a1d99118008d",
-    "hrid" : "in00000018",
+    "hrid" : "in00000020",
     "source" : "FOLIO",
     "title" : "A journey through Europe Bildtontraeger high-speed lines European Commission, Directorate-General for Mobility and Transport",
     "alternativeTitles" : [ ],
@@ -287,14 +251,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.681+0000",
-      "updatedDate" : "2019-11-25T05:44:32.681+0000"
+      "createdDate" : "2019-11-26T03:34:20.763+0000",
+      "updatedDate" : "2019-11-26T03:34:20.763+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "30fcc8e7-a019-43f4-b642-2edc389f4501",
-    "hrid" : "in00000010",
+    "hrid" : "in00000007",
     "source" : "FOLIO",
     "title" : "The American Journal of Medicine",
     "alternativeTitles" : [ {
@@ -364,14 +328,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.652+0000",
-      "updatedDate" : "2019-11-25T05:44:32.652+0000"
+      "createdDate" : "2019-11-26T03:34:20.728+0000",
+      "updatedDate" : "2019-11-26T03:34:20.728+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "0abeee3d-8ad2-4b04-92ff-221b4fce1075" ]
   }, {
     "id" : "3c4ae3f3-b460-4a89-a2f9-78ce3145e4fc",
-    "hrid" : "in00000015",
+    "hrid" : "in00000014",
     "source" : "FOLIO",
     "title" : "The chess player’s mating guide Computer Datei Robert Ris",
     "alternativeTitles" : [ ],
@@ -408,50 +372,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.666+0000",
-      "updatedDate" : "2019-11-25T05:44:32.666+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "4d06b77c-88c3-4edb-96ec-06d57306e939",
-    "hrid" : "in00000035",
-    "source" : "FOLIO",
-    "title" : "New test title",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T06:01:17.502+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:01:17.502+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.748+0000",
+      "updatedDate" : "2019-11-26T03:34:20.748+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "549fad9e-7f8e-4d8e-9a71-00d251817866",
-    "hrid" : "in00000021",
+    "hrid" : "in00000023",
     "source" : "FOLIO",
     "title" : "Agile Organisation, Risiko- und Change Management Harald Augustin (Hrsg.)",
     "alternativeTitles" : [ ],
@@ -510,14 +438,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.692+0000",
-      "updatedDate" : "2019-11-25T05:44:32.692+0000"
+      "createdDate" : "2019-11-26T03:34:20.793+0000",
+      "updatedDate" : "2019-11-26T03:34:20.793+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "54cc0262-76df-4cac-acca-b10e9bc5c79a",
-    "hrid" : "in00000013",
+    "hrid" : "in00000015",
     "source" : "FOLIO",
     "title" : "On the signature of complex system a decomposed approach Gaofeng Da, Ping Shing Chan, Maochao Xu",
     "alternativeTitles" : [ ],
@@ -553,14 +481,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.668+0000",
-      "updatedDate" : "2019-11-25T05:44:32.668+0000"
+      "createdDate" : "2019-11-26T03:34:20.749+0000",
+      "updatedDate" : "2019-11-26T03:34:20.749+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "5b1eb450-ff9f-412d-a9e7-887f6eaeb5b4",
-    "hrid" : "in00000005",
+    "hrid" : "in00000004",
     "source" : "FOLIO",
     "title" : "Concepts of fashion 1921 - 1987 microform a study of garments worn by selected winners of the Miss America Pageant Marian Ann J. Matwiejczyk-Montgomery",
     "alternativeTitles" : [ ],
@@ -601,14 +529,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.625+0000",
-      "updatedDate" : "2019-11-25T05:44:32.625+0000"
+      "createdDate" : "2019-11-26T03:34:20.702+0000",
+      "updatedDate" : "2019-11-26T03:34:20.702+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
-    "hrid" : "in00000009",
+    "hrid" : "in00000010",
     "source" : "FOLIO",
     "title" : "A semantic web primer",
     "indexTitle" : "Semantic web primer",
@@ -669,21 +597,16 @@
     "modeOfIssuanceId" : "9d18a02f-5897-4c31-9106-c9abb5c7ae8b",
     "catalogedDate" : "2019-04-05",
     "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
-    "statusId" : "2a340d34-6b70-443a-bb1b-1b8d1c65d862",
-    "statusUpdatedDate" : "2019-11-25T11:41:40.206",
-    "tags" : {
-      "tagList" : [ ]
-    },
+    "statusId" : "9634a5ab-9228-4703-baf2-4d12ebc77d56",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.653+0000",
-      "updatedDate" : "2019-11-25T11:41:40.204+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.733+0000",
+      "updatedDate" : "2019-11-26T03:34:20.733+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "62ca5b43-0f11-40af-a6b4-1a9ee2db33cb",
-    "hrid" : "in00000004",
+    "hrid" : "in00000002",
     "source" : "FOLIO",
     "title" : "The Neurotic Heroine in Tennessee Williams microform C.N. Stavrou",
     "alternativeTitles" : [ ],
@@ -721,14 +644,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.623+0000",
-      "updatedDate" : "2019-11-25T05:44:32.623+0000"
+      "createdDate" : "2019-11-26T03:34:20.703+0000",
+      "updatedDate" : "2019-11-26T03:34:20.703+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
-    "hrid" : "in00000017",
+    "hrid" : "in00000018",
     "source" : "FOLIO",
     "title" : "Nod",
     "alternativeTitles" : [ ],
@@ -758,14 +681,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.679+0000",
-      "updatedDate" : "2019-11-25T05:44:32.679+0000"
+      "createdDate" : "2019-11-26T03:34:20.759+0000",
+      "updatedDate" : "2019-11-26T03:34:20.759+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "69640328-788e-43fc-9c3c-af39e243f3b7",
-    "hrid" : "in00000024",
+    "hrid" : "in00000021",
     "source" : "FOLIO",
     "title" : "ABA Journal",
     "alternativeTitles" : [ ],
@@ -796,14 +719,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.696+0000",
-      "updatedDate" : "2019-11-25T05:44:32.696+0000"
+      "createdDate" : "2019-11-26T03:34:20.794+0000",
+      "updatedDate" : "2019-11-26T03:34:20.794+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "0abeee3d-8ad2-4b04-92ff-221b4fce1075" ]
   }, {
     "id" : "6b4ae089-e1ee-431f-af83-e1133f8e3da0",
-    "hrid" : "in00000014",
+    "hrid" : "in00000012",
     "source" : "FOLIO",
     "title" : "MobiCom'17 5 mmNets'17, October 16, 2017, Snowbird, UT, USA / general chairs: Haitham Hassanieh (University of Illinois at Urbana Champaign, USA), Xinyu Zhang (University of California San Diego, USA)",
     "alternativeTitles" : [ {
@@ -859,8 +782,8 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.667+0000",
-      "updatedDate" : "2019-11-25T05:44:32.667+0000"
+      "createdDate" : "2019-11-26T03:34:20.744+0000",
+      "updatedDate" : "2019-11-26T03:34:20.744+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
@@ -903,14 +826,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.678+0000",
-      "updatedDate" : "2019-11-25T05:44:32.678+0000"
+      "createdDate" : "2019-11-26T03:34:20.758+0000",
+      "updatedDate" : "2019-11-26T03:34:20.758+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "7ab22f0a-c9cd-449a-9137-c76e5055ca37",
-    "hrid" : "in00000026",
+    "hrid" : "in00000029",
     "source" : "FOLIO",
     "title" : "Poverty reduction strategies in Africa edited by Toyin Falola and Mike Odugbo Odey",
     "alternativeTitles" : [ ],
@@ -975,14 +898,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.718+0000",
-      "updatedDate" : "2019-11-25T05:44:32.718+0000"
+      "createdDate" : "2019-11-26T03:34:20.807+0000",
+      "updatedDate" : "2019-11-26T03:34:20.807+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
-    "hrid" : "in00000023",
+    "hrid" : "in00000025",
     "source" : "FOLIO",
     "title" : "Bridget Jones's Baby: the diaries",
     "alternativeTitles" : [ ],
@@ -1028,14 +951,14 @@
     "discoverySuppress" : true,
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.698+0000",
-      "updatedDate" : "2019-11-25T05:44:32.698+0000"
+      "createdDate" : "2019-11-26T03:34:20.796+0000",
+      "updatedDate" : "2019-11-26T03:34:20.796+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "81825729-e824-4d52-9d15-1695e9bf1831",
-    "hrid" : "in00000012",
+    "hrid" : "in00000013",
     "source" : "FOLIO",
     "title" : "Dissent, protest and dispute in Africa edited by Emmanuel M. Mbah and Toyin Falola",
     "alternativeTitles" : [ ],
@@ -1095,14 +1018,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.666+0000",
-      "updatedDate" : "2019-11-25T05:44:32.666+0000"
+      "createdDate" : "2019-11-26T03:34:20.747+0000",
+      "updatedDate" : "2019-11-26T03:34:20.747+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "8be05cf5-fb4f-4752-8094-8e179d08fb99",
-    "hrid" : "in00000027",
+    "hrid" : "in00000026",
     "source" : "FOLIO",
     "title" : "Anglo-Saxon manuscripts in microfiche facsimile Volume 25 Corpus Christi College, Cambridge II, MSS 12, 144, 162, 178, 188, 198, 265, 285, 322, 326, 449 microform A. N. Doane (editor and director), Matthew T. Hussey (associate editor), Phillip Pulsiano (founding editor)",
     "alternativeTitles" : [ ],
@@ -1168,113 +1091,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.720+0000",
-      "updatedDate" : "2019-11-25T05:44:32.720+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "90067668-f1d9-4ad1-997a-8186c7450353",
-    "hrid" : "in00000034",
-    "source" : "FOLIO",
-    "title" : "qwer",
-    "alternativeTitles" : [ ],
-    "editions" : [ "[1st ed.]" ],
-    "series" : [ "Catalogus (Museum van Hedendaagse Kunst Antwerpen), 92" ],
-    "identifiers" : [ {
-      "value" : "foo_1574661214794",
-      "identifierTypeId" : "8e3dd25e-db82-4b06-8311-90d41998c109"
-    }, {
-      "value" : "9789072828279",
-      "identifierTypeId" : "27fd35a6-b8f6-41f2-aa0e-9c663ceb250c"
-    } ],
-    "contributors" : [ {
-      "name" : "Moritz Küng",
-      "contributorTypeText" : "",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ "Venlet, Richard -- Exhibitions", "Installations (Art) -- Exhibitions", "Installations (Art)" ],
-    "classifications" : [ ],
-    "publication" : [ {
-      "publisher" : "MUHKA",
-      "place" : "Antwerpen",
-      "dateOfPublication" : "©2002"
-    } ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ "230 pages : chiefly illustrations (some color) ; 28 cm + 1 folded sheet" ],
-    "languages" : [ "dut", "eng" ],
-    "notes" : [ {
-      "note" : "Catalog of two exhibitions, \"Paramount basics\" held at the 25th Biennale of São Paulo, 23 March-2 June 2002, and \"Paramount basics (extended),\" held at MUHKA, Museum van Hedendaagse Kunst Antwerpen, 21 September-24 November 2002.",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : null
-    }, {
-      "note" : "Cover title.",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : null
-    }, {
-      "note" : "Includes folded sheet of list of works in the exhibition held at MUHKA.",
-      "staffOnly" : false,
-      "instanceNoteTypeId" : null
-    } ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T06:01:14.475+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:01:14.475+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "9d710c2c-1a54-4562-8bfb-29ae19dc891f",
-    "hrid" : "in00000031",
-    "source" : "FOLIO",
-    "title" : "L’Apprenti sorcier / Paul Dukas",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:54:38.636+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:54:38.636+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.808+0000",
+      "updatedDate" : "2019-11-26T03:34:20.808+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "a317b304-528c-424f-961c-39174933b454",
-    "hrid" : "in00000003",
+    "hrid" : "in00000005",
     "source" : "FOLIO",
     "title" : "Umsetzung der DIN EN ISO 9001:2015 Harald Augustin (Hrsg.)",
     "alternativeTitles" : [ ],
@@ -1305,44 +1129,8 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.624+0000",
-      "updatedDate" : "2019-11-25T05:44:32.624+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "a5b03b56-af9b-40c0-a8a2-d52f9bcd509a",
-    "hrid" : "in00000032",
-    "source" : "FOLIO",
-    "title" : "Soul station / Hank Mobley",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:57:26.915+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:57:26.915+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.711+0000",
+      "updatedDate" : "2019-11-26T03:34:20.711+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
@@ -1378,16 +1166,16 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.616+0000",
-      "updatedDate" : "2019-11-25T05:44:32.616+0000"
+      "createdDate" : "2019-11-26T03:34:20.696+0000",
+      "updatedDate" : "2019-11-26T03:34:20.696+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
-    "id" : "ae34ddd2-cb99-4b70-91b4-57f66ac97454",
-    "hrid" : "in00000030",
+    "id" : "bb9d9a06-951f-4805-a995-4a97ae4b16df",
+    "hrid" : "in00000031",
     "source" : "FOLIO",
-    "title" : "Soul station / Hank Mobley",
+    "title" : "L’Apprenti sorcier / Paul Dukas",
     "alternativeTitles" : [ ],
     "editions" : [ ],
     "series" : [ ],
@@ -1412,52 +1200,10 @@
       "tagList" : [ ]
     },
     "metadata" : {
-      "createdDate" : "2019-11-25T05:54:01.904+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:54:01.904+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "b0ca4662-3131-436f-8eac-3b214fb28e26",
-    "hrid" : "in00000037",
-    "source" : "FOLIO",
-    "title" : "title 8170081409148527",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ {
-      "name" : "supercalifragilisticexpialidocious 3913914859403693",
-      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-      "contributorTypeText" : "",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T06:03:44.742+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:03:44.742+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:44:30.780+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:30.780+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
@@ -1487,14 +1233,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.660+0000",
-      "updatedDate" : "2019-11-25T05:44:32.660+0000"
+      "createdDate" : "2019-11-26T03:34:20.742+0000",
+      "updatedDate" : "2019-11-26T03:34:20.742+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "c1d3be12-ecec-4fab-9237-baf728575185",
-    "hrid" : "in00000020",
+    "hrid" : "in00000019",
     "source" : "FOLIO",
     "title" : "The city post-modernity edited by Alan Latham",
     "alternativeTitles" : [ ],
@@ -1541,50 +1287,8 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.683+0000",
-      "updatedDate" : "2019-11-25T05:44:32.683+0000"
-    },
-    "holdingsRecords2" : [ ],
-    "natureOfContentTermIds" : [ ]
-  }, {
-    "id" : "c55eaacb-0d5e-4094-bb8c-f414a0a6aca0",
-    "hrid" : "in00000036",
-    "source" : "FOLIO",
-    "title" : "supercalifragilisticexpialidocious 5007583748365627",
-    "alternativeTitles" : [ ],
-    "editions" : [ ],
-    "series" : [ ],
-    "identifiers" : [ ],
-    "contributors" : [ {
-      "name" : "author 6527937165922297",
-      "contributorTypeId" : "6e09d47d-95e2-4d8a-831b-f777b8ef6d81",
-      "contributorTypeText" : "",
-      "contributorNameTypeId" : "2b94c631-fca9-4892-a730-03ee529ffe2a",
-      "primary" : false
-    } ],
-    "subjects" : [ ],
-    "classifications" : [ ],
-    "publication" : [ ],
-    "publicationFrequency" : [ ],
-    "publicationRange" : [ ],
-    "electronicAccess" : [ ],
-    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
-    "instanceFormatIds" : [ ],
-    "physicalDescriptions" : [ ],
-    "languages" : [ ],
-    "notes" : [ ],
-    "previouslyHeld" : false,
-    "staffSuppress" : false,
-    "discoverySuppress" : false,
-    "statisticalCodeIds" : [ ],
-    "tags" : {
-      "tagList" : [ ]
-    },
-    "metadata" : {
-      "createdDate" : "2019-11-25T06:03:41.104+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:03:41.104+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:20.760+0000",
+      "updatedDate" : "2019-11-26T03:34:20.760+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
@@ -1633,14 +1337,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.647+0000",
-      "updatedDate" : "2019-11-25T05:44:32.647+0000"
+      "createdDate" : "2019-11-26T03:34:20.727+0000",
+      "updatedDate" : "2019-11-26T03:34:20.727+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "cf23adf0-61ba-4887-bf82-956c4aae2260",
-    "hrid" : "in00000007",
+    "hrid" : "in00000009",
     "source" : "FOLIO",
     "title" : "Temeraire",
     "alternativeTitles" : [ ],
@@ -1670,8 +1374,44 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.649+0000",
-      "updatedDate" : "2019-11-25T05:44:32.649+0000"
+      "createdDate" : "2019-11-26T03:34:20.731+0000",
+      "updatedDate" : "2019-11-26T03:34:20.731+0000"
+    },
+    "holdingsRecords2" : [ ],
+    "natureOfContentTermIds" : [ ]
+  }, {
+    "id" : "dc137a60-48a7-4be0-ab57-303d9ccf7e44",
+    "hrid" : "in00000030",
+    "source" : "FOLIO",
+    "title" : "Soul station / Hank Mobley",
+    "alternativeTitles" : [ ],
+    "editions" : [ ],
+    "series" : [ ],
+    "identifiers" : [ ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "publicationFrequency" : [ ],
+    "publicationRange" : [ ],
+    "electronicAccess" : [ ],
+    "instanceTypeId" : "a2c91e87-6bab-44d6-8adb-1fd02481fc4f",
+    "instanceFormatIds" : [ ],
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ],
+    "previouslyHeld" : false,
+    "staffSuppress" : false,
+    "discoverySuppress" : false,
+    "statisticalCodeIds" : [ ],
+    "tags" : {
+      "tagList" : [ ]
+    },
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:43:53.731+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:43:53.731+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
@@ -1740,14 +1480,14 @@
     } ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.694+0000",
-      "updatedDate" : "2019-11-25T05:44:32.694+0000"
+      "createdDate" : "2019-11-26T03:34:20.792+0000",
+      "updatedDate" : "2019-11-26T03:34:20.792+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "e6bc03c6-c137-4221-b679-a7c5c31f986c",
-    "hrid" : "in00000029",
+    "hrid" : "in00000028",
     "source" : "FOLIO",
     "title" : "Organisations- und Prozessentwicklung Harald Augustin (Hrsg.)",
     "alternativeTitles" : [ ],
@@ -1806,14 +1546,14 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.723+0000",
-      "updatedDate" : "2019-11-25T05:44:32.723+0000"
+      "createdDate" : "2019-11-26T03:34:20.811+0000",
+      "updatedDate" : "2019-11-26T03:34:20.811+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   }, {
     "id" : "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
-    "hrid" : "in00000025",
+    "hrid" : "in00000024",
     "source" : "FOLIO",
     "title" : "The Girl on the Train",
     "alternativeTitles" : [ {
@@ -1847,8 +1587,8 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.697+0000",
-      "updatedDate" : "2019-11-25T05:44:32.697+0000"
+      "createdDate" : "2019-11-26T03:34:20.795+0000",
+      "updatedDate" : "2019-11-26T03:34:20.795+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ "44cd89f3-2e76-469f-a955-cc57cb9e0395" ]
@@ -1888,11 +1628,11 @@
     "notes" : [ ],
     "statisticalCodeIds" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.651+0000",
-      "updatedDate" : "2019-11-25T05:44:32.651+0000"
+      "createdDate" : "2019-11-26T03:34:20.730+0000",
+      "updatedDate" : "2019-11-26T03:34:20.730+0000"
     },
     "holdingsRecords2" : [ ],
     "natureOfContentTermIds" : [ ]
   } ],
-  "totalRecords" : 37
+  "totalRecords" : 31
 }

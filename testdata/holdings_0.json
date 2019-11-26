@@ -1,43 +1,5 @@
 {
   "holdingsRecords" : [ {
-    "id" : "0589c5a7-66d1-4a58-a7f1-4f0a52e272ab",
-    "formerIds" : [ ],
-    "instanceId" : "1aba2ead-8f4c-489c-b468-a202cc307f6d",
-    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "callNumber" : "ZZ39.50",
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:59:51.941+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:59:51.941+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "06274f74-d88a-481b-8cfa-24946719d214",
-    "formerIds" : [ ],
-    "instanceId" : "ae34ddd2-cb99-4b70-91b4-57f66ac97454",
-    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "callNumber" : "ZZ39.50",
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:54:06.477+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:54:06.477+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
     "id" : "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
     "hrid" : "ho00000136",
     "formerIds" : [ "ABW4508", "442882" ],
@@ -93,8 +55,8 @@
     "statisticalCodeIds" : [ "775b6ad4-9c35-4d29-bf78-8775a9b42226" ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.080+0000",
-      "updatedDate" : "2019-11-25T05:44:33.080+0000"
+      "createdDate" : "2019-11-26T03:34:21.172+0000",
+      "updatedDate" : "2019-11-26T03:34:21.172+0000"
     }
   }, {
     "id" : "133a7916-f05e-4df4-8f7f-09eb2a7076d1",
@@ -112,45 +74,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.992+0000",
-      "updatedDate" : "2019-11-25T05:44:32.992+0000"
-    }
-  }, {
-    "id" : "1a5db17d-8e3b-4589-836d-dd4bec7bbc73",
-    "formerIds" : [ ],
-    "instanceId" : "9d710c2c-1a54-4562-8bfb-29ae19dc891f",
-    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "callNumber" : "ZZ39.50",
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T05:54:41.835+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:54:41.835+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "4429befa-088b-4ffb-8587-1fe65c12af1d",
-    "formerIds" : [ ],
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.514+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:39.514+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.082+0000",
+      "updatedDate" : "2019-11-26T03:34:21.082+0000"
     }
   }, {
     "id" : "55f48dc6-efa7-4cfe-bc7c-4786efe493e3",
@@ -165,8 +90,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.082+0000",
-      "updatedDate" : "2019-11-25T05:44:33.082+0000"
+      "createdDate" : "2019-11-26T03:34:21.183+0000",
+      "updatedDate" : "2019-11-26T03:34:21.183+0000"
     }
   }, {
     "id" : "65032151-39a5-4cef-8810-5350eb316300",
@@ -186,8 +111,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.098+0000",
-      "updatedDate" : "2019-11-25T05:44:33.098+0000"
+      "createdDate" : "2019-11-26T03:34:21.191+0000",
+      "updatedDate" : "2019-11-26T03:34:21.191+0000"
     }
   }, {
     "id" : "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
@@ -203,8 +128,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.078+0000",
-      "updatedDate" : "2019-11-25T05:44:33.078+0000"
+      "createdDate" : "2019-11-26T03:34:21.169+0000",
+      "updatedDate" : "2019-11-26T03:34:21.169+0000"
     }
   }, {
     "id" : "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
@@ -224,8 +149,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.993+0000",
-      "updatedDate" : "2019-11-25T05:44:32.993+0000"
+      "createdDate" : "2019-11-26T03:34:21.083+0000",
+      "updatedDate" : "2019-11-26T03:34:21.083+0000"
     }
   }, {
     "id" : "68872d8a-bf16-420b-829f-206da38f6c10",
@@ -245,31 +170,13 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.994+0000",
-      "updatedDate" : "2019-11-25T05:44:32.994+0000"
+      "createdDate" : "2019-11-26T03:34:21.083+0000",
+      "updatedDate" : "2019-11-26T03:34:21.083+0000"
     }
   }, {
-    "id" : "78c3f909-2dfd-47ae-867e-a0c11a858a95",
+    "id" : "748238ed-8377-45c9-877f-90ab00a60c42",
     "formerIds" : [ ],
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "permanentLocationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
-    "electronicAccess" : [ ],
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.564+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:39.564+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "7b11cf95-c816-48d5-81da-c013bc5eef3b",
-    "formerIds" : [ ],
-    "instanceId" : "a5b03b56-af9b-40c0-a8a2-d52f9bcd509a",
+    "instanceId" : "bb9d9a06-951f-4805-a995-4a97ae4b16df",
     "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
     "electronicAccess" : [ ],
     "callNumber" : "ZZ39.50",
@@ -280,17 +187,18 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:57:31.136+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T05:57:31.136+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:44:33.965+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:33.965+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
-    "id" : "b162c9bd-9fbc-4251-9472-8b1750ceade1",
+    "id" : "93f123e7-58c9-4f40-ada5-aff4cf011eba",
     "formerIds" : [ ],
-    "instanceId" : "1640f178-f243-4e4a-bf1c-9e1e62b3171d",
+    "instanceId" : "dc137a60-48a7-4be0-ab57-303d9ccf7e44",
     "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
     "electronicAccess" : [ ],
+    "callNumber" : "ZZ39.50",
     "notes" : [ ],
     "holdingsStatements" : [ ],
     "holdingsStatementsForIndexes" : [ ],
@@ -298,10 +206,10 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T17:19:31.142+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T17:19:31.142+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:43:58.414+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:43:58.414+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
     }
   }, {
     "id" : "c4a15834-0184-4a6f-9c0c-0ca5bad8286d",
@@ -334,45 +242,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.069+0000",
-      "updatedDate" : "2019-11-25T05:44:33.069+0000"
-    }
-  }, {
-    "id" : "c5997757-4cf9-412d-ad9f-048709599bec",
-    "formerIds" : [ ],
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "permanentLocationId" : "758258bc-ecc1-41b8-abca-f7b610822ffd",
-    "electronicAccess" : [ ],
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.539+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:39.539+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
-    }
-  }, {
-    "id" : "c7600e96-7ef0-4970-b525-676bc5dfaa1d",
-    "formerIds" : [ ],
-    "instanceId" : "4d06b77c-88c3-4edb-96ec-06d57306e939",
-    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
-    "electronicAccess" : [ ],
-    "callNumber" : "ZZ39.50",
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T06:01:20.525+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T06:01:20.525+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.157+0000",
+      "updatedDate" : "2019-11-26T03:34:21.157+0000"
     }
   }, {
     "id" : "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
@@ -392,26 +263,8 @@
     "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.081+0000",
-      "updatedDate" : "2019-11-25T05:44:33.081+0000"
-    }
-  }, {
-    "id" : "e43621c5-4e7a-4347-b9db-116869243449",
-    "formerIds" : [ ],
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "permanentLocationId" : "184aae84-a5bf-4c6a-85ba-4a7c73026cd5",
-    "electronicAccess" : [ ],
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:19:50.995+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:19:50.995+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.173+0000",
+      "updatedDate" : "2019-11-26T03:34:21.173+0000"
     }
   }, {
     "id" : "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
@@ -431,8 +284,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:32.985+0000",
-      "updatedDate" : "2019-11-25T05:44:32.985+0000"
+      "createdDate" : "2019-11-26T03:34:21.074+0000",
+      "updatedDate" : "2019-11-26T03:34:21.074+0000"
     }
   }, {
     "id" : "e9285a1c-1dfc-4380-868c-e74073003f43",
@@ -452,26 +305,8 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.102+0000",
-      "updatedDate" : "2019-11-25T05:44:33.102+0000"
-    }
-  }, {
-    "id" : "eb3f02ca-f524-4b18-9fd9-60540b5c6802",
-    "formerIds" : [ ],
-    "instanceId" : "a317b304-528c-424f-961c-39174933b454",
-    "permanentLocationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
-    "electronicAccess" : [ ],
-    "notes" : [ ],
-    "holdingsStatements" : [ ],
-    "holdingsStatementsForIndexes" : [ ],
-    "holdingsStatementsForSupplements" : [ ],
-    "statisticalCodeIds" : [ ],
-    "holdingsItems" : [ ],
-    "metadata" : {
-      "createdDate" : "2019-11-25T20:15:39.541+0000",
-      "createdByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54",
-      "updatedDate" : "2019-11-25T20:15:39.541+0000",
-      "updatedByUserId" : "bca705d2-c5be-5d9a-8dd6-4ca010c95d54"
+      "createdDate" : "2019-11-26T03:34:21.195+0000",
+      "updatedDate" : "2019-11-26T03:34:21.195+0000"
     }
   }, {
     "id" : "fb7b70f1-b898-4924-a991-0e4b6312bb5f",
@@ -487,9 +322,9 @@
     "statisticalCodeIds" : [ ],
     "holdingsItems" : [ ],
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:33.105+0000",
-      "updatedDate" : "2019-11-25T05:44:33.105+0000"
+      "createdDate" : "2019-11-26T03:34:21.195+0000",
+      "updatedDate" : "2019-11-26T03:34:21.195+0000"
     }
   } ],
-  "totalRecords" : 23
+  "totalRecords" : 14
 }

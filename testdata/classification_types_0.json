@@ -4,80 +4,80 @@
     "name" : "Dewey",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.786+0000",
-      "updatedDate" : "2019-11-25T05:44:29.786+0000"
+      "createdDate" : "2019-11-26T03:34:17.892+0000",
+      "updatedDate" : "2019-11-26T03:34:17.892+0000"
     }
   }, {
     "id" : "74c08086-81a4-4466-93d8-d117ce8646db",
     "name" : "Additional Dewey",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.798+0000",
-      "updatedDate" : "2019-11-25T05:44:29.798+0000"
+      "createdDate" : "2019-11-26T03:34:17.903+0000",
+      "updatedDate" : "2019-11-26T03:34:17.903+0000"
     }
   }, {
     "id" : "9075b5f8-7d97-49e1-a431-73fdd468d476",
     "name" : "SUDOC",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.787+0000",
-      "updatedDate" : "2019-11-25T05:44:29.787+0000"
+      "createdDate" : "2019-11-26T03:34:17.892+0000",
+      "updatedDate" : "2019-11-26T03:34:17.892+0000"
     }
   }, {
     "id" : "9a60012a-0fcf-4da9-a1d1-148e818c27ad",
     "name" : "National Agricultural Library",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.797+0000",
-      "updatedDate" : "2019-11-25T05:44:29.797+0000"
+      "createdDate" : "2019-11-26T03:34:17.902+0000",
+      "updatedDate" : "2019-11-26T03:34:17.902+0000"
     }
   }, {
     "id" : "a7f4d03f-b0d8-496c-aebf-4e9cdb678200",
     "name" : "NLM",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.787+0000",
-      "updatedDate" : "2019-11-25T05:44:29.787+0000"
+      "createdDate" : "2019-11-26T03:34:17.893+0000",
+      "updatedDate" : "2019-11-26T03:34:17.893+0000"
     }
   }, {
     "id" : "a83699eb-cc23-4307-8043-5a38a8dce335",
     "name" : "LC (local)",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.798+0000",
-      "updatedDate" : "2019-11-25T05:44:29.798+0000"
+      "createdDate" : "2019-11-26T03:34:17.904+0000",
+      "updatedDate" : "2019-11-26T03:34:17.904+0000"
     }
   }, {
     "id" : "ad615f6e-e28c-4343-b4a0-457397c5be3e",
     "name" : "Canadian Classification",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.797+0000",
-      "updatedDate" : "2019-11-25T05:44:29.797+0000"
+      "createdDate" : "2019-11-26T03:34:17.903+0000",
+      "updatedDate" : "2019-11-26T03:34:17.903+0000"
     }
   }, {
     "id" : "ce176ace-a53e-4b4d-aa89-725ed7b2edac",
     "name" : "LC",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.786+0000",
-      "updatedDate" : "2019-11-25T05:44:29.786+0000"
+      "createdDate" : "2019-11-26T03:34:17.892+0000",
+      "updatedDate" : "2019-11-26T03:34:17.892+0000"
     }
   }, {
     "id" : "e8662436-75a8-4984-bebc-531e38c774a0",
     "name" : "UDC",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.799+0000",
-      "updatedDate" : "2019-11-25T05:44:29.799+0000"
+      "createdDate" : "2019-11-26T03:34:17.902+0000",
+      "updatedDate" : "2019-11-26T03:34:17.902+0000"
     }
   }, {
     "id" : "fb12264c-ff3b-47e0-8e09-b0aa074361f1",
     "name" : "GDC",
     "source" : "folio",
     "metadata" : {
-      "createdDate" : "2019-11-25T05:44:29.788+0000",
-      "updatedDate" : "2019-11-25T05:44:29.788+0000"
+      "createdDate" : "2019-11-26T03:34:17.891+0000",
+      "updatedDate" : "2019-11-26T03:34:17.891+0000"
     }
   } ],
   "totalRecords" : 10
