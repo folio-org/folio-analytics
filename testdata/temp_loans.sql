@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: temp_loans; Type: TABLE; Schema: public; Owner: ldpqadmin
+-- Name: temp_loans; Type: TABLE; Schema: public; Owner: ldpadmin
 --
 
 CREATE TABLE public.temp_loans (
@@ -30,10 +30,11 @@ CREATE TABLE public.temp_loans (
 );
 
 
-ALTER TABLE public.temp_loans OWNER TO ldpqadmin;
+ALTER TABLE public.temp_loans OWNER TO ldpadmin;
 
 --
--- Data for Name: temp_loans; Type: TABLE DATA; Schema: public; Owner: ldpqadmin
+-- Data for Name: temp_loans; Type: TABLE DATA; Schema: public; Owner:
+-- ldpadmin
 --
 
 INSERT INTO public.temp_loans (id, temp_location) VALUES ('0bab56e5-1ab6-4ac2-afdf-8b2df0434378', 'Annex');
@@ -58,7 +59,8 @@ INSERT INTO public.temp_loans (id, temp_location) VALUES ('843695a2-3fbe-4497-a1
 
 
 --
--- Name: temp_loans load_temp_loans_pkey1; Type: CONSTRAINT; Schema: public; Owner: ldpqadmin
+-- Name: temp_loans load_temp_loans_pkey1; Type: CONSTRAINT; Schema:
+-- public; Owner: ldpadmin
 --
 
 ALTER TABLE ONLY public.temp_loans
@@ -66,7 +68,7 @@ ALTER TABLE ONLY public.temp_loans
 
 
 --
--- Name: TABLE temp_loans; Type: ACL; Schema: public; Owner: ldpqadmin
+-- Name: TABLE temp_loans; Type: ACL; Schema: public; Owner: ldpadmin
 --
 
 GRANT SELECT ON TABLE public.temp_loans TO ldp;
