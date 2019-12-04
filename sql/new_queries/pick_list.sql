@@ -125,7 +125,7 @@ eff_call_no AS (
     SELECT
         i.id AS item_id,
         h.id AS holding_id,
-        Coalesce(i.item_level_call_number, h.call_number) :: VARCHAR AS effective_callNumber
+        COALESCE(i.item_level_call_number, h.call_number) :: VARCHAR AS effective_callNumber
     FROM
         items AS i
         LEFT JOIN holdings AS h
