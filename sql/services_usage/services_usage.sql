@@ -30,8 +30,8 @@ checkout_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        l.loan_date :: DATE AS action_date,
-        to_char(l.loan_date, 'Day') AS day_of_week,
+        l.loan_date :: TIMESTAMPTZ AS action_date,
+        to_char(l.loan_date :: TIMESTAMPTZ AT TIME ZONE 'EST', 'Day') AS day_of_week,
         --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
         EXTRACT(hours from l.loan_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
         m.name AS material_type,
@@ -68,47 +68,49 @@ checkout_actions AS (
         tl.temp_location,
         l.item_status        
 ),
+simple_return_dates AS ( 
+    SELECT
+	    id,
+        checkin_service_point_id,
+        --TODO: still need to work on timezone for return date; still 5 hours early
+        COALESCE(system_return_date :: TIMESTAMPTZ, return_date :: TIMESTAMPTZ ) AS action_date,
+        item_id,
+        item_status
+    FROM loans
+),
 checkin_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        l.system_return_date :: DATE AS action_date,
-        to_char(l.system_return_date, 'Day') AS day_of_week,
+        simple_return_dates.action_date AS action_date,
+        to_char(simple_return_dates.action_date :: TIMESTAMPTZ AT TIME ZONE 'EST', 'Day') AS day_of_week,
         --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
-        EXTRACT(hours from l.system_return_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
+        EXTRACT(hours from simple_return_dates.action_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
         m.name AS material_type,
         'Checkin' :: VARCHAR AS action_type,
         tl.temp_location AS effective_location,
-	    l.item_status AS item_status,
-        count(l.id) AS ct
-    FROM (
-        SELECT
-            id,
-            checkin_service_point_id,
-            system_return_date,
-            item_id,
-            item_status
-        FROM loans
-        --remove the WHERE clause below to ignore date range filter
-        WHERE
-            system_return_date >= (SELECT start_date FROM parameters)
-        AND system_return_date <  (SELECT end_date FROM parameters)
-    ) AS l
+	    simple_return_dates.item_status AS item_status,
+        count(simple_return_dates.id) AS ct
+    FROM simple_return_dates
     LEFT JOIN temp_loans AS tl
-        ON l.id = tl.id
+        ON simple_return_dates.id = tl.id
     LEFT JOIN items i
-        ON l.item_id = i.id
+        ON simple_return_dates.item_id = i.id
     LEFT JOIN service_points sp
-        ON l.checkin_service_point_id = sp.id
+        ON simple_return_dates.checkin_service_point_id = sp.id
     LEFT JOIN material_types m
         ON i.material_type_id = m.id
+    --remove the WHERE clause below to ignore date range filter
+    WHERE
+        simple_return_dates.action_date >= (SELECT start_date FROM parameters)
+    AND simple_return_dates.action_date <  (SELECT end_date FROM parameters)
     GROUP BY
         sp.name,
         sp.discovery_display_name,
-        l.system_return_date,
+        simple_return_dates.action_date,
         m.name,
         tl.temp_location,
-	    l.item_status
+	    simple_return_dates.item_status
 )
 SELECT
     service_point_name,

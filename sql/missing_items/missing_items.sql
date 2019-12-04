@@ -46,6 +46,10 @@ Temp loans table
 FILTERS: item status type, item status date, location
 
 AGGREGATION: number of loans for each item, loan renewal counts, sum of these two aggregations
+
+Note: We are using item status 'In transit' to indicate that an item is missing.
+You can set the date range to specify that it is older, closed loans with "In transit"
+status that constitute missing items.
 */
 
 /* Change the lines below to adjust the date, item status, and location filters */
@@ -53,16 +57,6 @@ WITH parameters AS (
     SELECT
         '2000-01-01' :: DATE AS start_date,
         '2020-01-01' :: DATE AS end_date,
-        /*
-        Is the item status filter supposed to determine if the item is missing?
-        Is 'Available' correct here, or is that just because the test data is lacking?
-        Maybe define the logic of the query in the comments somewhere.
-        For example, "we consider an item missing if status is 'In transit' and
-        status date is older than 5 days."
-        
-        If something like that is correct, might be nicer to just have the date parameter
-        be a time period, like 5 days.
-        */
         'In transit' :: VARCHAR AS item_status_filter,
         /*choose only ONE of the following location parameters*/
 		--'Main Library' :: VARCHAR AS items_permanent_location_filter
@@ -77,23 +71,6 @@ SELECT
         ' to ' :: VARCHAR ||
         (SELECT end_date :: VARCHAR FROM parameters) AS date_range,
     /*
-     * NOTE: identifiers are not human readable, so normally I wouldn't expect them
-     * to be in the actual query results, unless the report requester expects to need
-     * to do some additional data joins later. I have commented them out.
-     * Also, sometimes the same identifier has been included twice - for example,
-     * item_id from loans, but also the id from items. If ids really are needed in the query,
-     * just include one copy. I suggest the one where it is the primary id, like items.id.
-     * I have removed duplicates, commented the remaining ids.
-     * 
-     * Please also be careful about capital letters. Many fields had been using 
-     * "ID" instead of "id".
-     * 
-     * You weren't including names for all of the location fields, so someone would 
-     * have to change the join field to get the correct name for the filter. I think it
-     * might be nicer to have all of the names available, so they can just change the
-     * parameter and the WHERE clause. To do that, I joined each location id field to 
-     * a separate copy of the locations table. Same with service points.
-     * 
      * I'm wondering if there is a flaw in the logic with this query. We are filtering
      * to find items who status changed to something in a particular time period.
      * Since the item status is basically the latest status of the item, that makes sense.
@@ -102,22 +79,15 @@ SELECT
      * It won't automatically limit it to the effective location of the loan that changed the 
      * item's status, so I think that still needs work.
      */
-	--h.id AS holdings_id,
-	--hploc.id AS holdings_permanent_location_id,
 	hploc.name AS holdings_permanent_location_name,
-	--htloc.id AS holdings_temporary_location_id,
 	htloc.name AS holdings_temporary_location_name,
-	--h.instance_id,
 	h.shelving_title,
-	/* including item_id to show that we have multiple records for an individual item */
-    i.id AS item_id,
-	--iploc.id AS items_permanent_location_id,
 	iploc.name AS items_permanent_location_name,
-	--itloc.id AS items_temporary_location_id,
 	itloc.name AS items_temporary_location_name,
 	i.barcode,
 	i.item_level_call_number,
-	i.volume,
+	--i.volume,
+	json_extract_path_text(i.data, 'volume') AS volume,
 	i.enumeration,
 	i.chronology,
 	json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
@@ -126,26 +96,14 @@ SELECT
 	'{ "copyNumbers": ' :: varchar || 
         COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: varchar) ||
 		'}' :: varchar AS copy_numbers,
-	--l.id AS loan_id,
-	--cosp.id AS checkout_service_point_id,
-	cosp.name AS checkout_service_point_name,
-	--cisp.id AS checkin_service_point_id,
-	cisp.name AS checkin_service_point_name,
-	/* Is renewal count needed for the "In transit" loan? Or is it just needed for the 
-	 * overall circulation of the item? I included loans_and_renewals separately below,
-	 * so I would expect to want to remove this per-loan renewal count from the report output.
-	 */
-	l.renewal_count AS loan_renewal_count, 
-	--ins.id AS instance_id,
-	ins.cataloged_date,
+    cosp.name AS checkout_service_point_name,
+    cisp.name AS checkin_service_point_name,
+    ins.cataloged_date,
     json_extract_path_text(ins.data, 'publication', 'dateOfPulication') AS instance_publication_date,
-    --m.id AS material_type_id, 
-	m.name AS material_type_name,
-	--itsp.id AS in_transit_destination_service_point_id,
-	itsp.name AS in_transit_destination_service_point_name,
-	--tl.id AS effective_location_id,
-	tl.temp_location AS effective_location_name,
-	l2.num_loans + l2.num_renewals AS num_loans_and_renewals
+    m.name AS material_type_name,
+    itsp.name AS in_transit_destination_service_point_name,
+    tl.temp_location AS effective_location_name,
+    l2.num_loans + l2.num_renewals AS num_loans_and_renewals
 FROM (
     SELECT
         id,
@@ -156,7 +114,7 @@ FROM (
         barcode,
         material_type_id,
         item_level_call_number,
-        volume,
+        --volume,
         enumeration,
         chronology,
         data
@@ -167,16 +125,24 @@ FROM (
     --AND json_extract_path_text(data, 'status', 'date')::DATE >= (SELECT start_date FROM parameters)
     --AND json_extract_path_text(data, 'status', 'date')::DATE <  (SELECT end_date FROM parameters)    
 ) AS i
-/* Not sure if, for performance, each table joined in should have a select statement
- * to limit to specific columns, or if it's okay to join entire table.
- */
 LEFT JOIN holdings AS h
 	ON i.holdings_record_id = h.id
-LEFT JOIN loans AS l
+/* This should be pulling the latest loan for each item. Worth testing more. */
+LEFT JOIN (
+	SELECT 
+	    DISTINCT ON (return_date)
+	    id,
+	    item_id,
+	    -- add effective location when available
+	    checkout_service_point_id,
+	    checkin_service_point_id
+    FROM loans
+    ORDER BY return_date DESC
+) AS l
 	ON i.id = l.item_id 
-LEFT join instances AS ins
+LEFT JOIN instances AS ins
 	ON h.instance_id = ins.id
-LEFT join material_types AS m
+LEFT JOIN material_types AS m
 	ON i.material_type_id = m.id
 LEFT JOIN service_points AS cosp 
 	ON l.checkout_service_point_id=cosp.id 
@@ -186,12 +152,15 @@ LEFT JOIN service_points AS itsp
 	ON i.in_transit_destination_service_point_id=itsp.id 
 LEFT JOIN locations AS hploc
 	ON h.permanent_location_id = hploc.id
+--LEFT JOIN locations AS htloc
+--	ON h.temporary_location_id = htloc.id
 LEFT JOIN locations AS htloc
-	ON h.temporary_location_id = htloc.id
+	ON json_extract_path_text(h.data, 'temporary_location_id') = htloc.id
 LEFT JOIN locations AS iploc
 	ON i.permanent_location_id = iploc.id
 LEFT JOIN locations AS itloc
 	ON i.temporary_location_id = itloc.id
+-- temp solution for effective location, until it gets added to loans	
 LEFT JOIN temp_loans AS tl
     ON l.id = tl.id
 LEFT JOIN (
