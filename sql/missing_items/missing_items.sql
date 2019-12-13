@@ -49,7 +49,11 @@ AGGREGATION: number of loans for each item, loan renewal counts, sum of these tw
 
 Note: We are using item status 'In transit' to indicate that an item is missing.
 You can set the date range to specify that it is older, closed loans with "In transit"
-status that constitute missing items.
+status that constitute missing items. 
+
+TODO: make sure we're supposed to use item status from item instead of loans
+TODO: think about item status more, maybe - this is looking for "In transit", but
+      what about "Lost" or "Missing" (those are both mentioned in the prototype
 */
 
 /* Change the lines below to adjust the date, item status, and location filters */
@@ -65,20 +69,25 @@ WITH parameters AS (
 		--'Main Library' :: VARCHAR AS holdings_temporary_location_filter
 		--'Main Library' :: VARCHAR AS effective_location_filter -- has results
 		--'Circ Desk 1' :: VARCHAR AS in_transit_destination_service_point_filter -- has results
-        )
+        ),
+ranked_loans AS (
+    SELECT 
+        id,
+        -- add effective location when available
+        return_date,
+        item_id,
+        checkout_service_point_id,
+        checkin_service_point_id,
+        rank() OVER (
+            PARTITION BY item_id
+            ORDER BY return_date DESC
+        ) AS return_date_ranked
+    FROM loans
+)
 SELECT
 	(SELECT start_date :: VARCHAR FROM parameters) ||
         ' to ' :: VARCHAR ||
         (SELECT end_date :: VARCHAR FROM parameters) AS date_range,
-    /*
-     * I'm wondering if there is a flaw in the logic with this query. We are filtering
-     * to find items who status changed to something in a particular time period.
-     * Since the item status is basically the latest status of the item, that makes sense.
-     * Then we join that item to all of its loans to get the effective location of
-     * the item when checked out, but that will create a row for every loan for that item, right?
-     * It won't automatically limit it to the effective location of the loan that changed the 
-     * item's status, so I think that still needs work.
-     */
 	hploc.name AS holdings_permanent_location_name,
 	htloc.name AS holdings_temporary_location_name,
 	h.shelving_title,
@@ -130,14 +139,13 @@ LEFT JOIN holdings AS h
 /* This should be pulling the latest loan for each item. Worth testing more. */
 LEFT JOIN (
 	SELECT 
-	    DISTINCT ON (return_date)
-	    id,
-	    item_id,
-	    -- add effective location when available
-	    checkout_service_point_id,
-	    checkin_service_point_id
-    FROM loans
-    ORDER BY return_date DESC
+        id,
+        -- add effective location when available
+        item_id,
+        checkout_service_point_id,
+        checkin_service_point_id
+    FROM ranked_loans
+    WHERE ranked_loans.return_date_ranked = 1
 ) AS l
 	ON i.id = l.item_id 
 LEFT JOIN instances AS ins
