@@ -30,10 +30,9 @@ checkout_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        l.loan_date :: TIMESTAMPTZ AS action_date,
-        to_char(l.loan_date :: TIMESTAMPTZ AT TIME ZONE 'EST', 'Day') AS day_of_week,
-        --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
-        EXTRACT(hours from l.loan_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
+        l.loan_date :: TIMESTAMP AS action_date,
+        to_char(l.loan_date , 'Day') AS day_of_week,
+        EXTRACT(hours from l.loan_date ) AS hour_of_day,
         m.name AS material_type,
         'Checkout' :: VARCHAR AS action_type,
         tl.temp_location AS effective_location,
@@ -72,8 +71,7 @@ simple_return_dates AS (
     SELECT
 	    id,
         checkin_service_point_id,
-        --TODO: still need to work on timezone for return date; still 5 hours early
-        COALESCE(system_return_date :: TIMESTAMPTZ, return_date :: TIMESTAMPTZ ) AS action_date,
+        COALESCE(system_return_date, return_date :: TIMESTAMPTZ AT TIME ZONE 'UTC' ) AS action_date,
         item_id,
         item_status
     FROM loans
@@ -82,10 +80,9 @@ checkin_actions AS (
     SELECT
         sp.name AS service_point_name,
         sp.discovery_display_name AS service_point_display_name,
-        simple_return_dates.action_date AS action_date,
-        to_char(simple_return_dates.action_date :: TIMESTAMPTZ AT TIME ZONE 'EST', 'Day') AS day_of_week,
-        --Note: 'EST' is hard-coded to correct for Redshift setting timezone at data load
-        EXTRACT(hours from simple_return_dates.action_date :: TIMESTAMPTZ AT TIME ZONE 'EST') AS hour_of_day,
+        simple_return_dates.action_date :: TIMESTAMP AS action_date,
+        to_char(simple_return_dates.action_date , 'Day') AS day_of_week,
+        EXTRACT(hours from simple_return_dates.action_date ) AS hour_of_day,
         m.name AS material_type,
         'Checkin' :: VARCHAR AS action_type,
         tl.temp_location AS effective_location,
