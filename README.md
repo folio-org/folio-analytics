@@ -35,9 +35,9 @@ SQL queries are stored in the [sql directory](sql) of this repository. Each quer
 
 ### Circulation
 
-* Circulation Detail Report: [Circulation Detail Query](sql/circ-detail)
-* Circulation Item Detail Report: [Circulation Item Detail Query](sql/circ-item-detail)
-* Services Usage Report: [Services Usage Report](sql/services-usage)
+* Circulation Detail Report: [Circulation Detail Query](sql/circ_detail)
+* Circulation Item Detail Report: [Circulation Item Detail Query](sql/circ_item_detail)
+* Services Usage Report: [Services Usage Report](sql/services_usage)
 
 ### Inventory
 
