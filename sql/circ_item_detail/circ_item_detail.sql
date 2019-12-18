@@ -43,12 +43,6 @@ SELECT
     '{ "copyNumbers": ' :: VARCHAR || 
         COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: VARCHAR) ||
         '}' :: VARCHAR AS copy_numbers,
-    /* alternative: code below converts elements of "copyNumbers" to
-       pipe-delimited list. does not work on Redshift. */
-    /*array_to_string(
-        ARRAY[
-            json_array_elements_text(
-                json_extract_path(i.data, 'copyNumbers'))],'|') AS copy_numbers,*/
     json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
     m.name AS material_type,
     g.group AS group_name

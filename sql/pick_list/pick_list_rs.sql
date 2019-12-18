@@ -79,29 +79,76 @@ location_filtering AS (
         OR libraries."name" = (SELECT library_filter FROM parameters)
         OR loc."name" = (SELECT location_filter FROM parameters)
 ),
-instance_formats_extract AS (
+numbers_table AS (
+    SELECT 0 AS i
+    UNION ALL SELECT 1
+    UNION ALL SELECT 2
+    UNION ALL SELECT 3
+    UNION ALL SELECT 4
+    UNION ALL SELECT 5
+    UNION ALL SELECT 6
+    UNION ALL SELECT 7
+    UNION ALL SELECT 8
+    UNION ALL SELECT 9
+),
+instance_formats_objects AS (
     SELECT
-        inst.id AS instance_id,
-        JSON_ARRAY_ELEMENTS_TEXT(JSON_EXTRACT_PATH(inst.data, 'instanceFormatIds')) :: VARCHAR AS instance_format_id
+        id AS instance_id,
+        json_extract_path_text(data, 'instanceFormatIds', true) AS objects
     FROM
-        instances AS inst
+        instances
+),
+instance_formats_expanded AS (
+    SELECT
+        instance_formats_objects.instance_id AS instance_id,
+        json_array_length(instance_formats_objects.objects, true) as number_of_items,
+        json_extract_array_element_text(
+            instance_formats_objects.objects, 
+            numbers_table.i::int, 
+            true
+        ) AS instance_format_id
+    FROM instance_formats_objects
+    CROSS JOIN numbers_table
+    WHERE numbers_table.i <
+        json_array_length(instance_formats_objects.objects, true)
 ),
 instance_format_names AS (
-    SELECT
-        instance_formats_extract.instance_id AS instance_id,
-        STRING_AGG(DISTINCT instance_formats.name, '|') AS instance_format_names
-    FROM instance_formats_extract
+    SELECT 
+        instance_id,
+        LISTAGG(DISTINCT instance_formats.name, '|' :: VARCHAR) AS instance_format_names
+    FROM instance_formats_expanded
     LEFT JOIN instance_formats
-        ON instance_formats_extract.instance_format_id = instance_formats.id
-    GROUP BY instance_formats_extract.instance_id
+        ON instance_formats_expanded.instance_format_id = instance_formats.id
+    GROUP BY instance_formats_expanded.instance_id
 ),
+identifiers_objects AS (
+    SELECT
+        id,
+        JSON_EXTRACT_PATH_TEXT(data, 'identifiers', true) AS objects
+    FROM
+        instances
+),
+identifiers_expanded AS(
+    select 
+        identifiers_objects.id,
+        json_array_length(identifiers_objects.objects, true) as number_of_items,
+        json_extract_array_element_text(
+            identifiers_objects.objects, 
+            numbers_table.i::int, 
+            true
+        ) as item
+    from identifiers_objects
+    cross join numbers_table
+    where numbers_table.i <
+        json_array_length(identifiers_objects.objects, true)
+    ),
 identifiers_extract AS (
     SELECT
-        inst.id AS instance_id,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'identifiers')),'identifierTypeId') :: VARCHAR AS type_id,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'identifiers')),'value') :: VARCHAR AS value
+        identifiers_expanded.id AS instance_id,
+        json_extract_path_text(identifiers_expanded.item, 'identifierTypeId')::varchar as type_id,
+        json_extract_path_text(identifiers_expanded.item, 'value')::varchar as value
     FROM
-        instances as inst
+        identifiers_expanded
 ),
 isbn_identifiers AS (
     SELECT instance_id, type_id, value
@@ -115,7 +162,7 @@ isbn_identifiers AS (
 isbn_agg AS (
     SELECT
         instance_id,
-        STRING_AGG(DISTINCT value :: VARCHAR, '|') AS isbn_values
+        LISTAGG(DISTINCT value, '|') AS isbn_values
     FROM isbn_identifiers
     GROUP BY instance_id
 ),
@@ -131,7 +178,7 @@ issn_identifiers AS (
 issn_agg AS (
     SELECT
         instance_id,
-        STRING_AGG(DISTINCT value :: VARCHAR, '|') AS issn_values
+        LISTAGG(DISTINCT value, '|') AS issn_values
     FROM issn_identifiers
     GROUP BY instance_id
 ),
@@ -153,56 +200,113 @@ eff_call_no AS (
         LEFT JOIN holdings AS h
             ON i.holdings_record_id = h.id
 ),
+contributor_objects AS (
+    SELECT
+        id,
+        JSON_EXTRACT_PATH_TEXT(data, 'contributors', true) AS objects
+    FROM
+        instances
+),
+contributor_expanded AS(
+    select 
+        contributor_objects.id,
+        json_array_length(contributor_objects.objects, true) as number_of_items,
+        json_extract_array_element_text(
+            contributor_objects.objects, 
+            numbers_table.i::int, 
+            true
+        ) as item
+    from contributor_objects
+    cross join numbers_table
+    where numbers_table.i <
+        json_array_length(contributor_objects.objects, true)
+    ),
 contributor_extract AS (
     SELECT
-        inst.id AS instance_id,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'contributors')),'name') :: VARCHAR AS name,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'contributors')),'primary') :: VARCHAR AS primary
+        contributor_expanded.id AS instance_id,
+        json_extract_path_text(contributor_expanded.item, 'name')::varchar as name,
+        json_extract_path_text(contributor_expanded.item, 'primary')::varchar as primary
     FROM
-        instances AS inst
+        contributor_expanded
 ),
 contributor_extract_name AS (
     SELECT
         instance_id,
-        STRING_AGG(DISTINCT name, '|') AS contributors
+        LISTAGG(DISTINCT name, '|') AS contributors
     FROM
         contributor_extract
     --comment out WHERE clause to get all contributors
     WHERE contributor_extract.primary = 'true'
     GROUP BY instance_id
 ),
+copy_num_objects AS (
+    SELECT
+        id,
+        JSON_EXTRACT_PATH_TEXT(data, 'copyNumbers', true) AS objects
+    FROM
+        items
+),
+copy_num_expanded AS(
+    select 
+        copy_num_objects.id,
+        json_array_length(copy_num_objects.objects, true) as number_of_items,
+        json_extract_array_element_text(
+            copy_num_objects.objects, 
+            numbers_table.i::int, 
+            true
+        ) as item
+    from copy_num_objects
+    cross join numbers_table
+    where numbers_table.i <
+        json_array_length(copy_num_objects.objects, true)
+    ),
 copy_number_agg AS (
     SELECT
-        item_id,
-        STRING_AGG(DISTINCT item_copy_number, '|') AS copy_numbers
-    FROM (
-        SELECT
-            i.id AS item_id,
-            JSON_ARRAY_ELEMENTS_TEXT(JSON_EXTRACT_PATH(i.data, 'copyNumbers')) :: VARCHAR AS item_copy_number
-        FROM
-            items AS i
-    ) AS copy_number_extract
+        copy_num_expanded.id AS item_id,
+        LISTAGG(DISTINCT item, '|') AS copy_numbers
+    FROM copy_num_expanded
     GROUP BY item_id
 ),
+publisher_objects AS (
+    SELECT
+        id,
+        JSON_EXTRACT_PATH_TEXT(data, 'publication', true) AS objects
+    FROM
+        instances
+),
+publisher_expanded AS(
+    select 
+        publisher_objects.id,
+        json_array_length(publisher_objects.objects, true) as number_of_items,
+        json_extract_array_element_text(
+            publisher_objects.objects, 
+            numbers_table.i::int, 
+            true
+        ) as item
+    from publisher_objects
+    cross join numbers_table
+    where numbers_table.i <
+        json_array_length(publisher_objects.objects, true)
+    ),
 publisher_extract AS (
     SELECT
-        inst.id AS instance_id,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'publication')),'dateOfPublication') :: VARCHAR AS date,
-        JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(inst.data, 'publication')),'publisher') :: VARCHAR AS name
+        publisher_expanded.id AS instance_id,
+        json_extract_path_text(publisher_expanded.item, 'dateOfPublication')::varchar as date,
+        json_extract_path_text(publisher_expanded.item, 'publisher')::varchar as name
     FROM
-        instances AS inst
+        publisher_expanded
 ),
 publisher_names AS (
     SELECT
         instance_id,
-        STRING_AGG(DISTINCT name, '|') AS publisher_name
+        LISTAGG(DISTINCT name, '|') AS publisher_name
     FROM publisher_extract
     GROUP BY instance_id
 ),
 publisher_dates AS (
     SELECT
         instance_id,
-        STRING_AGG(DISTINCT date, '|') AS publisher_date
+        LISTAGG(DISTINCT date, '|') AS publisher_date
     FROM publisher_extract
     GROUP BY instance_id
 )
