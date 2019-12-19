@@ -1,0 +1,36 @@
+{
+  "statisticalCodeTypes" : [ {
+    "id" : "0d3ec58e-dc3c-4aa1-9eba-180fca95c544",
+    "name" : "RECM (Record management)",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:18.308+0000",
+      "updatedDate" : "2019-11-26T03:34:18.308+0000"
+    }
+  }, {
+    "id" : "3abd6fc2-b3e4-4879-b1e1-78be41769fe3",
+    "name" : "ARL (Collection stats)",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:18.307+0000",
+      "updatedDate" : "2019-11-26T03:34:18.307+0000"
+    }
+  }, {
+    "id" : "d816175b-578f-4056-af61-689f449c3c45",
+    "name" : "DISC (Discovery)",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:18.305+0000",
+      "updatedDate" : "2019-11-26T03:34:18.305+0000"
+    }
+  }, {
+    "id" : "e2ab27f9-a726-4e5e-9963-fff9e6128680",
+    "name" : "SERM (Serial management)",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:18.306+0000",
+      "updatedDate" : "2019-11-26T03:34:18.306+0000"
+    }
+  } ],
+  "totalRecords" : 4
+}

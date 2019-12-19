@@ -1,0 +1,330 @@
+{
+  "holdingsRecords" : [ {
+    "id" : "0c45bb50-7c9b-48b0-86eb-178a494e25fe",
+    "hrid" : "ho00000136",
+    "formerIds" : [ "ABW4508", "442882" ],
+    "instanceId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ {
+      "uri" : "http://www.ebscohost.com",
+      "materialsSpecification" : "1984-",
+      "relationshipId" : "3b430592-2e09-4b48-9a0c-0636d66b9fb3"
+    }, {
+      "uri" : "http://www.jstor.com",
+      "materialsSpecification" : "1984-",
+      "publicNote" : "Most recent 4 years not available.",
+      "relationshipId" : "3b430592-2e09-4b48-9a0c-0636d66b9fb3"
+    } ],
+    "callNumber" : "K1 .M44",
+    "acquisitionMethod" : "Purchase",
+    "receiptStatus" : "Not currently received",
+    "notes" : [ {
+      "note" : " Subscription cancelled per Evans Current Periodicals Selector Review. acq",
+      "staffOnly" : true,
+      "holdingsNoteTypeId" : "b160f13a-ddba-4053-b9c4-60ec5ea45d56"
+    }, {
+      "note" : "Asked Ebsco to check with publisher and ask what years were paid since we are missing (2001:Oct.-Dec.), (All of 2002), & (2003:Jan.-Feb.). 20030305. evaldez",
+      "staffOnly" : false,
+      "holdingsNoteTypeId" : "b160f13a-ddba-4053-b9c4-60ec5ea45d56"
+    }, {
+      "note" : "Backorder:v.87(2001:Oct.-Dec)-v.88(2002). eluza",
+      "staffOnly" : false,
+      "holdingsNoteTypeId" : "b160f13a-ddba-4053-b9c4-60ec5ea45d56"
+    }, {
+      "note" : "WITH 2010 TREAT ISSUE S AS DISCARDS. dgill",
+      "staffOnly" : false,
+      "holdingsNoteTypeId" : "b160f13a-ddba-4053-b9c4-60ec5ea45d56"
+    } ],
+    "retentionPolicy" : "Permanently retained.",
+    "holdingsStatements" : [ {
+      "statement" : "v.70-84 (1984-1998)"
+    }, {
+      "statement" : "v.85:no. 1-11 (1999:Jan.-Nov.)"
+    }, {
+      "statement" : "v.87:no.1-9 (2001:Jan.-Sept.)"
+    }, {
+      "statement" : "v.89:no.2-12 (2003:Feb.-Dec.)"
+    }, {
+      "statement" : "v.90-95 (2004-2009)"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ {
+      "statement" : "no.1-23 "
+    } ],
+    "copyNumber" : "1",
+    "statisticalCodeIds" : [ "775b6ad4-9c35-4d29-bf78-8775a9b42226" ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.172+0000",
+      "updatedDate" : "2019-11-26T03:34:21.172+0000"
+    }
+  }, {
+    "id" : "133a7916-f05e-4df4-8f7f-09eb2a7076d1",
+    "formerIds" : [ ],
+    "instanceId" : "30fcc8e7-a019-43f4-b642-2edc389f4501",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "R11.A38",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "v1-128, July 1946-December 2016"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.082+0000",
+      "updatedDate" : "2019-11-26T03:34:21.082+0000"
+    }
+  }, {
+    "id" : "55f48dc6-efa7-4cfe-bc7c-4786efe493e3",
+    "formerIds" : [ ],
+    "instanceId" : "bbd4a5e1-c9f3-44b9-bfdf-d184e04f0ba0",
+    "permanentLocationId" : "f34d27c6-a8eb-461b-acd6-5dea81771e70",
+    "electronicAccess" : [ ],
+    "notes" : [ ],
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.183+0000",
+      "updatedDate" : "2019-11-26T03:34:21.183+0000"
+    }
+  }, {
+    "id" : "65032151-39a5-4cef-8810-5350eb316300",
+    "formerIds" : [ ],
+    "instanceId" : "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+    "permanentLocationId" : "b241764c-1466-4e1d-a028-1a3684a5da87",
+    "electronicAccess" : [ ],
+    "callNumber" : "MCN FICTION",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "Line 1b"
+    }, {
+      "statement" : "Line 2b"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.191+0000",
+      "updatedDate" : "2019-11-26T03:34:21.191+0000"
+    }
+  }, {
+    "id" : "65cb2bf0-d4c2-4886-8ad0-b76f1ba75d61",
+    "formerIds" : [ ],
+    "instanceId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "PR6056.I4588 B749 2016",
+    "notes" : [ ],
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.169+0000",
+      "updatedDate" : "2019-11-26T03:34:21.169+0000"
+    }
+  }, {
+    "id" : "67cd0046-e4f1-4e4f-9024-adf0b0039d09",
+    "formerIds" : [ ],
+    "instanceId" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+    "permanentLocationId" : "f34d27c6-a8eb-461b-acd6-5dea81771e70",
+    "electronicAccess" : [ ],
+    "callNumber" : "D15.H63 A3 2002",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "Line 1b"
+    }, {
+      "statement" : "Line 2b"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.083+0000",
+      "updatedDate" : "2019-11-26T03:34:21.083+0000"
+    }
+  }, {
+    "id" : "68872d8a-bf16-420b-829f-206da38f6c10",
+    "formerIds" : [ ],
+    "instanceId" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "some-callnumber",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "Line 1b"
+    }, {
+      "statement" : "Line 2b"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.083+0000",
+      "updatedDate" : "2019-11-26T03:34:21.083+0000"
+    }
+  }, {
+    "id" : "748238ed-8377-45c9-877f-90ab00a60c42",
+    "formerIds" : [ ],
+    "instanceId" : "bb9d9a06-951f-4805-a995-4a97ae4b16df",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "ZZ39.50",
+    "notes" : [ ],
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:44:33.965+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:33.965+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "93f123e7-58c9-4f40-ada5-aff4cf011eba",
+    "formerIds" : [ ],
+    "instanceId" : "dc137a60-48a7-4be0-ab57-303d9ccf7e44",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "ZZ39.50",
+    "notes" : [ ],
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:43:58.414+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:43:58.414+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  }, {
+    "id" : "c4a15834-0184-4a6f-9c0c-0ca5bad8286d",
+    "formerIds" : [ ],
+    "instanceId" : "69640328-788e-43fc-9c3c-af39e243f3b7",
+    "permanentLocationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
+    "electronicAccess" : [ {
+      "uri" : "https://search.proquest.com/publication/1396348",
+      "materialsSpecification" : "1.2012 -",
+      "publicNote" : "via ProQuest, the last 12 months are not available due to an embargo",
+      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
+    }, {
+      "uri" : "https://www.emeraldinsight.com/loi/jepp",
+      "materialsSpecification" : "1.2012 -",
+      "publicNote" : "via Emerald",
+      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
+    }, {
+      "uri" : "https://www.emeraldinsight.com/journal/jepp",
+      "materialsSpecification" : "1.2012 - 5.2016",
+      "publicNote" : "via Emerald, national license",
+      "relationshipId" : "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
+    } ],
+    "callNumber" : "K1 .M44",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "1.2012 -"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.157+0000",
+      "updatedDate" : "2019-11-26T03:34:21.157+0000"
+    }
+  }, {
+    "id" : "e3ff6133-b9a2-4d4c-a1c9-dc1867d4df19",
+    "holdingsTypeId" : "03c9c400-b9e3-4a07-ac0e-05ab470233ed",
+    "formerIds" : [ ],
+    "instanceId" : "5bf370e0-8cca-4d9c-82e4-5170ab2a0a39",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumberTypeId" : "512173a7-bd09-490e-b773-17d83f2b63fe",
+    "callNumber" : "TK5105.88815 . A58 2004 FT MEADE",
+    "shelvingTitle" : " TK5105.88815",
+    "notes" : [ ],
+    "illPolicyId" : "46970b40-918e-47a4-a45d-b1677a2d3d46",
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ "b5968c9e-cddc-4576-99e3-8e60aed8b0dd" ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.173+0000",
+      "updatedDate" : "2019-11-26T03:34:21.173+0000"
+    }
+  }, {
+    "id" : "e6d7e91a-4dbc-4a70-9b38-e000d2fbdc79",
+    "formerIds" : [ ],
+    "instanceId" : "cf23adf0-61ba-4887-bf82-956c4aae2260",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "some-callnumber",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "Line 1b"
+    }, {
+      "statement" : "Line 2b"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.074+0000",
+      "updatedDate" : "2019-11-26T03:34:21.074+0000"
+    }
+  }, {
+    "id" : "e9285a1c-1dfc-4380-868c-e74073003f43",
+    "formerIds" : [ ],
+    "instanceId" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+    "permanentLocationId" : "fcd64ce1-6995-48f0-840e-89ffa2288371",
+    "electronicAccess" : [ ],
+    "callNumber" : "M1366.S67 T73 2017",
+    "notes" : [ ],
+    "holdingsStatements" : [ {
+      "statement" : "Line 1b"
+    }, {
+      "statement" : "Line 2b"
+    } ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.195+0000",
+      "updatedDate" : "2019-11-26T03:34:21.195+0000"
+    }
+  }, {
+    "id" : "fb7b70f1-b898-4924-a991-0e4b6312bb5f",
+    "formerIds" : [ ],
+    "instanceId" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "permanentLocationId" : "53cf956f-c1df-410b-8bea-27f712cca7c0",
+    "electronicAccess" : [ ],
+    "callNumber" : "PR6056.I4588 B749 2016",
+    "notes" : [ ],
+    "holdingsStatements" : [ ],
+    "holdingsStatementsForIndexes" : [ ],
+    "holdingsStatementsForSupplements" : [ ],
+    "statisticalCodeIds" : [ ],
+    "holdingsItems" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:21.195+0000",
+      "updatedDate" : "2019-11-26T03:34:21.195+0000"
+    }
+  } ],
+  "totalRecords" : 14
+}

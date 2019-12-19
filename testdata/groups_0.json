@@ -1,0 +1,36 @@
+{
+  "usergroups" : [ {
+    "group" : "staff",
+    "desc" : "Staff Member",
+    "id" : "3684a786-6671-4268-8ed0-9db82ebca60b",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:33:53.995+0000",
+      "updatedDate" : "2019-11-26T03:33:53.995+0000"
+    }
+  }, {
+    "group" : "faculty",
+    "desc" : "Faculty Member",
+    "id" : "503a81cd-6c26-400f-b620-14c08943697c",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:33:54.019+0000",
+      "updatedDate" : "2019-11-26T03:33:54.019+0000"
+    }
+  }, {
+    "group" : "graduate",
+    "desc" : "Graduate Student",
+    "id" : "ad0bc554-d5bc-463c-85d1-5562127ae91b",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:33:53.990+0000",
+      "updatedDate" : "2019-11-26T03:33:53.990+0000"
+    }
+  }, {
+    "group" : "undergrad",
+    "desc" : "Undergraduate Student",
+    "id" : "bdc2b6d4-5ceb-4a12-ab46-249b9a68473e",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:33:53.982+0000",
+      "updatedDate" : "2019-11-26T03:33:53.982+0000"
+    }
+  } ],
+  "totalRecords" : 4
+}

@@ -33,6 +33,7 @@ SELECT
     inst.name AS institution_name,
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
+    ins.title AS instance_title,
     h.shelving_title AS holdings_shelving_title,
     h.call_number AS holdings_call_number,
     i.item_level_call_number AS item_call_number,
@@ -42,19 +43,13 @@ SELECT
     '{ "copyNumbers": ' :: VARCHAR || 
         COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: VARCHAR) ||
         '}' :: VARCHAR AS copy_numbers,
-    /* alternative: code below converts elements of "copyNumbers" to
-       pipe-delimited list. does not work on Redshift. */
-    /*array_to_string(
-        ARRAY[
-            json_array_elements_text(
-                json_extract_path(i.data, 'copyNumbers'))],'|') AS copy_numbers,*/
     json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
     m.name AS material_type,
     g.group AS group_name
 FROM (
     SELECT
         id,
-        user_id,
+        patron_group_id_at_checkout,
         item_id,
         loan_date
     FROM loans
@@ -80,12 +75,12 @@ INNER JOIN (
         (SELECT item_status_filter FROM parameters)
 ) AS i
     ON l.item_id = i.id
-LEFT JOIN users AS u
-    ON l.user_id = u.id
 LEFT JOIN groups AS g
-    ON u.patron_group = g.id
+    ON l.patron_group_id_at_checkout = g.id
 LEFT JOIN holdings AS h
     ON i.holdings_record_id = h.id
+LEFT JOIN instances AS ins
+    ON h.instance_id = ins.id
 LEFT JOIN locations AS ipl
     ON i.permanent_location_id = ipl.id
 LEFT JOIN material_types AS m

@@ -1,0 +1,15 @@
+{
+  "patronActionSessions" : [ {
+    "id" : "453e0ea0-4300-43bf-9562-f1430c1ba430",
+    "patronId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "loanId" : "e72989b3-de32-4752-8616-64bc39b68490",
+    "actionType" : "Check-out",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:44:11.115+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:11.115+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  } ],
+  "totalRecords" : 1
+}
