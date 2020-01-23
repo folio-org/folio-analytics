@@ -37,9 +37,15 @@ SQL queries are stored in the [sql directory](sql) of this repository. Each quer
 
 * Circulation Detail Report: [Circulation Detail Query](sql/circ_detail)
 * Circulation Item Detail Report: [Circulation Item Detail Query](sql/circ_item_detail)
+* Loans and Renewals Report: [Loans and Renewals Counts Query](sql/loans_and_renewals_counts)
 * Services Usage Report: [Services Usage Report](sql/services_usage)
 
 ### Inventory
+
+* ACRL Title Count Report: [ACRL Title Count Query](sql/acrl)
+* ACRL Volume Count Report: [ACRL Volume Count Query](sql/acrl)
+* Missing Items Report: [Missing Items Query](sql/missing_items)
+* Pick List Report: [Pick List Query](sql/pick_list)
 
 ### Finance and Orders
 
@@ -57,5 +63,3 @@ This repository includes [a framework for testing queries](TESTING.md).
 
 * [Self-paced course on Relational Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
 * [Self-paced course on SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
-
-
