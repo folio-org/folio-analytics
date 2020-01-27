@@ -12,7 +12,8 @@ FROM (
     SELECT
         id,
         user_id,
-        checkout_service_point_id
+        checkout_service_point_id,
+        patron_group_id_at_checkout
     FROM loans
     --remove the WHERE clause below to ignore date range filter
     WHERE
@@ -21,9 +22,7 @@ FROM (
 ) AS l
 LEFT JOIN service_points AS sp
     ON l.checkout_service_point_id = sp.id
-LEFT JOIN users AS u
-    ON l.user_id = u.id
 LEFT JOIN groups AS g
-    ON u.patron_group = g.id
+    ON l.patron_group_id_at_checkout = g.id
 GROUP BY sp.name, g.group
 ORDER BY sp.name, g.group;
