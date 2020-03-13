@@ -1,5 +1,5 @@
 # New Queries
 
-Add new queries by creating a fork of the ldp-analytics repository, creating a new file in the [queries\_in\_progress subdirectory](queries\_in\_progress/), and creating a pull request to have your forked merged back into the master ldp-analytics repository.
+When working on a new query, please contact Angela Zoss with the URL of your prototype. Angela will create a subdirectory and README file for your work, at which point you can fork the ldp-analytics repository and begin using version control to save progress on your query.
 
-After merging your query files, the repository administrators can create a new subdirectory for your query. You can then update your fork by merging the changes to the master back in and proceed with your query development normally.
+When you are done with your initial query development, you may submit a pull request to have the query merged back into the master repository. Then the query will go through the review workflow on JIRA.
