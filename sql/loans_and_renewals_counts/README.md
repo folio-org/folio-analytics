@@ -1,11 +1,3 @@
-{::options parse_block_html="true" /}
-
-<div class="panel panel-danger">
-**Untested**
-{: .panel-heading}
-<div class="panel-body">
+##Untested
 
 This query has been submitted but has not yet undergone testing.
-
-</div>
-</div>
