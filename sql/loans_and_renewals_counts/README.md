@@ -1,3 +1,5 @@
+{::options parse_block_html="true" /}
+
 <div class="panel panel-danger">
 **Untested**
 {: .panel-heading}
