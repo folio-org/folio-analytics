@@ -1,4 +1,4 @@
-# Loans and Renewals Count Report
+# ACRL Circulation Report
 
 ## Status: Untested
 
