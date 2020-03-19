@@ -1,8 +1,12 @@
 # Circulation Detail Report
 
-Brief description: A report summarizing the count of items charged by library, patron group, and date range.
+## Status: Tested
 
-Associated FOLIO JIRA Issue: [REP-195](https://issues.folio.org/browse/REP-195)
+This query has been reviewed for code syntax and style, approved by the community, and provided with machine test files.
+
+## Report Details
+
+Brief description: A report summarizing the count of items charged by library, patron group, and date range.
 
 This report was formatted based on the following specification:
 

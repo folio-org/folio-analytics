@@ -2,7 +2,7 @@
 WITH parameters AS (
     SELECT
         '2000-01-01' :: DATE AS start_date,
-        '2020-01-01' :: DATE AS end_date
+        '2021-01-01' :: DATE AS end_date
 )
 SELECT
     sp.name AS service_point_name,
