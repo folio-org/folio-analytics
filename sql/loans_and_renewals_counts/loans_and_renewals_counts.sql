@@ -150,7 +150,7 @@ loan_details AS (
 --MAIN QUERY
 SELECT 
 	(SELECT start_date :: VARCHAR FROM parameters) ||
-     'to' :: VARCHAR ||
+     ' to ' :: VARCHAR ||
     (SELECT end_date :: VARCHAR FROM parameters) AS date_range,
 		loan_due_date,
 		loan_return_date,
