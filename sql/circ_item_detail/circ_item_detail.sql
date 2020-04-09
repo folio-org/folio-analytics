@@ -52,7 +52,7 @@ FROM (
         patron_group_id_at_checkout,
         item_id,
         loan_date
-    FROM loans
+    FROM circulation_loans
     --remove the WHERE clause below to ignore date range filter
     WHERE
         loan_date >= (SELECT start_date FROM parameters)
@@ -69,23 +69,23 @@ INNER JOIN (
         holdings_record_id,
         permanent_location_id,
         material_type_id
-    FROM items
+    FROM inventory_items
     --remove the WHERE clause below to ignore item status filter
-    WHERE json_extract_path_text(items.data, 'status', 'name') =
+    WHERE json_extract_path_text(data, 'status', 'name') =
         (SELECT item_status_filter FROM parameters)
 ) AS i
     ON l.item_id = i.id
-LEFT JOIN groups AS g
+LEFT JOIN user_groups AS g
     ON l.patron_group_id_at_checkout = g.id
-LEFT JOIN holdings AS h
+LEFT JOIN inventory_holdings AS h
     ON i.holdings_record_id = h.id
-LEFT JOIN instances AS ins
+LEFT JOIN inventory_instances AS ins
     ON h.instance_id = ins.id
-LEFT JOIN locations AS ipl
+LEFT JOIN inventory_locations AS ipl
     ON i.permanent_location_id = ipl.id
-LEFT JOIN material_types AS m
+LEFT JOIN inventory_material_types AS m
     ON i.material_type_id = m.id
-LEFT JOIN institutions AS inst
+LEFT JOIN inventory_institutions AS inst
     ON ipl.institution_id = inst.id
 ORDER BY inst.name, ipl.name, l.loan_date
 ;

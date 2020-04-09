@@ -49,14 +49,15 @@ Loan type table
 */
 
 WITH parameters AS (
-		/*Choose a start and end date for the loans period*/    
 	SELECT
-        '2019-01-01' :: DATE AS start_date,
-        '2020-01-01' :: DATE AS end_date,
-        	/*Fill one out, leave others blank to filter by location*/
+		/* Choose a start and end date for the loans period */
+        '2000-01-01' :: DATE AS start_date,
+        '2021-01-01' :: DATE AS end_date,
+        /* Fill one out, leave others blank to filter by location */
 		'Main Library' :: VARCHAR AS items_permanent_location_filter, --Online, Annex, Main Library
 		'' :: VARCHAR AS items_temporary_location_filter, --Online, Annex, Main Library
 		'' :: VARCHAR AS items_effective_location_filter, --Online, Annex, Main Library
+		/* The following connect to the item's permanent location */
 		'' ::VARCHAR AS institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
         '' ::VARCHAR AS campus_filter, -- 'Main Campus','City Campus','Online'
         '' ::VARCHAR AS library_filter -- 'Datalogisk Institut','Adelaide Library'
@@ -64,49 +65,49 @@ WITH parameters AS (
         --SUB-QUERIES
 location_filtering AS (
     SELECT
-     i.id AS item_id,
-	 i.permanent_location_id AS perm_location_id,
-	 i.temporary_location_id AS temp_location_id,
-	 i.effective_location_id AS effec_location_id,
-     loc1.id AS loc_id,
-     loc1."name" AS perm_location_name,
- 	 loc2.id AS loc_id,
-     loc2."name" AS temp_location_name,
-	 loc3.id AS loc_id,
-     loc3."name" AS effective_location_name,
-     libraries."name" AS lib_name,
-     campuses."name" AS campus_name,
-    institutions."name" AS institute_name
-    FROM items AS i
-LEFT JOIN locations AS loc1
-        ON i.permanent_location_id = loc1.id
-LEFT JOIN locations AS loc2
-       ON i.temporary_location_id = loc2.id
-LEFT JOIN locations AS loc3
-       ON i.effective_location_id = loc3.id
-LEFT JOIN libraries
-       ON loc1.library_id = libraries.id
-LEFT JOIN campuses
-       ON loc1.campus_id = campuses.id
-LEFT JOIN institutions
-       ON loc1.institution_id = institutions.id
+        i.id AS item_id,
+	    i.permanent_location_id AS perm_location_id,
+	    i.temporary_location_id AS temp_location_id,
+	    i.effective_location_id AS effec_location_id,
+        itpl.id AS item_perm_loc_id,
+        itpl."name" AS perm_location_name,
+ 	    ittl.id AS item_temp_loc_id,
+        ittl."name" AS temp_location_name,
+	    itel.id AS loc_id,
+        itel."name" AS effective_location_name,
+        lib."name" AS lib_name,
+        cmp."name" AS campus_name,
+        ins."name" AS institute_name
+    FROM inventory_items AS i
+	LEFT JOIN inventory_locations AS itpl
+        ON i.permanent_location_id = itpl.id
+    LEFT JOIN inventory_locations AS ittl
+        ON i.temporary_location_id = ittl.id
+    LEFT JOIN inventory_locations AS itel
+        ON i.effective_location_id = itel.id
+    LEFT JOIN inventory_libraries AS lib
+        ON itpl.library_id = lib.id
+    LEFT JOIN inventory_campuses AS cmp
+        ON itpl.campus_id = cmp.id
+    LEFT JOIN inventory_institutions AS ins
+        ON itpl.institution_id = ins.id
     WHERE
-		Loc1."name" = (SELECT items_permanent_location_filter FROM parameters)
-		OR Loc2."name" = (SELECT items_temporary_location_filter FROM parameters)
-		OR Loc3."name" = (SELECT items_effective_location_filter FROM parameters)
-		OR libraries."name" = (SELECT library_filter FROM parameters)
-		OR campuses."name" = (SELECT campus_filter FROM parameters)
-		OR institutions."name" = (SELECT institution_filter FROM parameters)
+		itpl."name" = (SELECT items_permanent_location_filter FROM parameters)
+		OR ittl."name" = (SELECT items_temporary_location_filter FROM parameters)
+		OR itel."name" = (SELECT items_effective_location_filter FROM parameters)
+		OR lib."name" = (SELECT library_filter FROM parameters)
+		OR cmp."name" = (SELECT campus_filter FROM parameters)
+		OR ins."name" = (SELECT institution_filter FROM parameters)
 ),
-Loan_count AS (
+loan_count AS (
 	SELECT 
 		id, 
 		COUNT(id) AS num_loans,
 		SUM(renewal_count) AS num_renewals
-		FROM loans
-		GROUP BY id
+	FROM circulation_loans
+	GROUP BY id
 ),
-Loan_details AS (
+loan_details AS (
 	SELECT 
 		l.loan_date,
 		l.due_date AS loan_due_date,
@@ -121,31 +122,31 @@ Loan_details AS (
 		mt.name AS material_type_name,
 		g.group AS patron_group_name,
 		lp.name AS loan_policy_name,
-		lt.name AS permanent_loan_type_name,
-		lt2.name AS temporary_loan_type_name,
+		plt.name AS permanent_loan_type_name,
+		tlt.name AS temporary_loan_type_name,
 		location_filtering.temp_location_name,
 		location_filtering.perm_location_name,
 		location_filtering.effective_location_name,
 		location_filtering.lib_name,
 		location_filtering.campus_name,
 		location_filtering.institute_name
-	FROM loans as l
-LEFT JOIN items AS i
-       ON l.loan_policy_id=i.id
-LEFT JOIN loan_policies as lp
-	   ON l.loan_policy_id=lp.id
-LEFT JOIN loan_types as lt
-	   ON i.permanent_loan_type_id=lt.id
-LEFT JOIN loan_types as lt2
-       ON i.temporary_loan_type_id=lt2.id
-LEFT JOIN material_types as mt
-       ON i.material_type_id=mt.id
-LEFT JOIN groups as g
-       ON l.patron_group_id_at_checkout=g.id
-LEFT JOIN loan_count AS lc
-       ON l.id=lc.id
-LEFT JOIN Location_filtering 
-       ON l.item_id= location_filtering.item_id)
+	FROM circulation_loans as l
+	LEFT JOIN inventory_items AS i
+        ON l.loan_policy_id=i.id
+	LEFT JOIN circulation_loan_policies as lp
+	    ON l.loan_policy_id=lp.id
+	LEFT JOIN inventory_loan_types as plt
+	    ON i.permanent_loan_type_id=plt.id
+	LEFT JOIN inventory_loan_types as tlt
+        ON i.temporary_loan_type_id=tlt.id
+	LEFT JOIN inventory_material_types as mt
+        ON i.material_type_id=mt.id
+	LEFT JOIN user_groups as g
+        ON l.patron_group_id_at_checkout=g.id
+	LEFT JOIN loan_count AS lc
+        ON l.id=lc.id
+	LEFT JOIN location_filtering 
+        ON l.item_id= location_filtering.item_id)
 --MAIN QUERY
 SELECT 
 	(SELECT start_date :: VARCHAR FROM parameters) ||
