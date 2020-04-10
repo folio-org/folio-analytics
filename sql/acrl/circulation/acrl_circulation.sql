@@ -34,54 +34,54 @@ Filters:
 WITH parameters AS (
     SELECT
         /* Choose a start and end date for the loans period */
-        '2019-01-01' :: DATE AS start_date,
-        '2020-01-01' :: DATE AS end_date,
+        '2000-01-01' :: DATE AS start_date,
+        '2021-01-01' :: DATE AS end_date,
         /* Fill in a material type name, or leave blank for all types */
         '' :: VARCHAR AS material_type_filter,
         /* Fill in a location name, or leave blank for all locations */
         '' :: VARCHAR AS items_permanent_location_filter, --Online, Annex, Main Library
         '' :: VARCHAR AS items_temporary_location_filter, --Online, Annex, Main Library
         '' :: VARCHAR AS items_effective_location_filter, --Online, Annex, Main Library
-        '' ::VARCHAR AS institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
-        '' ::VARCHAR AS campus_filter, -- 'Main Campus','City Campus','Online'
-        '' ::VARCHAR AS library_filter -- 'Datalogisk Institut','Adelaide Library'
+        '' :: VARCHAR AS institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
+        '' :: VARCHAR AS campus_filter, -- 'Main Campus','City Campus','Online'
+        '' :: VARCHAR AS library_filter -- 'Datalogisk Institut','Adelaide Library'
 ),
 --SUB-QUERIES
 location_filtering AS (
     SELECT
         i.id AS item_id,
-        loc1."name" AS perm_location_name,
-        loc2."name" AS temp_location_name,
-        loc3."name" AS effective_location_name,
-        institutions."name" AS institution_name,
-        campuses."name" AS campus_name,
-        libraries."name" AS library_name
-    FROM items AS i
-    LEFT JOIN locations AS loc1
-        ON i.permanent_location_id = loc1.id
-    LEFT JOIN locations AS loc2
-        ON i.temporary_location_id = loc2.id
-    LEFT JOIN locations AS loc3
-        ON i.effective_location_id = loc3.id
-    LEFT JOIN libraries
-        ON loc1.library_id = libraries.id
-    LEFT JOIN campuses
-        ON loc1.campus_id = campuses.id
-    LEFT JOIN institutions
-        ON loc1.institution_id = institutions.id
-WHERE
-    (loc1."name" = (SELECT items_permanent_location_filter FROM parameters)
-        OR '' = (SELECT items_permanent_location_filter FROM parameters))
-    AND (loc2."name" = (SELECT items_temporary_location_filter FROM parameters)
-        OR '' = (SELECT items_temporary_location_filter FROM parameters))
-    AND (loc3."name" = (SELECT items_effective_location_filter FROM parameters)
-        OR '' = (SELECT items_effective_location_filter FROM parameters))
-    AND (libraries."name" = (SELECT library_filter FROM parameters)
-        OR '' = (SELECT library_filter FROM parameters))
-    AND (campuses."name" = (SELECT campus_filter FROM parameters)
-        OR '' = (SELECT campus_filter FROM parameters))
-    AND (institutions."name" = (SELECT institution_filter FROM parameters)
-        OR '' = (SELECT institution_filter FROM parameters))
+        itpl."name" AS perm_location_name,
+        ittl."name" AS temp_location_name,
+        itel."name" AS effective_location_name,
+        inst."name" AS institution_name,
+        cmp."name" AS campus_name,
+        lib."name" AS library_name
+    FROM inventory_items AS i
+    LEFT JOIN inventory_locations AS itpl
+        ON i.permanent_location_id = itpl.id
+    LEFT JOIN inventory_locations AS ittl
+        ON i.temporary_location_id = ittl.id
+    LEFT JOIN inventory_locations AS itel
+        ON i.effective_location_id = itel.id
+    LEFT JOIN inventory_libraries AS lib
+        ON itpl.library_id = lib.id
+    LEFT JOIN inventory_campuses AS cmp
+        ON itpl.campus_id = cmp.id
+    LEFT JOIN inventory_institutions AS inst
+        ON itpl.institution_id = inst.id
+	WHERE
+    	(itpl."name" = (SELECT items_permanent_location_filter FROM parameters)
+    	       OR '' = (SELECT items_permanent_location_filter FROM parameters))
+    AND (ittl."name" = (SELECT items_temporary_location_filter FROM parameters)
+    	       OR '' = (SELECT items_temporary_location_filter FROM parameters))
+    AND (itel."name" = (SELECT items_effective_location_filter FROM parameters)
+    	       OR '' = (SELECT items_effective_location_filter FROM parameters))
+    AND (lib."name" = (SELECT library_filter FROM parameters)
+        	   OR '' = (SELECT library_filter FROM parameters))
+	AND (cmp."name" = (SELECT campus_filter FROM parameters)
+    	       OR '' = (SELECT campus_filter FROM parameters))
+	AND (inst."name" = (SELECT institution_filter FROM parameters)
+        	   OR '' = (SELECT institution_filter FROM parameters))
 ),
 loan_details AS (
     SELECT
@@ -96,26 +96,26 @@ loan_details AS (
         mt.name AS material_type_name,
         g.group AS patron_group_name,
         lp.name AS loan_policy_name,
-        lt.name AS permanent_loan_type_name,
-        lt2.name AS temporary_loan_type_name,
+        plt.name AS permanent_loan_type_name,
+        tlt.name AS temporary_loan_type_name,
         location_filtering.temp_location_name,
         location_filtering.perm_location_name,
         location_filtering.effective_location_name,
         location_filtering.institution_name,
         location_filtering.campus_name,
         location_filtering.library_name
-    FROM loans AS l
-    LEFT JOIN items AS i
+    FROM circulation_loans AS l
+    LEFT JOIN inventory_items AS i
         ON l.item_id=i.id
-    LEFT JOIN loan_policies AS lp
+    LEFT JOIN circulation_loan_policies AS lp
         ON l.loan_policy_id=lp.id
-    LEFT JOIN loan_types AS lt
-        ON i.permanent_loan_type_id=lt.id
-    LEFT JOIN loan_types AS lt2
-        ON i.temporary_loan_type_id=lt2.id
-    LEFT JOIN material_types AS mt
+    LEFT JOIN inventory_loan_types AS plt
+        ON i.permanent_loan_type_id=plt.id
+    LEFT JOIN inventory_loan_types AS tlt
+        ON i.temporary_loan_type_id=tlt.id
+    LEFT JOIN inventory_material_types AS mt
         ON i.material_type_id=mt.id
-    LEFT JOIN groups AS g
+    LEFT JOIN user_groups AS g
         ON l.patron_group_id_at_checkout=g.id
 -- note INNER JOIN needed for applying the location filtering
     INNER JOIN location_filtering
@@ -138,8 +138,8 @@ SELECT
 FROM loan_details
 WHERE
     loan_date >= (SELECT start_date FROM parameters)
-    AND loan_date < (SELECT end_date FROM parameters)
-    AND (
-        material_type_name = (SELECT material_type_filter FROM parameters)
-        OR '' = (SELECT material_type_filter FROM parameters)
-    );
+AND loan_date < (SELECT end_date FROM parameters)
+AND (
+    material_type_name = (SELECT material_type_filter FROM parameters)
+    OR '' = (SELECT material_type_filter FROM parameters)
+);

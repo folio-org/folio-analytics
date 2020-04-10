@@ -14,15 +14,15 @@ FROM (
         user_id,
         checkout_service_point_id,
         patron_group_id_at_checkout
-    FROM loans
+    FROM circulation_loans
     --remove the WHERE clause below to ignore date range filter
     WHERE
         loan_date >= (SELECT start_date FROM parameters)
     AND loan_date <  (SELECT end_date FROM parameters)
 ) AS l
-LEFT JOIN service_points AS sp
+LEFT JOIN inventory_service_points AS sp
     ON l.checkout_service_point_id = sp.id
-LEFT JOIN groups AS g
+LEFT JOIN user_groups AS g
     ON l.patron_group_id_at_checkout = g.id
 GROUP BY sp.name, g.group
 ORDER BY sp.name, g.group;

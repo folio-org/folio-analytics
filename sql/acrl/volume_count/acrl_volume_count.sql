@@ -9,31 +9,31 @@
  */
 
 SELECT
-    institutions.name AS "institution location name",
-    campuses.name AS "campus location name",
-    libraries.name AS "library location name",
-    locations.name AS "item location name",
-    material_type.name AS "material type name",
-    COUNT(items.id) AS "item count"
+    inst.name AS "institution location name",
+    cmp.name AS "campus location name",
+    lib.name AS "library location name",
+    itpl.name AS "item location name",
+    mt.name AS "material type name",
+    COUNT(i.id) AS "item count"
 FROM
-    instances  
-    LEFT JOIN holdings ON 
-        instances.id = holdings.instance_id
-    LEFT JOIN items ON 
-        holdings.id = items.holdings_record_id
-    LEFT JOIN locations ON
-        items.permanent_location_id = locations.id
-    LEFT JOIN institutions ON
-        locations.institution_id = institutions.id
-    LEFT JOIN campuses ON
-        locations.campus_id = campuses.id
-    LEFT JOIN libraries ON
-        locations.library_id = libraries.id
-    LEFT JOIN material_types material_type ON
-        items.material_type_id = material_type.id
+    inventory_instances AS ins 
+    LEFT JOIN inventory_holdings AS h 
+    	ON ins.id = h.instance_id
+    LEFT JOIN inventory_items AS i
+    	ON h.id = i.holdings_record_id
+    LEFT JOIN inventory_locations AS itpl
+    	ON i.permanent_location_id = itpl.id
+    LEFT JOIN inventory_institutions AS inst
+    	ON itpl.institution_id = inst.id
+    LEFT JOIN inventory_campuses AS cmp
+    	ON itpl.campus_id = cmp.id
+    LEFT JOIN inventory_libraries AS lib
+    	ON itpl.library_id = lib.id
+    LEFT JOIN inventory_material_types AS mt 
+    	ON i.material_type_id = mt.id
 GROUP BY
-    institutions.name,
-    campuses.name,
-    libraries.name,
-    locations.name,
-    material_type.name
+    inst.name,
+    cmp.name,
+    lib.name,
+    itpl.name,
+    mt.name
