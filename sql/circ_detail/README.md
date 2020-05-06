@@ -6,7 +6,7 @@
 
 Brief description: A report summarizing the count of items charged by service point and patron group, filtered by a particular date range.
 
-This report generated data with the following format:
+This report generates data with the following format:
 
 | Service Point Name | Patron Group Name | Count |
 |---|---|---|
