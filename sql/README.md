@@ -8,13 +8,13 @@ You can find queries by browsing the subfolders in this folder or by reviewing t
 
 ## Understanding query files
 
-In the folder for each query, you should see an .sql file, a README file, and for most queries, a set of testing files (\*\_test.go, \*\_result.csv). 
+In the folder for each query, you should see an .sql file, a README file, and for most queries, a set of test files (\*\_test.go, \*\_result.csv). 
 
 The README file summarizes the status, purpose, output, and parameters of the query. The status of a query can either be Reviewed (it has undergone review for code logic, syntax, and style by the Reporting SIG) or Unreviewed. Unreviewed queries will not have complete code or documentation. 
 
 The .sql file contains the SQL code for the query. You can copy and paste the content of this file into the reporting tool of your choice (or download the file and open it in the tool). Unreviewed queries, however, may not yet be functional.
 
-The testing files are described in detail on our [testing documentation page](https://github.com/folio-org/ldp-analytics/blob/master/TESTING.md).
+The test files are described in detail on our [testing documentation page](https://github.com/folio-org/ldp-analytics/blob/master/TESTING.md).
 
 ## Submitting new queries
 
