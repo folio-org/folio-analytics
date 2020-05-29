@@ -1,0 +1,16 @@
+{
+  "categories" : [ {
+    "id" : "28f1af24-e88f-45c9-8b65-8091afe4e799",
+    "value" : "Returns"
+  }, {
+    "id" : "ab760714-4185-4859-b0dd-3e72f01c5c52",
+    "value" : "Payments"
+  }, {
+    "id" : "cbfaec07-5df1-4197-bfa5-1bc91f9073cf",
+    "value" : "Shipments"
+  }, {
+    "id" : "f52ceea4-8e35-404b-9ebd-5c7db6613195",
+    "value" : "Customer Service"
+  } ],
+  "totalRecords" : 4
+}

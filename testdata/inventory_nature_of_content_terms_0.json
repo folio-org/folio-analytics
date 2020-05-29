@@ -1,0 +1,172 @@
+{
+  "natureOfContentTerms" : [ {
+    "id" : "04a6a8d2-f902-4774-b15f-d8bd885dc804",
+    "name" : "autobiography",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.723+0000",
+      "updatedDate" : "2019-11-26T03:34:17.723+0000"
+    }
+  }, {
+    "id" : "073f7f2f-9212-4395-b039-6f9825b11d54",
+    "name" : "proceedings",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.736+0000",
+      "updatedDate" : "2019-11-26T03:34:17.736+0000"
+    }
+  }, {
+    "id" : "0abeee3d-8ad2-4b04-92ff-221b4fce1075",
+    "name" : "journal",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.742+0000",
+      "updatedDate" : "2019-11-26T03:34:17.742+0000"
+    }
+  }, {
+    "id" : "2fbc8a7b-b432-45df-ba37-46031b1f6545",
+    "name" : "website",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.729+0000",
+      "updatedDate" : "2019-11-26T03:34:17.729+0000"
+    }
+  }, {
+    "id" : "31572023-f4c9-4cf3-80a2-0543c9eda884",
+    "name" : "literature report",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.722+0000",
+      "updatedDate" : "2019-11-26T03:34:17.722+0000"
+    }
+  }, {
+    "id" : "44cd89f3-2e76-469f-a955-cc57cb9e0395",
+    "name" : "textbook",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.710+0000",
+      "updatedDate" : "2019-11-26T03:34:17.710+0000"
+    }
+  }, {
+    "id" : "4570a93e-ddb6-4200-8e8b-283c8f5c9bfa",
+    "name" : "research report",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.728+0000",
+      "updatedDate" : "2019-11-26T03:34:17.728+0000"
+    }
+  }, {
+    "id" : "536da7c1-9c35-45df-8ea1-c3545448df92",
+    "name" : "monographic series",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.741+0000",
+      "updatedDate" : "2019-11-26T03:34:17.741+0000"
+    }
+  }, {
+    "id" : "631893b6-5d8a-4e1a-9e6b-5344e2945c74",
+    "name" : "illustrated book / picture book",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.742+0000",
+      "updatedDate" : "2019-11-26T03:34:17.742+0000"
+    }
+  }, {
+    "id" : "71b43e3a-8cdd-4d22-9751-020f34fb6ef8",
+    "name" : "report",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.709+0000",
+      "updatedDate" : "2019-11-26T03:34:17.709+0000"
+    }
+  }, {
+    "id" : "85657646-6b6f-4e71-b54c-d47f3b95a5ed",
+    "name" : "school program",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.717+0000",
+      "updatedDate" : "2019-11-26T03:34:17.717+0000"
+    }
+  }, {
+    "id" : "9419a20e-6c8f-4ae1-85a7-8c184a1f4762",
+    "name" : "travel report",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.742+0000",
+      "updatedDate" : "2019-11-26T03:34:17.742+0000"
+    }
+  }, {
+    "id" : "94f6d06a-61e0-47c1-bbcb-6186989e6040",
+    "name" : "thesis",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.712+0000",
+      "updatedDate" : "2019-11-26T03:34:17.712+0000"
+    }
+  }, {
+    "id" : "96879b60-098b-453b-bf9a-c47866f1ab2a",
+    "name" : "audiobook",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.729+0000",
+      "updatedDate" : "2019-11-26T03:34:17.729+0000"
+    }
+  }, {
+    "id" : "acceb2d6-4f05-408f-9a88-a92de26441ce",
+    "name" : "comic (book)",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.723+0000",
+      "updatedDate" : "2019-11-26T03:34:17.723+0000"
+    }
+  }, {
+    "id" : "b29d4dc1-f78b-48fe-b3e5-df6c37cdc58d",
+    "name" : "festschrift",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.716+0000",
+      "updatedDate" : "2019-11-26T03:34:17.716+0000"
+    }
+  }, {
+    "id" : "b6e214bd-82f5-467f-af5b-4592456dc4ab",
+    "name" : "biography",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.743+0000",
+      "updatedDate" : "2019-11-26T03:34:17.743+0000"
+    }
+  }, {
+    "id" : "b82b3a0d-00fa-4811-96da-04f531da8ea8",
+    "name" : "exhibition catalogue",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.717+0000",
+      "updatedDate" : "2019-11-26T03:34:17.717+0000"
+    }
+  }, {
+    "id" : "c0d52f31-aabb-4c55-bf81-fea7fdda94a4",
+    "name" : "experience report",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.722+0000",
+      "updatedDate" : "2019-11-26T03:34:17.722+0000"
+    }
+  }, {
+    "id" : "ebbbdef1-00e1-428b-bc11-314dc0705074",
+    "name" : "newspaper",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.729+0000",
+      "updatedDate" : "2019-11-26T03:34:17.729+0000"
+    }
+  }, {
+    "id" : "f5908d05-b16a-49cf-b192-96d55a94a0d1",
+    "name" : "bibliography",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:17.722+0000",
+      "updatedDate" : "2019-11-26T03:34:17.722+0000"
+    }
+  } ],
+  "totalRecords" : 21
+}
