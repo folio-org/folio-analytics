@@ -25,7 +25,7 @@ LDP queries are written in SQL and are designed to execute correctly on either t
 If none of the queries provided match your needs, you can look for an existing
 query to use as a starting point and edit the query to create the desired
 output.  The [LDP User
-Guide](https://github.com/folio-org/ldp/blob/master/USER_GUIDE.md) includes
+Guide](https://github.com/folio-org/ldp/blob/master/doc/User_Guide.md) includes
 LDP-specific guidelines for query writing.
 
 
