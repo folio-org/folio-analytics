@@ -109,7 +109,7 @@ loan_count AS (
 ),
 loan_details AS (
 	SELECT 
-		l.loan_date,
+		l.loan_date :: DATE,
 		l.due_date AS loan_due_date,
 		l.return_date AS loan_return_date,
 		l.item_status AS loan_status,
