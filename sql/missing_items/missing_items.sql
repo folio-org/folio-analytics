@@ -48,10 +48,6 @@ Note: We are using item status 'In transit' to indicate that an item is missing.
 You can set the date range to specify that it is older, closed loans with "In transit"
 status that constitute missing items. 
 
-TODO: make sure we're supposed to use item status from item instead of loans
-TODO: think about item status more, maybe - this is looking for "In transit", but
-      what about "Lost" or "Missing" (those are both mentioned in the prototype
-Yes, take item status from loans, but should be same as one from items
 */
 
 /* Change the lines below to adjust the date, item status, and location filters */
@@ -60,7 +56,7 @@ WITH parameters AS (
         '2000-01-01' :: DATE AS start_date,
         '2021-01-01' :: DATE AS end_date,
         'In transit' :: VARCHAR AS item_status_filter,
-		---- Fill out one, leave others blank to filter by location or service point name ----
+		---- Fill out one location or service point filter, leave others blank ----
         '' ::VARCHAR AS items_permanent_location_filter, -- 'Main Library'
         '' ::VARCHAR AS items_temporary_location_filter, -- 'Annex'
         'Main Library' ::VARCHAR AS holdings_permanent_location_filter, -- 'Main Library'
@@ -88,7 +84,20 @@ ranked_loans AS (
 	    item_status = (SELECT item_status_filter FROM parameters)
     AND return_date :: DATE >= (SELECT start_date FROM parameters)
     AND return_date :: DATE <  (SELECT end_date FROM parameters)    
+),
+/* This should be pulling the latest loan for each item. Worth testing more. */
+latest_loan AS (
+    SELECT 
+        id,
+        item_effective_location_at_check_out,
+        item_id,
+        checkout_service_point_id,
+        checkin_service_point_id,
+        item_status
+    FROM ranked_loans
+    WHERE ranked_loans.return_date_ranked = 1
 )
+---------- MAIN QUERY ----------
 SELECT
 	(SELECT start_date :: VARCHAR FROM parameters) ||
         ' to ' :: VARCHAR ||
@@ -101,14 +110,14 @@ SELECT
 	effloc.name AS items_effective_location_name,
 	i.barcode,
 	i.item_level_call_number,
-	--i.volume,
+	--i.volume, --not reliable as separate column
 	json_extract_path_text(i.data, 'volume') AS volume,
 	i.enumeration,
 	i.chronology,
 	json_extract_path_text(i.data, 'notes', 'description') AS item_notes,
-	'{ "copyNumbers": ' :: varchar || 
-        COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: varchar) ||
-		'}' :: varchar AS copy_numbers,
+	'{ "copyNumbers": ' :: VARCHAR || 
+        COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: VARCHAR) ||
+		'}' :: VARCHAR AS copy_numbers,
 	l.item_status,
     cosp.name AS checkout_service_point_name,
     cisp.name AS checkin_service_point_name,
@@ -127,7 +136,7 @@ FROM (
         barcode,
         material_type_id,
         item_level_call_number,
-        --volume,
+        --volume,  --not reliable as separate column
         enumeration,
         chronology,
         data
@@ -135,18 +144,7 @@ FROM (
 ) AS i
 LEFT JOIN inventory_holdings AS h
 	ON i.holdings_record_id = h.id
-/* This should be pulling the latest loan for each item. Worth testing more. */
-INNER JOIN (
-	SELECT 
-        id,
-        item_effective_location_at_check_out,
-        item_id,
-        checkout_service_point_id,
-        checkin_service_point_id,
-        item_status
-    FROM ranked_loans
-    WHERE ranked_loans.return_date_ranked = 1
-) AS l
+INNER JOIN latest_loan AS l
 	ON i.id = l.item_id 
 LEFT JOIN inventory_instances AS ins
 	ON h.instance_id = ins.id
@@ -156,13 +154,12 @@ LEFT JOIN inventory_service_points AS cosp
 	ON l.checkout_service_point_id=cosp.id 
 LEFT JOIN inventory_service_points AS cisp 
 	ON l.checkin_service_point_id=cisp.id 
--- using this makes sense if we're using item status of "in transit", but when
--- using loan's item status, will item have an in transit service point?
+-- only present if inventory_items.item_status.name is "In transit"
 LEFT JOIN inventory_service_points AS itsp 
 	ON i.in_transit_destination_service_point_id=itsp.id 
 LEFT JOIN inventory_locations AS hploc
 	ON h.permanent_location_id = hploc.id
---holdings temp locations not showing up in table yet, so have to pull from data	
+--holdings temp locations not showing up in table yet, so have to pull from data column
 --LEFT JOIN inventory_locations AS htloc
 --	ON h.temporary_location_id = htloc.id
 LEFT JOIN inventory_locations AS htloc
@@ -183,14 +180,16 @@ LEFT JOIN (
 ) AS l2
 	ON i.id = l2.item_id
 WHERE 
-    /*choose only ONE of the statements below, to match with choice of location filter*/
-    iploc.name = (SELECT items_permanent_location_filter FROM parameters)
-    OR itloc.name = (SELECT items_temporary_location_filter FROM parameters)
-    OR hploc.name = (SELECT holdings_permanent_location_filter FROM parameters)
-    OR htloc.name = (SELECT holdings_temporary_location_filter FROM parameters)
-    OR effloc.name = (SELECT effective_location_filter FROM parameters)
-    OR itsp.name = (SELECT in_transit_destination_service_point_filter FROM parameters)
+         (iploc.name = (SELECT items_permanent_location_filter FROM parameters)
+					OR (SELECT items_permanent_location_filter FROM parameters) = '')
+    AND  (itloc.name = (SELECT items_temporary_location_filter FROM parameters)
+ 					OR (SELECT items_temporary_location_filter FROM parameters) = '')
+    AND  (hploc.name = (SELECT holdings_permanent_location_filter FROM parameters)
+					OR (SELECT holdings_permanent_location_filter FROM parameters) = '')
+    AND  (htloc.name = (SELECT holdings_temporary_location_filter FROM parameters)
+					OR (SELECT holdings_temporary_location_filter FROM parameters) = '')
+    AND (effloc.name = (SELECT effective_location_filter FROM parameters)
+					OR (SELECT effective_location_filter FROM parameters) = '')
+    AND   (itsp.name = (SELECT in_transit_destination_service_point_filter FROM parameters)
+					OR (SELECT in_transit_destination_service_point_filter FROM parameters) = '')
  ;
-
-     	
-   
