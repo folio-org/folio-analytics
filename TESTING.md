@@ -54,7 +54,7 @@ dbname = <database_name>
 For example:
 
 ```ini
-databases = ldpqdev,rs-ldpqdev
+databases = ldpqdev,redshift_ldpqdev
 
 [ldpqdev]
 dbtype = postgresql
@@ -64,7 +64,7 @@ user = ldp
 password = YS4p4EkJGWJqbO9w
 dbname = ldpqdev
 
-[rs-ldpqdev]
+[redshift_ldpqdev]
 dbtype = redshift
 host = ldpqdev.hfwgaxcbvs5t.us-east-2.redshift.amazonaws.com
 port = 5439

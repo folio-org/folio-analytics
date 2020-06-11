@@ -1,8 +1,11 @@
-# The FOLIO LDP Query Repository
+# The FOLIO Query Repository
 
 This repository stores shared queries designed to produce reports of
-FOLIO data in local LDP instances. These queries have been developed
-by the [FOLIO Reporting SIG](https://wiki.folio.org/display/RPT/).
+FOLIO data in a local LDP instance.  These queries have been developed
+by the FOLIO reporting community.  For more information about FOLIO
+reporting, see the [FOLIO Reporting
+SIG](https://wiki.folio.org/display/RPT/).
+
 
 ## How to find a query
 

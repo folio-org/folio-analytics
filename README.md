@@ -20,11 +20,11 @@ Interest Group](https://wiki.folio.org/display/RPT/).
 
 ## How to use this repository
 
-LDP queries are written in SQL and are designed to execute correctly
-on either the PostgreSQL or Redshift installation of the LDP. To use
-these queries, you will need to connect to an instance of the LDP
-using a reporting tool that supports SQL scripts. Examples of
-reporting tools that will execute SQL scripts include:
+LDP-based queries are written in SQL and are designed to execute
+correctly on either PostgreSQL or Redshift.  To use these queries, you
+will need to connect to an LDP database instance using a reporting
+tool that supports SQL scripts.  Examples of reporting tools that will
+execute SQL scripts include:
 
 * Microsoft Access
 * DBeaver
@@ -37,7 +37,7 @@ If none of the queries provided match your needs, you can look for an
 existing query to use as a starting point and edit the query to create
 the desired output.  The [LDP User
 Guide](https://github.com/folio-org/ldp/blob/master/doc/User_Guide.md)
-includes LDP-specific guidelines for query writing.
+includes guidelines for query writing.
 
 
 ## Queries
