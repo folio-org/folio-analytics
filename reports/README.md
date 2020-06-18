@@ -10,12 +10,12 @@ using the list below.
 ## Circulation
 
 * Circulation Detail Report: [Circulation Detail
-  Query](sql/circ_detail)
+  Query](../sql/circ_detail)
 * Circulation Item Detail Report: [Circulation Item Detail
-  Query](sql/circ_item_detail)
+  Query](../sql/circ_item_detail)
 * Loans and Renewals Report: [Loans and Renewals Counts
-  Query](sql/loans_and_renewals_counts)
-* Services Usage Report: [Services Usage Report](sql/services_usage)
+  Query](../sql/loans_and_renewals_counts)
+* Services Usage Report: [Services Usage Report](../sql/services_usage)
 
 ## External Statistics
 * [Association of College and Research Libraries (ACRL) Report](ACRL.md)
@@ -24,10 +24,10 @@ using the list below.
 
 ## Inventory
 
-* ACRL Title Count Report: [ACRL Title Count Query](sql/acrl)
-* ACRL Volume Count Report: [ACRL Volume Count Query](sql/acrl)
-* Missing Items Report: [Missing Items Query](sql/missing_items)
-* Pick List Report: [Pick List Query](sql/pick_list)
+* ACRL Title Count Report: [ACRL Title Count Query](../sql/acrl)
+* ACRL Volume Count Report: [ACRL Volume Count Query](../sql/acrl)
+* Missing Items Report: [Missing Items Query](../sql/missing_items)
+* Pick List Report: [Pick List Query](../sql/pick_list)
 
 ## Resource Management
 
