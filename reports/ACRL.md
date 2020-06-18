@@ -12,7 +12,7 @@ The manner in which these reports are constructed can vary greatly from one libr
 * An accounting of "initial circulation" transactions, which includes charges only (no renewals)
 
 To meet the report criteria, run the following four separate queries:
-* [ACRL Circulation Report](../sql/acrl/volume_count)
-* [ACRL Circulation Report](../sql/acrl/title_count)
-* [ACRL Circulation Report](../sql/acrl/collections_expenditures)
+* [ACRL Volume Count Report](../sql/acrl/volume_count)
+* [ACRL Title Count Report](../sql/acrl/title_count)
+* [ACRL Collections Expenditures Report](../sql/acrl/collections_expenditures)
 * [ACRL Circulation Report](../sql/acrl/circulation)
