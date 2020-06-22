@@ -4,6 +4,8 @@ These reports are used for pulling data that are reported on an annual basis to 
 
 The manner in which these reports are constructed can vary greatly from one library to the next. Therefore, a host of filter-point data elements must be included here in support of the widest variety of need within the FOLIO community.
 
+ACRL reports are run once a year.
+
 ## Report Criteria
 
 * A sum of total volumes
