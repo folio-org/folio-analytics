@@ -55,11 +55,11 @@ WITH parameters AS (
     SELECT
         '2000-01-01' :: DATE AS start_date,
         '2021-01-01' :: DATE AS end_date,
-        'In transit' :: VARCHAR AS item_status_filter,
+        --'In transit' :: VARCHAR AS item_status_filter, --commented out because of lack of test data
 		---- Fill out one location or service point filter, leave others blank ----
         '' ::VARCHAR AS items_permanent_location_filter, -- 'Main Library'
         '' ::VARCHAR AS items_temporary_location_filter, -- 'Annex'
-        'Main Library' ::VARCHAR AS holdings_permanent_location_filter, -- 'Main Library'
+        '' ::VARCHAR AS holdings_permanent_location_filter, -- 'Main Library'
         '' ::VARCHAR AS holdings_temporary_location_filter, -- 'Main Library'
         '' ::VARCHAR AS effective_location_filter, -- 'Main Library'
         '' ::VARCHAR AS in_transit_destination_service_point_filter -- 'Circ Desk 1'
@@ -72,27 +72,33 @@ ranked_loans AS (
         json_extract_path_text(data, 'itemEffectiveLocationAtCheckOut') AS item_effective_location_at_check_out,
         return_date,
         item_id,
-        checkout_service_point_id,
-        checkin_service_point_id,
+        --checkout_service_point_id, --not reliable as separate column
+        json_extract_path_text(data, 'checkoutServicePointId') AS checkout_service_point_id,
+        --checkin_service_point_id, --not reliable as separate column
+        json_extract_path_text(data, 'checkinServicePointId') AS checkin_service_point_id,
         item_status,
+        data,
         rank() OVER (
             PARTITION BY item_id
             ORDER BY return_date DESC
         ) AS return_date_ranked
     FROM circulation_loans
     WHERE
-	    item_status = (SELECT item_status_filter FROM parameters)
-    AND return_date :: DATE >= (SELECT start_date FROM parameters)
+--	    item_status = (SELECT item_status_filter FROM parameters) --commented out because of lack of test data
+    --AND 
+        return_date :: DATE >= (SELECT start_date FROM parameters)
     AND return_date :: DATE <  (SELECT end_date FROM parameters)    
 ),
-/* This should be pulling the latest loan for each item. Worth testing more. */
+/* This should be pulling the latest loan for each item. Will want to test again with real data. */
 latest_loan AS (
     SELECT 
         id,
         item_effective_location_at_check_out,
         item_id,
-        checkout_service_point_id,
-        checkin_service_point_id,
+        --checkout_service_point_id, --not reliable as separate column
+        json_extract_path_text(data, 'checkoutServicePointId') AS checkout_service_point_id,
+        --checkin_service_point_id, --not reliable as separate column
+        json_extract_path_text(data, 'checkinServicePointId') AS checkin_service_point_id,
         item_status
     FROM ranked_loans
     WHERE ranked_loans.return_date_ranked = 1
@@ -132,7 +138,7 @@ FROM (
         holdings_record_id,
         permanent_location_id,
         temporary_location_id,
-        in_transit_destination_service_point_id,
+        --in_transit_destination_service_point_id, --not reliable as separate column
         barcode,
         material_type_id,
         item_level_call_number,
@@ -156,13 +162,13 @@ LEFT JOIN inventory_service_points AS cisp
 	ON l.checkin_service_point_id=cisp.id 
 -- only present if inventory_items.item_status.name is "In transit"
 LEFT JOIN inventory_service_points AS itsp 
-	ON i.in_transit_destination_service_point_id=itsp.id 
+	--ON i.in_transit_destination_service_point_id=itsp.id
+	ON json_extract_path_text(i.data, 'inTransitDestinationServicePointId')=itsp.id 
 LEFT JOIN inventory_locations AS hploc
 	ON h.permanent_location_id = hploc.id
 --holdings temp locations not showing up in table yet, so have to pull from data column
---LEFT JOIN inventory_locations AS htloc
---	ON h.temporary_location_id = htloc.id
 LEFT JOIN inventory_locations AS htloc
+--	ON h.temporary_location_id = htloc.id
 	ON json_extract_path_text(h.data, 'temporaryLocationId') = htloc.id
 LEFT JOIN inventory_locations AS iploc
 	ON i.permanent_location_id = iploc.id
