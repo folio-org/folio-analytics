@@ -1,6 +1,6 @@
 # Reports
 
-SQL queries are stored in the [sql directory](sql) of this repository.
+SQL queries are stored in the [sql directory](../sql) of this repository.
 Each query has a separate directory. A full report may contain
 several individual queries, so the queries are grouped into reports
 using the list below.
@@ -30,5 +30,7 @@ using the list below.
 * Pick List Report: [Pick List Query](../sql/pick_list)
 
 ## Resource Management
+* RM Title Count Report: [RM Title Count Query](../sql/title_count)
+
 
 ## Users
