@@ -34,7 +34,8 @@ SELECT
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
     ins.title AS instance_title,
-    h.shelving_title AS holdings_shelving_title,
+    json_extract_path_text(h.data, 'shelvingTitle')
+            AS holdings_shelving_title,
     h.call_number AS holdings_call_number,
     i.item_level_call_number AS item_call_number,
     i.barcode AS item_barcode,
