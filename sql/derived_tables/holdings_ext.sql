@@ -50,15 +50,15 @@ SELECT holdings.id AS holdings_id,
        holdings_temporary_location.name AS holdings_temporary_location_name
     FROM holdings
         LEFT JOIN inventory_holdings_types AS holdings_type
-	    ON holdings.holdings_type_id = holdings_type.id
+            ON holdings.holdings_type_id = holdings_type.id
         LEFT JOIN inventory_ill_policies AS holdings_ill_policy
-	    ON holdings.ill_policy_id = holdings_ill_policy.id
+            ON holdings.ill_policy_id = holdings_ill_policy.id
         LEFT JOIN inventory_call_number_types AS holdings_call_number_type
-	    ON holdings.call_number_type_id = holdings_call_number_type.id
+            ON holdings.call_number_type_id = holdings_call_number_type.id
         LEFT JOIN inventory_locations AS holdings_permanent_location
-	    ON holdings.permanent_location_id = holdings_permanent_location.id
-	LEFT JOIN inventory_locations AS holdings_temporary_location
-	    ON holdings.temporary_location_id = holdings_temporary_location.id;
+            ON holdings.permanent_location_id = holdings_permanent_location.id
+        LEFT JOIN inventory_locations AS holdings_temporary_location
+            ON holdings.temporary_location_id = holdings_temporary_location.id;
 
 CREATE INDEX ON local.holdings_ext (holdings_id);
 CREATE INDEX ON local.holdings_ext (acquisition_method);

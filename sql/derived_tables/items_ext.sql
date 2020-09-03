@@ -68,9 +68,9 @@ SELECT items.id AS items_id,
         LEFT JOIN inventory_locations AS item_temporary_location
             ON items.temporary_location_id = item_temporary_location.id
         LEFT JOIN inventory_item_damaged_statuses AS item_damaged_status
-	    ON items.item_damaged_status_id = item_damaged_status.id
+            ON items.item_damaged_status_id = item_damaged_status.id
         LEFT JOIN inventory_call_number_types AS item_call_number_type
-	    ON items.item_level_call_number_type_id = item_call_number_type.id;
+            ON items.item_level_call_number_type_id = item_call_number_type.id;
 
 CREATE INDEX ON local.items_ext (items_id);
 CREATE INDEX ON local.items_ext (accession_number);

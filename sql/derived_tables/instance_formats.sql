@@ -4,7 +4,7 @@ SELECT id,
        hrid,
        JSON_ARRAY_ELEMENTS_TEXT(
                JSON_EXTRACT_PATH(data, 'instanceFormatIds')
-	       ) :: VARCHAR AS instance_format_id
+               ) :: VARCHAR AS instance_format_id
     FROM inventory_instances
 )
 SELECT instances.id AS instance_id,
@@ -15,7 +15,7 @@ SELECT instances.id AS instance_id,
        formats.source AS format_source
     FROM instances
         LEFT JOIN inventory_instance_formats AS formats
-	    ON instances.instance_format_id = formats.id;
+            ON instances.instance_format_id = formats.id;
 
 CREATE INDEX ON local.instance_formats (instance_id);
 CREATE INDEX ON local.instance_formats (instance_hrid);
