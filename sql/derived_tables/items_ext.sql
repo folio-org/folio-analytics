@@ -71,28 +71,3 @@ SELECT items.id AS items_id,
             ON items.item_damaged_status_id = item_damaged_status.id
         LEFT JOIN inventory_call_number_types AS item_call_number_type
             ON items.item_level_call_number_type_id = item_call_number_type.id;
-
-CREATE INDEX ON local.items_ext (items_id);
-CREATE INDEX ON local.items_ext (accession_number);
-CREATE INDEX ON local.items_ext (barcode);
-CREATE INDEX ON local.items_ext (chronology);
-CREATE INDEX ON local.items_ext (copy_number);
-CREATE INDEX ON local.items_ext (enumeration);
-CREATE INDEX ON local.items_ext (in_transit_destination_service_point_id);
-CREATE INDEX ON local.items_ext (in_transit_destination_service_point_name);
-CREATE INDEX ON local.items_ext (item_identifier);
-CREATE INDEX ON local.items_ext (item_level_call_number);
-CREATE INDEX ON local.items_ext (item_level_call_number_type_id);
-CREATE INDEX ON local.items_ext (item_damaged_status_id);
-CREATE INDEX ON local.items_ext (material_type_id);
-CREATE INDEX ON local.items_ext (item_material_type_name);
-CREATE INDEX ON local.items_ext (number_of_pieces);
-CREATE INDEX ON local.items_ext (permanent_loan_type_id);
-CREATE INDEX ON local.items_ext (temporary_loan_type_id);
-CREATE INDEX ON local.items_ext (permanent_location_id);
-CREATE INDEX ON local.items_ext (item_permanent_location_name);
-CREATE INDEX ON local.items_ext (temporary_location_id);
-CREATE INDEX ON local.items_ext (item_temporary_location_name);
-
-VACUUM local.items_ext;
-ANALYZE local.items_ext;
