@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS local.instances_statistical_codes;
+DROP TABLE IF EXISTS local.instances_stat_codes;
 
-CREATE TABLE local.instances_statistical_codes AS
+CREATE TABLE local.instances_stat_codes AS
 WITH instances_statistical_codes AS (
     SELECT
         instance.id AS instance_id,
@@ -22,19 +22,19 @@ FROM
     LEFT JOIN inventory_statistical_codes ON instances_statistical_codes.instance_statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON local.instances_statistical_codes (instance_id);
+CREATE INDEX ON local.instances_stat_codes (instance_id);
 
-CREATE INDEX ON local.instances_statistical_codes (instance_hrid);
+CREATE INDEX ON local.instances_stat_codes (instance_hrid);
 
-CREATE INDEX ON local.instances_statistical_codes (instance_statistical_code_id);
+CREATE INDEX ON local.instances_stat_codes (instance_statistical_code_id);
 
-CREATE INDEX ON local.instances_statistical_codes (statistical_code);
+CREATE INDEX ON local.instances_stat_codes (statistical_code);
 
-CREATE INDEX ON local.instances_statistical_codes (statistical_code_name);
+CREATE INDEX ON local.instances_stat_codes (statistical_code_name);
 
-CREATE INDEX ON local.instances_statistical_codes (statistical_code_type_id);
+CREATE INDEX ON local.instances_stat_codes (statistical_code_type_id);
 
-CREATE INDEX ON local.instances_statistical_codes (statistical_code_type_name);
+CREATE INDEX ON local.instances_stat_codes (statistical_code_type_name);
 
-VACUUM ANALYZE local.instances_statistical_codes;
+VACUUM ANALYZE local.instances_stat_codes;
 
