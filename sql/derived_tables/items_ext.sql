@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS local.items_ext;
+
 -- Create an extended items table that includes the name for in
 -- transit destination service point, item damaged status, material
 -- type call number type, permanent loan type, permanent location,

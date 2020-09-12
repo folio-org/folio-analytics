@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS local.instances_ext;
+
 -- Create a local table that includes the name for the mode of
 -- issuance, resource type, and statuses.
 CREATE TABLE local.instances_ext AS

@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS local.instance_formats;
+
 CREATE TABLE local.instance_formats AS
 WITH instances AS (
     SELECT
