@@ -10,9 +10,9 @@ WITH nature_content AS (
         inventory_instances
 )
 SELECT
-    instance_id,
-    instance_hrid,
-    nature_content_id,
+    nature_content.instance_id,
+    nature_content.instance_hrid,
+    nature_content.nature_content_id,
     nature_content_term.id AS nature_content_term_id,
     nature_content_term.name AS nature_content_term_name,
     nature_content_term.source AS nature_content_term_source
