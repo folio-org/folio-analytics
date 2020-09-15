@@ -1,0 +1,12 @@
+{
+  "locinsts" : [ {
+    "id" : "40ee00ca-a518-4b49-be01-0638d0a4ac57",
+    "name" : "Københavns Universitet",
+    "code" : "KU",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:14.213+0000",
+      "updatedDate" : "2019-11-26T03:34:14.213+0000"
+    }
+  } ],
+  "totalRecords" : 1
+}

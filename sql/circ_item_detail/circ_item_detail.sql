@@ -33,7 +33,9 @@ SELECT
     inst.name AS institution_name,
     ipl.name AS item_perm_location,
     l.loan_date AS loan_date,
-    h.shelving_title AS holdings_shelving_title,
+    ins.title AS instance_title,
+    json_extract_path_text(h.data, 'shelvingTitle')
+            AS holdings_shelving_title,
     h.call_number AS holdings_call_number,
     i.item_level_call_number AS item_call_number,
     i.barcode AS item_barcode,
@@ -42,22 +44,16 @@ SELECT
     '{ "copyNumbers": ' :: VARCHAR || 
         COALESCE(json_extract_path_text(i.data, 'copyNumbers'), '[]' :: VARCHAR) ||
         '}' :: VARCHAR AS copy_numbers,
-    /* alternative: code below converts elements of "copyNumbers" to
-       pipe-delimited list. does not work on Redshift. */
-    /*array_to_string(
-        ARRAY[
-            json_array_elements_text(
-                json_extract_path(i.data, 'copyNumbers'))],'|') AS copy_numbers,*/
     json_extract_path_text(i.data, 'status', 'name') AS item_status_name,
     m.name AS material_type,
     g.group AS group_name
 FROM (
     SELECT
         id,
-        user_id,
+        patron_group_id_at_checkout,
         item_id,
         loan_date
-    FROM loans
+    FROM circulation_loans
     --remove the WHERE clause below to ignore date range filter
     WHERE
         loan_date >= (SELECT start_date FROM parameters)
@@ -74,23 +70,23 @@ INNER JOIN (
         holdings_record_id,
         permanent_location_id,
         material_type_id
-    FROM items
+    FROM inventory_items
     --remove the WHERE clause below to ignore item status filter
-    WHERE json_extract_path_text(items.data, 'status', 'name') =
+    WHERE json_extract_path_text(data, 'status', 'name') =
         (SELECT item_status_filter FROM parameters)
 ) AS i
     ON l.item_id = i.id
-LEFT JOIN users AS u
-    ON l.user_id = u.id
-LEFT JOIN groups AS g
-    ON u.patron_group = g.id
-LEFT JOIN holdings AS h
+LEFT JOIN user_groups AS g
+    ON l.patron_group_id_at_checkout = g.id
+LEFT JOIN inventory_holdings AS h
     ON i.holdings_record_id = h.id
-LEFT JOIN locations AS ipl
+LEFT JOIN inventory_instances AS ins
+    ON h.instance_id = ins.id
+LEFT JOIN inventory_locations AS ipl
     ON i.permanent_location_id = ipl.id
-LEFT JOIN material_types AS m
+LEFT JOIN inventory_material_types AS m
     ON i.material_type_id = m.id
-LEFT JOIN institutions AS inst
+LEFT JOIN inventory_institutions AS inst
     ON ipl.institution_id = inst.id
 ORDER BY inst.name, ipl.name, l.loan_date
 ;

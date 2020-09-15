@@ -1,0 +1,26 @@
+{
+  "vouchers" : [ {
+    "id" : "a9b99f8a-7100-47f2-9903-6293d44a9905",
+    "accountingCode" : "1234",
+    "amount" : 23.45,
+    "batchNumber" : "101",
+    "disbursementNumber" : "EFT546789",
+    "disbursementDate" : "2019-05-05T00:00:00.000+0000",
+    "disbursementAmount" : 5.0,
+    "invoiceCurrency" : "USD",
+    "invoiceId" : "733cafd3-895f-4e33-87b7-bf40dc3c8069",
+    "exchangeRate" : 0.89,
+    "exportToAccounting" : false,
+    "status" : "Awaiting payment",
+    "systemCurrency" : "EUR",
+    "type" : "Payment",
+    "voucherDate" : "2019-05-06T00:00:00.000+0000",
+    "voucherNumber" : "1000",
+    "acqUnitIds" : [ ],
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:35:33.154+0000",
+      "updatedDate" : "2019-11-26T03:35:33.154+0000"
+    }
+  } ],
+  "totalRecords" : 1
+}

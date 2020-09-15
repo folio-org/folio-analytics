@@ -1,0 +1,25 @@
+{
+  "cancellationReasons" : [ {
+    "id" : "1c0e9ba1-6a97-4bbc-94fc-83eecc32f5fd",
+    "name" : "Needed For Course Reserves",
+    "description" : "Item is needed for course reserves",
+    "publicDescription" : "Item is no longer available for request",
+    "requiresAdditionalInformation" : false
+  }, {
+    "id" : "75187e8d-e25a-47a7-89ad-23ba612338de",
+    "name" : "Patron Cancelled",
+    "description" : "Cancelled at patron’s request",
+    "requiresAdditionalInformation" : false
+  }, {
+    "id" : "b548b182-55c2-4741-b169-616d9cd995a8",
+    "name" : "Other",
+    "description" : "Other",
+    "requiresAdditionalInformation" : true
+  }, {
+    "id" : "ff474f60-d9ce-4bd8-8659-eb51af825a56",
+    "name" : "Item Not Available",
+    "description" : "Item is no longer available",
+    "requiresAdditionalInformation" : false
+  } ],
+  "totalRecords" : 4
+}

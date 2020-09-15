@@ -1,0 +1,88 @@
+{
+  "loans" : [ {
+    "id" : "0bab56e5-1ab6-4ac2-afdf-8b2df0434378",
+    "userId" : "ab579dc3-219b-4f5b-8068-ab1c7a55c402",
+    "proxyUserId" : "a13dda6b-51ce-4543-be9c-eff894c0c2d0",
+    "itemId" : "459afaba-5b39-468d-9072-eb1685e0ddf4",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2017-02-03T08:43:15Z",
+    "dueDate" : "2017-02-17T08:43:15.000+0000",
+    "returnDate" : "2017-03-01T11:35:12Z",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "renewalCount" : 0
+  }, {
+    "id" : "21b34ab5-fdb1-4922-88ba-4f32750f61da",
+    "userId" : "9ad09b01-7429-455f-9f64-e3897027db61",
+    "itemId" : "23fdb0bc-ab58-442a-b326-577a96204487",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2017-03-05T18:32:31Z",
+    "dueDate" : "2017-03-19T18:32:31.000+0000",
+    "action" : "checkedin",
+    "itemStatus" : "Available",
+    "renewalCount" : 0
+  }, {
+    "id" : "3fd2d7aa-a6fe-4794-9d34-837a6bd31a8b",
+    "userId" : "ab579dc3-219b-4f5b-8068-ab1c7a55c402",
+    "itemId" : "bb5a6689-c008-4c96-8f8f-b666850ee12d",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-01-05T12:42:21Z",
+    "dueDate" : "2017-01-19T12:42:21.000+0000",
+    "action" : "holdrequested",
+    "itemStatus" : "Checked out"
+  }, {
+    "id" : "40f5e9d9-38ac-458e-ade7-7795bd821652",
+    "userId" : "47f7eaea-1a18-4058-907c-62b7d095c61b",
+    "itemId" : "1b6d3338-186e-4e35-9e75-1b886b0da53e",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-03-05T18:32:31Z",
+    "dueDate" : "2017-03-19T18:32:31.000+0000",
+    "action" : "checkedout",
+    "itemStatus" : "Checked out",
+    "renewalCount" : 0
+  }, {
+    "id" : "959f65f6-ce51-4984-99fa-5e11c1f5661c",
+    "userId" : "d0fc4228-2e42-49b2-a5b0-9df48897e8c0",
+    "itemId" : "23f2c8e1-bd5d-4f27-9398-a688c998808a",
+    "status" : {
+      "name" : "Open"
+    },
+    "loanDate" : "2017-03-03T15:41:54Z",
+    "dueDate" : "2017-03-17T15:41:54.000+0000",
+    "action" : "recallrequested",
+    "itemStatus" : "Checked out",
+    "renewalCount" : 1
+  }, {
+    "id" : "e72989b3-de32-4752-8616-64bc39b68490",
+    "userId" : "a49cefad-7447-4f2f-9004-de32e7a6cc53",
+    "itemId" : "d8700996-4235-44e9-92e8-40fc43009934",
+    "status" : {
+      "name" : "Closed"
+    },
+    "loanDate" : "2019-11-26T03:44:08Z",
+    "dueDate" : "2019-11-26T04:44:08.000+0000",
+    "returnDate" : "2019-11-26T03:44:18.000Z",
+    "systemReturnDate" : "2019-11-26T03:44:18.594+0000",
+    "action" : "checkedin",
+    "itemStatus" : "In transit",
+    "loanPolicyId" : "43198de5-f56a-4a53-a0bd-5a324418967a",
+    "checkoutServicePointId" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+    "checkinServicePointId" : "7c5abc9f-f3d7-4856-b8d7-6712462ca007",
+    "patronGroupIdAtCheckout" : "503a81cd-6c26-400f-b620-14c08943697c",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:44:11.071+0000",
+      "createdByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e",
+      "updatedDate" : "2019-11-26T03:44:18.737+0000",
+      "updatedByUserId" : "21f7ff90-4d78-5f31-b20b-37693f00188e"
+    }
+  } ],
+  "totalRecords" : 6
+}

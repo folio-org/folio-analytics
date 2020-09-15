@@ -1,0 +1,60 @@
+{
+  "itemNoteTypes" : [ {
+    "id" : "0e40884c-3523-4c6d-8187-d578e3d2794e",
+    "name" : "Action note",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.278+0000",
+      "updatedDate" : "2019-11-26T03:34:20.278+0000"
+    }
+  }, {
+    "id" : "1dde7141-ec8a-4dae-9825-49ce14c728e7",
+    "name" : "Copy note",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.281+0000",
+      "updatedDate" : "2019-11-26T03:34:20.281+0000"
+    }
+  }, {
+    "id" : "87c450be-2033-41fb-80ba-dd2409883681",
+    "name" : "Binding",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.275+0000",
+      "updatedDate" : "2019-11-26T03:34:20.275+0000"
+    }
+  }, {
+    "id" : "8d0a5eca-25de-4391-81a9-236eeefdd20b",
+    "name" : "Note",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.278+0000",
+      "updatedDate" : "2019-11-26T03:34:20.278+0000"
+    }
+  }, {
+    "id" : "acb3a58f-1d72-461d-97c3-0e7119e8d544",
+    "name" : "Reproduction",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.276+0000",
+      "updatedDate" : "2019-11-26T03:34:20.276+0000"
+    }
+  }, {
+    "id" : "c3a539b9-9576-4e3a-b6de-d910200b2919",
+    "name" : "Provenance",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.281+0000",
+      "updatedDate" : "2019-11-26T03:34:20.281+0000"
+    }
+  }, {
+    "id" : "f3ae3823-d096-4c65-8734-0c1efd2ffea8",
+    "name" : "Electronic bookplate",
+    "source" : "folio",
+    "metadata" : {
+      "createdDate" : "2019-11-26T03:34:20.275+0000",
+      "updatedDate" : "2019-11-26T03:34:20.275+0000"
+    }
+  } ],
+  "totalRecords" : 7
+}
