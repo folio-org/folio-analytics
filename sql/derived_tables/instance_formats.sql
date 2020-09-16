@@ -32,5 +32,7 @@ CREATE INDEX ON local.instance_formats (format_name);
 
 CREATE INDEX ON local.instance_formats (format_source);
 
-VACUUM ANALYZE local.instance_formats;
+VACUUM local.instance_formats;
+
+ANALYZE local.instance_formats;
 

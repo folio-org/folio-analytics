@@ -14,5 +14,7 @@ CREATE INDEX ON local.instances_subjects (instance_hrid);
 
 CREATE INDEX ON local.instances_subjects (subject);
 
-VACUUM ANALYZE local.instances_subjects;
+VACUUM local.instances_subjects;
+
+ANALYZE local.instances_subjects;
 

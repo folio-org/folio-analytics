@@ -106,5 +106,7 @@ CREATE INDEX ON local.items_ext (temporary_location_id);
 
 CREATE INDEX ON local.items_ext (item_temporary_location_name);
 
-VACUUM ANALYZE local.items_ext;
+VACUUM local.items_ext;
+
+ANALYZE local.items_ext;
 

@@ -37,5 +37,7 @@ CREATE INDEX ON local.items_stat_codes (statistical_code_type_id);
 
 CREATE INDEX ON local.items_stat_codes (statistical_code_type_name);
 
-VACUUM ANALYZE local.items_stat_codes;
+VACUUM local.items_stat_codes;
+
+ANALYZE local.items_stat_codes;
 

@@ -43,5 +43,7 @@ CREATE INDEX ON local.instances_electronic_access (electronic_access_relationshi
 
 CREATE INDEX ON local.instances_electronic_access (electronic_access_uri);
 
-VACUUM ANALYZE local.instances_electronic_access;
+VACUUM local.instances_electronic_access;
+
+ANALYZE local.instances_electronic_access;
 
