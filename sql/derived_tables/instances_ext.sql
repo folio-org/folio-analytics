@@ -55,5 +55,7 @@ CREATE INDEX ON local.instances_ext (instance_status_name);
 
 CREATE INDEX ON local.instances_ext (title);
 
-VACUUM ANALYZE local.instances_ext;
+VACUUM local.instances_ext;
+
+ANALYZE local.instances_ext;
 

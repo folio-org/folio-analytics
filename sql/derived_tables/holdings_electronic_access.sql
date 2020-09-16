@@ -43,5 +43,7 @@ CREATE INDEX ON local.holdings_electronic_access (electronic_access_relationship
 
 CREATE INDEX ON local.holdings_electronic_access (electronic_access_uri);
 
-VACUUM ANALYZE local.holdings_electronic_access;
+VACUUM local.holdings_electronic_access;
+
+ANALYZE local.holdings_electronic_access;
 
