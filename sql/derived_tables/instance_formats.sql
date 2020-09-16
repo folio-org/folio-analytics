@@ -5,7 +5,7 @@ WITH instances AS (
     SELECT
         id,
         hrid,
-        json_array_elements_text(json_extract_path(data, 'instanceFormatIds')) ::varchar AS instance_format_id
+        json_array_elements_text(json_extract_path(data, 'instanceFormatIds')) AS instance_format_id
     FROM
         inventory_instances
 )

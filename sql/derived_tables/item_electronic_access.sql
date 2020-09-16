@@ -6,11 +6,11 @@ WITH items_relationship_ids AS (
     SELECT
         item.id AS item_id,
         item.hrid AS item_hrid,
-        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'linkText') ::varchar AS electronic_access_link_text,
-        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'materialsSpecification') ::varchar AS electronic_access_materials_specification,
-        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'publicNote') ::varchar AS electronic_access_public_note,
-        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'relationshipId') ::varchar AS electronic_access_relationship_id,
-        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'uri') ::varchar AS electronic_access_uri
+        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'linkText') AS electronic_access_link_text,
+        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'materialsSpecification') AS electronic_access_materials_specification,
+        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'publicNote') AS electronic_access_public_note,
+        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'relationshipId') AS electronic_access_relationship_id,
+        json_extract_path_text(json_array_elements(json_extract_path(item.data, 'electronicAccess')), 'uri') AS electronic_access_uri
     FROM
         inventory_items AS item
 )
