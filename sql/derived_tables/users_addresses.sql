@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS local.angelazoss_users_addresses;
+DROP TABLE IF EXISTS local.users_addresses;
 
 -- Create a derived table that takes the user_users table and unpacks
 -- the address array into a normalized table
-CREATE TABLE local.angelazoss_users_addresses AS
+CREATE TABLE local.users_addresses AS
 WITH address_array AS (
     SELECT
         uu.id AS user_id,
@@ -37,31 +37,31 @@ FROM
     --    ON address_array.address_type_id = ua.id
 ;
 
-CREATE INDEX ON local.angelazoss_users_addresses (user_id);
+CREATE INDEX ON local.users_addresses (user_id);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_id);
+CREATE INDEX ON local.users_addresses (address_id);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_country_id);
+CREATE INDEX ON local.users_addresses (address_country_id);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_line_1);
+CREATE INDEX ON local.users_addresses (address_line_1);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_line_2);
+CREATE INDEX ON local.users_addresses (address_line_2);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_city);
+CREATE INDEX ON local.users_addresses (address_city);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_region);
+CREATE INDEX ON local.users_addresses (address_region);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_postal_code);
+CREATE INDEX ON local.users_addresses (address_postal_code);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_type_id);
+CREATE INDEX ON local.users_addresses (address_type_id);
 
---CREATE INDEX ON local.angelazoss_users_addresses (address_type_name);
+--CREATE INDEX ON local.users_addresses (address_type_name);
 
---CREATE INDEX ON local.angelazoss_users_addresses (address_type_description);
+--CREATE INDEX ON local.users_addresses (address_type_description);
 
-CREATE INDEX ON local.angelazoss_users_addresses (is_primary_address);
+CREATE INDEX ON local.users_addresses (is_primary_address);
 
-VACUUM local.angelazoss_users_addresses;
+VACUUM local.users_addresses;
 
-ANALYZE local.angelazoss_users_addresses;
+ANALYZE local.users_addresses;
 
