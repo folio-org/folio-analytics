@@ -55,9 +55,9 @@ CREATE INDEX ON local.angelazoss_users_addresses (address_postal_code);
 
 CREATE INDEX ON local.angelazoss_users_addresses (address_type_id);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_type_name);
+--CREATE INDEX ON local.angelazoss_users_addresses (address_type_name);
 
-CREATE INDEX ON local.angelazoss_users_addresses (address_type_description);
+--CREATE INDEX ON local.angelazoss_users_addresses (address_type_description);
 
 CREATE INDEX ON local.angelazoss_users_addresses (is_primary_address);
 

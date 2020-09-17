@@ -26,11 +26,11 @@ CREATE INDEX ON local.angelazoss_users_departments_unpacked (user_id);
 
 CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_id);
 
-CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_name);
+--CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_name);
 
-CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_code);
+--CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_code);
 
-CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_usage_number);
+--CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_usage_number);
 
 VACUUM local.angelazoss_users_departments_unpacked;
 
