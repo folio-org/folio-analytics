@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS local.angelazoss_users_departments_unpacked;
+DROP TABLE IF EXISTS local.users_departments_unpacked;
 
 -- Create a derived table that takes the user_users table and joins
 -- in the group information
-CREATE TABLE local.angelazoss_users_departments_unpacked AS
+CREATE TABLE local.users_departments_unpacked AS
 WITH departments_array AS (
     SELECT
         uu.id AS user_id,
@@ -22,17 +22,17 @@ FROM
     --    ON departments_array.department_id = ud.id
 ;
 
-CREATE INDEX ON local.angelazoss_users_departments_unpacked (user_id);
+CREATE INDEX ON local.users_departments_unpacked (user_id);
 
-CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_id);
+CREATE INDEX ON local.users_departments_unpacked (department_id);
 
---CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_name);
+--CREATE INDEX ON local.users_departments_unpacked (department_name);
 
---CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_code);
+--CREATE INDEX ON local.users_departments_unpacked (department_code);
 
---CREATE INDEX ON local.angelazoss_users_departments_unpacked (department_usage_number);
+--CREATE INDEX ON local.users_departments_unpacked (department_usage_number);
 
-VACUUM local.angelazoss_users_departments_unpacked;
+VACUUM local.users_departments_unpacked;
 
-ANALYZE local.angelazoss_users_departments_unpacked;
+ANALYZE local.users_departments_unpacked;
 
