@@ -22,7 +22,7 @@ SELECT
     uu.created_date,
     uu.enrollment_date,
     uu.expiration_date,
-    uu.external_system_id,
+    json_extract_path_text(uu.data, 'externalSystemId') AS external_system_id,
     uu.patron_group,
     ug.desc AS group_description,
     ug.group AS group_name,
