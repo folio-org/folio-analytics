@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS local.rm_invoice_lines_adjustments;
+DROP TABLE IF EXISTS local.invoice_lines_adjustments;
 
 -- These fields in adjustments can be locally defined
 --
-
-CREATE TABLE local.rm_invoice_lines_adjustments AS WITH adjusts AS (
+CREATE TABLE local.invoice_lines_adjustments AS
+WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
         json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'description') AS adjustment_description,
@@ -26,29 +26,29 @@ SELECT
     adjustment_value,
     adjustment_adjustments_total
 FROM
-    adjusts
+    adjustments
 WHERE
     adjustment_relationToTotal = 'In addition to'
     OR adjustment_relationToTotal = 'included'
     OR adjustment_relationToTotal = 'separate from';
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (invoice_line_id);
+CREATE INDEX ON local.invoice_lines_adjustments (invoice_line_id);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_description);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_description);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_fund_distributions);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_fund_distributions);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_prorate);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_prorate);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_relationToTotal);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_relationToTotal);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_type);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_type);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_value);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_value);
 
-CREATE INDEX ON local.rm_invoice_lines_adjustments (adjustment_adjustments_total);
+CREATE INDEX ON local.invoice_lines_adjustments (adjustment_adjustments_total);
 
-VACUUM local.rm_invoice_lines_adjustments;
+VACUUM local.invoice_lines_adjustments;
 
-ANALYZE local.rm_invoice_lines_adjustments;
+ANALYZE local.invoice_lines_adjustments;
 
