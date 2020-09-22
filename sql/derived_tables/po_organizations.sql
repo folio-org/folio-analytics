@@ -9,9 +9,7 @@ SELECT
     oo.name AS org_name,
     json_extract_path_text(oo.data, 'description') AS org_description,
     oc.first_name AS contact_first_name,
-    oc.last_name AS contact_last_name,
-    json_extract_path_text(oc.data, 'emails') AS contact_email,
-    json_extract_path_text(oc.data, 'phoneNumbers') AS contact_phone_number
+    oc.last_name AS contact_last_name
 FROM
     po_purchase_orders AS ppo
     LEFT JOIN organization_organizations AS oo ON ppo.vendor = oo.id
