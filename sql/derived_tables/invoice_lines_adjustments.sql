@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS local.invoice_lines_adjustments;
 
--- These fields in adjustments can be locally defined
+-- This table includes the extracted adjustments data on invoice line level
+-- The field description can be locally defined by the instutions.
+-- Examples are “shipping”, “VAT” (MwSt), “Service Charge”
 --
 CREATE TABLE local.invoice_lines_adjustments AS
 WITH adjustments AS (
@@ -29,8 +31,8 @@ FROM
     adjustments
 WHERE
     adjustment_relationToTotal = 'In addition to'
-    OR adjustment_relationToTotal = 'included'
-    OR adjustment_relationToTotal = 'separate from';
+    OR adjustment_relationToTotal = 'Included'
+    OR adjustment_relationToTotal = 'Separate from';
 
 CREATE INDEX ON local.invoice_lines_adjustments (invoice_line_id);
 
