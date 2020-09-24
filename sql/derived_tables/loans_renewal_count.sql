@@ -32,5 +32,7 @@ CREATE INDEX ON local.loans_renewal_count (num_loans);
 
 CREATE INDEX ON local.loans_renewal_count (num_renewals);
 
-VACUUM ANALYZE local.loans_renewal_count;
+VACUUM local.loans_renewal_count;
+
+ANALYZE local.loans_renewal_count;
 

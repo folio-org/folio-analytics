@@ -6,11 +6,11 @@ WITH instances_relationship_ids AS (
     SELECT
         instance.id AS instance_id,
         instance.hrid AS instance_hrid,
-        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'linkText') ::varchar AS electronic_access_link_text,
-        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'materialsSpecification') ::varchar AS electronic_access_materials_specification,
-        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'publicNote') ::varchar AS electronic_access_public_note,
-        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'relationshipId') ::varchar AS electronic_access_relationship_id,
-        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'uri') ::varchar AS electronic_access_uri
+        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'linkText') AS electronic_access_link_text,
+        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'materialsSpecification') AS electronic_access_materials_specification,
+        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'publicNote') AS electronic_access_public_note,
+        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'relationshipId') AS electronic_access_relationship_id,
+        json_extract_path_text(json_array_elements(json_extract_path(instance.data, 'electronicAccess')), 'uri') AS electronic_access_uri
     FROM
         inventory_instances AS instance
 )
@@ -43,5 +43,7 @@ CREATE INDEX ON local.instances_electronic_access (electronic_access_relationshi
 
 CREATE INDEX ON local.instances_electronic_access (electronic_access_uri);
 
-VACUUM ANALYZE local.instances_electronic_access;
+VACUUM local.instances_electronic_access;
+
+ANALYZE local.instances_electronic_access;
 

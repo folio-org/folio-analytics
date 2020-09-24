@@ -35,5 +35,7 @@ CREATE INDEX ON local.locations_libraries (institution_id);
 
 CREATE INDEX ON local.locations_libraries (institution_name);
 
-VACUUM ANALYZE local.locations_libraries;
+VACUUM local.locations_libraries;
+
+ANALYZE local.locations_libraries;
 
