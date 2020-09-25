@@ -2,46 +2,35 @@ DROP TABLE IF EXISTS local.holdings_electronic_access;
 
 -- Create table for electronic access points for holdings records
 CREATE TABLE local.holdings_electronic_access AS
-WITH holdings_relationship_ids AS (
-    SELECT
-        holdings.id AS holdings_id,
-        holdings.hrid AS holdings_hrid,
-        json_extract_path_text(json_array_elements(json_extract_path(holdings.data, 'electronicAccess')), 'linkText') AS electronic_access_link_text,
-        json_extract_path_text(json_array_elements(json_extract_path(holdings.data, 'electronicAccess')), 'materialsSpecification') AS electronic_access_materials_specification,
-        json_extract_path_text(json_array_elements(json_extract_path(holdings.data, 'electronicAccess')), 'publicNote') AS electronic_access_public_note,
-        json_extract_path_text(json_array_elements(json_extract_path(holdings.data, 'electronicAccess')), 'relationshipId') AS electronic_access_relationship_id,
-        json_extract_path_text(json_array_elements(json_extract_path(holdings.data, 'electronicAccess')), 'uri') AS electronic_access_uri
-    FROM
-        inventory_holdings AS holdings
-)
 SELECT
-    holdings_relationship_ids.holdings_id,
-    holdings_relationship_ids.holdings_hrid,
-    holdings_relationship_ids.electronic_access_link_text,
-    holdings_relationship_ids.electronic_access_materials_specification,
-    holdings_relationship_ids.electronic_access_public_note,
-    holdings_relationship_ids.electronic_access_relationship_id,
-    inventory_electronic_access_relationships.name AS electronic_access_relationship_id_name,
-    holdings_relationship_ids.electronic_access_uri
+    holdings.id AS holdings_id,
+    holdings.hrid AS holdings_hrid,
+    json_extract_path_text(electronic_access.data, 'linkText') AS link_text,
+    json_extract_path_text(electronic_access.data, 'materialsSpecification') AS materials_specification,
+    json_extract_path_text(electronic_access.data, 'publicNote') AS public_note,
+    json_extract_path_text(electronic_access.data, 'relationshipId') AS relationship_id,
+    inventory_instance_relationship_types.name AS relationship_type_id_name,
+    json_extract_path_text(electronic_access.data, 'uri') AS uri
 FROM
-    holdings_relationship_ids
-    LEFT JOIN inventory_electronic_access_relationships ON holdings_relationship_ids.electronic_access_relationship_id = inventory_electronic_access_relationships.id;
+    inventory_holdings AS holdings
+    CROSS JOIN json_array_elements(json_extract_path(data, 'electronicAccess')) AS electronic_access(data)
+    LEFT JOIN inventory_instance_relationship_types ON json_extract_path_text(electronic_access.data, 'relationshipId') = inventory_instance_relationship_types.id;
 
 CREATE INDEX ON local.holdings_electronic_access (holdings_id);
 
 CREATE INDEX ON local.holdings_electronic_access (holdings_hrid);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_link_text);
+CREATE INDEX ON local.holdings_electronic_access (link_text);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_materials_specification);
+CREATE INDEX ON local.holdings_electronic_access (materials_specification);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_public_note);
+CREATE INDEX ON local.holdings_electronic_access (public_note);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_relationship_id);
+CREATE INDEX ON local.holdings_electronic_access (relationship_id);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_relationship_id_name);
+CREATE INDEX ON local.holdings_electronic_access (relationship_type_id_name);
 
-CREATE INDEX ON local.holdings_electronic_access (electronic_access_uri);
+CREATE INDEX ON local.holdings_electronic_access (uri);
 
 VACUUM local.holdings_electronic_access;
 
