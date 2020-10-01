@@ -3,39 +3,23 @@ DROP TABLE IF EXISTS local.users_addresses;
 -- Create a derived table that takes the user_users table and unpacks
 -- the address array into a normalized table
 CREATE TABLE local.users_addresses AS
-WITH address_array AS (
-    SELECT
-        uu.id AS user_id,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'id') AS address_id,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'countryId') AS address_country_id,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'addressLine1') AS address_line_1,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'addressLine2') AS address_line_2,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'city') AS address_city,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'region') AS address_region,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'postalCode') AS address_postal_code,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'addressTypeId') AS address_type_id,
-        json_extract_path_text(json_array_elements(json_extract_path(uu.data, 'personal', 'addresses')), 'primaryAddress') AS is_primary_address
-    FROM
-        user_users AS uu
-)
 SELECT
-    address_array.user_id,
-    address_array.address_id,
-    address_array.address_country_id,
-    address_array.address_line_1,
-    address_array.address_line_2,
-    address_array.address_city,
-    address_array.address_region,
-    address_array.address_postal_code,
-    address_array.address_type_id,
-    --	ua.address_type AS address_type_name,
-    --	ua.desc AS address_type_description,
-    address_array.is_primary_address
+    uu.id AS user_id,
+    json_extract_path_text(addresses.data, 'id') AS address_id,
+    json_extract_path_text(addresses.data, 'countryId') AS address_country_id,
+    json_extract_path_text(addresses.data, 'addressLine1') AS address_line_1,
+    json_extract_path_text(addresses.data, 'addressLine2') AS address_line_2,
+    json_extract_path_text(addresses.data, 'city') AS address_city,
+    json_extract_path_text(addresses.data, 'region') AS address_region,
+    json_extract_path_text(addresses.data, 'postalCode') AS address_postal_code,
+    json_extract_path_text(addresses.data, 'addressTypeId') AS address_type_id,
+    ua.address_type AS address_type_name,
+    ua.desc AS address_type_description,
+    json_extract_path_text(addresses.data, 'primaryAddress')::boolean AS is_primary_address
 FROM
-    address_array
-    --LEFT JOIN	user_address_types AS ua
-    --    ON address_array.address_type_id = ua.id
-;
+    user_users AS uu
+    CROSS JOIN json_array_elements(json_extract_path(data, 'personal', 'addresses')) AS addresses (data)
+    LEFT JOIN user_addresstypes AS ua ON json_extract_path_text(addresses.data, 'addressTypeId') = ua.id;
 
 CREATE INDEX ON local.users_addresses (user_id);
 
@@ -55,9 +39,9 @@ CREATE INDEX ON local.users_addresses (address_postal_code);
 
 CREATE INDEX ON local.users_addresses (address_type_id);
 
---CREATE INDEX ON local.users_addresses (address_type_name);
+CREATE INDEX ON local.users_addresses (address_type_name);
 
---CREATE INDEX ON local.users_addresses (address_type_description);
+CREATE INDEX ON local.users_addresses (address_type_description);
 
 CREATE INDEX ON local.users_addresses (is_primary_address);
 
