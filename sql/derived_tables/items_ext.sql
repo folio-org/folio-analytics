@@ -127,6 +127,3 @@ CREATE INDEX ON local.items_ext (item_status_name);
 
 CREATE INDEX ON local.items_ext (item_holdings_id);
 
-VACUUM local.items_ext;
-
-ANALYZE local.items_ext;

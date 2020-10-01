@@ -32,7 +32,3 @@ CREATE INDEX ON local.instances_publication (publication_place);
 
 CREATE INDEX ON local.instances_publication (publication_publisher);
 
-VACUUM local.instances_publication;
-
-ANALYZE local.instances_publication;
-

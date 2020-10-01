@@ -30,7 +30,3 @@ CREATE INDEX ON local.instances_nature_content (nature_content_term_name);
 
 CREATE INDEX ON local.instances_nature_content (nature_content_term_source);
 
-VACUUM local.instances_nature_content;
-
-ANALYZE local.instances_nature_content;
-

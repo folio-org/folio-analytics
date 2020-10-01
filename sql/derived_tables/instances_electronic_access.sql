@@ -32,7 +32,3 @@ CREATE INDEX ON local.instances_electronic_access (ins_elec_access_relationship_
 
 CREATE INDEX ON local.instances_electronic_access (ins_uri);
 
-VACUUM local.instances_electronic_access;
-
-ANALYZE local.instances_electronic_access;
-

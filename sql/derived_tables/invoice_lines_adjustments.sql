@@ -52,7 +52,3 @@ CREATE INDEX ON local.invoice_lines_adjustments (adjustment_value);
 
 CREATE INDEX ON local.invoice_lines_adjustments (adjustment_adjustments_total);
 
-VACUUM local.invoice_lines_adjustments;
-
-ANALYZE local.invoice_lines_adjustments;
-

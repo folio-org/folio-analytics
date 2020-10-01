@@ -24,7 +24,3 @@ CREATE INDEX ON local.holdings_statements_supplements (holdings_statement_supple
 
 CREATE INDEX ON local.holdings_statements_supplements (holdings_statement_supplements_staff_note);
 
-VACUUM local.holdings_statements_supplements;
-
-ANALYZE local.holdings_statements_supplements;
-
