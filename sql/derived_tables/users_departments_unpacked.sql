@@ -32,7 +32,3 @@ CREATE INDEX ON local.users_departments_unpacked (department_id);
 
 --CREATE INDEX ON local.users_departments_unpacked (department_usage_number);
 
-VACUUM local.users_departments_unpacked;
-
-ANALYZE local.users_departments_unpacked;
-

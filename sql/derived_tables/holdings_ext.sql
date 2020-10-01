@@ -93,7 +93,3 @@ CREATE INDEX ON local.holdings_ext (temporary_location_id);
 
 CREATE INDEX ON local.holdings_ext (holdings_temporary_location_name);
 
-VACUUM local.holdings_ext;
-
-ANALYZE local.holdings_ext;
-

@@ -3,9 +3,10 @@ DROP TABLE IF EXISTS local.items_ext;
 -- Create an extended items table that includes the name for in
 -- transit destination service point, item damaged status, material
 -- type call number type, permanent loan type, permanent location,
--- temporary loan type, temporary location.
-CREATE TABLE local.items_ext AS
-WITH items AS (
+-- temporary loan type, temporary location, created_date,
+-- description_of_pieces, status_date, status_name, holdings_id
+
+CREATE TABLE local.items_ext AS WITH items AS (
     SELECT
         id,
         json_extract_path_text(data, 'accessionNumber') AS accession_number,
@@ -23,7 +24,12 @@ WITH items AS (
         permanent_loan_type_id,
         temporary_loan_type_id,
         permanent_location_id,
-        temporary_location_id
+        temporary_location_id,
+        json_extract_path_text(data, 'metadata', 'createdDate') AS item_created_date,
+        json_extract_path_text(data, 'circulationNotes', 'descriptionOfPieces') AS item_description_of_pieces,
+        json_extract_path_text(data, 'status', 'date') AS item_status_date,
+        json_extract_path_text(data, 'status', 'name') AS item_status_name,
+        json_extract_path_text(data, 'holdingsRecordId') AS item_holdings_id
     FROM
         inventory_items
 )
@@ -52,7 +58,12 @@ SELECT
     items.permanent_location_id,
     item_permanent_location.name AS item_permanent_location_name,
     items.temporary_location_id,
-    item_temporary_location.name AS item_temporary_location_name
+    item_temporary_location.name AS item_temporary_location_name,
+    items.item_created_date,
+    items.item_description_of_pieces,
+    items.item_status_date,
+    items.item_status_name,
+    items.item_holdings_id
 FROM
     items
     LEFT JOIN inventory_service_points AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
@@ -106,7 +117,13 @@ CREATE INDEX ON local.items_ext (temporary_location_id);
 
 CREATE INDEX ON local.items_ext (item_temporary_location_name);
 
-VACUUM local.items_ext;
+CREATE INDEX ON local.items_ext (item_created_date);
 
-ANALYZE local.items_ext;
+CREATE INDEX ON local.items_ext (item_description_of_pieces);
+
+CREATE INDEX ON local.items_ext (item_status_date);
+
+CREATE INDEX ON local.items_ext (item_status_name);
+
+CREATE INDEX ON local.items_ext (item_holdings_id);
 
