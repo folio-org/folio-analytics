@@ -22,7 +22,3 @@ CREATE INDEX ON local.instance_relationships_ext (relationship_sub_instance_id);
 
 CREATE INDEX ON local.instance_relationships_ext (relationship_super_instance_id);
 
-VACUUM local.instance_relationships_ext;
-
-ANALYZE local.instance_relationships_ext;
-

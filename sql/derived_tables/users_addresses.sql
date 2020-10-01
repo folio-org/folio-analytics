@@ -61,7 +61,3 @@ CREATE INDEX ON local.users_addresses (address_type_id);
 
 CREATE INDEX ON local.users_addresses (is_primary_address);
 
-VACUUM local.users_addresses;
-
-ANALYZE local.users_addresses;
-

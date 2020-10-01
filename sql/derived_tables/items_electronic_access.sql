@@ -32,7 +32,3 @@ CREATE INDEX ON local.items_electronic_access (itm_elec_access_relationship_name
 
 CREATE INDEX ON local.items_electronic_access (itm_uri);
 
-VACUUM local.items_electronic_access;
-
-ANALYZE local.items_electronic_access;
-

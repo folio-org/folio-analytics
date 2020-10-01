@@ -37,7 +37,3 @@ CREATE INDEX ON local.holdings_stat_codes (statistical_code_type_id);
 
 CREATE INDEX ON local.holdings_stat_codes (statistical_code_type_name);
 
-VACUUM local.holdings_stat_codes;
-
-ANALYZE local.holdings_stat_codes;
-

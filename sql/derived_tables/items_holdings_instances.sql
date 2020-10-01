@@ -104,7 +104,3 @@ CREATE INDEX ON local.items_holdings_instances (loan_type_id);
 
 CREATE INDEX ON local.items_holdings_instances (loan_type_name);
 
-VACUUM local.items_holdings_instances;
-
-ANALYZE local.items_holdings_instances;
-
