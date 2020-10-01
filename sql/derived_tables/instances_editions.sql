@@ -14,7 +14,3 @@ CREATE INDEX ON local.instances_editions (instance_hrid);
 
 CREATE INDEX ON local.instances_editions (edition_statement);
 
-VACUUM local.instances_editions;
-
-ANALYZE local.instances_editions;
-

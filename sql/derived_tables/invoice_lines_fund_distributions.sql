@@ -54,7 +54,3 @@ CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_sub_total);
 
 CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_total);
 
-VACUUM LOCAL.invoice_lines_fund_distributions;
-
-ANALYZE local.invoice_lines_fund_distributions;
-

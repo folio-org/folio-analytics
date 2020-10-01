@@ -32,7 +32,3 @@ CREATE INDEX ON local.holdings_electronic_access (hol_elec_access_relationship_n
 
 CREATE INDEX ON local.holdings_electronic_access (hol_uri);
 
-VACUUM local.holdings_electronic_access;
-
-ANALYZE local.holdings_electronic_access;
-

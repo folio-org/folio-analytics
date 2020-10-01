@@ -96,7 +96,3 @@ CREATE INDEX ON local.users_groups (user_tags);
 
 CREATE INDEX ON local.users_groups (user_custom_fields);
 
-VACUUM local.users_groups;
-
-ANALYZE local.users_groups;
-

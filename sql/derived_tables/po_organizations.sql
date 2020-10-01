@@ -35,7 +35,3 @@ CREATE INDEX ON local.po_organizations (contact_email);
 
 CREATE INDEX ON local.po_organizations (contact_phone_number);
 
-VACUUM local.po_organizations;
-
-ANALYZE local.po_organizations;
-
