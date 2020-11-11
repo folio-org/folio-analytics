@@ -14,7 +14,3 @@ CREATE INDEX ON local.instances_languages (instance_hrid);
 
 CREATE INDEX ON local.instances_languages ("language");
 
-VACUUM local.instances_languages;
-
-ANALYZE local.instances_languages;
-

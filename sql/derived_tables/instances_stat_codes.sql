@@ -36,7 +36,3 @@ CREATE INDEX ON local.instances_stat_codes (statistical_code_type_id);
 
 CREATE INDEX ON local.instances_stat_codes (statistical_code_type_name);
 
-VACUUM local.instances_stat_codes;
-
-ANALYZE local.instances_stat_codes;
-

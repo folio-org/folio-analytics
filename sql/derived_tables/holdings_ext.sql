@@ -12,7 +12,7 @@ WITH holdings AS (
         json_extract_path_text(h.data, 'callNumberPrefix') AS call_number_prefix,
         json_extract_path_text(h.data, 'callNumberSuffix') AS call_number_suffix,
         h.call_number_type_id,
-        h.copy_number,
+        json_extract_path_text(h.data, 'copyNumber') AS copy_number,
         h.holdings_type_id,
         h.ill_policy_id,
         h.instance_id,
@@ -92,8 +92,4 @@ CREATE INDEX ON local.holdings_ext (shelving_title);
 CREATE INDEX ON local.holdings_ext (temporary_location_id);
 
 CREATE INDEX ON local.holdings_ext (holdings_temporary_location_name);
-
-VACUUM local.holdings_ext;
-
-ANALYZE local.holdings_ext;
 

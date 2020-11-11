@@ -14,7 +14,3 @@ CREATE INDEX ON local.instances_series (instance_hrid);
 
 CREATE INDEX ON local.instances_series (series_statement);
 
-VACUUM local.instances_series;
-
-ANALYZE local.instances_series;
-

@@ -109,7 +109,3 @@ CREATE INDEX ON local.loans_items (permanent_loan_type_name);
 
 CREATE INDEX ON local.loans_items (temporary_loan_type_name);
 
-VACUUM local.loans_items;
-
-ANALYZE local.loans_items;
-

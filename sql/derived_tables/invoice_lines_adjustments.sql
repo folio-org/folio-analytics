@@ -1,20 +1,24 @@
 DROP TABLE IF EXISTS local.invoice_lines_adjustments;
 
--- These fields in adjustments can be locally defined
---
+-- This table includes the extracted adjustments data on the invoice
+-- line level.  The field description can be locally defined by the
+-- institutions.  Examples are "shipping", "VAT" (MwSt), "Service
+-- Charge".
 CREATE TABLE local.invoice_lines_adjustments AS
 WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'description') AS adjustment_description,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'fundDistributions') AS adjustment_fund_distributions,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'prorate') AS adjustment_prorate,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'relationToTotal') AS adjustment_relationToTotal,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'type') AS adjustment_type,
-        json_extract_path_text(json_array_elements(json_extract_path(data, 'adjustments')), 'value') AS adjustment_value,
-        json_extract_path_text(data, 'adjustmentsTotal') AS adjustment_adjustments_total
+        json_extract_path_text(adjustments.data, 'description') AS adjustment_description,
+        json_extract_path_text(adjustments.data, 'fundDistributions') AS adjustment_fund_distributions,
+        json_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
+        json_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
+        json_extract_path_text(adjustments.data, 'type') AS adjustment_type,
+        json_extract_path_text(adjustments.data, 'value') AS adjustment_value,
+        json_extract_path_text(invoice_lines.data, 'adjustmentsTotal') AS adjustment_adjustments_total
     FROM
         invoice_lines
+        CROSS JOIN json_array_elements(json_extract_path(data, 'adjustments'))
+            AS adjustments(data)
 )
 SELECT
     invoice_line_id,
@@ -29,8 +33,8 @@ FROM
     adjustments
 WHERE
     adjustment_relationToTotal = 'In addition to'
-    OR adjustment_relationToTotal = 'included'
-    OR adjustment_relationToTotal = 'separate from';
+    OR adjustment_relationToTotal = 'Included'
+    OR adjustment_relationToTotal = 'Separate from';
 
 CREATE INDEX ON local.invoice_lines_adjustments (invoice_line_id);
 
@@ -47,8 +51,4 @@ CREATE INDEX ON local.invoice_lines_adjustments (adjustment_type);
 CREATE INDEX ON local.invoice_lines_adjustments (adjustment_value);
 
 CREATE INDEX ON local.invoice_lines_adjustments (adjustment_adjustments_total);
-
-VACUUM local.invoice_lines_adjustments;
-
-ANALYZE local.invoice_lines_adjustments;
 
