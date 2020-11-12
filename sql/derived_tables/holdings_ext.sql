@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS local.holdings_ext;
 
 -- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy, 
--- permanent location, and tempoary location.
+-- permanent location, and temporary location.
 -- Holdings notes are in a separate derived table.
 CREATE TABLE local.holdings_ext AS
 WITH holdings AS (

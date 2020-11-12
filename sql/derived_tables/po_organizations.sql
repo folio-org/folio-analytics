@@ -31,7 +31,3 @@ CREATE INDEX ON local.po_organizations (contact_first_name);
 
 CREATE INDEX ON local.po_organizations (contact_last_name);
 
-CREATE INDEX ON local.po_organizations (contact_email);
-
-CREATE INDEX ON local.po_organizations (contact_phone_number);
-
