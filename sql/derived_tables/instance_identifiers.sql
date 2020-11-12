@@ -5,7 +5,7 @@ SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
     json_extract_path_text(identifiers.data, 'identifierTypeId') AS identifier_type_id,
-    inventory_identifier_types.name AS identifier_type,
+    inventory_identifier_types.name AS identifier_type_name,
     json_extract_path_text(identifiers.data, 'value') AS identifier
 FROM
     inventory_instances AS instances
@@ -18,7 +18,8 @@ CREATE INDEX ON local.instance_identifiers (instance_hrid);
 
 CREATE INDEX ON local.instance_identifiers (identifier_type_id);
 
-CREATE INDEX ON local.instance_identifiers (identifier_type);
+CREATE INDEX ON local.instance_identifiers (identifier_type_name);
 
 CREATE INDEX ON local.instance_identifiers (identifier);
 
+CREATE INDEX ON local.instance_identifiers (identifier);

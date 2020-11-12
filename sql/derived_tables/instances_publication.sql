@@ -1,24 +1,24 @@
-DROP TABLE IF EXISTS local.instances_publication;
+DROP TABLE IF EXISTS local.instance_publication;
 
 -- Create table for publication information that includes publication date, place, and publisher name from instance records
-CREATE TABLE local.instances_publication AS
+CREATE TABLE local.instance_publication AS
 SELECT
-    instance.id AS inst_id,
-    instance.hrid AS inst_hrid,
-    json_extract_path_text(publication.data, 'dateOfPublication') AS inst_pub_date,
-    json_extract_path_text(publication.data, 'place') AS inst_pub_place,
-    json_extract_path_text(publication.data, 'publisher') AS inst_pub_publisher
+    instance.id AS instance_id,
+    instance.hrid AS instance_hrid,
+    json_extract_path_text(publication.data, 'dateOfPublication') AS date_of_publication,
+    json_extract_path_text(publication.data, 'place') AS place,
+    json_extract_path_text(publication.data, 'publisher') AS publisher
 FROM
     inventory_instances AS instance
     CROSS JOIN json_array_elements(json_extract_path(instance.data, 'publication')) AS publication(data);
 
-CREATE INDEX ON local.instances_publication (inst_id);
+CREATE INDEX ON local.instance_publication (instance_id);
 
-CREATE INDEX ON local.instances_publication (inst_hrid);
+CREATE INDEX ON local.instance_publication (instance_hrid);
 
-CREATE INDEX ON local.instances_publication (inst_pub_date);
+CREATE INDEX ON local.instance_publication (date_of_publication);
 
-CREATE INDEX ON local.instances_publication (inst_pub_place);
+CREATE INDEX ON local.instance_publication (place);
 
-CREATE INDEX ON local.instances_publication (inst_pub_publisher);
+CREATE INDEX ON local.instance_publication (publisher);
 
