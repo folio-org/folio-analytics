@@ -21,5 +21,3 @@ CREATE INDEX ON local.instance_identifiers (identifier_type_id);
 CREATE INDEX ON local.instance_identifiers (identifier_type_name);
 
 CREATE INDEX ON local.instance_identifiers (identifier);
-
-CREATE INDEX ON local.instance_identifiers (identifier);
