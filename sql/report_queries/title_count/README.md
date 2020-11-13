@@ -1,18 +1,29 @@
 # Title Count Report
 
-## Status: beta
+# Documentation of the RM title query
 
-## [Report Details](https://wiki.folio.org/display/RPT/RM-Title+Count+Cluster)
+## Contents
+* [Status](https://github.com/LM-15/falltest/blob/main/README.md#status)
+* [Purpose](https://github.com/LM-15/falltest/blob/main/README.md#purpose)
+* [Filters](https://github.com/LM-15/falltest/blob/main/README.md#filters)
+* [Output](https://github.com/LM-15/falltest/blob/main/README.md#output)
+* [In Progress](https://github.com/LM-15/falltest/blob/main/README.md#in-progress) 
 
 
-## Parameters
-### AGGREGATION:
-instance_type, mode_of_issuance, instance_format, instance_statistical_code, instance_nature_of_content, holding_type, callnumber_type, holding_statistical_code, super_relation_type,
-sub_relation_type
+## Status
+This query has been reviewed for code syntax and style, approved by the community, and provided with machine test files.
 
-### FILTERS: FOR USERS TO SELECT
-cataloged_date, instance_type, instance_format, mode_of_issuance, nature_of_content_terms, holdings_receipt_status, holdings_type, holdings_callnumber,
-instance_statistical_code, holdings_statistical_code, permanent_location_name_filter, campus_filter, library_filter, institution_filter
+## Purpose
+To provide title counts for non-electronic resources cataloged in the Inventory.  
 
-### HARDCODED FILTERS
-instance_discovery_suppress, instance_statuses (cataloged or batchloaded)
+<details>
+  <summary>Click to read more!</summary>
+  
+  * Provides unique title counts (i.e., only one count if more than one copy/subscription).  See assumptions and filters available below. Note that it is It is generally assumed that if you need a holdings count as of a certain date, you take it on that date; while you can use processing dates to exclude items newly added after a certain date, you cannot get back titles that were withdrawn or transferred through this query. Local and national definitions can be updated from year to year; be sure to review for needed changes.
+  </details>
+  
+  ## Filters
+  
+  #### Harcoded filters (assumptions):
+* Includes only titles cataloged and made ready for use.
+* Excludes: e-resources; suppressed instance record counts, and counts of instance records with only suppressed holdings records.  
