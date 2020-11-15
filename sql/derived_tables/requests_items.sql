@@ -28,12 +28,12 @@ SELECT
     iel.name AS item_effective_location_name,
     ii.permanent_location_id AS item_permanent_location_id,
     ipl.name AS item_permanent_location_name,
-    ii.temporary_location_id AS item_temporary_location_id,
+    json_extract_path_text(ii.data, 'temporaryLocationId') AS item_temporary_location_id,
     itl.name AS item_temporary_location_name,
     ii.enumeration,
     ii.holdings_record_id,
     ii.hrid,
-    ii.item_identifier,
+    json_extract_path_text(ii.data, 'itemIdentifier') AS item_identifier,
     ii.material_type_id,
     imt.name AS material_type_name,
     ii.number_of_pieces,
@@ -50,7 +50,7 @@ FROM
     LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id
     LEFT JOIN inventory_locations AS iel ON ii.effective_location_id = iel.id
     LEFT JOIN inventory_locations AS ipl ON ii.permanent_location_id = ipl.id
-    LEFT JOIN inventory_locations AS itl ON ii.temporary_location_id = itl.id
+    LEFT JOIN inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN inventory_loan_types AS iplt ON ii.permanent_loan_type_id = iplt.id
     LEFT JOIN inventory_loan_types AS itlt ON ii.temporary_loan_type_id = itlt.id
     LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id;
