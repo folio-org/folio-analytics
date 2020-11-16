@@ -37,7 +37,7 @@ SELECT
     ispt.discovery_display_name AS in_transit_destination_service_point_name,
     ii.effective_location_id AS current_item_effective_location_id,
     iel.name AS current_item_effective_location_name,
-    ii.temporary_location_id AS current_item_temporary_location_id,
+    json_extract_path_text(ii.data, 'temporaryLocationId') AS current_item_temporary_location_id,
     itl.name AS current_item_temporary_location_name,
     ii.permanent_location_id AS current_item_permanent_location_id,
     ipl.name AS current_item_permanent_location_name,
@@ -73,7 +73,7 @@ FROM
     LEFT JOIN public.user_groups AS ug ON cl.patron_group_id_at_checkout = ug.id
     LEFT JOIN public.inventory_locations AS iel ON ii.effective_location_id = iel.id
     LEFT JOIN public.inventory_locations AS ipl ON ii.permanent_location_id = ipl.id
-    LEFT JOIN public.inventory_locations AS itl ON ii.temporary_location_id = itl.id
+    LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
     LEFT JOIN public.inventory_service_points AS ispo ON cl.checkin_service_point_id = ispo.id
