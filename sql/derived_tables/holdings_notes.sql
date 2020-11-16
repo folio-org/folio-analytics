@@ -1,12 +1,13 @@
 DROP TABLE IF EXISTS local.holdings_notes;
 
+-- Create a local table for notes in holdings records that includes the type id and name. Here note can be either public or for staff.
 CREATE TABLE local.holdings_notes AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
     instance_id AS instance_id,
-    json_extract_path_text(notes.data, 'holdingsNoteTypeId') AS holdings_note_type_id,
-    holdings_note_types.name AS holdings_note_type,
+    json_extract_path_text(notes.data, 'holdingsNoteTypeId') AS note_type_id,
+    holdings_note_types.name AS note_type_name,
     json_extract_path_text(notes.data, 'note') AS note,
     json_extract_path_text(notes.data, 'staffOnly')::boolean AS staff_only
 FROM
@@ -20,9 +21,9 @@ CREATE INDEX ON local.holdings_notes (holdings_hrid);
 
 CREATE INDEX ON local.holdings_notes (instance_id);
 
-CREATE INDEX ON local.holdings_notes (holdings_note_type_id);
+CREATE INDEX ON local.holdings_notes (note_type_id);
 
-CREATE INDEX ON local.holdings_notes (holdings_note_type);
+CREATE INDEX ON local.holdings_notes (note_type_name);
 
 CREATE INDEX ON local.holdings_notes (note);
 
