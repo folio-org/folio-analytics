@@ -36,7 +36,7 @@ SELECT
     json_extract_path_text(uu.data, 'personal', 'mobilePhone') AS user_mobile_phone,
     json_extract_path_text(uu.data, 'personal', 'dateOfBirth') AS user_date_of_birth,
     json_extract_path_text(uu.data, 'personal', 'preferredContactTypeId') AS user_preferred_contact_type_id,
-    uu.type AS user_type,
+    json_extract_path_text(uu.data, 'type') AS user_type,
     uu.updated_date,
     uu.username,
     json_extract_path_text(uu.data, 'tags') AS user_tags,

@@ -12,7 +12,7 @@ WITH instances AS (
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    instances.instance_format_id,
+    instances.instance_format_id AS format_id,
     formats.code AS format_code,
     formats.name AS format_name,
     formats.source AS format_source
@@ -24,7 +24,7 @@ CREATE INDEX ON local.instance_formats (instance_id);
 
 CREATE INDEX ON local.instance_formats (instance_hrid);
 
-CREATE INDEX ON local.instance_formats (instance_format_id);
+CREATE INDEX ON local.instance_formats (format_id);
 
 CREATE INDEX ON local.instance_formats (format_code);
 

@@ -1,12 +1,13 @@
 DROP TABLE IF EXISTS local.item_notes;
 
+-- Create a local table for notes in item records. Here note is a public note.
 CREATE TABLE local.item_notes AS
 SELECT
     items.id AS item_id,
     items.hrid AS item_hrid,
-    holdings_record_id AS holdings_id,
-    json_extract_path_text(notes.data, 'itemNoteTypeId') AS item_note_type_id,
-    item_note_types.name AS item_note_type,
+    holdings_record_id AS holdings_record_id,
+    json_extract_path_text(notes.data, 'itemNoteTypeId') AS note_type_id,
+    item_note_types.name AS note_type_name,
     json_extract_path_text(notes.data, 'note') AS note,
     json_extract_path_text(notes.data, 'staffOnly')::boolean AS staff_only
 FROM
@@ -18,11 +19,11 @@ CREATE INDEX ON local.item_notes (item_id);
 
 CREATE INDEX ON local.item_notes (item_hrid);
 
-CREATE INDEX ON local.item_notes (holdings_id);
+CREATE INDEX ON local.item_notes (holdings_record_id);
 
-CREATE INDEX ON local.item_notes (item_note_type_id);
+CREATE INDEX ON local.item_notes (note_type_id);
 
-CREATE INDEX ON local.item_notes (item_note_type);
+CREATE INDEX ON local.item_notes (note_type_name);
 
 CREATE INDEX ON local.item_notes (note);
 

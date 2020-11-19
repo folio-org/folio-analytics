@@ -14,7 +14,7 @@ SELECT
     po_acq_unit.po_id AS po_id,
     po_acq_unit.po_number,
     po_acq_unit.po_acq_unit_id AS po_acquisition_unit_id,
-    acquisitions_units.name AS po_acquisition_unit_name
+    json_extract_path_text(acquisitions_units.data, 'name') AS po_acquisition_unit_name
 FROM
     po_acq_unit
     LEFT JOIN acquisitions_units ON acquisitions_units.id = po_acq_unit.po_acq_unit_id;

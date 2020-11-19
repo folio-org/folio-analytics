@@ -22,7 +22,7 @@ SELECT
     ff.code AS finance_fund_code,
     ff.name AS fund_name,
     ff.id AS fund_type_id,
-    fT.name AS fund_type_name,
+    ft.name AS fund_type_name,
     fund_distribution_value AS fund_distribution_value,
     fund_distribution_type AS fund_distribution_type,
     invoice_line_sub_total AS invoice_line_sub_total,
@@ -30,7 +30,7 @@ SELECT
 FROM
     funds_distr
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
-    LEFT JOIN finance_fund_types AS ft ON ft.id = ff.fund_type_id;
+    LEFT JOIN finance_fund_types AS ft ON ft.id = json_extract_path_text(ff.data, 'fundTypeId');
 
 CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_id);
 

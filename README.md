@@ -50,19 +50,19 @@ using the list below.
 ### Circulation
 
 * Circulation Detail Report: [Circulation Detail
-  Query](sql/circ_detail)
+  Query](sql/report_queries/circ_detail)
 * Circulation Item Detail Report: [Circulation Item Detail
-  Query](sql/circ_item_detail)
+  Query](sql/report_queries/circ_item_detail)
 * Loans and Renewals Report: [Loans and Renewals Counts
-  Query](sql/loans_and_renewals_counts)
-* Services Usage Report: [Services Usage Report](sql/services_usage)
+  Query](sql/report_queries/loans_and_renewals_counts)
+* Services Usage Report: [Services Usage Report](sql/report_queries/services_usage)
 
 ### Inventory
 
-* ACRL Title Count Report: [ACRL Title Count Query](sql/acrl)
-* ACRL Volume Count Report: [ACRL Volume Count Query](sql/acrl)
-* Missing Items Report: [Missing Items Query](sql/missing_items)
-* Pick List Report: [Pick List Query](sql/pick_list)
+* ACRL Title Count Report: [ACRL Title Count Query](sql/report_queries/acrl)
+* ACRL Volume Count Report: [ACRL Volume Count Query](sql/report_queries/acrl)
+* Missing Items Report: [Missing Items Query](sql/report_queries/missing_items)
+* Pick List Report: [Pick List Query](sql/report_queries/pick_list)
 
 ### Finance and Orders
 
