@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS local.po_lines_eresource;
+
 --Create a local table for Purchase Order Line Eresource data.
 CREATE TABLE local.po_lines_eresource AS
 WITH temp_eresource AS (
@@ -37,15 +38,11 @@ SELECT
     te.pol_user_limit,
     te.pol_resource_url
 FROM
-	temp_eresource AS te
-    	LEFT JOIN inventory_material_types AS imt 
-    		ON imt.id = te.pol_material_type
-    	LEFT JOIN inventory_locations AS il 
-    		ON il.id = te.pol_location_id
-    	LEFT JOIN organization_organizations AS oo 
-   			ON oo.id = te.access_provider;
+    temp_eresource AS te
+    LEFT JOIN inventory_material_types AS imt ON imt.id = te.pol_material_type
+    LEFT JOIN inventory_locations AS il ON il.id = te.pol_location_id
+    LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
 
-	 	
 CREATE INDEX ON local.po_lines_eresource (pol_id);
 
 CREATE INDEX ON local.po_lines_eresource (pol_location_id);
@@ -77,3 +74,4 @@ CREATE INDEX ON local.po_lines_eresource (pol_trial);
 CREATE INDEX ON local.po_lines_eresource (pol_user_limit);
 
 CREATE INDEX ON local.po_lines_eresource (pol_resource_url);
+
