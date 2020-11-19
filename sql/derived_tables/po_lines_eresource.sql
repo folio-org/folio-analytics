@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS local.po_lines_eresource;
 
---Create a local table for Purchase Order Line Eresource data.
+-- Create a local table for Purchase Order Line Eresource data.
 CREATE TABLE local.po_lines_eresource AS
 WITH temp_eresource AS (
     SELECT
