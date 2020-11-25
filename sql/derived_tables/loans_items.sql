@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS local.loans_items;
+DROP TABLE IF EXISTS folio_reporting.loans_items;
 
 -- Create a derived table that contains all items from loans and adds
 -- item, location, and other loan-related information
@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS local.loans_items;
 -- Location names are from the items table.  They show location of the
 -- item right now vs. when item was checked out.
 --
-CREATE TABLE local.loans_items AS
+CREATE TABLE folio_reporting.loans_items AS
 SELECT
     cl.id AS loan_id,
     cl.item_id,
@@ -83,29 +83,29 @@ FROM
     LEFT JOIN public.feesfines_overdue_fines_policies AS ffo ON cl.overdue_fine_policy_id = ffo.id
     LEFT JOIN public.feesfines_lost_item_fees_policies AS ffl ON cl.lost_item_policy_id = ffl.id;
 
-CREATE INDEX ON local.loans_items (item_status);
+CREATE INDEX ON folio_reporting.loans_items (item_status);
 
-CREATE INDEX ON local.loans_items (loan_date);
+CREATE INDEX ON folio_reporting.loans_items (loan_date);
 
-CREATE INDEX ON local.loans_items (loan_due_date);
+CREATE INDEX ON folio_reporting.loans_items (loan_due_date);
 
-CREATE INDEX ON local.loans_items (current_item_effective_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_name);
 
-CREATE INDEX ON local.loans_items (current_item_permanent_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_name);
 
-CREATE INDEX ON local.loans_items (current_item_temporary_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_name);
 
-CREATE INDEX ON local.loans_items (checkin_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_name);
 
-CREATE INDEX ON local.loans_items (checkout_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (checkout_service_point_name);
 
-CREATE INDEX ON local.loans_items (in_transit_destination_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (in_transit_destination_service_point_name);
 
-CREATE INDEX ON local.loans_items (patron_group_name);
+CREATE INDEX ON folio_reporting.loans_items (patron_group_name);
 
-CREATE INDEX ON local.loans_items (material_type_name);
+CREATE INDEX ON folio_reporting.loans_items (material_type_name);
 
-CREATE INDEX ON local.loans_items (permanent_loan_type_name);
+CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_name);
 
-CREATE INDEX ON local.loans_items (temporary_loan_type_name);
+CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_name);
 

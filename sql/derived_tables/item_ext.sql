@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS local.item_ext;
+DROP TABLE IF EXISTS folio_reporting.item_ext;
 
 -- Create an extended items table that includes the name for in
 -- transit destination service point, item damaged status, material
@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS local.item_ext;
 -- description_of_pieces, status_date, status_name, holdings_id
 -- Item notes are in a separate derived table.
 -- There is a separate table for effective call number. However, it is also included here.
-CREATE TABLE local.item_ext AS 
+CREATE TABLE folio_reporting.item_ext AS 
 WITH items AS (
     SELECT
         id,                  
@@ -93,80 +93,80 @@ FROM
     LEFT JOIN inventory_call_number_types AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
    	LEFT JOIN inventory_call_number_types AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id;
 
-CREATE INDEX ON local.item_ext (item_id);
+CREATE INDEX ON folio_reporting.item_ext (item_id);
 
-CREATE INDEX ON local.item_ext (item_hrid);
+CREATE INDEX ON folio_reporting.item_ext (item_hrid);
 
-CREATE INDEX ON local.item_ext (accession_number);
+CREATE INDEX ON folio_reporting.item_ext (accession_number);
 
-CREATE INDEX ON local.item_ext (barcode);
+CREATE INDEX ON folio_reporting.item_ext (barcode);
 
-CREATE INDEX ON local.item_ext (chronology);
+CREATE INDEX ON folio_reporting.item_ext (chronology);
 
-CREATE INDEX ON local.item_ext (copy_number);
+CREATE INDEX ON folio_reporting.item_ext (copy_number);
 
-CREATE INDEX ON local.item_ext (enumeration);
+CREATE INDEX ON folio_reporting.item_ext (enumeration);
 
-CREATE INDEX ON local.item_ext (in_transit_destination_service_point_id);
+CREATE INDEX ON folio_reporting.item_ext (in_transit_destination_service_point_id);
 
-CREATE INDEX ON local.item_ext (in_transit_destination_service_point_name);
+CREATE INDEX ON folio_reporting.item_ext (in_transit_destination_service_point_name);
 
-CREATE INDEX ON local.item_ext (identifier);
+CREATE INDEX ON folio_reporting.item_ext (identifier);
 
-CREATE INDEX ON local.item_ext (call_number);
+CREATE INDEX ON folio_reporting.item_ext (call_number);
 
-CREATE INDEX ON local.item_ext (call_number_type_id);
+CREATE INDEX ON folio_reporting.item_ext (call_number_type_id);
 
-CREATE INDEX ON LOCAL.item_ext (call_number_type_name);
+CREATE INDEX ON FOLIO_REPORTING.item_ext (call_number_type_name);
 
-CREATE INDEX ON local.item_ext (effective_call_number_prefix);
+CREATE INDEX ON folio_reporting.item_ext (effective_call_number_prefix);
 
-CREATE INDEX ON local.item_ext (effective_call_number);
+CREATE INDEX ON folio_reporting.item_ext (effective_call_number);
 
-CREATE INDEX ON local.item_ext (effective_call_number_suffix);
+CREATE INDEX ON folio_reporting.item_ext (effective_call_number_suffix);
 
-CREATE INDEX ON local.item_ext (effective_call_number_type_id);
+CREATE INDEX ON folio_reporting.item_ext (effective_call_number_type_id);
 
-CREATE INDEX ON local.item_ext (effective_call_number_type_name);
+CREATE INDEX ON folio_reporting.item_ext (effective_call_number_type_name);
 
-CREATE INDEX ON local.item_ext (damaged_status_id);
+CREATE INDEX ON folio_reporting.item_ext (damaged_status_id);
 
-CREATE INDEX ON local.item_ext (damaged_status_name);
+CREATE INDEX ON folio_reporting.item_ext (damaged_status_name);
 
-CREATE INDEX ON local.item_ext (material_type_id);
+CREATE INDEX ON folio_reporting.item_ext (material_type_id);
 
-CREATE INDEX ON local.item_ext (material_type_name);
+CREATE INDEX ON folio_reporting.item_ext (material_type_name);
 
-CREATE INDEX ON local.item_ext (number_of_pieces);
+CREATE INDEX ON folio_reporting.item_ext (number_of_pieces);
 
-CREATE INDEX ON local.item_ext (permanent_loan_type_id);
+CREATE INDEX ON folio_reporting.item_ext (permanent_loan_type_id);
 
-CREATE INDEX ON local.item_ext (permanent_loan_type_name);
+CREATE INDEX ON folio_reporting.item_ext (permanent_loan_type_name);
 
-CREATE INDEX ON local.item_ext (temporary_loan_type_id);
+CREATE INDEX ON folio_reporting.item_ext (temporary_loan_type_id);
 
-CREATE INDEX ON local.item_ext (temporary_loan_type_name);
+CREATE INDEX ON folio_reporting.item_ext (temporary_loan_type_name);
 
-CREATE INDEX ON local.item_ext (permanent_location_id);
+CREATE INDEX ON folio_reporting.item_ext (permanent_location_id);
 
-CREATE INDEX ON local.item_ext (permanent_location_name);
+CREATE INDEX ON folio_reporting.item_ext (permanent_location_name);
 
-CREATE INDEX ON local.item_ext (temporary_location_id);
+CREATE INDEX ON folio_reporting.item_ext (temporary_location_id);
 
-CREATE INDEX ON local.item_ext (temporary_location_name);
+CREATE INDEX ON folio_reporting.item_ext (temporary_location_name);
 
-CREATE INDEX ON local.item_ext (description_of_pieces);
+CREATE INDEX ON folio_reporting.item_ext (description_of_pieces);
 
-CREATE INDEX ON local.item_ext (status_date);
+CREATE INDEX ON folio_reporting.item_ext (status_date);
 
-CREATE INDEX ON local.item_ext (status_name);
+CREATE INDEX ON folio_reporting.item_ext (status_name);
 
-CREATE INDEX ON local.item_ext (holdings_record_id); 
+CREATE INDEX ON folio_reporting.item_ext (holdings_record_id); 
 
-CREATE INDEX ON local.item_ext (created_date);
+CREATE INDEX ON folio_reporting.item_ext (created_date);
 
-CREATE INDEX ON local.item_ext (updated_by_user_id);
+CREATE INDEX ON folio_reporting.item_ext (updated_by_user_id);
 
-CREATE INDEX ON local.item_ext (updated_date);
+CREATE INDEX ON folio_reporting.item_ext (updated_date);
 
 
