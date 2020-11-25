@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS local.feesfines_accounts_actions;
+DROP TABLE IF EXISTS folio_reporting.feesfines_accounts_actions;
 
 -- Create a derived table that takes feesfines_accounts as the main table
 -- join all transaction data from the feesfines_actions table
 -- add patron group information from user_group table
-CREATE TABLE local.feesfines_accounts_actions AS
+CREATE TABLE folio_reporting.feesfines_accounts_actions AS
 SELECT
     fa.id AS fine_account_id,
     json_extract_path_text(fa.data, 'amount') AS fine_account_amount,
@@ -38,57 +38,57 @@ FROM
     LEFT JOIN user_users AS uu ON json_extract_path_text(fa.data, 'userId') = uu.id
     LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id;
 
-CREATE INDEX ON local.feesfines_accounts_actions (fine_account_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fine_account_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fine_account_amount);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fine_account_amount);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fine_date);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fine_date);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fine_updated_date);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fine_updated_date);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fee_fine_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fee_fine_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (owner_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (owner_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fee_fine_owner);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fee_fine_owner);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fee_fine_type);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fee_fine_type);
 
-CREATE INDEX ON local.feesfines_accounts_actions (material_type_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (material_type_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (material_type);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (material_type);
 
-CREATE INDEX ON local.feesfines_accounts_actions (payment_status);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (payment_status);
 
-CREATE INDEX ON local.feesfines_accounts_actions (fine_status);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (fine_status);
 
-CREATE INDEX ON local.feesfines_accounts_actions (account_user_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (account_user_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (transaction_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (transaction_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (account_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (account_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (transaction_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (transaction_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (account_balance);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (account_balance);
 
-CREATE INDEX ON local.feesfines_accounts_actions (type_action);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (type_action);
 
-CREATE INDEX ON local.feesfines_accounts_actions (transaction_date);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (transaction_date);
 
-CREATE INDEX ON local.feesfines_accounts_actions (transaction_location);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (transaction_location);
 
-CREATE INDEX ON local.feesfines_accounts_actions (transaction_information);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (transaction_information);
 
-CREATE INDEX ON local.feesfines_accounts_actions (operator_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (operator_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (payment_method);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (payment_method);
 
-CREATE INDEX ON local.feesfines_accounts_actions (user_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (user_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (user_patron_group_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (user_patron_group_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (patron_group_id);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (patron_group_id);
 
-CREATE INDEX ON local.feesfines_accounts_actions (patron_group_name);
+CREATE INDEX ON folio_reporting.feesfines_accounts_actions (patron_group_name);
 

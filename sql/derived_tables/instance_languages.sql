@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.instance_languages;
+DROP TABLE IF EXISTS folio_reporting.instance_languages;
 
 --Create a local table for languages in instance records.
-CREATE TABLE local.instance_languages AS
+CREATE TABLE folio_reporting.instance_languages AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
@@ -9,9 +9,9 @@ SELECT
 FROM
     inventory_instances AS instances;
 
-CREATE INDEX ON local.instance_languages (instance_id);
+CREATE INDEX ON folio_reporting.instance_languages (instance_id);
 
-CREATE INDEX ON local.instance_languages (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_languages (instance_hrid);
 
-CREATE INDEX ON local.instance_languages ("language");
+CREATE INDEX ON folio_reporting.instance_languages ("language");
 

@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.instance_subjects;
+DROP TABLE IF EXISTS folio_reporting.instance_subjects;
 
 -- Create a local table for subjects in the instance record.
-CREATE TABLE local.instance_subjects AS
+CREATE TABLE folio_reporting.instance_subjects AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
@@ -9,9 +9,9 @@ SELECT
 FROM
     inventory_instances AS instances;
 
-CREATE INDEX ON local.instance_subjects (instance_id);
+CREATE INDEX ON folio_reporting.instance_subjects (instance_id);
 
-CREATE INDEX ON local.instance_subjects (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_subjects (instance_hrid);
 
-CREATE INDEX ON local.instance_subjects (subject);
+CREATE INDEX ON folio_reporting.instance_subjects (subject);
 
