@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.instance_series;
+DROP TABLE IF EXISTS folio_reporting.instance_series;
 
 -- Create a local table for series statemnts in the instance records.
-CREATE TABLE local.instance_series AS
+CREATE TABLE folio_reporting.instance_series AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
@@ -9,9 +9,9 @@ SELECT
 FROM
     inventory_instances AS instances;
 
-CREATE INDEX ON local.instance_series (instance_id);
+CREATE INDEX ON folio_reporting.instance_series (instance_id);
 
-CREATE INDEX ON local.instance_series (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_series (instance_hrid);
 
-CREATE INDEX ON local.instance_series (series);
+CREATE INDEX ON folio_reporting.instance_series (series);
 

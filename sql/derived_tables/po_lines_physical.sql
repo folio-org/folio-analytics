@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.po_lines_physical;
+DROP TABLE IF EXISTS folio_reporting.po_lines_physical;
 
 -- Create a local table for Purchase Order Lines Physical material data.
-CREATE TABLE local.po_lines_physical AS
+CREATE TABLE folio_reporting.po_lines_physical AS
 WITH temp_phys AS (
     SELECT
         pol.id AS pol_id,
@@ -31,23 +31,23 @@ FROM
     LEFT JOIN inventory_material_types AS imt ON imt.id = tp.pol_phys_mat_type
     LEFT JOIN organization_organizations AS oo ON oo.id = tp.pol_phys_mat_supplier;
 
-CREATE INDEX ON local.po_lines_physical (pol_id);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_id);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_create_inventory);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_create_inventory);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_mat_type);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_mat_type);
 
-CREATE INDEX ON local.po_lines_physical (pol_er_mat_type_name);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_er_mat_type_name);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_mat_supplier);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_mat_supplier);
 
-CREATE INDEX ON local.po_lines_physical (supplier_org_name);
+CREATE INDEX ON folio_reporting.po_lines_physical (supplier_org_name);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_expected_receipt_date);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_expected_receipt_date);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_receipt_due);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_receipt_due);
 
-CREATE INDEX ON local.po_lines_physical (pol_volumes);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_volumes);
 
-CREATE INDEX ON local.po_lines_physical (pol_phys_volumes_description);
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_volumes_description);
 
