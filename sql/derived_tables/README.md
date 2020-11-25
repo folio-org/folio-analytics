@@ -5,7 +5,8 @@ These queries create "derived tables" which are helper tables to
 simplify writing ad hoc queries.
 
 The tables are created in the schema `folio_reporting`.  We suggest
-granting full permissions to the `ldp` user, but this is not required.
+granting full permissions to the `ldp` user, as in the examples below,
+but this is not required.
 
 Before running the queries for the first time, the schema should be
 created:
