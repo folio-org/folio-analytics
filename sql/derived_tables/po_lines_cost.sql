@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.po_lines_cost;
+DROP TABLE IF EXISTS folio_reporting.po_lines_cost;
 
 -- Create table for cost information on the purchase order line
-CREATE TABLE local.po_lines_cost AS
+CREATE TABLE folio_reporting.po_lines_cost AS
 SELECT
     pol.id AS pol_id,
     json_extract_path_text(pol.data, 'cost', 'listUnitPrice') AS po_lines_list_unit_price_phys,
@@ -16,23 +16,23 @@ SELECT
 FROM
     po_lines AS pol;
 
-CREATE INDEX ON local.po_lines_cost (pol_id);
+CREATE INDEX ON folio_reporting.po_lines_cost (pol_id);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_list_unit_price_phys);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_list_unit_price_phys);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_quant_phys);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_quant_phys);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_list_unit_price_elec);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_list_unit_price_elec);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_quant_elec);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_quant_elec);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_additional_cost);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_additional_cost);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_currency);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_currency);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_discount);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_discount);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_discount_type);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_discount_type);
 
-CREATE INDEX ON local.po_lines_cost (po_lines_estimated_price);
+CREATE INDEX ON folio_reporting.po_lines_cost (po_lines_estimated_price);
 

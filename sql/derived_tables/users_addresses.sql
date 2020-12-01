@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS local.users_addresses;
+DROP TABLE IF EXISTS folio_reporting.users_addresses;
 
 -- Create a derived table that takes the user_users table and unpacks
 -- the address array into a normalized table
-CREATE TABLE local.users_addresses AS
+CREATE TABLE folio_reporting.users_addresses AS
 SELECT
     uu.id AS user_id,
     json_extract_path_text(addresses.data, 'id') AS address_id,
@@ -21,27 +21,27 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(data, 'personal', 'addresses')) AS addresses (data)
     LEFT JOIN user_addresstypes AS ua ON json_extract_path_text(addresses.data, 'addressTypeId') = ua.id;
 
-CREATE INDEX ON local.users_addresses (user_id);
+CREATE INDEX ON folio_reporting.users_addresses (user_id);
 
-CREATE INDEX ON local.users_addresses (address_id);
+CREATE INDEX ON folio_reporting.users_addresses (address_id);
 
-CREATE INDEX ON local.users_addresses (address_country_id);
+CREATE INDEX ON folio_reporting.users_addresses (address_country_id);
 
-CREATE INDEX ON local.users_addresses (address_line_1);
+CREATE INDEX ON folio_reporting.users_addresses (address_line_1);
 
-CREATE INDEX ON local.users_addresses (address_line_2);
+CREATE INDEX ON folio_reporting.users_addresses (address_line_2);
 
-CREATE INDEX ON local.users_addresses (address_city);
+CREATE INDEX ON folio_reporting.users_addresses (address_city);
 
-CREATE INDEX ON local.users_addresses (address_region);
+CREATE INDEX ON folio_reporting.users_addresses (address_region);
 
-CREATE INDEX ON local.users_addresses (address_postal_code);
+CREATE INDEX ON folio_reporting.users_addresses (address_postal_code);
 
-CREATE INDEX ON local.users_addresses (address_type_id);
+CREATE INDEX ON folio_reporting.users_addresses (address_type_id);
 
-CREATE INDEX ON local.users_addresses (address_type_name);
+CREATE INDEX ON folio_reporting.users_addresses (address_type_name);
 
-CREATE INDEX ON local.users_addresses (address_type_description);
+CREATE INDEX ON folio_reporting.users_addresses (address_type_description);
 
-CREATE INDEX ON local.users_addresses (is_primary_address);
+CREATE INDEX ON folio_reporting.users_addresses (is_primary_address);
 
