@@ -1,11 +1,11 @@
 # Documentation for the RM title query
 
 ## Contents
-* [Status](https://github.com/LM-15/folio-analytics/sql/report_queries/title_count/blob/main/README.md#status)
-* [Purpose](https://github.com/LM-15/falltest/blob/main/README.md#purpose)
-* [Filters](https://github.com/LM-15/falltest/blob/main/README.md#filters)
-* [Output](https://github.com/LM-15/falltest/blob/main/README.md#output)
-* [Requests not yet addressed](https://github.com/LM-15/falltest/blob/main/README.md#requests-not-yet-addressed) 
+* [Status](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#status)
+* [Purpose](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#purpose)
+* [Filters](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#filters)
+* [Output](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#output)
+* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#requests-not-yet-addressed) 
 
 
 ## Status
