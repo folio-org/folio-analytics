@@ -14,7 +14,8 @@ ACRL reports are run once a year.
 * An accounting of "initial circulation" transactions, which includes charges only (no renewals)
 
 To meet the report criteria, run the following four separate queries:
-* [ACRL Volume Count Report](../sql/acrl/volume_count)
-* [ACRL Title Count Report](../sql/acrl/title_count)
-* [ACRL Collections Expenditures Report](../sql/acrl/collections_expenditures)
-* [ACRL Circulation Report](../sql/acrl/circulation)
+
+* [ACRL Volume Count Report](volume_count)
+* [ACRL Title Count Report](title_count)
+* [ACRL Collections Expenditures Report](collections_expenditures)
+* [ACRL Circulation Report](circulation)
