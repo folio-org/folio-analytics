@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.item_statistical_codes;
+DROP TABLE IF EXISTS folio_reporting.item_statistical_codes;
 
 -- Create a local table for item statistics with the id and name of the code and type.
-CREATE TABLE local.item_statistical_codes AS
+CREATE TABLE folio_reporting.item_statistical_codes AS
 WITH items_statistical_codes AS (
     SELECT
         item.id AS item_id,
@@ -23,17 +23,17 @@ FROM
     LEFT JOIN inventory_statistical_codes ON items_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON local.item_statistical_codes (item_id);
+CREATE INDEX ON folio_reporting.item_statistical_codes (item_id);
 
-CREATE INDEX ON local.item_statistical_codes (item_hrid);
+CREATE INDEX ON folio_reporting.item_statistical_codes (item_hrid);
 
-CREATE INDEX ON local.item_statistical_codes (statistical_code_id);
+CREATE INDEX ON folio_reporting.item_statistical_codes (statistical_code_id);
 
-CREATE INDEX ON local.item_statistical_codes (statistical_code);
+CREATE INDEX ON folio_reporting.item_statistical_codes (statistical_code);
 
-CREATE INDEX ON local.item_statistical_codes (statistical_code_name);
+CREATE INDEX ON folio_reporting.item_statistical_codes (statistical_code_name);
 
-CREATE INDEX ON local.item_statistical_codes (statistical_code_type_id);
+CREATE INDEX ON folio_reporting.item_statistical_codes (statistical_code_type_id);
 
-CREATE INDEX ON local.item_statistical_codes (statistical_code_type_name);
+CREATE INDEX ON folio_reporting.item_statistical_codes (statistical_code_type_name);
 

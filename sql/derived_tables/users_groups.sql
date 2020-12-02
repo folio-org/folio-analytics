@@ -1,17 +1,17 @@
-DROP TABLE IF EXISTS local.users_groups;
+DROP TABLE IF EXISTS folio_reporting.users_groups;
 
 -- Create a derived table that takes the user_users table and joins in
 -- the group information.  Does not include addresses - see additional
 -- derived tables for addresses in different arrangements.  Query also
 -- depends on separate derived table for user departments
-CREATE TABLE local.users_groups AS
+CREATE TABLE folio_reporting.users_groups AS
 WITH user_departments AS (
     SELECT
         user_id,
         --string_agg(DISTINCT department_name, '|'::text) AS departments
         string_agg(DISTINCT department_id, '|'::text) AS departments
     FROM
-        local.users_departments_unpacked
+        folio_reporting.users_departments_unpacked
     GROUP BY
         user_id
 )
@@ -46,53 +46,53 @@ FROM
     LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id
     LEFT JOIN user_departments AS ud ON uu.id = ud.user_id;
 
-CREATE INDEX ON local.users_groups (user_id);
+CREATE INDEX ON folio_reporting.users_groups (user_id);
 
-CREATE INDEX ON local.users_groups (active);
+CREATE INDEX ON folio_reporting.users_groups (active);
 
-CREATE INDEX ON local.users_groups (barcode);
+CREATE INDEX ON folio_reporting.users_groups (barcode);
 
-CREATE INDEX ON local.users_groups (created_date);
+CREATE INDEX ON folio_reporting.users_groups (created_date);
 
-CREATE INDEX ON local.users_groups (enrollment_date);
+CREATE INDEX ON folio_reporting.users_groups (enrollment_date);
 
-CREATE INDEX ON local.users_groups (expiration_date);
+CREATE INDEX ON folio_reporting.users_groups (expiration_date);
 
-CREATE INDEX ON local.users_groups (external_system_id);
+CREATE INDEX ON folio_reporting.users_groups (external_system_id);
 
-CREATE INDEX ON local.users_groups (patron_group);
+CREATE INDEX ON folio_reporting.users_groups (patron_group);
 
-CREATE INDEX ON local.users_groups (group_description);
+CREATE INDEX ON folio_reporting.users_groups (group_description);
 
-CREATE INDEX ON local.users_groups (group_name);
+CREATE INDEX ON folio_reporting.users_groups (group_name);
 
-CREATE INDEX ON local.users_groups (departments);
+CREATE INDEX ON folio_reporting.users_groups (departments);
 
-CREATE INDEX ON local.users_groups (user_last_name);
+CREATE INDEX ON folio_reporting.users_groups (user_last_name);
 
-CREATE INDEX ON local.users_groups (user_first_name);
+CREATE INDEX ON folio_reporting.users_groups (user_first_name);
 
-CREATE INDEX ON local.users_groups (user_middle_name);
+CREATE INDEX ON folio_reporting.users_groups (user_middle_name);
 
-CREATE INDEX ON local.users_groups (user_preferred_first_name);
+CREATE INDEX ON folio_reporting.users_groups (user_preferred_first_name);
 
-CREATE INDEX ON local.users_groups (user_email);
+CREATE INDEX ON folio_reporting.users_groups (user_email);
 
-CREATE INDEX ON local.users_groups (user_phone);
+CREATE INDEX ON folio_reporting.users_groups (user_phone);
 
-CREATE INDEX ON local.users_groups (user_mobile_phone);
+CREATE INDEX ON folio_reporting.users_groups (user_mobile_phone);
 
-CREATE INDEX ON local.users_groups (user_date_of_birth);
+CREATE INDEX ON folio_reporting.users_groups (user_date_of_birth);
 
-CREATE INDEX ON local.users_groups (user_preferred_contact_type_id);
+CREATE INDEX ON folio_reporting.users_groups (user_preferred_contact_type_id);
 
-CREATE INDEX ON local.users_groups (user_type);
+CREATE INDEX ON folio_reporting.users_groups (user_type);
 
-CREATE INDEX ON local.users_groups (updated_date);
+CREATE INDEX ON folio_reporting.users_groups (updated_date);
 
-CREATE INDEX ON local.users_groups (username);
+CREATE INDEX ON folio_reporting.users_groups (username);
 
-CREATE INDEX ON local.users_groups (user_tags);
+CREATE INDEX ON folio_reporting.users_groups (user_tags);
 
-CREATE INDEX ON local.users_groups (user_custom_fields);
+CREATE INDEX ON folio_reporting.users_groups (user_custom_fields);
 

@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.po_lines_locations;
+DROP TABLE IF EXISTS folio_reporting.po_lines_locations;
 
 -- Create a local table for Purchase Order Line Locations including location quantity and type.
-CREATE TABLE local.po_lines_locations AS
+CREATE TABLE folio_reporting.po_lines_locations AS
 WITH pol_location AS (
     SELECT
         pol.id AS pol_id,
@@ -24,15 +24,15 @@ FROM
     pol_location
     LEFT JOIN inventory_locations ON inventory_locations.id = pol_location.pol_loc_id;
 
-CREATE INDEX ON local.po_lines_locations (pol_id);
+CREATE INDEX ON folio_reporting.po_lines_locations (pol_id);
 
-CREATE INDEX ON local.po_lines_locations (pol_loc_id);
+CREATE INDEX ON folio_reporting.po_lines_locations (pol_loc_id);
 
-CREATE INDEX ON local.po_lines_locations (pol_loc_qty);
+CREATE INDEX ON folio_reporting.po_lines_locations (pol_loc_qty);
 
-CREATE INDEX ON local.po_lines_locations (pol_loc_qty_elec);
+CREATE INDEX ON folio_reporting.po_lines_locations (pol_loc_qty_elec);
 
-CREATE INDEX ON local.po_lines_locations (pol_loc_quant_phys);
+CREATE INDEX ON folio_reporting.po_lines_locations (pol_loc_quant_phys);
 
-CREATE INDEX ON local.po_lines_locations (location_name);
+CREATE INDEX ON folio_reporting.po_lines_locations (location_name);
 

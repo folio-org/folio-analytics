@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS local.instance_editions;
+DROP TABLE IF EXISTS folio_reporting.instance_editions;
 
-CREATE TABLE local.instance_editions AS
+CREATE TABLE folio_reporting.instance_editions AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
@@ -8,9 +8,9 @@ SELECT
 FROM
     inventory_instances AS instances;
 
-CREATE INDEX ON local.instance_editions (instance_id);
+CREATE INDEX ON folio_reporting.instance_editions (instance_id);
 
-CREATE INDEX ON local.instance_editions (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_editions (instance_hrid);
 
-CREATE INDEX ON local.instance_editions (edition);
+CREATE INDEX ON folio_reporting.instance_editions (edition);
 
