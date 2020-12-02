@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS local.invoice_lines_fund_distributions;
+DROP TABLE IF EXISTS folio_reporting.invoice_lines_fund_distributions;
 
 -- Create a local table for Fund Distributions
-CREATE TABLE local.invoice_lines_fund_distributions AS
+CREATE TABLE folio_reporting.invoice_lines_fund_distributions AS
 WITH funds_distr AS (
     SELECT
         id AS invoice_line_id,
@@ -22,7 +22,7 @@ SELECT
     ff.code AS finance_fund_code,
     ff.name AS fund_name,
     ff.id AS fund_type_id,
-    fT.name AS fund_type_name,
+    ft.name AS fund_type_name,
     fund_distribution_value AS fund_distribution_value,
     fund_distribution_type AS fund_distribution_type,
     invoice_line_sub_total AS invoice_line_sub_total,
@@ -30,27 +30,27 @@ SELECT
 FROM
     funds_distr
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
-    LEFT JOIN finance_fund_types AS ft ON ft.id = ff.fund_type_id;
+    LEFT JOIN finance_fund_types AS ft ON ft.id = json_extract_path_text(ff.data, 'fundTypeId');
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_id);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (invoice_line_id);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_distribution_id);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_distribution_id);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (finance_fund_status);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (finance_fund_status);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (finance_fund_code);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (finance_fund_code);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_name);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_name);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_type_id);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_type_id);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_type_name);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_type_name);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_distribution_value);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_distribution_value);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (fund_distribution_type);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (fund_distribution_type);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_sub_total);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (invoice_line_sub_total);
 
-CREATE INDEX ON local.invoice_lines_fund_distributions (invoice_line_total);
+CREATE INDEX ON folio_reporting.invoice_lines_fund_distributions (invoice_line_total);
 

@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS local.items_holdings_instances;
+DROP TABLE IF EXISTS folio_reporting.items_holdings_instances;
 
 -- Create an extended items table that includes holdings and instances
 -- information such as call number, material type, title, etc.
@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS local.items_holdings_instances;
 --     inventory_holdings_types
 --     inventory_call_number_types
 --
-CREATE TABLE local.items_holdings_instances AS
+CREATE TABLE folio_reporting.items_holdings_instances AS
 SELECT
     ii.id AS item_id,
     ii.barcode,
@@ -21,7 +21,7 @@ SELECT
     ii.enumeration,
     ii.holdings_record_id,
     ii.hrid,
-    ii.item_identifier,
+    json_extract_path_text(ii.data, 'itemIdentifier') AS item_identifier,
     ii.item_level_call_number,
     ih.call_number_type_id,
     icnt.name AS call_number_type_name,
@@ -30,12 +30,12 @@ SELECT
     ii.number_of_pieces,
     ih.id AS holdings_id,
     ih.call_number,
-    ih.acquisition_method,
-    ih.copy_number AS holdings_copy_number,
+    json_extract_path_text(ih.data, 'acquisitionMethod') AS acquisition_method,
+    json_extract_path_text(ih.data, 'copyNumber') AS holdings_copy_number,
     ih.holdings_type_id,
     iht.name AS holdings_type_name,
     ih.instance_id,
-    ih.shelving_title,
+    json_extract_path_text(ih.data, 'shelvingTitle') AS shelving_title,
     ii2.cataloged_date,
     ii2.index_title,
     ii2.title,
@@ -50,57 +50,57 @@ FROM
     LEFT JOIN public.inventory_holdings_types AS iht ON ih.holdings_type_id = iht.id
     LEFT JOIN public.inventory_call_number_types AS icnt ON ih.call_number_type_id = icnt.id;
 
-CREATE INDEX ON local.items_holdings_instances (item_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (item_id);
 
-CREATE INDEX ON local.items_holdings_instances (barcode);
+CREATE INDEX ON folio_reporting.items_holdings_instances (barcode);
 
-CREATE INDEX ON local.items_holdings_instances (chronology);
+CREATE INDEX ON folio_reporting.items_holdings_instances (chronology);
 
-CREATE INDEX ON local.items_holdings_instances (item_copy_number);
+CREATE INDEX ON folio_reporting.items_holdings_instances (item_copy_number);
 
-CREATE INDEX ON local.items_holdings_instances (enumeration);
+CREATE INDEX ON folio_reporting.items_holdings_instances (enumeration);
 
-CREATE INDEX ON local.items_holdings_instances (holdings_record_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (holdings_record_id);
 
-CREATE INDEX ON local.items_holdings_instances (hrid);
+CREATE INDEX ON folio_reporting.items_holdings_instances (hrid);
 
-CREATE INDEX ON local.items_holdings_instances (item_identifier);
+CREATE INDEX ON folio_reporting.items_holdings_instances (item_identifier);
 
-CREATE INDEX ON local.items_holdings_instances (item_level_call_number);
+CREATE INDEX ON folio_reporting.items_holdings_instances (item_level_call_number);
 
-CREATE INDEX ON local.items_holdings_instances (call_number_type_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (call_number_type_id);
 
-CREATE INDEX ON local.items_holdings_instances (call_number_type_name);
+CREATE INDEX ON folio_reporting.items_holdings_instances (call_number_type_name);
 
-CREATE INDEX ON local.items_holdings_instances (material_type_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (material_type_id);
 
-CREATE INDEX ON local.items_holdings_instances (material_type_name);
+CREATE INDEX ON folio_reporting.items_holdings_instances (material_type_name);
 
-CREATE INDEX ON local.items_holdings_instances (number_of_pieces);
+CREATE INDEX ON folio_reporting.items_holdings_instances (number_of_pieces);
 
-CREATE INDEX ON local.items_holdings_instances (holdings_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (holdings_id);
 
-CREATE INDEX ON local.items_holdings_instances (call_number);
+CREATE INDEX ON folio_reporting.items_holdings_instances (call_number);
 
-CREATE INDEX ON local.items_holdings_instances (acquisition_method);
+CREATE INDEX ON folio_reporting.items_holdings_instances (acquisition_method);
 
-CREATE INDEX ON local.items_holdings_instances (holdings_copy_number);
+CREATE INDEX ON folio_reporting.items_holdings_instances (holdings_copy_number);
 
-CREATE INDEX ON local.items_holdings_instances (holdings_type_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (holdings_type_id);
 
-CREATE INDEX ON local.items_holdings_instances (holdings_type_name);
+CREATE INDEX ON folio_reporting.items_holdings_instances (holdings_type_name);
 
-CREATE INDEX ON local.items_holdings_instances (instance_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (instance_id);
 
-CREATE INDEX ON local.items_holdings_instances (shelving_title);
+CREATE INDEX ON folio_reporting.items_holdings_instances (shelving_title);
 
-CREATE INDEX ON local.items_holdings_instances (cataloged_date);
+CREATE INDEX ON folio_reporting.items_holdings_instances (cataloged_date);
 
-CREATE INDEX ON local.items_holdings_instances (index_title);
+CREATE INDEX ON folio_reporting.items_holdings_instances (index_title);
 
-CREATE INDEX ON local.items_holdings_instances (title);
+CREATE INDEX ON folio_reporting.items_holdings_instances (title);
 
-CREATE INDEX ON local.items_holdings_instances (loan_type_id);
+CREATE INDEX ON folio_reporting.items_holdings_instances (loan_type_id);
 
-CREATE INDEX ON local.items_holdings_instances (loan_type_name);
+CREATE INDEX ON folio_reporting.items_holdings_instances (loan_type_name);
 
