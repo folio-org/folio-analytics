@@ -70,12 +70,12 @@ To provide **title** counts for **non-electronic** resources cataloged in the In
 * Call number:
   * Holdings call number types name (e.g., LC, NLM, Dewey Decimal, etc.)
   * Holdings call number (note that the call number field is a text string only (no breakouts); you may want to use truncation symbols as suggested in the filter to get at call number ranges)
-  * Holdings acquisition method (e.g., gift, deposit, membership, etc.)
+* Holdings acquisition method (e.g., gift, deposit, membership, etc.)
   </details>
   
   #### Other fields you might want to filter on in results:
-    * Instance previously held  (indicates the item was "previously held" in terms of, for example, HathiTrust digital access)
-    * Super relation type name  (content within titles is sometimes analyzed (cataloged) as part of the larger, parent title; if you need to avoid including one level in your count in such cases, this and the following measure will allow you to exclude one or the other) (This query assumes that a relationship type is always included.)
+    * Instance previously held  (indicates the item was "previously held" in print in terms of, for example, HathiTrust digital access)
+    * Super relation type name  (content within titles is sometimes analyzed (cataloged) as part of the larger, parent title; if you need to avoid including one level in your count in such cases, this and the following measure will allow you to exclude one or the other)
     * Sub relation type name (see immediately above)
 
 ## Output
