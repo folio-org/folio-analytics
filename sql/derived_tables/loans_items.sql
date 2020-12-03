@@ -63,7 +63,7 @@ SELECT
     ii.number_of_pieces,
     ii.permanent_loan_type_id,
     iltp.name AS permanent_loan_type_name,
-    ii.temporary_loan_type_id,
+    json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
     iltt.name AS temporary_loan_type_name
 FROM
     public.circulation_loans AS cl
@@ -76,9 +76,9 @@ FROM
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
-    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkin_service_point_id = ispo.id
+    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkout_service_point_id = ispo.id
     LEFT JOIN public.inventory_service_points AS ispt ON ii.in_transit_destination_service_point_id = ispt.id
-    LEFT JOIN public.inventory_loan_types AS iltp ON ii.temporary_loan_type_id = iltp.id
+    LEFT JOIN public.inventory_loan_types AS iltp ON json_extract_path_text(ii.data, 'temporaryLoanTypeId') = iltp.id
     LEFT JOIN public.inventory_loan_types AS iltt ON ii.permanent_loan_type_id = iltt.id
     LEFT JOIN public.feesfines_overdue_fines_policies AS ffo ON cl.overdue_fine_policy_id = ffo.id
     LEFT JOIN public.feesfines_lost_item_fees_policies AS ffl ON cl.lost_item_policy_id = ffl.id;
