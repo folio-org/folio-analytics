@@ -39,7 +39,7 @@ SELECT
     ii.number_of_pieces,
     ii.permanent_loan_type_id AS item_permanent_loan_type_id,
     iplt.name AS item_permanent_loan_type_name,
-    ii.temporary_loan_type_id AS item_temporary_loan_type_id,
+    json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS item_temporary_loan_type_id,
     itlt.name AS item_temporary_loan_type_name
 FROM
     public.circulation_requests AS cr
@@ -52,7 +52,7 @@ FROM
     LEFT JOIN inventory_locations AS ipl ON ii.permanent_location_id = ipl.id
     LEFT JOIN inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN inventory_loan_types AS iplt ON ii.permanent_loan_type_id = iplt.id
-    LEFT JOIN inventory_loan_types AS itlt ON ii.temporary_loan_type_id = itlt.id
+    LEFT JOIN inventory_loan_types AS itlt ON json_extract_path_text(ii.data, 'temporaryLoanTypeId') = itlt.id
     LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id;
 
 CREATE INDEX ON folio_reporting.requests_items (request_id);
