@@ -76,7 +76,7 @@ FROM
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
-    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkin_service_point_id = ispo.id
+    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkout_service_point_id = ispo.id
     LEFT JOIN public.inventory_service_points AS ispt ON ii.in_transit_destination_service_point_id = ispt.id
     LEFT JOIN public.inventory_loan_types AS iltp ON ii.temporary_loan_type_id = iltp.id
     LEFT JOIN public.inventory_loan_types AS iltt ON ii.permanent_loan_type_id = iltt.id
