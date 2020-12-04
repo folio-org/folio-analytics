@@ -12,7 +12,7 @@
 Is this correct??: As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
 
 ## Purpose
-To provide **item** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
+To provide summary **item** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
 
 <details>
   <summary>Click to read more!</summary>
@@ -26,15 +26,15 @@ To provide **item** counts for **non-electronic** resources cataloged in the Inv
   ## Filters
   
   #### Hardcoded filters (assumptions; in the where clause):
-* Excludes: e-resources; suppressed instance records, and instance records with only suppressed holdings records.  
+* Excludes: e-resources; suppressed instance records, and suppressed holdings records (when field becomes available).  
 
 <details>
   <summary>Click to read more!</summary>
   
-  * Each instance has a holdings record.  Each holdings record has a permanent location.
+  * Each holdings record has a permanent location.
   * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes instance records that do not have at least one unsuppressed holdings record (all holdings discovery suppress values are “true”)
-  * This query is intended to exclude e-resources. It excludes instance records with instance format names of “computer – online resource” or “ISNULL,”  and excludes instance records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
+  * [When this field becomes available:] Excludes suppressed holdings recor
+  * This query is intended to exclude e-resources. It excludes records with instance format names of “computer – online resource” or “ISNULL,”  and excludes records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   
 #### Parameter filters (at the top of the query):
@@ -44,15 +44,24 @@ To provide **item** counts for **non-electronic** resources cataloged in the Inv
 <details>
   <summary>Click to read more!</summary>
   
-  * Instance statuses:
-    * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
+  * Statuses:
+    * Instance statuses:
+      * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
+    * Holdings
+    * Items
+      * Item status filter (e.g., "available," "awaiting pikcup," "checked out," "declared lost," etc.)
   * Resource format: (Reporters need to know how their institution's records format information locally; it may use one of more of these commonly used fields, but not all of them.)
-    * Instance types name (e.g., text, video, computer dataset, etc.)  (query allows up to three selected simultaneously)
-    * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
-    * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
-    * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-    * Instance statistical code name
-    * Holdings statistical code name
+    * Instance formats:
+      * Instance types name (e.g., text, video, computer dataset, etc.)  (query allows up to three selected simultaneously)
+      * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
+      * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
+      * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
+      * Instance statistical code name
+      * (see also statistical codes)
+    * Holdings formats:
+    
+    * Items formats:
+    Holdings statistical code name
     * Inventory modes of issuance name (e.g., serial, integrating resource, single unit, unspecified, etc.)
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
 * Receipt status:
@@ -61,6 +70,8 @@ To provide **item** counts for **non-electronic** resources cataloged in the Inv
   * Languages (will include a value for each language used; if more than one language, the first is the primary language if there is one; use %% as wildcards; use, e.g., "%%eng%%" to get all titles that are fully or partially in english.)
 * Date:
   * Cataloged date (allows you to specify start and end date)
+  * Item created date (allows you to specify start and end date)
+  * item status date (allows you to specify start and end date)
 * Location: (where housed) (institutions with a shared consortial database may need to filter with their institutional location information to verify ownership (i.e., presence of instance record alone not enough))
   * Holdings permanent location id (typically the lowest level in the location hierarchy -- the specific location within a library)
   * Holdings location name
@@ -107,6 +118,10 @@ Aggregation: This query provides counts grouped by:
 * Instance super relationship type name
 * Instance sub relationship type id
 * Instance sub relationship type name
+
+## To be done
+* The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
+* do we need to add item material type category and source?
 
 ## Requests not yet addressed
 <details>
