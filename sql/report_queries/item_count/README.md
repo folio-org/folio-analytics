@@ -12,7 +12,7 @@
 Is this correct??: As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
 
 ## Purpose
-To provide summary **item** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
+To provide summary **item** and **pieces** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
 
 <details>
   <summary>Click to read more!</summary>
@@ -44,34 +44,42 @@ To provide summary **item** counts for **non-electronic** resources cataloged in
 <details>
   <summary>Click to read more!</summary>
   
-  * Statuses:
-    * Instance statuses:
-      * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
-    * Holdings
-    * Items
-      * Item status filter (e.g., "available," "awaiting pikcup," "checked out," "declared lost," etc.)
-  * Resource format: (Reporters need to know how their institution's records format information locally; it may use one of more of these commonly used fields, but not all of them.)
-    * Instance formats:
-      * Instance types name (e.g., text, video, computer dataset, etc.)  (query allows up to three selected simultaneously)
-      * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
-      * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
-      * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-      * Instance statistical code name
-      * (see also statistical codes)
-    * Holdings formats:
-    
-    * Items formats:
-    Holdings statistical code name
+ * Statuses:
+   * Instance statuses:
+     * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
+   * Holdings
+     * Holdings receipt status (e.g., "not currently received," etc.)
+   * Items
+     * Item status filter (e.g., "available," "awaiting pikcup," "checked out," "declared lost," etc.)
+* Resource format: (Reporters need to know how their institution's records format information locally; it may use one of more of these commonly used fields, but not all of them.)
+  * Instance formats:
+    * Instance types name (e.g., text, video, computer dataset, etc.)  (query allows up to three selected simultaneously)
+    * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
+    * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
+    * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
+    * Instance statistical code name
+    * (see also statistical codes)
     * Inventory modes of issuance name (e.g., serial, integrating resource, single unit, unspecified, etc.)
+  * Holdings formats:
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
-* Receipt status:
-  * Holdings receipt status (e.g., not currently received)
+    * (see also statical codes)
+  * Items formats:
+    * Item material type source
+    * Item material type category
+    * item material type name
+* Statistical codes
+  * Instance statistical code type
+  * Instance statistical code name
+  * Holdings statistical code name
+  * Item statistical code (e.g., "books," "serials")
+  * Item statistical code name (e.g., "Book, print (books)," "Serial, print (serials)"
 * Language:
   * Languages (will include a value for each language used; if more than one language, the first is the primary language if there is one; use %% as wildcards; use, e.g., "%%eng%%" to get all titles that are fully or partially in english.)
 * Date:
   * Cataloged date (allows you to specify start and end date)
   * Item created date (allows you to specify start and end date)
   * item status date (allows you to specify start and end date)
+  * Item chronology (may help you to identify items barcoded retrospectively, vs. currently)
 * Location: (where housed) (institutions with a shared consortial database may need to filter with their institutional location information to verify ownership (i.e., presence of instance record alone not enough))
   * Holdings permanent location id (typically the lowest level in the location hierarchy -- the specific location within a library)
   * Holdings location name
@@ -90,6 +98,24 @@ To provide summary **item** counts for **non-electronic** resources cataloged in
 
 ## Output
 Aggregation: This query provides counts grouped by:
+* Item chronology (COMMENT THIS OUT?  SEE BELOW)
+* Item status name (COMMENT THIS OUT?  SEE BELOW)
+* Item material type id
+* Item material type
+* Item statistical code id
+* Item statistical code
+* Item statistical code name
+* Holdings type id
+* Holdings type name
+* Holdings call number type id
+* Holdings call number type name
+* Holdings statistical code id
+* Holdings statistical code
+* Holdings statistical code name
+* Holdings receipt status
+
+
+
 * Instance type id
 * Instance type name
 * Mode of issuance id
@@ -104,14 +130,9 @@ Aggregation: This query provides counts grouped by:
 * Instance nature of content id
 * Instance nature of content code
 * Instance nature of content name
-* Holdings type id
-* Holdings type name
-* Holdings call number type id
-* Holdings call number type name
-* Holdings statistical code id
-* Holdings statistical code
-* Holdings statistical code name
-* Holdings receipt status
+* 
+* 
+*
 * Inventory locations name
 * Instance previously held
 * Instance super relationship type id
@@ -119,9 +140,47 @@ Aggregation: This query provides counts grouped by:
 * Instance sub relationship type id
 * Instance sub relationship type name
 
+    ditem.chronology,
+    ditem.status_name,
+    ditem.material_type_id,
+    ditem.material_type_name,
+    ditsc.statistical_code_id,
+    ditsc.statistical_code,
+    ditsc.statistical_code_name,
+    dhld.type_id,
+    dhld.type_name,
+    dhld.call_number_type_id,
+    dhld.call_number_type_name,
+    dhsc.statistical_code_id,
+    dhsc.statistical_code,
+    dhsc.statistical_code_name,
+    dhld.receipt_status,
+    loc.location_name,
+    inst.type_id,
+    inst.type_name,
+    inst.mode_of_issuance_id,
+    inst.mode_of_issuance_name,
+    inform.format_id,
+    inform.format_code,
+    inform.format_name,
+    first_language,
+    insc.statistical_code_id,
+    insc.statistical_code,
+    insc.statistical_code_name,
+    innc.nature_of_content_term_id,
+    innc.nature_of_content_term_name,
+    inst.previously_held,
+    super_relation.relationship_type_id,
+    super_relation.relationship_type_name,
+    sub_relation.relationship_type_id,
+    sub_relation.relationship_type_name;
+
 ## To be done
-* The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
-* do we need to add item material type category and source?
+   * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
+   * do we need to add item material type category and source?
+   * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
+   * Should the order be item, holdings, instance?
+   * are we doing to need more than location name? For this and for bib?
 
 ## Requests not yet addressed
 <details>
