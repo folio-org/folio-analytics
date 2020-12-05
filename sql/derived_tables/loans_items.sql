@@ -33,7 +33,7 @@ SELECT
     ispo.discovery_display_name AS checkout_service_point_name,
     cl.item_effective_location_id_at_check_out,
     icl.name AS item_effective_location_name_at_check_out,
-    ii.in_transit_destination_service_point_id,
+    json_extract_path_text(ii.data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
     ispt.discovery_display_name AS in_transit_destination_service_point_name,
     ii.effective_location_id AS current_item_effective_location_id,
     iel.name AS current_item_effective_location_name,
@@ -50,17 +50,17 @@ SELECT
     cl.patron_group_id_at_checkout,
     ug.group AS patron_group_name,
     cl.user_id,
-    cl.proxy_user_id,
+    json_extract_path_text(cl.data, 'proxyUserId') AS proxy_user_id,
     ii.barcode,
-    ii.chronology,
+    json_extract_path_text(ii.data, 'chronology') AS chronology,
     ii.copy_number,
-    ii.enumeration,
+    json_extract_path_text(ii.data, 'enumeration') AS enumeration,
     ii.holdings_record_id,
     ii.hrid,
     ii.item_level_call_number,
     ii.material_type_id,
     imt.name AS material_type_name,
-    ii.number_of_pieces,
+    json_extract_path_text(ii.data, 'numberOfPieces') AS number_of_pieces,
     ii.permanent_loan_type_id,
     iltp.name AS permanent_loan_type_name,
     json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
@@ -77,7 +77,7 @@ FROM
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
     LEFT JOIN public.inventory_service_points AS ispo ON cl.checkout_service_point_id = ispo.id
-    LEFT JOIN public.inventory_service_points AS ispt ON ii.in_transit_destination_service_point_id = ispt.id
+    LEFT JOIN public.inventory_service_points AS ispt ON json_extract_path_text(ii.data, 'inTransitDestinationServicePointId') = ispt.id
     LEFT JOIN public.inventory_loan_types AS iltp ON json_extract_path_text(ii.data, 'temporaryLoanTypeId') = iltp.id
     LEFT JOIN public.inventory_loan_types AS iltt ON ii.permanent_loan_type_id = iltt.id
     LEFT JOIN public.feesfines_overdue_fines_policies AS ffo ON cl.overdue_fine_policy_id = ffo.id
