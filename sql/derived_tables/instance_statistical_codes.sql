@@ -6,9 +6,11 @@ WITH instances_statistical_codes AS (
     SELECT
         instance.id AS instance_id,
         instance.hrid AS instance_hrid,
-        json_array_elements_text(json_extract_path(instance.data, 'statisticalCodeIds')) AS statistical_code_id
+        statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_instances AS instance
+        CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds'))
+            AS statistical_code_ids(data)
 )
 SELECT
     instances_statistical_codes.instance_id,
