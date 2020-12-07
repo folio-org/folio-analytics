@@ -14,10 +14,10 @@ WITH items AS (
         hrid,
         json_extract_path_text(data, 'accessionNumber') AS accession_number,
         barcode,
-        chronology,
+        json_extract_path_text(data, 'chronology') AS chronology,
         copy_number,
-        enumeration,
-        in_transit_destination_service_point_id,
+        json_extract_path_text(data, 'enumeration') AS enumeration,
+        json_extract_path_text(data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
         json_extract_path_text(data, 'itemIdentifier') AS item_identifier,
         item_level_call_number,
         json_extract_path_text(data, 'itemLevelCallNumberTypeId') AS item_level_call_number_type_id,
@@ -27,7 +27,7 @@ WITH items AS (
 		json_extract_path_text(data, 'effectiveCallNumberComponents', 'typeID') AS effective_call_number_type_id,
         json_extract_path_text(data, 'itemDamagedStatusId') AS item_damaged_status_id,
         material_type_id,
-        number_of_pieces,
+        json_extract_path_text(data, 'numberOfPieces') AS number_of_pieces,
         json_extract_path_text(data, 'permanentLoanTypeId') AS permanent_loan_type_id,
         json_extract_path_text(data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
         json_extract_path_text(data, 'permanentLocationId') AS permanent_location_id,
@@ -117,7 +117,7 @@ CREATE INDEX ON folio_reporting.item_ext (call_number);
 
 CREATE INDEX ON folio_reporting.item_ext (call_number_type_id);
 
-CREATE INDEX ON FOLIO_REPORTING.item_ext (call_number_type_name);
+CREATE INDEX ON folio_reporting.item_ext (call_number_type_name);
 
 CREATE INDEX ON folio_reporting.item_ext (effective_call_number_prefix);
 

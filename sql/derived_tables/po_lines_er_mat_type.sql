@@ -17,9 +17,9 @@ WITH temp_pol_er_mat_type AS (
         temp_pol_er_mat_type AS tpemt
     LEFT JOIN inventory_material_types AS imt ON imt.id = tpemt.pol_er_mat_type;
 
-CREATE INDEX ON FOLIO_REPORTING.po_lines_er_mat_type (pol_id);
+CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_id);
 
-CREATE INDEX ON FOLIO_REPORTING.po_lines_er_mat_type (pol_er_mat_type_id);
+CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_er_mat_type_id);
 
-CREATE INDEX ON FOLIO_REPORTING.po_lines_er_mat_type (pol_er_mat_type_name);
+CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_er_mat_type_name);
 

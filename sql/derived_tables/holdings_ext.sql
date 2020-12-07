@@ -15,7 +15,7 @@ WITH holdings AS (
         call_number_type_id,
         json_extract_path_text(data, 'copyNumber') AS copy_number,
         holdings_type_id,
-        ill_policy_id,
+        json_extract_path_text(data, 'illPolicyId') AS ill_policy_id,
         instance_id,
         permanent_location_id,
         json_extract_path_text(data, 'receiptStatus') AS receipt_status,
