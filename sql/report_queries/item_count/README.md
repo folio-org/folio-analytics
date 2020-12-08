@@ -5,14 +5,14 @@
 * [Purpose](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#purpose)
 * [Filters](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#filters)
 * [Output](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#output)
-* [Requests not yet addressed]
+* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/item_count/README.md#requests-not-yet-addressed)
 
 
 ## Status
-Is this correct??: As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
+Is this correct?: As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
 
 ## Purpose
-To provide summary **item** and **pieces** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
+To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
 
 <details>
   <summary>Click to read more!</summary>
@@ -33,18 +33,19 @@ To provide summary **item** and **pieces** counts for **non-electronic** resourc
   
   * Each holdings record has a permanent location.
   * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes suppressed holdings recor
+  * [When this field becomes available:] Excludes suppressed holdings records
+  * HOW ARE WE EXCLUDING WITHDRAWN ITEMS?
   * This query is intended to exclude e-resources. It excludes records with instance format names of “computer – online resource” or “ISNULL,”  and excludes records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   
 #### Parameter filters (at the top of the query):
 
-* Through parameter filters, this SQL allows you to easily type in text to filter by: instance status, resource format, receipt status, language, date, location, call number and holdings acquisition method.  
+* Through parameter filters, this SQL allows you to easily type in text to filter by: record status, resource format, receipt status, statistical codes, language, dates, location, call number and holdings acquisition method.  
 
 <details>
   <summary>Click to read more!</summary>
   
- * Statuses:
+ * Record status:
    * Instance statuses:
      * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
    * Holdings
@@ -57,16 +58,16 @@ To provide summary **item** and **pieces** counts for **non-electronic** resourc
     * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
     * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
     * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-    * Instance statistical code name
-    * (see also statistical codes)
     * Inventory modes of issuance name (e.g., serial, integrating resource, single unit, unspecified, etc.)
+    * (see also statistical codes)
   * Holdings formats:
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
-    * (see also statical codes)
+    * (see also statistical codes)
   * Items formats:
     * Item material type source
     * Item material type category
     * item material type name
+    * (see also statistical codes)
 * Statistical codes
   * Instance statistical code type
   * Instance statistical code name
@@ -75,7 +76,7 @@ To provide summary **item** and **pieces** counts for **non-electronic** resourc
   * Item statistical code name (e.g., "Book, print (books)," "Serial, print (serials)"
 * Language:
   * Languages (will include a value for each language used; if more than one language, the first is the primary language if there is one; use %% as wildcards; use, e.g., "%%eng%%" to get all titles that are fully or partially in english.)
-* Date:
+* Dates:
   * Cataloged date (allows you to specify start and end date)
   * Item created date (allows you to specify start and end date)
   * item status date (allows you to specify start and end date)
@@ -111,7 +112,7 @@ Aggregation: This query provides counts grouped by:
    * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
    * do we need to add item material type category and source?
    * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
-   * Should the order be item, holdings, instance?
+   * Should the order be item, holdings, instance?  Ordering of parameters OK?
    * are we doing to need more than location name? For this and for bib?
    </details>
 
