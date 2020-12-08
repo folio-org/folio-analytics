@@ -104,12 +104,16 @@ Aggregation: This query provides counts grouped by:
 * Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code  (DO WE NEED?); Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
   
 ## To be done
+<details>
+  <summary>Click to read more!</summary>
+  
    * What is the status of the SQL?
    * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
    * do we need to add item material type category and source?
    * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
    * Should the order be item, holdings, instance?
    * are we doing to need more than location name? For this and for bib?
+   </details>
 
 ## Requests not yet addressed
 <details>
