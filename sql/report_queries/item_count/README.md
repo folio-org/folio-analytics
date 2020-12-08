@@ -1,10 +1,10 @@
 # BEING UPDATED FROM THE TITLE COUNT QUERY 12/2/20  Documentation for the RM item count query
 
 ## Contents
-* [Status]
-* [Purpose]
-* [Filters]
-* [Output]
+* [Status](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#status)
+* [Purpose](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#purpose)
+* [Filters](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#filters)
+* [Output](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#output)
 * [Requests not yet addressed]
 
 
@@ -17,7 +17,7 @@ To provide summary **item** and **pieces** counts for **non-electronic** resourc
 <details>
   <summary>Click to read more!</summary>
   
-  * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item counts, such as those that record bibliographic format and library location information. Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
+  * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item counts, such as those that record bibliographic format and library location information. Your library will not need all of these measures.  Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
   * Queries to count e-resources (whether tracked through the ERM or the Inventory) are available separately. Each reporter must know where their institution’s various resources are tracked and should find the needed reports as appropriate, adding together counts if needed, and avoiding any duplication if possible.
   * Note that it is generally assumed that if you need a holdings count as of a certain date, you take it on that date; while you may be able to use processing dates to exclude resources newly added after a certain date, you cannot get back titles that were withdrawn or transferred.
   * Local and national definitions can be updated from year to year; be sure to review for needed changes.
@@ -98,84 +98,13 @@ To provide summary **item** and **pieces** counts for **non-electronic** resourc
 
 ## Output
 Aggregation: This query provides counts grouped by:
-* Item chronology (COMMENT THIS OUT?  SEE BELOW)
-* Item status name (COMMENT THIS OUT?  SEE BELOW)
-* Item material type id
-* Item material type
-* Item statistical code id
-* Item statistical code
-* Item statistical code name
-* Holdings type id
-* Holdings type name
-* Holdings call number type id
-* Holdings call number type name
-* Holdings statistical code id
-* Holdings statistical code
-* Holdings statistical code name
-* Holdings receipt status
-
-
-
-* Instance type id
-* Instance type name
-* Mode of issuance id
-* Mode of issuance name
-* Instance format id
-* Instance format code
-* Instance format name
-* Instance language (first)
-* Instance statistical code id
-* Instance statistical code
-* Instance statistical code name
-* Instance nature of content id
-* Instance nature of content code
-* Instance nature of content name
-* 
-* 
-*
-* Inventory locations name
-* Instance previously held
-* Instance super relationship type id
-* Instance super relationship type name
-* Instance sub relationship type id
-* Instance sub relationship type name
-
-    ditem.chronology,
-    ditem.status_name,
-    ditem.material_type_id,
-    ditem.material_type_name,
-    ditsc.statistical_code_id,
-    ditsc.statistical_code,
-    ditsc.statistical_code_name,
-    dhld.type_id,
-    dhld.type_name,
-    dhld.call_number_type_id,
-    dhld.call_number_type_name,
-    dhsc.statistical_code_id,
-    dhsc.statistical_code,
-    dhsc.statistical_code_name,
-    dhld.receipt_status,
-    loc.location_name,
-    inst.type_id,
-    inst.type_name,
-    inst.mode_of_issuance_id,
-    inst.mode_of_issuance_name,
-    inform.format_id,
-    inform.format_code,
-    inform.format_name,
-    first_language,
-    insc.statistical_code_id,
-    insc.statistical_code,
-    insc.statistical_code_name,
-    innc.nature_of_content_term_id,
-    innc.nature_of_content_term_name,
-    inst.previously_held,
-    super_relation.relationship_type_id,
-    super_relation.relationship_type_name,
-    sub_relation.relationship_type_id,
-    sub_relation.relationship_type_name;
-
+* Item chronology (COMMENT THIS OUT?  SEE BELOW); Item status name (COMMENT THIS OUT?  SEE BELOW); Item material type id; Item material type name; Item statistical code id; Item statistical code; Item statistical code name;
+* Holdings type id; Holdings type name; Holdings call number type id; Holdings call number type name; Holdings statistical code id; Holdings statistical code; Holdings statistical code name; Holdings receipt status;
+* Location name;
+* Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code  (DO WE NEED?); Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
+  
 ## To be done
+   * What is the status of the SQL?
    * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
    * do we need to add item material type category and source?
    * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
@@ -187,7 +116,6 @@ Aggregation: This query provides counts grouped by:
   <summary>Click to read more!</summary>
   
   See this page for additional information recorded by the Resource Management reporters: https://wiki.folio.org/x/OA8uAg 
-  * Counting separately multiple formats cataloged on the same instance record (maybe by unique instances and unique holdings formats?)
   * Information tracked possibly through holdings records notes?: precious bindings, copy notes, dedications, inscriptions, left by decedents? Use a filter with truncation. Which measures each institution uses to track this information could differ.
   * When fields available?:
     * When the holdings discover suppress field becomes available, add it to the WHERE hardcoded filters and update comment.
@@ -200,5 +128,4 @@ Aggregation: This query provides counts grouped by:
     * has retention requirements / is an obligatory copy (have retention policy field on holdings?)
     * is government document (how this will be addressed by institutions can vary greatly; statistical code, location, source record (not yet available; e.g., MARC 008, 086 for federal US/Canadian docs))
     * acquired as part of a project
-    * identifying records for collections like CRL if in catalog, so can be excluded for national reporting
-  </details>
+      </details>
