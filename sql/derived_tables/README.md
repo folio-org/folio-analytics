@@ -28,13 +28,14 @@ There are various ways the queries can be executed.  One method is:
 cd folio-analytics/sql/derived_tables
 git checkout 0.9-release
 git pull
+echo > logfile
 for f in $( ls *.sql ); do
-    echo ""
-    echo "======== $f ========"
-    echo ""
+    echo >> logfile
+    echo "======== $f ========" >> logfile
+    echo >> logfile
     cat $f > tmpfile
     echo "GRANT SELECT ON ALL TABLES IN SCHEMA folio_reporting TO ldp;" >> tmpfile
-    psql ldp -U ldpreport -a -1 -f tmpfile
+    psql ldp -U ldpreport -a -1 -f tmpfile >> logfile 2>&1
 done
 ```
 
