@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS local.loans_items;
+DROP TABLE IF EXISTS folio_reporting.loans_items;
 
 -- Create a derived table that contains all items from loans and adds
 -- item, location, and other loan-related information
@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS local.loans_items;
 -- Location names are from the items table.  They show location of the
 -- item right now vs. when item was checked out.
 --
-CREATE TABLE local.loans_items AS
+CREATE TABLE folio_reporting.loans_items AS
 SELECT
     cl.id AS loan_id,
     cl.item_id,
@@ -33,7 +33,7 @@ SELECT
     ispo.discovery_display_name AS checkout_service_point_name,
     cl.item_effective_location_id_at_check_out,
     icl.name AS item_effective_location_name_at_check_out,
-    ii.in_transit_destination_service_point_id,
+    json_extract_path_text(ii.data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
     ispt.discovery_display_name AS in_transit_destination_service_point_name,
     ii.effective_location_id AS current_item_effective_location_id,
     iel.name AS current_item_effective_location_name,
@@ -50,20 +50,20 @@ SELECT
     cl.patron_group_id_at_checkout,
     ug.group AS patron_group_name,
     cl.user_id,
-    cl.proxy_user_id,
+    json_extract_path_text(cl.data, 'proxyUserId') AS proxy_user_id,
     ii.barcode,
-    ii.chronology,
+    json_extract_path_text(ii.data, 'chronology') AS chronology,
     ii.copy_number,
-    ii.enumeration,
+    json_extract_path_text(ii.data, 'enumeration') AS enumeration,
     ii.holdings_record_id,
     ii.hrid,
     ii.item_level_call_number,
     ii.material_type_id,
     imt.name AS material_type_name,
-    ii.number_of_pieces,
+    json_extract_path_text(ii.data, 'numberOfPieces') AS number_of_pieces,
     ii.permanent_loan_type_id,
     iltp.name AS permanent_loan_type_name,
-    ii.temporary_loan_type_id,
+    json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
     iltt.name AS temporary_loan_type_name
 FROM
     public.circulation_loans AS cl
@@ -76,36 +76,36 @@ FROM
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
-    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkin_service_point_id = ispo.id
-    LEFT JOIN public.inventory_service_points AS ispt ON ii.in_transit_destination_service_point_id = ispt.id
-    LEFT JOIN public.inventory_loan_types AS iltp ON ii.temporary_loan_type_id = iltp.id
+    LEFT JOIN public.inventory_service_points AS ispo ON cl.checkout_service_point_id = ispo.id
+    LEFT JOIN public.inventory_service_points AS ispt ON json_extract_path_text(ii.data, 'inTransitDestinationServicePointId') = ispt.id
+    LEFT JOIN public.inventory_loan_types AS iltp ON json_extract_path_text(ii.data, 'temporaryLoanTypeId') = iltp.id
     LEFT JOIN public.inventory_loan_types AS iltt ON ii.permanent_loan_type_id = iltt.id
     LEFT JOIN public.feesfines_overdue_fines_policies AS ffo ON cl.overdue_fine_policy_id = ffo.id
     LEFT JOIN public.feesfines_lost_item_fees_policies AS ffl ON cl.lost_item_policy_id = ffl.id;
 
-CREATE INDEX ON local.loans_items (item_status);
+CREATE INDEX ON folio_reporting.loans_items (item_status);
 
-CREATE INDEX ON local.loans_items (loan_date);
+CREATE INDEX ON folio_reporting.loans_items (loan_date);
 
-CREATE INDEX ON local.loans_items (loan_due_date);
+CREATE INDEX ON folio_reporting.loans_items (loan_due_date);
 
-CREATE INDEX ON local.loans_items (current_item_effective_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_name);
 
-CREATE INDEX ON local.loans_items (current_item_permanent_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_name);
 
-CREATE INDEX ON local.loans_items (current_item_temporary_location_name);
+CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_name);
 
-CREATE INDEX ON local.loans_items (checkin_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_name);
 
-CREATE INDEX ON local.loans_items (checkout_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (checkout_service_point_name);
 
-CREATE INDEX ON local.loans_items (in_transit_destination_service_point_name);
+CREATE INDEX ON folio_reporting.loans_items (in_transit_destination_service_point_name);
 
-CREATE INDEX ON local.loans_items (patron_group_name);
+CREATE INDEX ON folio_reporting.loans_items (patron_group_name);
 
-CREATE INDEX ON local.loans_items (material_type_name);
+CREATE INDEX ON folio_reporting.loans_items (material_type_name);
 
-CREATE INDEX ON local.loans_items (permanent_loan_type_name);
+CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_name);
 
-CREATE INDEX ON local.loans_items (temporary_loan_type_name);
+CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_name);
 

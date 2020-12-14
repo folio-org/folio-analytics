@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS local.loans_renewal_count;
+DROP TABLE IF EXISTS folio_reporting.loans_renewal_count;
 
 -- Create a derived table that contains all items from inventory_items
 -- and adds circulation info (total loans and renewals) from
 -- circulation_loans; add in a date to show when the report was last
 -- run and fill circulation nulls with zero.
-CREATE TABLE local.loans_renewal_count AS
+CREATE TABLE folio_reporting.loans_renewal_count AS
 WITH loan_count AS (
     SELECT
         item_id,
@@ -24,11 +24,11 @@ FROM
     inventory_items AS it
     LEFT JOIN loan_count AS lc ON it.id = lc.item_id;
 
-CREATE INDEX ON local.loans_renewal_count (current_as_of_date);
+CREATE INDEX ON folio_reporting.loans_renewal_count (current_as_of_date);
 
-CREATE INDEX ON local.loans_renewal_count (item_id);
+CREATE INDEX ON folio_reporting.loans_renewal_count (item_id);
 
-CREATE INDEX ON local.loans_renewal_count (num_loans);
+CREATE INDEX ON folio_reporting.loans_renewal_count (num_loans);
 
-CREATE INDEX ON local.loans_renewal_count (num_renewals);
+CREATE INDEX ON folio_reporting.loans_renewal_count (num_renewals);
 
