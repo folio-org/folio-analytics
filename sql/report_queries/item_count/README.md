@@ -1,4 +1,4 @@
-# BEING UPDATED FROM THE TITLE COUNT QUERY 12/2/20  Documentation for the RM item count query
+# Documentation for the RM item count query (UXPROD-2396)
 
 ## Contents
 * [Status](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#status)
@@ -9,15 +9,17 @@
 
 
 ## Status
-Is this correct?: As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
+As of December 2020, this query has be updated to use the relevant derived tables.  WHAT ELSE SHOULD BE SAID?
 
 ## Purpose
-To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
+To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.
 
 <details>
   <summary>Click to read more!</summary>
   
-  * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item counts, such as those that record bibliographic format and library location information. Your library will not need all of these measures.  Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
+  * The piece counts of item records are summed for the piece counts (which assumes that all item records have peice counts, even if only one piece).
+  * LOCATION INFORMMATION IS assigned by permanent location.
+  * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item and piece counts, such as those that record bibliographic format and library location information. Your library will not need all of these measures.  Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
   * Queries to count e-resources (whether tracked through the ERM or the Inventory) are available separately. Each reporter must know where their institution’s various resources are tracked and should find the needed reports as appropriate, adding together counts if needed, and avoiding any duplication if possible.
   * Note that it is generally assumed that if you need a holdings count as of a certain date, you take it on that date; while you may be able to use processing dates to exclude resources newly added after a certain date, you cannot get back titles that were withdrawn or transferred.
   * Local and national definitions can be updated from year to year; be sure to review for needed changes.
@@ -26,7 +28,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   ## Filters
   
   #### Hardcoded filters (assumptions; in the where clause):
-* Excludes: e-resources; suppressed instance records, and suppressed holdings records (when field becomes available).  
+* Excludes: e-resources; suppressed instance records, and suppressed holdings records (when field becomes available).
 
 <details>
   <summary>Click to read more!</summary>
@@ -39,8 +41,8 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   </details>
   
 #### Parameter filters (at the top of the query):
-
-* Through parameter filters, this SQL allows you to easily type in text to filter by: record status, resource format, receipt status, statistical codes, language, dates, location, call number and holdings acquisition method.  
+ 
+* Through parameter filters, this SQL allows you to easily type in text to filter by: record status (including receipt status), resource format, statistical codes, language, dates, location, call number and holdings acquisition method.  
 
 <details>
   <summary>Click to read more!</summary>
@@ -57,21 +59,23 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
     * Instance types name (e.g., text, video, computer dataset, etc.)  (query allows up to three selected simultaneously)
     * Instance formats name (e.g., video – videocassette, unmediated – sheet, microform – microfilm roll, etc.)  (query allows up to three selected simultaneously)
     * Instance nature of content terms (e.g., autobiography, journal, newspaper, research report, etc.)
-    * Instance statistical code types name (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
     * Inventory modes of issuance name (e.g., serial, integrating resource, single unit, unspecified, etc.)
     * (see also statistical codes)
   * Holdings formats:
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
     * (see also statistical codes)
   * Items formats:
-    * Item material type source
-    * Item material type category
-    * item material type name
+    * ITEM MATERIAL TYPE SOURCE OR IS THIS MATERIAL TYPE SOURCE IN GENERAL (SEE BELOW)?
+    * ITEM MATERIAL TYPE CATEGORY OR IS THIS MATERIAL TYPE CATEGORY IN GENERAL? IS IT EVEN IMPLEMENTED?  IN MM LIST.
+    * ITEM MATERIAL TYPE NAME? AVAIlABLE IN ITEM EXT
+    * Item discription of pieces
     * (see also statistical codes)
 * Statistical codes
-  * Instance statistical code type
+  * SHOULD WE ADD INSTANCE STATISTICAL CODE TYPE NAME? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Instance statistical code name
+  * SHOULD WE ADD HOLDINGS STATISTICAL CODE TYPE NAME?  (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Holdings statistical code name
+  * SHOULD WE ADD ITEM STATISTICAL CODE TYPE NAME?  (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Item statistical code (e.g., "books," "serials")
   * Item statistical code name (e.g., "Book, print (books)," "Serial, print (serials)"
 * Language:
@@ -103,17 +107,20 @@ Aggregation: This query provides counts grouped by:
 * Holdings type id; Holdings type name; Holdings call number type id; Holdings call number type name; Holdings statistical code id; Holdings statistical code; Holdings statistical code name; Holdings receipt status;
 * Location name;
 * Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code  (DO WE NEED?); Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
-  
+
 ## To be done
 <details>
   <summary>Click to read more!</summary>
   
    * What is the status of the SQL?
-   * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
-   * do we need to add item material type category and source?
+   * ASK JENNIFER ABOUT THESE:
+     * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
+     * How will bound with be handled?
+     * do we need to add item material type category and source (SEEN IN MM LIST)?  It looks like this links to the Inventory material type table?  There is no category there. The source given is FOLIO.  Here is the link to the list the MM table provides: https://docs.google.com/spreadsheets/d/1scRQl09jroOy-c_emITk3EQ6lkj7XPRlkupPNuL-FfM/edit#gid=1928495227  where category and material type look of use.
+     * Do we need to add inventory statistical code type names for instance, holdings and item?  Looks like each of those reference the same satistical code tables, AND THAT LOCAL DERIVED TABLES WERE CREATED FOR EACH WITH THE FIELD OF "STATISTICAL CODE TYPE NAME":  Instance statistical codes, holdings statistical codes, item statistical codes.
    * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
    * Should the order be item, holdings, instance?  Ordering of parameters OK?
-   * are we doing to need more than location name? For this and for bib?
+   * are we doing to need more than location name in output? For this and for bib?
    </details>
 
 ## Requests not yet addressed
@@ -121,7 +128,9 @@ Aggregation: This query provides counts grouped by:
   <summary>Click to read more!</summary>
   
   See this page for additional information recorded by the Resource Management reporters: https://wiki.folio.org/x/OA8uAg 
-  * Information tracked possibly through holdings records notes?: precious bindings, copy notes, dedications, inscriptions, left by decedents? Use a filter with truncation. Which measures each institution uses to track this information could differ.
+  * HOW WILL BE HANDLING BOUND WITH?
+  * WILL BE CODE WRITTEN TO HELP BREAK OUT CALL NUMBERS
+  * Information tracked possibly through holdings records notes?: provenance; precious bindings, copy notes, dedications, inscriptions, left by decedents, etc. Use a filter with truncation. Which measures each institution uses to track this information could differ.
   * When fields available?:
     * When the holdings discover suppress field becomes available, add it to the WHERE hardcoded filters and update comment.
     * country of publication (source record)
