@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS folio_reporting.po_instance;
+DROP TABLE IF EXISTS po_instance;
 CREATE TABLE folio_reporting.po_instance AS
 
 SELECT 
