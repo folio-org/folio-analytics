@@ -9,7 +9,7 @@ WITH loan_count AS (
     SELECT
         item_id,
         count(DISTINCT id) AS num_loans,
-        sum(renewal_count) AS num_renewals
+        sum(json_extract_path_text(data, 'renewalCount')::bigint) AS num_renewals
     FROM
         circulation_loans
     GROUP BY
