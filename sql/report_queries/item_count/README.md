@@ -64,9 +64,6 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
     * (see also statistical codes)
   * Items formats:
-    * ITEM MATERIAL TYPE SOURCE OR IS THIS MATERIAL TYPE SOURCE IN GENERAL (MARC, equipment, etc.) (SEE BELOW)?
-    * ITEM MATERIAL TYPE CATEGORY OR IS THIS MATERIAL TYPE CATEGORY IN GENERAL? IS IT EVEN IMPLEMENTED?  IN MM LIST.
-    * ITEM MATERIAL TYPE NAME? AVAIlABLE IN ITEM EXT
     * Item discription of pieces
     * (see also statistical codes)
 * Statistical codes
@@ -130,13 +127,10 @@ Aggregation: This query provides counts grouped by:
   * Should we add instance statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add holdings statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add item statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-  * Should we add item material type source or is this material type category in general? (MARC, equipment, etc.)
-  * Should we add item material type name or is this material type source in general?
-  Should we add item material type source or is this material type source in general (MARC, equipment, etc.)
-
-    * ITEM MATERIAL TYPE CATEGORY OR IS THIS MATERIAL TYPE CATEGORY IN GENERAL? IS IT EVEN IMPLEMENTED?  IN MM LIST.
-    * ITEM MATERIAL TYPE NAME? AVAIlABLE IN ITEM EXT
-  * Jennifer said the item call number is the effective call number.
+  * Should we add item material type source or is this material type source in general? (MARC, equipment, etc.)
+  * Should we add item material type category or is this material type category in general? Is it even implemented? In MM list. (MARC, equipment, etc.)
+  * Should we add item material type name? Available in Item-ext.
+  * Jennnifer said the item call number is the effective call number.
   * Information tracked possibly through holdings records notes?: provenance; precious bindings, copy notes, dedications, inscriptions, left by decedents, etc. Use a filter with truncation. Which measures each institution uses to track this information could differ.
   * When fields available?:
     * When the holdings discover suppress field becomes available, add it to the WHERE hardcoded filters and update comment.
