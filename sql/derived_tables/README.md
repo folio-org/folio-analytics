@@ -46,3 +46,12 @@ The queries should be rerun every night after the LDP full update
 completes, so that the derived tables will be recreated with the
 latest data.
 
+After all database updates and derived table queries have completed,
+it is recommended to run vacuum and analyze as superuser:
+
+```shell
+VACUUM;
+
+ANALYZE;
+```
+
