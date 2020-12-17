@@ -5,11 +5,11 @@
 * [Purpose](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#purpose)
 * [Filters](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#filters)
 * [Output](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#output)
-* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/item_count/README.md#requests-not-yet-addressed)
+* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/item_count/README.md#requests-and-issues-not-yet-addressed)
 
 
 ## Status
-As of December 2020, this query has be updated to use the relevant derived tables.  WHAT ELSE SHOULD BE SAID?
+As of December 2020, this query has be updated to use the relevant derived tables.
 
 ## Purpose
 To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.
@@ -18,7 +18,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   <summary>Click to read more!</summary>
   
   * The piece counts of item records are summed for the piece counts (which assumes that all item records have peice counts, even if only one piece).
-  * LOCATION INFORMMATION IS assigned by permanent location.
+  * Location information is assigned by permanent location.
   * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item and piece counts, such as those that record bibliographic format and library location information. Your library will not need all of these measures.  Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
   * Queries to count e-resources (whether tracked through the ERM or the Inventory) are available separately. Each reporter must know where their institution’s various resources are tracked and should find the needed reports as appropriate, adding together counts if needed, and avoiding any duplication if possible.
   * Note that it is generally assumed that if you need a holdings count as of a certain date, you take it on that date; while you may be able to use processing dates to exclude resources newly added after a certain date, you cannot get back titles that were withdrawn or transferred.
@@ -35,8 +35,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   
   * Each holdings record has a permanent location.
   * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes suppressed holdings records
-  * HOW ARE WE EXCLUDING WITHDRAWN ITEMS?
+  * [When this field becomes available:] Excludes suppressed holdings records.
   * This query is intended to exclude e-resources. It excludes records with instance format names of “computer – online resource” or “ISNULL,”  and excludes records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   
@@ -65,17 +64,14 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
     * Holdings types name (e.g., physical, electronic, serial, multi-part monograph, etc.)
     * (see also statistical codes)
   * Items formats:
-    * ITEM MATERIAL TYPE SOURCE OR IS THIS MATERIAL TYPE SOURCE IN GENERAL (SEE BELOW)?
+    * ITEM MATERIAL TYPE SOURCE OR IS THIS MATERIAL TYPE SOURCE IN GENERAL (MARC, equipment, etc.) (SEE BELOW)?
     * ITEM MATERIAL TYPE CATEGORY OR IS THIS MATERIAL TYPE CATEGORY IN GENERAL? IS IT EVEN IMPLEMENTED?  IN MM LIST.
     * ITEM MATERIAL TYPE NAME? AVAIlABLE IN ITEM EXT
     * Item discription of pieces
     * (see also statistical codes)
 * Statistical codes
-  * SHOULD WE ADD INSTANCE STATISTICAL CODE TYPE NAME? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Instance statistical code name
-  * SHOULD WE ADD HOLDINGS STATISTICAL CODE TYPE NAME?  (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Holdings statistical code name
-  * SHOULD WE ADD ITEM STATISTICAL CODE TYPE NAME?  (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Item statistical code (e.g., "books," "serials")
   * Item statistical code name (e.g., "Book, print (books)," "Serial, print (serials)"
 * Language:
@@ -112,7 +108,7 @@ Aggregation: This query provides counts grouped by:
 <details>
   <summary>Click to read more!</summary>
   
-   * What is the status of the SQL?
+   * Do we need the What is the status of the SQL?
    * ASK JENNIFER ABOUT THESE:
      * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
      * How will bound with be handled?
@@ -123,13 +119,24 @@ Aggregation: This query provides counts grouped by:
    * are we doing to need more than location name in output? For this and for bib?
    </details>
 
-## Requests not yet addressed
+## Requests and issues not yet addressed
 <details>
   <summary>Click to read more!</summary>
   
   See this page for additional information recorded by the Resource Management reporters: https://wiki.folio.org/x/OA8uAg 
-  * HOW WILL BE HANDLING BOUND WITH?
-  * WILL BE CODE WRITTEN TO HELP BREAK OUT CALL NUMBERS
+  * How will we be able to exclude withdrawn items?
+  * How will we be able to exclude any bound with items (if item records exist for these)?
+  * Consider adding any code to break out call numbers?
+  * Should we add instance statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
+  * Should we add holdings statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
+  * Should we add item statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
+  * Should we add item material type source or is this material type category in general? (MARC, equipment, etc.)
+  * Should we add item material type name or is this material type source in general?
+  Should we add item material type source or is this material type source in general (MARC, equipment, etc.)
+
+    * ITEM MATERIAL TYPE CATEGORY OR IS THIS MATERIAL TYPE CATEGORY IN GENERAL? IS IT EVEN IMPLEMENTED?  IN MM LIST.
+    * ITEM MATERIAL TYPE NAME? AVAIlABLE IN ITEM EXT
+  * Jennifer said the item call number is the effective call number.
   * Information tracked possibly through holdings records notes?: provenance; precious bindings, copy notes, dedications, inscriptions, left by decedents, etc. Use a filter with truncation. Which measures each institution uses to track this information could differ.
   * When fields available?:
     * When the holdings discover suppress field becomes available, add it to the WHERE hardcoded filters and update comment.
