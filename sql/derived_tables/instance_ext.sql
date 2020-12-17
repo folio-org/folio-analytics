@@ -16,14 +16,14 @@ SELECT
     instance.previously_held,
     instance.source AS instance_source,
     instance.staff_suppress,
-    instance.status_id,
+    json_extract_path_text(instance.data, 'statusId') AS status_id,
     instance_status.name AS status_name,
     instance.title
 FROM
     inventory_instances AS instance
     LEFT JOIN inventory_instance_types AS instance_type ON instance.instance_type_id = instance_type.id
     LEFT JOIN inventory_modes_of_issuance AS mode_of_issuance ON instance.mode_of_issuance_id = mode_of_issuance.id
-    LEFT JOIN inventory_instance_statuses AS instance_status ON instance.status_id = instance_status.id;
+    LEFT JOIN inventory_instance_statuses AS instance_status ON json_extract_path_text(instance.data, 'statusId') = instance_status.id;
 
 CREATE INDEX ON folio_reporting.instance_ext (instance_id);
 

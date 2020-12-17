@@ -17,7 +17,7 @@ SELECT
     ii.id AS item_id,
     ii.barcode,
     json_extract_path_text(ii.data, 'chronology') AS chronology,
-    ii.copy_number AS item_copy_number,
+    json_extract_path_text(ii.data, 'copyNumber') AS item_copy_number,
     json_extract_path_text(ii.data, 'enumeration') AS enumeration,
     ii.holdings_record_id,
     ii.hrid,
@@ -32,7 +32,7 @@ SELECT
     ih.call_number,
     json_extract_path_text(ih.data, 'acquisitionMethod') AS acquisition_method,
     json_extract_path_text(ih.data, 'copyNumber') AS holdings_copy_number,
-    ih.holdings_type_id,
+    json_extract_path_text(ih.data, 'holdingsTypeId') AS holdings_type_id,
     iht.name AS holdings_type_name,
     ih.instance_id,
     json_extract_path_text(ih.data, 'shelvingTitle') AS shelving_title,
@@ -47,7 +47,7 @@ FROM
     LEFT JOIN public.inventory_instances AS ii2 ON ih.instance_id = ii2.id
     LEFT JOIN public.inventory_loan_types AS ilt ON ii.permanent_loan_type_id = ilt.id
     LEFT JOIN public.inventory_material_types AS imt ON ii.material_type_id = imt.id
-    LEFT JOIN public.inventory_holdings_types AS iht ON ih.holdings_type_id = iht.id
+    LEFT JOIN public.inventory_holdings_types AS iht ON json_extract_path_text(ih.data, 'holdingsTypeId') = iht.id
     LEFT JOIN public.inventory_call_number_types AS icnt ON ih.call_number_type_id = icnt.id;
 
 CREATE INDEX ON folio_reporting.items_holdings_instances (item_id);
