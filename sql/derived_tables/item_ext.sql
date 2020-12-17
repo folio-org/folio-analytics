@@ -7,15 +7,15 @@ DROP TABLE IF EXISTS folio_reporting.item_ext;
 -- description_of_pieces, status_date, status_name, holdings_id
 -- Item notes are in a separate derived table.
 -- There is a separate table for effective call number. However, it is also included here.
-CREATE TABLE folio_reporting.item_ext AS 
+CREATE TABLE folio_reporting.item_ext AS
 WITH items AS (
     SELECT
-        id,                  
+        id,
         hrid,
         json_extract_path_text(data, 'accessionNumber') AS accession_number,
         barcode,
         json_extract_path_text(data, 'chronology') AS chronology,
-        copy_number,
+        json_extract_path_text(data, 'copyNumber') AS copy_number,
         json_extract_path_text(data, 'enumeration') AS enumeration,
         json_extract_path_text(data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
         json_extract_path_text(data, 'itemIdentifier') AS item_identifier,
@@ -161,7 +161,7 @@ CREATE INDEX ON folio_reporting.item_ext (status_date);
 
 CREATE INDEX ON folio_reporting.item_ext (status_name);
 
-CREATE INDEX ON folio_reporting.item_ext (holdings_record_id); 
+CREATE INDEX ON folio_reporting.item_ext (holdings_record_id);
 
 CREATE INDEX ON folio_reporting.item_ext (created_date);
 
