@@ -6,9 +6,10 @@ WITH items_statistical_codes AS (
     SELECT
         item.id AS item_id,
         item.hrid AS item_hrid,
-        json_array_elements_text(json_extract_path(item.data, 'statisticalCodeIds')) AS statistical_code_id
+	statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_items AS item
+	CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds')) AS statistical_code_ids(data)
 )
 SELECT
     items_statistical_codes.item_id,

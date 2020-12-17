@@ -39,7 +39,7 @@ SELECT
     iel.name AS current_item_effective_location_name,
     json_extract_path_text(ii.data, 'temporaryLocationId') AS current_item_temporary_location_id,
     itl.name AS current_item_temporary_location_name,
-    ii.permanent_location_id AS current_item_permanent_location_id,
+    json_extract_path_text(ii.data, 'permanentLocationId') AS current_item_permanent_location_id,
     ipl.name AS current_item_permanent_location_name,
     cl.loan_policy_id,
     clp.name AS loan_policy_name,
@@ -49,15 +49,15 @@ SELECT
     ffo.name AS overdue_fine_policy_name,
     cl.patron_group_id_at_checkout,
     ug.group AS patron_group_name,
-    cl.user_id,
+    json_extract_path_text(cl.data, 'userId') AS user_id,
     json_extract_path_text(cl.data, 'proxyUserId') AS proxy_user_id,
     ii.barcode,
     json_extract_path_text(ii.data, 'chronology') AS chronology,
-    ii.copy_number,
+    json_extract_path_text(ii.data, 'copyNumber') AS copy_number,
     json_extract_path_text(ii.data, 'enumeration') AS enumeration,
     ii.holdings_record_id,
     ii.hrid,
-    ii.item_level_call_number,
+    json_extract_path_text(ii.data, 'itemLevelCallNumber') AS item_level_call_number,
     ii.material_type_id,
     imt.name AS material_type_name,
     json_extract_path_text(ii.data, 'numberOfPieces') AS number_of_pieces,
@@ -72,7 +72,7 @@ FROM
     LEFT JOIN public.circulation_loan_policies AS clp ON cl.loan_policy_id = clp.id
     LEFT JOIN public.user_groups AS ug ON cl.patron_group_id_at_checkout = ug.id
     LEFT JOIN public.inventory_locations AS iel ON ii.effective_location_id = iel.id
-    LEFT JOIN public.inventory_locations AS ipl ON ii.permanent_location_id = ipl.id
+    LEFT JOIN public.inventory_locations AS ipl ON json_extract_path_text(ii.data, 'permanentLocationId') = ipl.id
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
