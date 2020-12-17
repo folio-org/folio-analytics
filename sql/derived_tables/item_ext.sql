@@ -19,7 +19,7 @@ WITH items AS (
         json_extract_path_text(data, 'enumeration') AS enumeration,
         json_extract_path_text(data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
         json_extract_path_text(data, 'itemIdentifier') AS item_identifier,
-        item_level_call_number,
+        json_extract_path_text(data, 'itemLevelCallNumber') AS item_level_call_number,
         json_extract_path_text(data, 'itemLevelCallNumberTypeId') AS item_level_call_number_type_id,
         json_extract_path_text(data, 'effectiveCallNumberComponents', 'prefix') AS effective_call_number_prefix,
 		json_extract_path_text(data, 'effectiveCallNumberComponents','callNumber') AS effective_call_number,
