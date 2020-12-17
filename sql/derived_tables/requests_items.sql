@@ -20,7 +20,7 @@ SELECT
     json_extract_path_text(cr.data, 'requesterId') AS requester_id,
     uu.patron_group AS patron_group_id,
     ug.desc AS patron_group_name,
-    ii.item_level_call_number,
+    json_extract_path_text(ii.data, 'itemLevelCallNumber') AS item_level_call_number,
     ii.barcode,
     json_extract_path_text(ii.data, 'chronology') AS chronology,
     json_extract_path_text(ii.data, 'copyNumber') AS item_copy_number,
