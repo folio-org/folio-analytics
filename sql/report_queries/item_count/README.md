@@ -122,7 +122,7 @@ Aggregation: This query provides counts grouped by:
   
   See this page for additional information recorded by the Resource Management reporters: https://wiki.folio.org/x/OA8uAg 
   * How will we be able to exclude withdrawn items?
-  * How will we be able to exclude any bound with items (if item records exist for these)?
+  * How will we be able to exclude any bound with items (if item records exist for these)?  See https://issues.folio.org/browse/UXPROD-2699?filter=1288508:46:36 for interesting Chicago discussion of item statuses as relates to boudn with (and HathiTrust ETAS restrictions).
   * Consider adding any code to break out call numbers?
   * Should we add instance statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add holdings statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
