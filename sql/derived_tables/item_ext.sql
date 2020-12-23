@@ -38,7 +38,8 @@ WITH items AS (
         json_extract_path_text(data, 'circulationNotes', 'descriptionOfPieces') AS description_of_pieces,
         json_extract_path_text(data, 'status', 'date') AS status_date,
         json_extract_path_text(data, 'status', 'name') AS status_name,
-        json_extract_path_text(data, 'holdingsRecordId') AS holdings_record_id
+        json_extract_path_text(data, 'holdingsRecordId') AS holdings_record_id,
+        json_extract_path_text(DATA, 'discovery_suppress') AS discovery_suppress
     FROM
         inventory_items
 )
@@ -78,6 +79,7 @@ SELECT
     items.status_date,
     items.status_name,
     items.holdings_record_id,
+    items.discovery_suppress,
     items.created_date,
     items.updated_by_user_id,
   	items.updated_date
@@ -162,6 +164,8 @@ CREATE INDEX ON folio_reporting.item_ext (status_date);
 CREATE INDEX ON folio_reporting.item_ext (status_name);
 
 CREATE INDEX ON folio_reporting.item_ext (holdings_record_id);
+
+CREATE INDEX ON folio_reporting.item_ext (discovery_suppress);
 
 CREATE INDEX ON folio_reporting.item_ext (created_date);
 

@@ -21,6 +21,7 @@ WITH holdings AS (
         json_extract_path_text(data, 'receiptStatus') AS receipt_status,
         json_extract_path_text(data, 'retentionPolicy') AS retention_policy,
         json_extract_path_text(data, 'shelvingTitle') AS shelving_title,
+        json_extract_path_text(data, 'discovery_suppress') AS discovery_suppress,
         json_extract_path_text(data, 'metadata', 'createdDate') AS created_date,
         json_extract_path_text(data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
         json_extract_path_text(data, 'metadata', 'updatedDate') AS updated_date,
@@ -50,6 +51,7 @@ SELECT
     holdings.receipt_status,
     holdings.retention_policy,
     holdings.shelving_title,
+    holdings.discovery_suppress,
     holdings.created_date,
     holdings.updated_by_user_id,
     holdings.updated_date
@@ -102,6 +104,8 @@ CREATE INDEX ON folio_reporting.holdings_ext (receipt_status);
 CREATE INDEX ON folio_reporting.holdings_ext (retention_policy);
 
 CREATE INDEX ON folio_reporting.holdings_ext (shelving_title);
+
+CREATE INDEX ON folio_reporting.holdings_ext (discovery_suppress);
 
 CREATE INDEX ON folio_reporting.holdings_ext (created_date);
 
