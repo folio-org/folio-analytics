@@ -11,11 +11,11 @@ when preparing a pull request.
 1\. [New contributors](#1-new-contributors)  
 2\. [Branches](#2-branches)  
 3\. [Code review](#3-code-review)  
-4\. [Formatting SQL](#4-formatting-sql)
+4\. [Formatting SQL](#4-formatting-sql)  
 
 
 1\. New contributors
--------------------
+--------------------
 
 Before working on a contribution, it is sometimes a good idea to ask
 the community in advance about the work you propose to do.  They may
@@ -30,7 +30,7 @@ For bugs or specific technical proposals, please use
 
 
 2\. Branches
------------
+------------
 
 There are three types of branches:
 
@@ -54,7 +54,7 @@ reviewer, if you wish.
 
 
 4\. Formatting SQL
------------------
+------------------
 
 We use the `pg_format` tool from
 [pgFormatter](https://github.com/darold/pgFormatter) to make SQL code
