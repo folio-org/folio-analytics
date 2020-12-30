@@ -17,6 +17,7 @@ WITH items AS (
         json_extract_path_text(data, 'chronology') AS chronology,
         json_extract_path_text(data, 'copyNumber') AS copy_number,
         json_extract_path_text(data, 'enumeration') AS enumeration,
+        json_extract_path_text(data, 'volume') AS volume,
         json_extract_path_text(data, 'inTransitDestinationServicePointId') AS in_transit_destination_service_point_id,
         json_extract_path_text(data, 'itemIdentifier') AS item_identifier,
         json_extract_path_text(data, 'itemLevelCallNumber') AS item_level_call_number,
@@ -51,6 +52,7 @@ SELECT
     items.chronology,
     items.copy_number,
     items.enumeration,
+    items.volume,
     items.in_transit_destination_service_point_id,
     item_in_transit_destination_service_point.name AS in_transit_destination_service_point_name,
     items.item_identifier AS identifier,
@@ -108,6 +110,8 @@ CREATE INDEX ON folio_reporting.item_ext (chronology);
 CREATE INDEX ON folio_reporting.item_ext (copy_number);
 
 CREATE INDEX ON folio_reporting.item_ext (enumeration);
+
+CREATE INDEX ON folio_reporting.item_ext (volume);
 
 CREATE INDEX ON folio_reporting.item_ext (in_transit_destination_service_point_id);
 
