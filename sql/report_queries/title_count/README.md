@@ -1,11 +1,11 @@
 # Documentation for the RM title query
 
 ## Contents
-* [Status](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#status)
-* [Purpose](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#purpose)
-* [Filters](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#filters)
-* [Output](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#output)
-* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/title_count/README.md#requests-not-yet-addressed) 
+* [Status](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#status)
+* [Purpose](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#purpose)
+* [Filters](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#filters)
+* [Output](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#output)
+* [Requests not yet addressed](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#requests-not-yet-addressed) 
 
 
 ## Status
@@ -80,34 +80,9 @@ To provide **title** counts for **non-electronic** resources cataloged in the In
 
 ## Output
 Aggregation: This query provides counts grouped by:
-* Instance type id
-* Instance type name
-* Mode of issuance id
-* Mode of issuance name
-* Instance format id
-* Instance format code
-* Instance format name
-* Instance language (first)
-* Instance statistical code id
-* Instance statistical code
-* Instance statistical code name
-* Instance nature of content id
-* Instance nature of content code
-* Instance nature of content name
-* Holdings type id
-* Holdings type name
-* Holdings call number type id
-* Holdings call number type name
-* Holdings statistical code id
-* Holdings statistical code
-* Holdings statistical code name
-* Holdings receipt status
-* Inventory locations name
-* Instance previously held
-* Instance super relationship type id
-* Instance super relationship type name
-* Instance sub relationship type id
-* Instance sub relationship type name
+* Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; Instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code; Instance nature of content name
+* Holdings type id; Holdings type name; Holdings call number type id; Holdings call number type name; Holdings statistical code id; Holdings statistical code; Holdings statistical code name; Holdings receipt status; Inventory locations name; 
+* Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
 
 ## Requests not yet addressed
 <details>
