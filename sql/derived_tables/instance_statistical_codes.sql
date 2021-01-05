@@ -1,14 +1,16 @@
-DROP TABLE IF EXISTS local.instance_statistical_codes;
+DROP TABLE IF EXISTS folio_reporting.instance_statistical_codes;
 
 -- Creates a local table for instances with the id and name for the code and type.
-CREATE TABLE local.instance_statistical_codes AS
+CREATE TABLE folio_reporting.instance_statistical_codes AS
 WITH instances_statistical_codes AS (
     SELECT
         instance.id AS instance_id,
         instance.hrid AS instance_hrid,
-        json_array_elements_text(json_extract_path(instance.data, 'statisticalCodeIds')) AS statistical_code_id
+        statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_instances AS instance
+        CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds'))
+            AS statistical_code_ids(data)
 )
 SELECT
     instances_statistical_codes.instance_id,
@@ -23,17 +25,17 @@ FROM
     LEFT JOIN inventory_statistical_codes ON instances_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON local.instance_statistical_codes (instance_id);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (instance_id);
 
-CREATE INDEX ON local.instance_statistical_codes (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (instance_hrid);
 
-CREATE INDEX ON local.instance_statistical_codes (statistical_code_id);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (statistical_code_id);
 
-CREATE INDEX ON local.instance_statistical_codes (statistical_code);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (statistical_code);
 
-CREATE INDEX ON local.instance_statistical_codes (statistical_code_name);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (statistical_code_name);
 
-CREATE INDEX ON local.instance_statistical_codes (statistical_code_type_id);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (statistical_code_type_id);
 
-CREATE INDEX ON local.instance_statistical_codes (statistical_code_type_name);
+CREATE INDEX ON folio_reporting.instance_statistical_codes (statistical_code_type_name);
 

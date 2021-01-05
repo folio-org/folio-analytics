@@ -1,28 +1,15 @@
-service_point_name,service_point_display_name,action_date,day_of_week,hour_of_day,material_type,action_type,effective_location,item_status,ct
-Circ Desk 1,Circulation Desk -- Hallway,2019-09-11,Wednesday,5,,Checkout,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,2,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,2,,Checkout,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,3,,Checkin,SECOND FLOOR,In transit,1
-Online,Online,2019-09-11,Wednesday,3,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,3,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,3,,Checkout,SECOND FLOOR,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkin,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkin,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkin,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkin,SECOND FLOOR,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkin,SECOND FLOOR,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,SECOND FLOOR,Checked out,1
-Online,Online,2019-09-11,Wednesday,4,,Checkout,SECOND FLOOR,In transit,1
-Online,Online,2019-09-11,Wednesday,5,,Checkin,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,5,,Checkout,Main Library,Checked out,1
-Online,Online,2019-09-11,Wednesday,8,,Checkin,Main Library,In transit,1
-Online,Online,2019-09-11,Wednesday,10,,Checkout,Main Library,Checked out,1
-,,2017-01-05,Thursday ,7,,Checkout,SECOND FLOOR,In transit,1
-,,2017-02-03,Friday   ,3,,Checkout,Annex,Available,1
-,,2017-03-03,Friday   ,10,,Checkout,Main Library,Checked out,1
-,,2017-03-05,Sunday   ,13,,Checkout,Main Library,Available,1
-,,2017-03-05,Sunday   ,13,,Checkout,Main Library,In transit,1
+service_point_name,action_date,day_of_week,hour_of_day,material_type_name,action_type,item_effective_location_name_at_check_out,item_status,ct
+Online,2020-12-03,Thursday ,1,book,Checkin,Main Library,In transit,1
+Online,2020-12-03,Thursday ,1,book,Checkout,Main Library,In transit,1
+Online,2020-12-03,Thursday ,2,book,Checkin,Main Library,In transit,1
+Online,2020-12-03,Thursday ,2,book,Checkout,Main Library,In transit,1
+Online,2020-12-03,Thursday ,12,book,Checkin,Main Library,In transit,1
+Online,2020-12-03,Thursday ,12,book,Checkout,Main Library,In transit,1
+,2017-01-05,Thursday ,12,book,Checkout,,Checked out,1
+,2017-02-03,Friday   ,8,dvd,Checkout,,Available,1
+,2017-03-01,Wednesday,11,dvd,Checkin,,Available,1
+,2017-03-03,Friday   ,15,book,Checkout,,Checked out,1
+,2017-03-05,Sunday   ,18,book,Checkout,,Available,1
+,2017-03-05,Sunday   ,18,book,Checkout,,Checked out,1
+,2020-12-03,Thursday ,1,book,Checkout,Main Library,Checked out,21
+,2020-12-03,Thursday ,2,book,Checkout,Main Library,Checked out,1

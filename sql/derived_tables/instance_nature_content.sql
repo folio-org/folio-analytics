@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS local.instance_nature_content;
+DROP TABLE IF EXISTS folio_reporting.instance_nature_content;
 
-CREATE TABLE local.instance_nature_content AS
+CREATE TABLE folio_reporting.instance_nature_content AS
 WITH nature_content AS (
     SELECT
         id AS instance_id,
@@ -20,13 +20,13 @@ FROM
     nature_content
     JOIN inventory_nature_of_content_terms AS nature_content_term ON nature_content_term.id = nature_content.nature_of_content_term_id;
 
-CREATE INDEX ON local.instance_nature_content (instance_id);
+CREATE INDEX ON folio_reporting.instance_nature_content (instance_id);
 
-CREATE INDEX ON local.instance_nature_content (instance_hrid);
+CREATE INDEX ON folio_reporting.instance_nature_content (instance_hrid);
 
-CREATE INDEX ON local.instance_nature_content (nature_of_content_term_id);
+CREATE INDEX ON folio_reporting.instance_nature_content (nature_of_content_term_id);
 
-CREATE INDEX ON local.instance_nature_content (nature_of_content_term_name);
+CREATE INDEX ON folio_reporting.instance_nature_content (nature_of_content_term_name);
 
-CREATE INDEX ON local.instance_nature_content (nature_of_content_term_source);
+CREATE INDEX ON folio_reporting.instance_nature_content (nature_of_content_term_source);
 

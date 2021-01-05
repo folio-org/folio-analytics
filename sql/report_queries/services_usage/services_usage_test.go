@@ -1,4 +1,4 @@
-package circ_detail
+package services_usage
 
 import (
 	"testing"
