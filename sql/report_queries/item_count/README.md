@@ -116,9 +116,6 @@ Aggregation: This query provides counts grouped by:
   * How will we be able to exclude withdrawn items? (Jennifer will ask about this 12/20)
   * How will we be able to exclude any bound with items (if item records exist for these)?  See https://issues.folio.org/browse/UXPROD-2699?filter=1288508:46:36 for interesting Chicago discussion of item statuses as relates to boudn with (and HathiTrust ETAS restrictions). Also https://docs.google.com/document/d/1iWhEAxd3hvlvqmDgXmbJ2a3A_J2ahQHaMN2RKvDLvWI/edit .
   * Consider adding any code to break out call numbers?n(Jennnifer said the item call number is the effective call number.)
-  * Should we add instance statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-  * Should we add holdings statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
-  * Should we add item statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add item material type source or is this material type source in general? (MARC, equipment, etc.)
   * Should we add item material type category or is this material type category in general? Is it even implemented? In MM list. (MARC, equipment, etc.)
   * Should we add item material type name? Available in Item-ext.
