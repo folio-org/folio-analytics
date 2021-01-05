@@ -1,15 +1,15 @@
 # Documentation for the RM item count query (UXPROD-2396)
 
 ## Contents
-* [Status](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#status)
-* [Purpose](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#purpose)
-* [Filters](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#filters)
-* [Output](https://github.com/LM-15/folio-analytics/tree/update-query-readme-files/sql/report_queries/item_count#output)
-* [Requests not yet addressed](https://github.com/LM-15/folio-analytics/blob/update-query-readme-files/sql/report_queries/item_count/README.md#requests-and-issues-not-yet-addressed)
+* [Status](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#status)
+* [Purpose](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#purpose)
+* [Filters](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#filters)
+* [Output](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#output)
+* [Requests not yet addressed](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#requests-and-issues-not-yet-addressed)
 
 
 ## Status
-As of December 2020, this query has be updated to use the relevant derived tables.
+As of December 2020, this query has been updated to use the relevant derived tables.
 
 ## Purpose
 To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.
@@ -17,7 +17,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
 <details>
   <summary>Click to read more!</summary>
   
-  * The piece counts of item records are summed for the piece counts (which assumes that all item records have peice counts, even if only one piece).
+  * The piece counts of item records are summed for the piece counts (assumes that all item records have peice counts, even if only one piece).
   * Location information is assigned by permanent location.
   * Modify this query to suit your local needs. This query was built to include many of the measures commonly used to get overall item and piece counts, such as those that record bibliographic format and library location information. Your library will not need all of these measures.  Some parameter filters are available.  We also try to spell out which assumptions are made (some of which individual institutions may need to adjust), and requests not yet addressed. 
   * Queries to count e-resources (whether tracked through the ERM or the Inventory) are available separately. Each reporter must know where their institution’s various resources are tracked and should find the needed reports as appropriate, adding together counts if needed, and avoiding any duplication if possible.
@@ -47,8 +47,8 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   <summary>Click to read more!</summary>
   
  * Record status:
-   * Instance statuses:
-     * Instance statuses name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
+   * Instance status:
+     * Instance status name (you can use this parameter to include only those titles cataloged and made ready for use; for many institutions, this would be "cataloged" and "batchloaded"; note that if your institution sets an instance status of, e.g., "pda unpurchased" you can exclude unpurchased patron driven acquisitions items if needed) (query allows up to two selected simultaneously)
    * Holdings
      * Holdings receipt status (e.g., "not currently received," etc.)
    * Items
@@ -96,42 +96,33 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
 
 ## Output
 Aggregation: This query provides counts grouped by:
-* Item chronology (COMMENT THIS OUT?  SEE BELOW); Item status name (COMMENT THIS OUT?  SEE BELOW); Item material type id; Item material type name; Item statistical code id; Item statistical code; Item statistical code name;
+* Item chronology; Item status name; Item material type id; Item material type name; Item statistical code id; Item statistical code; Item statistical code name;
 * Holdings type id; Holdings type name; Holdings call number type id; Holdings call number type name; Holdings statistical code id; Holdings statistical code; Holdings statistical code name; Holdings receipt status;
 * Location name;
-* Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code  (DO WE NEED?); Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
+* Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code; Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
 
 ## To be done
 <details>
   <summary>Click to read more!</summary>
   
    * Do we need the What is the status of the SQL?
-   * ASK JENNIFER ABOUT THESE:
-     * The item status does not include "withdrawn" in FOLIO snapshot and on the MM list.  There also does not appear to be an item record suppress field in item.  How are we to exclude these?
-     * How will bound with be handled?
-     * do we need to add item material type category and source (SEEN IN MM LIST)?  It looks like this links to the Inventory material type table?  There is no category there. The source given is FOLIO.  Here is the link to the list the MM table provides: https://docs.google.com/spreadsheets/d/1scRQl09jroOy-c_emITk3EQ6lkj7XPRlkupPNuL-FfM/edit#gid=1928495227  where category and material type look of use.
-     * Do we need to add inventory statistical code type names for instance, holdings and item?  Looks like each of those reference the same satistical code tables, AND THAT LOCAL DERIVED TABLES WERE CREATED FOR EACH WITH THE FIELD OF "STATISTICAL CODE TYPE NAME":  Instance statistical codes, holdings statistical codes, item statistical codes.
-   * Should we comment out the item chronology in the aggregation because will only need to use if want to get at recon?
-   * Should the order be item, holdings, instance?  Ordering of parameters OK?
-   * are we doing to need more than location name in output? For this and for bib?
-   </details>
+     </details>
 
 ## Requests and issues not yet addressed
 <details>
   <summary>Click to read more!</summary>
   
   See this page for additional information recorded by the Resource Management reporters: https://wiki.folio.org/x/OA8uAg 
-  * How will we be able to exclude withdrawn items?
+  * How will we be able to exclude withdrawn items? (Jennifer will ask about this 12/20)
   * How will we be able to exclude any bound with items (if item records exist for these)?  See https://issues.folio.org/browse/UXPROD-2699?filter=1288508:46:36 for interesting Chicago discussion of item statuses as relates to boudn with (and HathiTrust ETAS restrictions). Also https://docs.google.com/document/d/1iWhEAxd3hvlvqmDgXmbJ2a3A_J2ahQHaMN2RKvDLvWI/edit .
-  * Consider adding any code to break out call numbers?
+  * Consider adding any code to break out call numbers?n(Jennnifer said the item call number is the effective call number.)
   * Should we add instance statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add holdings statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add item statistical code type name? (e.g., ARL (Collection stats), DISC (Discovery); SERM (Serial management), etc.)
   * Should we add item material type source or is this material type source in general? (MARC, equipment, etc.)
   * Should we add item material type category or is this material type category in general? Is it even implemented? In MM list. (MARC, equipment, etc.)
   * Should we add item material type name? Available in Item-ext.
-  * Jennnifer said the item call number is the effective call number.
-  * Information tracked possibly through holdings records notes?: provenance; precious bindings, copy notes, dedications, inscriptions, left by decedents, etc. Use a filter with truncation. Which measures each institution uses to track this information could differ.
+   * Information tracked possibly through holdings records notes?: provenance; precious bindings, copy notes, dedications, inscriptions, left by decedents, etc. Use a filter with truncation. Which measures each institution uses to track this information could differ.
   * When fields available?:
     * When the holdings discover suppress field becomes available, add it to the WHERE hardcoded filters and update comment.
     * country of publication (source record)
