@@ -29,6 +29,7 @@ WITH items AS (
         json_extract_path_text(data, 'itemDamagedStatusId') AS item_damaged_status_id,
         material_type_id,
         json_extract_path_text(data, 'numberOfPieces') AS number_of_pieces,
+        json_extract_path_text(data,'numberOfMissingPieces') AS number_of_missing_pieces,
         json_extract_path_text(data, 'permanentLoanTypeId') AS permanent_loan_type_id,
         json_extract_path_text(data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
         json_extract_path_text(data, 'permanentLocationId') AS permanent_location_id,
@@ -69,6 +70,7 @@ SELECT
     items.material_type_id,
     item_material_type.name AS material_type_name,
     items.number_of_pieces,
+    items.number_of_missing_pieces,
     items.permanent_loan_type_id,
     item_permanent_loan_type.name AS permanent_loan_type_name,
     items.temporary_loan_type_id,
@@ -144,6 +146,8 @@ CREATE INDEX ON folio_reporting.item_ext (material_type_id);
 CREATE INDEX ON folio_reporting.item_ext (material_type_name);
 
 CREATE INDEX ON folio_reporting.item_ext (number_of_pieces);
+
+CREATE INDEX ON folio_reporting.item_ext (number_of_missing_pieces);
 
 CREATE INDEX ON folio_reporting.item_ext (permanent_loan_type_id);
 
