@@ -32,7 +32,7 @@ git checkout 0.9-release
 git pull
 psql ldp -U ldpadmin -c "GRANT SELECT ON ALL TABLES IN SCHEMA public TO ldpreport;"
 echo > logfile
-for f in $( ls *.sql ); do
+for f in $( cat runlist.txt ); do
     echo >> logfile
     echo "======== $f ========" >> logfile
     echo >> logfile
@@ -41,6 +41,10 @@ for f in $( ls *.sql ); do
     psql ldp -U ldpreport -a -1 -f tmpfile >> logfile 2>&1
 done
 ```
+
+Note that the provided file `runlist.txt` lists all of the query files
+in the order they should be run.  The order is significant because
+some of the queries depend on the result of other queries.
 
 The queries should be rerun every night after the LDP full update
 completes, so that the derived tables will be recreated with the
