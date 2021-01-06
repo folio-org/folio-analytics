@@ -44,7 +44,9 @@ done
 
 Note that the provided file `runlist.txt` lists all of the query files
 in the order they should be run.  The order is significant because
-some of the queries depend on the result of other queries.
+some of the queries depend on the result of other queries.  The file
+`deps.txt` lists specific dependencies in the form *r1*: *r2* *r3* ...
+where *r1* depends on *r2*, *r3*, ...
 
 The queries should be rerun every night after the LDP full update
 completes, so that the derived tables will be recreated with the
