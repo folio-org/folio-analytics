@@ -101,13 +101,6 @@ Aggregation: This query provides counts grouped by:
 * Location name;
 * Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code; Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
 
-## To be done
-<details>
-  <summary>Click to read more!</summary>
-  
-   * Do we need the What is the status of the SQL?
-     </details>
-
 ## Requests and issues not yet addressed
 <details>
   <summary>Click to read more!</summary>
