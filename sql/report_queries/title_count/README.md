@@ -9,7 +9,7 @@
 
 
 ## Status
-As of 11/18/20, this query has been reviewed, but it is being updated to use the relevant derived tables.
+As of 1/6/21, in review. 
 
 ## Purpose
 To provide **title** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
