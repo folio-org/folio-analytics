@@ -20,6 +20,8 @@ ALTER SCHEMA folio_reporting OWNER TO ldpadmin;
 GRANT CREATE, USAGE ON SCHEMA folio_reporting TO ldpreport;
 
 GRANT USAGE ON SCHEMA folio_reporting TO ldp;
+
+GRANT USAGE ON SCHEMA public TO ldpreport;
 ```
 
 There are various ways the queries can be executed.  One method is:
@@ -28,6 +30,7 @@ There are various ways the queries can be executed.  One method is:
 cd folio-analytics/sql/derived_tables
 git checkout 0.9-release
 git pull
+psql ldp -U ldpadmin -c "GRANT SELECT ON ALL TABLES IN SCHEMA public TO ldpreport;"
 echo > logfile
 for f in $( ls *.sql ); do
     echo >> logfile
@@ -42,4 +45,13 @@ done
 The queries should be rerun every night after the LDP full update
 completes, so that the derived tables will be recreated with the
 latest data.
+
+After all database updates and derived table queries have completed,
+it is recommended to run vacuum and analyze as superuser:
+
+```shell
+VACUUM;
+
+ANALYZE;
+```
 
