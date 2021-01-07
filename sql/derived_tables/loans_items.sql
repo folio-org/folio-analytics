@@ -1,6 +1,5 @@
 -- this query depends on locations_libraries, so that
 -- should be run before this one
-
 DROP TABLE IF EXISTS folio_reporting.loans_items;
 
 -- Create a derived table that contains all items from loans and adds
@@ -44,7 +43,12 @@ SELECT
     itl.name AS current_item_temporary_location_name,
     json_extract_path_text(ii.data, 'permanentLocationId') AS current_item_permanent_location_id,
     ipl.name AS current_item_permanent_location_name,
-    --add library, campus, institution for permanent location;
+    ll.library_id AS current_item_permanent_location_library_id,
+    ll.library_name AS current_item_permanent_location_library_name,
+    ll.campus_id AS current_item_permanent_location_campus_id,
+    ll.campus_name AS current_item_permanent_location_campus_name,
+    ll.institution_id AS current_item_permanent_location_institution_id,
+    ll.institution_name AS current_item_permanent_location_institution_name,
     cl.loan_policy_id,
     clp.name AS loan_policy_name,
     cl.lost_item_policy_id,
@@ -77,6 +81,7 @@ FROM
     LEFT JOIN public.user_groups AS ug ON cl.patron_group_id_at_checkout = ug.id
     LEFT JOIN public.inventory_locations AS iel ON ii.effective_location_id = iel.id
     LEFT JOIN public.inventory_locations AS ipl ON json_extract_path_text(ii.data, 'permanentLocationId') = ipl.id
+    LEFT JOIN folio_reporting.locations_libraries AS ll ON ipl.id = ll.location_id
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
@@ -98,6 +103,12 @@ CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_nam
 CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_name);
 
 CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_library_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_campus_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_institution_name);
 
 CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_name);
 
