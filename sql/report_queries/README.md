@@ -36,6 +36,7 @@ page](https://github.com/folio-org/folio-analytics/blob/master/TESTING.md).
 
 ### Circulation
 
+* ACRL Circulation Report: [ACRL Circulation Query](acrl/circulation)
 * Claimed Returned Report: [Claimed Returned Query](claimed_returned)
 * Loans and Renewals Report: [Loans and Renewals Counts
   Query](loans_and_renewals_counts)
