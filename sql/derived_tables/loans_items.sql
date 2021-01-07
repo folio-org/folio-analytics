@@ -1,3 +1,6 @@
+-- this query depends on locations_libraries, so that
+-- should be run before this one
+
 DROP TABLE IF EXISTS folio_reporting.loans_items;
 
 -- Create a derived table that contains all items from loans and adds
@@ -41,6 +44,7 @@ SELECT
     itl.name AS current_item_temporary_location_name,
     json_extract_path_text(ii.data, 'permanentLocationId') AS current_item_permanent_location_id,
     ipl.name AS current_item_permanent_location_name,
+    --add library, campus, institution for permanent location;
     cl.loan_policy_id,
     clp.name AS loan_policy_name,
     cl.lost_item_policy_id,
