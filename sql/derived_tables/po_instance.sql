@@ -10,7 +10,7 @@ SELECT
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
     json_extract_path_text(po_lines.data, 'instanceId') AS pol_instance_id,
     inventory_instances.title AS title,
-    json_extract_path_text(po_lines.data, 'publicationDate') AS date_of_publication,
+    json_extract_path_text(po_lines.data, 'publicationDate') AS publication_date,
     json_extract_path_text(po_lines.data, 'publisher') AS publisher,
     json_extract_path_text(po_lines.data, 'requester') AS requester,
     json_extract_path_text(po_lines.data, 'rush')::boolean AS rush
