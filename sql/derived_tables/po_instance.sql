@@ -4,7 +4,7 @@ CREATE TABLE folio_reporting.po_instance AS
 SELECT
     po_purchase_orders.po_number AS po_number,
     organization_organizations.code AS vendor_code,
-    json_extract_path_text(po_purchase_orders.data, 'approved') AS status_approved,
+    json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate') AS created_date,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') AS created_by,
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
