@@ -1,4 +1,4 @@
-package circ_detail
+package acrl_circulation
 
 import (
 	"testing"
@@ -8,6 +8,6 @@ import (
 
 func TestQuery(t *testing.T) {
 
-	gotest.RunTest(t, "circ_detail.sql", "circ_detail_result.csv")
+	gotest.RunTest(t, "acrl_circulation.sql", "acrl_circulation_result.csv")
 
 }

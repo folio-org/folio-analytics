@@ -11,7 +11,7 @@ SELECT
     inventory_contributor_types.name AS contributor_rdatype_name,
     json_extract_path_text(contributors.data, 'contributorTypeText') AS contributor_type_freetext,
     json_extract_path_text(contributors.data, 'name') AS contributor_name,
-    json_extract_path_text(contributors.data, 'primary') AS contributor_primary
+    json_extract_path_text(contributors.data, 'primary')::boolean AS contributor_primary
 FROM
     inventory_instances AS instance
     CROSS JOIN json_array_elements(json_extract_path(instance.data, 'contributors')) AS contributors(data)
