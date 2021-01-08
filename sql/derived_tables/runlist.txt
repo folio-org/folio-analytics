@@ -29,9 +29,9 @@ item_ext.sql
 item_notes.sql
 items_holdings_instances.sql
 item_statistical_codes.sql
-loans_items.sql
 loans_renewal_count.sql
 locations_libraries.sql
+loans_items.sql
 po_acq_unit_ids.sql
 po_instance.sql
 po_lines_cost.sql
