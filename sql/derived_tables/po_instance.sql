@@ -4,7 +4,7 @@ CREATE TABLE folio_reporting.po_instance AS
 SELECT
     po_purchase_orders.po_number AS po_number,
     organization_organizations.code AS vendor_code,
-    json_extract_path_text(po_purchase_orders.data, 'approved') AS status_approved,
+    json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate') AS created_date,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') AS created_by,
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
@@ -37,7 +37,7 @@ CREATE INDEX ON folio_reporting.po_instance (pol_instance_id);
 
 CREATE INDEX ON folio_reporting.po_instance (title);
 
-CREATE INDEX ON folio_reporting.po_instance (date_of_publication);
+CREATE INDEX ON folio_reporting.po_instance (publication_date);
 
 CREATE INDEX ON folio_reporting.po_instance (publisher);
 

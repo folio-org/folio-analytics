@@ -8,9 +8,9 @@ WITH funds_distr AS (
         json_extract_path_text(dist.data, 'code') AS fund_distribution_code,
         json_extract_path_text(dist.data, 'fundId') AS fund_distribution_id,
         json_extract_path_text(dist.data, 'distributionType') AS fund_distribution_type,
-        json_extract_path_text(dist.data, 'value') AS fund_distribution_value,
-        json_extract_path_text(lines.data, 'subTotal') AS invoice_line_sub_total,
-        json_extract_path_text(lines.data, 'total') AS invoice_line_total
+        json_extract_path_text(dist.data, 'value')::numeric AS fund_distribution_value,
+        json_extract_path_text(lines.data, 'subTotal')::numeric(12,2) AS invoice_line_sub_total,
+        json_extract_path_text(lines.data, 'total')::numeric(12,2) AS invoice_line_total
     FROM
         invoice_lines AS lines
         CROSS JOIN json_array_elements(json_extract_path(data, 'fundDistributions')) AS dist(data)

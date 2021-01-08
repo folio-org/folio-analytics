@@ -42,7 +42,7 @@ WITH items AS (
         json_extract_path_text(data, 'status', 'date') AS status_date,
         json_extract_path_text(data, 'status', 'name') AS status_name,
         json_extract_path_text(data, 'holdingsRecordId') AS holdings_record_id,
-        json_extract_path_text(data, 'discoverySuppress') AS discovery_suppress
+        json_extract_path_text(data, 'discoverySuppress')::boolean AS discovery_suppress
     FROM
         inventory_items
 )
