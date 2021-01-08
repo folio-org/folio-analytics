@@ -25,6 +25,7 @@ SELECT
     cl.id AS loan_id,
     cl.item_id,
     cl.item_status,
+    json_extract_path_text(cl.data, 'status','name') AS loan_status,
     cl.loan_date,
     cl.due_date AS loan_due_date,
     cl.return_date AS loan_return_date,
@@ -72,7 +73,8 @@ SELECT
     ii.permanent_loan_type_id,
     iltp.name AS permanent_loan_type_name,
     json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
-    iltt.name AS temporary_loan_type_name
+    iltt.name AS temporary_loan_type_name,
+    cl.renewal_count 
 FROM
     public.circulation_loans AS cl
     LEFT JOIN public.inventory_items AS ii ON cl.item_id = ii.id
@@ -93,6 +95,8 @@ FROM
     LEFT JOIN public.feesfines_lost_item_fees_policies AS ffl ON cl.lost_item_policy_id = ffl.id;
 
 CREATE INDEX ON folio_reporting.loans_items (item_status);
+
+CREATE INDEX ON folio_reporting.loans_items (loan_status);
 
 CREATE INDEX ON folio_reporting.loans_items (loan_date);
 
