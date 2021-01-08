@@ -8,9 +8,9 @@ WITH funds_distr AS (
         json_extract_path_text(dist.data, 'code') AS fund_distribution_code,
         json_extract_path_text(dist.data, 'fundId') AS fund_distribution_id,
         json_extract_path_text(dist.data, 'distributionType') AS fund_distribution_type,
-        json_extract_path_text(dist.data, 'value') AS fund_distribution_value,
-        json_extract_path_text(lines.data, 'subTotal') AS invoice_line_sub_total,
-        json_extract_path_text(lines.data, 'total') AS invoice_line_total
+        json_extract_path_text(dist.data, 'value')::numeric AS fund_distribution_value,
+        json_extract_path_text(lines.data, 'subTotal')::numeric(12,2) AS invoice_line_sub_total,
+        json_extract_path_text(lines.data, 'total')::numeric(12,2) AS invoice_line_total
     FROM
         invoice_lines AS lines
         CROSS JOIN json_array_elements(json_extract_path(data, 'fundDistributions')) AS dist(data)
@@ -18,10 +18,10 @@ WITH funds_distr AS (
 SELECT
     invoice_line_id AS invoice_line_id,
     fund_distribution_id AS fund_distribution_id,
-    ff.fund_status AS finance_fund_status,
-    ff.code AS finance_fund_code,
-    ff.name AS fund_name,
-    ff.id AS fund_type_id,
+    json_extract_path_text(ff.data, 'fundStatus') AS finance_fund_status,
+    json_extract_path_text(ff.data, 'code') AS finance_fund_code,
+    json_extract_path_text(ff.data, 'name') AS fund_name,
+    json_extract_path_text(ff.data, 'id') AS fund_type_id,
     ft.name AS fund_type_name,
     fund_distribution_value AS fund_distribution_value,
     fund_distribution_type AS fund_distribution_type,

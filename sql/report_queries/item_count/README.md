@@ -7,7 +7,6 @@
 * [Output](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#output)
 * [Requests not yet addressed](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#requests-and-issues-not-yet-addressed)
 
-
 ## Status
 As of December 2020, this query has been updated to use the relevant derived tables.
 
@@ -102,6 +101,7 @@ Aggregation: This query provides counts grouped by:
 * Instance type id; Instance type name; Mode of issuance id; Mode of issuance name; Instance format id; Instance format code; instance format name; Instance language (first); Instance statistical code id; Instance statistical code; Instance statistical code name; Instance nature of content id; Instance nature of content code; Instance nature of content name; Instance previously held; Instance super relationship type id; Instance super relationship type name; Instance sub relationship type id; Instance sub relationship type name
 
 ## Requests and issues not yet addressed
+
 <details>
   <summary>Click to read more!</summary>
   
