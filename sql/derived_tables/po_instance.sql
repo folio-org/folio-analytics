@@ -37,7 +37,7 @@ CREATE INDEX ON folio_reporting.po_instance (pol_instance_id);
 
 CREATE INDEX ON folio_reporting.po_instance (title);
 
-CREATE INDEX ON folio_reporting.po_instance (date_of_publication);
+CREATE INDEX ON folio_reporting.po_instance (publication_date);
 
 CREATE INDEX ON folio_reporting.po_instance (publisher);
 
