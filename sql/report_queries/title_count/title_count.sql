@@ -101,6 +101,7 @@ FROM
     LEFT JOIN folio_reporting.holdings_ext AS hld ON inst.instance_id = hld.instance_id
     LEFT JOIN folio_reporting.holdings_statistical_codes AS hsc ON hld.holdings_id = hsc.holdings_id
     LEFT JOIN folio_reporting.locations_libraries AS loc ON hld.permanent_location_id = loc.location_id  
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id
 WHERE 
 
 	-- hardcoded filters 
@@ -160,7 +161,7 @@ WHERE
 			AND (SELECT instance_format_filter3 FROM parameters) = ''))
 	AND	
 	(
-		((SELECT "language" FROM folio_reporting.instance_languages AS lng WHERE lng.instance_id = inst.instance_id LIMIT 1) = (SELECT instance_language_filter FROM parameters))
+		(lng.language = (SELECT instance_language_filter FROM parameters))
 			OR ((SELECT instance_language_filter FROM parameters) = ''))
 	AND 
 	(inst.mode_of_issuance_name = (SELECT instance_mode_of_issuance_filter FROM parameters)
