@@ -169,6 +169,10 @@ CREATE INDEX ON folio_reporting.item_ext (temporary_location_id);
 
 CREATE INDEX ON folio_reporting.item_ext (temporary_location_name);
 
+CREATE INDEX ON folio_reporting.item_ext (effective_location_id);
+
+CREATE INDEX ON folio_reporting.item_ext (effective_location_name);
+
 CREATE INDEX ON folio_reporting.item_ext (description_of_pieces);
 
 CREATE INDEX ON folio_reporting.item_ext (status_date);
