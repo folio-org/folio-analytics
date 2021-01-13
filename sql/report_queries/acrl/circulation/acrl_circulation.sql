@@ -34,26 +34,26 @@ Filters:
 WITH parameters AS (
     SELECT
         /* Choose a start and end date for the loans period */
-        '2000-01-01'::DATE AS start_date,
-        '2021-01-01'::DATE AS end_date,
+        '2000-01-01'::date AS start_date,
+        '2021-01-01'::date AS end_date,
         /* Fill in a material type name, or leave blank for all types */
-        ''::VARCHAR AS material_type_filter,
+        ''::varchar AS material_type_filter,
         /* Fill in a location name, or leave blank for all locations */
-        ''::VARCHAR AS items_permanent_location_filter, --Online, Annex, Main Library
-        ''::VARCHAR AS items_temporary_location_filter, --Online, Annex, Main Library
-        ''::VARCHAR AS items_effective_location_filter, --Online, Annex, Main Library
-        ''::VARCHAR AS items_permanent_institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
-''::VARCHAR AS items_permanent_campus_filter, -- 'Main Campus','City Campus','Online'
-''::VARCHAR AS items_permanent_library_filter -- 'Datalogisk Institut','Adelaide Library'
+        ''::varchar AS items_permanent_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_temporary_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_effective_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_permanent_institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
+        ''::varchar AS items_permanent_campus_filter, -- 'Main Campus','City Campus','Online'
+        ''::varchar AS items_permanent_library_filter -- 'Datalogisk Institut','Adelaide Library'
 )
 SELECT
     (
         SELECT
-            start_date::VARCHAR
+            start_date::varchar
         FROM
-            parameters) || ' to '::VARCHAR || (
+            parameters) || ' to '::varchar || (
         SELECT
-            end_date::VARCHAR
+            end_date::varchar
         FROM
             parameters) AS date_range,
     loan_date,
