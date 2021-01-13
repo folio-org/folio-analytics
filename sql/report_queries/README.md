@@ -10,13 +10,12 @@ SIG](https://wiki.folio.org/display/RPT/).
 ## How to find a query
 
 You can find queries by browsing the subfolders in this folder or by
-reviewing the [main README file for this
-repository](https://github.com/folio-org/folio-analytics).
+reviewing the [Query Table of Contents](#query-table-of-contents) below.
 
 ## Understanding query files
 
 In the folder for each query, you should see an .sql file, a README
-file, and for most queries, a set of test files (\*\_test.go,
+file, and for some queries, a set of test files (\*\_test.go,
 \*\_result.csv). 
 
 The README file summarizes the status, purpose, output, and parameters
@@ -33,16 +32,39 @@ however, may not yet be functional.
 The test files are described in detail on our [testing documentation
 page](https://github.com/folio-org/folio-analytics/blob/master/TESTING.md).
 
-## Submitting new queries
+## Query Table of Contents
 
-When working on a new query, please contact Angela Zoss with the URL
-of your prototype. Angela will create a subdirectory and README file
-for your work, at which point you can fork the folio-analytics
-repository and begin using version control to save progress on your
-query.
+### Circulation
 
-When you are done with your initial query development, you may submit
-a pull request to have the query merged back into the master
-repository. Then the query will go through the review workflow on
-JIRA.
+* ACRL Circulation Report: [ACRL Circulation Query](acrl/circulation)
+* Claimed Returned Report: [Claimed Returned Query](claimed_returned)
+* Loans and Renewals Report: [Loans and Renewals Counts
+  Query](loans_and_renewals_counts)
+* Recalls Report: [Recalls Report](recalls)
+* Requests Report: [Requests Report](requests)
+* Services Usage Report: [Services Usage Report](services_usage)
 
+### Course Reserves
+
+### External Statistics
+* [Association of College and Research Libraries (ACRL) Report](acrl)
+
+### Finance and Orders
+
+* ACRL Collection Expenditures Report: [ACRL Collection Expenditures Query](acrl/collection_expenditures)
+
+### Inventory
+
+* ACRL Title Count Report: [ACRL Title Count Query](acrl/title_count)
+* ACRL Volume Count Report: [ACRL Volume Count Query](acrl/volume_count)
+* HathiTrust Print Report: [Hathi Trust Print Queries](hathitrust_print)
+* Missing Items Report: [Missing Items Query](missing_items)
+* Pick List Report: [Pick List Query](pick_list)
+
+### Notifications
+
+### Resource Management
+* RM Title Count Report: [RM Title Count Query](title_count)
+
+
+### Users

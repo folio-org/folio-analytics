@@ -42,33 +42,11 @@ includes guidelines for query writing.
 
 ## Queries
 
-SQL queries are stored in the [sql directory](sql) of this repository.
-Each query has a separate directory. A full report may contain
-separate individual queries, so the queries are grouped into reports
-using the list below.
+SQL queries are stored in the [sql directory](sql) of this repository. Queries are separated into two categories: [derived table queries](sql/derived_tables) and [report queries](sql/report_queries). 
 
-### Circulation
+Derived table queries are designed to combine tables that are commonly used together or to otherwise simply querying. Institutions may wish to set up a nightly CRON job to run these queries.
 
-* Circulation Detail Report: [Circulation Detail
-  Query](sql/circ_detail)
-* Circulation Item Detail Report: [Circulation Item Detail
-  Query](sql/circ_item_detail)
-* Loans and Renewals Report: [Loans and Renewals Counts
-  Query](sql/loans_and_renewals_counts)
-* Services Usage Report: [Services Usage Report](sql/services_usage)
-
-### Inventory
-
-* ACRL Title Count Report: [ACRL Title Count Query](sql/acrl)
-* ACRL Volume Count Report: [ACRL Volume Count Query](sql/acrl)
-* Missing Items Report: [Missing Items Query](sql/missing_items)
-* Pick List Report: [Pick List Query](sql/pick_list)
-
-### Finance and Orders
-
-### Resource Management
-
-### Users
+Report queries are created in response to specific report requests from FOLIO member institutions. Each query has a separate directory. A full report may contain separate individual queries. Consult the README file in the [report queries](sql/report_queries) folder for a query table of contents, and look for additional README files in the query folders to explain how to run the reports.
 
 
 ## Testing

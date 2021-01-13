@@ -1,14 +1,15 @@
-DROP TABLE IF EXISTS local.holdings_statistical_codes;
+DROP TABLE IF EXISTS folio_reporting.holdings_statistical_codes;
 
 -- Create a local holdings table with the id and name for the code and type.
-CREATE TABLE local.holdings_statistical_codes AS
+CREATE TABLE folio_reporting.holdings_statistical_codes AS
 WITH holdings_statistical_codes AS (
     SELECT
         holdings.id AS holdings_id,
         holdings.hrid AS holdings_hrid,
-        json_array_elements_text(json_extract_path(holdings.data, 'statisticalCodeIds')) AS statistical_code_id
+        statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_holdings AS holdings
+        CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds')) AS statistical_code_ids (data)
 )
 SELECT
     holdings_statistical_codes.holdings_id,
@@ -23,17 +24,17 @@ FROM
     LEFT JOIN inventory_statistical_codes ON holdings_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON local.holdings_statistical_codes (holdings_id);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (holdings_id);
 
-CREATE INDEX ON local.holdings_statistical_codes (holdings_hrid);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (holdings_hrid);
 
-CREATE INDEX ON local.holdings_statistical_codes (statistical_code_id);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (statistical_code_id);
 
-CREATE INDEX ON local.holdings_statistical_codes (statistical_code);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (statistical_code);
 
-CREATE INDEX ON local.holdings_statistical_codes (statistical_code_name);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (statistical_code_name);
 
-CREATE INDEX ON local.holdings_statistical_codes (statistical_code_type_id);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (statistical_code_type_id);
 
-CREATE INDEX ON local.holdings_statistical_codes (statistical_code_type_name);
+CREATE INDEX ON folio_reporting.holdings_statistical_codes (statistical_code_type_name);
 
