@@ -15,6 +15,8 @@ jobs:
       run: sudo runuser -l postgres -c 'createuser -s runner'
     - name: Create database
       run: createdb folio_snapshot
+    - name: Create schema
+      run: psql -bq -v ON_ERROR_STOP=on -d folio_snapshot -c "create schema folio_reporting;"
     - name: Download test database
       run: curl -sSO https://glintcore.net:8443/ldp/folio_snapshot.sql.gz
     - name: Load test data
