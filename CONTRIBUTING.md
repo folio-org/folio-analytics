@@ -6,7 +6,6 @@ appreciate submissions of SQL code for new report queries and derived
 table queries, as well as bug fixes.  Please follow these guidelines
 when preparing a pull request.
 
-
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
 2\. [Branches](#2-branches)  
@@ -49,8 +48,7 @@ Again, please use the `main` branch for all pull requests.
 ---------------
 
 A pull request is reviewed by at least one person other than the
-contributor before it can be merged.  Feel free to request a specific
-reviewer, if you wish.
+contributor before it can be merged.
 
 
 4\. Formatting SQL
