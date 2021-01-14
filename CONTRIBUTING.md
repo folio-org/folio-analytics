@@ -6,7 +6,6 @@ appreciate submissions of SQL code for new report queries and derived
 table queries, as well as bug fixes.  Please follow these guidelines
 when preparing a pull request.
 
-
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
 2\. [Branches](#2-branches)  
