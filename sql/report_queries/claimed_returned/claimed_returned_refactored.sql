@@ -14,10 +14,16 @@ WITH parameters AS (
         'Main Library' :: VARCHAR AS current_item_effective_location_filter --Online, Annex, Main Library
    ),
    notes as (
-   SELECT item_id,
-   STRING_AGG (note, '|') AS item_notes
-   FROM folio_reporting.item_notes
-   GROUP BY item_id
+   		SELECT item_id,
+   		STRING_AGG (note, '|') AS item_notes
+   		FROM folio_reporting.item_notes
+   		GROUP BY item_id
+   ),
+   publication_d as (
+   		SELECT instance_id,
+   		STRING_AGG (date_of_publication, '|') AS dates_of_publication
+   		FROM folio_reporting.instance_publication
+   		GROUP BY instance_id
    )
 SELECT 
 	(SELECT start_date :: VARCHAR FROM parameters) ||
@@ -52,7 +58,7 @@ SELECT
     he.temporary_location_name,
     he.shelving_title,
     ii.cataloged_date, 
-	ip.date_of_publication,
+	pd.dates_of_publication,
     lrc.num_loans,
     lrc.num_renewals,
     li.user_id,
@@ -74,6 +80,8 @@ LEFT JOIN folio_reporting.holdings_ext AS he
 	ON ie.holdings_record_id = he.holdings_id
 LEFT JOIN public.inventory_instances as ii
 	ON he.instance_id=ii.id
+LEFT JOIN publication_d as pd
+	ON he.instance_id=pd.instance_id
 LEFT JOIN folio_reporting.instance_publication as ip
 	ON he.instance_id=ip.instance_id
 LEFT JOIN folio_reporting.loans_renewal_count AS lrc
