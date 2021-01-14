@@ -49,8 +49,7 @@ Again, please use the `main` branch for all pull requests.
 ---------------
 
 A pull request is reviewed by at least one person other than the
-contributor before it can be merged.  Feel free to request a specific
-reviewer, if you wish.
+contributor before it can be merged.
 
 
 4\. Formatting SQL
