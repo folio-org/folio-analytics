@@ -1,3 +1,5 @@
+-- this query depends on locations_libraries, so that
+-- should be run before this one
 DROP TABLE IF EXISTS folio_reporting.loans_items;
 
 -- Create a derived table that contains all items from loans and adds
@@ -23,6 +25,7 @@ SELECT
     cl.id AS loan_id,
     cl.item_id,
     cl.item_status,
+    json_extract_path_text(cl.data, 'status','name') AS loan_status,
     cl.loan_date,
     cl.due_date AS loan_due_date,
     cl.return_date AS loan_return_date,
@@ -41,6 +44,12 @@ SELECT
     itl.name AS current_item_temporary_location_name,
     json_extract_path_text(ii.data, 'permanentLocationId') AS current_item_permanent_location_id,
     ipl.name AS current_item_permanent_location_name,
+    ll.library_id AS current_item_permanent_location_library_id,
+    ll.library_name AS current_item_permanent_location_library_name,
+    ll.campus_id AS current_item_permanent_location_campus_id,
+    ll.campus_name AS current_item_permanent_location_campus_name,
+    ll.institution_id AS current_item_permanent_location_institution_id,
+    ll.institution_name AS current_item_permanent_location_institution_name,
     cl.loan_policy_id,
     clp.name AS loan_policy_name,
     cl.lost_item_policy_id,
@@ -64,7 +73,8 @@ SELECT
     ii.permanent_loan_type_id,
     iltp.name AS permanent_loan_type_name,
     json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
-    iltt.name AS temporary_loan_type_name
+    iltt.name AS temporary_loan_type_name,
+    cl.renewal_count 
 FROM
     public.circulation_loans AS cl
     LEFT JOIN public.inventory_items AS ii ON cl.item_id = ii.id
@@ -73,6 +83,7 @@ FROM
     LEFT JOIN public.user_groups AS ug ON cl.patron_group_id_at_checkout = ug.id
     LEFT JOIN public.inventory_locations AS iel ON ii.effective_location_id = iel.id
     LEFT JOIN public.inventory_locations AS ipl ON json_extract_path_text(ii.data, 'permanentLocationId') = ipl.id
+    LEFT JOIN folio_reporting.locations_libraries AS ll ON ipl.id = ll.location_id
     LEFT JOIN public.inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN public.inventory_locations AS icl ON cl.item_effective_location_id_at_check_out = icl.id
     LEFT JOIN public.inventory_service_points AS ispi ON cl.checkin_service_point_id = ispi.id
@@ -85,6 +96,8 @@ FROM
 
 CREATE INDEX ON folio_reporting.loans_items (item_status);
 
+CREATE INDEX ON folio_reporting.loans_items (loan_status);
+
 CREATE INDEX ON folio_reporting.loans_items (loan_date);
 
 CREATE INDEX ON folio_reporting.loans_items (loan_due_date);
@@ -94,6 +107,12 @@ CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_nam
 CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_name);
 
 CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_library_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_campus_name);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_institution_name);
 
 CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_name);
 
