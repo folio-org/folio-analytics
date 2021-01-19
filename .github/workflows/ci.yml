@@ -1,0 +1,29 @@
+name: folio-analytics CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Start postgres
+      run: sudo service postgresql start
+    - name: Create user
+      run: sudo runuser -l postgres -c 'createuser -s runner'
+    - name: Create database
+      run: createdb folio_snapshot
+    - name: Create schema
+      run: psql -bq -v ON_ERROR_STOP=on -d folio_snapshot -c "create schema folio_reporting;"
+    - name: Download test database
+      run: curl -sSO https://glintcore.net:8443/ldp/folio_snapshot.sql.gz
+    - name: Load test data
+      run: zcat folio_snapshot.sql.gz | psql -bq -v ON_ERROR_STOP=on -d folio_snapshot
+    - name: Clean up
+      run: rm -f folio_snapshot.sql.gz
+    - name: Vacuum database
+      run: vacuumdb -qz -d folio_snapshot
+    - name: Run derived table queries
+      run: ./run-ci.sh
