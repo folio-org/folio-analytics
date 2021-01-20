@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS folio_reporting.po_lines_details_subscription;
 
+-- Create a local table for subscription details in po_lines.
 CREATE TABLE folio_reporting.po_lines_details_subscription AS
 /* Subquery to extract nested JSON data */
 WITH temp_pol_detail_subs AS (
