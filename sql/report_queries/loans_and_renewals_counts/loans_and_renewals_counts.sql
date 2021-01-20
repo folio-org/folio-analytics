@@ -79,7 +79,7 @@ WITH parameters AS (
     li.loan_due_date AS loan_due_date,
     li.loan_return_date AS loan_return_date,
     li.loan_status AS loan_status,
-    '1'::int AS num_loans, -- each row is a single loan
+    1::int AS num_loans, -- each row is a single loan
     li.renewal_count AS num_renewals,
     li.patron_group_name AS patron_group_name,
     li.material_type_name AS material_type_name,
