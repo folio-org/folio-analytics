@@ -5,11 +5,12 @@ DROP TABLE IF EXISTS folio_reporting.po_lines_tags;
 CREATE TABLE folio_reporting.po_lines_tags AS
 SELECT
     pol.id AS pol_id,
-    tags #>> '{}' AS pol_tag
+    tags.data #>> '{}' AS pol_tag,
+    tags.ordinality
 FROM
     po_lines AS pol
-    CROSS JOIN json_array_elements(
-        json_extract_path(data, 'tags', 'tagList')) AS tags;
+    CROSS JOIN LATERAL json_array_elements(
+        json_extract_path(data, 'tags', 'tagList')) WITH ORDINALITY AS tags (data);
 
 CREATE INDEX ON folio_reporting.po_lines_tags (pol_id);
 
