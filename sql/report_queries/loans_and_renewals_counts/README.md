@@ -12,6 +12,9 @@ This report generates data with the following format:
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 2000-01-01 to 2022-01-01 | 2021-01-07 | 2021-01-07 19:03:41+00 | 2021-01-07 20:38:36+00 | Open | 1 |  | undergrad | book | One Hour |  | Can circulate | Main Library | | Main Library | Datalogisk Institut | City Campus | Københavns Universitet |
 
+Note that in this report `num_loans` always has a value of `1`, since
+each row corresponds to one loan.
+
 
 ## Parameters
 
