@@ -22,7 +22,7 @@ SELECT
     json_extract_path_text(ff.data, 'code') AS finance_fund_code,
     json_extract_path_text(ff.data, 'name') AS fund_name,
     json_extract_path_text(ff.data, 'id') AS fund_type_id,
-    ft.name AS fund_type_name,
+    json_extract_path_text(ft.data, 'name') AS fund_type_name,
     fund_distribution_value AS fund_distribution_value,
     fund_distribution_type AS fund_distribution_type,
     invoice_line_sub_total AS invoice_line_sub_total,
