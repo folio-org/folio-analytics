@@ -71,7 +71,6 @@ po_lines_detail AS (
         polermat.pol_er_mat_type_name AS "purchase_order_elec_material_type_name",
         polphysmat.pol_mat_type_name AS "purchase_order_phys_material_type_name",
         --pol.instance_id AS "instance_id",
-        pol.agreement_id AS "agreement_id",
         pol.purchase_order_id AS "purchase_order_id"
     FROM
         po_lines AS pol
