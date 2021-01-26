@@ -5,9 +5,12 @@ CREATE TABLE folio_reporting.instance_subjects AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    json_array_elements_text(json_extract_path(instances.data, 'subjects')) AS subject
+    subjects.data #>> '{}' AS subject,
+    subjects.ordinality
 FROM
-    inventory_instances AS instances;
+    inventory_instances AS instances
+    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'subjects'))
+    WITH ORDINALITY AS subjects (data);
 
 CREATE INDEX ON folio_reporting.instance_subjects (instance_id);
 
