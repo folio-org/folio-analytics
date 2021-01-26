@@ -6,18 +6,17 @@ WITH instances AS (
         id,
         hrid,
         instance_format_ids.data #>> '{}' AS instance_format_id,
-        instance_format_ids.ordinality
+        instance_format_ids.ordinality AS instance_format_ordinality
     FROM
         inventory_instances
         CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'instanceFormatIds'))
-        WITH ORDINALITY
-        AS instance_format_ids (data)
+        WITH ORDINALITY AS instance_format_ids (data)
 )
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
     instances.instance_format_id AS format_id,
-    instances.ordinality AS format_ordinality,
+    instances.instance_format_ordinality AS format_ordinality,
     formats.code AS format_code,
     formats.name AS format_name,
     formats.source AS format_source
