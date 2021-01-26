@@ -39,7 +39,8 @@ Subscription data entry is optional for institutions.
 
 STILL IN PROGRESS
 -need to add paymentDate field from invoices data array when this field is available
- */
+
+*/
  
 --updated to use date
 WITH parameters AS (
@@ -113,7 +114,8 @@ SELECT
 FROM
     po_lines_detail AS pol
     LEFT JOIN po_purchase_order_detail AS podtl ON podtl.po_detail_id = pol.purchase_order_id
-    --filter po by order type and date
+    
+--filters for date ordered, workflow status, order type, subscription start and end dates, and tags
 WHERE
 --	 (podtl.po_date_ordered > (SELECT start_date FROM parameters) AND
 --		podtl.po_date_ordered < (SELECT end_date FROM parameters))
@@ -188,6 +190,7 @@ WHERE
                                         tags_filter3
                                     FROM
                                         parameters) = ''))
+--aggregation by data elements below
 GROUP BY
     po_line_number,
     po_order_type,
