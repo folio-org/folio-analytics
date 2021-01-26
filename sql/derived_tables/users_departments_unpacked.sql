@@ -7,7 +7,7 @@ WITH departments_array AS (
     SELECT
         uu.id AS user_id,
         departments.data #>> '{}' AS department_id,
-        departments.ordinality
+        departments.ordinality AS department_ordinality
     FROM
         user_users AS uu
         CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'departments'))
@@ -15,7 +15,8 @@ WITH departments_array AS (
 )
 SELECT
     departments_array.user_id,
-    departments_array.department_id --,
+    departments_array.department_id,
+    departments_array.department_ordinality --,
     --	ud.name AS department_name,
     --	ud.code AS department_code,
     --	ud.usage_number AS department_usage_number
