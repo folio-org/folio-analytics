@@ -86,7 +86,7 @@ po_purchase_order_detail AS (
         podtl.id AS "po_detail_id",
         podtl.order_type AS "po_order_type",
         podtl.po_number AS "po_number",
-        --podtl.date_ordered AS "po_date_ordered",
+        podtl.date_ordered AS "po_date_ordered",
         podtl.workflow_status AS "po_workflow_status",
         poacqunitids.po_acquisition_unit_id AS "po_acquisition_unit_id",
         poacqunitids.po_acquisition_unit_name AS "po_acquisition_unit_name",
