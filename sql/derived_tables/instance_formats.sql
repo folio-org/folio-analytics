@@ -30,6 +30,8 @@ CREATE INDEX ON folio_reporting.instance_formats (instance_hrid);
 
 CREATE INDEX ON folio_reporting.instance_formats (format_id);
 
+CREATE INDEX ON folio_reporting.instance_formats (format_ordinality);
+
 CREATE INDEX ON folio_reporting.instance_formats (format_code);
 
 CREATE INDEX ON folio_reporting.instance_formats (format_name);
