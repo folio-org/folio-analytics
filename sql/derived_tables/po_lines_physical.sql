@@ -53,5 +53,7 @@ CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_receipt_due);
 
 CREATE INDEX ON folio_reporting.po_lines_physical (pol_volumes);
 
+CREATE INDEX ON folio_reporting.po_lines_physical (pol_volumes_ordinality);
+
 CREATE INDEX ON folio_reporting.po_lines_physical (pol_phys_volumes_description);
 
