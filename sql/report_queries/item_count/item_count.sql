@@ -97,7 +97,7 @@ SELECT
     inform.format_id AS instance_format_id,
     inform.format_code AS instance_format_code,
     inform.format_name AS instance_format_name,
-    (SELECT "language" FROM folio_reporting.instance_languages AS lng WHERE lng.instance_id = inst.instance_id LIMIT 1) AS first_language,
+    lng.language AS first_language,
     insc.statistical_code_id AS instance_statistical_code_id,
     insc.statistical_code AS instance_statistical_code,
     insc.statistical_code_name AS instance_statistical_code_name,
@@ -120,7 +120,7 @@ FROM
     LEFT JOIN folio_reporting.instance_statistical_codes AS insc ON inst.instance_id = insc.instance_id
     LEFT JOIN folio_reporting.instance_nature_content AS innc ON inst.instance_id = innc.instance_id
     LEFT JOIN folio_reporting.instance_formats AS inform ON inst.instance_id = inform.instance_id
-    LEFT JOIN folio_reporting.instance_languages AS inlang ON inst.instance_id = inlang.instance_id
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.ordinality = 1
     LEFT JOIN folio_reporting.instance_relationships_ext AS super_relation ON super_relation.relationship_super_instance_id = inst.instance_id
     LEFT JOIN folio_reporting.instance_relationships_ext AS sub_relation ON sub_relation.relationship_sub_instance_id = inst.instance_id
 WHERE
@@ -185,7 +185,7 @@ WHERE
 			AND (SELECT instance_format_filter3 FROM parameters) = ''))
 	AND	
 	(
-		((SELECT "language" FROM folio_reporting.instance_languages AS lng WHERE lng.instance_id = inst.instance_id LIMIT 1) = (SELECT instance_language_filter FROM parameters))
+        (lng.language = (SELECT instance_language_filter FROM parameters))
 			OR ((SELECT instance_language_filter FROM parameters) = ''))
 	AND 
 	(inst.mode_of_issuance_name = (SELECT instance_mode_of_issuance_filter FROM parameters)

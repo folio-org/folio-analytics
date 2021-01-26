@@ -20,17 +20,17 @@ date filter, then checkout actions that match, then just unions them together
 /* Change the lines below to adjust the date filter */
 WITH parameters AS (
     SELECT
-        '2000-01-01'::DATE AS start_date,
-        '2021-01-01'::DATE AS end_date
+        '2000-01-01'::date AS start_date,
+        '2021-01-01'::date AS end_date
 ),
 checkout_actions AS (
     SELECT
         checkout_service_point_name AS service_point_name,
-        loan_date::DATE AS action_date,
+        loan_date::date AS action_date,
         to_char(loan_date, 'Day') AS day_of_week,
     extract(hours FROM loan_date) AS hour_of_day,
     material_type_name,
-    'Checkout'::VARCHAR AS action_type,
+    'Checkout'::varchar AS action_type,
     item_effective_location_name_at_check_out,
     item_status,
     count(loan_id) AS ct
@@ -59,9 +59,9 @@ FROM
 simple_return_dates AS (
     SELECT
         checkin_service_point_name AS service_point_name,
-        coalesce(system_return_date, loan_return_date::TIMESTAMPTZ AT TIME ZONE 'UTC') AS action_date,
+        coalesce(system_return_date, loan_return_date::timestamptz at time zone 'UTC') AS action_date,
         material_type_name,
-        'Checkin'::VARCHAR AS action_type,
+        'Checkin'::varchar AS action_type,
         item_effective_location_name_at_check_out,
         item_status,
         loan_id
@@ -71,7 +71,7 @@ simple_return_dates AS (
 checkin_actions AS (
     SELECT
         service_point_name,
-        action_date::DATE AS action_date,
+        action_date::date AS action_date,
         to_char(action_date, 'Day') AS day_of_week,
         extract(hours FROM action_date) AS hour_of_day,
     material_type_name,
