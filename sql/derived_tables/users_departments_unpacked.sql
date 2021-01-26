@@ -30,6 +30,8 @@ CREATE INDEX ON folio_reporting.users_departments_unpacked (user_id);
 
 CREATE INDEX ON folio_reporting.users_departments_unpacked (department_id);
 
+CREATE INDEX ON folio_reporting.users_departments_unpacked (department_ordinality);
+
 --CREATE INDEX ON folio_reporting.users_departments_unpacked (department_name);
 
 --CREATE INDEX ON folio_reporting.users_departments_unpacked (department_code);
