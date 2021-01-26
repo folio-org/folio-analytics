@@ -6,9 +6,12 @@ CREATE TABLE folio_reporting.users_departments_unpacked AS
 WITH departments_array AS (
     SELECT
         uu.id AS user_id,
-        json_array_elements_text(json_extract_path(uu.data, 'departments')) AS department_id
+        departments.data #>> '{}' AS department_id,
+        departments.ordinality
     FROM
         user_users AS uu
+        CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'departments'))
+        WITH ORDINALITY AS departments (data)
 )
 SELECT
     departments_array.user_id,
