@@ -40,7 +40,7 @@ SELECT
 FROM
     invoice_invoices AS inv
     LEFT JOIN invoice_lines AS invl ON invl.invoice_id = inv.id
-    LEFT JOIN folio_reporting.INVOICE_ADJUSTMENT_IN_ADDITION_TO AS invadj ON invadj.invoice_id = inv.id
+    LEFT JOIN folio_reporting.invoice_adjustment_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
 GROUP BY
     inv.id,
