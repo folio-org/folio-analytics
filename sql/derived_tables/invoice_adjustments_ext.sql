@@ -24,7 +24,8 @@ SELECT
         0
     ELSE
         invadj.adjustment_value::decimal
-    END AS inv_adjust_total_value, --This is the total of the invoice adjustment invl.total AS "invl_total",
+    END AS inv_adjust_total_value, --This is the total of the invoice adjustment 
+    invl.total AS "invl_total",
     invltotal.invl_total AS "invls_total",
     invadj.adjustment_prorate AS inv_adj_prorate,
     invadj.adjustment_relationtototal AS inv_adj_relationToTotal,
