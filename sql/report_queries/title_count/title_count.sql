@@ -100,7 +100,7 @@ FROM
     LEFT JOIN folio_reporting.holdings_ext AS hld ON inst.instance_id = hld.instance_id
     LEFT JOIN folio_reporting.holdings_statistical_codes AS hsc ON hld.holdings_id = hsc.holdings_id
     LEFT JOIN folio_reporting.locations_libraries AS loc ON hld.permanent_location_id = loc.location_id  
-    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.ordinality = 1
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.language_ordinality = 1
 WHERE 
 
 	-- hardcoded filters 
