@@ -120,7 +120,7 @@ FROM
     LEFT JOIN folio_reporting.instance_statistical_codes AS insc ON inst.instance_id = insc.instance_id
     LEFT JOIN folio_reporting.instance_nature_content AS innc ON inst.instance_id = innc.instance_id
     LEFT JOIN folio_reporting.instance_formats AS inform ON inst.instance_id = inform.instance_id
-    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.ordinality = 1
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.language_ordinality = 1
     LEFT JOIN folio_reporting.instance_relationships_ext AS super_relation ON super_relation.relationship_super_instance_id = inst.instance_id
     LEFT JOIN folio_reporting.instance_relationships_ext AS sub_relation ON sub_relation.relationship_sub_instance_id = inst.instance_id
 WHERE
