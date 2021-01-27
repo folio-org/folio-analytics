@@ -48,6 +48,7 @@ GROUP BY
     inv_adj_relationToTotal,
     invadj.adjustment_prorate,
     invadj.adjustment_value,
+    invl.total,
     invltotal.invl_total;
 
 CREATE INDEX ON folio_reporting.invoice_adjustments_ext (invoice_id);
