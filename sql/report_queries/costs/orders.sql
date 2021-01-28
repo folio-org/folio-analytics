@@ -71,7 +71,8 @@ po_lines_detail AS (
         polsubdtl.pol_subscription_interval AS "pol_subscription_interval",
         polermat.pol_er_mat_type_name AS "purchase_order_elec_material_type_name",
         polphysmat.pol_mat_type_name AS "purchase_order_phys_material_type_name",
-        --pol.instance_id AS "instance_id",
+        --pol.instance_id AS "instance_id", using workaround below
+        JSON_EXTRACT_PATH_TEXT(pol.data, 'instanceId') :: VARCHAR AS instance_id,
         pol.purchase_order_id AS "purchase_order_id"
     FROM
         po_lines AS pol
@@ -86,7 +87,8 @@ po_purchase_order_detail AS (
         podtl.id AS "po_detail_id",
         podtl.order_type AS "po_order_type",
         podtl.po_number AS "po_number",
-        podtl.date_ordered AS "po_date_ordered",
+        --podtl.po_date_ordered AS "date_ordered", using workaround below
+        JSON_EXTRACT_PATH_TEXT(podtl.data, 'dateOrdered') :: VARCHAR AS po_date_ordered,
         podtl.workflow_status AS "po_workflow_status",
         poacqunitids.po_acquisition_unit_id AS "po_acquisition_unit_id",
         poacqunitids.po_acquisition_unit_name AS "po_acquisition_unit_name",
@@ -110,7 +112,7 @@ SELECT
     purchase_order_acquisition_method,
     po_acquisition_unit_name,
     purchase_order_elec_material_type_name,
-    purchase_order_phys_material_type_name /
+    purchase_order_phys_material_type_name 
 FROM
     po_lines_detail AS pol
     LEFT JOIN po_purchase_order_detail AS podtl ON podtl.po_detail_id = pol.purchase_order_id
