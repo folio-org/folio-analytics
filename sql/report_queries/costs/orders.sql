@@ -42,38 +42,37 @@ STILL IN PROGRESS
 
 */
  
---updated to use date
+-- updated to use date
 WITH parameters AS (
     SELECT
-        '2000-01-01'::DATE AS start_date,
-        '2021-01-01'::DATE AS end_date,
-        ''::VARCHAR AS workflow_status,
-        ''::VARCHAR AS order_type,
+        '2000-01-01'::date AS start_date,
+        '2021-01-01'::date AS end_date,
+        ''::varchar AS workflow_status,
+        ''::varchar AS order_type,
         -- Please comment/uncomment one pair the these NULL parameters if you want to define the range of active subscriptions
-        NULL::DATE AS subscription_from_date,
-        NULL::DATE AS subscription_to_date,
-        --'2000-01-01' :: DATE AS subscription_from_date,
-        --'2021-01-01' :: DATE AS subscription_to_date,
-        ''::VARCHAR AS tags_filter1, -- select 'your first local tag' or leave blank for all. You can use %% as wildcards.
-        ''::VARCHAR AS tags_filter2, -- select 'your second local tag' or leave blank for all. You can use %% as wildcards.
-        ''::VARCHAR AS tags_filter3 --select 'your third local tag' or leave blank for all. You can use %% as wildcards.
+        NULL::date AS subscription_from_date,
+        NULL::date AS subscription_to_date,
+        --'2000-01-01'::date AS subscription_from_date,
+        --'2021-01-01'::date AS subscription_to_date,
+        ''::varchar AS tags_filter1, -- select 'your first local tag' or leave blank for all. You can use %% as wildcards.
+        ''::varchar AS tags_filter2, -- select 'your second local tag' or leave blank for all. You can use %% as wildcards.
+        ''::varchar AS tags_filter3 --select 'your third local tag' or leave blank for all. You can use %% as wildcards.
 ),
---subquery for po_lines_detail
+-- po_lines_detail
 po_lines_detail AS (
     SELECT
-        pol.id AS "po_line_id",
-        pol.po_line_number AS "po_line_number",
-        poltags.pol_tag AS "purchase_order_tag",
-        pol.description AS "purchase_order_description",
-        pol.acquisition_method AS "purchase_order_acquisition_method",
-        polsubdtl.pol_subscription_from AS "pol_subscription_from",
-        polsubdtl.pol_subscription_to AS "pol_subscription_to",
-        polsubdtl.pol_subscription_interval AS "pol_subscription_interval",
-        polermat.pol_er_mat_type_name AS "purchase_order_elec_material_type_name",
-        polphysmat.pol_mat_type_name AS "purchase_order_phys_material_type_name",
-        --pol.instance_id AS "instance_id", using workaround below
-        JSON_EXTRACT_PATH_TEXT(pol.data, 'instanceId') :: VARCHAR AS instance_id,
-        pol.purchase_order_id AS "purchase_order_id"
+        pol.id AS po_line_id,
+        pol.po_line_number AS po_line_number,
+        poltags.pol_tag AS purchase_order_tag,
+        pol.description AS purchase_order_description,
+        pol.acquisition_method AS purchase_order_acquisition_method,
+        polsubdtl.pol_subscription_from AS pol_subscription_from,
+        polsubdtl.pol_subscription_to AS pol_subscription_to,
+        polsubdtl.pol_subscription_interval AS pol_subscription_interval,
+        polermat.pol_er_mat_type_name AS purchase_order_elec_material_type_name,
+        polphysmat.pol_mat_type_name AS purchase_order_phys_material_type_name,
+        json_extract_path_text(pol.data, 'instanceId')::varchar AS instance_id,
+        pol.purchase_order_id AS purchase_order_id
     FROM
         po_lines AS pol
         LEFT JOIN folio_reporting.po_lines_er_mat_type AS polermat ON pol.id = polermat.pol_id
@@ -81,30 +80,27 @@ po_lines_detail AS (
         LEFT JOIN folio_reporting.po_lines_tags AS poltags ON pol.id = poltags.pol_id
         LEFT JOIN folio_reporting.po_lines_details_subscription AS polsubdtl ON pol.id = polsubdtl.pol_id
 ),
---subquery for po_purchase_order_detail
+-- po_purchase_order_detail
 po_purchase_order_detail AS (
     SELECT
-        podtl.id AS "po_detail_id",
-        podtl.order_type AS "po_order_type",
-        podtl.po_number AS "po_number",
-        --podtl.po_date_ordered AS "date_ordered", using workaround below
-        JSON_EXTRACT_PATH_TEXT(podtl.data, 'dateOrdered') :: VARCHAR AS po_date_ordered,
-        podtl.workflow_status AS "po_workflow_status",
-        poacqunitids.po_acquisition_unit_id AS "po_acquisition_unit_id",
-        poacqunitids.po_acquisition_unit_name AS "po_acquisition_unit_name",
-        poonging.po_ongoing_interval AS "po_ongoing_interval",
-        poonging.po_ongoing_is_subscription AS "po_is_subscription",
-        poonging.po_ongoing_renewal_date AS "po_renewal date",
-        poonging.po_ongoing_review_period AS "po_review_period"
+        podtl.id AS po_detail_id,
+        podtl.order_type AS po_order_type,
+        podtl.po_number AS po_number,
+        json_extract_path_text(podtl.data, 'dateOrdered')::varchar AS po_date_ordered,
+        podtl.workflow_status AS po_workflow_status,
+        poacqunitids.po_acquisition_unit_id AS po_acquisition_unit_id,
+        poacqunitids.po_acquisition_unit_name AS po_acquisition_unit_name,
+        poonging.po_ongoing_interval AS po_ongoing_interval,
+        poonging.po_ongoing_is_subscription AS po_is_subscription,
+        poonging.po_ongoing_renewal_date AS po_renewal_date,
+        poonging.po_ongoing_review_period AS po_review_period
     FROM
         po_purchase_orders AS podtl
         LEFT JOIN folio_reporting.po_acq_unit_ids AS poacqunitids ON podtl.id = poacqunitids.po_id
-        LEFT JOIN folio_reporting.po_ongoing AS poonging ON podtl.id = poonging.po_id)
-    /*
-)*/
--- End of WITH section
---MAIN QUERY: provide details about each purchase order with filtering by date and/or order type
---starts from po_lines_detail subquery
+        LEFT JOIN folio_reporting.po_ongoing AS poonging ON podtl.id = poonging.po_id
+)
+-- MAIN QUERY: provide details about each purchase order with filtering by date and/or order type
+-- starts from po_lines_detail
 SELECT
     po_line_number,
     purchase_order_description,
@@ -116,8 +112,7 @@ SELECT
 FROM
     po_lines_detail AS pol
     LEFT JOIN po_purchase_order_detail AS podtl ON podtl.po_detail_id = pol.purchase_order_id
-    
---filters for date ordered, workflow status, order type, subscription start and end dates, and tags
+-- filters for date ordered, workflow status, order type, subscription start and end dates, and tags
 WHERE
 --	 (podtl.po_date_ordered > (SELECT start_date FROM parameters) AND
 --		podtl.po_date_ordered < (SELECT end_date FROM parameters))
@@ -192,7 +187,7 @@ WHERE
                                         tags_filter3
                                     FROM
                                         parameters) = ''))
---aggregation by data elements below
+-- aggregation by data elements below
 GROUP BY
     po_line_number,
     po_order_type,
@@ -201,5 +196,5 @@ GROUP BY
     purchase_order_acquisition_method,
     purchase_order_elec_material_type_name,
     purchase_order_phys_material_type_name
-    
-    ;
+;
+
