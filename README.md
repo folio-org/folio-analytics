@@ -1,6 +1,6 @@
 # folio-analytics
 
-Copyright (C) 2018-2020 The Open Library Foundation
+Copyright (C) 2018-2021 The Open Library Foundation
 
 This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
@@ -10,70 +10,48 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 This repository contains reports and other analytics developed for
 FOLIO and designed to run on the [Library Data
-Platform](https://github.com/folio-org/ldp).  At present most of the
-content here consists of SQL reports developed by the FOLIO reporting
-community and based on the requirements of [FOLIO partner
-libraries](https://www.folio.org/community/support/).  For more
-information about FOLIO reporting, see the [FOLIO Reporting Special
-Interest Group](https://wiki.folio.org/display/RPT/).
+Platform](https://github.com/library-data-platform/ldp).  At present
+most of the content here consists of SQL reports developed by the
+FOLIO reporting community and based on the requirements of [FOLIO
+partner libraries](https://www.folio.org/community/support/).  In
+addition to report development, FOLIO has a [Reporting Special
+Interest Group](https://wiki.folio.org/display/RPT/) that discusses
+reporting requirements and other related topics.
 
 
 ## How to use this repository
 
-LDP-based queries are written in SQL and are designed to execute
-correctly on either PostgreSQL or Redshift.  To use these queries, you
-will need to connect to an LDP database instance using a reporting
-tool that supports SQL scripts.  Examples of reporting tools that will
-execute SQL scripts include:
-
-* Microsoft Access
-* DBeaver
-* R
-* Crystal Reports
-* BIRT
-* Tableau
+LDP-based queries are written in SQL and are currently tested on
+PostgreSQL, with plans to test on Redshift in the future.  To use
+these queries, you will need to connect to an LDP database instance
+using a reporting tool that supports SQL scripts.  Examples of
+reporting tools that will execute SQL scripts include DBeaver, Aqua
+Data Studio, Tableau, and Microsoft Access.
 
 If none of the queries provided match your needs, you can look for an
 existing query to use as a starting point and edit the query to create
 the desired output.  The [LDP User
-Guide](https://github.com/folio-org/ldp/blob/master/doc/User_Guide.md)
-includes guidelines for query writing.
+Guide](https://github.com/library-data-platform/ldp/blob/main/doc/User_Guide.md)
+includes guidelines for writing queries.
 
 
 ## Queries
 
 SQL queries are stored in the [sql directory](sql) of this repository.
-Each query has a separate directory. A full report may contain
-separate individual queries, so the queries are grouped into reports
-using the list below.
+Queries are separated into two categories: [derived table
+queries](sql/derived_tables) and [report queries](sql/report_queries). 
 
-### Circulation
+Derived table queries are designed to combine tables that are commonly
+used together or to otherwise simply querying.  Institutions may wish
+to set up a nightly Cron job to run these queries.
 
-* Circulation Detail Report: [Circulation Detail
-  Query](sql/circ_detail)
-* Circulation Item Detail Report: [Circulation Item Detail
-  Query](sql/circ_item_detail)
-* Loans and Renewals Report: [Loans and Renewals Counts
-  Query](sql/loans_and_renewals_counts)
-* Services Usage Report: [Services Usage Report](sql/services_usage)
-
-### Inventory
-
-* ACRL Title Count Report: [ACRL Title Count Query](sql/acrl)
-* ACRL Volume Count Report: [ACRL Volume Count Query](sql/acrl)
-* Missing Items Report: [Missing Items Query](sql/missing_items)
-* Pick List Report: [Pick List Query](sql/pick_list)
-
-### Finance and Orders
-
-### Resource Management
-
-### Users
-
-
-## Testing
-
-This repository includes [a framework for testing queries](TESTING.md).
+Report queries are created in response to specific report requests
+from FOLIO member institutions.  Each query is located in a separate
+directory.  A full report may contain several individual queries.
+Consult the README.md file in the [report queries](sql/report_queries)
+folder for a query table of contents, and look for additional
+README.md files in the query folders to explain how to run the
+reports.
 
 
 ## How to learn more about SQL

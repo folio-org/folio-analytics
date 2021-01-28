@@ -1,98 +1,152 @@
 /* FIELDS TO INCLUDE:
 Parameters
-    date_range
+ date_range
 Loans table
-    loan_date
+ loan_date
 Groups table
-    patron_group_name
+ patron_group_name
 Material Types table
-    material_type_name
+ material_type_name
 Locations table
-    perm_location_name
-    temp_location_name
-    effective_location_name
+ perm_location_name
+ temp_location_name
+ effective_location_name
 Institutions table
-    institution_name
+ institution_name
 Campuses table
-    campus_name
+ campus_name
 Libraries table
-    library_name
+ library_name
 
 Aggregation: none
 
 Filters:
-    start_date (for loan_date)
-    end_date (for loan_date)
-    material_type_filter
-    items_permament_location_filter
-    items_temporary_location_filter
-    items_effective_location_filter
-    institution_filter
-    campus_filter
-    library_filter
-*/
-CREATE TABLE local.acrl_circulation AS
+ start_date (for loan_date)
+ end_date (for loan_date)
+ material_type_filter
+ items_permament_location_filter
+ items_temporary_location_filter
+ items_effective_location_filter
+ institution_filter
+ campus_filter
+ library_filter
+ */
 WITH parameters AS (
-    SELECT * FROM local.acrl_parameters
-),
---SUB-QUERIES
-loan_details AS (
     SELECT
-        l.loan_date,
-        l.due_date AS loan_due_date,
-        l.return_date AS loan_return_date,
-        l.item_status AS loan_status,
-        l.item_id,
-        l.id AS loan_id,
-        l.patron_group_id_at_checkout,
-        i.material_type_id,
-        mt.name AS material_type_name,
-        g.group AS patron_group_name,
-        lp.name AS loan_policy_name,
-        plt.name AS permanent_loan_type_name,
-        tlt.name AS temporary_loan_type_name,
-        location_filtering.temp_location_name,
-        location_filtering.perm_location_name,
-        location_filtering.effective_location_name,
-        location_filtering.institution_name,
-        location_filtering.campus_name,
-        location_filtering.library_name
-    FROM circulation_loans AS l
-    LEFT JOIN inventory_items AS i
-        ON l.item_id=i.id
-    LEFT JOIN circulation_loan_policies AS lp
-        ON l.loan_policy_id=lp.id
-    LEFT JOIN inventory_loan_types AS plt
-        ON i.permanent_loan_type_id=plt.id
-    LEFT JOIN inventory_loan_types AS tlt
-        ON i.temporary_loan_type_id=tlt.id
-    LEFT JOIN inventory_material_types AS mt
-        ON i.material_type_id=mt.id
-    LEFT JOIN user_groups AS g
-        ON l.patron_group_id_at_checkout=g.id
--- note INNER JOIN needed for applying the location filtering
-    INNER JOIN local.acrl_location_filtering AS location_filtering
-        ON l.item_id= location_filtering.item_id
+        /* Choose a start and end date for the loans period */
+        '2000-01-01'::date AS start_date,
+        '2021-01-01'::date AS end_date,
+        /* Fill in a material type name, or leave blank for all types */
+        ''::varchar AS material_type_filter,
+        /* Fill in a location name, or leave blank for all locations */
+        ''::varchar AS items_permanent_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_temporary_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_effective_location_filter, --Online, Annex, Main Library
+        ''::varchar AS items_permanent_institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
+        ''::varchar AS items_permanent_campus_filter, -- 'Main Campus','City Campus','Online'
+        ''::varchar AS items_permanent_library_filter -- 'Datalogisk Institut','Adelaide Library'
 )
---MAIN QUERY
 SELECT
-    (SELECT start_date :: VARCHAR FROM parameters) ||
-        ' to ' :: VARCHAR ||
-        (SELECT end_date :: VARCHAR FROM parameters) AS date_range,
+    (
+        SELECT
+            start_date::varchar
+        FROM
+            parameters) || ' to '::varchar || (
+        SELECT
+            end_date::varchar
+        FROM
+            parameters) AS date_range,
     loan_date,
     patron_group_name,
     material_type_name,
-    perm_location_name,
-    temp_location_name,
-    effective_location_name,
+    current_item_permanent_location_name AS perm_location_name,
+    current_item_temporary_location_name AS temp_location_name,
+    current_item_effective_location_name AS effective_location_name,
     institution_name,
     campus_name,
     library_name
-FROM loan_details
+FROM
+    folio_reporting.loans_items AS li
+    LEFT JOIN folio_reporting.locations_libraries AS loc ON li.current_item_permanent_location_id = loc.location_id
 WHERE
-    loan_date >= (SELECT start_date FROM parameters)
-AND loan_date < (SELECT end_date FROM parameters)
-AND (
-    material_type_name = (SELECT material_type_filter FROM parameters)
-    OR '' = (SELECT material_type_filter FROM parameters)
-);
+    loan_date >= (
+        SELECT
+            start_date
+        FROM
+            parameters)
+    AND loan_date < (
+        SELECT
+            end_date
+        FROM
+            parameters)
+    AND (material_type_name = (
+            SELECT
+                material_type_filter
+            FROM
+                parameters)
+            OR '' = (
+                SELECT
+                    material_type_filter
+                FROM
+                    parameters))
+        AND (current_item_permanent_location_name = (
+                SELECT
+                    items_permanent_location_filter
+                FROM
+                    parameters)
+                OR '' = (
+                    SELECT
+                        items_permanent_location_filter
+                    FROM
+                        parameters))
+            AND (current_item_temporary_location_name = (
+                    SELECT
+                        items_temporary_location_filter
+                    FROM
+                        parameters)
+                    OR '' = (
+                        SELECT
+                            items_temporary_location_filter
+                        FROM
+                            parameters))
+                AND (current_item_effective_location_name = (
+                        SELECT
+                            items_effective_location_filter
+                        FROM
+                            parameters)
+                        OR '' = (
+                            SELECT
+                                items_effective_location_filter
+                            FROM
+                                parameters))
+                    AND (library_name = (
+                            SELECT
+                                items_permanent_library_filter
+                            FROM
+                                parameters)
+                            OR '' = (
+                                SELECT
+                                    items_permanent_library_filter
+                                FROM
+                                    parameters))
+                        AND (campus_name = (
+                                SELECT
+                                    items_permanent_campus_filter
+                                FROM
+                                    parameters)
+                                OR '' = (
+                                    SELECT
+                                        items_permanent_campus_filter
+                                    FROM
+                                        parameters))
+                            AND (institution_name = (
+                                    SELECT
+                                        items_permanent_institution_filter
+                                    FROM
+                                        parameters)
+                                    OR '' = (
+                                        SELECT
+                                            items_permanent_institution_filter
+                                        FROM
+                                            parameters));
+
