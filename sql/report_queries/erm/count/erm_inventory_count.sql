@@ -116,13 +116,12 @@ WHERE
   AND
 
   -- begin to process the set filters
-    /** 	this is commented out atm because of to few test data
-    AND
+  AND
     inst.cataloged_date :: DATE >= (SELECT cataloged_date_start_date FROM parameters)
-    AND
+  AND
     inst.cataloged_date :: DATE < (SELECT cataloged_date_end_date FROM parameters)
-    AND
-    */
+  AND
+
     (
             (inst.status_name  IN (
                                    (SELECT instance_status_filter1 FROM parameters),
