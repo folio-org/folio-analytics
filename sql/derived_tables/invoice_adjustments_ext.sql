@@ -22,16 +22,17 @@ SELECT
     invadj.adjustment_relationtototal AS inv_adj_relationToTotal,
     CASE WHEN invltotal.invl_total IS NULL
         OR invltotal.invl_total = 0 THEN
-        0
+        0.0000
     ELSE
-        COALESCE (invl.total, 0) / invltotal.invl_total
+        round(COALESCE (invl.total, 0) / invltotal.invl_total, 4)
     END AS ratio_of_inv_adj_per_invoice_line,
     --Above: This is the ratio of the invoice adjustment per invoice line
-    CASE WHEN invltotal.invl_total IS NULL
+    CASE WHEN invadj.adjustment_value IS NULL
+        OR invltotal.invl_total IS NULL
         OR invltotal.invl_total = 0 THEN
-        0
+        0.0000
     ELSE
-        invadj.adjustment_value * (COALESCE(invl.total, 0) / invltotal.invl_total)
+        round(invadj.adjustment_value * (COALESCE(invl.total, 0) / invltotal.invl_total), 4)
     END AS inv_adj_total
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line.
 FROM
