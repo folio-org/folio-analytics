@@ -36,7 +36,7 @@ SELECT
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total percentage per invoice line.
 FROM
     invoice_invoices AS inv
-    LEFT JOIN invoice_lines AS invl ON invl.invoice_id = inv.id
+    LEFT JOIN invoice_lines AS invl ON json_extract_path_text(invl.data, 'invoiceId') = inv.id
     LEFT JOIN folio_reporting.invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
 GROUP BY
