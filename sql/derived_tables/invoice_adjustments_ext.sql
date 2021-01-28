@@ -5,7 +5,7 @@ CREATE TABLE folio_reporting.invoice_adjustments_ext AS
 WITH invl_total AS (
     SELECT
         inv.id AS inv_id,
-        sum(invl.total) ::numeric(12,2) AS invl_total
+        sum(invl.total) ::numeric(12, 2) AS invl_total
     FROM
         invoice_invoices AS inv
         LEFT JOIN invoice_lines AS invl ON inv.id = invl.invoice_id
@@ -15,33 +15,28 @@ WITH invl_total AS (
 SELECT
     inv.id AS invoice_id,
     invl.id AS invl_id,
-    CASE WHEN invl.total IS NULL THEN
-        0
-    ELSE
-        invl.total ::numeric(12,2)
-    END AS invoice_line_value,
-    COALESCE(invadj.adjustment_value::numeric(12,2),0) AS inv_adjust_total_value, --This is the total of the invoice adjustment 
+    COALESCE (invl.total, 0) AS invoice_line_value,
+    COALESCE (invadj.adjustment_value, 0) AS inv_adjust_total_value, --This is the total of the invoice adjustment
     invltotal.invl_total AS "invls_total",
     invadj.adjustment_prorate AS inv_adj_prorate,
     invadj.adjustment_relationtototal AS inv_adj_relationToTotal,
-        CASE WHEN invltotal.invl_total IS NULL OR invltotal.invl_total = 0 THEN 0
-            ELSE
-                COALESCE(invl.total, 0) / invltotal.invl_total 
-                END
-
-                AS perc_of_inv_adj_per_invoice_line, --This is the percentage of the invoice adjustment per invoice line
-    
-    
-        CASE WHEN invltotal.invl_total IS NULL OR invltotal.invl_total = 0 THEN 0
-      
-        ELSE
-            invadj.adjustment_value::numeric(12,2) * (
-            COALESCE(invl.total, 0)::numeric(12,2) / invltotal.invl_total)
+    CASE WHEN invltotal.invl_total IS NULL
+        OR invltotal.invl_total = 0 THEN
+        0
+    ELSE
+        COALESCE (invl.total, 0) / invltotal.invl_total
+    END AS perc_of_inv_adj_per_invoice_line,
+    --Above: This is the percentage of the invoice adjustment per invoice line
+    CASE WHEN invltotal.invl_total IS NULL
+        OR invltotal.invl_total = 0 THEN
+        0
+    ELSE
+        invadj.adjustment_value * (COALESCE(invl.total, 0) / invltotal.invl_total)
     END AS inv_adj_total
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total percentage per invoice line.
 FROM
     invoice_invoices AS inv
-    LEFT JOIN invoice_lines AS invl ON invl.invoice_id = inv.id
+    LEFT JOIN invoice_lines AS invl ON json_extract_path_text(invl.data, 'invoiceId') = inv.id
     LEFT JOIN folio_reporting.invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
 GROUP BY
