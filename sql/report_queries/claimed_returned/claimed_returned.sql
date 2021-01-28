@@ -190,8 +190,10 @@ subquery_items_with_notes AS (
     FROM (
         SELECT
             inventory_items.id,
-            JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(data, 'notes')),'note') :: VARCHAR AS notes
+	    json_extract_path_text(notes.data, 'note') AS notes
         FROM inventory_items
+            CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'notes'))
+            WITH ORDINALITY AS notes (data)
         WHERE id IN (SELECT item_id FROM subquery_inventory) -- avoid doing string concats on the entire db
     ) AS notes_set
     GROUP BY id
@@ -203,8 +205,10 @@ subquery_instances_with_publication_dates AS (
     FROM (
         SELECT
             inventory_instances.id,
-            JSON_EXTRACT_PATH_TEXT(JSON_ARRAY_ELEMENTS(JSON_EXTRACT_PATH(data, 'publication')),'dateOfPublication') :: VARCHAR AS dop
+	    json_extract_path_text(publication.data, 'dateOfPublication') AS dop
         FROM inventory_instances
+            CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'publication'))
+            WITH ORDINALITY AS publication (data)
         WHERE id IN (SELECT instance_id FROM subquery_inventory) -- avoid doing string concats on the entire db
     ) AS publication_dates_set
     GROUP BY id
