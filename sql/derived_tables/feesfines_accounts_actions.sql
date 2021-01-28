@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS folio_reporting.feesfines_accounts_actions;
 CREATE TABLE folio_reporting.feesfines_accounts_actions AS
 SELECT
     fa.id AS fine_account_id,
-    json_extract_path_text(fa.data, 'amount') AS fine_account_amount,
+    json_extract_path_text(fa.data, 'amount')::numeric(12,2) AS fine_account_amount,
     json_extract_path_text(fa.data, 'dateCreated') AS fine_date,
     json_extract_path_text(fa.data, 'dateUpdated') AS fine_updated_date,
     json_extract_path_text(fa.data, 'feeFineId') AS fee_fine_id,
@@ -20,8 +20,8 @@ SELECT
     json_extract_path_text(fa.data, 'userId') AS account_user_id,
     ff.id AS transaction_id,
     json_extract_path_text(ff.data, 'accountId') AS account_id,
-    json_extract_path_text(ff.data, 'amountAction') AS transaction_amount,
-    json_extract_path_text(ff.data, 'balance') AS account_balance,
+    json_extract_path_text(ff.data, 'amountAction')::numeric(12,2) AS transaction_amount,
+    json_extract_path_text(ff.data, 'balance')::numeric(12,2) AS account_balance,
     json_extract_path_text(ff.data, 'typeAction') AS type_action,
     json_extract_path_text(ff.data, 'dateAction') AS transaction_date,
     json_extract_path_text(ff.data, 'createdAt') AS transaction_location,
