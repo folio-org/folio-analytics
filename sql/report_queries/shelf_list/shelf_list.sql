@@ -1,4 +1,9 @@
 /*
+Set Filters at the end of the query to modify or comment out. 
+	Item Discovery Suppress - Does show in results and is set to False or Null
+	Holdings Discovery Suppress - Does not show in results and is set to False or Null
+	Instance Discovery Suppress - Does not show in results and is set to False or Null
+	Instance Identifier Type - Does show in results and is set to match on string 'OCLC'. 
 Fields Included:
 	Instance_ext Folio Reporting table:
 		Instance id
@@ -58,11 +63,6 @@ location_filtering AS (
 	FROM 
 		inventory_items AS ii
 		LEFT JOIN folio_reporting.locations_libraries AS loc ON ii.effective_location_id = loc.location_id 
-	WHERE 
-		loc.institution_name = (SELECT institution_filter FROM parameters)
-        OR loc.campus_name = (SELECT campus_filter FROM parameters)
-        OR loc.library_name = (SELECT library_filter FROM parameters)
-        OR loc.location_name = (SELECT location_filter FROM parameters)
 ),
 loan_info AS (
 	SELECT 
@@ -132,4 +132,12 @@ AND
 	((ie2.discovery_suppress IS FALSE) OR (ie2.discovery_suppress IS NULL))
 AND 
 	ii2.identifier_type_name IN('OCLC')
+AND 
+	loc_fil.institution_name = (SELECT institution_filter FROM parameters)
+OR 
+	loc_fil.campus_name = (SELECT campus_filter FROM parameters)
+OR 
+	loc_fil.library_name = (SELECT library_filter FROM parameters)
+OR
+	loc_fil.location_name = (SELECT location_filter FROM parameters)
 ;
