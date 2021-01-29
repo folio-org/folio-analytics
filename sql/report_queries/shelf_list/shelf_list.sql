@@ -3,7 +3,7 @@ Fields Included:
 	Instance_ext Folio Reporting table:
 		Instance id
 		Instance hrid
-		Suppressed from discovery -- not suppressed
+		Suppressed from discovery - filter only not in results 
 		Title
 		Name of Contributor
 		Contributor is primary or not
@@ -11,9 +11,9 @@ Fields Included:
 		Name of the identifier type
 		Value of the identifier
 	Holdings ext Folio Reporting table:
-		holdings id
-		holdings hrid
-		holdings discovery suppress
+		holdings id - not in results
+		holdings hrid - not in results
+		holdings discovery suppress - filter only not in results
 	Item ext Folio Reporting table:
 		Item id
 		Item hrid
@@ -102,7 +102,7 @@ SELECT
 	loan_info.item_status AS loan_item_status,
 	i.permanent_location_name,
 	i.temporary_location_name,
-	i.discovery_suppress,
+	i.discovery_suppress as item_suppressed,
 	loan_info.item_loan_due_date,
 	loan_info.item_loan_return_date,
 	loan_info.item_num_loans,
