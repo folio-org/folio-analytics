@@ -7,9 +7,7 @@
     Item Material Type Name
     Item Loan Type [based on item permanent_loan_type_id
     Count of Loan Checkouts (ciruclation history)
-    Call Number Prefix
-    Call No.
-    Call No. Suffix
+    Effective Call Number
     Contributor/Author (Primary)
     Title
     Index Title
@@ -25,9 +23,9 @@
     Identifiers ISSN
     Publisher
     Date of Publication
-    Item Id
-    Holding Id
-    Instance Id
+    Item Id -- not in results
+    Holding Id -- not in results
+    Instance Id -- not in results
     
    AGGREGATION:
     Count(Loan Checkouts)
