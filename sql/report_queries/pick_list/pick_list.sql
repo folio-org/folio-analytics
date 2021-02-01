@@ -92,7 +92,7 @@ identifiers_extract AS (
     SELECT
         inst.instance_id AS instance_id,
         inst.identifier_type_id AS type_id,
-        inst.identifier_type_name AS inst_identifier_type_name
+        inst.identifier_type_name AS value
     FROM
         folio_reporting.instance_identifiers as inst
 ),
