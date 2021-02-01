@@ -21,6 +21,8 @@ instance_relationships_ext.sql
 instance_series.sql
 instance_statistical_codes.sql
 instance_subjects.sql
+invoice_adjustments_in_addition_to.sql
+invoice_adjustments_ext.sql
 invoice_lines_adjustments.sql
 invoice_lines_fund_distributions.sql
 item_effective_callno_components.sql
