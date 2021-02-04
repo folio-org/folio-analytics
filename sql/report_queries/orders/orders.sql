@@ -29,7 +29,7 @@ This query aggregates the data by po line number, po order type, po acquisition 
 FILTERS FOR USERS TO SELECT
 date: filters data using the date_ordered field on purchase orders
 order type: can be set to One-Time or Ongoing; renewal date is only present if order type is Ongoing
-subscription: can be set for "subscription to," subscription from" dates; subscription data only shows for One-Time order type
+subscription: can be set for "subscription to," subscription from" dates; subscription data only shows for One-Time order type; 
 workflow status: can be set to pending, open, or closed
 tags: local field with custom settings; can set up to 3 tag filters	
 
@@ -142,7 +142,7 @@ WHERE
                     subscription_from_date
                 FROM
                     parameters)
-                OR pol.pol_subscription_from <= (
+                OR pol.pol_subscription_from < (
                     SELECT
                         subscription_to_date
                     FROM
