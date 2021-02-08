@@ -28,10 +28,11 @@ WITH parameters AS (
     SELECT
         -- filters on invoice level
         -- Please comment/uncomment one pair the these parameters if you want to define the date range of paid invoices
+        -- since there is no paymentDate temporary using approvalDate
         NULL::DATE AS start_date,
         NULL::DATE AS end_date,
-        --'2000-01-01' :: DATE AS start_date, -- since there is no paymentDate now using approvalDate
-        --'2021-01-15' :: DATE AS end_date, -- since there is no paymentDate now using approvalDate
+        --'2021-01-01' :: DATE AS start_date, -- start date day is included in interval
+        --'2022-01-01' :: DATE AS end_date, -- end date day is NOT included in interval -> enter next day
         -- filters on invoice line level
         ''::VARCHAR AS invoice_line_status, -- Enter your invoice line status eg. 'Paid', 'Approved', 'Open' etc.
         -- filters on purchase order line level
@@ -128,8 +129,8 @@ FROM
         LEFT JOIN instance_subs AS instsub ON instsub.instance_id = inst.instance_id
         LEFT JOIN instance_formats AS instform ON instform.instance_id = inst.instance_id
 WHERE
-    ((inv.invoice_approval_date >= (SELECT start_date FROM parameters) OR
-		inv.invoice_approval_date<= (SELECT end_date FROM parameters))			
+    ((inv.invoice_approval_date >= (SELECT start_date FROM parameters) AND
+		inv.invoice_approval_date < (SELECT end_date FROM parameters))
 		OR 
 		(((SELECT start_date FROM parameters) IS NULL) 
 			OR ((SELECT end_date FROM parameters) IS NULL)))
