@@ -13,7 +13,7 @@ SELECT
     instance_type.name AS type_name,
     instance.mode_of_issuance_id,
     mode_of_issuance.name AS mode_of_issuance_name,
-    instance.previously_held,
+    json_extract_path_text(instance.data, 'previouslyHeld')::boolean AS previously_held,
     instance.source AS instance_source,
     instance.staff_suppress,
     json_extract_path_text(instance.data, 'statusId') AS status_id,
