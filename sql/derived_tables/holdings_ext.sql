@@ -21,7 +21,7 @@ WITH holdings AS (
         json_extract_path_text(data, 'receiptStatus') AS receipt_status,
         json_extract_path_text(data, 'retentionPolicy') AS retention_policy,
         json_extract_path_text(data, 'shelvingTitle') AS shelving_title,
-        json_extract_path_text(data, 'discoverySuppress') AS discovery_suppress,
+        json_extract_path_text(data, 'discoverySuppress')::boolean AS discovery_suppress,
         json_extract_path_text(data, 'metadata', 'createdDate') AS created_date,
         json_extract_path_text(data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
         json_extract_path_text(data, 'metadata', 'updatedDate') AS updated_date,
