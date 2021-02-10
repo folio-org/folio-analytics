@@ -74,7 +74,7 @@ SELECT
     iltp.name AS permanent_loan_type_name,
     json_extract_path_text(ii.data, 'temporaryLoanTypeId') AS temporary_loan_type_id,
     iltt.name AS temporary_loan_type_name,
-    cl.renewal_count
+    json_extract_path_text(cl.data, 'renewalCount')::int8 AS renewal_count
 FROM
     circulation_loans AS cl
     LEFT JOIN inventory_items AS ii ON cl.item_id = ii.id
