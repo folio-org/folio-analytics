@@ -128,3 +128,74 @@ CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_name);
 
 CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_name);
 
+CREATE INDEX ON folio_reporting.loans_items (loan_id);
+
+CREATE INDEX ON folio_reporting.loans_items (item_id);
+
+CREATE INDEX ON folio_reporting.loans_items (loan_return_date);
+
+CREATE INDEX ON folio_reporting.loans_items (system_return_date);
+
+CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_id);
+
+CREATE INDEX ON folio_reporting.loans_items (checkout_service_point_id);
+
+CREATE INDEX ON folio_reporting.loans_items (item_effective_location_id_at_check_out);
+
+CREATE INDEX ON folio_reporting.loans_items (item_effective_location_name_at_check_out);
+
+CREATE INDEX ON folio_reporting.loans_items (in_transit_destination_service_point_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_library_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_campus_id);
+
+CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_institution_id);
+
+CREATE INDEX ON folio_reporting.loans_items (loan_policy_id);
+
+CREATE INDEX ON folio_reporting.loans_items (loan_policy_name);
+
+CREATE INDEX ON folio_reporting.loans_items (lost_item_policy_id);
+
+CREATE INDEX ON folio_reporting.loans_items (lost_item_policy_name);
+
+CREATE INDEX ON folio_reporting.loans_items (overdue_fine_policy_id);
+
+CREATE INDEX ON folio_reporting.loans_items (overdue_fine_policy_name);
+
+CREATE INDEX ON folio_reporting.loans_items (patron_group_id_at_checkout);
+
+CREATE INDEX ON folio_reporting.loans_items (user_id);
+
+CREATE INDEX ON folio_reporting.loans_items (proxy_user_id);
+
+CREATE INDEX ON folio_reporting.loans_items (barcode);
+
+CREATE INDEX ON folio_reporting.loans_items (chronology);
+
+CREATE INDEX ON folio_reporting.loans_items (copy_number);
+
+CREATE INDEX ON folio_reporting.loans_items (enumeration);
+
+CREATE INDEX ON folio_reporting.loans_items (holdings_record_id);
+
+CREATE INDEX ON folio_reporting.loans_items (hrid);
+
+CREATE INDEX ON folio_reporting.loans_items (item_level_call_number);
+
+CREATE INDEX ON folio_reporting.loans_items (material_type_id);
+
+CREATE INDEX ON folio_reporting.loans_items (number_of_pieces);
+
+CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_id);
+
+CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_id);
+
+CREATE INDEX ON folio_reporting.loans_items (renewal_count);
