@@ -47,7 +47,8 @@ WITH parameters AS (
         '' ::VARCHAR AS institution_filter, -- 'Københavns Universitet','Montoya College'
         '' ::VARCHAR AS campus_filter, -- 'Main Campus','City Campus','Online'
         '' ::VARCHAR AS library_filter, -- 'Datalogisk Institut','Adelaide Library'
-        '' ::VARCHAR AS location_filter -- 'Main Library','Annex','Online'
+        '' ::VARCHAR AS location_filter, -- 'Main Library','Annex','Online'
+	'' ::VARCHAR AS identifier_filter -- 'OCLC'
 ),
 location_filtering AS (
 	SELECT
@@ -123,7 +124,7 @@ FROM
 	LEFT JOIN folio_reporting.holdings_ext AS he ON i.holdings_record_id = he.holdings_id 
 	LEFT JOIN folio_reporting.instance_ext AS ie2 ON he.instance_id = ie2.instance_id
 	LEFT JOIN folio_reporting.instance_identifiers AS ii2 ON ie2.instance_id = ii2.instance_id
---FILTERS: Item, holdings, and Instance records are not marked as suppress from discovery and Identifier is OCLC
+--FILTERS: Item, holdings, and Instance records are not marked as suppress from discovery. Includes filters set in the parameters.
 WHERE
 	(loc_fil.institution_name = (SELECT institution_filter FROM parameters) OR (SELECT institution_filter FROM parameters) = '')
 AND
@@ -132,12 +133,12 @@ AND
 	(loc_fil.library_name = (SELECT library_filter FROM parameters) OR (SELECT library_filter FROM parameters) = '')
 AND 
 	(loc_fil.location_name = (SELECT location_filter FROM parameters) OR (SELECT location_filter FROM parameters) = '')
+AND 
+	(ii2.identifier_type_name = (SELECT identifier_filter FROM parameters) OR (SELECT identifier_filter FROM parameters) = '')
 AND
 	((i.discovery_suppress IS FALSE) OR (i.discovery_suppress IS NULL))
 AND 
 	((he.discovery_suppress IS FALSE) OR (he.discovery_suppress IS NULL))
 AND 
 	((ie2.discovery_suppress IS FALSE) OR (ie2.discovery_suppress IS NULL))
-AND 
-	ii2.identifier_type_name IN('OCLC')
 ;
