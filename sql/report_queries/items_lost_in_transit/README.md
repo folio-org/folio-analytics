@@ -1,7 +1,5 @@
 # Items Lost in Transit Report
 
-## Status: Tested
-
 ## Report Details
 
 Brief description: Reports items that were discharged at a circulation desk other than their "home" circulation desk and haven't yet been discharged at home. Therefore the items might have been lost or misplaced on their way back to their home location.

@@ -8,9 +8,6 @@
 * [Requests not yet addressed](https://github.com/folio-org/folio-analytics/blob/main/sql/report_queries/title_count/README.md#requests-not-yet-addressed) 
 
 
-## Status
-As of 1/6/21, in review. 
-
 ## Purpose
 To provide **title** counts for **non-electronic** resources cataloged in the Inventory, by various filters.  
 
