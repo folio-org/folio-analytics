@@ -1,9 +1,5 @@
 # Services Usage Report
 
-## Status: Tested
-
-This query has been reviewed for code syntax and style, approved by the community, and provided with machine test files.
-
 ## Report Details
 
 This a report on number of circulation transactions by service-point and transaction type, with time aggregated to date, day of week, and hour of day. Can also be filtered to a particular date range (either a full year or a smaller date range, as needed). This report can be used to review hourly statistics for a short time period to review staffing needs or (by aggregating to week) to report weekly statistics over a full year.

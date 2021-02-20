@@ -7,9 +7,6 @@
 * [Output](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#output)
 * [Requests not yet addressed](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#requests-and-issues-not-yet-addressed)
 
-## Status
-As of December 2020, this query has been updated to use the relevant derived tables.
-
 ## Purpose
 To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.
 
