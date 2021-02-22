@@ -34,21 +34,12 @@ For bugs or specific technical proposals, please use
 2\. Branches
 ------------
 
-There are three types of branches:
-
-* `main` is the development branch where new features are added.
-* `stable` is a development branch that is made from `main`; it is
-  considered to be more stable than `main`.
-* `*-release` are specific release branches made from `stable`; they
-  are the most stable branches.
-
 Pull requests should be based on:
 
 * `main` for all new features as well as bug fixes to unreleased
-  features.
-* `*-release` for bug fixes to a specific release.
+  features
 
-The `stable` branch is not used for pull requests.
+* `release-*` for bug fixes to specific releases
 
 
 3\. Code review
