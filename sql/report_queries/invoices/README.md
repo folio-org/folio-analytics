@@ -1,5 +1,3 @@
-INVOICES query 
-
 #Invoices Report
 
 ##Purpose
@@ -17,9 +15,6 @@ The parameters in the table below can be set in the WITH clause to filter the re
 | invoice\_approval\_date | date invoice was approved | Set start\_date and end\_date in YYYY-MM-DD format. |
 | invoice\_status | status of the invoices to show, which can be open, reviewed, approved, paid, or cancelled | Set &quot;invoice\_status&quot; to &quot;Open,&quot; &quot;Reviewed,&quot; &quot;Approved,&quot; &quot;Paid&quot; or &quot;Cancelled.&quot; |
 
-|
- |
-| --- |
 
 ##Sample Output
 
