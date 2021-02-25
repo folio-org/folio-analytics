@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS folio_reporting.po_instance;
 
 CREATE TABLE folio_reporting.po_instance AS
 SELECT
-    po_purchase_orders.po_number AS po_number,
+    json_extract_path_text(po_purchase_orders.data, 'poNumber') AS po_number,
     organization_organizations.code AS vendor_code,
     json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate') AS created_date,
@@ -18,7 +18,7 @@ FROM
     po_purchase_orders
     LEFT JOIN po_lines ON po_purchase_orders.id = json_extract_path_text(po_lines.data, 'purchaseOrderId')
     LEFT JOIN inventory_instances ON json_extract_path_text(po_lines.data, 'instanceId') = inventory_instances.id
-    LEFT JOIN organization_organizations ON po_purchase_orders.vendor = organization_organizations.id
+    LEFT JOIN organization_organizations ON json_extract_path_text(po_purchase_orders.data, 'vendor') = organization_organizations.id
     LEFT JOIN configuration_entries ON json_extract_path_text(po_purchase_orders.data, 'billTo') = configuration_entries.id;
 
 CREATE INDEX ON folio_reporting.po_instance (po_number);
