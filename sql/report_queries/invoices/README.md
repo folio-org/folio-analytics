@@ -2,9 +2,7 @@
 
 ## Purpose
 
-This purpose of this report is to provide a summary of what was spent by purchase order line
-
-on an invoice line across all the invoices within a particular time period. Invoice line adjustments are included in the invoice line total. The &quot;invoice\_line\_total\_sum&quot; column shows the sum of invoice line totals associated with each purchase order line number. This query only shows invoice line data that is linked to a purchase order. The output is aggregated by purchase order line id, purchase order line number, and invoice status.
+This purpose of this report is to provide a summary of what was spent by purchase order line on an invoice line across all the invoices within a particular time period. Invoice line adjustments are included in the invoice line total. The &quot;invoice\_line\_total\_sum&quot; column shows the sum of invoice line totals associated with each purchase order line number. This query only shows invoice line data that is linked to a purchase order. The output is aggregated by purchase order line id, purchase order line number, and invoice status.
 
 ## Parameters
 
