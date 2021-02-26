@@ -8,7 +8,7 @@ This report is to provide a dataset of invoice lines to summarize certain costs 
 
 The parameters in the table below can be set in the WITH clause to filter the report output.
 
-| parameter | description | options |
+| parameter | description | examples |
 | --- | --- | --- |
 | invoice\_approval\_date | date invoice was approved | Set start\_date and end\_date in YYYY-MM-DD format. |
 | invoice_line_status | status of the invoices to show, which can be open, reviewed, approved, paid, or cancelled | 'Paid', 'Approved', 'Open' etc. |
@@ -27,5 +27,5 @@ The parameters in the table below can be set in the WITH clause to filter the re
 
 ## Future Updates
 
-The &quot;paymentDate&quot; field, which captures the date an invoice was paid, is currently in development. This element should be added to the query as soon as it becomes available. 
+The &quot;paymentDate&quot; field, which captures the date an invoice was paid, is currently in development. This element should be added to the query as soon as it becomes available. As a substitute date the invoice_approval_date has been taken until paymentDate will be available.
 Issue for foreign currencies will be solved in a future version by getting the system currency amount from finance_transactions table.
