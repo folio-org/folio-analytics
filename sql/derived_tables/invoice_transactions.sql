@@ -23,13 +23,13 @@ SELECT
     json_extract_path_text(ft.data, 'sourceInvoiceId') AS invoice_id,
     json_extract_path_text(ft.data, 'sourceInvoiceLineId') AS invoice_line_id,
     ft.transaction_type AS transaction_type,
-    ii.invoice_date AS invoice_date,
+    json_extract_path_text(ii.data, 'invoiceDate') AS invoice_date,
     json_extract_path_text(ii.data, 'paymentDate') AS invoice_payment_date,
     json_extract_path_text(ii.data, 'exchangeRate') AS invoice_exchange_rate,
     json_extract_path_text(il.data, 'total') AS invoice_line_total,
-    ii.currency AS invoice_currency,
+    json_extract_path_text(ii.data, 'currency') AS invoice_currency,
     json_extract_path_text(il.data, 'poLineId') AS po_line_id,
-    ii.vendor_id AS invoice_vendor_id
+    json_extract_path_text(ii.data, 'vendorId') AS invoice_vendor_id
 FROM
     finance_transactions AS ft
     LEFT JOIN invoice_invoices AS ii ON json_extract_path_text(ft.data, 'sourceInvoiceId') = ii.id
