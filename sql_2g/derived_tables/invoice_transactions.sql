@@ -29,20 +29,23 @@ SELECT
     json_extract_path_text(il.jsonb::json, 'total') AS invoice_line_total,
     json_extract_path_text(ii.jsonb::json, 'currency') AS invoice_currency,
     json_extract_path_text(il.jsonb::json, 'poLineId') AS po_line_id,
-    json_extract_path_text(ii.jsonb::json, 'vendorId') AS invoice_vendor_id
+    json_extract_path_text(ii.jsonb::json, 'vendorId') AS invoice_vendor_id,
+    json_extract_path_text(oo.jsonb::json, 'name') AS invoice_vendor_name
 FROM
     folio_finance.transaction AS ft
     LEFT JOIN folio_invoice.invoices AS ii ON json_extract_path_text(ft.jsonb::json, 'sourceInvoiceId') = ii.id
     LEFT JOIN folio_invoice.invoice_lines AS il ON json_extract_path_text(ft.jsonb::json, 'sourceInvoiceLineId') = il.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
+    LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(ii.jsonb::json, 'vendorId') = oo.id
 WHERE (json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Pending payment'
     OR json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Payment')
-AND ft.__current
-AND ii.__current
-AND il.__current
-AND ff.__current
-AND fb.__current;
+    AND ft.__current
+    AND ii.__current
+    AND il.__current
+    AND ff.__current
+    AND fb.__current
+    AND oo.__current;
 
 CREATE INDEX ON folio_reporting.invoice_transactions (transaction_id);
 
@@ -84,3 +87,4 @@ CREATE INDEX ON folio_reporting.invoice_transactions (po_line_id);
 
 CREATE INDEX ON folio_reporting.invoice_transactions (invoice_vendor_id);
 
+CREATE INDEX ON folio_reporting.invoice_transactions (invoice_vendor_name);

@@ -29,13 +29,15 @@ SELECT
     json_extract_path_text(il.data, 'total') AS invoice_line_total,
     json_extract_path_text(ii.data, 'currency') AS invoice_currency,
     json_extract_path_text(il.data, 'poLineId') AS po_line_id,
-    json_extract_path_text(ii.data, 'vendorId') AS invoice_vendor_id
+    json_extract_path_text(ii.data, 'vendorId') AS invoice_vendor_id,
+    oo.name AS invoice_vendor_name
 FROM
     finance_transactions AS ft
     LEFT JOIN invoice_invoices AS ii ON json_extract_path_text(ft.data, 'sourceInvoiceId') = ii.id
     LEFT JOIN invoice_lines AS il ON json_extract_path_text(ft.data, 'sourceInvoiceLineId') = il.id
     LEFT JOIN finance_funds AS ff ON ft.from_fund_id = ff.id
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id
+    LEFT JOIN organization_organizations AS oo ON json_extract_path_text(ii.data, 'vendorId') = oo.id
 WHERE
     transaction_type = 'Pending payment'
     OR transaction_type = 'Payment';
@@ -79,4 +81,6 @@ CREATE INDEX ON folio_reporting.invoice_transactions (invoice_currency);
 CREATE INDEX ON folio_reporting.invoice_transactions (po_line_id);
 
 CREATE INDEX ON folio_reporting.invoice_transactions (invoice_vendor_id);
+
+CREATE INDEX ON folio_reporting.invoice_transactions (invoice_vendor_name);
 

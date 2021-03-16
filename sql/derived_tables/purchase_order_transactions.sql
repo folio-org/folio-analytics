@@ -31,13 +31,15 @@ SELECT
     json_extract_path_text(pol.data, 'description') AS pol_description,
     pol.acquisition_method AS pol_acquisition_method,
     po.order_type AS po_order_type,
-    po.vendor AS po_vendor_id
+    po.vendor AS po_vendor_id,
+    oo.name AS po_vendor_name
 FROM
     finance_transactions AS ft
     LEFT JOIN po_lines AS pol ON json_extract_path_text(ft.data, 'encumbrance', 'sourcePoLineId') = pol.id
     LEFT JOIN po_purchase_orders AS po ON json_extract_path_text(ft.data, 'encumbrance', 'sourcePurchaseOrderId') = po.id
     LEFT JOIN finance_funds AS ff ON ft.from_fund_id = ff.id
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id
+    LEFT JOIN organization_organizations AS oo ON po.vendor = oo.id
 WHERE
     ft.transaction_type = 'Encumbrance';
 
@@ -84,4 +86,6 @@ CREATE INDEX ON folio_reporting.purchase_order_transactions (pol_acquisition_met
 CREATE INDEX ON folio_reporting.purchase_order_transactions (po_order_type);
 
 CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_id);
+
+CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_name);
 
