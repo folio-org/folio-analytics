@@ -28,7 +28,7 @@ SELECT
     json_extract_path_text(ft.data, 'encumbrance', 'sourcePoLineId') AS po_line_id,
     json_extract_path_text(ft.data, 'encumbrance', 'sourcePurchaseOrderId') AS po_id,
     pol.po_line_number AS pol_number,
-    pol.description AS pol_description,
+    json_extract_path_text(pol.data, 'description') AS pol_description,
     pol.acquisition_method AS pol_acquisition_method,
     po.order_type AS po_order_type,
     po.vendor AS po_vendor_id
