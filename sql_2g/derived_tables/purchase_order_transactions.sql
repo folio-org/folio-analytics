@@ -31,20 +31,23 @@ SELECT
     json_extract_path_text(pol.jsonb::json, 'description') AS pol_description,
     json_extract_path_text(pol.jsonb::json, 'acquisition_method') AS pol_acquisition_method,
     json_extract_path_text(po.jsonb::json, 'order_type') AS po_order_type,
-    json_extract_path_text(po.jsonb::json, 'vendor') AS po_vendor_id
+    json_extract_path_text(po.jsonb::json, 'vendor') AS po_vendor_id,
+    json_extract_path_text(oo.jsonb::json, 'name') AS po_vendor_name
 FROM
     folio_finance.transaction AS ft
     LEFT JOIN folio_orders.po_line AS pol ON json_extract_path_text(ft.jsonb::json, 'encumbrance', 'sourcePoLineId') = pol.id
     LEFT JOIN folio_orders.purchase_order AS po ON json_extract_path_text(ft.jsonb::json, 'encumbrance', 'sourcePurchaseOrderId') = po.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
+    LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(po.jsonb::json, 'vendor') = oo.id
 WHERE
     json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Encumbrance'
     AND ft.__current
     AND po.__current
     AND pol.__current
     AND ff.__current
-    AND fb.__current;
+    AND fb.__current
+    AND oo.__current;
 
 CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_id);
 
@@ -90,3 +93,4 @@ CREATE INDEX ON folio_reporting.purchase_order_transactions (po_order_type);
 
 CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_id);
 
+CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_name);
