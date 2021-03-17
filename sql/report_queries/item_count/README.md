@@ -24,7 +24,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   ## Filters
   
   #### Hardcoded filters (assumptions; in the where clause):
-* Excludes: e-resources; suppressed instance records, and suppressed holdings records (when field becomes available).
+* Excludes: e-resources; suppressed instance records, suppressed holdings records, and suppressed item records.
 
 <details>
   <summary>Click to read more!</summary>

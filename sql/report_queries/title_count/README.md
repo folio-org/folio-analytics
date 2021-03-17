@@ -31,7 +31,7 @@ To provide **title** counts for **non-electronic** resources cataloged in the In
   
   * Each instance has a holdings record.  Each holdings record has a permanent location.
   * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes instance records that do not have at least one unsuppressed holdings record (all holdings discovery suppress values are “true”)
+  * Excludes instance records that do not have at least one unsuppressed holdings record (all holdings discovery suppress values are “true”)
   * This query is intended to exclude e-resources. It excludes instance records with instance format names of “computer – online resource” or “ISNULL,”  and excludes instance records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   

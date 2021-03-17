@@ -106,9 +106,11 @@ WHERE
 	-- hardcoded filters 
 	
 	-- if suppressed don't count 
-	(
-		(NOT inst.discovery_suppress) 
-			OR (inst.discovery_suppress ISNULL))   
+	(NOT inst.discovery_suppress 
+		OR inst.discovery_suppress ISNULL)
+	AND 
+	(NOT hld.discovery_suppress 
+		OR hld.discovery_suppress ISNULL) 
 	AND  
 	-- filter all virtual titles (update values as needed).	
 	(inform.format_name NOT IN  ('computer -- online resource') 
