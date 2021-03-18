@@ -54,10 +54,19 @@ README.md files in the query folders to explain how to run the
 reports.
 
 
-## How to learn more about SQL
+## Releases and branches
 
-* [Self-paced course on Relational
-  Algebra](https://lagunita.stanford.edu/courses/DB/RA/SelfPaced/about)
-* [Self-paced course on
-  SQL](https://lagunita.stanford.edu/courses/DB/SQL/SelfPaced/about)
+This repository has release branches but not GitHub releases.
+
+There are two primary types of branches:
+
+* The main branch (`main`).  This is a development branch where new
+  features are first merged.  This branch is relatively unstable.  It
+  is also the default view when browsing the repository on GitHub.
+
+* Release branches (`release-*`).  These are releases made from
+  `main`.  They are managed as stable branches; i.e. they may receive
+  bug fixes but generally no new features.  Most users should run a
+  recent release branch.
+
 

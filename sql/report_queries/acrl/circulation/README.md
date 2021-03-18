@@ -1,9 +1,5 @@
 # ACRL Circulation Report
 
-## Status: Tested
-
-This query has been reviewed for code syntax and style, approved by the community, and provided with machine test files.
-
 ## Report Details
 
 This report is used for pulling data that are reported on an annual basis to organizations such as the Association of College & Research Libraries (ACRL), the Association of Research Libraries (ARL), and the National Center for Education Statistics (NCES). 
