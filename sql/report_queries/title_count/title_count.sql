@@ -107,18 +107,18 @@ WHERE
 	
 	-- if suppressed don't count 
 	(NOT inst.discovery_suppress 
-		OR inst.discovery_suppress ISNULL)
+		OR inst.discovery_suppress IS NULL)
 	AND 
 	(NOT hld.discovery_suppress 
-		OR hld.discovery_suppress ISNULL) 
+		OR hld.discovery_suppress IS NULL) 
 	AND  
 	-- filter all virtual titles (update values as needed).	
 	(inform.format_name NOT IN  ('computer -- online resource') 
-		OR  inform.format_name ISNULL)
+		OR  inform.format_name IS NULL)
 	AND  
 	-- only physical resources
 	(loc.library_name  NOT IN  ('Online') 
-		OR  loc.library_name ISNULL)
+		OR  loc.library_name IS NULL)
 	AND
 	
 	-- begin to process the set filters
