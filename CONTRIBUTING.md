@@ -80,7 +80,8 @@ We use the `pg_format` tool from
 [pgFormatter](https://github.com/darold/pgFormatter) to make SQL code
 more readable.  For maximum consistency, a [configuration
 file](https://github.com/folio-org/folio-analytics/blob/main/sql/pg_format.conf)
-has been provided.
+has been provided.  The configuration file should be copied as
+`~/.pg_format`.
 
 Please use this method to format submitted code if possible.
 
