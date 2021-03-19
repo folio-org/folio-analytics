@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS folio_reporting.purchase_order_transactions;
+DROP TABLE IF EXISTS folio_reporting.finance_transaction_purchase_order;
 
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
 --
@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS folio_reporting.purchase_order_transactions;
 --    finance_budget
 --    po_lines
 --    po_purchase_orders
-CREATE TABLE folio_reporting.purchase_order_transactions AS
+CREATE TABLE folio_reporting.finance_transaction_purchase_order AS
 SELECT
     ft.id AS transaction_id,
     json_extract_path_text(ft.jsonb::json, 'amount') AS transaction_amount,
@@ -49,48 +49,48 @@ WHERE
     AND fb.__current
     AND oo.__current;
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_amount);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_amount);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_currency);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_currency);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_expense_class_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_expense_class_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_fiscal_year_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_fiscal_year_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_from_fund_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_from_fund_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_from_fund_name);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_from_fund_name);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_from_fund_code);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_from_fund_code);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_from_budget_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_from_budget_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_from_budget_name);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_from_budget_name);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_encumbrance_amount_awaiting_payment);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_encumbrance_amount_awaiting_payment);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_encumbrance_amount_expended);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_encumbrance_amount_expended);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_encumbrance_initial_amount);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_encumbrance_initial_amount);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_encumbrance_order_type);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_encumbrance_order_type);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (transaction_encumbrance_subscription);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_encumbrance_subscription);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (po_line_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (po_line_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (po_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (po_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (pol_number);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (pol_number);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (pol_description);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (pol_description);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (pol_acquisition_method);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (pol_acquisition_method);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (po_order_type);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (po_order_type);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_id);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (po_vendor_id);
 
-CREATE INDEX ON folio_reporting.purchase_order_transactions (po_vendor_name);
+CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (po_vendor_name);
