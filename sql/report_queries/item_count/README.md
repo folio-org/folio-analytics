@@ -30,8 +30,7 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   <summary>Click to read more!</summary>
   
   * Each holdings record has a permanent location.
-  * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes suppressed holdings records.
+  * Excludes suppressed instance, holdings and item records
   * This query is intended to exclude e-resources. It excludes records with instance format names of “computer – online resource” or “ISNULL,”  and excludes records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   
