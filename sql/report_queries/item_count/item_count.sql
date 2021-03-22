@@ -125,17 +125,24 @@ FROM
     LEFT JOIN folio_reporting.instance_relationships_ext AS sub_relation ON sub_relation.relationship_sub_instance_id = inst.instance_id
 WHERE
     -- hardcoded filters
-	(
-		(NOT inst.discovery_suppress) 
-			OR (inst.discovery_suppress ISNULL))   
+	
+	-- if suppressed don't count 
+	(NOT inst.discovery_suppress 
+		OR inst.discovery_suppress IS NULL)
+	AND 
+	(NOT hld.discovery_suppress 
+		OR hld.discovery_suppress IS NULL)
+	AND
+	(NOT item.discovery_suppress 
+		OR item.discovery_suppress IS NULL) 
 	AND  
 	-- filter all virtual titles (update values as needed).	
 	(inform.format_name NOT IN  ('computer -- online resource') 
-		OR  inform.format_name ISNULL)
+		OR  inform.format_name IS NULL)
 	AND  
 	-- only physical resources
 	(loc.library_name  NOT IN  ('Online') 
-		OR  loc.library_name ISNULL)
+		OR  loc.library_name IS NULL)
 	AND
 	-- begin to process the set filters
 	/** 	this is commented out atm because of to few test data  	 	 	 	
