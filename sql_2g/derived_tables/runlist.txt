@@ -1,2 +1,3 @@
-invoice_transactions.sql
-purchase_order_transactions.sql
+finance_transaction_invoices.sql
+finance_transaction_purchase_order.sql
+licenses_license_ext.sql

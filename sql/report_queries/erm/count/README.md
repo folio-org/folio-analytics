@@ -9,8 +9,7 @@ This query relies on the [title count query](../../title_count) but is only addr
   <summary>Click to read more!</summary>
 
 * Each instance has a holdings record.  Each holdings record has a permanent location.
-* Excludes suppressed instance records (instance discovery suppress value is “true”)
-* [When this field becomes available:] Excludes instance records that do not have at least one unsuppressed holdings record (all holdings discovery suppress values are “true”)
+* Excludes suppressed instance and holdings records
 * This query is intended to only include e-resources. It includes instance records with instance format names of “computer – online resource” or instance records with holdings library names of “Online”. These values many need to be updated for your local needs.
   </details>
 
