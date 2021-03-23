@@ -42,7 +42,7 @@ WITH parameters AS (
         ''::varchar AS items_permanent_location_filter, --Online, Annex, Main Library
         ''::varchar AS items_temporary_location_filter, --Online, Annex, Main Library
         ''::varchar AS items_effective_location_filter, --Online, Annex, Main Library
-        ''::varchar AS items_permanent_institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
+        ''::varchar AS items_permanent_institution_filter, -- 'Københavns Universitet','Montoya College'
         ''::varchar AS items_permanent_campus_filter, -- 'Main Campus','City Campus','Online'
         ''::varchar AS items_permanent_library_filter -- 'Datalogisk Institut','Adelaide Library'
 )
