@@ -15,11 +15,10 @@
   		Approval date
   		Payment date	 
   		                
-    Finance Fiscal Years table
-     	Fiscal year ID
-     	Fiscal year code
+    	Finance Fiscal Years table
+     		Fiscal year ID
+     		Fiscal year code
  */
-
 WITH parameters AS (
     SELECT
     ''::VARCHAR AS fiscal_year_code, --ex: FY20201, FY2022 etc. 
@@ -36,8 +35,7 @@ SELECT
 	fti.invoice_line_id AS transaction_invoice_line_id,
 	fti.transaction_amount AS transaction_amount,
 	fti.transaction_currency AS transaction_currency,
-	fti.transaction_type AS transaction_type
-		
+	fti.transaction_type AS transaction_type		
 FROM 
 	folio_reporting.finance_transaction_invoices AS fti
 	LEFT JOIN invoice_invoices AS inv ON fti.invoice_id = inv.id
@@ -48,7 +46,7 @@ WHERE
 	AND fti.transaction_type LIKE 'Payment'
 	AND (fy.code = (SELECT fiscal_year_code FROM parameters) OR (SELECT fiscal_year_code FROM parameters) = '')
 	AND (inv.payment_date::date >= (SELECT payment_date_start_date FROM parameters))
-	AND (inv.payment_date::date < (SELECT payment_date_end_date FROM parameters))
+	AND (inv.payment_date::date < (SELECT payment_date_end_date FROM parameters));
 
 
 
