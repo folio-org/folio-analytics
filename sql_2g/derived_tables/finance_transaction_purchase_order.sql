@@ -41,13 +41,7 @@ FROM
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(po.jsonb::json, 'vendor') = oo.id
 WHERE
-    json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Encumbrance'
-    AND ft.__current
-    AND po.__current
-    AND pol.__current
-    AND ff.__current
-    AND fb.__current
-    AND oo.__current;
+    json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Encumbrance';
 
 CREATE INDEX ON folio_reporting.finance_transaction_purchase_order (transaction_id);
 

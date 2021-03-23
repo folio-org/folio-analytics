@@ -39,13 +39,7 @@ FROM
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(ii.jsonb::json, 'vendorId') = oo.id
 WHERE (json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Pending payment'
-    OR json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Payment')
-    AND ft.__current
-    AND ii.__current
-    AND il.__current
-    AND ff.__current
-    AND fb.__current
-    AND oo.__current;
+    OR json_extract_path_text(ft.jsonb::json, 'transactionType') = 'Payment');
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_id);
 
