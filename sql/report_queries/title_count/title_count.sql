@@ -68,7 +68,7 @@ SELECT
     inform.format_id AS instance_format_id,
     inform.format_code AS instance_format_code,
     inform.format_name AS instance_format_name,
-    (SELECT "language" FROM folio_reporting.instance_languages AS lng WHERE lng.instance_id = inst.instance_id LIMIT 1) AS first_language,
+    lng.language AS first_language,
     insc.statistical_code_id AS instance_statistical_code_id,
     insc.statistical_code AS instance_statistical_code,
     insc.statistical_code_name AS instance_statistical_code_name,
@@ -95,28 +95,30 @@ FROM
     LEFT JOIN folio_reporting.instance_statistical_codes AS insc ON inst.instance_id = insc.instance_id
     LEFT JOIN folio_reporting.instance_nature_content AS innc ON inst.instance_id = innc.instance_id
     LEFT JOIN folio_reporting.instance_formats AS inform ON inst.instance_id = inform.instance_id
-    LEFT JOIN folio_reporting.instance_languages AS inlang ON inst.instance_id = inlang.instance_id
     LEFT JOIN folio_reporting.instance_relationships_ext AS super_relation ON super_relation.relationship_super_instance_id = inst.instance_id
     LEFT JOIN folio_reporting.instance_relationships_ext AS sub_relation ON sub_relation.relationship_sub_instance_id = inst.instance_id
     LEFT JOIN folio_reporting.holdings_ext AS hld ON inst.instance_id = hld.instance_id
     LEFT JOIN folio_reporting.holdings_statistical_codes AS hsc ON hld.holdings_id = hsc.holdings_id
     LEFT JOIN folio_reporting.locations_libraries AS loc ON hld.permanent_location_id = loc.location_id  
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.language_ordinality = 1
 WHERE 
 
 	-- hardcoded filters 
 	
 	-- if suppressed don't count 
-	(
-		(NOT inst.discovery_suppress) 
-			OR (inst.discovery_suppress ISNULL))   
+	(NOT inst.discovery_suppress 
+		OR inst.discovery_suppress IS NULL)
+	AND 
+	(NOT hld.discovery_suppress 
+		OR hld.discovery_suppress IS NULL) 
 	AND  
 	-- filter all virtual titles (update values as needed).	
 	(inform.format_name NOT IN  ('computer -- online resource') 
-		OR  inform.format_name ISNULL)
+		OR  inform.format_name IS NULL)
 	AND  
 	-- only physical resources
 	(loc.library_name  NOT IN  ('Online') 
-		OR  loc.library_name ISNULL)
+		OR  loc.library_name IS NULL)
 	AND
 	
 	-- begin to process the set filters
@@ -160,7 +162,7 @@ WHERE
 			AND (SELECT instance_format_filter3 FROM parameters) = ''))
 	AND	
 	(
-		((SELECT "language" FROM folio_reporting.instance_languages AS lng WHERE lng.instance_id = inst.instance_id LIMIT 1) = (SELECT instance_language_filter FROM parameters))
+		(lng.language = (SELECT instance_language_filter FROM parameters))
 			OR ((SELECT instance_language_filter FROM parameters) = ''))
 	AND 
 	(inst.mode_of_issuance_name = (SELECT instance_mode_of_issuance_filter FROM parameters)

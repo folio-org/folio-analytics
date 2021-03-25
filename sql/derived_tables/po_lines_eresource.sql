@@ -12,7 +12,7 @@ WITH temp_eresource AS (
         json_extract_path_text(data, 'eresource', 'createInventory') AS pol_create_inventory,
         json_extract_path_text(data, 'eresource', 'expectedActivation') AS pol_expected_activation,
         json_extract_path_text(data, 'eresource', 'license') AS pol_license,
-        json_extract_path_text(data, 'eresource', 'license', 'desription') AS pol_license_desc,
+        json_extract_path_text(data, 'eresource', 'license', 'description') AS pol_license_desc,
         json_extract_path_text(data, 'eresource', 'materialType') AS pol_material_type,
         json_extract_path_text(data, 'eresource', 'trial') AS pol_trial,
         json_extract_path_text(data, 'eresource', 'userLimit') AS pol_user_limit,

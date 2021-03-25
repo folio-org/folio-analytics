@@ -14,7 +14,7 @@ WITH adjustments AS (
         json_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
         json_extract_path_text(adjustments.data, 'type') AS adjustment_type,
         json_extract_path_text(adjustments.data, 'value') AS adjustment_value,
-        json_extract_path_text(invoice_lines.data, 'adjustmentsTotal') AS adjustment_adjustments_total
+        json_extract_path_text(invoice_lines.data, 'adjustmentsTotal')::numeric(12,2) AS adjustment_adjustments_total
     FROM
         invoice_lines
         CROSS JOIN json_array_elements(json_extract_path(data, 'adjustments'))
