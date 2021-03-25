@@ -42,7 +42,7 @@ SELECT
     holdings.holdings_type_id AS type_id,
     holdings_type.name AS type_name,
     holdings.ill_policy_id,
-    holdings_ill_policy.name AS ill_policy_name,
+    json_extract_path_text(holdings_ill_policy.data, 'name') AS ill_policy_name,
     holdings.instance_id,
     holdings.permanent_location_id,
     holdings_permanent_location.name AS permanent_location_name,
