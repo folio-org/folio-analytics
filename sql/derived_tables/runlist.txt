@@ -52,3 +52,6 @@ requests_items.sql
 users_addresses.sql
 users_departments_unpacked.sql
 users_groups.sql
+po_instance.sql
+po_prod_ids.sql
+
