@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS folio_reporting.loans_renewal_dates;
 CREATE TABLE folio_reporting.loans_renewal_dates AS
     WITH distinct_records AS (
         SELECT
-            DISTINCT __start, id, jsonb
+            DISTINCT __start, id, jsonb::VARCHAR
         FROM
             folio_circulation.loan
     )
