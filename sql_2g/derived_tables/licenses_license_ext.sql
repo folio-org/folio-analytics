@@ -24,13 +24,7 @@ FROM (folio_licenses.license AS licenses_license
     LEFT JOIN folio_licenses.org AS licenses_license_org2 ON licenses_license_org.sao_org_fk = licenses_license_org2.org_id
     LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value ON licenses_refdata_value.rdv_id = licenses_license_org.sao_role)
     LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value2 ON licenses_refdata_value2.rdv_id = licenses_license.lic_type_rdv_fk
-    LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value3 ON licenses_refdata_value3.rdv_id = licenses_license.lic_status_rdv_fk
-    /* metadb specific attributes */
-WHERE
-    licenses_license. "__current"
-    AND licenses_license_org. "__current"
-    AND licenses_license_org2. "__current"
-    AND licenses_refdata_value. "__current";
+    LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value3 ON licenses_refdata_value3.rdv_id = licenses_license.lic_status_rdv_fk;
 
 CREATE INDEX ON folio_reporting.licenses_license_ext (license_id);
 
