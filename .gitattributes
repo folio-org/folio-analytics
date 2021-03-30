@@ -1,0 +1,4 @@
+*.sql linguist-detectable=true
+*.go linguist-detectable=false
+*.sh linguist-detectable=false
+
