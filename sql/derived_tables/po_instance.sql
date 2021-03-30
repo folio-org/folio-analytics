@@ -4,11 +4,11 @@ CREATE TABLE folio_reporting.po_instance AS
 SELECT
     json_extract_path_text(po_purchase_orders.data, 'poNumber') AS po_number,
     organization_organizations.code AS vendor_code,
+    user_users.username AS created_by,
     po_lines.po_line_number,
     po_purchase_orders.workflow_status AS po_wf_status,
     json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
-    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate') AS created_date,
-    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') AS created_by,
+    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate') AS created_date,  
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
     json_extract_path_text(po_lines.data, 'instanceId') AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
