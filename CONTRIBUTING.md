@@ -34,12 +34,8 @@ For bugs or specific technical proposals, please use
 2\. Branches
 ------------
 
-Pull requests should be based on:
-
-* `main` for all new features as well as bug fixes to unreleased
-  features
-
-* `release-*` for bug fixes to specific releases
+All pull requests should be based on the `main` branch.  Some bug 
+fixes will be backported to recent release branches.
 
 
 3\. Code review
