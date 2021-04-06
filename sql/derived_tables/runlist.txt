@@ -55,3 +55,4 @@ users_groups.sql
 po_instance.sql
 po_prod_ids.sql
 loans_renewal_dates.sql
+locations_service_points.sql
