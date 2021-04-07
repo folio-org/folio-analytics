@@ -1,13 +1,7 @@
-/* This derived table will pull renewals from the folio_circulation.loan table by 
+/* This derived table pulls renewals from the folio_circulation.loan table by 
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 
  * or to validate the results. */
-  
--- Questions:
--- Do we want to count "renewedThroughOverride" as a renewal for circulation reports?
--- like, for annual statistics, would that count as a renewal? It does
--- increment renewal count.
-
 DROP TABLE IF EXISTS folio_reporting.loans_renewal_dates;
 
 --check for rows that are duplicated except for __id
