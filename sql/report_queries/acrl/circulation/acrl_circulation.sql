@@ -35,14 +35,14 @@ WITH parameters AS (
     SELECT
         /* Choose a start and end date for the loans period */
         '2000-01-01'::date AS start_date,
-        '2021-01-01'::date AS end_date,
+        '2022-01-01'::date AS end_date,
         /* Fill in a material type name, or leave blank for all types */
         ''::varchar AS material_type_filter,
         /* Fill in a location name, or leave blank for all locations */
         ''::varchar AS items_permanent_location_filter, --Online, Annex, Main Library
         ''::varchar AS items_temporary_location_filter, --Online, Annex, Main Library
         ''::varchar AS items_effective_location_filter, --Online, Annex, Main Library
-        ''::varchar AS items_permanent_institution_filter, -- 'KÃ¸benhavns Universitet','Montoya College'
+        ''::varchar AS items_permanent_institution_filter, -- 'Københavns Universitet','Montoya College'
         ''::varchar AS items_permanent_campus_filter, -- 'Main Campus','City Campus','Online'
         ''::varchar AS items_permanent_library_filter -- 'Datalogisk Institut','Adelaide Library'
 )
@@ -62,12 +62,11 @@ SELECT
     current_item_permanent_location_name AS perm_location_name,
     current_item_temporary_location_name AS temp_location_name,
     current_item_effective_location_name AS effective_location_name,
-    institution_name,
-    campus_name,
-    library_name
+    current_item_permanent_location_library_name AS library_name,
+    current_item_permanent_location_campus_name AS campus_name,
+    current_item_permanent_location_institution_name AS institution_name
 FROM
     folio_reporting.loans_items AS li
-    LEFT JOIN folio_reporting.locations_libraries AS loc ON li.current_item_permanent_location_id = loc.location_id
 WHERE
     loan_date >= (
         SELECT
@@ -119,7 +118,7 @@ WHERE
                                 items_effective_location_filter
                             FROM
                                 parameters))
-                    AND (library_name = (
+                    AND (current_item_permanent_location_library_name = (
                             SELECT
                                 items_permanent_library_filter
                             FROM
@@ -129,7 +128,7 @@ WHERE
                                     items_permanent_library_filter
                                 FROM
                                     parameters))
-                        AND (campus_name = (
+                        AND (current_item_permanent_location_campus_name = (
                                 SELECT
                                     items_permanent_campus_filter
                                 FROM
@@ -139,7 +138,7 @@ WHERE
                                         items_permanent_campus_filter
                                     FROM
                                         parameters))
-                            AND (institution_name = (
+                            AND (current_item_permanent_location_institution_name = (
                                     SELECT
                                         items_permanent_institution_filter
                                     FROM

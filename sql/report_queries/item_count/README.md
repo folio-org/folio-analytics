@@ -7,9 +7,6 @@
 * [Output](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#output)
 * [Requests not yet addressed](https://github.com/folio-org/folio-analytics/tree/main/sql/report_queries/item_count#requests-and-issues-not-yet-addressed)
 
-## Status
-As of December 2020, this query has been updated to use the relevant derived tables.
-
 ## Purpose
 To provide summary **item** and **piece** counts for **non-electronic** resources cataloged in the Inventory, by various filters.
 
@@ -27,14 +24,13 @@ To provide summary **item** and **piece** counts for **non-electronic** resource
   ## Filters
   
   #### Hardcoded filters (assumptions; in the where clause):
-* Excludes: e-resources; suppressed instance records, and suppressed holdings records (when field becomes available).
+* Excludes: e-resources; suppressed instance records, suppressed holdings records, and suppressed item records.
 
 <details>
   <summary>Click to read more!</summary>
   
   * Each holdings record has a permanent location.
-  * Excludes suppressed instance records (instance discovery suppress value is “true”)
-  * [When this field becomes available:] Excludes suppressed holdings records.
+  * Excludes suppressed instance, holdings and item records
   * This query is intended to exclude e-resources. It excludes records with instance format names of “computer – online resource” or “ISNULL,”  and excludes records with holdings library names of “Online” or “ISNULL.” These values many need to be updated for your local needs.
   </details>
   

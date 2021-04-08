@@ -100,23 +100,25 @@ FROM
     LEFT JOIN folio_reporting.holdings_ext AS hld ON inst.instance_id = hld.instance_id
     LEFT JOIN folio_reporting.holdings_statistical_codes AS hsc ON hld.holdings_id = hsc.holdings_id
     LEFT JOIN folio_reporting.locations_libraries AS loc ON hld.permanent_location_id = loc.location_id  
-    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.ordinality = 1
+    LEFT JOIN folio_reporting.instance_languages AS lng ON lng.instance_id = inst.instance_id AND lng.language_ordinality = 1
 WHERE 
 
 	-- hardcoded filters 
 	
 	-- if suppressed don't count 
-	(
-		(NOT inst.discovery_suppress) 
-			OR (inst.discovery_suppress ISNULL))   
+	(NOT inst.discovery_suppress 
+		OR inst.discovery_suppress IS NULL)
+	AND 
+	(NOT hld.discovery_suppress 
+		OR hld.discovery_suppress IS NULL) 
 	AND  
 	-- filter all virtual titles (update values as needed).	
 	(inform.format_name NOT IN  ('computer -- online resource') 
-		OR  inform.format_name ISNULL)
+		OR  inform.format_name IS NULL)
 	AND  
 	-- only physical resources
 	(loc.library_name  NOT IN  ('Online') 
-		OR  loc.library_name ISNULL)
+		OR  loc.library_name IS NULL)
 	AND
 	
 	-- begin to process the set filters
