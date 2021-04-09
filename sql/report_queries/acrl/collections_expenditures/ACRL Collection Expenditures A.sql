@@ -102,7 +102,7 @@ inv_transac_amount_total AS (
         transaction_currency AS transaction_currency,
         fti.transaction_type
     FROM
-        folio_reporting.finance_transaction_invocies AS fti
+        folio_reporting.finance_transaction_invoices AS fti
     WHERE
         invoice_line_id IS NULL
         AND invoice_id IS NOT NULL
