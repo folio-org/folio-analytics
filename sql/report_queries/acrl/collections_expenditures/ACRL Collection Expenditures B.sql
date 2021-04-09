@@ -94,13 +94,13 @@ invl_transac_amount_total AS (
 inv_transac_amount_total AS (
     -- Provide invoice transaction not appearing in invoice_line, i.e. adjustment
     SELECT
-        id AS transaction_id,
-        json_extract_path_text(ft.data, 'expenseClassId') AS transaction_expense_class_id,
-        fiscal_year_id AS fiscal_year_id,
+        transaction_id AS transaction_id,
+        transaction_expense_class_id AS transaction_expense_class_id,
+        transaction_fiscal_year_id AS fiscal_year_id,
         invoice_id AS transaction_source_invoice_id,
         invoice_line_id AS transaction_source_invoice_line_id,
-        amount AS transaction_amount,
-        currency AS transaction_currency
+        transaction_amount AS transaction_amount,
+        transaction_currency AS transaction_currency
     FROM
         folio_reporting.finance_transaction_invoices AS fti
     WHERE
