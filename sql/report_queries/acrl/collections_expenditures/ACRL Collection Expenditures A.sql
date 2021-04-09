@@ -100,13 +100,13 @@ inv_transac_amount_total AS (
         source_invoice_line_id AS transaction_source_invoice_line_id,
         amount AS transaction_amount,
         currency AS transaction_currency,
-        ft.transaction_type
+        fti.transaction_type
     FROM
-        finance_transactions AS ft
+        folio_reporting.finance_transaction_invocies AS fti
     WHERE
-        source_invoice_line_id IS NULL
-        AND source_invoice_id IS NOT NULL
-        AND ft.transaction_type LIKE 'Payment'
+        invoice_line_id IS NULL
+        AND invoice_id IS NOT NULL
+        AND fti.transaction_type LIKE 'Payment'
 ),
 invoice_adj_ratio AS (
     -- ratio per invoice_line to distribute transaction not associated with an invoice_line
