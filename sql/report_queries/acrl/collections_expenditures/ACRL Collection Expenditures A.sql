@@ -186,5 +186,6 @@ GROUP BY
     ilta.transaction_total_per_invl,
     ita.transaction_amount,
     ita.transaction_expense_class_id,
-    invadjext.ratio_of_inv_adj_per_invoice_line;
+    invadjext.ratio_of_inv_adj_per_invoice_line,
+    fec.name;
 
