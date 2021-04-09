@@ -54,7 +54,7 @@ As mentioned earlier, four main queries can be used to help institution answerin
 ### Hardcoded filters:
 Note that the first two queries exclude online resources via their hardcoded filters (i.e., not instance.format_name (computer – online resource) and not holdings.library_name (online)). The fourth limits items in the Inventory to online resources via its hard filters (i.e., in instance.format_name (computer – online resource) and in holdings.library_name (online)).  All queries exclude records that are suppressed.
 
-### Paramter filters:
+### Parameter filters:
 (Note that the FOLIO App “Settings” for Inventory may allow you to see what possible values many of these fields may contain at your institution.)
 
 #### Non-format filters:
