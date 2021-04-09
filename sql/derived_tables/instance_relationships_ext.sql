@@ -5,7 +5,7 @@ CREATE TABLE folio_reporting.instance_relationships_ext AS
 SELECT
     relationships.id AS relationship_id,
     json_extract_path_text(relationships.data, 'instanceRelationshipTypeId') AS relationship_type_id,
-    types.name AS relationship_type_name,
+    json_extract_path_text(types.data, 'name') AS relationship_type_name,
     json_extract_path_text(relationships.data, 'subInstanceId') AS relationship_sub_instance_id,
     json_extract_path_text(relationships.data, 'superInstanceId') AS relationship_super_instance_id
 FROM
