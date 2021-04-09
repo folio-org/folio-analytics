@@ -43,10 +43,10 @@ Generally, the goal is to count unique instance records by format. Needed format
 
 ## FILTERS
 As mentioned earlier, four main queries can be used to help institution answering the Library Collections data and many filters can be selected.
-1. Title Count
-2. Volume Count
+1. [Title Count](https://github.com/NancyBolduc/folio-analytics/tree/master/sql/report_queries/title_count)
+2. [Item Count (Volume count)](https://github.com/NancyBolduc/folio-analytics/tree/master/sql/report_queries/item_count)
 3. ERM Title Count (If using ERM; targeted for Release 1.1 but relies on the next version of LDP (MetaDB)) 
-4. ERM Inventory Title Count
+4. [ERM Inventory Title Count](https://github.com/NancyBolduc/folio-analytics/tree/master/sql/report_queries/erm/count)
 
 <details>
   <summary>Click for information on Hardcoded and Parameter filters!</summary>
