@@ -10,12 +10,12 @@
  * - pickup_service_point_name
  * - pickup_library_name
  * folio_reporting.item_ext table:
- * - call_number
  * - barcode
  * - material_type_name
  * - permanent_location_name
  * - effective_location_name
  * folio_reporting.holdings_ext table:
+ * - call_number
  * - shelving_title
  * folio_reporting.users_groups (derived) table:
  * - user_group
@@ -51,6 +51,9 @@ service_point_libraries AS (
         library_name 
 )
 SELECT
+    (SELECT start_date::varchar FROM parameters) || 
+        ' to ' || 
+        (SELECT end_date::varchar FROM parameters) AS date_range,
     cr.id AS request_id,
     cr.request_date,
     cr.request_type,
@@ -61,9 +64,10 @@ SELECT
     spl.library_name AS pickup_library_name,
     cr.fulfilment_preference,
     --ie.item_id,
-    ie.call_number,
+    he.call_number,
     ie.barcode,
     ie.material_type_name,
+    --ie.holdings_record_id,
     ie.permanent_location_name,
     ie.effective_location_name,
     --he.holdings_id,
