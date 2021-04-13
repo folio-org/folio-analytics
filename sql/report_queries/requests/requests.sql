@@ -10,12 +10,12 @@
  * - pickup_service_point_name
  * - pickup_library_name
  * folio_reporting.item_ext table:
- * - call_number
  * - barcode
  * - material_type_name
  * - permanent_location_name
  * - effective_location_name
  * folio_reporting.holdings_ext table:
+ * - call_number
  * - shelving_title
  * folio_reporting.users_groups (derived) table:
  * - user_group
@@ -35,7 +35,12 @@ WITH parameters AS (
         '2000-01-01'::date AS start_date,
         '2022-01-01'::date AS end_date,
         /* Fill in a location name, or leave blank for all locations */
-        ''::varchar AS items_permanent_location_filter --Online, Annex, Main Library
+        ''::varchar AS items_permanent_location_filter, --Online, Annex, Main Library
+        /* Fill in 1-4 request statuses, or leave all blank for all statuses */
+        'Open - Not yet filled'::VARCHAR AS request_status_filter1, --  'Open - Not yet filled', 'Open - Awaiting pickup','Open - In transit', ''Open, Awaiting delivery', 'Closed - Filled', 'Closed - Cancelled', 'Closed - Unfilled', 'Closed - Pickup expired'
+        'Open - In transit'::VARCHAR AS request_status_filter2, -- other request status to also include
+        ''::VARCHAR AS request_status_filter3, -- other request status to also include
+        ''::VARCHAR AS request_status_filter4 -- other request status to also include
 ),
 service_point_libraries AS (
     SELECT
@@ -51,6 +56,9 @@ service_point_libraries AS (
         library_name 
 )
 SELECT
+    (SELECT start_date::varchar FROM parameters) || 
+        ' to ' || 
+        (SELECT end_date::varchar FROM parameters) AS date_range,
     cr.id AS request_id,
     cr.request_date,
     cr.request_type,
@@ -61,9 +69,10 @@ SELECT
     spl.library_name AS pickup_library_name,
     cr.fulfilment_preference,
     --ie.item_id,
-    ie.call_number,
+    he.call_number,
     ie.barcode,
     ie.material_type_name,
+    --ie.holdings_record_id,
     ie.permanent_location_name,
     ie.effective_location_name,
     --he.holdings_id,
@@ -93,4 +102,16 @@ WHERE
         ie.permanent_location_name = (SELECT items_permanent_location_filter FROM parameters)
         OR '' = (SELECT items_permanent_location_filter FROM parameters)
     )
+    AND (
+        cr.status IN ((SELECT request_status_filter1 FROM parameters),
+                      (SELECT request_status_filter2 FROM parameters),
+                      (SELECT request_status_filter3 FROM parameters),
+                      (SELECT request_status_filter4 FROM parameters)
+                    )
+        OR ('' = (SELECT request_status_filter1 FROM parameters) AND
+            '' = (SELECT request_status_filter2 FROM parameters) AND
+            '' = (SELECT request_status_filter3 FROM parameters) AND
+            '' = (SELECT request_status_filter4 FROM parameters)
+            )
+    )     
 ;
