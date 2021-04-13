@@ -35,10 +35,10 @@ WITH parameters AS (
         -- filters on purchase order line level
         ''::VARCHAR AS po_line_order_format, -- Enter your po line format eg. 'Electronic Resource', 'Physical Resource', 'P/E Mix' etc.
         -- filters on instance level
-        ''::VARCHAR AS instance_subject, -- Enter your  eg.  etc.
-        ''::VARCHAR AS mode_of_issuance_name, -- Enter your mode_of_issuance_name eg.  etc.
+        ''::VARCHAR AS instance_subject, -- Enter your  eg. 'Public welfare', 'Internet and children', 'Medicare'  etc.
+        ''::VARCHAR AS mode_of_issuance_name, -- Enter your mode_of_issuance_name eg. 'integrating resource', 'serial', 'multipart monograph' etc.
         'computer -- online resource'::VARCHAR AS format_name, -- Enter your format_name eg. 'computer -- online resource'  etc.
-        ''::VARCHAR AS library_name -- Enter your library_location_name eg.  etc.
+        ''::VARCHAR AS library_name -- Enter your library_location_name eg. 'Datalogisk Institut','Adelaide Library' etc.
 ),
      instance_detail AS (
          SELECT
@@ -96,6 +96,7 @@ SELECT
     invl_adjustments.adjustment_prorate AS "invl_adjustment_prorate",
     invl_adjustments.adjustment_relationtototal AS "invl_adjustment_relationtototal",
     invl_adjustments.adjustment_value AS "invl_adjustment_value",
+    invl_adjustments.adjustment_type AS "invl_adjustment_type",
     invl.sub_total AS "invl_sub_total",
     invl.total AS "invl_total", -- this are costs by invoice_line in invoice currency
     inv_adj.inv_adj_prorate,
@@ -167,6 +168,7 @@ GROUP BY
 	invl_adjustments.adjustment_prorate,
 	invl_adjustments.adjustment_relationtototal,
 	invl_adjustments.adjustment_value,
+	invl_adjustments.adjustment_type,
 	invl.sub_total,
 	invl.total,
 	inv_adj.inv_adj_prorate,
