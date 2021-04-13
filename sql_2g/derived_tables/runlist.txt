@@ -6,5 +6,7 @@ agreements_subscription_agreement_entitlement.sql
 agreements_subscription_agreement_org_ext.sql
 finance_transaction_invoices.sql
 finance_transaction_purchase_order.sql
+invoice_adjustments_in_addition_to.sql
+invoice_adjustments_ext.sql
 licenses_license_ext.sql
 loans_renewal_dates.sql
