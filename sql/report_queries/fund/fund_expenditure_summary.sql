@@ -2,8 +2,6 @@
 PURPOSE
 This report shows fund expenditures as the sum of the transaction amount by purchase order line grouped by fund and expense class. 
 Fund expenditures can be viewed by fund name, fund type, fund code, purchase order line format, transaction type, expense class, and fiscal year.
-The "is_package" field from the purchase order lines table uses NOT to exclude packages. 
-Users can uncomment the "is_package" field when there is package data to exclude.
 
 MAIN TABLES INCLUDED
 finance_funds
@@ -59,7 +57,7 @@ LEFT JOIN finance_fiscal_years AS finyear ON finyear.id = fitrin.transaction_fis
 LEFT JOIN po_lines AS pol ON pol.id = fitrin.po_line_id
 
 WHERE
-	--NOT pol.is_package
+	
 	--(fitrin.invoice_payment_date::date >= (SELECT start_date FROM parameters)) 
 	--AND (fitrin.invoice_payment_date::date < (SELECT end_date FROM parameters))
 
