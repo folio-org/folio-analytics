@@ -10,7 +10,3 @@ The "is_package" field from the purchase order lines table uses NOT to exclude p
 ## Aggregation
 Data are aggregated by fund_id, fund_name, fund_type_name, fund_code, fund_description, transaction_type, expense_class, and fiscal_year_code.
 
-## Sample Output
-
-
-
