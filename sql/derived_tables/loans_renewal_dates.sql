@@ -1,14 +1,7 @@
-/* This derived table will pull renewals from the circulation_loan_history by 
+/* This derived table pulls renewals from the circulation_loan_history by 
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 
- * or to validate the results. When we move to metadb, will probably want to use
- * metadb's native history functionality instead. */
-  
--- Questions:
--- Do we want to count "renewedThroughOverride" as a renewal for circulation reports?
--- like, for annual statistics, would that count as a renewal? It does
--- increment renewal count.
-
+ * or to validate the results. */
 DROP TABLE IF EXISTS folio_reporting.loans_renewal_dates;
 
 CREATE TABLE folio_reporting.loans_renewal_dates AS
