@@ -53,6 +53,12 @@ Additions or changes to queries should be accompanied by the
 corresponding additions or changes to user documentation, together in
 the same pull request.
 
+The user documentation should contain three sections:
+
+* Purpose of report
+* Sample output
+* Query instructions, e.g. how to set parameters
+
 
 5\. Testing
 -----------
