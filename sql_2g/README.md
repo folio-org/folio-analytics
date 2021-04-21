@@ -1,4 +1,4 @@
 
-This directory will be used to store SQL queries for FOLIO data in
-Metadb 1.2 or later.
+This directory contains SQL queries for FOLIO data in Metadb.  (For
+LDP-based queries, see [folio-analytics/sql/](../sql).)
 
