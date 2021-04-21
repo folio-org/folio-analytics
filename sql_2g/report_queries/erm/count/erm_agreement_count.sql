@@ -28,7 +28,7 @@ WITH parameters AS (
         --'2022-01-01' :: DATE AS ent_end_date, -- end date day is NOT included in interval -> enter next day	
 		-- filters on package content item level
         NULL::DATE AS pci_start_date,
-        NULL::DATE AS pci_end_date,
+        NULL::DATE AS pci_end_date
         --'2021-01-01' :: DATE AS pci_start_date, -- start date day is included in interval
         --'2022-01-01' :: DATE AS pci_end_date, -- end date day is NOT included in interval -> enter next day		
 )
