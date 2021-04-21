@@ -4,10 +4,9 @@
 /* FIELDS TO INCLUDE:
  Invoice table:
  Invoice ID
- Invoice approval date
  Invoice exchange rate
- Invoice currency
- *Payment Date* not developed yet, will need to add to this query   
+ Invoice payment date
+ Invoice currency   
  Invoice Line table:
  Invoice Line iD
  Invoice Line status
@@ -60,10 +59,8 @@
 /* Change the lines below to filter or leave blank to return all results. Add details in '' for a specific filter.*/
 WITH parameters AS (
     SELECT
-        '2000-01-01'::date AS approval_date_start_date, --ex:2000-01-01
-        '2021-12-31'::date AS approval_date_end_date, -- ex:2020-12-31
-        '2000-01-01'::date AS payment_date_start_date, --ex:2000-01-01 'INVOICE PAYMENT DATE' IN DEVELOPMENT- USE WHEN BECOMES AVAILABLE
-        '2021-12-31'::date AS payment_date_end_date, -- ex:2020-12-31 'INVOICE PAYMENT DATE' IN DEVELOPMENT- USE wHEN BECOMES AVAILABLE
+        '2000-01-01'::date AS payment_date_start_date, --ex:2000-01-01 
+        '2021-12-31'::date AS payment_date_end_date, -- ex:2020-12-31 
         ''::varchar AS order_type, -- select 'One-Time' or 'Ongoing' or leave blank for both
         ''::varchar AS order_format, -- select 'Electronic Resource', 'Physical Resource', 'P/E Mix', 'Other' or leave blank for all
         ''::varchar AS instance_format_name, -- example: select e-resources vs physical (eg. "computer-online resource" for electronic resources or "Phycical Resource" for phycial resources)
@@ -130,7 +127,7 @@ invoice_adj_ratio AS (
    ita.transaction_expense_class_id,
    fec.name AS expense_classes_name,
    invl.invoice_line_status AS invl_status,
-   inv.approval_date::date AS inv_approval_date,
+   inv.payment_date::date AS inv_payment_date,
    coalesce(invl.sub_total, 0) AS invl_sub_total,
    ila.adjustment_value AS invl_adjustment_value,
    ila.adjustment_description AS invl_adj_desc,
