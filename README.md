@@ -56,8 +56,6 @@ reports.
 
 ## Releases and branches
 
-This repository has release branches but not GitHub releases.
-
 There are two primary types of branches:
 
 * The main branch (`main`).  This is a development branch where new
@@ -66,7 +64,6 @@ There are two primary types of branches:
 
 * Release branches (`release-*`).  These are releases made from
   `main`.  They are managed as stable branches; i.e. they may receive
-  bug fixes but generally no new features.  Most users should run a
-  recent release branch.
+  bug fixes but generally no new features.
 
 
