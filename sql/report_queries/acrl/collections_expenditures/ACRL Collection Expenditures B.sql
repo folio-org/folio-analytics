@@ -5,10 +5,9 @@
 /* FIELDS TO INCLUDE:
  Invoice table:
  Invoice ID
- Invoice approval date
  Invoice exchange rate
  Invoice currency
- *Payment Date* not developed yet, will need to add to this query   
+ Invoice payment date   
  Invoice Line table:
  Invoice Line iD
  Invoice Line status
@@ -60,9 +59,7 @@
  */
 /* Change the lines below to filter or leave blank to return all results. Add details in '' for a specific filter.*/
 WITH parameters AS (
-    SELECT
-        '2020-01-01'::date AS approval_date_start_date, --ex:2000-01-01
-        '2021-12-31'::date AS approval_date_end_date, -- ex:2020-12-31
+    SELEC
         '2020-01-01'::date AS payment_date_start_date, --ex:2000-01-01
         '2021-12-31'::date AS payment_date_end_date, -- ex:2020-12-31
         ''::varchar AS order_type, -- select 'One-Time' or 'Ongoing' or leave blank for both
