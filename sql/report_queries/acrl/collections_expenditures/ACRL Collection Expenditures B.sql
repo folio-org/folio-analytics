@@ -59,7 +59,7 @@
  */
 /* Change the lines below to filter or leave blank to return all results. Add details in '' for a specific filter.*/
 WITH parameters AS (
-    SELEC
+    SELECT
         '2020-01-01'::date AS payment_date_start_date, --ex:2000-01-01
         '2021-12-31'::date AS payment_date_end_date, -- ex:2020-12-31
         ''::varchar AS order_type, -- select 'One-Time' or 'Ongoing' or leave blank for both
