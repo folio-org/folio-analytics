@@ -39,10 +39,10 @@ WITH parameters AS (
 )
 
 SELECT
-	fitrin.transaction_from_fund_id AS fund_id,
-	fitrin.transaction_from_fund_name AS fund_name,
+	finfun.id AS fund_id,
+	finfun.name AS fund_name,
 	finfuntyp.name AS fund_type_name,
-	fitrin.transaction_from_fund_code AS fund_code,
+	finfun.code AS fund_code,
 	finfun.description AS fund_description,
 	fitrin.transaction_type AS transaction_type,
 	finexpclass.name AS expense_class,
