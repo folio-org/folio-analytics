@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS folio_reporting.licenses_license_ext;
+DROP TABLE IF EXISTS folio_derived.licenses_license_ext;
 
 -- Create a derived table that contains information about licenses from the app license
 --
@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS folio_reporting.licenses_license_ext;
 --   folio_licenses.license_org
 --   folio_licenses.org
 --   folio_licenses.refdata_value
-CREATE TABLE folio_reporting.licenses_license_ext AS
+CREATE TABLE folio_derived.licenses_license_ext AS
 SELECT
     licenses_license.lic_id AS "license_id",
     licenses_license.lic_name AS "license_name",
@@ -26,23 +26,23 @@ FROM (folio_licenses.license AS licenses_license
     LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value2 ON licenses_refdata_value2.rdv_id = licenses_license.lic_type_rdv_fk
     LEFT JOIN folio_licenses.refdata_value AS licenses_refdata_value3 ON licenses_refdata_value3.rdv_id = licenses_license.lic_status_rdv_fk;
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_id);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_id);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_name);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_name);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_description);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_description);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_start);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_start);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_end);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_end);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_type);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_type);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_status);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_status);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_org);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_org);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_org_role);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_org_role);
 
-CREATE INDEX ON folio_reporting.licenses_license_ext (license_org_uuid);
+CREATE INDEX ON folio_derived.licenses_license_ext (license_org_uuid);
 

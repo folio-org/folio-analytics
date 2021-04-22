@@ -61,12 +61,12 @@ SELECT
     json_extract_path_text(invl.jsonb, 'total') AS "invl_total", -- this are costs by invoice_line in invoice currency
     cast(fintrainvl.transaction_amount AS money) AS "transactions_invl_total"  
 FROM
-	folio_reporting.agreements_subscription_agreement_entitlement AS sa_ent_dt
-		LEFT JOIN folio_reporting.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
+	folio_derived.agreements_subscription_agreement_entitlement AS sa_ent_dt
+		LEFT JOIN folio_derived.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
 		LEFT JOIN folio_orders.po_line AS pol ON pol.id = sa_ent_dt.po_line_id
 		LEFT JOIN folio_invoice.invoice_lines AS invl ON json_extract_path_text(invl.jsonb, 'poLineId') = pol.id
         LEFT JOIN invoice_detail AS inv ON json_extract_path_text(invl.jsonb, 'invoiceId') = inv.invoice_id
-        LEFT JOIN folio_reporting.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
+        LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
 WHERE	
 	((sa_ent_dt.subscription_agreement_status_label = (SELECT agreement_status FROM parameters)) OR 
 		((SELECT agreement_status FROM parameters) = ''))

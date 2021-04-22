@@ -2,10 +2,10 @@
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 
  * or to validate the results. */
-DROP TABLE IF EXISTS folio_reporting.loans_renewal_dates;
+DROP TABLE IF EXISTS folio_derived.loans_renewal_dates;
 
 --check for rows that are duplicated except for __id
-CREATE TABLE folio_reporting.loans_renewal_dates AS
+CREATE TABLE folio_derived.loans_renewal_dates AS
     WITH distinct_records AS (
         SELECT
             DISTINCT __start, id, jsonb::VARCHAR
@@ -28,16 +28,16 @@ CREATE TABLE folio_reporting.loans_renewal_dates AS
         loan_action_date
 ;
 
---CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_history_id);
+--CREATE INDEX ON folio_derived.loans_renewal_dates (loan_history_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_action_date);
+CREATE INDEX ON folio_derived.loans_renewal_dates (loan_action_date);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_id);
+CREATE INDEX ON folio_derived.loans_renewal_dates (loan_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (item_id);
+CREATE INDEX ON folio_derived.loans_renewal_dates (item_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_action);
+CREATE INDEX ON folio_derived.loans_renewal_dates (loan_action);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_renewal_count);
+CREATE INDEX ON folio_derived.loans_renewal_dates (loan_renewal_count);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_status);
+CREATE INDEX ON folio_derived.loans_renewal_dates (loan_status);

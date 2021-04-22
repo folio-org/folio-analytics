@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS folio_reporting.agreements_erm_resource;
+DROP TABLE IF EXISTS folio_derived.agreements_erm_resource;
 
 -- Creates a derived table on agreements_erm_resource that has an entitlement linked and 
 -- resolves values and labels from erm_agreements_refdata_value for:
 --    res_sub_type_fk
 --    res_type_fk
-CREATE TABLE folio_reporting.agreements_erm_resource AS
+CREATE TABLE folio_derived.agreements_erm_resource AS
 SELECT
     id AS res_id,
     res_name,
@@ -24,25 +24,25 @@ FROM
     LEFT JOIN folio_agreements.refdata_value AS rt ON res.res_type_fk = rt.rdv_id
    	LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id;
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_id);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_id);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_sub_type_fk);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_fk);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_sub_type_fk_value);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_fk_value);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_sub_type_fk_label);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_fk_label);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_name);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_name);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_type_fk);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_type_fk_value);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk_value);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_type_fk_label);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk_label);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_publication_type_fk);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_publication_type_fk_value);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk_value);
 
-CREATE INDEX ON folio_reporting.agreements_erm_resource (res_publication_type_fk_label);
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk_label);
 
