@@ -11,7 +11,6 @@ folio_agreements.refdata_value
 
 WITH parameters AS (
     SELECT
-    
 		-- filters on agreement level
 		''::VARCHAR AS agreement_status, -- Enter your subscription agreement status eg. 'Active', 'Closed' etc.
 		-- subscription agreement time period will be added when available (IRIS)
@@ -41,7 +40,6 @@ FROM
     folio_derived.agreements_package_content_item AS pci_list
     LEFT JOIN folio_derived.agreements_subscription_agreement_entitlement AS sa_ent ON pci_list.entitlement_id = sa_ent.entitlement_id
     LEFT JOIN folio_agreements.refdata_value AS agrestat ON agrestat.rdv_id = sa_ent.subscription_agreement_status
-
 WHERE
  -- Don't count removed titles from packages
     pci_list.pci_removed_ts IS NULL
@@ -49,6 +47,8 @@ WHERE
     AND
 	((agrestat.rdv_label = (SELECT agreement_status FROM parameters)) OR
 		((SELECT agreement_status FROM parameters) = ''))
+/*	
+ -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
 	AND
     ((pci_list.pci_access_start < (SELECT pci_end_date FROM parameters) AND
 	    (pci_list.pci_access_end >= (SELECT pci_start_date FROM parameters) OR pci_list.pci_access_end IS NULL))
@@ -62,7 +62,6 @@ WHERE
 		(((SELECT ent_start_date FROM parameters) IS NULL)
 			OR ((SELECT ent_end_date FROM parameters) IS NULL)))
 	-- subscription agreement time period will be added when available (IRIS)
-	/*
 	AND 			
     ((sa_ent.sa_start_date < (SELECT a_end_date FROM parameters) AND
 	    (sa_ent.sa_end_date >= (SELECT a_start_date FROM parameters) OR sa_ent.sa_end_date IS NULL))

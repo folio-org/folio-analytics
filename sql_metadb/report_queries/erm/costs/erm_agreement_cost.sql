@@ -16,7 +16,6 @@ agreement_status, resource_type, resource_sub_type, resource_publication_type, p
  */
 WITH parameters AS (
     SELECT
-    
 		-- filters on agreement level
 		''::VARCHAR AS agreement_status, -- Enter your subscription agreement status eg. 'Active', 'Closed' etc.
 		-- filters on erm_resource level
@@ -34,7 +33,6 @@ WITH parameters AS (
         NULL::DATE AS end_date
         --'2021-01-01' :: DATE AS start_date, -- start date day is included in interval
         --'2022-01-01' :: DATE AS end_date, -- end date day is NOT included in interval -> enter next day
-
 ),
      invoice_detail AS (
          SELECT
