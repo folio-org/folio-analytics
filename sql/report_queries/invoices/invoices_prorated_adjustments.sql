@@ -12,106 +12,92 @@ include everything except non-prorated adjustments to invoices at the invoice le
 MAIN TABLES AND COLUMNS INCLUDED
 
 -invoice_invoices
-	-id
-	-payment_date
-	
+ -id
+ -payment_date
+ -status
+ -vendor_invoice_no
+
 -invoice_lines
-	-id
-	-total
-	-subtotal
-	-invoice_id
-	-invoice_line_number
-	-po_line_id
-	
+ -id
+ -invoice_id
+ -invoice_line_number
+ -po_line_id
+
 -po_lines
-	-id
-	-po_number
+ -id
+ -po_line_number
 	
 -po_order_invoice_relns
-	-id
-	-invoice_id
-	-purchase_order_id
+ -id
+ -invoice_id
+ -purchase_order_id
+
+-finance_transaction_invoices
+ -transaction_amount
 	
 AGGREGATION
-po_line_id
+po_line_id, po_line_number, invoice_status, invoice_payment_date, vendor_invoice_number
 	
 FILTERS FOR USERS TO SELECT
 invoice_payment_date, invoice_status
-					
-*/
-
+ */
 WITH parameters AS (
     SELECT
         /* enter invoice payment start date and end date in YYYY-MM-DD format */
-    	--'2000-01-01' :: DATE AS start_date,
+        --'2000-01-01' :: DATE AS start_date,
         --'2021-01-01' :: DATE AS end_date,
         /* enter invoice_status as Open, Reviewed, Approved, Paid or Cancelled */
-    	--'' :: VARCHAR AS invoice_status
+        --'' :: VARCHAR AS invoice_status
 ),
-
 --subquery for invoice detail
 invoice_detail AS (
-SELECT
-	inv.id AS "invoice_id",
-	inv.payment_date AS "invoice_payment_date",
-	inv.status AS "invoice_status",
-	inv.vendor_invoice_no AS "vendor_invoice_number"
-	
-FROM invoice_invoices AS inv
+    SELECT
+        inv.id AS "invoice_id",
+        inv.payment_date AS "invoice_payment_date",
+        inv.status AS "invoice_status",
+        inv.vendor_invoice_no AS "vendor_invoice_number"
+    FROM
+        invoice_invoices AS inv
 ),
-
 --subquery for invoice line detail
 invoice_line_detail AS (
-SELECT
-	invli.po_line_id AS "po_line_id",
-	invli.id AS "invoice_line_id",
-	invli.invoice_line_number AS "invoice_line_number",
-	invli.invoice_id AS "invoice_line_invoice_id"
-	
-FROM invoice_lines AS invli
-
+    SELECT
+        invli.po_line_id AS "po_line_id",
+        invli.id AS "invoice_line_id",
+        invli.invoice_line_number AS "invoice_line_number",
+        invli.invoice_id AS "invoice_line_invoice_id"
+    FROM
+        invoice_lines AS invli
 ),
 --subquery for po line number
 po_lines_detail AS (
-SELECT
-	pol_detail.id AS pol_id,
-	pol_detail.po_line_number AS "po_line_number"
-
-FROM po_lines AS pol_detail
-
-)
-/*
-
-)*/
--- End of WITH section
-
-
+    SELECT
+        pol_detail.id AS pol_id,
+        pol_detail.po_line_number AS "po_line_number"
+    FROM
+        po_lines AS pol_detail)
+--End of WITH section
 --MAIN QUERY
-
-SELECT 
-	invli_detail.po_line_id,
-	pol_detail.po_line_number,
-	SUM(fitrin.transaction_amount) as "invoice_line_total_sum",
-	invoice_status,
-	inv_detail.invoice_payment_date::date,
-	inv_detail.vendor_invoice_number
-	
-FROM invoice_detail AS inv_detail
-	
-LEFT JOIN invoice_line_detail AS "invli_detail"
-ON invli_detail.invoice_line_invoice_id = inv_detail.invoice_id
-LEFT JOIN folio_reporting.finance_transaction_invoices AS fitrin ON fitrin.invoice_line_id = invli_detail.invoice_line_id
-
-LEFT JOIN po_lines_detail AS pol_detail
-	ON invli_detail.po_line_id = pol_detail.pol_id
+SELECT
+    invli_detail.po_line_id,
+    pol_detail.po_line_number,
+    sum(fitrin.transaction_amount) AS "invoice_line_total_sum",
+    invoice_status,
+    inv_detail.invoice_payment_date::date,
+    inv_detail.vendor_invoice_number
+FROM
+    invoice_detail AS inv_detail
+    LEFT JOIN invoice_line_detail AS "invli_detail" ON invli_detail.invoice_line_invoice_id = inv_detail.invoice_id
+    LEFT JOIN folio_reporting.finance_transaction_invoices AS fitrin ON fitrin.invoice_line_id = invli_detail.invoice_line_id
+    LEFT JOIN po_lines_detail AS pol_detail ON invli_detail.po_line_id = pol_detail.pol_id
 WHERE
-	inv_detail.invoice_status = (SELECT invoice_status FROM parameters)
-	--AND (inv_detail.invoice_payment_date > (SELECT start_date FROM parameters) 
-	--AND inv_detail.invoice_payment_date < (SELECT end_date FROM parameters))
+    inv_detail.invoice_status = (SELECT invoice_status FROM parameters)
+    --AND (inv_detail.invoice_payment_date > (SELECT start_date FROM parameters)
+    --AND inv_detail.invoice_payment_date < (SELECT end_date FROM parameters))
 GROUP BY
-	invli_detail.po_line_id,
-	pol_detail.po_line_number,
-	inv_detail.invoice_status,
-	inv_detail.invoice_payment_date,
-	inv_detail.vendor_invoice_number
-;
+    invli_detail.po_line_id,
+    pol_detail.po_line_number,
+    inv_detail.invoice_status,
+    inv_detail.invoice_payment_date,
+    inv_detail.vendor_invoice_number;
+
