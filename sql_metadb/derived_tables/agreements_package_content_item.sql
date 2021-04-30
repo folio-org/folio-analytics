@@ -8,6 +8,7 @@ SELECT
     pci_list.pci_access_start,
     pci_list.pci_access_end,
     pci_list.pci_package_id,
+    pci_list.pci_removed_ts, 
     pci_list.package_source,
     pci_list.package_vendor_id,
     pci_list.org_vendor_name,
@@ -38,6 +39,7 @@ FROM
 	    pci.pci_access_start,
 	    pci.pci_access_end,
 	    pci.pci_pkg_fk AS pci_package_id,
+	    pci.pci_removed_ts,
 	    pack.pkg_source AS package_source,
 	    pack.pkg_vendor_fk AS package_vendor_id,
 	    org.org_name AS org_vendor_name,
@@ -79,6 +81,7 @@ FROM
 	    pci.pci_access_start,
 	    pci.pci_access_end,
 	    pci.pci_pkg_fk AS pci_package_id,
+	    pci.pci_removed_ts,
 	    pack.pkg_source AS package_source,
 	    pack.pkg_vendor_fk AS package_vendor_id,
 	    org.org_name AS org_vendor_name,
@@ -123,6 +126,8 @@ CREATE INDEX ON folio_derived.agreements_package_content_item (pci_access_start)
 CREATE INDEX ON folio_derived.agreements_package_content_item (pci_access_end);
 
 CREATE INDEX ON folio_derived.agreements_package_content_item (pci_package_id);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (pci_removed_ts);
 
 CREATE INDEX ON folio_derived.agreements_package_content_item (package_source);
 
