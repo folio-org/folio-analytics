@@ -17,7 +17,7 @@ SELECT
     json_extract_path_text(po_lines.data, 'publisher') AS publisher,
     json_extract_path_text(po_lines.data, 'requester') AS requester,
     json_extract_path_text(po_lines.data, 'rush')::boolean AS rush,
-    po_lines.selector
+    json_extract_path_text(po_lines.data, 'selector') AS selector
 FROM
     po_purchase_orders
     LEFT JOIN po_lines ON po_purchase_orders.id = json_extract_path_text(po_lines.data, 'purchaseOrderId')

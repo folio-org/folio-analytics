@@ -16,7 +16,6 @@ agreement_status, resource_type, resource_sub_type, resource_publication_type, p
  */
 WITH parameters AS (
     SELECT
-    
 		-- filters on agreement level
 		''::VARCHAR AS agreement_status, -- Enter your subscription agreement status eg. 'Active', 'Closed' etc.
 		-- filters on erm_resource level
@@ -28,12 +27,12 @@ WITH parameters AS (
         -- filters on invoice line level
         ''::VARCHAR AS invoice_line_status, -- Enter your invoice line status eg. 'Paid' or 'Approved'etc.
         -- filters on invoice level
+  -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
         -- Please comment/uncomment one pair the these parameters if you want to define the date range of paid invoices
         NULL::DATE AS start_date,
         NULL::DATE AS end_date
         --'2021-01-01' :: DATE AS start_date, -- start date day is included in interval
         --'2022-01-01' :: DATE AS end_date, -- end date day is NOT included in interval -> enter next day
-
 ),
      invoice_detail AS (
          SELECT
@@ -61,12 +60,12 @@ SELECT
     json_extract_path_text(invl.jsonb, 'total') AS "invl_total", -- this are costs by invoice_line in invoice currency
     cast(fintrainvl.transaction_amount AS money) AS "transactions_invl_total"  
 FROM
-	folio_reporting.agreements_subscription_agreement_entitlement AS sa_ent_dt
-		LEFT JOIN folio_reporting.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
+	folio_derived.agreements_subscription_agreement_entitlement AS sa_ent_dt
+		LEFT JOIN folio_derived.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
 		LEFT JOIN folio_orders.po_line AS pol ON pol.id = sa_ent_dt.po_line_id
 		LEFT JOIN folio_invoice.invoice_lines AS invl ON json_extract_path_text(invl.jsonb, 'poLineId') = pol.id
         LEFT JOIN invoice_detail AS inv ON json_extract_path_text(invl.jsonb, 'invoiceId') = inv.invoice_id
-        LEFT JOIN folio_reporting.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
+        LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
 WHERE	
 	((sa_ent_dt.subscription_agreement_status_label = (SELECT agreement_status FROM parameters)) OR 
 		((SELECT agreement_status FROM parameters) = ''))
@@ -85,12 +84,15 @@ WHERE
 	AND 	
 	((json_extract_path_text(pol.jsonb, 'orderFormat') = (SELECT po_line_order_format FROM parameters)) OR 
 		((SELECT po_line_order_format FROM parameters) = ''))
+/*
+ -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
 	AND
     ((inv.invoice_payment_date >= (SELECT start_date FROM parameters) AND
 		inv.invoice_payment_date < (SELECT end_date FROM parameters))
 		OR 
 		(((SELECT start_date FROM parameters) IS NULL) 
 			OR ((SELECT end_date FROM parameters) IS NULL)))	
+*/
 GROUP BY 
 	sa_ent_dt.subscription_agreement_name,
 	sa_ent_dt.subscription_agreement_status_label,
