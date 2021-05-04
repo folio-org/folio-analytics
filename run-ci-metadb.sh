@@ -3,7 +3,7 @@ set -e
 cd sql_metadb/derived_tables
 # check for duplicates in runlist
 if [[ $(sort runlist.txt | uniq -d) ]]; then
-	echo "run-ci-2g.sh: runlist.txt contains duplicates: `sort runlist.txt | uniq -d`"
+	echo "run-ci-metadb.sh: runlist.txt contains duplicates: `sort runlist.txt | uniq -d`"
 	exit 1
 fi
 for f in $( cat runlist.txt ); do
