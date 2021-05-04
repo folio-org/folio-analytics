@@ -22,7 +22,7 @@ This report generates data with the following format:
 ## Query instructions
 
 The report can be filtered on a date range, type of actions, and location where the action took place.
-(There is a long list of actions: see [documentation for circulation logs interface](https://s3.amazonaws.com/foliodocs/api/mod-audit/p/circulation-logs.html)).
+(There is a long list of actions: see [the schema for action type](https://github.com/folio-org/mod-audit/blob/master/ramls/schemas/action_type.json)).
 
 NOTE: This report includes patron personal information and operator identifying ID information, which is not GDPR-compliant. This is needed to identify whether the same 
 patron has received an excessive number of fee or other waivers on items, and which operator is responsible for the actions.
