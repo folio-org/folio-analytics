@@ -38,7 +38,7 @@ FROM
     LEFT JOIN folio_orders.po_line AS pol ON json_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId') = pol.id
     LEFT JOIN folio_orders.purchase_order AS po ON json_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId') = po.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
-    LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
+    LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid= fb.fiscalyearid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(po.jsonb, 'vendor') = oo.id
 WHERE
     json_extract_path_text(ft.jsonb, 'transactionType') = 'Encumbrance';

@@ -36,7 +36,7 @@ FROM
     LEFT JOIN folio_invoice.invoices AS ii ON json_extract_path_text(ft.jsonb, 'sourceInvoiceId') = ii.id
     LEFT JOIN folio_invoice.invoice_lines AS il ON json_extract_path_text(ft.jsonb, 'sourceInvoiceLineId') = il.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
-    LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid
+    LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid= fb.fiscalyearid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(ii.jsonb, 'vendorId') = oo.id
 WHERE (json_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
     OR json_extract_path_text(ft.jsonb, 'transactionType') = 'Payment');
