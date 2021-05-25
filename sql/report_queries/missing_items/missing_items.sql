@@ -68,9 +68,9 @@ instance_subset AS (
     SELECT 
         ie.instance_id 
     FROM 
-    item_subset AS its
-    LEFT JOIN folio_reporting.holdings_ext AS he ON its.holdings_record_id = he.holdings_id
-    LEFT JOIN folio_reporting.instance_ext AS ie ON he.instance_id = ie.instance_id
+        item_subset AS its
+        LEFT JOIN folio_reporting.holdings_ext AS he ON its.holdings_record_id = he.holdings_id
+        LEFT JOIN folio_reporting.instance_ext AS ie ON he.instance_id = ie.instance_id
 ),
 publication_dates_list AS (
     SELECT
@@ -103,29 +103,29 @@ SELECT
     its.volume,
     he.permanent_location_name AS holdings_permanent_location_name,
     he.temporary_location_name AS holdings_temporary_location_name,
-    li.current_item_permanent_location_name,
-    li.current_item_temporary_location_name,
-    li.current_item_effective_location_name,
+    ite.permanent_location_name AS current_item_permanent_location_name,
+    ite.temporary_location_name AS current_item_temporary_location_name,
+    ite.effective_location_name AS current_item_effective_location_name,
     ie.cataloged_date,
     pd.publication_dates_list,
     nl.notes_list,
-    li.material_type_name,
+    ite.material_type_name,
     lc.num_loans,
     lc.num_renewals
 FROM
-    item_subset AS its -- how TO LIMIT this TO subset? OR expand subset WITH COLUMNS?
-	LEFT JOIN folio_reporting.loans_items AS li ON its.item_id=li.item_id 
-    INNER JOIN latest_loan AS ll ON li.loan_id = ll.loan_id
-    LEFT JOIN item_notes_list AS nl ON li.item_id = nl.item_id
-    LEFT JOIN folio_reporting.holdings_ext AS he ON li.holdings_record_id = he.holdings_id
+    item_subset AS its
+    LEFT JOIN folio_reporting.item_ext AS ite ON its.item_id = ite.item_id 
+	LEFT JOIN folio_reporting.loans_items AS li ON its.item_id = li.item_id 
+    LEFT JOIN latest_loan AS ll ON its.item_id = ll.item_id
+    LEFT JOIN item_notes_list AS nl ON its.item_id = nl.item_id
+    LEFT JOIN folio_reporting.holdings_ext AS he ON its.holdings_record_id = he.holdings_id
     LEFT JOIN folio_reporting.instance_ext AS ie ON he.instance_id = ie.instance_id
-    LEFT JOIN folio_reporting.instance_publication AS ip ON ie.instance_id = ip.instance_id
     LEFT JOIN publication_dates_list AS pd ON ie.instance_id = pd.instance_id
     LEFT JOIN folio_reporting.loans_renewal_count AS lc ON li.item_id = lc.item_id
-WHERE (li.current_item_permanent_location_name = 
+WHERE (ite.permanent_location_name = 
         (SELECT item_permanent_location_filter FROM parameters)
         OR (SELECT item_permanent_location_filter FROM parameters) = '')
-    AND (li.current_item_temporary_location_name = 
+    AND (ite.temporary_location_name = 
         (SELECT item_temporary_location_filter FROM parameters)
         OR (SELECT item_temporary_location_filter FROM parameters) = '')
     AND (he.permanent_location_name = 
@@ -134,7 +134,7 @@ WHERE (li.current_item_permanent_location_name =
     AND (he.temporary_location_name = 
         (SELECT holdings_temporary_location_filter FROM parameters)
         OR (SELECT holdings_temporary_location_filter FROM parameters) = '')
-    AND (current_item_effective_location_name = 
+    AND (ite.effective_location_name = 
         (SELECT effective_location_filter FROM parameters)
         OR (SELECT effective_location_filter FROM parameters) = '')
 ;
