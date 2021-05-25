@@ -3,7 +3,7 @@ WITH parameters AS (
     SELECT
         '2000-01-01'::date AS start_date,
         '2022-01-01'::date AS end_date,
-        ''::varchar AS item_status_filter, --  Should be 'Missing'
+        'Missing'::varchar AS item_status_filter, --  Should be 'Missing'
               ---- Fill out one location or service point filter, leave others blank ----
         ''::varchar AS item_permanent_location_filter, -- 'Main Library'
         ''::varchar AS item_temporary_location_filter, -- 'Annex'
