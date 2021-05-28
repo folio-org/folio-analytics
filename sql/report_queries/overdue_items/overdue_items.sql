@@ -19,7 +19,7 @@ WITH parameters AS (
         ''::varchar AS current_item_temporary_location_filter, --Online, Annex, Main Library
         ''::varchar AS current_item_effective_location_filter, --Online, Annex, Main Library 
         /*Choose a patron group name or leave blank*/
-        ''AS patron_group_filter --can use for Borrow Direct or ILL
+        ''::varchar AS patron_group_filter --can use for Borrow Direct or ILL
 ),
 days AS (
     SELECT 
