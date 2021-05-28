@@ -2,7 +2,7 @@
  * description:
  * -------------
  * The report shows e-resources that are covered by an agreement.
- * All identifiers for a title are aggregated and output in the identificator attribute.
+ * All identifiers for a title are aggregated and output in the identifier attribute.
  * 
  * tables: 
  * -------------
@@ -25,10 +25,10 @@ SELECT
     erm_pci_list.ti_monograph_edition,
     erm_pci_list.ti_monograph_volume,
     erm_pci_list.ti_first_editor,
-    string_agg(erm_pci_list.identifiernamespace_name || ': ' || erm_pci_list.identifier_value, ', ' ORDER BY erm_pci_list.identifiernamespace_name, erm_pci_list.identifier_value) identificator
+    string_agg(erm_pci_list.identifiernamespace_name || ': ' || erm_pci_list.identifier_value, ', ' ORDER BY erm_pci_list.identifiernamespace_name, erm_pci_list.identifier_value) AS identifier
 FROM
     folio_derived.agreements_package_content_item AS erm_pci_list
-    JOIN folio_agreements."work" AS erm_pci_titles ON erm_pci_titles.w_id = erm_pci_list.ti_work_id
+    JOIN folio_agreements.work AS erm_pci_titles ON erm_pci_titles.w_id = erm_pci_list.ti_work_id
     JOIN folio_derived.agreements_subscription_agreement_entitlement AS erm_agreements ON erm_agreements.entitlement_id = erm_pci_list.entitlement_id
     JOIN folio_agreements.erm_resource AS erm_erm_resource ON erm_erm_resource.id = erm_agreements.entitlement_resource_fk
 GROUP BY
