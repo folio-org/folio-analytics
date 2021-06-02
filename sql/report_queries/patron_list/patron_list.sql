@@ -1,4 +1,6 @@
-/* Fields needed:
+/* Test with database: folio_snapshot_20210602_users
+ * 
+ * Fields needed:
  * Y patron barcode -> users_groups:barcode
  * Y patron name -> users_groups: user_last_name, user_first_name, user_middle_name, user_preferred_first_name
  * Y e-mail -> users_groups:user_email
@@ -7,11 +9,11 @@
  * Y expiry date of library card/patron -> users_groups:expiration_date
  * Y date of last activity -> users_groups:updated_date
  * Y patron status (blocked/expired) -> users_groups:active?
- * patron block -> feesfines_manualblocks (need to add)
- * blocking library -> feesfines_manualblocks??
+ * ? patron block -> feesfines_manualblocks (need to add)
+ *  blocking library -> feesfines_manualblocks??
  * home library -> ?? default service point?
- * block reason -> feesfines_manualblocks?? looking for block type? or description? 
- * date/time of block -> have feesfines_manualblocks:expirationDate, but not createdDate? get from metadata?
+ * ? block reason -> feesfines_manualblocks?? looking for block type? or description? 
+ * Y date/time of block -> have feesfines_manualblocks:expirationDate, but not createdDate? get from metadata?
  * Y netid -> users_groups:external_system_id and/or users_groups:username
  * "privilege type" [REP-200] --> can't do permissions until metadb?
  * "privilege location?" [REP-200] --> can't do permissions until metadb?
@@ -69,14 +71,21 @@ SELECT
     ug.expiration_date,
     ug.updated_date,
     ug.active,
+    mb.code AS block_code,
+    mb.expiration_date AS block_expiration_date,
+    mb.borrowing AS block_borrowing_yn,
+    mb.renewals AS block_renewals_yn,
+    mb.requests AS block_requests_yn,
+    json_extract_path_text(mb.data, 'metadata', 'createdDate') AS block_created_date,
     ug.external_system_id,
     ug.username,
-    json_extract_path_text(data, 'customFields') AS user_custom_fields,
-    json_extract_path_text(data, 'personal', 'addresses') AS user_addresses,
+    json_extract_path_text(uu.data, 'customFields') AS user_custom_fields,
+    json_extract_path_text(uu.data, 'personal', 'addresses') AS user_addresses,
     ud.depts_list
  FROM
     folio_reporting.users_groups AS ug
     LEFT JOIN user_notes AS un ON ug.user_id = un.user_id
-    LEFT JOIN user_users AS uu ON ug.user_id = uu.id
+    LEFT JOIN public.user_users AS uu ON ug.user_id = uu.id
     LEFT JOIN user_depts AS ud ON ug.user_id = ud.user_id
+    LEFT JOIN public.feesfines_manualblocks AS mb ON ug.user_id = mb.user_id
 ;
