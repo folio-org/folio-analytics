@@ -57,7 +57,7 @@ latest_loan AS (
 item_notes_list AS (
     SELECT
         itn.item_id,
-        string_agg(DISTINCT itn.note, '|'::text) AS notes_list
+        string_agg(DISTINCT itn.note, '|') AS notes_list
     FROM
         folio_reporting.item_notes AS itn
         RIGHT JOIN item_subset AS its ON itn.item_id = its.item_id
@@ -75,7 +75,7 @@ instance_subset AS (
 publication_dates_list AS (
     SELECT
         ip.instance_id,
-        string_agg(DISTINCT date_of_publication, '|'::text) AS publication_dates_list
+        string_agg(DISTINCT date_of_publication, '|') AS publication_dates_list
     FROM
         folio_reporting.instance_publication AS ip
         RIGHT JOIN instance_subset AS ins ON ip.instance_id = ins.instance_id
@@ -85,7 +85,7 @@ publication_dates_list AS (
     ---------- MAIN QUERY ----------
 SELECT
     (SELECT start_date::varchar FROM parameters) || 
-        ' to '::varchar || 
+        ' to ' || 
         (SELECT end_date::varchar FROM parameters) AS date_range,
     its.item_id,
     ie.title,
