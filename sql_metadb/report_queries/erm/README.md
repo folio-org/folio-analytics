@@ -7,3 +7,5 @@ the available data sources grows.
 * [Costs](./costs)
 
 * [Counts](./counts)
+
+* [Resource lists](./resource_lists)
