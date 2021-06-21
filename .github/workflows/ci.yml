@@ -42,4 +42,4 @@ jobs:
     - name: Vacuum reports_dev database
       run: vacuumdb -qz -d reports_dev
     - name: Run derived table queries in reports_dev
-      run: ./run-ci-2g.sh
+      run: ./run-ci-metadb.sh

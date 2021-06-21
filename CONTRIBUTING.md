@@ -97,9 +97,12 @@ cases, manual formatting is preferred.
 -----------------
 
 Names of tables and columns should be in lowercase and use underscores
-( `_` ) to separate words.  In the rare case where a column name is
-both the same as a reserved word and stands alone without a table or
-alias prefix, it should be enclosed in quotation marks ( `"` ).
+( `_` ) to separate words.
+
+In the rare case where a column name is both the same as a reserved
+word and stands alone without a table or alias prefix, it must be
+enclosed in quotation marks ( `"` ).  Apart from these cases, it is
+better not to use quotation marks.
 
 For derived tables, the table names do not follow a purely mechanical
 pattern, which might result in some names being impractically long.
