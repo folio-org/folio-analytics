@@ -5,6 +5,7 @@ This report cluster covers reports on the status of purchase orders.
 
 MAIN TABLES
 	invoice_lines
+	srs_marctab
 	organization_organizations
 	po_lines
 	po_purchase_orders
@@ -16,15 +17,6 @@ MAIN TABLES
 
 FILTERS FOR USERS TO ADJUST
 	days back to current date on 'date updated'
-
-OPTIONAL FIELDS
-
-
-STILL IN PROGRESS
-
--- MARC fields
-MARC tags to add 490 & 890
-899 MARC
 
 */
 
@@ -48,7 +40,7 @@ SELECT
     string_agg(ii.identifier, ', ') AS identifier
 FROM
     folio_reporting.instance_ext  AS inst
-    LEFT JOIN folio_reporting.instance_identifiers AS ii ON inst.instance_id = ii.instance_id WHERE ii.identifier_type_name = 'ISBN'
+    LEFT JOIN folio_reporting.instance_identifiers AS ii ON inst.instance_id = ii.instance_id WHERE ii.identifier_type_name in ('ISBN', 'Invalid ISBN')
 GROUP BY
     inst.instance_id
     )
@@ -75,7 +67,9 @@ SELECT
     plc.po_lines_quant_elec AS no_electronical,
     plc.po_lines_estimated_price AS pol_estimated_price,
     po.approved_by_id,
-    invl.invoice_id
+    invl.invoice_id,
+    marc.field,
+    string_agg('$'::varchar || marc.sf || marc.content, '') AS series
 FROM
     po_purchase_orders AS po
         LEFT JOIN organization_organizations AS vendor ON po.vendor = vendor.id
@@ -86,8 +80,28 @@ FROM
         LEFT JOIN instance_ids AS inst_ids ON inst_ids.instance_id = pol.instance_id
         LEFT JOIN folio_reporting.po_lines_cost AS plc ON pol.id = plc.pol_id
         LEFT JOIN invoice_lines AS invl ON pol.id = invl.po_line_id
+        LEFT JOIN srs_marctab AS marc ON inst.instance_id = marc.instance_id
 
 -- filters for date updated
 WHERE
     json_extract_path_text(po.data, 'metadata', 'updatedDate')::date >= (SELECT start_date FROM parameters)
+    AND
+	marc.field IN ('490','830')
+GROUP BY 
+	po.id,
+	vendor.code,
+	pol.po_line_number,
+	pol.instance_id,
+	inst.title,
+	inst_ids.identifier,
+	inst_auth.authors,
+	inst.discovery_suppress,
+	pub.publisher,
+	pol.receipt_status,
+	pol.requester,
+	plc.po_lines_quant_phys,
+    plc.po_lines_quant_elec,
+    plc.po_lines_estimated_price,
+	invl.invoice_id,
+	marc.field
 ;
