@@ -40,7 +40,7 @@ WITH parameters AS (
         '2000-01-01'::date AS created_after_filter, -- use early date to include all users
         '2000-01-01'::date AS updated_after_filter, -- Example: 2021-06-02
         'staff'::varchar AS patron_group_filter, -- Example: undergrad, graduate, staff
-        'true'::varchar AS active_status_filter, -- can be true or false (or '' for either)
+        ''::varchar AS active_status_filter, -- can be true or false (or '' for either)
         ''::varchar AS is_blocked_filter -- can be true or false (or '' for either)
         ),
 user_notes AS (
