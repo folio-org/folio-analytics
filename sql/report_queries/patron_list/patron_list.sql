@@ -20,15 +20,13 @@
  * patron type (group)
  * patron status (e.g., Active, Blocked)
  * created date
- * activity date
+ * updated date
  * 
  * Not yet available:
  * - blocking library -> not sure this is stored in FOLIO
  * - patron home library -> not sure this is stored in FOLIO
  * - patron status date --> have date block was added, but not sure how to get date when user 
- *    became active (or inactive); use history to find exactly when status changed?
- * - various filters
- * 
+ *    became active (or inactive); may use history to find exactly when status changed
  * 
  * */
 
