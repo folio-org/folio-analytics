@@ -1,40 +1,30 @@
-/* Test with database: folio_snapshot_20210602_users
- * 
- * Fields needed:
- * Y patron barcode -> users_groups:barcode
- * Y patron name -> users_groups: user_last_name, user_first_name, user_middle_name, user_preferred_first_name
- * Y e-mail -> users_groups:user_email
- * Y patron type (group) -> users_groups:group_name
- * Y patron notes -> notes (data/links) 
- * Y expiry date of library card/patron -> users_groups:expiration_date
- * Y date of last activity -> users_groups:updated_date
- * Y patron status (blocked/expired) -> users_groups:active?
- * Y patron block -> feesfines_manualblocks (need to add)
- * Y block reason -> we can get patron message and description from manual blocks, 
- *     but additional info from block template probably needs to wait until metadb
- * Y date/time of block -> have feesfines_manualblocks:expirationDate, but not createdDate? get from metadata?
- * Y netid -> users_groups:external_system_id and/or users_groups:username
- * Y custom fields (need to add) -> users_groups:user_custom_fields (or start again with user_users and unpack data/customFields)
- *      try to template somehow
- * Y patron address [REP-216] - which one? -> users_addresses, or pull entire user_users:data/personal/addresses object 
- *      maybe have a parameter that filters to a certain address type
- * Y patron department [REP-216] (need to add)  - which one? -> users_departments, but group by and collapse names?
- * Y created date -> users_groups:created_date
- * Y GuestID (located in address field) [REP-225] -- maybe just a Voyager thing
- * Y address type [REP-225] -- maybe just a Voyager thing
+/* Fields requested:
+ * patron barcode
+ * patron name
+ * e-mail
+ * patron type (group)
+ * patron notes 
+ * expiry date of library card/patron
+ * date of last activity
+ * patron active status
+ * patron block (including description and date)
+ * patron username
+ * patron external system id
+ * custom fields
+ * patron addresses
+ * patron departments
+ * patron created date
  * 
  * 
  * Filters needed:
  * patron type (group)
+ * patron status (e.g., Active, Blocked)
+ * created date
  * activity date
- * email is blank [REP-218]
- * mailing address is blank [REP-218]
- * patron status (e.g., Active)
- * status date (e.g., created >= x) [REP-222]
  * 
  * Not yet available:
  * - blocking library -> not sure this is stored in FOLIO
- * - home library -> not sure this is stored in FOLIO
+ * - patron home library -> not sure this is stored in FOLIO
  * - patron status date --> have date block was added, but not sure how to get date when user 
  *    became active (or inactive); use history to find exactly when status changed?
  * - various filters
@@ -44,17 +34,17 @@
 
 WITH parameters AS (
     SELECT
-        /* Choose a start and end date for the request period */
-        '2000-01-01'::date AS start_date,
-        '2022-01-01'::date AS end_date,
         /* Fill in an address type */
         'Home'::varchar AS address_type_name_filter,
-        /* Fill in a custom field */
+        /* Fill in a custom field to include in the report */
         'college'::varchar AS custom_field_filter,
-        ''::varchar AS patron_group_filter--, --Example: graduate
-        --''::date AS created_after_filter,
-        --'TRUE'::boolean AS active_status_filter
-),
+        /* Fill in patron filters */
+        '2000-01-01'::date AS created_after_filter, -- use early date to include all users
+        '2000-01-01'::date AS updated_after_filter, -- Example: 2021-06-02
+        'staff'::varchar AS patron_group_filter, -- Example: undergrad, graduate, staff
+        'true'::varchar AS active_status_filter, -- can be true or false (or '' for either)
+        ''::varchar AS is_blocked_filter -- can be true or false (or '' for either)
+        ),
 user_notes AS (
     SELECT
         json_extract_path_text(links.data, 'id') AS user_id,
@@ -156,9 +146,11 @@ SELECT
  WHERE 
     (group_name = (SELECT patron_group_filter FROM parameters)
         OR '' = (SELECT patron_group_filter FROM parameters))
-    --AND (ug.active = (SELECT active_status_filter FROM parameters)
-    --    OR '' = (SELECT active_status_filter FROM parameters))
-    --AND (ug.created_date >= (SELECT created_after_filter FROM parameters)
-    --    OR '' = (SELECT created_after_filter FROM parameters))
+    AND (ug.active::varchar = (SELECT active_status_filter FROM parameters)
+        OR '' = (SELECT active_status_filter FROM parameters))
+    AND (mb.code IS NOT NULL::varchar = (SELECT is_blocked_filter FROM parameters)
+        OR '' = (SELECT is_blocked_filter FROM parameters))
+    AND ug.created_date >= (SELECT created_after_filter FROM parameters)
+    AND ug.updated_date >= (SELECT updated_after_filter FROM parameters)
 
 ;
