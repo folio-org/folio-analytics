@@ -1,7 +1,7 @@
-/**
+/** Documentation of ERM ORDER STATUS QUERY
 
 PURPOSE
-This report cluster covers reports on the status of purchase orders.
+This report cluster covers reports on the status of purchase orders. Check for currently open orders, as well as Pending "Not Yet Published" titles and were updated in the last 30 days.
 
 MAIN TABLES
 	invoice_lines
@@ -22,7 +22,7 @@ FILTERS FOR USERS TO ADJUST
 
 WITH parameters AS (
     SELECT
-           current_date - integer '30' AS start_date -- get all orders created XX days from today
+           current_date - integer '30' AS days_from_current_date -- get all orders created XX days from today
     ),
     instance_authors AS (
 SELECT
@@ -84,7 +84,7 @@ FROM
 
 -- filters for date updated
 WHERE
-    json_extract_path_text(po.data, 'metadata', 'updatedDate')::date >= (SELECT start_date FROM parameters)
+    json_extract_path_text(po.data, 'metadata', 'updatedDate')::date >= (SELECT days_from_current_date FROM parameters)
     AND
 	marc.field IN ('490','830')
 GROUP BY 
