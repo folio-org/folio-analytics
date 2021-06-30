@@ -18,7 +18,7 @@ SELECT
     ft.from_fund_id AS transaction_from_fund_id,
     ff.name AS transaction_from_fund_name,
     ff.code AS transaction_from_fund_code,
-    ft.from_fund_id AS transaction_from_budget_id,
+    fb.id AS transaction_from_budget_id,
     fb.name AS transaction_from_budget_name,
     json_extract_path_text(ft.data, 'sourceInvoiceId') AS invoice_id,
     json_extract_path_text(ft.data, 'sourceInvoiceLineId') AS invoice_line_id,
