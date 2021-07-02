@@ -6,9 +6,10 @@ Brief description: To extract records for all items that fit the requirements fo
 
 This report generates data with the following format:
 
-| item\_id | item\_hrid | item\_material\_type | chronology | enumeration | item\_status\_name | instance\_id | instance\_hrid | instanace\_status\_name | instance\_resource\_type | instance\_mode\_of\_issuance | instance\_identifier\_name | instance\_identifier | instance\_format | holdings\_type\_name | item\_stat\_code\_type\_name | item\_stat\_code\_name | hol\_stat\_code\_type\_name | hol\_stat\_code\_name | inst\_stat\_code\_type\_name | inst\_stat\_code\_name | location\_name | campus\_name | library\_name | institution\_name |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0b96a642-5e7f-452d-9cae-9cee66c9a892 | item000000000017 | text | | | Available | 69640328-788e-43fc-9c3c-af39e243f3b7 | inst000000000001 | Temporary | text | single unit | OCLC | 98837837 | unmediated -- volume | physical | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) |
+| item_id | item_hrid | item_material_type | chronology | enumeration | item_status_name | instance_id | instance_hrid | instanace_status_name | instance_resource_type | instance_mode_of_issuance | instance_identifier_name | instance_identifier | instance_format | holdings_type_name | item_stat_code_type_name | item_stat_code_name | hol_stat_code_type_name | hol_stat_code_name | inst_stat_code_type_name | inst_stat_code_name | location_name | campus_name | library_name | institution_name |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0b96a642-5e7f-452d-9cae-9cee66c9a892 | item000000000017 | text |  |  | Available | 69640328-788e-43fc-9c3c-af39e243f3b7 | inst000000000001 | Temporary | text | single unit | OCLC | 98837837 | unmediated -- volume | physical | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) |
+
 
 
 # Parameters
