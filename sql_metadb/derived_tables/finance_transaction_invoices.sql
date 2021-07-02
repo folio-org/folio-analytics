@@ -39,7 +39,8 @@ FROM
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(ii.jsonb, 'vendorId') = oo.id
 WHERE (json_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
-    OR json_extract_path_text(ft.jsonb, 'transactionType') = 'Payment');
+    OR json_extract_path_text(ft.jsonb, 'transactionType') = 'Payment')
+    OR json_extract_path_text(ft.jsonb, 'transactionType') = 'Credit');
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_id);
 
