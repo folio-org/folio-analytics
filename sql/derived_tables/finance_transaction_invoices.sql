@@ -40,7 +40,8 @@ FROM
     LEFT JOIN organization_organizations AS oo ON json_extract_path_text(ii.data, 'vendorId') = oo.id
 WHERE
     transaction_type = 'Pending payment'
-    OR transaction_type = 'Payment';
+    OR transaction_type = 'Payment'
+    OR transaction_type = 'Credit';
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_id);
 
