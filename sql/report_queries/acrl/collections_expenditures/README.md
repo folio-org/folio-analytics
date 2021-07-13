@@ -41,7 +41,7 @@ The Invoice transactions/adjustments that are "Not prorated" and “in addition 
 <br>
 <p>
 <ins>ACRL Collection Expenditures B:</ins>
-This query will return all transactions made at the Invoice Level that have not been distributed to any Invoice Line.   The needed totals will be calculated by exporting your results to excel or by using any other reporting tools of your choice, like Tableau.  As mentioned earlier, the ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide total material expenditures. 
+This query provides the total of materials expenditures made at the invoice line level. The overall total will be calculated by adding all Invoice Lines together. The needed totals will be calculated by exporting your results to Excel or by using any other reporting tools of your choice, like Tableau.  Please note that it does not include any transactions made at the Invoice level that have not been distributed to the Invoice Lines by the system. If one wants to get the total of Invoice Lines plus the total of all invoice transactions/adjustments made only at the invoice level, then the ACRL Collection Expenditures B should be run jointly with ACRL Collection Expenditures C.  
 <br>
 <p>
  <ins>ACRL Collection Expenditures C:</ins>
