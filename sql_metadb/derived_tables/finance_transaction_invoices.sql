@@ -18,6 +18,9 @@ SELECT
     ft.fromfundid AS transaction_from_fund_id,
     json_extract_path_text(ff.jsonb, 'name') AS transaction_from_fund_name,
     json_extract_path_text(ff.jsonb, 'code') AS transaction_from_fund_code,
+    ft.tofundid AS transaction_to_fund_id,
+    json_extract_path_text(tf.jsonb, 'name') AS transaction_to_fund_name,
+    json_extract_path_text(tf.jsonb, 'code') AS transaction_to_fund_code,
     fb.id AS transaction_from_budget_id,
     json_extract_path_text(fb.jsonb, 'name') AS transaction_from_budget_name,
     json_extract_path_text(ft.jsonb, 'sourceInvoiceId') AS invoice_id,
@@ -36,6 +39,7 @@ FROM
     LEFT JOIN folio_invoice.invoices AS ii ON json_extract_path_text(ft.jsonb, 'sourceInvoiceId') = ii.id
     LEFT JOIN folio_invoice.invoice_lines AS il ON json_extract_path_text(ft.jsonb, 'sourceInvoiceLineId') = il.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
+    LEFT JOIN folio_finance.fund AS tf ON ft.tofundid = tf.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
     LEFT JOIN folio_organizations. organizations AS oo ON json_extract_path_text(ii.jsonb, 'vendorId') = oo.id
 WHERE (json_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
@@ -57,6 +61,12 @@ CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_from_fun
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_from_fund_name);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_from_fund_code);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_id);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_name);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_code);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_from_budget_id);
 
