@@ -10,3 +10,4 @@ managed in the FOLIO built-in E-Resource Management (agreements).
 
 * [Costs](./costs)
 * [Count](./count)
+* [ERM Order Status Query](erm_order_status.md)
