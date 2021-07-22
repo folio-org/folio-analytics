@@ -42,7 +42,7 @@ fixes will be backported to recent release branches.
 3\. Code review
 ---------------
 
-A pull request is reviewed by at least one person other than the
+A pull request is reviewed by at least two people other than the
 contributor before it can be merged.
 
 
