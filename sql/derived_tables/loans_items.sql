@@ -29,7 +29,7 @@ SELECT
     cl.loan_date,
     cl.due_date AS loan_due_date,
     cl.return_date AS loan_return_date,
-    json_extract_path_text(cl.data, 'systemReturnDate') AS system_return_date,
+    json_extract_path_text(cl.data, 'systemReturnDate')::timestamptz at time zone 'UTC' AS system_return_date,
     json_extract_path_text(cl.data, 'checkinServicePointId') AS checkin_service_point_id,
     ispi.discovery_display_name AS checkin_service_point_name,
     json_extract_path_text(cl.data, 'checkoutServicePointId') AS checkout_service_point_id,
