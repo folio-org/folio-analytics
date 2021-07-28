@@ -51,8 +51,8 @@ FROM
 simple_return_dates AS (
     SELECT
         checkin_service_point_name AS service_point_name,
-        coalesce(system_return_date::timestamptz at time zone 'UTC', 
-            loan_return_date::timestamptz at time zone 'UTC') AS action_date,
+        coalesce(system_return_date::timestamptz, 
+            loan_return_date::timestamptz) AS action_date,
         material_type_name,
         'Checkin'::varchar AS action_type,
         item_effective_location_name_at_check_out,
