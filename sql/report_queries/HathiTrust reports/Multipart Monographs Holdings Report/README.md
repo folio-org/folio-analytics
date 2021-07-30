@@ -2,7 +2,7 @@
 
 ## Report Details
 
-Brief description: To extract records for all items that fit the requirements for HathiTrust. Use the parameters to back multipart monograph resources with OCLC numbers. There are a number of optional results such as item status, holdings type or statistical codes. If these results aren't needed, they can be removed from the query. This report doesn't account for the option government document information typically found in MARC fixed fields. This report relies on FOLIO metadata only. 
+Brief description: To extract records for all items that fit the requirements for HathiTrust. Use the parameters to back multipart monograph resources with OCLC numbers. There are a number of optional results such as item status, holdings type or statistical codes. If these results aren't needed, they can be removed from the query. This report doesn't account for the option government document information typically found in MARC fixed fields. This report relies on FOLIO metadata only.
 
 This report generates data with the following format:
 
@@ -14,4 +14,3 @@ This report generates data with the following format:
 # Parameters
 
 Users can add parameters for the institution, campus name, library, name, location, mode of issuance, holdings type, status name, identifier, format, and 3 options for resource type. Only one entry is allowed for the parameters. The suggestions are based on FOLIO Snapshot options.
-
