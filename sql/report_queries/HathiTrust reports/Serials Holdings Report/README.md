@@ -8,9 +8,13 @@ This report generates data with the following format:
 
 | title | instance\_id | instance\_hrid | oclc\_number | instance\_mode\_of\_issuance | item\_stat\_code\_type\_name | item\_stat\_code\_name | hol\_stat\_code\_type\_name | hol\_stat\_code\_name | inst\_stat\_code\_type\_name | inst\_stat\_code\_name | location\_name | campus\_name | library\_name | institution\_name |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+<<<<<<< HEAD
 | The year FOLIO went live | 0b96a642-5e7f-452d-9cae-9cee66c9a892 | item000000000017 | 098766 | serial | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | Main Library | City Campus | FOLIO Libraries | |
 
 
+=======
+| The year FOLIO went live | 0b96a642-5e7f-452d-9cae-9cee66c9a892 | item000000000017 | 098766 | text | Available | 69640328-788e-43fc-9c3c-af39e243f3b7 | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | ARL (Collection stats) | Serials, print (serials) | Stacks | Main Campus | Library | Institution |
+>>>>>>> d2ecb37f8f3ac73f0d599ec2bb9c0a2cb5bfd538
 # Parameters
 
 Users can add parameters for the institution, campus name, library, name, location, mode of issuance, status name, and identifier. Only one entry is allowed for the parameters. The suggestions are based on FOLIO Snapshot options.
