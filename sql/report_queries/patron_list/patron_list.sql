@@ -32,7 +32,11 @@
 
 WITH parameters AS (
     SELECT
-        /* Fill in an address type */
+        /* Fill in an address type. This specifies which type of address will be used to 
+         * fill in the address columns in the report, but you may see nulls if a user
+         * doesn't have that kind of address. If you leave this parameter empty, the final
+         * report may have duplicate rows for each patron - one for each type of address
+         * they have on file.  */
         'Home'::varchar AS address_type_name_filter,
         /* Fill in a custom field to include in the report */
         'college'::varchar AS custom_field_filter,
