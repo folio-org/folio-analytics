@@ -43,16 +43,25 @@ WITH parameters AS (
         ''::varchar AS active_status_filter, -- can be true or false (or '' for either)
         ''::varchar AS is_blocked_filter -- can be true or false (or '' for either)
         ),
-user_notes AS (
+indiv_notes AS (
     SELECT
         json_extract_path_text(links.data, 'id') AS user_id,
-        string_agg(DISTINCT nt."content", '|') AS notes_list
+        nt."content" AS note_content,
+        to_date(json_extract_path_text(nt.data, 'metadata', 'createdDate'), 'YYYY-MM-DD') AS note_date
     FROM
         notes AS nt
         CROSS JOIN json_array_elements(json_extract_path(data, 'links')) AS links (data)
     WHERE json_extract_path_text(links.data, 'type') = 'user'
+    ORDER BY note_date DESC
+),
+user_notes AS (
+    SELECT
+        user_id,
+        string_agg(note_date || ':' || note_content, '|') AS notes_list
+    FROM
+        indiv_notes
     GROUP BY
-        json_extract_path_text(links.data, 'id')
+        user_id
 ),
 user_custom_fields AS (
     SELECT
