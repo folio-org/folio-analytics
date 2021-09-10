@@ -50,7 +50,7 @@ WITH parameters AS (
 indiv_notes AS (
     SELECT
         json_extract_path_text(links.data, 'id') AS user_id,
-        nt."content" AS note_content,
+        json_extract_path_text(nt.data, 'content') AS note_content,
         to_date(json_extract_path_text(nt.data, 'metadata', 'createdDate'), 'YYYY-MM-DD') AS note_date
     FROM
         notes AS nt
