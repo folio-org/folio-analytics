@@ -38,6 +38,8 @@ CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_fk_value);
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_fk_label);
 
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_sub_type_category);
+
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_name);
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk);
@@ -46,9 +48,13 @@ CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk_value);
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_fk_label);
 
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_type_category);
+
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk);
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk_value);
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_fk_label);
+
+CREATE INDEX ON folio_derived.agreements_erm_resource (res_publication_type_category);
 
