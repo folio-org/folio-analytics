@@ -4,9 +4,6 @@
 
 This report is to counts of e-resources by agreement
 
-## Known issue
-As there is currently an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
-
 ## Parameters
 
 The parameters in the table below can be set in the WITH clause to filter the report output.

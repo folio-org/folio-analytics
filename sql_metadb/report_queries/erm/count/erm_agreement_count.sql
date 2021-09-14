@@ -29,7 +29,7 @@ WITH parameters AS (
         NULL::DATE AS pci_start_date,
         NULL::DATE AS pci_end_date
         --'2021-01-01' :: DATE AS pci_start_date, -- start date day is included in interval
-        --'2022-01-01' :: DATE AS pci_end_date, -- end date day is NOT included in interval -> enter next day
+        --'2022-01-01' :: DATE AS pci_end_date -- end date day is NOT included in interval -> enter next day
 )
 SELECT
     sa_ent.subscription_agreement_name AS "Agreements",
@@ -46,8 +46,6 @@ WHERE
     AND
 	((agrestat.rdv_label = (SELECT agreement_status FROM parameters)) OR
 		((SELECT agreement_status FROM parameters) = ''))
-/*	
- -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
 	AND
     ((pci_list.pci_access_start < (SELECT pci_end_date FROM parameters) AND
 	    (pci_list.pci_access_end >= (SELECT pci_start_date FROM parameters) OR pci_list.pci_access_end IS NULL))
@@ -61,6 +59,7 @@ WHERE
 		(((SELECT ent_start_date FROM parameters) IS NULL)
 			OR ((SELECT ent_end_date FROM parameters) IS NULL)))
 	-- subscription agreement time period will be added when available (IRIS)
+	/*
 	AND 			
     ((sa_ent.sa_start_date < (SELECT a_end_date FROM parameters) AND
 	    (sa_ent.sa_end_date >= (SELECT a_start_date FROM parameters) OR sa_ent.sa_end_date IS NULL))
