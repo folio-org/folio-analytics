@@ -11,18 +11,24 @@ SELECT
     res_sub_type_fk,
     rst.rdv_value AS res_sub_type_fk_value,
     rst.rdv_label AS res_sub_type_fk_label,
+    rstc.rdc_description AS res_sub_type_category,
     res_type_fk,
     rt.rdv_value AS res_type_fk_value,
     rt.rdv_label AS res_type_fk_label,
+    rtc.rdc_description AS res_type_category,
     res_publication_type_fk,
     rpub.rdv_value AS res_publication_type_fk_value,
-    rpub.rdv_label AS res_publication_type_fk_label
+    rpub.rdv_label AS res_publication_type_fk_label,
+    rpubc.rdc_description AS res_publication_type_category
 FROM
     folio_agreements.erm_resource AS res
     INNER JOIN folio_agreements.entitlement AS ent ON res.id = ent.ent_resource_fk
     LEFT JOIN folio_agreements.refdata_value AS rst ON res.res_sub_type_fk = rst.rdv_id
+    LEFT JOIN folio_agreements.refdata_category AS rstc ON rst.rdv_owner = rstc.rdc_id
     LEFT JOIN folio_agreements.refdata_value AS rt ON res.res_type_fk = rt.rdv_id
-   	LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id;
+    LEFT JOIN folio_agreements.refdata_category AS rtc ON rt.rdv_owner = rtc.rdc_id
+   	LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id
+	LEFT JOIN folio_agreements.refdata_category AS rpubc ON rpub.rdv_owner = rpubc.rdc_id;
 
 CREATE INDEX ON folio_derived.agreements_erm_resource (res_id);
 
