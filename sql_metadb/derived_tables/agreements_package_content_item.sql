@@ -31,7 +31,20 @@ SELECT
     pci_list.identifier_value,
     pci_list.identifier_namespace_id,
     pci_list.identifiernamespace_name,
-	pci_list.entitlement_id
+	pci_list.entitlement_id,
+	pci_list.res_name,
+    pci_list.res_sub_type_fk,
+    pci_list.res_sub_type_value,
+    pci_list.res_sub_type_label,
+    pci_list.res_sub_type_category,
+    pci_list.res_type_fk,
+    pci_list.res_type_value,
+    pci_list.res_type_label,
+    pci_list.res_type_category,
+    pci_list.res_publication_type_fk,
+    pci_list.res_publication_type_value,
+    pci_list.res_publication_type_label,
+    pci_list.res_publication_type_category
 FROM
 (
 	SELECT
@@ -62,10 +75,23 @@ FROM
 	    id.id_value AS identifier_value,
 	    id.id_ns_fk AS identifier_namespace_id,
 	    idns.idns_value AS identifiernamespace_name,
-		ent.ent_id AS entitlement_id
+		ent.ent_id AS entitlement_id,		
+		res.res_name,
+	    res.res_sub_type_fk,
+	    rst.rdv_value AS res_sub_type_value,
+	    rst.rdv_label AS res_sub_type_label,
+	    rstc.rdc_description AS res_sub_type_category,
+	    res.res_type_fk,
+	    rt.rdv_value AS res_type_value,
+	    rt.rdv_label AS res_type_label,
+	    rtc.rdc_description AS res_type_category,
+	    res.res_publication_type_fk,
+	    rpub.rdv_value AS res_publication_type_value,
+	    rpub.rdv_label AS res_publication_type_label,
+	    rpubc.rdc_description AS res_publication_type_category
 	FROM
 	    folio_agreements.package_content_item AS pci
-	    INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk
+	    INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk   
 	    LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
 	    LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk = org.org_id
 	    LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
@@ -74,7 +100,14 @@ FROM
 	    LEFT JOIN folio_agreements.title_instance AS ti ON pti.pti_ti_fk = ti.id
 	    LEFT JOIN folio_agreements.identifier_occurrence AS oc ON ti.id = oc.io_ti_fk
 	    LEFT JOIN folio_agreements.identifier AS id ON oc.io_identifier_fk = id.id_id
-	    LEFT JOIN folio_agreements.identifier_namespace AS idns ON id.id_ns_fk = idns.idns_id
+	    LEFT JOIN folio_agreements.identifier_namespace AS idns ON id.id_ns_fk = idns.idns_id    
+	    LEFT JOIN folio_agreements.erm_resource AS res ON res.id = pti.pti_ti_fk
+	    LEFT JOIN folio_agreements.refdata_value AS rst ON res.res_sub_type_fk = rst.rdv_id
+    	LEFT JOIN folio_agreements.refdata_category AS rstc ON rst.rdv_owner = rstc.rdc_id
+    	LEFT JOIN folio_agreements.refdata_value AS rt ON res.res_type_fk = rt.rdv_id
+    	LEFT JOIN folio_agreements.refdata_category AS rtc ON rt.rdv_owner = rtc.rdc_id
+   		LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id
+		LEFT JOIN folio_agreements.refdata_category AS rpubc ON rpub.rdv_owner = rpubc.rdc_id
 	UNION 
 	SELECT
 	    pci.id AS pci_id,
@@ -104,7 +137,20 @@ FROM
 	    id.id_value AS identifier_value,
 	    id.id_ns_fk AS identifier_namespace_id,
 	    idns.idns_value AS identifiernamespace_name,
-		ent.ent_id AS entitlement_id
+		ent.ent_id AS entitlement_id,
+		res.res_name,
+	    res.res_sub_type_fk,
+	    rst.rdv_value AS res_sub_type_value,
+	    rst.rdv_label AS res_sub_type_label,
+	    rstc.rdc_description AS res_sub_type_category,
+	    res.res_type_fk,
+	    rt.rdv_value AS res_type_value,
+	    rt.rdv_label AS res_type_label,
+	    rtc.rdc_description AS res_type_category,
+	    res.res_publication_type_fk,
+	    rpub.rdv_value AS res_publication_type_value,
+	    rpub.rdv_label AS res_publication_type_label,
+	    rpubc.rdc_description AS res_publication_type_category
 	FROM
 	    folio_agreements.package_content_item AS pci 
 	    LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
@@ -117,6 +163,13 @@ FROM
 	    LEFT JOIN folio_agreements.identifier_occurrence AS oc ON ti.id = oc.io_ti_fk
 	    LEFT JOIN folio_agreements.identifier AS id ON oc.io_identifier_fk = id.id_id
 	    LEFT JOIN folio_agreements.identifier_namespace AS idns ON id.id_ns_fk = idns.idns_id
+	    LEFT JOIN folio_agreements.erm_resource AS res ON res.id = pti.pti_ti_fk
+	    LEFT JOIN folio_agreements.refdata_value AS rst ON res.res_sub_type_fk = rst.rdv_id
+    	LEFT JOIN folio_agreements.refdata_category AS rstc ON rst.rdv_owner = rstc.rdc_id
+    	LEFT JOIN folio_agreements.refdata_value AS rt ON res.res_type_fk = rt.rdv_id
+    	LEFT JOIN folio_agreements.refdata_category AS rtc ON rt.rdv_owner = rtc.rdc_id
+   		LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id
+		LEFT JOIN folio_agreements.refdata_category AS rpubc ON rpub.rdv_owner = rpubc.rdc_id
 ) AS pci_list;
 
 CREATE INDEX ON folio_derived.agreements_package_content_item (pci_id);
@@ -174,3 +227,29 @@ CREATE INDEX ON folio_derived.agreements_package_content_item (identifier_namesp
 CREATE INDEX ON folio_derived.agreements_package_content_item (identifiernamespace_name);
 
 CREATE INDEX ON folio_derived.agreements_package_content_item (entitlement_id);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_name);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_fk);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_value);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_label);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_category);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_fk);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_value);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_label);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_category);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_fk);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_value);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_label);
+
+CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_category);
