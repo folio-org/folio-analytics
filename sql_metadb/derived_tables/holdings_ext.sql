@@ -6,29 +6,30 @@ DROP TABLE IF EXISTS folio_derived.holdings_ext;
 CREATE TABLE folio_derived.holdings_ext AS
 WITH holdings AS (
     SELECT
-        id,
-        hrid,
-        acquisition_method,
-        call_number,
+        h.id,
+        h.hrid,
+        h.acquisition_method,
+        h.call_number,
         -- call_number_prefix,
         -- call_number_suffix,
-        call_number_type_id,
-        copy_number,
-        holdings_type_id,
-        ill_policy_id,
-        instance_id,
-        permanent_location_id,
-        receipt_status,
-        retention_policy,
-        shelving_title,
+        h.call_number_type_id,
+        h.copy_number,
+        h.holdings_type_id,
+        h.ill_policy_id,
+        h.instance_id,
+        h.permanent_location_id,
+        h.receipt_status,
+        h.retention_policy,
+        h.shelving_title,
         -- discovery_suppress,
-        -- json_extract_path_text(data, 'metadata', 'createdDate') AS created_date,
-        -- json_extract_path_text(data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-        -- json_extract_path_text(data, 'metadata', 'updatedDate') AS updated_date,
+	md.created_date,
+	md.updated_by_user_id,
+	md.updated_date,
         -- temporary_location_id
 	'' AS temporary_location_id  -- temporary
     FROM
-        folio_inventory.holdings_record_j
+        folio_inventory.holdings_record_j AS h
+	JOIN folio_inventory.holdings_record_j_metadata AS md ON h.id = md.id
 )
 SELECT
     holdings.id AS holdings_id,
@@ -51,11 +52,11 @@ SELECT
     holdings_temporary_location.name AS temporary_location_name,
     holdings.receipt_status,
     holdings.retention_policy,
-    holdings.shelving_title
+    holdings.shelving_title,
     -- holdings.discovery_suppress,
-    -- holdings.created_date,
-    -- holdings.updated_by_user_id,
-    -- holdings.updated_date
+    holdings.created_date,
+    holdings.updated_by_user_id,
+    holdings.updated_date
 FROM
     holdings
     LEFT JOIN folio_inventory.holdings_type_j AS holdings_type ON holdings.holdings_type_id = holdings_type.id
@@ -108,9 +109,9 @@ CREATE INDEX ON folio_derived.holdings_ext (shelving_title);
 
 -- CREATE INDEX ON folio_derived.holdings_ext (discovery_suppress);
 
--- CREATE INDEX ON folio_derived.holdings_ext (created_date);
+CREATE INDEX ON folio_derived.holdings_ext (created_date);
 
--- CREATE INDEX ON folio_derived.holdings_ext (updated_by_user_id);
+CREATE INDEX ON folio_derived.holdings_ext (updated_by_user_id);
 
--- CREATE INDEX ON folio_derived.holdings_ext (updated_date);
+CREATE INDEX ON folio_derived.holdings_ext (updated_date);
 
