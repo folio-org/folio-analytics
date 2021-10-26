@@ -32,7 +32,11 @@
 
 WITH parameters AS (
     SELECT
-        /* Fill in an address type */
+        /* Fill in an address type. This specifies which type of address will be used to 
+         * fill in the address columns in the report, but you may see nulls if a user
+         * doesn't have that kind of address. If you leave this parameter empty, the final
+         * report may have duplicate rows for each patron - one for each type of address
+         * they have on file.  */
         'Home'::varchar AS address_type_name_filter,
         /* Fill in a custom field to include in the report */
         'college'::varchar AS custom_field_filter,
@@ -43,16 +47,25 @@ WITH parameters AS (
         ''::varchar AS active_status_filter, -- can be true or false (or '' for either)
         ''::varchar AS is_blocked_filter -- can be true or false (or '' for either)
         ),
-user_notes AS (
+indiv_notes AS (
     SELECT
         json_extract_path_text(links.data, 'id') AS user_id,
-        string_agg(DISTINCT nt."content", '|') AS notes_list
+        json_extract_path_text(nt.data, 'content') AS note_content,
+        to_date(json_extract_path_text(nt.data, 'metadata', 'createdDate'), 'YYYY-MM-DD') AS note_date
     FROM
         notes AS nt
         CROSS JOIN json_array_elements(json_extract_path(data, 'links')) AS links (data)
     WHERE json_extract_path_text(links.data, 'type') = 'user'
+    ORDER BY note_date DESC
+),
+user_notes AS (
+    SELECT
+        user_id,
+        string_agg(note_date || ':' || note_content, '|') AS notes_list
+    FROM
+        indiv_notes
     GROUP BY
-        json_extract_path_text(links.data, 'id')
+        user_id
 ),
 user_custom_fields AS (
     SELECT
@@ -113,15 +126,24 @@ SELECT
     --json_extract_path_text(uu.data, 'customFields') AS user_all_custom_fields,
     ucf.custom_field_name,
     ucf.custom_field_value,
-    mb.code IS NOT NULL AS blocked,
-    mb.code AS block_code,
-    mb.desc AS block_description,
-    mb.patron_message AS block_patron_message,
-    mb.type AS block_type,
-    mb.expiration_date AS block_expiration_date,
-    mb.borrowing AS block_borrowing_yn,
-    mb.renewals AS block_renewals_yn,
-    mb.requests AS block_requests_yn,
+    --mb.code IS NOT NULL AS blocked,
+    json_extract_path_text(mb.data, 'code') IS NOT NULL AS blocked,
+    --mb.code AS block_code,
+    json_extract_path_text(mb.data, 'code') AS block_code,
+    --mb.desc AS block_description,
+    json_extract_path_text(mb.data, 'desc') AS block_description,
+    --mb.patron_message AS block_patron_message,
+    json_extract_path_text(mb.data, 'patronMessage') AS block_patron_message,
+    --mb.type AS block_type,
+    json_extract_path_text(mb.data, 'type') AS block_type,
+    --mb.expiration_date AS block_expiration_date,
+    json_extract_path_text(mb.data, 'expirationDate') AS block_expiration_date,
+    --mb.borrowing AS block_borrowing_yn,
+    json_extract_path_text(mb.data, 'borrowing') AS block_borrowing_yn,
+    --mb.renewals AS block_renewals_yn,
+    json_extract_path_text(mb.data, 'renewals') AS block_renewals_yn,
+    --mb.requests AS block_requests_yn,
+    json_extract_path_text(mb.data, 'requests') AS block_requests_yn,
     json_extract_path_text(mb.data, 'metadata', 'createdDate') AS block_created_date,
     --json_extract_path_text(uu.data, 'personal', 'addresses') AS user_all_addresses,
     address_line_1,
@@ -138,7 +160,7 @@ SELECT
     LEFT JOIN user_notes AS un ON ug.user_id = un.user_id
     LEFT JOIN public.user_users AS uu ON ug.user_id = uu.id
     LEFT JOIN user_depts AS ud ON ug.user_id = ud.user_id
-    LEFT JOIN public.feesfines_manualblocks AS mb ON ug.user_id = mb.user_id
+    LEFT JOIN public.feesfines_manualblocks AS mb ON ug.user_id = json_extract_path_text(mb.data, 'userId')
     LEFT JOIN user_addresses AS ua ON ug.user_id = ua.user_id
     LEFT JOIN user_custom_fields AS ucf ON ug.user_id = ucf.user_id
  WHERE 
@@ -146,7 +168,7 @@ SELECT
         OR '' = (SELECT patron_group_filter FROM parameters))
     AND (ug.active::varchar = (SELECT active_status_filter FROM parameters)
         OR '' = (SELECT active_status_filter FROM parameters))
-    AND (mb.code IS NOT NULL::varchar = (SELECT is_blocked_filter FROM parameters)
+    AND (json_extract_path_text(mb.data, 'code') IS NOT NULL::varchar = (SELECT is_blocked_filter FROM parameters)
         OR '' = (SELECT is_blocked_filter FROM parameters))
     AND ug.created_date >= (SELECT created_after_filter FROM parameters)
     AND ug.updated_date >= (SELECT updated_after_filter FROM parameters)
