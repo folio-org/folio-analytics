@@ -32,8 +32,8 @@ FROM
     JOIN folio_derived.agreements_subscription_agreement_entitlement AS erm_agreements ON erm_agreements.entitlement_id = erm_pci_list.entitlement_id
     JOIN folio_agreements.erm_resource AS erm_erm_resource ON erm_erm_resource.id = erm_agreements.entitlement_resource_fk
 WHERE 
-	-- Don't use removed titles from packages
-	erm_pci_list.pci_removed_ts IS NULL 
+    -- Don't use removed titles from packages
+    erm_pci_list.pci_removed_ts IS NULL 
 GROUP BY
     title,
     agreement,
