@@ -27,6 +27,8 @@ jobs:
       run: vacuumdb -qz -d folio_snapshot
     - name: Run derived table queries in folio_snapshot
       run: ./run-ci.sh
+    - name: Run again in folio_snapshot to test drop table
+      run: ./run-ci.sh
     - name: Drop folio_snapshot database
       run: dropdb folio_snapshot
     - name: Create reports_dev database
@@ -37,9 +39,11 @@ jobs:
       run: curl -sSO https://glintcore.net:8443/ldp/reports_dev.sql.gz
     - name: Load reports_dev data
       run: zcat reports_dev.sql.gz | psql -o /dev/null -bq -v ON_ERROR_STOP=on -d reports_dev
-    - name: Clean up reports_dev file
-      run: rm -f reports_dev.sql.gz
-    - name: Vacuum reports_dev database
-      run: vacuumdb -qz -d reports_dev
-    - name: Run derived table queries in reports_dev
-      run: ./run-ci-metadb.sh
+    #- name: Clean up reports_dev file
+    #  run: rm -f reports_dev.sql.gz
+    #- name: Vacuum reports_dev database
+    #  run: vacuumdb -qz -d reports_dev
+    #- name: Run derived table queries in reports_dev
+    #  run: ./run-ci-metadb.sh
+    #- name: Run again in reports_dev to test drop table
+    #  run: ./run-ci-metadb.sh
