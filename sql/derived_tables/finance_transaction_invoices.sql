@@ -2,6 +2,9 @@ DROP TABLE IF EXISTS folio_reporting.finance_transaction_invoices;
 
 -- Create a derived table that joins invoice and invoice_lines fields to transactions for expenditure reports in system currency
 --
+-- NOTE: effective_fund_id, effective_fund_name, effective_fund_code were derived from the set from_fund or to_fund as a convenient 
+-- 		 way to get the effective fund
+--
 -- Tables included:
 --   finance_transactions
 --	 finance_budgets
@@ -13,6 +16,9 @@ SELECT
     ft.id AS transaction_id,
     ft.amount AS transaction_amount,
     ft.currency AS transaction_currency,
+    json_extract_path_text(ft.data, 'metadata', 'createdDate')::DATE AS transaction_created_date,
+    json_extract_path_text(ft.data, 'metadata', 'updatedDate')::DATE AS transaction_updated_date,
+    ft.description AS transaction_description,
     json_extract_path_text(ft.data, 'expenseClassId') AS transaction_expense_class_id,
     ft.fiscal_year_id AS transaction_fiscal_year_id,
     ft.from_fund_id AS transaction_from_fund_id,
@@ -21,6 +27,9 @@ SELECT
     ft.to_fund_id AS transaction_to_fund_id,
     tf.name AS transaction_to_fund_name,
     tf.code AS transaction_to_fund_code,
+    CASE WHEN ft.to_fund_id IS NULL THEN ft.from_fund_id ELSE ft.to_fund_id END AS effective_fund_id,
+    CASE WHEN ff.name IS NULL THEN tf.name ELSE ff.name END AS effective_fund_name,
+    CASE WHEN ff.code IS NULL THEN tf.code ELSE ff.code END AS effective_fund_code,
     fb.id AS transaction_from_budget_id,
     fb.name AS transaction_from_budget_name,
     json_extract_path_text(ft.data, 'sourceInvoiceId') AS invoice_id,
@@ -53,6 +62,12 @@ CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_amount
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_currency);
 
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_created_date);
+
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_updated_date);
+
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_description);
+
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_expense_class_id);
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_fiscal_year_id);
@@ -68,6 +83,12 @@ CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fun
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fund_name);
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fund_code);
+
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_id);
+
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_name);
+
+CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_code);
 
 CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_budget_id);
 
