@@ -2,6 +2,9 @@ DROP TABLE IF EXISTS folio_derived.finance_transaction_invoices;
 
 -- Create a derived table that joins invoice and invoice_lines fields to transactions for expenditure reports in system currency
 --
+-- NOTE: effective_fund_id, effective_fund_name, effective_fund_code were derived from the set from_fund or to_fund as a convenient 
+-- 		 way to get the effective fund
+--
 -- Tables included:
 --   folio_finance.transaction
 --   folio_invoice.invoices
@@ -13,6 +16,9 @@ SELECT
     ft.id AS transaction_id,
     json_extract_path_text(ft.jsonb, 'amount') AS transaction_amount,
     json_extract_path_text(ft.jsonb, 'currency') AS transaction_currency,
+    json_extract_path_text(ft.jsonb, 'metadata', 'createdDate')::DATE AS transaction_created_date,
+    json_extract_path_text(ft.jsonb, 'metadata', 'updatedDate')::DATE AS transaction_updated_date,
+	json_extract_path_text(ft.jsonb, 'description') AS transaction_description,
     ft.expenseclassid AS transaction_expense_class_id,
     ft.fiscalyearid AS transaction_fiscal_year_id,
     ft.fromfundid AS transaction_from_fund_id,
@@ -21,6 +27,9 @@ SELECT
     ft.tofundid AS transaction_to_fund_id,
     json_extract_path_text(tf.jsonb, 'name') AS transaction_to_fund_name,
     json_extract_path_text(tf.jsonb, 'code') AS transaction_to_fund_code,
+    CASE WHEN ft.tofundid IS NULL THEN ft.fromfundid ELSE ft.tofundid END AS effective_fund_id,
+    CASE WHEN json_extract_path_text(ff.jsonb, 'name') IS NULL THEN json_extract_path_text(tf.jsonb, 'name') ELSE json_extract_path_text(ff.jsonb, 'name') END AS effective_fund_name,
+    CASE WHEN json_extract_path_text(ff.jsonb, 'code') IS NULL THEN json_extract_path_text(tf.jsonb, 'code') ELSE json_extract_path_text(ff.jsonb, 'code') END AS effective_fund_code,
     fb.id AS transaction_from_budget_id,
     json_extract_path_text(fb.jsonb, 'name') AS transaction_from_budget_name,
     json_extract_path_text(ft.jsonb, 'sourceInvoiceId') AS invoice_id,
@@ -52,6 +61,12 @@ CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_amount);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_currency);
 
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_created_date);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_updated_date);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_description);
+
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_expense_class_id);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_fiscal_year_id);
@@ -67,6 +82,12 @@ CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_name);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_to_fund_code);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (effective_fund_id);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (effective_fund_name);
+
+CREATE INDEX ON folio_derived.finance_transaction_invoices (effective_fund_code);
 
 CREATE INDEX ON folio_derived.finance_transaction_invoices (transaction_from_budget_id);
 
