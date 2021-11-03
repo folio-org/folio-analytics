@@ -3,19 +3,19 @@ DROP TABLE IF EXISTS folio_derived.locations_libraries;
 CREATE TABLE folio_derived.locations_libraries AS
 SELECT
     cmp.id AS campus_id,
-    json_extract_path_text(cmp.jsonb, 'name') AS campus_name,
+    cmp.name AS campus_name,
     loc.id AS location_id,
-    json_extract_path_text(loc.jsonb, 'name') AS location_name,
-    json_extract_path_text(loc.jsonb, 'discoveryDisplayName') AS discovery_display_name,
+    loc.name AS location_name,
+    loc.discovery_display_name AS discovery_display_name,
     lib.id AS library_id,
-    json_extract_path_text(lib.jsonb, 'name') AS library_name,
+    lib.name AS library_name,
     inst.id AS institution_id,
-    json_extract_path_text(inst.jsonb, 'name') AS institution_name
+    inst.name AS institution_name
 FROM
-    folio_inventory.loccampus AS cmp
-    JOIN folio_inventory.location AS loc ON cmp.id = loc.campusid
-    JOIN folio_inventory.locinstitution AS inst ON loc.institutionid = inst.id
-    JOIN folio_inventory.loclibrary AS lib ON loc.libraryid = lib.id;
+    folio_inventory.loccampus__t AS cmp
+    LEFT JOIN folio_inventory.location__t AS loc ON cmp.id = loc.campus_id
+    LEFT JOIN folio_inventory.locinstitution__t AS inst ON loc.institution_id = inst.id
+    LEFT JOIN folio_inventory.loclibrary__t AS lib ON loc.library_id = lib.id;
 
 CREATE INDEX ON folio_derived.locations_libraries (campus_id);
 
