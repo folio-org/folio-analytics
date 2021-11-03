@@ -6,28 +6,29 @@ DROP TABLE IF EXISTS folio_derived.holdings_ext;
 CREATE TABLE folio_derived.holdings_ext AS
 WITH holdings AS (
     SELECT
-        h.id,
-        json_extract_path_text(h.jsonb, 'hrid') AS hrid,
-        json_extract_path_text(h.jsonb, 'acquisitionMethod') AS acquisition_method,
-        json_extract_path_text(h.jsonb, 'callNumber') AS call_number,
-        json_extract_path_text(h.jsonb, 'callNumberPrefix') AS call_number_prefix,
-        json_extract_path_text(h.jsonb, 'callNumberSuffix') AS call_number_suffix,
-        json_extract_path_text(h.jsonb, 'callNumberTypeId') AS call_number_type_id,
-        json_extract_path_text(h.jsonb, 'copyNumber') AS copy_number,
-        json_extract_path_text(h.jsonb, 'holdingsTypeId') AS holdings_type_id,
-        json_extract_path_text(h.jsonb, 'illPolicyId') AS ill_policy_id,
-        json_extract_path_text(h.jsonb, 'instanceId') AS instance_id,
-        json_extract_path_text(h.jsonb, 'permanentLocationId') AS permanent_location_id,
-        json_extract_path_text(h.jsonb, 'receiptStatus') AS receipt_status,
-        json_extract_path_text(h.jsonb, 'retentionPolicy') AS retention_policy,
-        json_extract_path_text(h.jsonb, 'shelvingTitle') AS shelving_title,
-        json_extract_path_text(h.jsonb, 'discoverySuppress') AS discovery_suppress,
+        h__t.id,
+        h__t.hrid,
+        h__t.acquisition_method,
+        h__t.call_number,
+        h__t.call_number_prefix,
+        h__t.call_number_suffix,
+        h__t.call_number_type_id,
+        h__t.copy_number,
+        h__t.holdings_type_id,
+        h__t.ill_policy_id,
+        h__t.instance_id,
+        h__t.permanent_location_id,
+        h__t.receipt_status,
+        h__t.retention_policy,
+        h__t.shelving_title,
+        h__t.discovery_suppress,
         json_extract_path_text(h.jsonb, 'metadata', 'createdDate') AS created_date,
         json_extract_path_text(h.jsonb, 'metadata', 'createdByUserId') AS updated_by_user_id,
         json_extract_path_text(h.jsonb, 'metadata', 'updatedDate') AS updated_date,
         json_extract_path_text(h.jsonb, 'temporaryLocationId') AS temporary_location_id
     FROM
         folio_inventory.holdings_record AS h
+        LEFT JOIN folio_inventory.holdings_record__t AS h__t ON h.id = h__t.id
 )
 SELECT
     holdings.id AS holdings_id,
@@ -37,17 +38,17 @@ SELECT
     holdings.call_number_prefix,
     holdings.call_number_suffix,
     holdings.call_number_type_id,
-    json_extract_path_text(holdings_call_number_type.jsonb, 'name') AS call_number_type_name,
+    holdings_call_number_type.name AS call_number_type_name,
     holdings.copy_number,
     holdings.holdings_type_id AS type_id,
-    json_extract_path_text(holdings_type.jsonb, 'name') AS type_name,
+    holdings_type.name AS type_name,
     holdings.ill_policy_id,
-    json_extract_path_text(holdings_ill_policy.jsonb, 'name') AS ill_policy_name,
+    holdings_ill_policy.name AS ill_policy_name,
     holdings.instance_id,
     holdings.permanent_location_id,
-    json_extract_path_text(holdings_permanent_location.jsonb, 'name') AS permanent_location_name,
+    holdings_permanent_location.name AS permanent_location_name,
     holdings.temporary_location_id,
-    json_extract_path_text(holdings_temporary_location.jsonb, 'name') AS temporary_location_name,
+    holdings_temporary_location.name AS temporary_location_name,
     holdings.receipt_status,
     holdings.retention_policy,
     holdings.shelving_title,
@@ -57,11 +58,11 @@ SELECT
     holdings.updated_date
 FROM
     holdings
-    LEFT JOIN folio_inventory.holdings_type AS holdings_type ON holdings.holdings_type_id = holdings_type.id
-    LEFT JOIN folio_inventory.ill_policy AS holdings_ill_policy ON holdings.ill_policy_id = holdings_ill_policy.id
-    LEFT JOIN folio_inventory.call_number_type AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
-    LEFT JOIN folio_inventory.location AS holdings_permanent_location ON holdings.permanent_location_id = holdings_permanent_location.id
-    LEFT JOIN folio_inventory.location AS holdings_temporary_location ON holdings.temporary_location_id = holdings_temporary_location.id;
+    LEFT JOIN folio_inventory.holdings_type__t AS holdings_type ON holdings.holdings_type_id = holdings_type.id
+    LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id = holdings_ill_policy.id
+    LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
+    LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id = holdings_permanent_location.id
+    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id = holdings_temporary_location.id;
 
 CREATE INDEX ON folio_derived.holdings_ext (holdings_id);
 
