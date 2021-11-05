@@ -25,10 +25,10 @@ The "transaction amount source" has been added for those institutions who would
 prefer to see the unmodified original transaction amount.
 
 ## MAIN TABLES INCLUDED
-finance_funds
-folio_reporting.finance_transaction_invoices
-finance_groups
-po_lines
+finance_funds\
+folio_reporting.finance_transaction_invoices\
+finance_groups\
+po_lines\
 
 ## AGGREGATION
 po_line_number, fund_group, fund_name, fund_type, fund_code, fund_description, transaction_type, expense_class
