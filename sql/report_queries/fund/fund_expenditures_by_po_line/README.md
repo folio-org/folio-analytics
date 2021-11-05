@@ -25,12 +25,12 @@ Showing credits as a negative value is a preference for some institutions.
 
 ## Main Tables Included
 
-finance_funds
-finance_fiscal_years
-finance_transaction_invoices (derived)
-finance_group_fund_fiscal_years
-finance_groups
-po_lines
+finance_funds\
+finance_fiscal_years\
+finance_transaction_invoices (derived)\
+finance_group_fund_fiscal_years\
+finance_groups\
+po_lines\
 
 ## Aggregation
 
