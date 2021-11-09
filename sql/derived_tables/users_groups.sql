@@ -19,7 +19,7 @@ SELECT
     uu.id AS user_id,
     uu.active,
     uu.barcode,
-    uu.created_date,
+    json_extract_path_text(uu.data, 'metadata', 'createdDate') AS created_date,
     uu.enrollment_date,
     uu.expiration_date,
     json_extract_path_text(uu.data, 'externalSystemId') AS external_system_id,
@@ -37,7 +37,7 @@ SELECT
     json_extract_path_text(uu.data, 'personal', 'dateOfBirth') AS user_date_of_birth,
     json_extract_path_text(uu.data, 'personal', 'preferredContactTypeId') AS user_preferred_contact_type_id,
     json_extract_path_text(uu.data, 'type') AS user_type,
-    uu.updated_date,
+    json_extract_path_text(uu.data, 'metadata', 'updatedDate') AS updated_date,
     uu.username,
     json_extract_path_text(uu.data, 'tags') AS user_tags,
     json_extract_path_text(uu.data, 'customFields') AS user_custom_fields

@@ -1,5 +1,4 @@
 agreements_custom_property.sql
-agreements_erm_resource.sql
 agreements_package_content_item.sql
 agreements_subscription_agreement.sql
 agreements_subscription_agreement_entitlement.sql

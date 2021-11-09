@@ -6,34 +6,37 @@ agreements_subscription_agreement_entitlement
 
 TABLES
 folio_agreements.refdata_value 
-
-*/
-
+ */
 WITH parameters AS (
     SELECT
-		-- filters on agreement level
-		''::VARCHAR AS agreement_status, -- Enter your subscription agreement status eg. 'Active', 'Closed' etc.
-		-- subscription agreement time period will be added when available (IRIS)
-		--NULL::DATE AS a_start_date,
-        --NULL::DATE AS a_end_date,
+        -- filters on agreement level
+        ''::varchar AS agreement_status, -- Enter your subscription agreement status eg. 'Active', 'Closed' etc.
+        -- subscription agreement time period will be added when available (IRIS)
+        --NULL::date AS a_start_date,
+        --NULL::date AS a_end_date,
         --'2021-01-01' :: DATE AS sa_start_date, -- start date day is included in interval
-        --'2022-01-01' :: DATE AS sa_end_date, -- end date day is NOT included in interval -> enter next day		
-		-- filters on erm_resource level
-		''::VARCHAR AS resource_type, -- Enter your erm resource type eg. 'monograph', 'serial' etc.
-		-- filters on entitelment level
-        NULL::DATE AS ent_start_date,
-        NULL::DATE AS ent_end_date,
+        --'2022-01-01' :: DATE AS sa_end_date, -- end date day is NOT included in interval -> enter next day
+        -- filters on erm_resource level
+        ''::varchar AS resource_type, -- Enter your erm resource type eg. 'monograph', 'serial' etc.
+        ''::varchar AS resource_sub_type, -- Enter your erm resource sub type eg. 'electronic', 'print' etc.
+        ''::varchar AS resource_publication_type, -- Enter your erm resource publication type eg. 'journal', 'book' etc.
+        -- filters on entitelment level
+        NULL::date AS ent_start_date,
+        NULL::date AS ent_end_date,
         --'2021-01-01' :: DATE AS ent_start_date, -- start date day is included in interval
         --'2022-01-01' :: DATE AS ent_end_date, -- end date day is NOT included in interval -> enter next day
-		-- filters on package content item level
-        NULL::DATE AS pci_start_date,
-        NULL::DATE AS pci_end_date
+        -- filters on package content item level
+        NULL::date AS pci_start_date,
+        NULL::date AS pci_end_date
         --'2021-01-01' :: DATE AS pci_start_date, -- start date day is included in interval
-        --'2022-01-01' :: DATE AS pci_end_date, -- end date day is NOT included in interval -> enter next day
+        --'2022-01-01' :: DATE AS pci_end_date -- end date day is NOT included in interval -> enter next day
 )
 SELECT
     sa_ent.subscription_agreement_name AS "Agreements",
     agrestat.rdv_label AS "Status",
+    pci_list.res_type_value AS "Resource Type",
+    pci_list.res_sub_type_value AS "Resource Subtype",
+    pci_list.res_publication_type_value AS "Resource Publicationtype",
     count(DISTINCT pci_list.pci_id) AS "Count"
 FROM
     folio_derived.agreements_package_content_item AS pci_list
@@ -46,8 +49,6 @@ WHERE
     AND
 	((agrestat.rdv_label = (SELECT agreement_status FROM parameters)) OR
 		((SELECT agreement_status FROM parameters) = ''))
-/*	
- -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
 	AND
     ((pci_list.pci_access_start < (SELECT pci_end_date FROM parameters) AND
 	    (pci_list.pci_access_end >= (SELECT pci_start_date FROM parameters) OR pci_list.pci_access_end IS NULL))
@@ -60,17 +61,28 @@ WHERE
 	    OR
 		(((SELECT ent_start_date FROM parameters) IS NULL)
 			OR ((SELECT ent_end_date FROM parameters) IS NULL)))
+    AND
+	((pci_list.res_type_value = (SELECT resource_type FROM parameters)) OR
+		((SELECT resource_type FROM parameters) = ''))
+	AND
+	((pci_list.res_sub_type_value = (SELECT resource_sub_type FROM parameters)) OR
+		((SELECT resource_sub_type FROM parameters) = ''))
+	AND
+	((pci_list.res_publication_type_value = (SELECT resource_publication_type FROM parameters)) OR
+		((SELECT resource_publication_type FROM parameters) = ''))
 	-- subscription agreement time period will be added when available (IRIS)
-	AND 			
+	/*
+	AND
     ((sa_ent.sa_start_date < (SELECT a_end_date FROM parameters) AND
 	    (sa_ent.sa_end_date >= (SELECT a_start_date FROM parameters) OR sa_ent.sa_end_date IS NULL))
-	    OR 
-		(((SELECT a_start_date FROM parameters) IS NULL) 
-			OR ((SELECT a_end_date FROM parameters) IS NULL)))	
+	    OR
+		(((SELECT a_start_date FROM parameters) IS NULL)
+			OR ((SELECT a_end_date FROM parameters) IS NULL)))
 	*/
 GROUP BY
     sa_ent.subscription_agreement_name,
-    agrestat.rdv_label
-    ;
-
+    agrestat.rdv_label,
+    pci_list.res_type_value,
+    pci_list.res_sub_type_value,
+    pci_list.res_publication_type_value;
 
