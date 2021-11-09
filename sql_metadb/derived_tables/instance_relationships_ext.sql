@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS folio_derived.instance_relationships_ext;
 CREATE TABLE folio_derived.instance_relationships_ext AS
 SELECT
     r.id AS relationship_id,
-    r.instance_relationship_type_id AS relationship_type_id,
+    r.instancerelationshiptypeid AS relationship_type_id,
     t.name AS relationship_type_name,
-    r.sub_instance_id AS relationship_sub_instance_id,
-    r.super_instance_id AS relationship_super_instance_id
+    r.subinstanceid AS relationship_sub_instance_id,
+    r.superinstanceid AS relationship_super_instance_id
 FROM
-    folio_inventory.instance_relationship_j AS r
-    LEFT JOIN folio_inventory.instance_relationship_type_j AS t
-        ON t.id = r.instance_relationship_type_id;
+    folio_inventory.instance_relationship AS r
+    LEFT JOIN folio_inventory.instance_relationship_type__t AS t
+        ON t.id = r.instancerelationshiptypeid;
 
 CREATE INDEX ON folio_derived.instance_relationships_ext (relationship_id);
 

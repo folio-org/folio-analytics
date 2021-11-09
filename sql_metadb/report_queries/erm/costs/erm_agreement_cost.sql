@@ -27,7 +27,6 @@ WITH parameters AS (
         -- filters on invoice line level
         ''::VARCHAR AS invoice_line_status, -- Enter your invoice line status eg. 'Paid' or 'Approved'etc.
         -- filters on invoice level
-  -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
         -- Please comment/uncomment one pair the these parameters if you want to define the date range of paid invoices
         NULL::DATE AS start_date,
         NULL::DATE AS end_date
@@ -84,15 +83,12 @@ WHERE
 	AND 	
 	((json_extract_path_text(pol.jsonb, 'orderFormat') = (SELECT po_line_order_format FROM parameters)) OR 
 		((SELECT po_line_order_format FROM parameters) = ''))
-/*
- -- As there is an issue on the field type for dates in MetaDB date filters are commented out and will be reimplemented when solved.
 	AND
     ((inv.invoice_payment_date >= (SELECT start_date FROM parameters) AND
 		inv.invoice_payment_date < (SELECT end_date FROM parameters))
 		OR 
 		(((SELECT start_date FROM parameters) IS NULL) 
 			OR ((SELECT end_date FROM parameters) IS NULL)))	
-*/
 GROUP BY 
 	sa_ent_dt.subscription_agreement_name,
 	sa_ent_dt.subscription_agreement_status_label,
