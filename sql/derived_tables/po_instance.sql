@@ -17,10 +17,14 @@ SELECT
     json_extract_path_text(po_lines.data, 'publisher') AS publisher,
     json_extract_path_text(po_lines.data, 'requester') AS requester,
     json_extract_path_text(po_lines.data, 'rush')::boolean AS rush,
-    json_extract_path_text(po_lines.data, 'selector') AS selector
+    json_extract_path_text(po_lines.data, 'selector') AS selector,
+    json_extract_path_text(locations.data, 'locationId') AS pol_location_id,
+    inventory_locations.name AS pol_location_name
 FROM
     po_purchase_orders
     LEFT JOIN po_lines ON po_purchase_orders.id = json_extract_path_text(po_lines.data, 'purchaseOrderId')
+    CROSS JOIN json_array_elements(json_extract_path(po_lines.data, 'locations')) AS locations (data)
+    LEFT JOIN inventory_locations ON json_extract_path_text(locations.data, 'locationId') = inventory_locations.id
     LEFT JOIN inventory_instances ON json_extract_path_text(po_lines.data, 'instanceId') = inventory_instances.id
     LEFT JOIN organization_organizations ON json_extract_path_text(po_purchase_orders.data, 'vendor') = organization_organizations.id
     LEFT JOIN configuration_entries ON json_extract_path_text(po_purchase_orders.data, 'billTo') = configuration_entries.id
@@ -51,3 +55,7 @@ CREATE INDEX ON folio_reporting.po_instance (requester);
 CREATE INDEX ON folio_reporting.po_instance (rush);
 
 CREATE INDEX ON folio_reporting.po_instance (selector);
+
+CREATE INDEX ON folio_reporting.po_instance (pol_location_id);
+
+CREATE INDEX ON folio_reporting.po_instance (pol_location_name);
