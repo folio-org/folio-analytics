@@ -18,5 +18,5 @@ COMMENT ON COLUMN public.circulation_loans.patron_group_id_at_checkout IS 'Patro
 COMMENT ON COLUMN public.circulation_loans.claimed_returned_date IS 'Date and time the item was claimed returned for this loan';
 COMMENT ON COLUMN public.circulation_loans.overdue_fine_policy_id IS 'ID of overdue fines policy at the time the item is check-in or renewed';
 COMMENT ON COLUMN public.circulation_loans.lost_item_policy_id IS 'ID of lost item policy which determines when the item ages to lost and the associated fees or the associated fees if the patron declares the item lost.';
-COMMENT ON COLUMN public.circulation_loans.checkin_service_point_id IS 'Comment to last action performed on a loan';
+COMMENT ON COLUMN public.circulation_loans.checkin_service_point_id IS 'ID of the Service Point where the last checkin occurred';
 
