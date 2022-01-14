@@ -1,4 +1,8 @@
 -- Creates a report that contains an overview of agreements and their cancellation deadlines.
+--
+-- For the filters in parameter, only 'sao role' is mandatory.
+-- The rest can be omitted if the where clause is commented out.
+-- The filters can be used, for example, to display agreements whose cancellation deadline is within a certain period of time.
 WITH parameters AS (
     SELECT
         'vendor' AS sao_role, -- Is required to restrict the table column "agreement_vendor" to vendor.
@@ -45,11 +49,11 @@ FROM
     LEFT JOIN folio_agreements.entitlement AS agreements_entitlement ON agreements_entitlement.ent_owner_fk = subscription_agreement.sa_id
     LEFT JOIN folio_agreements.erm_resource AS agreements_erm_resource ON agreements_erm_resource.id = agreements_entitlement.ent_resource_fk
     LEFT JOIN folio_agreements.order_line AS agreements_order_line ON agreements_order_line.pol_owner_fk = agreements_entitlement.ent_id
---WHERE
-    --subscription_agreement.sa_cancellation_deadline BETWEEN (SELECT agreement_cancellation_interval_start FROM parameters) AND (SELECT agreement_cancellation_interval_end FROM parameters)
-    --AND
-    --agreement_status.rdv_value = (SELECT agreement_status FROM parameters)
-    --AND
-    --agreement_is_perpetual.rdv_value = (SELECT agreement_is_perpetual FROM parameters)
+WHERE
+    subscription_agreement.sa_cancellation_deadline BETWEEN (SELECT agreement_cancellation_interval_start FROM parameters) AND (SELECT agreement_cancellation_interval_end FROM parameters)
+    AND
+    agreement_status.rdv_value = (SELECT agreement_status FROM parameters)
+    AND
+    agreement_is_perpetual.rdv_value = (SELECT agreement_is_perpetual FROM parameters)
 ORDER BY
     subscription_agreement.sa_name;
