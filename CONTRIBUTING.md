@@ -8,7 +8,7 @@ when preparing a pull request.
 
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
-2\. [Branches](#2-branches)  
+2\. [Commits and pull requests](#2-commits-and-pull-requests)  
 3\. [Code review](#3-code-review)  
 4\. [Documentation](#4-documentation)  
 5\. [Testing](#5-testing)  
@@ -32,8 +32,25 @@ For bugs or specific technical proposals, please use
 [Issues](https://github.com/folio-org/folio-analytics/issues).
 
 
-2\. Branches
-------------
+2\. Commits and pull requests
+-----------------------------
+
+### Commit description
+
+Quoting roughly from the Git Reference Manual, Git commits are
+documented with a short title (less than 50 characters) which
+summarizes the changes, followed by a more thorough description.  It
+is important that at least the title be filled in with a meaningful
+summary so that the Git history will be readable.
+
+### Pull request description
+
+The pull request description, entered in the large "Leave a comment"
+text field, should contain a complete description of the changes.
+This should be text rather than a hyperlink, so that it can be added
+to the merge commit as a self-contained summary of the changes.
+
+### Branches
 
 All pull requests should be based on the `main` branch.  Some bug 
 fixes will be backported to recent release branches.
