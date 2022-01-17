@@ -1,15 +1,13 @@
 -- Creates a report that contains an overview of agreements and their cancellation deadlines.
 --
--- For the filters in parameter, only 'sao role' is mandatory.
--- The rest can be omitted if the where clause is commented out.
 -- The filters can be used, for example, to display agreements whose cancellation deadline is within a certain period of time.
 WITH parameters AS (
     SELECT
-        'vendor' AS sao_role, -- Is required to restrict the table column "agreement_vendor" to vendor.
-        '2022-01-01'::date AS agreement_cancellation_interval_start, -- start date for cancellation interval, e.g. 2022-01-01
-        '2022-12-31'::date AS agreement_cancellation_interval_end, -- end date for cancellation interval, e.g. 2022-12-31
-        'active' AS agreement_status,
-        'yes' AS agreement_is_perpetual
+        'vendor' AS sao_role, -- required to restrict the table column "agreement_vendor" to vendor.
+        '2022-01-01'::date AS agreement_cancellation_interval_start, -- required, start date for cancellation interval, e.g. 2022-01-01
+        '2022-12-31'::date AS agreement_cancellation_interval_end, -- required, end date for cancellation interval, e.g. 2022-12-31
+        'active' AS agreement_status, -- Enter your agreement_status eg. 'active', 'closed', 'draft', 'requested' etc.
+        'yes' AS agreement_is_perpetual -- Enter your selection for agreement perpetual
 ),
 organizations AS (
     SELECT
@@ -52,8 +50,8 @@ FROM
 WHERE
     subscription_agreement.sa_cancellation_deadline BETWEEN (SELECT agreement_cancellation_interval_start FROM parameters) AND (SELECT agreement_cancellation_interval_end FROM parameters)
     AND
-    agreement_status.rdv_value = (SELECT agreement_status FROM parameters)
+    (agreement_status.rdv_value = (SELECT agreement_status FROM parameters)) OR ((SELECT agreement_status FROM parameters) = '')
     AND
-    agreement_is_perpetual.rdv_value = (SELECT agreement_is_perpetual FROM parameters)
+    (agreement_is_perpetual.rdv_value = (SELECT agreement_is_perpetual FROM parameters)) OR ((SELECT agreement_is_perpetual FROM parameters) = '')
 ORDER BY
     subscription_agreement.sa_name;
