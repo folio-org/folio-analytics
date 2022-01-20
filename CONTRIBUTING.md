@@ -39,8 +39,8 @@ For bugs or specific technical proposals, please use
 
 Quoting roughly from the Git Reference Manual, Git commits are
 documented with a short, one-line title which summarizes the changes,
-followed by a more thorough, long description.  The title should be
-less than 75 characters.  It is important that at least the title be
+followed by a more thorough, long description.  The title should be no
+more than 75 characters.  It is important that at least the title be
 filled in with a meaningful summary so that the Git history will be
 readable.  Hyperlinks or other references such as "Fixes #" may be
 included in the long description, but not in the title and not as a
