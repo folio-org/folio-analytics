@@ -38,13 +38,13 @@ For bugs or specific technical proposals, please use
 ### Commit description
 
 Quoting roughly from the Git Reference Manual, Git commits are
-documented with a short title (less than 50 characters) which
-summarizes the changes, followed by a more thorough, long description.
-It is important that at least the title be filled in with a meaningful
-summary so that the Git history will be readable.  Hyperlinks or other
-references such as "Fixes #" may be included in the long description,
-but not in the title and not as a substitute for a complete
-description of the changes.
+documented with a short, one-line title which summarizes the changes,
+followed by a more thorough, long description.  The title should be
+less than 75 characters.  It is important that at least the title be
+filled in with a meaningful summary so that the Git history will be
+readable.  Hyperlinks or other references such as "Fixes #" may be
+included in the long description, but not in the title and not as a
+substitute for a complete description of the changes.
 
 ### Pull request description
 
