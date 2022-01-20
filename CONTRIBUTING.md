@@ -119,7 +119,9 @@ cases, manual formatting is preferred.
 -----------------
 
 Names of tables and columns should be in lowercase and use underscores
-( `_` ) to separate words.
+( `_` ) to separate words.  Double underscores ( `__` ) should be
+avoided because they are used in Metadb databases as special
+indicators.
 
 In the rare case where a column name is both the same as a reserved
 word and stands alone without a table or alias prefix, it must be
