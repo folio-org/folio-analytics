@@ -62,6 +62,11 @@ fixes will be backported to recent release branches.
 A pull request is reviewed by at least two people other than the
 contributor before it can be merged.
 
+If a review suggests expanding the scope of the changes to include
+additional functionality, those changes do not have to be addressed in
+the current pull request but may be handled in a separate, new pull
+request.
+
 
 4\. Documentation
 -----------------
