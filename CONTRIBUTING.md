@@ -8,7 +8,7 @@ when preparing a pull request.
 
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
-2\. [Branches](#2-branches)  
+2\. [Commits and pull requests](#2-commits-and-pull-requests)  
 3\. [Code review](#3-code-review)  
 4\. [Documentation](#4-documentation)  
 5\. [Testing](#5-testing)  
@@ -32,8 +32,28 @@ For bugs or specific technical proposals, please use
 [Issues](https://github.com/folio-org/folio-analytics/issues).
 
 
-2\. Branches
-------------
+2\. Commits and pull requests
+-----------------------------
+
+### Commit description
+
+Quoting roughly from the Git Reference Manual, Git commits are
+documented with a short, one-line title which summarizes the changes,
+followed by a more thorough, long description.  The title should be no
+more than 75 characters.  It is important that at least the title be
+filled in with a meaningful summary so that the Git history will be
+readable.  Hyperlinks or other references such as "Fixes #" may be
+included in the long description, but not in the title and not as a
+substitute for a complete description of the changes.
+
+### Pull request description
+
+The pull request description, entered in the large "Leave a comment"
+text field, should contain a complete description of the changes.
+This should be text rather than a hyperlink, so that it can be added
+to the merge commit as a self-contained summary of the changes.
+
+### Branches
 
 All pull requests should be based on the `main` branch.  Some bug 
 fixes will be backported to recent release branches.
@@ -44,6 +64,11 @@ fixes will be backported to recent release branches.
 
 A pull request is reviewed by at least two people other than the
 contributor before it can be merged.
+
+If a review suggests expanding the scope of the changes to include
+additional functionality, those changes do not have to be addressed in
+the current pull request but may be handled in a separate, new pull
+request.
 
 
 4\. Documentation
@@ -97,7 +122,9 @@ cases, manual formatting is preferred.
 -----------------
 
 Names of tables and columns should be in lowercase and use underscores
-( `_` ) to separate words.
+( `_` ) to separate words.  Double underscores ( `__` ) should be
+avoided because they are used in Metadb databases as special
+indicators.
 
 In the rare case where a column name is both the same as a reserved
 word and stands alone without a table or alias prefix, it must be
