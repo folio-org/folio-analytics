@@ -16,13 +16,13 @@ CREATE TABLE folio_derived.loans_renewal_dates AS
         --__id AS loan_history_id, -- can add back in if we stop de-duplicating rows
         __start AS loan_action_date,
         id AS loan_id,
-        json_extract_path_text(jsonb::JSON, 'itemId') AS item_id,
-        json_extract_path_text(jsonb::JSON, 'action') AS loan_action,
-        json_extract_path_text(jsonb::JSON, 'renewalCount') AS loan_renewal_count,
-        json_extract_path_text(jsonb::JSON, 'status', 'name') AS loan_status
+        jsonb_extract_path_text(jsonb::JSON, 'itemId') AS item_id,
+        jsonb_extract_path_text(jsonb::JSON, 'action') AS loan_action,
+        jsonb_extract_path_text(jsonb::JSON, 'renewalCount') AS loan_renewal_count,
+        jsonb_extract_path_text(jsonb::JSON, 'status', 'name') AS loan_status
     FROM distinct_records
     WHERE
-        json_extract_path_text(jsonb::JSON, 'action') IN ('renewed', 'renewedThroughOverride')
+        jsonb_extract_path_text(jsonb::JSON, 'action') IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
         loan_action_date

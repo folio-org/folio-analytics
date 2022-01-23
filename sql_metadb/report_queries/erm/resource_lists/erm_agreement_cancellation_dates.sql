@@ -22,11 +22,11 @@ organizations AS (
 internal_contacts AS (
     SELECT
         internal_contact.ic_owner_fk,
-        json_extract_path_text(users_users."jsonb", 'personal', 'lastName') || ', ' || json_extract_path_text(users_users."jsonb", 'personal', 'firstName') AS names
+        jsonb_extract_path_text(users_users."jsonb", 'personal', 'lastName') || ', ' || jsonb_extract_path_text(users_users."jsonb", 'personal', 'firstName') AS names
     FROM
         folio_agreements.internal_contact AS internal_contact
         LEFT JOIN folio_agreements.refdata_value AS internal_contact_refdata_value ON internal_contact_refdata_value.rdv_id = internal_contact.ic_role
-        LEFT JOIN folio_users.users AS users_users ON json_extract_path_text(users_users."jsonb", 'id') = internal_contact.ic_user_fk
+        LEFT JOIN folio_users.users AS users_users ON jsonb_extract_path_text(users_users."jsonb", 'id') = internal_contact.ic_user_fk
 )
 SELECT
     subscription_agreement.sa_id AS agreement_id,

@@ -5,17 +5,17 @@ CREATE TABLE folio_derived.invoice_adjustments_ext AS
 WITH invl_total AS (
     SELECT
         inv.id AS inv_id,
-        sum(json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2)) AS invl_total
+        sum(jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2)) AS invl_total
     FROM
         folio_invoice.invoices AS inv
-        LEFT JOIN folio_invoice.invoice_lines AS invl ON inv.id = json_extract_path_text(invl.jsonb, 'invoiceId')
+        LEFT JOIN folio_invoice.invoice_lines AS invl ON inv.id = jsonb_extract_path_text(invl.jsonb, 'invoiceId')
     GROUP BY
         inv_id
 )
 SELECT
     inv.id AS invoice_id,
     invl.id AS invl_id,
-    coalesce(json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) AS invoice_line_value,
+    coalesce(jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) AS invoice_line_value,
     fintrainvl.transaction_amount AS transaction_invoice_line_value, --This is invoice_line_value in system currency
     coalesce(invadj.adjustment_value, 0) AS inv_adjust_total_value, 
     fintrainv.transaction_amount AS transaction_invoice_adj_value, --This is inv_adjust_total_value in system currency
@@ -26,7 +26,7 @@ SELECT
         OR invltotal.invl_total = 0 THEN
         0.0000
     ELSE
-        round(coalesce(json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total, 4)
+        round(coalesce(jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total, 4)
     END AS ratio_of_inv_adj_per_invoice_line,
     --Above: This is the ratio of the invoice adjustment per invoice line
     CASE WHEN invadj.adjustment_value IS NULL
@@ -34,7 +34,7 @@ SELECT
         OR invltotal.invl_total = 0 THEN
         0.0000
     ELSE
-        round(invadj.adjustment_value * (coalesce(json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total), 4)
+        round(invadj.adjustment_value * (coalesce(jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total), 4)
     END AS inv_adj_total,
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line.
     CASE WHEN fintrainv.transaction_amount IS NULL
@@ -42,12 +42,12 @@ SELECT
         OR invltotal.invl_total = 0 THEN
         0.0000
     ELSE
-        round(fintrainv.transaction_amount::numeric(12, 2) * (coalesce(json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total), 4)
+        round(fintrainv.transaction_amount::numeric(12, 2) * (coalesce(jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2), 0) / invltotal.invl_total), 4)
     END AS transactions_inv_adj_total
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line. IN SYSTEM CURRENCY.
 FROM
     folio_invoice.invoices AS inv
-    LEFT JOIN folio_invoice.invoice_lines AS invl ON json_extract_path_text(invl.jsonb, 'invoiceId') = inv.id
+    LEFT JOIN folio_invoice.invoice_lines AS invl ON jsonb_extract_path_text(invl.jsonb, 'invoiceId') = inv.id
     LEFT JOIN folio_derived.invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
     LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id AND fintrainv.invoice_line_id IS NULL
@@ -58,7 +58,7 @@ GROUP BY
     inv_adj_relationToTotal,
     invadj.adjustment_prorate,
     invadj.adjustment_value,
-    json_extract_path_text(invl.jsonb, 'total')::numeric(12, 2),
+    jsonb_extract_path_text(invl.jsonb, 'total')::numeric(12, 2),
     invltotal.invl_total,
     transaction_invoice_line_value,
     transaction_invoice_adj_value;

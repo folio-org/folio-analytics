@@ -22,10 +22,10 @@ WITH holdings AS (
         h__t.retention_policy,
         h__t.shelving_title,
         h__t.discovery_suppress,
-        json_extract_path_text(h.jsonb, 'metadata', 'createdDate') AS created_date,
-        json_extract_path_text(h.jsonb, 'metadata', 'createdByUserId') AS updated_by_user_id,
-        json_extract_path_text(h.jsonb, 'metadata', 'updatedDate') AS updated_date,
-        json_extract_path_text(h.jsonb, 'temporaryLocationId') AS temporary_location_id
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'createdDate') AS created_date,
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'createdByUserId') AS updated_by_user_id,
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'updatedDate') AS updated_date,
+        jsonb_extract_path_text(h.jsonb, 'temporaryLocationId') AS temporary_location_id
     FROM
         folio_inventory.holdings_record AS h
         LEFT JOIN folio_inventory.holdings_record__t AS h__t ON h.id = h__t.id
