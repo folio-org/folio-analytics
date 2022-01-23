@@ -32,8 +32,8 @@ SELECT
     CASE WHEN jsonb_extract_path_text(ff.jsonb, 'code') IS NULL THEN jsonb_extract_path_text(tf.jsonb, 'code') ELSE jsonb_extract_path_text(ff.jsonb, 'code') END AS effective_fund_code,
     fb.id AS transaction_from_budget_id,
     jsonb_extract_path_text(fb.jsonb, 'name') AS transaction_from_budget_name,
-    jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceId') AS invoice_id,
-    jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceLineId') AS invoice_line_id,
+    jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceId')::uuid AS invoice_id,
+    jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceLineId')::uuid AS invoice_line_id,
     jsonb_extract_path_text(ft.jsonb, 'transactionType') AS transaction_type,
     jsonb_extract_path_text(ii.jsonb, 'invoiceDate') AS invoice_date,
     jsonb_extract_path_text(ii.jsonb, 'paymentDate') AS invoice_payment_date,
@@ -41,16 +41,16 @@ SELECT
     jsonb_extract_path_text(il.jsonb, 'total') AS invoice_line_total,
     jsonb_extract_path_text(ii.jsonb, 'currency') AS invoice_currency,
     jsonb_extract_path_text(il.jsonb, 'poLineId') AS po_line_id,
-    jsonb_extract_path_text(ii.jsonb, 'vendorId') AS invoice_vendor_id,
+    jsonb_extract_path_text(ii.jsonb, 'vendorId')::uuid AS invoice_vendor_id,
     jsonb_extract_path_text(oo.jsonb, 'name') AS invoice_vendor_name
 FROM
     folio_finance.transaction AS ft
-    LEFT JOIN folio_invoice.invoices AS ii ON jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceId') = ii.id
-    LEFT JOIN folio_invoice.invoice_lines AS il ON jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceLineId') = il.id
+    LEFT JOIN folio_invoice.invoices AS ii ON jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceId')::uuid = ii.id
+    LEFT JOIN folio_invoice.invoice_lines AS il ON jsonb_extract_path_text(ft.jsonb, 'sourceInvoiceLineId')::uuid = il.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
     LEFT JOIN folio_finance.fund AS tf ON ft.tofundid = tf.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
-    LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(ii.jsonb, 'vendorId') = oo.id
+    LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(ii.jsonb, 'vendorId')::uuid = oo.id
 WHERE (jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Credit');

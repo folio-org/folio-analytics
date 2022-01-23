@@ -58,11 +58,11 @@ SELECT
     holdings.updated_date
 FROM
     holdings
-    LEFT JOIN folio_inventory.holdings_type__t AS holdings_type ON holdings.holdings_type_id = holdings_type.id
-    LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id = holdings_ill_policy.id
-    LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
-    LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id = holdings_permanent_location.id
-    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id = holdings_temporary_location.id;
+    LEFT JOIN folio_inventory.holdings_type__t AS holdings_type ON holdings.holdings_type_id::uuid = holdings_type.id
+    LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id::uuid = holdings_ill_policy.id
+    LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id::uuid = holdings_call_number_type.id
+    LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id::uuid = holdings_permanent_location.id
+    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id;
 
 CREATE INDEX ON folio_derived.holdings_ext (holdings_id);
 

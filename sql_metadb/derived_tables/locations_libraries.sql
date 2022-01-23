@@ -13,9 +13,9 @@ SELECT
     inst.name AS institution_name
 FROM
     folio_inventory.loccampus__t AS cmp
-    LEFT JOIN folio_inventory.location__t AS loc ON cmp.id = loc.campus_id
-    LEFT JOIN folio_inventory.locinstitution__t AS inst ON loc.institution_id = inst.id
-    LEFT JOIN folio_inventory.loclibrary__t AS lib ON loc.library_id = lib.id;
+    LEFT JOIN folio_inventory.location__t AS loc ON cmp.id = loc.campus_id::uuid
+    LEFT JOIN folio_inventory.locinstitution__t AS inst ON loc.institution_id::uuid = inst.id
+    LEFT JOIN folio_inventory.loclibrary__t AS lib ON loc.library_id::uuid = lib.id;
 
 CREATE INDEX ON folio_derived.locations_libraries (campus_id);
 

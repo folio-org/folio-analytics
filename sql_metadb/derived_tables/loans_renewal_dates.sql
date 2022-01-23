@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS folio_derived.loans_renewal_dates;
 CREATE TABLE folio_derived.loans_renewal_dates AS
     WITH distinct_records AS (
         SELECT
-            DISTINCT __start, id, jsonb::VARCHAR
+            DISTINCT __start, id, jsonb
         FROM
             folio_circulation.loan
     )
@@ -16,13 +16,13 @@ CREATE TABLE folio_derived.loans_renewal_dates AS
         --__id AS loan_history_id, -- can add back in if we stop de-duplicating rows
         __start AS loan_action_date,
         id AS loan_id,
-        jsonb_extract_path_text(jsonb::JSON, 'itemId') AS item_id,
-        jsonb_extract_path_text(jsonb::JSON, 'action') AS loan_action,
-        jsonb_extract_path_text(jsonb::JSON, 'renewalCount') AS loan_renewal_count,
-        jsonb_extract_path_text(jsonb::JSON, 'status', 'name') AS loan_status
+        jsonb_extract_path_text(jsonb, 'itemId') AS item_id,
+        jsonb_extract_path_text(jsonb, 'action') AS loan_action,
+        jsonb_extract_path_text(jsonb, 'renewalCount') AS loan_renewal_count,
+        jsonb_extract_path_text(jsonb, 'status', 'name') AS loan_status
     FROM distinct_records
     WHERE
-        jsonb_extract_path_text(jsonb::JSON, 'action') IN ('renewed', 'renewedThroughOverride')
+        jsonb_extract_path_text(jsonb, 'action') IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
         loan_action_date

@@ -25,21 +25,21 @@ SELECT
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'initialAmountEncumbered') AS transaction_encumbrance_initial_amount,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'orderType') AS transaction_encumbrance_order_type,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'subscription') AS transaction_encumbrance_subscription,
-    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId') AS po_line_id,
-    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId') AS po_id,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid AS po_line_id,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId')::uuid AS po_id,
     jsonb_extract_path_text(pol.jsonb, 'poLineNumber') AS pol_number,
     jsonb_extract_path_text(pol.jsonb, 'description') AS pol_description,
     jsonb_extract_path_text(pol.jsonb, 'acquisition_method') AS pol_acquisition_method,
     jsonb_extract_path_text(po.jsonb, 'order_type') AS po_order_type,
-    jsonb_extract_path_text(po.jsonb, 'vendor') AS po_vendor_id,
+    jsonb_extract_path_text(po.jsonb, 'vendor')::uuid AS po_vendor_id,
     jsonb_extract_path_text(oo.jsonb, 'name') AS po_vendor_name
 FROM
     folio_finance.transaction AS ft
-    LEFT JOIN folio_orders.po_line AS pol ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId') = pol.id
-    LEFT JOIN folio_orders.purchase_order AS po ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId') = po.id
+    LEFT JOIN folio_orders.po_line AS pol ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid = pol.id
+    LEFT JOIN folio_orders.purchase_order AS po ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId')::uuid = po.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
-    LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor') = oo.id
+    LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor')::uuid = oo.id
 WHERE
     jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Encumbrance';
 
