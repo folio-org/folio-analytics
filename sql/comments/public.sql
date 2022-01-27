@@ -15,8 +15,31 @@ COMMENT ON COLUMN public.circulation_loans.renewal_count IS 'Count of how many t
 COMMENT ON COLUMN public.circulation_loans.loan_policy_id IS 'ID of last policy used in relation to this loan';
 COMMENT ON COLUMN public.circulation_loans.checkout_service_point_id IS 'ID of the Service Point where the last checkout occured';
 COMMENT ON COLUMN public.circulation_loans.patron_group_id_at_checkout IS 'Patron Group Id at checkout';
+COMMENT ON COLUMN public.circulation_loans.proxy_user_id IS 'ID of the user representing a proxy for the patron';
 COMMENT ON COLUMN public.circulation_loans.claimed_returned_date IS 'Date and time the item was claimed returned for this loan';
 COMMENT ON COLUMN public.circulation_loans.overdue_fine_policy_id IS 'ID of overdue fines policy at the time the item is check-in or renewed';
 COMMENT ON COLUMN public.circulation_loans.lost_item_policy_id IS 'ID of lost item policy which determines when the item ages to lost and the associated fees or the associated fees if the patron declares the item lost.';
 COMMENT ON COLUMN public.circulation_loans.checkin_service_point_id IS 'ID of the Service Point where the last checkin occurred';
+
+--public.circulation_requests
+COMMENT ON COLUMN public.circulation_requests.id IS 'UUID of the request';
+COMMENT ON COLUMN public.circulation_requests.cancellation_additional_information IS 'Potential relevant information regarding a cancellation';
+COMMENT ON COLUMN public.circulation_requests.cancellation_reason_id IS 'The id of the request cancellation reason';
+COMMENT ON COLUMN public.circulation_requests.cancelled_by_user_id IS 'The id of the user that cancelled the request';
+COMMENT ON COLUMN public.circulation_requests.cancelled_date IS 'Date the request was cancelled';
+COMMENT ON COLUMN public.circulation_requests.fulfilment_preference IS 'How should the request be fulfilled (whether the item should be kept on the hold shelf for collection or delivered to the requester)';
+COMMENT ON COLUMN public.circulation_requests.hold_shelf_expiration_date IS 'Date when an item on the hold shelf expires';
+COMMENT ON COLUMN public.circulation_requests.holdings_record_id IS 'ID of the holdings record being requested';
+COMMENT ON COLUMN public.circulation_requests.instance_id IS 'ID of the instance being requested';
+COMMENT ON COLUMN public.circulation_requests.item_id IS 'ID of the item being requested';
+COMMENT ON COLUMN public.circulation_requests.patron_comments IS 'Comments made by the patron';
+COMMENT ON COLUMN public.circulation_requests.pickup_service_point_id IS 'The ID of the Service Point where this request can be picked up';
+COMMENT ON COLUMN public.circulation_requests."position" IS 'Position of the request in the unified request queue';
+COMMENT ON COLUMN public.circulation_requests.request_date IS 'Date the request was made';
+COMMENT ON COLUMN public.circulation_requests.request_expiration_date IS 'Date when the request expires';
+COMMENT ON COLUMN public.circulation_requests.request_level IS 'Level of the request - Item or Title';
+COMMENT ON COLUMN public.circulation_requests.request_type IS 'Whether the item should be held upon return, recalled or paged for';
+COMMENT ON COLUMN public.circulation_requests.requester_id IS 'ID of the requesting patron (user)';
+COMMENT ON COLUMN public.circulation_requests.status IS 'Status of the request';
+
 
