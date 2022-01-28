@@ -5,14 +5,14 @@ CREATE TABLE folio_derived.invoice_adjustments_in_addition_to AS
 WITH adjustments AS (
     SELECT
         id AS invoice_id,
-        json_extract_path_text(adjustments.data, 'description') AS adjustment_description,
-        json_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
-        json_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
-        json_extract_path_text(adjustments.data, 'type') AS adjustment_type,
-        json_extract_path_text(adjustments.data, 'value') ::numeric(12,2) AS adjustment_value
+        jsonb_extract_path_text(adjustments.data, 'description') AS adjustment_description,
+        jsonb_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
+        jsonb_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
+        jsonb_extract_path_text(adjustments.data, 'type') AS adjustment_type,
+        jsonb_extract_path_text(adjustments.data, 'value') ::numeric(12,2) AS adjustment_value
     FROM
         folio_invoice.invoices AS inv
-        CROSS JOIN json_array_elements(json_extract_path(inv.jsonb, 'adjustments')) AS adjustments (data)
+        CROSS JOIN jsonb_array_elements(jsonb_extract_path(inv.jsonb, 'adjustments')) AS adjustments (data)
 )
 SELECT
     invoice_id,
