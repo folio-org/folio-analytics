@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS folio_derived.holdings_ext;
+DROP TABLE IF EXISTS holdings_ext;
 
 -- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy, 
 -- permanent location, and temporary location.
 -- Holdings notes are in a separate derived table.
-CREATE TABLE folio_derived.holdings_ext AS
+CREATE TABLE holdings_ext AS
 WITH holdings AS (
     SELECT
         h__t.id,
@@ -64,53 +64,53 @@ FROM
     LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id::uuid = holdings_permanent_location.id
     LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id;
 
-CREATE INDEX ON folio_derived.holdings_ext (holdings_id);
+CREATE INDEX ON holdings_ext (holdings_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (holdings_hrid);
+CREATE INDEX ON holdings_ext (holdings_hrid);
 
-CREATE INDEX ON folio_derived.holdings_ext (acquisition_method);
+CREATE INDEX ON holdings_ext (acquisition_method);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number);
+CREATE INDEX ON holdings_ext (call_number);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_prefix);
+CREATE INDEX ON holdings_ext (call_number_prefix);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_suffix);
+CREATE INDEX ON holdings_ext (call_number_suffix);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_type_id);
+CREATE INDEX ON holdings_ext (call_number_type_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_type_name);
+CREATE INDEX ON holdings_ext (call_number_type_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (copy_number);
+CREATE INDEX ON holdings_ext (copy_number);
 
-CREATE INDEX ON folio_derived.holdings_ext (type_id);
+CREATE INDEX ON holdings_ext (type_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (type_name);
+CREATE INDEX ON holdings_ext (type_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (ill_policy_id);
+CREATE INDEX ON holdings_ext (ill_policy_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (ill_policy_name);
+CREATE INDEX ON holdings_ext (ill_policy_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (instance_id);
+CREATE INDEX ON holdings_ext (instance_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (permanent_location_id);
+CREATE INDEX ON holdings_ext (permanent_location_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (permanent_location_name);
+CREATE INDEX ON holdings_ext (permanent_location_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (temporary_location_id);
+CREATE INDEX ON holdings_ext (temporary_location_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (temporary_location_name);
+CREATE INDEX ON holdings_ext (temporary_location_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (receipt_status);
+CREATE INDEX ON holdings_ext (receipt_status);
 
-CREATE INDEX ON folio_derived.holdings_ext (retention_policy);
+CREATE INDEX ON holdings_ext (retention_policy);
 
-CREATE INDEX ON folio_derived.holdings_ext (shelving_title);
+CREATE INDEX ON holdings_ext (shelving_title);
 
-CREATE INDEX ON folio_derived.holdings_ext (discovery_suppress);
+CREATE INDEX ON holdings_ext (discovery_suppress);
 
-CREATE INDEX ON folio_derived.holdings_ext (created_date);
+CREATE INDEX ON holdings_ext (created_date);
 
-CREATE INDEX ON folio_derived.holdings_ext (updated_by_user_id);
+CREATE INDEX ON holdings_ext (updated_by_user_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (updated_date);
+CREATE INDEX ON holdings_ext (updated_date);
 

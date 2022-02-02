@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_derived.invoice_adjustments_ext;
+DROP TABLE IF EXISTS invoice_adjustments_ext;
 
 -- This table includes the ratio of the invoice lines amount in relation to the invoice_line total to calculate the invoice adjustment by row
-CREATE TABLE folio_derived.invoice_adjustments_ext AS
+CREATE TABLE invoice_adjustments_ext AS
 WITH invl_total AS (
     SELECT
         inv.id AS inv_id,
@@ -48,10 +48,10 @@ SELECT
 FROM
     folio_invoice.invoices AS inv
     LEFT JOIN folio_invoice.invoice_lines AS invl ON jsonb_extract_path_text(invl.jsonb, 'invoiceId')::uuid = inv.id
-    LEFT JOIN folio_derived.invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
+    LEFT JOIN invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
-    LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id AND fintrainv.invoice_line_id IS NULL
-    LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
+    LEFT JOIN finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id AND fintrainv.invoice_line_id IS NULL
+    LEFT JOIN finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
 GROUP BY
     inv.id,
     invl_id,
@@ -63,21 +63,21 @@ GROUP BY
     transaction_invoice_line_value,
     transaction_invoice_adj_value;
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (invoice_id);
+CREATE INDEX ON invoice_adjustments_ext (invoice_id);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (invl_id);
+CREATE INDEX ON invoice_adjustments_ext (invl_id);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (invoice_line_value);
+CREATE INDEX ON invoice_adjustments_ext (invoice_line_value);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (inv_adjust_total_value);
+CREATE INDEX ON invoice_adjustments_ext (inv_adjust_total_value);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (invls_total);
+CREATE INDEX ON invoice_adjustments_ext (invls_total);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (inv_adj_prorate);
+CREATE INDEX ON invoice_adjustments_ext (inv_adj_prorate);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (inv_adj_relationToTotal);
+CREATE INDEX ON invoice_adjustments_ext (inv_adj_relationToTotal);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (ratio_of_inv_adj_per_invoice_line);
+CREATE INDEX ON invoice_adjustments_ext (ratio_of_inv_adj_per_invoice_line);
 
-CREATE INDEX ON folio_derived.invoice_adjustments_ext (inv_adj_total); 
+CREATE INDEX ON invoice_adjustments_ext (inv_adj_total); 
 

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_derived.locations_libraries;
+DROP TABLE IF EXISTS locations_libraries;
 
-CREATE TABLE folio_derived.locations_libraries AS
+CREATE TABLE locations_libraries AS
 SELECT
     cmp.id AS campus_id,
     cmp.name AS campus_name,
@@ -17,21 +17,21 @@ FROM
     LEFT JOIN folio_inventory.locinstitution__t AS inst ON loc.institution_id::uuid = inst.id
     LEFT JOIN folio_inventory.loclibrary__t AS lib ON loc.library_id::uuid = lib.id;
 
-CREATE INDEX ON folio_derived.locations_libraries (campus_id);
+CREATE INDEX ON locations_libraries (campus_id);
 
-CREATE INDEX ON folio_derived.locations_libraries (campus_name);
+CREATE INDEX ON locations_libraries (campus_name);
 
-CREATE INDEX ON folio_derived.locations_libraries (location_id);
+CREATE INDEX ON locations_libraries (location_id);
 
-CREATE INDEX ON folio_derived.locations_libraries (location_name);
+CREATE INDEX ON locations_libraries (location_name);
 
-CREATE INDEX ON folio_derived.locations_libraries (discovery_display_name);
+CREATE INDEX ON locations_libraries (discovery_display_name);
 
-CREATE INDEX ON folio_derived.locations_libraries (library_id);
+CREATE INDEX ON locations_libraries (library_id);
 
-CREATE INDEX ON folio_derived.locations_libraries (library_name);
+CREATE INDEX ON locations_libraries (library_name);
 
-CREATE INDEX ON folio_derived.locations_libraries (institution_id);
+CREATE INDEX ON locations_libraries (institution_id);
 
-CREATE INDEX ON folio_derived.locations_libraries (institution_name);
+CREATE INDEX ON locations_libraries (institution_name);
 
