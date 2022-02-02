@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_reporting.po_ongoing;
+DROP TABLE IF EXISTS po_ongoing;
 
 -- Create a local table for ongoing details in purchase orders.
-CREATE TABLE folio_reporting.po_ongoing AS
+CREATE TABLE po_ongoing AS
 SELECT
     po.id AS po_id,
     json_extract_path_text(data, 'ongoing', 'interval')::INT AS po_ongoing_interval,
@@ -12,15 +12,15 @@ SELECT
 FROM
     po_purchase_orders AS po;
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_id);
+CREATE INDEX ON po_ongoing (po_id);
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_ongoing_interval);
+CREATE INDEX ON po_ongoing (po_ongoing_interval);
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_ongoing_is_subscription);
+CREATE INDEX ON po_ongoing (po_ongoing_is_subscription);
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_ongoing_manual_renewal);
+CREATE INDEX ON po_ongoing (po_ongoing_manual_renewal);
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_ongoing_renewal_date);
+CREATE INDEX ON po_ongoing (po_ongoing_renewal_date);
 
-CREATE INDEX ON folio_reporting.po_ongoing (po_ongoing_review_period);
+CREATE INDEX ON po_ongoing (po_ongoing_review_period);
 

@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_reporting.item_effective_callno_components;
+DROP TABLE IF EXISTS item_effective_callno_components;
 
 --Create table for item effective call number components
-CREATE TABLE folio_reporting.item_effective_callno_components AS
+CREATE TABLE item_effective_callno_components AS
 
 WITH items AS (
 	SELECT
@@ -26,16 +26,16 @@ FROM
        items
        LEFT JOIN inventory_call_number_types ON items.effective_call_number_type_id = inventory_call_number_types.id;
       
-CREATE INDEX ON folio_reporting.item_effective_callno_components (item_id);
+CREATE INDEX ON item_effective_callno_components (item_id);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (item_hrid);
+CREATE INDEX ON item_effective_callno_components (item_hrid);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (effective_call_number_prefix);
+CREATE INDEX ON item_effective_callno_components (effective_call_number_prefix);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (effective_call_number);
+CREATE INDEX ON item_effective_callno_components (effective_call_number);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (effective_call_number_suffix);
+CREATE INDEX ON item_effective_callno_components (effective_call_number_suffix);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (effective_call_number_type_id);
+CREATE INDEX ON item_effective_callno_components (effective_call_number_type_id);
 
-CREATE INDEX ON folio_reporting.item_effective_callno_components (effective_call_number_type_name);
+CREATE INDEX ON item_effective_callno_components (effective_call_number_type_name);

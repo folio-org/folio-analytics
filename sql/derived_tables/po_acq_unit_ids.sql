@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_reporting.po_acq_unit_ids;
+DROP TABLE IF EXISTS po_acq_unit_ids;
 
 -- These fields in adjustments can be locally defined
-CREATE TABLE folio_reporting.po_acq_unit_ids AS
+CREATE TABLE po_acq_unit_ids AS
 WITH po_acq_unit AS (
     SELECT
         id AS po_id,
@@ -23,11 +23,11 @@ FROM
     po_acq_unit
     LEFT JOIN acquisitions_units ON acquisitions_units.id = po_acq_unit.po_acq_unit_id;
 
-CREATE INDEX ON folio_reporting.po_acq_unit_ids (po_id);
+CREATE INDEX ON po_acq_unit_ids (po_id);
 
-CREATE INDEX ON folio_reporting.po_acq_unit_ids (po_number);
+CREATE INDEX ON po_acq_unit_ids (po_number);
 
-CREATE INDEX ON folio_reporting.po_acq_unit_ids (po_acquisition_unit_id);
+CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_id);
 
-CREATE INDEX ON folio_reporting.po_acq_unit_ids (po_acquisition_unit_name);
+CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_name);
 

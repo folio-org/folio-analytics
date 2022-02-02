@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.instance_editions;
+DROP TABLE IF EXISTS instance_editions;
 
-CREATE TABLE folio_reporting.instance_editions AS
+CREATE TABLE instance_editions AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
@@ -11,11 +11,11 @@ FROM
     CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'editions'))
     WITH ORDINALITY AS editions (data);
 
-CREATE INDEX ON folio_reporting.instance_editions (instance_id);
+CREATE INDEX ON instance_editions (instance_id);
 
-CREATE INDEX ON folio_reporting.instance_editions (instance_hrid);
+CREATE INDEX ON instance_editions (instance_hrid);
 
-CREATE INDEX ON folio_reporting.instance_editions (edition);
+CREATE INDEX ON instance_editions (edition);
 
-CREATE INDEX ON folio_reporting.instance_editions (edition_ordinality);
+CREATE INDEX ON instance_editions (edition_ordinality);
 

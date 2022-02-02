@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS folio_reporting.holdings_statements;
+DROP TABLE IF EXISTS holdings_statements;
 
 -- This table contains holdings statements with their associated
 -- public/staff only notes; holdings statements for supplements and
 -- indexes are in separate tables. Here note is a public note.
-CREATE TABLE folio_reporting.holdings_statements AS
+CREATE TABLE holdings_statements AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
@@ -14,13 +14,13 @@ FROM
     inventory_holdings AS holdings
     CROSS JOIN json_array_elements(json_extract_path(data, 'holdingsStatements')) AS holdings_statement(data);
 
-CREATE INDEX ON folio_reporting.holdings_statements (holdings_id);
+CREATE INDEX ON holdings_statements (holdings_id);
 
-CREATE INDEX ON folio_reporting.holdings_statements (holdings_hrid);
+CREATE INDEX ON holdings_statements (holdings_hrid);
 
-CREATE INDEX ON folio_reporting.holdings_statements ("statement");
+CREATE INDEX ON holdings_statements ("statement");
 
-CREATE INDEX ON folio_reporting.holdings_statements (public_note);
+CREATE INDEX ON holdings_statements (public_note);
 
-CREATE INDEX ON folio_reporting.holdings_statements (staff_note);
+CREATE INDEX ON holdings_statements (staff_note);
 

@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS folio_reporting.finance_transaction_invoices;
+DROP TABLE IF EXISTS finance_transaction_invoices;
 
 -- Create a derived table that joins invoice and invoice_lines fields to transactions for expenditure reports in system currency
 --
@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS folio_reporting.finance_transaction_invoices;
 --	 finance_funds
 --   invoice_invoices
 --   invoice_lines
-CREATE TABLE folio_reporting.finance_transaction_invoices AS
+CREATE TABLE finance_transaction_invoices AS
 SELECT
     ft.id AS transaction_id,
     ft.amount AS transaction_amount,
@@ -56,63 +56,63 @@ WHERE
     OR transaction_type = 'Payment'
     OR transaction_type = 'Credit';
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_amount);
+CREATE INDEX ON finance_transaction_invoices (transaction_amount);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_currency);
+CREATE INDEX ON finance_transaction_invoices (transaction_currency);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_created_date);
+CREATE INDEX ON finance_transaction_invoices (transaction_created_date);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_updated_date);
+CREATE INDEX ON finance_transaction_invoices (transaction_updated_date);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_description);
+CREATE INDEX ON finance_transaction_invoices (transaction_description);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_expense_class_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_expense_class_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_fiscal_year_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_fiscal_year_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_fund_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_fund_name);
+CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_name);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_fund_code);
+CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_code);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fund_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fund_name);
+CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_name);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_to_fund_code);
+CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_code);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_id);
+CREATE INDEX ON finance_transaction_invoices (effective_fund_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_name);
+CREATE INDEX ON finance_transaction_invoices (effective_fund_name);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (effective_fund_code);
+CREATE INDEX ON finance_transaction_invoices (effective_fund_code);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_budget_id);
+CREATE INDEX ON finance_transaction_invoices (transaction_from_budget_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_from_budget_name);
+CREATE INDEX ON finance_transaction_invoices (transaction_from_budget_name);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_id);
+CREATE INDEX ON finance_transaction_invoices (invoice_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_line_id);
+CREATE INDEX ON finance_transaction_invoices (invoice_line_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (transaction_type);
+CREATE INDEX ON finance_transaction_invoices (transaction_type);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_date);
+CREATE INDEX ON finance_transaction_invoices (invoice_date);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_payment_date);
+CREATE INDEX ON finance_transaction_invoices (invoice_payment_date);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_exchange_rate);
+CREATE INDEX ON finance_transaction_invoices (invoice_exchange_rate);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_line_total);
+CREATE INDEX ON finance_transaction_invoices (invoice_line_total);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_currency);
+CREATE INDEX ON finance_transaction_invoices (invoice_currency);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (po_line_id);
+CREATE INDEX ON finance_transaction_invoices (po_line_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_vendor_id);
+CREATE INDEX ON finance_transaction_invoices (invoice_vendor_id);
 
-CREATE INDEX ON folio_reporting.finance_transaction_invoices (invoice_vendor_name);
+CREATE INDEX ON finance_transaction_invoices (invoice_vendor_name);
 

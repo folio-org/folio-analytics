@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_reporting.holdings_electronic_access;
+DROP TABLE IF EXISTS holdings_electronic_access;
 
 -- Create table for electronic access points for holdings records
-CREATE TABLE folio_reporting.holdings_electronic_access AS
+CREATE TABLE holdings_electronic_access AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
@@ -16,19 +16,19 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(data, 'electronicAccess')) AS electronic_access(data)
     LEFT JOIN inventory_electronic_access_relationships ON json_extract_path_text(electronic_access.data, 'relationshipId') = inventory_electronic_access_relationships.id;
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (holdings_id);
+CREATE INDEX ON holdings_electronic_access (holdings_id);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (holdings_hrid);
+CREATE INDEX ON holdings_electronic_access (holdings_hrid);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (link_text);
+CREATE INDEX ON holdings_electronic_access (link_text);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (materials_specification);
+CREATE INDEX ON holdings_electronic_access (materials_specification);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (public_note);
+CREATE INDEX ON holdings_electronic_access (public_note);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (relationship_id);
+CREATE INDEX ON holdings_electronic_access (relationship_id);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (relationship_name);
+CREATE INDEX ON holdings_electronic_access (relationship_name);
 
-CREATE INDEX ON folio_reporting.holdings_electronic_access (uri);
+CREATE INDEX ON holdings_electronic_access (uri);
 

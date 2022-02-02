@@ -1,6 +1,6 @@
 -- this query depends on locations_libraries, so that
 -- should be run before this one
-DROP TABLE IF EXISTS folio_reporting.loans_items;
+DROP TABLE IF EXISTS loans_items;
 
 -- Create a derived table that contains all items from loans and adds
 -- item, location, and other loan-related information
@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS folio_reporting.loans_items;
 -- Location names are from the items table.  They show location of the
 -- item right now vs. when item was checked out.
 --
-CREATE TABLE folio_reporting.loans_items AS
+CREATE TABLE loans_items AS
 SELECT
     cl.id AS loan_id,
     cl.item_id,
@@ -83,7 +83,7 @@ FROM
     LEFT JOIN user_groups AS ug ON json_extract_path_text(cl.data, 'patronGroupIdAtCheckout') = ug.id
     LEFT JOIN inventory_locations AS iel ON ii.effective_location_id = iel.id
     LEFT JOIN inventory_locations AS ipl ON json_extract_path_text(ii.data, 'permanentLocationId') = ipl.id
-    LEFT JOIN folio_reporting.locations_libraries AS ll ON ipl.id = ll.location_id
+    LEFT JOIN locations_libraries AS ll ON ipl.id = ll.location_id
     LEFT JOIN inventory_locations AS itl ON json_extract_path_text(ii.data, 'temporaryLocationId') = itl.id
     LEFT JOIN inventory_locations AS icl ON json_extract_path_text(cl.data, 'itemEffectiveLocationIdAtCheckOut') = icl.id
     LEFT JOIN inventory_service_points AS ispi ON json_extract_path_text(cl.data, 'checkinServicePointId') = ispi.id
@@ -94,108 +94,108 @@ FROM
     LEFT JOIN feesfines_overdue_fines_policies AS ffo ON json_extract_path_text(cl.data, 'overdueFinePolicyId') = ffo.id
     LEFT JOIN feesfines_lost_item_fees_policies AS ffl ON json_extract_path_text(cl.data, 'lostItemPolicyId') = ffl.id;
 
-CREATE INDEX ON folio_reporting.loans_items (item_status);
+CREATE INDEX ON loans_items (item_status);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_status);
+CREATE INDEX ON loans_items (loan_status);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_date);
+CREATE INDEX ON loans_items (loan_date);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_due_date);
+CREATE INDEX ON loans_items (loan_due_date);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_name);
+CREATE INDEX ON loans_items (current_item_effective_location_name);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_name);
+CREATE INDEX ON loans_items (current_item_permanent_location_name);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_name);
+CREATE INDEX ON loans_items (current_item_temporary_location_name);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_library_name);
+CREATE INDEX ON loans_items (current_item_permanent_location_library_name);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_campus_name);
+CREATE INDEX ON loans_items (current_item_permanent_location_campus_name);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_institution_name);
+CREATE INDEX ON loans_items (current_item_permanent_location_institution_name);
 
-CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_name);
+CREATE INDEX ON loans_items (checkin_service_point_name);
 
-CREATE INDEX ON folio_reporting.loans_items (checkout_service_point_name);
+CREATE INDEX ON loans_items (checkout_service_point_name);
 
-CREATE INDEX ON folio_reporting.loans_items (in_transit_destination_service_point_name);
+CREATE INDEX ON loans_items (in_transit_destination_service_point_name);
 
-CREATE INDEX ON folio_reporting.loans_items (patron_group_name);
+CREATE INDEX ON loans_items (patron_group_name);
 
-CREATE INDEX ON folio_reporting.loans_items (material_type_name);
+CREATE INDEX ON loans_items (material_type_name);
 
-CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_name);
+CREATE INDEX ON loans_items (permanent_loan_type_name);
 
-CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_name);
+CREATE INDEX ON loans_items (temporary_loan_type_name);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_id);
+CREATE INDEX ON loans_items (loan_id);
 
-CREATE INDEX ON folio_reporting.loans_items (item_id);
+CREATE INDEX ON loans_items (item_id);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_return_date);
+CREATE INDEX ON loans_items (loan_return_date);
 
-CREATE INDEX ON folio_reporting.loans_items (system_return_date);
+CREATE INDEX ON loans_items (system_return_date);
 
-CREATE INDEX ON folio_reporting.loans_items (checkin_service_point_id);
+CREATE INDEX ON loans_items (checkin_service_point_id);
 
-CREATE INDEX ON folio_reporting.loans_items (checkout_service_point_id);
+CREATE INDEX ON loans_items (checkout_service_point_id);
 
-CREATE INDEX ON folio_reporting.loans_items (item_effective_location_id_at_check_out);
+CREATE INDEX ON loans_items (item_effective_location_id_at_check_out);
 
-CREATE INDEX ON folio_reporting.loans_items (item_effective_location_name_at_check_out);
+CREATE INDEX ON loans_items (item_effective_location_name_at_check_out);
 
-CREATE INDEX ON folio_reporting.loans_items (in_transit_destination_service_point_id);
+CREATE INDEX ON loans_items (in_transit_destination_service_point_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_effective_location_id);
+CREATE INDEX ON loans_items (current_item_effective_location_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_temporary_location_id);
+CREATE INDEX ON loans_items (current_item_temporary_location_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_id);
+CREATE INDEX ON loans_items (current_item_permanent_location_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_library_id);
+CREATE INDEX ON loans_items (current_item_permanent_location_library_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_campus_id);
+CREATE INDEX ON loans_items (current_item_permanent_location_campus_id);
 
-CREATE INDEX ON folio_reporting.loans_items (current_item_permanent_location_institution_id);
+CREATE INDEX ON loans_items (current_item_permanent_location_institution_id);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_policy_id);
+CREATE INDEX ON loans_items (loan_policy_id);
 
-CREATE INDEX ON folio_reporting.loans_items (loan_policy_name);
+CREATE INDEX ON loans_items (loan_policy_name);
 
-CREATE INDEX ON folio_reporting.loans_items (lost_item_policy_id);
+CREATE INDEX ON loans_items (lost_item_policy_id);
 
-CREATE INDEX ON folio_reporting.loans_items (lost_item_policy_name);
+CREATE INDEX ON loans_items (lost_item_policy_name);
 
-CREATE INDEX ON folio_reporting.loans_items (overdue_fine_policy_id);
+CREATE INDEX ON loans_items (overdue_fine_policy_id);
 
-CREATE INDEX ON folio_reporting.loans_items (overdue_fine_policy_name);
+CREATE INDEX ON loans_items (overdue_fine_policy_name);
 
-CREATE INDEX ON folio_reporting.loans_items (patron_group_id_at_checkout);
+CREATE INDEX ON loans_items (patron_group_id_at_checkout);
 
-CREATE INDEX ON folio_reporting.loans_items (user_id);
+CREATE INDEX ON loans_items (user_id);
 
-CREATE INDEX ON folio_reporting.loans_items (proxy_user_id);
+CREATE INDEX ON loans_items (proxy_user_id);
 
-CREATE INDEX ON folio_reporting.loans_items (barcode);
+CREATE INDEX ON loans_items (barcode);
 
-CREATE INDEX ON folio_reporting.loans_items (chronology);
+CREATE INDEX ON loans_items (chronology);
 
-CREATE INDEX ON folio_reporting.loans_items (copy_number);
+CREATE INDEX ON loans_items (copy_number);
 
-CREATE INDEX ON folio_reporting.loans_items (enumeration);
+CREATE INDEX ON loans_items (enumeration);
 
-CREATE INDEX ON folio_reporting.loans_items (holdings_record_id);
+CREATE INDEX ON loans_items (holdings_record_id);
 
-CREATE INDEX ON folio_reporting.loans_items (hrid);
+CREATE INDEX ON loans_items (hrid);
 
-CREATE INDEX ON folio_reporting.loans_items (item_level_call_number);
+CREATE INDEX ON loans_items (item_level_call_number);
 
-CREATE INDEX ON folio_reporting.loans_items (material_type_id);
+CREATE INDEX ON loans_items (material_type_id);
 
-CREATE INDEX ON folio_reporting.loans_items (number_of_pieces);
+CREATE INDEX ON loans_items (number_of_pieces);
 
-CREATE INDEX ON folio_reporting.loans_items (permanent_loan_type_id);
+CREATE INDEX ON loans_items (permanent_loan_type_id);
 
-CREATE INDEX ON folio_reporting.loans_items (temporary_loan_type_id);
+CREATE INDEX ON loans_items (temporary_loan_type_id);
 
-CREATE INDEX ON folio_reporting.loans_items (renewal_count);
+CREATE INDEX ON loans_items (renewal_count);

@@ -2,9 +2,9 @@
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 
  * or to validate the results. */
-DROP TABLE IF EXISTS folio_reporting.loans_renewal_dates;
+DROP TABLE IF EXISTS loans_renewal_dates;
 
-CREATE TABLE folio_reporting.loans_renewal_dates AS
+CREATE TABLE loans_renewal_dates AS
     SELECT
         id AS loan_history_id,
         created_date AS loan_action_date,
@@ -21,16 +21,16 @@ CREATE TABLE folio_reporting.loans_renewal_dates AS
         loan_action_date
 ;
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_history_id);
+CREATE INDEX ON loans_renewal_dates (loan_history_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_action_date);
+CREATE INDEX ON loans_renewal_dates (loan_action_date);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_id);
+CREATE INDEX ON loans_renewal_dates (loan_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (item_id);
+CREATE INDEX ON loans_renewal_dates (item_id);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_action);
+CREATE INDEX ON loans_renewal_dates (loan_action);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_renewal_count);
+CREATE INDEX ON loans_renewal_dates (loan_renewal_count);
 
-CREATE INDEX ON folio_reporting.loans_renewal_dates (loan_status);
+CREATE INDEX ON loans_renewal_dates (loan_status);
