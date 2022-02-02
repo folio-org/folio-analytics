@@ -73,7 +73,7 @@ SELECT
     items.volume,
     items.in_transit_destination_service_point_id,
     item_in_transit_destination_service_point.name AS in_transit_destination_service_point_name,
-    items.item_identifier AS item_identifier,
+    items.item_identifier AS identifier,
     items.item_level_call_number AS call_number,
     items.item_level_call_number_type_id AS call_number_type_id,
     item_call_number_type.name AS call_number_type_name,
