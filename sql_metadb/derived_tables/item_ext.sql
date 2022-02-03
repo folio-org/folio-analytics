@@ -59,8 +59,8 @@ WITH items AS (
         i.holdingsrecordid AS holdings_record_id,
         jsonb_extract_path_text(i."jsonb", 'discoverySuppress')::boolean AS discovery_suppress
     FROM
-        item AS i
-        LEFT JOIN item__t AS it ON i.id = it.id
+        folio_inventory.item AS i
+        LEFT JOIN folio_inventory.item__t AS it ON i.id = it.id
 )
 SELECT
     items.id AS item_id,
@@ -108,16 +108,16 @@ SELECT
     items.updated_date
 FROM
     items
-    LEFT JOIN service_point__t AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
-    LEFT JOIN material_type__t AS item_material_type ON items.material_type_id = item_material_type.id
-    LEFT JOIN loan_type__t AS item_permanent_loan_type ON items.permanent_loan_type_id = item_permanent_loan_type.id
-    LEFT JOIN loan_type__t AS item_temporary_loan_type ON items.temporary_loan_type_id = item_temporary_loan_type.id
-    LEFT JOIN location__t AS item_permanent_location ON items.permanent_location_id = item_permanent_location.id
-    LEFT JOIN location__t AS item_temporary_location ON items.temporary_location_id = item_temporary_location.id
-    LEFT JOIN location__t AS item_effective_location ON items.effective_location_id = item_effective_location.id
-    LEFT JOIN item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
-    LEFT JOIN call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
-    LEFT JOIN call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id
+    LEFT JOIN folio_inventory.service_point__t AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
+    LEFT JOIN folio_inventory.material_type__t AS item_material_type ON items.material_type_id = item_material_type.id
+    LEFT JOIN folio_inventory.loan_type__t AS item_permanent_loan_type ON items.permanent_loan_type_id = item_permanent_loan_type.id
+    LEFT JOIN folio_inventory.loan_type__t AS item_temporary_loan_type ON items.temporary_loan_type_id = item_temporary_loan_type.id
+    LEFT JOIN folio_inventory.location__t AS item_permanent_location ON items.permanent_location_id = item_permanent_location.id
+    LEFT JOIN folio_inventory.location__t AS item_temporary_location ON items.temporary_location_id = item_temporary_location.id
+    LEFT JOIN folio_inventory.location__t AS item_effective_location ON items.effective_location_id = item_effective_location.id
+    LEFT JOIN folio_inventory.item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
+    LEFT JOIN folio_inventory.call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
+    LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id
 ;
 
 CREATE INDEX ON item_ext (item_id);
