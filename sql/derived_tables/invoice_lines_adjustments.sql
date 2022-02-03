@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS folio_reporting.invoice_lines_adjustments;
+DROP TABLE IF EXISTS invoice_lines_adjustments;
 
 -- This table includes the extracted adjustments data on the invoice
 -- line level.  The field description can be locally defined by the
 -- institutions.  Examples are "shipping", "VAT" (MwSt), "Service
 -- Charge".
-CREATE TABLE folio_reporting.invoice_lines_adjustments AS
+CREATE TABLE invoice_lines_adjustments AS
 WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
@@ -36,19 +36,21 @@ WHERE
     OR adjustment_relationToTotal = 'Included'
     OR adjustment_relationToTotal = 'Separate from';
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (invoice_line_id);
+CREATE INDEX ON invoice_lines_adjustments (invoice_line_id);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_description);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_description);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_fund_distributions);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_fund_distributions);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_prorate);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_prorate);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_relationToTotal);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_relationToTotal);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_type);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_type);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_value);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
 
-CREATE INDEX ON folio_reporting.invoice_lines_adjustments (adjustment_adjustments_total);
+CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
+
+VACUUM ANALYZE invoice_lines_adjustments;
 

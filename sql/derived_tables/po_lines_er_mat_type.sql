@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.po_lines_er_mat_type;
+DROP TABLE IF EXISTS po_lines_er_mat_type;
 
-CREATE TABLE folio_reporting.po_lines_er_mat_type AS
+CREATE TABLE po_lines_er_mat_type AS
 /* Subquery to extract nested JSON data */
 WITH temp_pol_er_mat_type AS (
     SELECT
@@ -17,9 +17,11 @@ WITH temp_pol_er_mat_type AS (
         temp_pol_er_mat_type AS tpemt
     LEFT JOIN inventory_material_types AS imt ON imt.id = tpemt.pol_er_mat_type;
 
-CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_id);
+CREATE INDEX ON po_lines_er_mat_type (pol_id);
 
-CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_er_mat_type_id);
+CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_id);
 
-CREATE INDEX ON folio_reporting.po_lines_er_mat_type (pol_er_mat_type_name);
+CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_name);
 
+
+VACUUM ANALYZE  po_lines_er_mat_type;

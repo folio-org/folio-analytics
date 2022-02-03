@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.po_organization;
+DROP TABLE IF EXISTS po_organization;
 
-CREATE TABLE folio_reporting.po_organization AS
+CREATE TABLE po_organization AS
 SELECT
     json_extract_path_text(ppo.data, 'poNumber') AS po_number,
     json_extract_path_text(ppo.data, 'vendor') AS vendor_id,
@@ -15,19 +15,21 @@ FROM
     LEFT JOIN organization_organizations AS oo ON json_extract_path_text(ppo.data, 'vendor') = oo.id
     LEFT JOIN organization_contacts AS oc ON oo.id = oc.id;
 
-CREATE INDEX ON folio_reporting.po_organization (po_number);
+CREATE INDEX ON po_organization (po_number);
 
-CREATE INDEX ON folio_reporting.po_organization (vendor_id);
+CREATE INDEX ON po_organization (vendor_id);
 
-CREATE INDEX ON folio_reporting.po_organization (org_id);
+CREATE INDEX ON po_organization (org_id);
 
-CREATE INDEX ON folio_reporting.po_organization (org_code);
+CREATE INDEX ON po_organization (org_code);
 
-CREATE INDEX ON folio_reporting.po_organization (org_name);
+CREATE INDEX ON po_organization (org_name);
 
-CREATE INDEX ON folio_reporting.po_organization (org_description);
+CREATE INDEX ON po_organization (org_description);
 
-CREATE INDEX ON folio_reporting.po_organization (contact_first_name);
+CREATE INDEX ON po_organization (contact_first_name);
 
-CREATE INDEX ON folio_reporting.po_organization (contact_last_name);
+CREATE INDEX ON po_organization (contact_last_name);
 
+
+VACUUM ANALYZE  po_organization;

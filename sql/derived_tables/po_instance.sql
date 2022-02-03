@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.po_instance;
+DROP TABLE IF EXISTS po_instance;
 
-CREATE TABLE folio_reporting.po_instance AS
+CREATE TABLE po_instance AS
 SELECT
     json_extract_path_text(po_purchase_orders.data, 'poNumber') AS po_number,
     organization_organizations.code AS vendor_code,
@@ -30,32 +30,34 @@ FROM
     LEFT JOIN configuration_entries ON json_extract_path_text(po_purchase_orders.data, 'billTo') = configuration_entries.id
     LEFT JOIN user_users ON json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') = user_users.id;
 
-CREATE INDEX ON folio_reporting.po_instance (po_number);
+CREATE INDEX ON po_instance (po_number);
 
-CREATE INDEX ON folio_reporting.po_instance (vendor_code);
+CREATE INDEX ON po_instance (vendor_code);
 
-CREATE INDEX ON folio_reporting.po_instance (status_approved);
+CREATE INDEX ON po_instance (status_approved);
 
-CREATE INDEX ON folio_reporting.po_instance (created_date);
+CREATE INDEX ON po_instance (created_date);
 
-CREATE INDEX ON folio_reporting.po_instance (created_by);
+CREATE INDEX ON po_instance (created_by);
 
-CREATE INDEX ON folio_reporting.po_instance (created_location);
+CREATE INDEX ON po_instance (created_location);
 
-CREATE INDEX ON folio_reporting.po_instance (pol_instance_id);
+CREATE INDEX ON po_instance (pol_instance_id);
 
-CREATE INDEX ON folio_reporting.po_instance (title);
+CREATE INDEX ON po_instance (title);
 
-CREATE INDEX ON folio_reporting.po_instance (publication_date);
+CREATE INDEX ON po_instance (publication_date);
 
-CREATE INDEX ON folio_reporting.po_instance (publisher);
+CREATE INDEX ON po_instance (publisher);
 
-CREATE INDEX ON folio_reporting.po_instance (requester);
+CREATE INDEX ON po_instance (requester);
 
-CREATE INDEX ON folio_reporting.po_instance (rush);
+CREATE INDEX ON po_instance (rush);
 
-CREATE INDEX ON folio_reporting.po_instance (selector);
+CREATE INDEX ON po_instance (selector);
 
-CREATE INDEX ON folio_reporting.po_instance (pol_location_id);
+CREATE INDEX ON po_instance (pol_location_id);
 
-CREATE INDEX ON folio_reporting.po_instance (pol_location_name);
+CREATE INDEX ON po_instance (pol_location_name);
+
+VACUUM ANALYZE  po_instance;
