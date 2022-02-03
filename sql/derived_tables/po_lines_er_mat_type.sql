@@ -23,3 +23,5 @@ CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_id);
 
 CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_name);
 
+
+VACUUM ANALYZE  po_lines_er_mat_type;

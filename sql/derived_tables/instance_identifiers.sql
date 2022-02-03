@@ -21,3 +21,6 @@ CREATE INDEX ON instance_identifiers (identifier_type_id);
 CREATE INDEX ON instance_identifiers (identifier_type_name);
 
 CREATE INDEX ON instance_identifiers (identifier);
+
+VACUUM ANALYZE instance_identifiers;
+

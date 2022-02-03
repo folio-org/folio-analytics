@@ -38,3 +38,5 @@ CREATE INDEX ON users_departments_unpacked (department_code);
 
 CREATE INDEX ON users_departments_unpacked (department_usage_number);
 
+
+VACUUM ANALYZE  users_departments_unpacked;

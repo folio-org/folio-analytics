@@ -36,3 +36,5 @@ CREATE INDEX ON po_lines_locations (pol_loc_quant_phys);
 
 CREATE INDEX ON po_lines_locations (location_name);
 
+
+VACUUM ANALYZE  po_lines_locations;

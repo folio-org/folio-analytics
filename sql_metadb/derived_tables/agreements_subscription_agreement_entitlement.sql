@@ -62,3 +62,4 @@ CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_refer
 
 CREATE INDEX ON agreements_subscription_agreement_entitlement (po_line_id);
 
+VACUUM ANALYZE agreements_subscription_agreement_entitlement;

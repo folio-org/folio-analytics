@@ -36,3 +36,4 @@ CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_note);
 
 CREATE INDEX ON agreements_subscription_agreement_org_ext (org_orgs_uuid);
 
+VACUUM ANALYZE agreements_subscription_agreement_org_ext;

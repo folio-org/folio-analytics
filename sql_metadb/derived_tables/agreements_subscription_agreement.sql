@@ -69,3 +69,4 @@ CREATE INDEX ON agreements_subscription_agreement (sa_reason_for_closure_label);
 
 CREATE INDEX ON agreements_subscription_agreement (sa_custom_properties_id);
 
+VACUUM ANALYZE agreements_subscription_agreement;

@@ -50,3 +50,5 @@ CREATE INDEX ON agreements_custom_property (custom_property_integer_value);
 CREATE INDEX ON agreements_custom_property (custom_property_text_id);
 
 CREATE INDEX ON agreements_custom_property (custom_property_text_value);
+
+VACUUM ANALYZE agreements_custom_property;

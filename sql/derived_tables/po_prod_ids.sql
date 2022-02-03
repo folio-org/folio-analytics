@@ -26,3 +26,5 @@ CREATE INDEX ON po_prod_ids (prod_id);
 
 CREATE INDEX ON po_prod_ids (prod_id_type_name);
 
+
+VACUUM ANALYZE  po_prod_ids;

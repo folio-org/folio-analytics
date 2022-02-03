@@ -59,3 +59,5 @@ CREATE INDEX ON po_instance (selector);
 CREATE INDEX ON po_instance (pol_location_id);
 
 CREATE INDEX ON po_instance (pol_location_name);
+
+VACUUM ANALYZE  po_instance;

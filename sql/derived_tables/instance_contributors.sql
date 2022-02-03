@@ -36,3 +36,5 @@ CREATE INDEX ON instance_contributors (contributor_name);
 
 CREATE INDEX ON instance_contributors (contributor_primary);
 
+VACUUM ANALYZE instance_contributors;
+

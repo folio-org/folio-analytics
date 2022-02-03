@@ -46,3 +46,4 @@ CREATE INDEX ON licenses_license_ext (license_org_role);
 
 CREATE INDEX ON licenses_license_ext (license_org_uuid);
 
+VACUUM ANALYZE licenses_license_ext;

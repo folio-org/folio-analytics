@@ -39,3 +39,5 @@ CREATE INDEX ON instance_statistical_codes (statistical_code_type_id);
 
 CREATE INDEX ON instance_statistical_codes (statistical_code_type_name);
 
+VACUUM ANALYZE instance_statistical_codes;
+

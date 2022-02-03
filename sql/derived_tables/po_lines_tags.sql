@@ -17,3 +17,5 @@ CREATE INDEX ON po_lines_tags (pol_tag);
 
 CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
 
+
+VACUUM ANALYZE  po_lines_tags;

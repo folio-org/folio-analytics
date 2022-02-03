@@ -23,3 +23,4 @@ CREATE INDEX ON instance_relationships_ext (relationship_sub_instance_id);
 
 CREATE INDEX ON instance_relationships_ext (relationship_super_instance_id);
 
+VACUUM ANALYZE instance_relationships_ext;

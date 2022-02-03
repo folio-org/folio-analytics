@@ -23,3 +23,5 @@ CREATE INDEX ON po_lines_phys_mat_type (pol_phys_mat_type_id);
 
 CREATE INDEX ON po_lines_phys_mat_type (pol_mat_type_name);
 
+
+VACUUM ANALYZE  po_lines_phys_mat_type;

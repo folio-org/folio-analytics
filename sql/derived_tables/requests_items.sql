@@ -127,3 +127,5 @@ CREATE INDEX ON requests_items (item_temporary_loan_type_id);
 
 CREATE INDEX ON requests_items (item_temporary_loan_type_name);
 
+
+VACUUM ANALYZE  requests_items;

@@ -81,3 +81,4 @@ CREATE INDEX ON invoice_adjustments_ext (ratio_of_inv_adj_per_invoice_line);
 
 CREATE INDEX ON invoice_adjustments_ext (inv_adj_total); 
 
+VACUUM ANALYZE invoice_adjustments_ext;

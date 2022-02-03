@@ -38,3 +38,5 @@ CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
 
 CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
 
+VACUUM ANALYZE holdings_statistical_codes;
+

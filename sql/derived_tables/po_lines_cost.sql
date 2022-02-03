@@ -36,3 +36,5 @@ CREATE INDEX ON po_lines_cost (po_lines_discount_type);
 
 CREATE INDEX ON po_lines_cost (po_lines_estimated_price);
 
+
+VACUUM ANALYZE  po_lines_cost;

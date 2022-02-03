@@ -19,3 +19,5 @@ CREATE INDEX ON instance_editions (edition);
 
 CREATE INDEX ON instance_editions (edition_ordinality);
 
+VACUUM ANALYZE instance_editions;
+

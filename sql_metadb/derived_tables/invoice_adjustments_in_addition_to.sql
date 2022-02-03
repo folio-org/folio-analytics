@@ -39,3 +39,4 @@ CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_type);
 
 CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_value);
 
+VACUUM ANALYZE invoice_adjustments_in_addition_to;

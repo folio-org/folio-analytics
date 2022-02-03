@@ -76,3 +76,5 @@ CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_type_name);
 
 CREATE INDEX ON invoice_voucher_lines_fund_distributions (invoice_voucher_lines_external_account_number);
 
+VACUUM ANALYZE invoice_voucher_lines_fund_distributions;
+

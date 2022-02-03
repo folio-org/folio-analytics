@@ -31,3 +31,5 @@ CREATE INDEX ON po_organization (contact_first_name);
 
 CREATE INDEX ON po_organization (contact_last_name);
 
+
+VACUUM ANALYZE  po_organization;

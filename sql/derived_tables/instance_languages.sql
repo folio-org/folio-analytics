@@ -19,3 +19,5 @@ CREATE INDEX ON instance_languages ("language");
 
 CREATE INDEX ON instance_languages (language_ordinality);
 
+VACUUM ANALYZE instance_languages;
+

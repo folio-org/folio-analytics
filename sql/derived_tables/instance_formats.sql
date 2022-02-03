@@ -38,3 +38,5 @@ CREATE INDEX ON instance_formats (format_name);
 
 CREATE INDEX ON instance_formats (format_source);
 
+VACUUM ANALYZE instance_formats;
+

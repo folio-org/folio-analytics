@@ -35,3 +35,6 @@ CREATE INDEX ON locations_libraries (institution_id);
 
 CREATE INDEX ON locations_libraries (institution_name);
 
+
+VACUUM ANALYZE  locations_libraries;
+

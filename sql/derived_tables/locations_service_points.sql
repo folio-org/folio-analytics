@@ -43,3 +43,6 @@ CREATE INDEX ON locations_service_points (campus_name);
 CREATE INDEX ON locations_service_points (institution_id);  
 
 CREATE INDEX ON locations_service_points (institution_name);
+
+VACUUM ANALYZE  locations_service_points;
+

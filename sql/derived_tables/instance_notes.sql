@@ -27,3 +27,5 @@ CREATE INDEX ON instance_notes (note_type_name);
 
 CREATE INDEX ON instance_notes (staff_only);
 
+VACUUM ANALYZE instance_notes;
+

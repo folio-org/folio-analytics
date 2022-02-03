@@ -32,3 +32,5 @@ CREATE INDEX ON holdings_electronic_access (relationship_name);
 
 CREATE INDEX ON holdings_electronic_access (uri);
 
+VACUUM ANALYZE holdings_electronic_access;
+

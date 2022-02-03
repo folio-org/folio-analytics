@@ -29,3 +29,5 @@ CREATE INDEX ON holdings_notes (note);
 
 CREATE INDEX ON holdings_notes (staff_only);
 
+VACUUM ANALYZE holdings_notes;
+

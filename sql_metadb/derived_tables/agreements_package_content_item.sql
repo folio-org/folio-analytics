@@ -252,3 +252,4 @@ CREATE INDEX ON agreements_package_content_item (res_publication_type_label);
 
 CREATE INDEX ON agreements_package_content_item (res_publication_type_category);
 
+VACUUM ANALYZE agreements_package_content_item;

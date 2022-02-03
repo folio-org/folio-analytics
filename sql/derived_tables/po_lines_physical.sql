@@ -57,3 +57,5 @@ CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
 
 CREATE INDEX ON po_lines_physical (pol_phys_volumes_description);
 
+
+VACUUM ANALYZE  po_lines_physical;

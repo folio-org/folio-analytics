@@ -41,3 +41,5 @@ CREATE INDEX ON loans_renewal_dates (loan_action);
 CREATE INDEX ON loans_renewal_dates (loan_renewal_count);
 
 CREATE INDEX ON loans_renewal_dates (loan_status);
+
+VACUUM ANALYZE loans_renewal_dates;

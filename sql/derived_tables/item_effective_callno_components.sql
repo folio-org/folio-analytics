@@ -39,3 +39,6 @@ CREATE INDEX ON item_effective_callno_components (effective_call_number_suffix);
 CREATE INDEX ON item_effective_callno_components (effective_call_number_type_id);
 
 CREATE INDEX ON item_effective_callno_components (effective_call_number_type_name);
+
+VACUUM ANALYZE item_effective_callno_components;
+

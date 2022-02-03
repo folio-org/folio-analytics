@@ -75,3 +75,5 @@ CREATE INDEX ON po_lines_eresource (pol_user_limit);
 
 CREATE INDEX ON po_lines_eresource (pol_resource_url);
 
+
+VACUUM ANALYZE  po_lines_eresource;

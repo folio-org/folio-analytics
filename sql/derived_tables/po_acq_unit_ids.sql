@@ -31,3 +31,6 @@ CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_id);
 
 CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_name);
 
+
+VACUUM ANALYZE  po_acq_unit_ids;
+

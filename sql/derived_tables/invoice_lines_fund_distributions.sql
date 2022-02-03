@@ -54,3 +54,5 @@ CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_sub_total);
 
 CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_total);
 
+VACUUM ANALYZE invoice_lines_fund_distributions;
+

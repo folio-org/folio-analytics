@@ -22,3 +22,5 @@ CREATE INDEX ON instance_publication (place);
 
 CREATE INDEX ON instance_publication (publisher);
 
+VACUUM ANALYZE instance_publication;
+

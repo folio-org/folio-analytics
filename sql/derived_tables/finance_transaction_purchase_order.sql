@@ -89,3 +89,5 @@ CREATE INDEX ON finance_transaction_purchase_order (po_vendor_id);
 
 CREATE INDEX ON finance_transaction_purchase_order (po_vendor_name);
 
+VACUUM ANALYZE finance_transaction_purchase_order;
+

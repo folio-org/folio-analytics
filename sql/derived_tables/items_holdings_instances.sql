@@ -104,3 +104,5 @@ CREATE INDEX ON items_holdings_instances (loan_type_id);
 
 CREATE INDEX ON items_holdings_instances (loan_type_name);
 
+VACUUM ANALYZE items_holdings_instances;
+

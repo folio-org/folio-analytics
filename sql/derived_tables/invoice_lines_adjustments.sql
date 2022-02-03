@@ -52,3 +52,5 @@ CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
 
 CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
 
+VACUUM ANALYZE invoice_lines_adjustments;
+

@@ -116,3 +116,5 @@ CREATE INDEX ON finance_transaction_invoices (invoice_vendor_id);
 
 CREATE INDEX ON finance_transaction_invoices (invoice_vendor_name);
 
+VACUUM ANALYZE finance_transaction_invoices;
+

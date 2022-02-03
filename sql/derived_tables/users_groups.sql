@@ -96,3 +96,5 @@ CREATE INDEX ON users_groups (user_tags);
 
 CREATE INDEX ON users_groups (user_custom_fields);
 
+
+VACUUM ANALYZE  users_groups;

@@ -30,3 +30,5 @@ CREATE INDEX ON instance_nature_content (nature_of_content_term_name);
 
 CREATE INDEX ON instance_nature_content (nature_of_content_term_source);
 
+VACUUM ANALYZE instance_nature_content;
+
