@@ -205,3 +205,5 @@ CREATE INDEX ON item_ext (created_date);
 CREATE INDEX ON item_ext (updated_by_user_id);
 
 CREATE INDEX ON item_ext (updated_date);
+
+VACUUM ANALYZE item_ext;
