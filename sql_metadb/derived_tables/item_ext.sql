@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS folio_derived.item_ext;
+DROP TABLE IF EXISTS item_ext;
 
 /*
  * Create an extended items table that includes the name for in
@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS folio_derived.item_ext;
  *    folio_inventory.item_damaged_status__t
  *    folio_inventory.call_number_type__t
  */
-CREATE TABLE folio_derived.item_ext AS
+CREATE TABLE item_ext AS
 WITH items AS (
     SELECT
         i.id,
@@ -59,8 +59,8 @@ WITH items AS (
         i.holdingsrecordid AS holdings_record_id,
         jsonb_extract_path_text(i."jsonb", 'discoverySuppress')::boolean AS discovery_suppress
     FROM
-        folio_inventory.item AS i
-        LEFT JOIN folio_inventory.item__t AS it ON i.id = it.id
+        item AS i
+        LEFT JOIN item__t AS it ON i.id = it.id
 )
 SELECT
     items.id AS item_id,
@@ -108,100 +108,100 @@ SELECT
     items.updated_date
 FROM
     items
-    LEFT JOIN folio_inventory.service_point__t AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
-    LEFT JOIN folio_inventory.material_type__t AS item_material_type ON items.material_type_id = item_material_type.id
-    LEFT JOIN folio_inventory.loan_type__t AS item_permanent_loan_type ON items.permanent_loan_type_id = item_permanent_loan_type.id
-    LEFT JOIN folio_inventory.loan_type__t AS item_temporary_loan_type ON items.temporary_loan_type_id = item_temporary_loan_type.id
-    LEFT JOIN folio_inventory.location__t AS item_permanent_location ON items.permanent_location_id = item_permanent_location.id
-    LEFT JOIN folio_inventory.location__t AS item_temporary_location ON items.temporary_location_id = item_temporary_location.id
-    LEFT JOIN folio_inventory.location__t AS item_effective_location ON items.effective_location_id = item_effective_location.id
-    LEFT JOIN folio_inventory.item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
-    LEFT JOIN folio_inventory.call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
-    LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id
+    LEFT JOIN service_point__t AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
+    LEFT JOIN material_type__t AS item_material_type ON items.material_type_id = item_material_type.id
+    LEFT JOIN loan_type__t AS item_permanent_loan_type ON items.permanent_loan_type_id = item_permanent_loan_type.id
+    LEFT JOIN loan_type__t AS item_temporary_loan_type ON items.temporary_loan_type_id = item_temporary_loan_type.id
+    LEFT JOIN location__t AS item_permanent_location ON items.permanent_location_id = item_permanent_location.id
+    LEFT JOIN location__t AS item_temporary_location ON items.temporary_location_id = item_temporary_location.id
+    LEFT JOIN location__t AS item_effective_location ON items.effective_location_id = item_effective_location.id
+    LEFT JOIN item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
+    LEFT JOIN call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
+    LEFT JOIN call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id
 ;
 
-CREATE INDEX ON folio_derived.item_ext (item_id);
+CREATE INDEX ON item_ext (item_id);
 
-CREATE INDEX ON folio_derived.item_ext (item_hrid);
+CREATE INDEX ON item_ext (item_hrid);
 
-CREATE INDEX ON folio_derived.item_ext (accession_number);
+CREATE INDEX ON item_ext (accession_number);
 
-CREATE INDEX ON folio_derived.item_ext (barcode);
+CREATE INDEX ON item_ext (barcode);
 
-CREATE INDEX ON folio_derived.item_ext (chronology);
+CREATE INDEX ON item_ext (chronology);
 
-CREATE INDEX ON folio_derived.item_ext (copy_number);
+CREATE INDEX ON item_ext (copy_number);
 
-CREATE INDEX ON folio_derived.item_ext (enumeration);
+CREATE INDEX ON item_ext (enumeration);
 
-CREATE INDEX ON folio_derived.item_ext (volume);
+CREATE INDEX ON item_ext (volume);
 
-CREATE INDEX ON folio_derived.item_ext (in_transit_destination_service_point_id);
+CREATE INDEX ON item_ext (in_transit_destination_service_point_id);
 
-CREATE INDEX ON folio_derived.item_ext (in_transit_destination_service_point_name);
+CREATE INDEX ON item_ext (in_transit_destination_service_point_name);
 
-CREATE INDEX ON folio_derived.item_ext (identifier);
+CREATE INDEX ON item_ext (identifier);
 
-CREATE INDEX ON folio_derived.item_ext (call_number);
+CREATE INDEX ON item_ext (call_number);
 
-CREATE INDEX ON folio_derived.item_ext (call_number_type_id);
+CREATE INDEX ON item_ext (call_number_type_id);
 
-CREATE INDEX ON folio_derived.item_ext (call_number_type_name);
+CREATE INDEX ON item_ext (call_number_type_name);
 
-CREATE INDEX ON folio_derived.item_ext (effective_call_number_prefix);
+CREATE INDEX ON item_ext (effective_call_number_prefix);
 
-CREATE INDEX ON folio_derived.item_ext (effective_call_number);
+CREATE INDEX ON item_ext (effective_call_number);
 
-CREATE INDEX ON folio_derived.item_ext (effective_call_number_suffix);
+CREATE INDEX ON item_ext (effective_call_number_suffix);
 
-CREATE INDEX ON folio_derived.item_ext (effective_call_number_type_id);
+CREATE INDEX ON item_ext (effective_call_number_type_id);
 
-CREATE INDEX ON folio_derived.item_ext (effective_call_number_type_name);
+CREATE INDEX ON item_ext (effective_call_number_type_name);
 
-CREATE INDEX ON folio_derived.item_ext (damaged_status_id);
+CREATE INDEX ON item_ext (damaged_status_id);
 
-CREATE INDEX ON folio_derived.item_ext (damaged_status_name);
+CREATE INDEX ON item_ext (damaged_status_name);
 
-CREATE INDEX ON folio_derived.item_ext (material_type_id);
+CREATE INDEX ON item_ext (material_type_id);
 
-CREATE INDEX ON folio_derived.item_ext (material_type_name);
+CREATE INDEX ON item_ext (material_type_name);
 
-CREATE INDEX ON folio_derived.item_ext (number_of_pieces);
+CREATE INDEX ON item_ext (number_of_pieces);
 
-CREATE INDEX ON folio_derived.item_ext (number_of_missing_pieces);
+CREATE INDEX ON item_ext (number_of_missing_pieces);
 
-CREATE INDEX ON folio_derived.item_ext (permanent_loan_type_id);
+CREATE INDEX ON item_ext (permanent_loan_type_id);
 
-CREATE INDEX ON folio_derived.item_ext (permanent_loan_type_name);
+CREATE INDEX ON item_ext (permanent_loan_type_name);
 
-CREATE INDEX ON folio_derived.item_ext (temporary_loan_type_id);
+CREATE INDEX ON item_ext (temporary_loan_type_id);
 
-CREATE INDEX ON folio_derived.item_ext (temporary_loan_type_name);
+CREATE INDEX ON item_ext (temporary_loan_type_name);
 
-CREATE INDEX ON folio_derived.item_ext (permanent_location_id);
+CREATE INDEX ON item_ext (permanent_location_id);
 
-CREATE INDEX ON folio_derived.item_ext (permanent_location_name);
+CREATE INDEX ON item_ext (permanent_location_name);
 
-CREATE INDEX ON folio_derived.item_ext (temporary_location_id);
+CREATE INDEX ON item_ext (temporary_location_id);
 
-CREATE INDEX ON folio_derived.item_ext (temporary_location_name);
+CREATE INDEX ON item_ext (temporary_location_name);
 
-CREATE INDEX ON folio_derived.item_ext (effective_location_id);
+CREATE INDEX ON item_ext (effective_location_id);
 
-CREATE INDEX ON folio_derived.item_ext (effective_location_name);
+CREATE INDEX ON item_ext (effective_location_name);
 
-CREATE INDEX ON folio_derived.item_ext (description_of_pieces);
+CREATE INDEX ON item_ext (description_of_pieces);
 
-CREATE INDEX ON folio_derived.item_ext (status_date);
+CREATE INDEX ON item_ext (status_date);
 
-CREATE INDEX ON folio_derived.item_ext (status_name);
+CREATE INDEX ON item_ext (status_name);
 
-CREATE INDEX ON folio_derived.item_ext (holdings_record_id);
+CREATE INDEX ON item_ext (holdings_record_id);
 
-CREATE INDEX ON folio_derived.item_ext (discovery_suppress);
+CREATE INDEX ON item_ext (discovery_suppress);
 
-CREATE INDEX ON folio_derived.item_ext (created_date);
+CREATE INDEX ON item_ext (created_date);
 
-CREATE INDEX ON folio_derived.item_ext (updated_by_user_id);
+CREATE INDEX ON item_ext (updated_by_user_id);
 
-CREATE INDEX ON folio_derived.item_ext (updated_date);
+CREATE INDEX ON item_ext (updated_date);
