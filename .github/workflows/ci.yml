@@ -25,8 +25,8 @@ jobs:
       run: rm -f folio_snapshot.sql.gz
     - name: Vacuum folio_snapshot database
       run: vacuumdb -qz -d folio_snapshot -U runner
-    - name: Test search_path
-      run: psql -a -c '\set ON_ERROR_STOP on' -d folio_snapshot -c 'set search_path = folio_reporting,public' -c "show search_path;" -U runner
+    - name: Test table access
+      run: psql -a -c '\set ON_ERROR_STOP on' -d folio_snapshot -c 'set search_path = folio_reporting,public' -c "\d feesfines_accounts" -U runner
     - name: Run derived table queries in folio_snapshot
       run: ./run-ci.sh
     - name: Run again in folio_snapshot to test drop table
