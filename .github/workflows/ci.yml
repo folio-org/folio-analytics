@@ -16,11 +16,11 @@ jobs:
     - name: Create folio_snapshot database
       run: createdb folio_snapshot
     - name: Create schema in folio_snapshot
-      run: psql -bq -v ON_ERROR_STOP=on -d folio_snapshot -c "create schema folio_reporting;"
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot -c "create schema folio_reporting;"
     - name: Download folio_snapshot database
       run: curl -sSO https://glintcore.net:8443/ldp/folio_snapshot.sql.gz
     - name: Load folio_snapshot data
-      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -v ON_ERROR_STOP=on -d folio_snapshot
+      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot
     - name: Clean up folio_snapshot file
       run: rm -f folio_snapshot.sql.gz
     - name: Vacuum folio_snapshot database
@@ -34,11 +34,11 @@ jobs:
     - name: Create reports_dev database
       run: createdb reports_dev
     - name: Create schema in reports_dev
-      run: psql -bq -v ON_ERROR_STOP=on -d reports_dev -c "create schema folio_derived;"
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d reports_dev -c "create schema folio_derived;"
     - name: Download reports_dev database
       run: curl -sSO https://glintcore.net:8443/ldp/reports_dev.sql.gz
     - name: Load reports_dev data
-      run: zcat reports_dev.sql.gz | psql -o /dev/null -bq -v ON_ERROR_STOP=on -d reports_dev
+      run: zcat reports_dev.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d reports_dev
     - name: Clean up reports_dev file
       run: rm -f reports_dev.sql.gz
     - name: Vacuum reports_dev database
@@ -47,3 +47,7 @@ jobs:
       run: ./run-ci-metadb.sh
     - name: Run again in reports_dev to test drop table
       run: ./run-ci-metadb.sh
+    - name: Create schema in reports_dev
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d reports_dev -c "create schema folio_reporting;"
+    - name: Run transitional table queries and derived tables in reports_dev
+      run: ./run-ci-transition.sh
