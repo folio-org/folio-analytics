@@ -20,11 +20,11 @@ jobs:
     - name: Download folio_snapshot database
       run: curl -sSO https://glintcore.net:8443/ldp/folio_snapshot.sql.gz
     - name: Load folio_snapshot data
-      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot
+      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot -U runner
     - name: Clean up folio_snapshot file
       run: rm -f folio_snapshot.sql.gz
     - name: Vacuum folio_snapshot database
-      run: vacuumdb -qz -d folio_snapshot
+      run: vacuumdb -qz -d folio_snapshot -U runner
     - name: Run derived table queries in folio_snapshot
       run: ./run-ci.sh
     - name: Run again in folio_snapshot to test drop table
