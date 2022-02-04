@@ -3,3 +3,4 @@ acquisitions_units.sql
 audit_circulation_logs.sql
 circulation_cancellation_reasons.sql
 circulation_check_ins.sql
+circulation_loan_history.sql
