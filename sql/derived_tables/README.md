@@ -38,7 +38,7 @@ for f in $( cat runlist.txt ); do
     echo >> logfile
     cat $f > tmpfile
     echo "GRANT SELECT ON ALL TABLES IN SCHEMA folio_reporting TO ldp;" >> tmpfile
-    psql ldp -U ldpreport -a -f tmpfile >> logfile 2>&1
+    psql ldp -U ldpreport -a -c 'set search_path = folio_reporting, public' -f tmpfile >> logfile 2>&1
 done
 ```
 
