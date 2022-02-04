@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS folio_reporting.invoice_transactions;
+DROP TABLE IF EXISTS invoice_transactions;
 

@@ -38,7 +38,7 @@ for f in $( cat runlist.txt ); do
     echo >> logfile
     cat $f > tmpfile
     echo "GRANT SELECT ON ALL TABLES IN SCHEMA folio_reporting TO ldp;" >> tmpfile
-    psql ldp -U ldpreport -a -f tmpfile >> logfile 2>&1
+    psql ldp -U ldpreport -a -c 'set search_path = folio_reporting, public' -f tmpfile >> logfile 2>&1
 done
 ```
 
@@ -51,13 +51,4 @@ where *r1* depends on *r2*, *r3*, ...
 The queries should be rerun every night after the LDP full update
 completes, so that the derived tables will be recreated with the
 latest data.
-
-After all database updates and derived table queries have completed,
-it is recommended to run vacuum and analyze as superuser:
-
-```shell
-VACUUM;
-
-ANALYZE;
-```
 

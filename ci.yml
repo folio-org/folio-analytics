@@ -14,17 +14,17 @@ jobs:
     - name: Create user
       run: sudo runuser -l postgres -c 'createuser -s runner'
     - name: Create folio_snapshot database
-      run: createdb folio_snapshot
+      run: createdb folio_snapshot -U runner -O runner
     - name: Create schema in folio_snapshot
-      run: psql -bq -v ON_ERROR_STOP=on -d folio_snapshot -c "create schema folio_reporting;"
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot -c "create schema folio_reporting;" -U runner
     - name: Download folio_snapshot database
       run: curl -sSO https://glintcore.net:8443/ldp/folio_snapshot.sql.gz
     - name: Load folio_snapshot data
-      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -v ON_ERROR_STOP=on -d folio_snapshot
+      run: zcat folio_snapshot.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d folio_snapshot -U runner
     - name: Clean up folio_snapshot file
       run: rm -f folio_snapshot.sql.gz
     - name: Vacuum folio_snapshot database
-      run: vacuumdb -qz -d folio_snapshot
+      run: vacuumdb -qz -d folio_snapshot -U runner
     - name: Run derived table queries in folio_snapshot
       run: ./run-ci.sh
     - name: Run again in folio_snapshot to test drop table
@@ -32,18 +32,22 @@ jobs:
     - name: Drop folio_snapshot database
       run: dropdb folio_snapshot
     - name: Create reports_dev database
-      run: createdb reports_dev
+      run: createdb reports_dev -U runner -O runner
     - name: Create schema in reports_dev
-      run: psql -bq -v ON_ERROR_STOP=on -d reports_dev -c "create schema folio_derived;"
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d reports_dev -c "create schema folio_derived;" -U runner
     - name: Download reports_dev database
       run: curl -sSO https://glintcore.net:8443/ldp/reports_dev.sql.gz
     - name: Load reports_dev data
-      run: zcat reports_dev.sql.gz | psql -o /dev/null -bq -v ON_ERROR_STOP=on -d reports_dev
+      run: zcat reports_dev.sql.gz | psql -o /dev/null -bq -c '\set ON_ERROR_STOP on' -d reports_dev -U runner
     - name: Clean up reports_dev file
       run: rm -f reports_dev.sql.gz
     - name: Vacuum reports_dev database
-      run: vacuumdb -qz -d reports_dev
+      run: vacuumdb -qz -d reports_dev -U runner
     - name: Run derived table queries in reports_dev
       run: ./run-ci-metadb.sh
     - name: Run again in reports_dev to test drop table
       run: ./run-ci-metadb.sh
+    - name: Create schema in reports_dev
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d reports_dev -c "create schema folio_reporting;" -U runner
+    - name: Run transitional table queries and derived tables in reports_dev
+      run: ./run-ci-transition.sh
