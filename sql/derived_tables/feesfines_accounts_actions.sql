@@ -33,10 +33,10 @@ SELECT
     ug.id AS patron_group_id,
     ug.group AS patron_group_name
 FROM
-    public.feesfines_accounts AS fa
-    LEFT JOIN public.feesfines_feefineactions AS ff ON fa.id = json_extract_path_text(ff.data, 'accountId')
-    LEFT JOIN public.user_users AS uu ON json_extract_path_text(fa.data, 'userId') = uu.id
-    LEFT JOIN public.user_groups AS ug ON uu.patron_group = ug.id;
+    feesfines_accounts AS fa
+    LEFT JOIN feesfines_feefineactions AS ff ON fa.id = json_extract_path_text(ff.data, 'accountId')
+    LEFT JOIN user_users AS uu ON json_extract_path_text(fa.data, 'userId') = uu.id
+    LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id;
 
 CREATE INDEX ON feesfines_accounts_actions (fine_account_id);
 
