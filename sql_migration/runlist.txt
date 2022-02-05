@@ -15,3 +15,6 @@ circulation_staff_slips.sql
 configuration_entries.sql
 email_email.sql
 feesfines_accounts.sql
+srs_error.sql
+srs_marc.sql
+srs_records.sql
