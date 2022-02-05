@@ -21,3 +21,4 @@ srs_records.sql
 user_addresstypes.sql
 user_groups.sql
 user_proxiesfor.sql
+user_users.sql
