@@ -25,6 +25,7 @@ inventory_holdings_note_types.sql
 inventory_holdings_sources.sql
 inventory_holdings.sql
 inventory_holdings_types.sql
+inventory_identifier_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
