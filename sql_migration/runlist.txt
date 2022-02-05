@@ -14,3 +14,4 @@ circulation_scheduled_notices.sql
 circulation_staff_slips.sql
 configuration_entries.sql
 email_email.sql
+feesfines_accounts.sql
