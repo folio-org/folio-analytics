@@ -19,6 +19,7 @@ inventory_alternative_title_types.sql
 inventory_call_number_types.sql
 inventory_classification_types.sql
 inventory_contributor_name_types.sql
+inventory_contributor_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
