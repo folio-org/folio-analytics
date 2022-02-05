@@ -7,3 +7,4 @@ circulation_loan_history.sql
 circulation_loan_policies.sql
 circulation_loans.sql
 circulation_patron_action_sessions.sql
+circulation_patron_notice_policies.sql
