@@ -10,3 +10,4 @@ circulation_patron_action_sessions.sql
 circulation_patron_notice_policies.sql
 circulation_request_policies.sql
 circulation_request_preference.sql
+circulation_scheduled_notices.sql
