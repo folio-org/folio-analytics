@@ -7,7 +7,7 @@ SELECT
     jsonb_extract_path_text(jsonb, 'ordering')::varchar(65535) AS ordering,
     jsonb_pretty(jsonb)::json AS data
 FROM
-    folio_inventory.classification_type;
+    folio_inventory.contributor_name_type;
 
 ALTER TABLE inventory_contributor_name_types ADD PRIMARY KEY (id);
 
