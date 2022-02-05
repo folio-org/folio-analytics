@@ -10,7 +10,7 @@ SELECT
     jsonb_extract_path_text(jsonb, 'claimedReturnedDate')::timestamptz AS claimed_returned_date,
     jsonb_extract_path_text(jsonb, 'declaredLostDate')::timestamptz AS declared_lost_date,
     jsonb_extract_path_text(jsonb, 'dueDate')::timestamptz AS due_date,
-    jsonb_extract_path_text(jsonb, 'dueDateChangedByRecall')::bool AS due_date_changed_by_recall,
+    jsonb_extract_path_text(jsonb, 'dueDateChangedByRecall')::boolean AS due_date_changed_by_recall,
     jsonb_extract_path_text(jsonb, 'itemEffectiveLocationIdAtCheckOut')::varchar(36) AS item_effective_location_id_at_check_out,
     jsonb_extract_path_text(jsonb, 'itemId')::varchar(36) AS item_id,
     jsonb_extract_path_text(jsonb, 'itemStatus')::varchar(36) AS item_status,

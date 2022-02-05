@@ -32,8 +32,9 @@ with the following additional rules:
   supported by LDP 1.x.
 * Cast varchar columns to `varchar(65535)`, except for UUIDs (the
   field name ending in `Id`) which should be `varchar(36)`.
-* Cast boolean columns to `boolean` or `bool`.
+* Cast Boolean columns to `boolean`.
 * Cast timestamps with time zone to `timestamptz`.
+* Cast numeric values used in finance to `numeric(12,2)`.
 * Create an index on each column, except for `id` and `data`.
 * Define the `id` column as a primary key using: `ALTER TABLE
   <tablename> ADD PRIMARY KEY (id);`.
