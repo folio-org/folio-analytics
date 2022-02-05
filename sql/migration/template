@@ -1,16 +1,16 @@
-DROP TABLE IF EXISTS <t>;
+DROP TABLE IF EXISTS 1;
 
-CREATE TABLE <t> AS
+CREATE TABLE 1 AS
 SELECT
     id::varchar(36),
-    -- (jsonb->>'')::varchar AS ,
-    -- (jsonb->>'')::bool AS ,
+    jsonb_extract_path_text(jsonb, '')::varchar(65535) AS ,
+    jsonb_extract_path_text(jsonb, '')::bool AS ,
     jsonb_pretty(jsonb)::json AS data
 FROM
     ;
 
-ALTER TABLE <t> ADD PRIMARY KEY (id);
+ALTER TABLE 1 ADD PRIMARY KEY (id);
 
-CREATE INDEX ON <t> ();
+CREATE INDEX ON 1 ();
 
-VACUUM ANALYZE <t>;
+VACUUM ANALYZE 1;
