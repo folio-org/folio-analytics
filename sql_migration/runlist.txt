@@ -21,6 +21,7 @@ inventory_classification_types.sql
 inventory_contributor_name_types.sql
 inventory_contributor_types.sql
 inventory_electronic_access_relationships.sql
+inventory_holdings_note_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
