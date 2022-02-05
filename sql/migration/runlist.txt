@@ -13,3 +13,4 @@ circulation_request_preference.sql
 circulation_scheduled_notices.sql
 circulation_staff_slips.sql
 configuration_entries.sql
+email_email.sql
