@@ -20,3 +20,4 @@ srs_marc.sql
 srs_records.sql
 user_addresstypes.sql
 user_groups.sql
+user_proxiesfor.sql

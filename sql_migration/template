@@ -3,8 +3,11 @@ DROP TABLE IF EXISTS 1;
 CREATE TABLE 1 AS
 SELECT
     id::varchar(36),
+
     jsonb_extract_path_text(jsonb, '')::varchar(65535) AS ,
-    jsonb_extract_path_text(jsonb, '')::bool AS ,
+    jsonb_extract_path_text(jsonb, '')::varchar(36) AS ,
+    jsonb_extract_path_text(jsonb, '')::boolean AS ,
+    jsonb_extract_path_text(jsonb, '')::timestamptz AS ,
     jsonb_pretty(jsonb)::json AS data
 FROM
     ;
