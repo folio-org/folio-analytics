@@ -29,6 +29,7 @@ inventory_identifier_types.sql
 inventory_ill_policies.sql
 inventory_instance_formats.sql
 inventory_instance_note_types.sql
+inventory_instance_relationship_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
