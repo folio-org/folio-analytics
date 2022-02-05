@@ -12,6 +12,8 @@ FROM
 
 ALTER TABLE circulation_patron_notice_policies ADD PRIMARY KEY (id);
 
+CREATE INDEX ON circulation_patron_notice_policies (active);
+
 CREATE INDEX ON circulation_patron_notice_policies (description);
 
 CREATE INDEX ON circulation_patron_notice_policies (name);
