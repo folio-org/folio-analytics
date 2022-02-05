@@ -12,7 +12,7 @@ psql -c 'set search_path = public' -f <sqlfile>
 
 If you find an error in these tables, or if your installation of LDP
 1.x has a column that has been omitted here, please [submit a pull
-request](../../CONTRIBUTING.md) with the correction/addition.
+request](../CONTRIBUTING.md) with the correction/addition.
 
 These tables are created using the same pattern as derived tables, and
 with the following additional rules:
