@@ -20,6 +20,7 @@ inventory_call_number_types.sql
 inventory_classification_types.sql
 inventory_contributor_name_types.sql
 inventory_contributor_types.sql
+inventory_electronic_access_relationships.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
