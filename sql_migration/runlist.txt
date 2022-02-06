@@ -35,6 +35,7 @@ inventory_instance_relationships.sql
 inventory_instances.sql
 inventory_instance_types.sql
 inventory_item_damaged_statuses.sql
+inventory_item_note_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
