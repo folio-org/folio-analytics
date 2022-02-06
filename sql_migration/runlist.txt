@@ -19,6 +19,7 @@ feesfines_comments.sql
 feesfines_feefineactions.sql
 feesfines_feefines.sql
 feesfines_lost_item_fees_policies.sql
+feesfines_overdue_fines_policies.sql
 inventory_alternative_title_types.sql
 inventory_call_number_types.sql
 inventory_classification_types.sql

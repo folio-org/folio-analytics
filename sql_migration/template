@@ -10,6 +10,7 @@ SELECT
     jsonb_extract_path_text(jsonb, '')::varchar(36) AS ,
     jsonb_extract_path_text(jsonb, '')::boolean AS ,
     jsonb_extract_path_text(jsonb, '')::timestamptz AS ,
+    jsonb_extract_path_text(jsonb, '')::numeric(12,2) AS ,
 
     jsonb_pretty(jsonb)::json AS data
 FROM
