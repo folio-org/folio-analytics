@@ -45,6 +45,7 @@ inventory_locations.sql
 inventory_material_types.sql
 inventory_modes_of_issuance.sql
 inventory_nature_of_content_terms.sql
+inventory_service_points.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
