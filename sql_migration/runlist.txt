@@ -47,6 +47,7 @@ inventory_modes_of_issuance.sql
 inventory_nature_of_content_terms.sql
 inventory_service_points.sql
 inventory_service_points_users.sql
+inventory_statistical_code_types.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
