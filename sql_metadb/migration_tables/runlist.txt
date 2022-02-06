@@ -66,6 +66,7 @@ inventory_service_points.sql
 inventory_service_points_users.sql
 inventory_statistical_code_types.sql
 inventory_statistical_codes.sql
+invoice_lines.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
