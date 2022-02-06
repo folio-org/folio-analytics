@@ -38,6 +38,7 @@ inventory_item_damaged_statuses.sql
 inventory_item_note_types.sql
 inventory_items.sql
 inventory_campuses.sql
+inventory_institutions.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
