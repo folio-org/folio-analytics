@@ -39,6 +39,7 @@ inventory_item_note_types.sql
 inventory_items.sql
 inventory_campuses.sql
 inventory_institutions.sql
+inventory_libraries.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
