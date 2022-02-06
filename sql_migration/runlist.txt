@@ -41,6 +41,7 @@ inventory_campuses.sql
 inventory_institutions.sql
 inventory_libraries.sql
 inventory_loan_types.sql
+inventory_locations.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
