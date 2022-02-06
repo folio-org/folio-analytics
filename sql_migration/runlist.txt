@@ -24,6 +24,7 @@ feesfines_owners.sql
 feesfines_payments.sql
 feesfines_refunds.sql
 feesfines_waives.sql
+finance_budgets.sql
 inventory_alternative_title_types.sql
 inventory_call_number_types.sql
 inventory_classification_types.sql
