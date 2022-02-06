@@ -30,6 +30,7 @@ finance_fund_types.sql
 finance_funds.sql
 finance_group_fund_fiscal_years.sql
 finance_groups.sql
+finance_ledgers.sql
 inventory_alternative_title_types.sql
 inventory_call_number_types.sql
 inventory_classification_types.sql
