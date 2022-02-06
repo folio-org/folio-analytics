@@ -73,6 +73,7 @@ invoice_vouchers.sql
 po_alerts.sql
 po_order_templates.sql
 po_pieces.sql
+po_lines.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
