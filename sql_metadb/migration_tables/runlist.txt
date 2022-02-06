@@ -70,6 +70,7 @@ invoice_lines.sql
 invoice_invoices.sql
 invoice_voucher_lines.sql
 invoice_vouchers.sql
+po_alerts.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
