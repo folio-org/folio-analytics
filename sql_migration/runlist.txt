@@ -16,6 +16,7 @@ configuration_entries.sql
 email_email.sql
 feesfines_accounts.sql
 feesfines_comments.sql
+feesfines_feefineactions.sql
 inventory_alternative_title_types.sql
 inventory_call_number_types.sql
 inventory_classification_types.sql
