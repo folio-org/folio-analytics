@@ -78,6 +78,7 @@ po_purchase_orders.sql
 po_reporting_codes.sql
 organization_categories.sql
 organization_contacts.sql
+organization_interfaces.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
