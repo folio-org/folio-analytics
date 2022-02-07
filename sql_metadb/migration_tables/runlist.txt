@@ -20,6 +20,7 @@ course_coursetypes.sql
 course_departments.sql
 course_processingstatuses.sql
 course_reserves.sql
+course_terms.sql
 email_email.sql
 feesfines_accounts.sql
 feesfines_comments.sql
