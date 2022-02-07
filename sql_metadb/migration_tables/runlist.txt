@@ -79,6 +79,7 @@ po_reporting_codes.sql
 organization_categories.sql
 organization_contacts.sql
 organization_interfaces.sql
+organization_organizations.sql
 srs_error.sql
 srs_marc.sql
 srs_records.sql
