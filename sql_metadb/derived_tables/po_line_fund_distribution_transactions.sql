@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS folio_derived.po_line_fund_distribution_transactions;
+DROP TABLE IF EXISTS po_line_fund_distribution_transactions;
 
 -- Create a derived table that contains information about the fund distribution in the po lines
 --
-CREATE TABLE folio_derived.po_line_fund_distribution_transactions AS
+CREATE TABLE po_line_fund_distribution_transactions AS
 WITH po_line AS (
     SELECT
         id AS po_line_id,
@@ -102,65 +102,66 @@ FROM
         po_number,
         poline_number;
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (po_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (po_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (po_number);
+CREATE INDEX ON po_line_fund_distribution_transactions (po_number);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (po_workflowStatus);
+CREATE INDEX ON po_line_fund_distribution_transactions (po_workflowStatus);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (po_line_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (po_line_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_number);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_number);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_title_or_package);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_title_or_package);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_listUnitPrice);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_listUnitPrice);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_quantityPhysical);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_quantityPhysical);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_listUnitPriceElectronic);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_listUnitPriceElectronic);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_quantityElectronic);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_quantityElectronic);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_currency);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_currency);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_discount);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_discount);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_discountType);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_discountType);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_additionalCost);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_additionalCost);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (poline_estimated_price);
+CREATE INDEX ON po_line_fund_distribution_transactions (poline_estimated_price);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (po_line_fyroAdjustmentAmount);
+CREATE INDEX ON po_line_fund_distribution_transactions (po_line_fyroAdjustmentAmount);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fund_distribution_value);
+CREATE INDEX ON po_line_fund_distribution_transactions (fund_distribution_value);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fund_distribution_type);
+CREATE INDEX ON po_line_fund_distribution_transactions (fund_distribution_type);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (budget_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (budget_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (budget_name);
+CREATE INDEX ON po_line_fund_distribution_transactions (budget_name);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fund_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (fund_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fund_code);
+CREATE INDEX ON po_line_fund_distribution_transactions (fund_code);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fiscal_year_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (fiscal_year_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (fiscal_year);
+CREATE INDEX ON po_line_fund_distribution_transactions (fiscal_year);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_id);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_id);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_currency);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_currency);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_amount);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_amount);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_encumbrance_initial_amount);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_initial_amount);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_encumbrance_amount_expended);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_amount_expended);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_encumbrance_order_type);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_order_type);
 
-CREATE INDEX ON folio_derived.po_line_fund_distribution_transactions (transaction_encumbrance_subscription);
+CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_subscription);
 
+VACUUM ANALYZE po_line_fund_distribution_transactions;
