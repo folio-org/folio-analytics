@@ -52,4 +52,6 @@ CREATE INDEX ON instance_contributors (contributor_name_type_id);
 
 CREATE INDEX ON instance_contributors (contributor_name_type_name);
 
+CREATE INDEX ON instance_contributors (contributor_ordinality);
+
 VACUUM ANALYZE instance_contributors; 
