@@ -1,3 +1,0 @@
-acquisitions_memberships.sql
-acquisitions_units.sql
-audit_circulation_logs.sql
