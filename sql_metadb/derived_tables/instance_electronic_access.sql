@@ -8,16 +8,16 @@ CREATE TABLE instance_electronic_access AS
 WITH eaccess AS (
 	SELECT 
 		i.id AS instance_id,
-		jsonb_extract_path_text(i."jsonb", 'hrid') AS instance_hrid,
+		jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
 		jsonb_extract_path_text(elac.jsonb, 'uri') AS uri,
     	jsonb_extract_path_text(elac.jsonb, 'linkText') AS link_text,
     	jsonb_extract_path_text(elac.jsonb, 'materialsSpecification') AS materials_specification,
     	jsonb_extract_path_text(elac.jsonb, 'publicNote') AS public_note,
     	jsonb_extract_path_text(elac.jsonb, 'relationshipId')::uuid AS relationship_id,
-    	elac.ORDINALITY AS electronic_access_ordinality
+    	elac.ordinality AS electronic_access_ordinality
 	FROM 
 		folio_inventory.instance i
-		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i."jsonb", 'electronicAccess')) WITH ORDINALITY AS elac (jsonb)
+		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'electronicAccess')) WITH ORDINALITY AS elac (jsonb)
 )
 SELECT 
 	ea.instance_id,
@@ -27,7 +27,8 @@ SELECT
 	ea.materials_specification,
 	ea.public_note,
 	ea.relationship_id,
-	eart."name" AS relationship_name
+	eart."name" AS relationship_name,
+	ea.electronic_access_ordinality 
 FROM 
 	eaccess AS ea
 	LEFT JOIN folio_inventory.electronic_access_relationship__t AS eart ON ea.relationship_id = eart.id ;
@@ -47,5 +48,7 @@ CREATE INDEX ON instance_electronic_access (public_note);a
 CREATE INDEX ON instance_electronic_access (relationship_id);
 
 CREATE INDEX ON instance_electronic_access (relationship_name);
+
+CREATE INDEX ON instance_electronic_access (electronic_access_ordinality);
 
 VACUUM ANALYZE instance_electronic_access; 
