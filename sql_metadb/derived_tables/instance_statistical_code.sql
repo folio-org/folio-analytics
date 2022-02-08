@@ -7,12 +7,12 @@ CREATE TABLE instance_statistical_codes AS
 WITH stcodes AS (
 	SELECT 
 		i.id::uuid AS instance_id,
-		jsonb_extract_path_text(i."jsonb", 'hrid') AS instance_hrid,
+		jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
 		statcodes.jsonb #>> '{}' AS statistical_code_id,
-		statcodes.ORDINALITY AS stat_code_ordinality
+		statcodes.ordinality AS stat_code_ordinality
 	FROM 
 		folio_inventory.instance AS i 
-		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i."jsonb", 'statisticalCodeIds')) WITH ORDINALITY AS statcodes (jsonb)
+		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'statisticalCodeIds')) WITH ORDINALITY AS statcodes (jsonb)
 )
 SELECT
 	stc.instance_id,
@@ -22,7 +22,8 @@ SELECT
 	sct.statistical_code_type_id,
 	sctt."name" AS statistical_code_type_name,
 	sct.code AS statistical_code,
-	sct."name" AS statistical_code_name
+	sct."name" AS statistical_code_name,
+	stc.stat_code_ordinality 
 FROM 
 	stcodes AS stc
 	LEFT JOIN folio_inventory.statistical_code__t AS sct ON stc.statistical_code_id::uuid = sct.id::uuid 
@@ -41,6 +42,8 @@ CREATE INDEX ON instance_statistical_codes (statistical_code_type_name);
 CREATE INDEX ON instance_statistical_codes (statistical_code);
 
 CREATE INDEX ON instance_statistical_codes (statistical_code_name);
+
+CREATE INDEX ON instance_statistical_codes (stat_code_ordinality);
 
 VACUUM ANALYZE instance_statistical_codes; 
 
