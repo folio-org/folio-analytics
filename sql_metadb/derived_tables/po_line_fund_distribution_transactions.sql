@@ -10,7 +10,7 @@ WITH po_line AS (
         jsonb_extract_path_text(dist.data, 'code') AS fund_distribution_code,
         cast(jsonb_extract_path_text(dist.data, 'fundId') AS uuid) AS fund_distribution_id,
         jsonb_extract_path_text(dist.data, 'distributionType') AS fund_distribution_type,
-        jsonb_extract_path_text(dist.data, 'value')::numeric AS fund_distribution_value,
+        jsonb_extract_path_text(dist.data, 'value')::decimal(19,4) AS fund_distribution_value,
         jsonb_extract_path_text(po_line.jsonb, 'poLineNumber') AS poline_number,
         cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'poLineEstimatedPrice') AS decimal(19,4)) AS poline_estimated_price,
         jsonb_extract_path_text(po_line.jsonb, 'cost', 'currency') AS poline_currency,
