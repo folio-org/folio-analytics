@@ -1,8 +1,0 @@
-acquisitions_memberships.sql
-acquisitions_units.sql
-audit_circulation_logs.sql
-circulation_cancellation_reasons.sql
-circulation_check_ins.sql
-circulation_loan_history.sql
-circulation_loan_policies.sql
-circulation_loans.sql
