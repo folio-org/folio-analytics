@@ -7,16 +7,16 @@ CREATE TABLE instance_contributors AS
 WITH contribs AS (
 	SELECT 
 		i.id AS instance_id,
-		jsonb_extract_path_text(i."jsonb", 'hrid') AS instance_hrid,
+		jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
 		jsonb_extract_path_text(ctb.jsonb, 'name') AS contributor_name,
 		jsonb_extract_path_text(ctb.jsonb, 'primary')::boolean AS contributor_is_primary,
 		jsonb_extract_path_text(ctb.jsonb, 'contributorTypeId')::uuid AS contributor_type_id,
 		jsonb_extract_path_text(ctb.jsonb, 'contributorTypeText') AS contributor_type_text,
 		jsonb_extract_path_text(ctb.jsonb, 'contributorNameTypeId')::uuid AS contributor_name_type_id,
-    	ctb.ORDINALITY AS contributor_ordinality
+    	ctb.ordinality AS contributor_ordinality
 	FROM 
 		folio_inventory.instance i
-		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i."jsonb", 'contributors')) WITH ORDINALITY AS ctb (jsonb)
+		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'contributors')) WITH ORDINALITY AS ctb (jsonb)
 )
 SELECT 
 	ctbs.instance_id,
@@ -27,7 +27,8 @@ SELECT
 	ctt."name" AS contributor_type_name,
 	ctbs.contributor_type_text,
 	ctbs.contributor_name_type_id,
-	cntt."name" AS contributor_name_type_name
+	cntt."name" AS contributor_name_type_name,
+	ctbs.contributor_ordinality 
 FROM 
 	contribs AS ctbs
 	LEFT JOIN folio_inventory.contributor_type__t AS ctt ON ctbs.contributor_type_id = ctt.id
