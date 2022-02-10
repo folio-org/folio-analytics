@@ -8,7 +8,7 @@ WITH stcodes AS (
 	SELECT 
 		i.id::uuid AS instance_id,
 		jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
-		statcodes.jsonb #>> '{}' AS statistical_code_id,
+		(statcodes.jsonb #>> '{}')::uuid AS statistical_code_id,
 		statcodes.ordinality AS stat_code_ordinality
 	FROM 
 		folio_inventory.instance AS i 
@@ -18,7 +18,7 @@ SELECT
 	stc.instance_id,
 	stc.instance_hrid,
 	stc.statistical_code_id,
-	sct.statistical_code_type_id,
+	sct.statistical_code_type_id::uuid,
 	sctt.name AS statistical_code_type_name,
 	sct.code AS statistical_code,
 	sct.name AS statistical_code_name,
