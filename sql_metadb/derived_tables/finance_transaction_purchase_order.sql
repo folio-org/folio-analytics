@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS finance_transaction_purchase_order;
 CREATE TABLE finance_transaction_purchase_order AS
 SELECT
     ft.id AS transaction_id,
-    jsonb_extract_path_text(ft.jsonb, 'amount') AS transaction_amount,
+    jsonb_extract_path_text(ft.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
     jsonb_extract_path_text(ft.jsonb, 'currency') AS transaction_currency,
     ft.expenseclassid AS transaction_expense_class_id,
     ft.fiscalyearid AS transaction_fiscal_year_id,
@@ -20,9 +20,9 @@ SELECT
     jsonb_extract_path_text(ff.jsonb, 'code') AS transaction_from_fund_code,
     fb.id AS transaction_from_budget_id,
     jsonb_extract_path_text(fb.jsonb, 'name') AS transaction_from_budget_name,
-    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'amountAwaitingPayment') AS transaction_encumbrance_amount_awaiting_payment,
-    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'amountExpended') AS transaction_encumbrance_amount_expended,
-    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'initialAmountEncumbered') AS transaction_encumbrance_initial_amount,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'amountAwaitingPayment')::numeric(19,4) AS transaction_encumbrance_amount_awaiting_payment,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'amountExpended')::numeric(19,4) AS transaction_encumbrance_amount_expended,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'initialAmountEncumbered')::numeric(19,4) AS transaction_encumbrance_initial_amount,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'orderType') AS transaction_encumbrance_order_type,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'subscription') AS transaction_encumbrance_subscription,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid AS po_line_id,

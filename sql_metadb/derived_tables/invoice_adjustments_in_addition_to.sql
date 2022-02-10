@@ -9,7 +9,7 @@ WITH adjustments AS (
         jsonb_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
         jsonb_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
         jsonb_extract_path_text(adjustments.data, 'type') AS adjustment_type,
-        jsonb_extract_path_text(adjustments.data, 'value') ::numeric(19,4) AS adjustment_value
+        jsonb_extract_path_text(adjustments.data, 'value')::numeric(19,4) AS adjustment_value
     FROM
         folio_invoice.invoices AS inv
         CROSS JOIN jsonb_array_elements(jsonb_extract_path(inv.jsonb, 'adjustments')) AS adjustments (data)
