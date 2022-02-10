@@ -20,9 +20,9 @@ SELECT
 	stc.statistical_code_id,
 	stc.stat_code_ordinality,
 	sct.statistical_code_type_id,
-	sctt."name" AS statistical_code_type_name,
+	sctt.name AS statistical_code_type_name,
 	sct.code AS statistical_code,
-	sct."name" AS statistical_code_name,
+	sct.name AS statistical_code_name,
 	stc.stat_code_ordinality 
 FROM 
 	stcodes AS stc
