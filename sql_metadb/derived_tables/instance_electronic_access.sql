@@ -27,7 +27,7 @@ SELECT
 	ea.materials_specification,
 	ea.public_note,
 	ea.relationship_id,
-	eart."name" AS relationship_name,
+	eart.name AS relationship_name,
 	ea.electronic_access_ordinality 
 FROM 
 	eaccess AS ea
