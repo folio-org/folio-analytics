@@ -15,3 +15,4 @@ loans_renewal_dates.sql
 locations_libraries.sql
 po_line_fund_distribution_transactions.sql
 item_ext.sql
+loans_items.sql
