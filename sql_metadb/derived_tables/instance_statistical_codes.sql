@@ -18,7 +18,6 @@ SELECT
 	stc.instance_id,
 	stc.instance_hrid,
 	stc.statistical_code_id,
-	stc.stat_code_ordinality,
 	sct.statistical_code_type_id,
 	sctt.name AS statistical_code_type_name,
 	sct.code AS statistical_code,
