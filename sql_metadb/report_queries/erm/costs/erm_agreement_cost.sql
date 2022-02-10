@@ -57,7 +57,7 @@ SELECT
     inv.invoice_payment_date AS "invoice_payment_date",
     jsonb_extract_path_text(invl.jsonb, 'subTotal') AS "invl_sub_total", -- this are costs by invoice_line in invoice currency
     jsonb_extract_path_text(invl.jsonb, 'total') AS "invl_total", -- this are costs by invoice_line in invoice currency
-    cast(fintrainvl.transaction_amount AS money) AS "transactions_invl_total"  
+    cast(fintrainvl.transaction_amount AS numeric(19,4)) AS "transactions_invl_total"  
 FROM
 	folio_derived.agreements_subscription_agreement_entitlement AS sa_ent_dt
 		LEFT JOIN folio_derived.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
