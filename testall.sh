@@ -2,7 +2,7 @@
 #
 # Set the following environment variables before running this script:
 #
-#     PGDATABASE - "folio_juniper" or "folio_snapshot'
+#     PGDATABASE - "folio_juniper" or "folio_snapshot"
 #     PGUSER - database user name
 #
 # For example:
