@@ -24,10 +24,10 @@ SELECT
 	ctbs.contributor_name,
 	ctbs.contributor_is_primary,
 	ctbs.contributor_type_id,
-	ctt."name" AS contributor_type_name,
+	ctt.name AS contributor_type_name,
 	ctbs.contributor_type_text,
 	ctbs.contributor_name_type_id,
-	cntt."name" AS contributor_name_type_name,
+	cntt.name AS contributor_name_type_name,
 	ctbs.contributor_ordinality 
 FROM 
 	contribs AS ctbs
