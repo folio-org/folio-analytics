@@ -13,12 +13,12 @@
 set -e
 # Check that the runlist exists.
 if [[ ! -f runlist.txt ]]; then
-    echo "testall.sh: runlist.txt not found"
+    echo "testall.sh: runlist.txt not found" 1>&2
     exit 1
 fi
 # Check for duplicates in runlist.
 if [[ $(sort runlist.txt | uniq -d) ]]; then
-    echo "testall.sh: runlist.txt contains duplicates: `sort runlist.txt | uniq -d`"
+    echo "testall.sh: runlist.txt contains duplicates: `sort runlist.txt | uniq -d`" 1>&2
     exit 1
 fi
 # Run all queries.
