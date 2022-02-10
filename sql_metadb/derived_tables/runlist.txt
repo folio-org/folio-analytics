@@ -7,6 +7,7 @@ finance_transaction_invoices.sql
 finance_transaction_purchase_order.sql
 holdings_ext.sql
 instance_relationships_ext.sql
+instance_electronic_access.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
 licenses_license_ext.sql
