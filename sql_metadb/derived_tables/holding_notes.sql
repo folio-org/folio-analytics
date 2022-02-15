@@ -18,7 +18,7 @@ SELECT
     n.holding_id,
     n.holding_hrid,
     n.note,
-    hntt.name AS note_name, 
+    hntt.name AS note_type_name, 
     n.holding_note_type_id,
     n.note_ordinality,
     hnt.creation_date AS note_date_created,
