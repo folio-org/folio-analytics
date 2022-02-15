@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS holdings_notes;
-CREATE TABLE holdings_notes
+CREATE TABLE holdings_notes AS
 WITH notes AS (
     SELECT 
     h.instanceid AS instance_id,
