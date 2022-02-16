@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS holdings_statistical_codes;
-CREATE TABLE holding_statistical_codes AS 
+CREATE TABLE holdings_statistical_codes AS 
 WITH stcodes AS (
     SELECT 
     h.instanceid AS instance_id, 
@@ -19,7 +19,7 @@ SELECT
     stc.holding_id,
     stc.holding_hrid,
     stc.statistical_code_id,
-    sct.statistical_code_type_id::uuid,
+    sct.statistical_code_type_id,
     sctt.name AS statistical_code_type_name,
     sct.code AS statistical_code,
     sct.name AS statistical_code_name,
@@ -31,12 +31,12 @@ FROM
     
 CREATE INDEX ON holdings_statistical_codes (instance_id);
 CREATE INDEX ON holdings_statistical_codes (instance_hrid);
-CREATE INDEX ON holdings_statistical_codes (holdings_id);
-CREATE INDEX ON holdings_statistical_codes (holdings_hrid);
+CREATE INDEX ON holdings_statistical_codes (holding_id);
+CREATE INDEX ON holdings_statistical_codes (holding_hrid);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_id);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
 CREATE INDEX ON holdings_statistical_codes (statistical_code);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_name);
-CREATE INDEX ON holdings_statistical_codes (stat_code_ordinality);
+CREATE INDEX ON holdings_statistical_codes (statistical_code_ordinality);
 VACUUM ANALYZE holdings_statistical_codes;
