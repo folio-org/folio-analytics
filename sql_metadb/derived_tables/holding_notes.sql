@@ -27,8 +27,8 @@ SELECT
     jsonb_extract_path_text(hnt.jsonb, 'updatedByUserId') AS note_updated_by_user_id
     FROM notes AS n
     LEFT JOIN folio_inventory.INSTANCE i ON n.instance_id = i.id
-    LEFT JOIN folio_inventory.holdings_note_type AS hnt ON n.holding_note_type_id = hnt.id
-    LEFT JOIN folio_inventory.holdings_note_type__t hntt ON n.holding_note_type_id = hntt.id
+    LEFT JOIN folio_inventory.holdings_note_type AS hnt ON n.note_type_id = hnt.id
+    LEFT JOIN folio_inventory.holdings_note_type__t hntt ON n.note_type_id = hntt.id
 ;
 CREATE INDEX ON holdings_notes (instance_id);
 CREATE INDEX ON holdings_notes (instance_hrid);
