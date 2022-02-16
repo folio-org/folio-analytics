@@ -43,7 +43,7 @@ CREATE INDEX ON instance_electronic_access (link_text);
 
 CREATE INDEX ON instance_electronic_access (materials_specification);
 
-CREATE INDEX ON instance_electronic_access (public_note);a
+CREATE INDEX ON instance_electronic_access (public_note);
 
 CREATE INDEX ON instance_electronic_access (relationship_id);
 
