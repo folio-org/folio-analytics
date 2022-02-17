@@ -8,7 +8,7 @@ SELECT
     jsonb_extract_path_text(jsonb, 'ongoing', 'interval')::int AS po_ongoing_interval,
     jsonb_extract_path_text(jsonb, 'ongoing', 'isSubscription')::boolean AS po_ongoing_is_subscription,
     jsonb_extract_path_text(jsonb, 'ongoing', 'manualRenewal')::boolean AS po_ongoing_manual_renewal,
-    jsonb_extract_path_text(jsonb, 'ongoing', 'renewalDate')::timestamp with time zone AS po_ongoing_renewal_date,
+    jsonb_extract_path_text(jsonb, 'ongoing', 'renewalDate')::timestamptz AS po_ongoing_renewal_date,
     jsonb_extract_path_text(jsonb, 'ongoing', 'reviewPeriod')::int AS po_ongoing_review_period
 FROM
     folio_orders.purchase_order AS po;
