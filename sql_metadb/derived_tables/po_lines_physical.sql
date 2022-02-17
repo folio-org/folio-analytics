@@ -9,8 +9,8 @@ WITH temp_phys AS (
         jsonb_extract_path_text(jsonb, 'physical', 'createInventory') AS pol_phys_create_inventory,
         jsonb_extract_path_text(jsonb, 'physical', 'materialType')::uuid AS pol_phys_mat_type_id,
         jsonb_extract_path_text(jsonb, 'physical', 'materialSupplier')::uuid AS pol_phys_mat_supplier_id,
-        jsonb_extract_path_text(jsonb, 'physical', 'expectedReceiptDate')::date AS pol_phys_expected_receipt_date,
-        jsonb_extract_path_text(jsonb, 'physical', 'receiptDue')::date  AS pol_phys_receipt_due,
+        jsonb_extract_path_text(jsonb, 'physical', 'expectedReceiptDate')::timestamptz AS pol_phys_expected_receipt_date,
+        jsonb_extract_path_text(jsonb, 'physical', 'receiptDue')::timestamptz AS pol_phys_receipt_due,
         physical_volumes.data #>> '{}' AS pol_volumes,
         physical_volumes.ordinality AS pol_volumes_ordinality,
         jsonb_extract_path_text(jsonb, 'physical', 'volumes', 'description') AS pol_phys_volumes_description
