@@ -10,7 +10,7 @@ WITH notes AS (
         jsonb_extract_path_text(notes.jsonb, 'holdingsNoteTypeId')::uuid AS note_type_id,
         notes.ordinality AS note_ordinality
     FROM 
-        folio_inventory.holdings_record h
+        folio_inventory.holdings_record AS h
         CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(h.jsonb, 'notes')) WITH ORDINALITY AS notes (jsonb)
 )
 SELECT
@@ -28,9 +28,9 @@ SELECT
     jsonb_extract_path_text(hnt.jsonb, 'updatedByUserId') AS note_updated_by_user_id
 FROM
     notes AS n
-    LEFT JOIN folio_inventory.INSTANCE i ON n.instance_id = i.id
+    LEFT JOIN folio_inventory.instance AS i ON n.instance_id = i.id
     LEFT JOIN folio_inventory.holdings_note_type AS hnt ON n.note_type_id = hnt.id
-    LEFT JOIN folio_inventory.holdings_note_type__t hntt ON n.note_type_id = hntt.id;
+    LEFT JOIN folio_inventory.holdings_note_type__t AS hntt ON n.note_type_id = hntt.id;
 
 CREATE INDEX ON holdings_notes (instance_id);
 
