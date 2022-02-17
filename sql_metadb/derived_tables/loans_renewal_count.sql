@@ -9,7 +9,7 @@ WITH loan_count AS (
     SELECT
         item_id::uuid,
         count(DISTINCT id::uuid) AS num_loans,
-        sum(renewal_count::bigint) AS num_renewals
+        sum(renewal_count::bigint)::bigint AS num_renewals
     FROM
         folio_circulation.loan__t
     GROUP BY
