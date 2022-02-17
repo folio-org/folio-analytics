@@ -11,7 +11,7 @@ WITH temp_eresource AS (
         jsonb_extract_path_text(jsonb, 'eresource', 'activated') AS pol_activated,
         jsonb_extract_path_text(jsonb, 'eresource', 'activationDue') AS pol_activation_due,
         jsonb_extract_path_text(jsonb, 'eresource', 'createInventory') AS pol_create_inventory,
-        jsonb_extract_path_text(jsonb, 'eresource', 'expectedActivation')::date AS pol_expected_activation,
+        jsonb_extract_path_text(jsonb, 'eresource', 'expectedActivation')::timestamptz AS pol_expected_activation,
         jsonb_extract_path_text(jsonb, 'eresource', 'license') AS pol_license,
         jsonb_extract_path_text(jsonb, 'eresource', 'license', 'description') AS pol_license_desc,
         jsonb_extract_path_text(jsonb, 'eresource', 'materialType')::uuid AS pol_material_type_id,
