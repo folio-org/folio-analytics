@@ -9,6 +9,7 @@ holdings_ext.sql
 holdings_notes.sql
 holdings_electronic_access
 instance_relationships_ext.sql
+instance_electronic_access.sql
 instance_statistical_codes.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
@@ -18,3 +19,4 @@ locations_libraries.sql
 po_line_fund_distribution_transactions.sql
 item_ext.sql
 loans_items.sql
+loans_renewal_count.sql
