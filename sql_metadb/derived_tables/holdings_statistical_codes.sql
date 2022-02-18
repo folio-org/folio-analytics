@@ -1,11 +1,12 @@
+-- Create a local holdings table with the id and name for the code and type.
 DROP TABLE IF EXISTS holdings_statistical_codes;
 CREATE TABLE holdings_statistical_codes AS 
 WITH stcodes AS (
     SELECT 
     h.instanceid AS instance_id, 
     jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
-    h.id AS holding_id, 
-    jsonb_extract_path_text(h.jsonb, 'hrid') AS holding_hrid,
+    h.id AS holdings_id, 
+    jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
     (sc.jsonb #>> '{}')::uuid AS statistical_code_id,
     sc.ORDINALITY AS statistical_code_ordinality
     FROM 
@@ -16,8 +17,8 @@ WITH stcodes AS (
 SELECT
     stc.instance_id,
     stc.instance_hrid,
-    stc.holding_id,
-    stc.holding_hrid,
+    stc.holdings_id,
+    stc.holdings_hrid,
     stc.statistical_code_id,
     sct.statistical_code_type_id,
     sctt.name AS statistical_code_type_name,
@@ -31,8 +32,8 @@ FROM
     
 CREATE INDEX ON holdings_statistical_codes (instance_id);
 CREATE INDEX ON holdings_statistical_codes (instance_hrid);
-CREATE INDEX ON holdings_statistical_codes (holding_id);
-CREATE INDEX ON holdings_statistical_codes (holding_hrid);
+CREATE INDEX ON holdings_statistical_codes (holdings_id);
+CREATE INDEX ON holdings_statistical_codes (holdings_hrid);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_id);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
 CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
