@@ -1,10 +1,11 @@
+-- Create table for electronic access points for holdings records
 DROP TABLE IF EXISTS holdings_electronic_access;
 CREATE TABLE holdings_electronic_access AS 
 SELECT 
     h.instanceid AS instance_id, 
     jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
-    h.id AS holding_id,
-    jsonb_extract_path_text(h.jsonb, 'hrid') AS holding_hrid,
+    h.id AS holdings_id,
+    jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
     jsonb_extract_path_text(eaccess.jsonb, 'relationshipId')::uuid AS relationship_id,
     jsonb_extract_path_text(ear.jsonb, 'name') AS relationship_name,
     jsonb_extract_path_text(eaccess.jsonb, 'uri') AS uri,
@@ -25,9 +26,9 @@ CREATE INDEX ON holdings_electronic_access (instance_id);
 
 CREATE INDEX ON holdings_electronic_access (instance_hrid);
 
-CREATE INDEX ON holdings_electronic_access (holding_id);
+CREATE INDEX ON holdings_electronic_access (holdings_id);
 
-CREATE INDEX ON holdings_electronic_access (holding_hrid);
+CREATE INDEX ON holdings_electronic_access (holdings_hrid);
 
 CREATE INDEX ON holdings_electronic_access (relationship_id);
 
