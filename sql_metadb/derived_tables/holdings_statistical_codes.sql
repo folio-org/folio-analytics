@@ -20,7 +20,7 @@ SELECT
     stc.holdings_id,
     stc.holdings_hrid,
     stc.statistical_code_id,
-    sct.statistical_code_type_id,
+    sct.statistical_code_type_id::uuid,
     sctt.name AS statistical_code_type_name,
     sct.code AS statistical_code,
     sct.name AS statistical_code_name,
