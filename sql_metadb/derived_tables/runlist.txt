@@ -7,6 +7,7 @@ finance_transaction_invoices.sql
 finance_transaction_purchase_order.sql
 holdings_ext.sql
 holdings_notes.sql
+holdings_statistical_codes.sql
 instance_relationships_ext.sql
 instance_contributors.sql
 instance_electronic_access.sql
