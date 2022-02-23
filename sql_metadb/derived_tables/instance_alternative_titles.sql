@@ -10,7 +10,7 @@ SELECT
 	jsonb_extract_path_text(titles.jsonb, 'alternativeTitle') AS alternative_title,
     jsonb_extract_path_text(titles.jsonb, 'alternativeTitleTypeId')::uuid AS alternative_title_type_id,
     titles.ordinality AS alternative_title_ordinality,
-    jsonb_extract_path_text(att.jsonb, 'name') AS alternative_type_name 
+    jsonb_extract_path_text(att.jsonb, 'name') AS alternative_title_type_name 
 FROM 
 	folio_inventory.instance i
 	CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'alternativeTitles')) WITH ORDINALITY AS titles (jsonb)
