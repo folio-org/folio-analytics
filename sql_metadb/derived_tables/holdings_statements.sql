@@ -9,7 +9,7 @@ SELECT
     h.instanceid AS instance_id,
     h.id AS holdings_id,
     jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
-    jsonb_extract_path_text(hs.jsonb, 'statement') AS "statement",
+    jsonb_extract_path_text(hs.jsonb, 'statement') AS holdings_statement,
     jsonb_extract_path_text(hs.jsonb, 'note') AS public_note,
     jsonb_extract_path_text(hs.jsonb, 'staffNote') AS staff_note,
     hs.ordinality AS statement_ordinality
@@ -21,7 +21,7 @@ SELECT
     jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,   
     hs.holdings_id,
     hs.holdings_hrid,
-    hs."statement",
+    hs.holdings_statement,
     hs.public_note,
     hs.staff_note, 
     hs.statement_ordinality
