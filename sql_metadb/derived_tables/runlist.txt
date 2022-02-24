@@ -10,6 +10,7 @@ holdings_notes.sql
 holdings_statistical_codes.sql
 instance_relationships_ext.sql
 instance_contributors.sql
+instance_alternative_titles.sql
 instance_electronic_access.sql
 instance_statistical_codes.sql
 invoice_adjustments_in_addition_to.sql
