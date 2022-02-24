@@ -15,7 +15,7 @@ WITH contribs AS (
 		jsonb_extract_path_text(ctb.jsonb, 'contributorNameTypeId')::uuid AS contributor_name_type_id,
     	ctb.ordinality AS contributor_ordinality
 	FROM 
-		folio_inventory.instance i
+		folio_inventory.instance AS i
 		CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'contributors')) WITH ORDINALITY AS ctb (jsonb)
 )
 SELECT 
