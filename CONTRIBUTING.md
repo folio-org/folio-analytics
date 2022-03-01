@@ -70,6 +70,28 @@ additional functionality, those changes do not have to be addressed in
 the current pull request but may be handled in a separate, new pull
 request.
 
+The following checklist can be used to guide your review of a pull
+request. A copy of the checklist should be added to the comment attached 
+to a review. Check off the items that have been confirmed in your review
+by adding an `x` between the square brackets `[]` on each line.
+
+```
+- [] Query runs
+- [] Data output makes sense
+- [] Data types look correct
+- [] Query logic seems correct
+- [] Column names make sense and are spelled correctly
+- [] Query syntax and style are appropriate (e.g., correct use of double quotes, lower case for data types)
+
+For derived tables:
+- [] query has indexes on columns
+- [] vacuum analyze has been added to the bottom
+- [] table appears in runlist.txt at an appropriate point
+```
+
+If any items remain unchecked or you have further questions, you can
+indicate that in the comment as well and select "Request changes" as
+the review response.
 
 4\. Documentation
 -----------------
