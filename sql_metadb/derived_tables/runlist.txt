@@ -13,6 +13,7 @@ instance_contributors.sql
 instance_alternative_titles.sql
 instance_electronic_access.sql
 instance_statistical_codes.sql
+instance_formats.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
 licenses_license_ext.sql
