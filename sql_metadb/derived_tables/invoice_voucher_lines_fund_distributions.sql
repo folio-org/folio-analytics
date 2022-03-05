@@ -1,10 +1,11 @@
-DROP TABLE IF EXISTS invoice_voucher_lines_fund_distributions;
 -- Create a derived table to extract fund_distributions from invoice_voucher_lines and joining funds related tables
-CREATE TABLE invoice_voucher_lines_fund_distributions AS
 
+DROP TABLE IF EXISTS invoice_voucher_lines_fund_distributions;
+
+CREATE TABLE invoice_voucher_lines_fund_distributions AS
 WITH funds_distr AS (
-	SELECT
-    	id AS invoice_voucher_line_id,
+    SELECT
+        id AS invoice_voucher_line_id,
         jsonb_extract_path_text(dist.data, 'code') AS fund_distribution_code,
         jsonb_extract_path_text(dist.data, 'fundId')::uuid AS fund_distribution_id,
         jsonb_extract_path_text(dist.data, 'invoiceLineId')::uuid AS fund_distribution_invl_id,
@@ -16,10 +17,10 @@ WITH funds_distr AS (
         voucherid AS voucher_id
     FROM
         folio_invoice.voucher_lines AS invvl
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(invvl.jsonb, 'fundDistributions')) AS dist(data)
+        CROSS JOIN jsonb_array_elements(jsonb_extract_path(invvl.jsonb, 'fundDistributions')) AS dist (data)
 )
 SELECT
-	invoice_voucher_line_id AS invoice_voucher_line_id,
+    invoice_voucher_line_id AS invoice_voucher_line_id,
     voucher_id AS voucher_id,
     invv.voucher_number AS voucher_number,
     invoice_voucher_lines_amount AS invoice_voucher_lines_amount,
@@ -35,15 +36,16 @@ SELECT
     ff.fund_type_id::uuid AS fund_type_id,
     ft.name AS fund_type_name,
     --ff.tags,  Take out '--' when tags are available to add to this query
-    invoice_voucher_lines_external_account_number AS invoice_voucher_lines_external_account_number   
+    invoice_voucher_lines_external_account_number AS invoice_voucher_lines_external_account_number
 FROM
     funds_distr
     LEFT JOIN folio_finance.fund__t AS ff ON ff.id = funds_distr.fund_distribution_id
     LEFT JOIN folio_finance.fund_type__t AS ft ON ft.id = ff.fund_type_id::uuid
     LEFT JOIN folio_finance.expense_class__t AS fec ON fec.id = fund_distribution_expense_class_id
     LEFT JOIN folio_invoice.vouchers__t AS invv ON invv.id = funds_distr.voucher_id
-ORDER BY voucher_number;
-   
+ORDER BY
+    voucher_number;
+
 CREATE INDEX ON invoice_voucher_lines_fund_distributions (invoice_voucher_line_id);
 
 CREATE INDEX ON invoice_voucher_lines_fund_distributions (voucher_id);
