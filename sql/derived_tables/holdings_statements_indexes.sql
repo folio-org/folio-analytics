@@ -25,4 +25,4 @@ CREATE INDEX ON holdings_statements_indexes (public_note);
 CREATE INDEX ON holdings_statements_indexes (staff_note);
 
 VACUUM ANALYZE holdings_statements_indexes;
-
+ 
