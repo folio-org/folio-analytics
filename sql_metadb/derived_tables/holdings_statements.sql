@@ -15,7 +15,7 @@ WITH holdings AS (
         jsonb_extract_path_text(hs.jsonb, 'staffNote') AS staff_note,
         hs.ordinality AS statement_ordinality
     FROM
-        folio_inventory.holdings_record h
+        folio_inventory.holdings_record AS h
         CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(h.jsonb, 'holdingsStatements')) WITH ORDINALITY AS hs (jsonb)
 )
 SELECT
@@ -29,7 +29,7 @@ SELECT
     hs.statement_ordinality
 FROM
     holdings AS hs
-    LEFT JOIN folio_inventory.instance i ON hs.instance_id = i.id;
+    LEFT JOIN folio_inventory.instance AS i ON hs.instance_id = i.id;
 
 CREATE INDEX ON holdings_statements (instance_id);
 
