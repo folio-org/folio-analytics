@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS po_lines_eresource;
-
 -- Creates a derived table for eresource data in purchase order lines
+
+DROP TABLE IF EXISTS po_lines_eresource;
 
 CREATE TABLE po_lines_eresource AS
 WITH temp_eresource AS (
@@ -76,5 +76,5 @@ CREATE INDEX ON po_lines_eresource (pol_user_limit);
 
 CREATE INDEX ON po_lines_eresource (pol_resource_url);
 
+VACUUM ANALYZE po_lines_eresource;
 
-VACUUM ANALYZE  po_lines_eresource;
