@@ -8,6 +8,7 @@ finance_transaction_purchase_order.sql
 holdings_ext.sql
 holdings_notes.sql
 holdings_statistical_codes.sql
+instance_ext.sql
 holdings_statements_supplements.sql
 holdings_statements.sql
 holdings_statements_indexes.sql
