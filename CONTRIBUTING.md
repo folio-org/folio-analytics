@@ -86,7 +86,7 @@ by adding an `x` between the square brackets `[]` on each line.
 For derived tables:
 - [] query has indexes on columns
 - [] vacuum analyze has been added to the bottom
-- [] table appears in runlist.txt at an appropriate point
+- [] table appears in runlist.txt at an appropriate point and with correct file name
 ```
 
 If any items remain unchecked or you have further questions, you can
