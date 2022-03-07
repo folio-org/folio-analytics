@@ -22,11 +22,19 @@ if [[ $(sort runlist.txt | uniq -d) ]]; then
     echo "testall.sh: runlist.txt contains duplicates: `sort runlist.txt | uniq -d`" 1>&2
     exit 1
 fi
+# Check which operating system is running.
+case "$(uname -s)" in
+    Linux*)     tmpfile=`mktemp --tmpdir=. testall-XXXXXXXXXX.tmp`
+                gnutime=/usr/bin/time ;;
+    Darwin*)    tmpfile=`mktemp testall.XXXXXXXXXX`
+                gnutime=gtime ;;
+    *)          echo "testall.sh: unsupported operating system: `uname -s`" 1>&2
+                exit 1 ;;
+esac
 # Run all queries.
-tmpfile=`mktemp --tmpdir=. testall-XXXXXXXXXX.tmp`
 trap 'rm -f -- "$tmpfile"' EXIT
 for f in $( cat runlist.txt ); do
-    if ! PGOPTIONS='--client-min-messages=warning' /usr/bin/time -o $tmpfile -f '%es' psql -c '\set ON_ERROR_STOP on' -f $f -Xq ; then
+    if ! PGOPTIONS='--client-min-messages=warning' $gnutime -o $tmpfile -f '%es' psql -c '\set ON_ERROR_STOP on' -f $f -Xq ; then
         exit 1
     fi
     printf 'ok\t%-50s\t%s\n' $f `cat $tmpfile` 1>&2

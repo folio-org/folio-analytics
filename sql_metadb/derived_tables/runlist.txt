@@ -8,6 +8,7 @@ finance_transaction_purchase_order.sql
 holdings_ext.sql
 holdings_notes.sql
 holdings_statistical_codes.sql
+holdings_statements_supplements.sql
 instance_relationships_ext.sql
 instance_contributors.sql
 instance_alternative_titles.sql
@@ -16,11 +17,15 @@ instance_statistical_codes.sql
 instance_nature_content.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
+invoice_voucher_lines_fund_distributions.sql
 licenses_license_ext.sql
 loans_renewal_dates.sql
 locations_libraries.sql
 po_line_fund_distribution_transactions.sql
 po_lines_details_subscription.sql
+po_lines_er_mat_type.sql
+po_lines_eresource.sql
+po_lines_phys_mat_type.sql
 item_ext.sql
 loans_items.sql
 loans_renewal_count.sql
