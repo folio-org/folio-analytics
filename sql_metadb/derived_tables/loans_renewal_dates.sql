@@ -2,13 +2,13 @@
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 
  * or to validate the results. */
-DROP TABLE IF EXISTS folio_derived.loans_renewal_dates;
+DROP TABLE IF EXISTS loans_renewal_dates;
 
 --check for rows that are duplicated except for __id
-CREATE TABLE folio_derived.loans_renewal_dates AS
+CREATE TABLE loans_renewal_dates AS
     WITH distinct_records AS (
         SELECT
-            DISTINCT __start, id, jsonb::VARCHAR
+            DISTINCT __start, id, jsonb
         FROM
             folio_circulation.loan
     )
@@ -16,28 +16,30 @@ CREATE TABLE folio_derived.loans_renewal_dates AS
         --__id AS loan_history_id, -- can add back in if we stop de-duplicating rows
         __start AS loan_action_date,
         id AS loan_id,
-        json_extract_path_text(jsonb::JSON, 'itemId') AS item_id,
-        json_extract_path_text(jsonb::JSON, 'action') AS loan_action,
-        json_extract_path_text(jsonb::JSON, 'renewalCount') AS loan_renewal_count,
-        json_extract_path_text(jsonb::JSON, 'status', 'name') AS loan_status
+        jsonb_extract_path_text(jsonb, 'itemId') AS item_id,
+        jsonb_extract_path_text(jsonb, 'action') AS loan_action,
+        jsonb_extract_path_text(jsonb, 'renewalCount') AS loan_renewal_count,
+        jsonb_extract_path_text(jsonb, 'status', 'name') AS loan_status
     FROM distinct_records
     WHERE
-        json_extract_path_text(jsonb::JSON, 'action') IN ('renewed', 'renewedThroughOverride')
+        jsonb_extract_path_text(jsonb, 'action') IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
         loan_action_date
 ;
 
---CREATE INDEX ON folio_derived.loans_renewal_dates (loan_history_id);
+--CREATE INDEX ON loans_renewal_dates (loan_history_id);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (loan_action_date);
+CREATE INDEX ON loans_renewal_dates (loan_action_date);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (loan_id);
+CREATE INDEX ON loans_renewal_dates (loan_id);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (item_id);
+CREATE INDEX ON loans_renewal_dates (item_id);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (loan_action);
+CREATE INDEX ON loans_renewal_dates (loan_action);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (loan_renewal_count);
+CREATE INDEX ON loans_renewal_dates (loan_renewal_count);
 
-CREATE INDEX ON folio_derived.loans_renewal_dates (loan_status);
+CREATE INDEX ON loans_renewal_dates (loan_status);
+
+VACUUM ANALYZE loans_renewal_dates;

@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS folio_derived.agreements_subscription_agreement_entitlement;
+DROP TABLE IF EXISTS agreements_subscription_agreement_entitlement;
 
 -- Creates a derived table on subscription_agreement with entitlement and 
 -- order_line to add po_line_id
-CREATE TABLE folio_derived.agreements_subscription_agreement_entitlement AS
+CREATE TABLE agreements_subscription_agreement_entitlement AS
 SELECT
     sa_id AS subscription_agreement_id,
     sa_name AS subscription_agreement_name,
@@ -28,37 +28,38 @@ FROM
    	LEFT JOIN folio_agreements.refdata_value AS sat ON sa_agreement_type = sat.rdv_id
     LEFT JOIN folio_agreements.refdata_value AS sas ON sa_agreement_status = sas.rdv_id;
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_id);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_id);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_name);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_name);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_local_reference);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_local_reference);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_type);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_type);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_type_value);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_type_value);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_type_label);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_type_label);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_status);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_status);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_status_value);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_status_value);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (subscription_agreement_status_label);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (subscription_agreement_status_label);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_id);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_id);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_active_to);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_active_to);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_active_from);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_active_from);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_subscription_agreement_id);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_subscription_agreement_id);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_resource_fk);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_resource_fk);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_authority);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_authority);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (entitlement_reference);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (entitlement_reference);
 
-CREATE INDEX ON folio_derived.agreements_subscription_agreement_entitlement (po_line_id);
+CREATE INDEX ON agreements_subscription_agreement_entitlement (po_line_id);
 
+VACUUM ANALYZE agreements_subscription_agreement_entitlement;

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.instance_formats;
+DROP TABLE IF EXISTS instance_formats;
 
-CREATE TABLE folio_reporting.instance_formats AS
+CREATE TABLE instance_formats AS
 WITH instances AS (
     SELECT
         id,
@@ -24,17 +24,19 @@ FROM
     instances
     LEFT JOIN inventory_instance_formats AS formats ON instances.instance_format_id = formats.id;
 
-CREATE INDEX ON folio_reporting.instance_formats (instance_id);
+CREATE INDEX ON instance_formats (instance_id);
 
-CREATE INDEX ON folio_reporting.instance_formats (instance_hrid);
+CREATE INDEX ON instance_formats (instance_hrid);
 
-CREATE INDEX ON folio_reporting.instance_formats (format_id);
+CREATE INDEX ON instance_formats (format_id);
 
-CREATE INDEX ON folio_reporting.instance_formats (format_ordinality);
+CREATE INDEX ON instance_formats (format_ordinality);
 
-CREATE INDEX ON folio_reporting.instance_formats (format_code);
+CREATE INDEX ON instance_formats (format_code);
 
-CREATE INDEX ON folio_reporting.instance_formats (format_name);
+CREATE INDEX ON instance_formats (format_name);
 
-CREATE INDEX ON folio_reporting.instance_formats (format_source);
+CREATE INDEX ON instance_formats (format_source);
+
+VACUUM ANALYZE instance_formats;
 

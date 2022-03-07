@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS folio_reporting.requests_items;
+DROP TABLE IF EXISTS requests_items;
 
 -- Create a derived table that contains all items from requests and adds
 -- item and patron-related information
-CREATE TABLE folio_reporting.requests_items AS
+CREATE TABLE requests_items AS
 SELECT
     cr.id AS request_id,
     json_extract_path_text(cr.data, 'itemId') AS item_id,
@@ -55,75 +55,77 @@ FROM
     LEFT JOIN inventory_loan_types AS itlt ON json_extract_path_text(ii.data, 'temporaryLoanTypeId') = itlt.id
     LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id;
 
-CREATE INDEX ON folio_reporting.requests_items (request_id);
+CREATE INDEX ON requests_items (request_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_id);
+CREATE INDEX ON requests_items (item_id);
 
-CREATE INDEX ON folio_reporting.requests_items (request_date);
+CREATE INDEX ON requests_items (request_date);
 
-CREATE INDEX ON folio_reporting.requests_items (request_type);
+CREATE INDEX ON requests_items (request_type);
 
-CREATE INDEX ON folio_reporting.requests_items (request_status);
+CREATE INDEX ON requests_items (request_status);
 
-CREATE INDEX ON folio_reporting.requests_items (pickup_service_point_id);
+CREATE INDEX ON requests_items (pickup_service_point_id);
 
-CREATE INDEX ON folio_reporting.requests_items (pickup_service_point_name);
+CREATE INDEX ON requests_items (pickup_service_point_name);
 
-CREATE INDEX ON folio_reporting.requests_items (pickup_service_point_disc_disp_name);
+CREATE INDEX ON requests_items (pickup_service_point_disc_disp_name);
 
-CREATE INDEX ON folio_reporting.requests_items (in_transit_dest_serv_point_id);
+CREATE INDEX ON requests_items (in_transit_dest_serv_point_id);
 
-CREATE INDEX ON folio_reporting.requests_items (in_transit_dest_serv_point_name);
+CREATE INDEX ON requests_items (in_transit_dest_serv_point_name);
 
-CREATE INDEX ON folio_reporting.requests_items (in_transit_dest_serv_point_disc_disp_name);
+CREATE INDEX ON requests_items (in_transit_dest_serv_point_disc_disp_name);
 
-CREATE INDEX ON folio_reporting.requests_items (fulfillment_preference);
+CREATE INDEX ON requests_items (fulfillment_preference);
 
-CREATE INDEX ON folio_reporting.requests_items (requester_id);
+CREATE INDEX ON requests_items (requester_id);
 
-CREATE INDEX ON folio_reporting.requests_items (patron_group_id);
+CREATE INDEX ON requests_items (patron_group_id);
 
-CREATE INDEX ON folio_reporting.requests_items (patron_group_name);
+CREATE INDEX ON requests_items (patron_group_name);
 
-CREATE INDEX ON folio_reporting.requests_items (item_level_call_number);
+CREATE INDEX ON requests_items (item_level_call_number);
 
-CREATE INDEX ON folio_reporting.requests_items (barcode);
+CREATE INDEX ON requests_items (barcode);
 
-CREATE INDEX ON folio_reporting.requests_items (chronology);
+CREATE INDEX ON requests_items (chronology);
 
-CREATE INDEX ON folio_reporting.requests_items (item_copy_number);
+CREATE INDEX ON requests_items (item_copy_number);
 
-CREATE INDEX ON folio_reporting.requests_items (item_effective_location_id);
+CREATE INDEX ON requests_items (item_effective_location_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_effective_location_name);
+CREATE INDEX ON requests_items (item_effective_location_name);
 
-CREATE INDEX ON folio_reporting.requests_items (item_permanent_location_id);
+CREATE INDEX ON requests_items (item_permanent_location_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_permanent_location_name);
+CREATE INDEX ON requests_items (item_permanent_location_name);
 
-CREATE INDEX ON folio_reporting.requests_items (item_temporary_location_id);
+CREATE INDEX ON requests_items (item_temporary_location_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_temporary_location_name);
+CREATE INDEX ON requests_items (item_temporary_location_name);
 
-CREATE INDEX ON folio_reporting.requests_items (enumeration);
+CREATE INDEX ON requests_items (enumeration);
 
-CREATE INDEX ON folio_reporting.requests_items (holdings_record_id);
+CREATE INDEX ON requests_items (holdings_record_id);
 
-CREATE INDEX ON folio_reporting.requests_items (hrid);
+CREATE INDEX ON requests_items (hrid);
 
-CREATE INDEX ON folio_reporting.requests_items (item_identifier);
+CREATE INDEX ON requests_items (item_identifier);
 
-CREATE INDEX ON folio_reporting.requests_items (material_type_id);
+CREATE INDEX ON requests_items (material_type_id);
 
-CREATE INDEX ON folio_reporting.requests_items (material_type_name);
+CREATE INDEX ON requests_items (material_type_name);
 
-CREATE INDEX ON folio_reporting.requests_items (number_of_pieces);
+CREATE INDEX ON requests_items (number_of_pieces);
 
-CREATE INDEX ON folio_reporting.requests_items (item_permanent_loan_type_id);
+CREATE INDEX ON requests_items (item_permanent_loan_type_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_permanent_loan_type_name);
+CREATE INDEX ON requests_items (item_permanent_loan_type_name);
 
-CREATE INDEX ON folio_reporting.requests_items (item_temporary_loan_type_id);
+CREATE INDEX ON requests_items (item_temporary_loan_type_id);
 
-CREATE INDEX ON folio_reporting.requests_items (item_temporary_loan_type_name);
+CREATE INDEX ON requests_items (item_temporary_loan_type_name);
 
+
+VACUUM ANALYZE  requests_items;

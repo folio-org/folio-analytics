@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS folio_derived.agreements_package_content_item;
+DROP TABLE IF EXISTS agreements_package_content_item;
 
 -- Creates a derived table on all needed data of package_content_items that either
 -- are linked directly to an entitlement or have an package linked that is linked to an entitlement
-CREATE TABLE folio_derived.agreements_package_content_item AS
+CREATE TABLE agreements_package_content_item AS
 SELECT
     pci_list.pci_id,
     pci_list.pci_access_start,
@@ -170,85 +170,86 @@ UNION
         LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id
         LEFT JOIN folio_agreements.refdata_category AS rpubc ON rpub.rdv_owner = rpubc.rdc_id) AS pci_list;
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_id);
+CREATE INDEX ON agreements_package_content_item (pci_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_access_start);
+CREATE INDEX ON agreements_package_content_item (pci_access_start);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_access_end);
+CREATE INDEX ON agreements_package_content_item (pci_access_end);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_package_id);
+CREATE INDEX ON agreements_package_content_item (pci_package_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_removed_ts);
+CREATE INDEX ON agreements_package_content_item (pci_removed_ts);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (package_source);
+CREATE INDEX ON agreements_package_content_item (package_source);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (package_vendor_id);
+CREATE INDEX ON agreements_package_content_item (package_vendor_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (org_vendor_name);
+CREATE INDEX ON agreements_package_content_item (org_vendor_name);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (package_remote_kb_id);
+CREATE INDEX ON agreements_package_content_item (package_remote_kb_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (remotekb_remote_kb_name);
+CREATE INDEX ON agreements_package_content_item (remotekb_remote_kb_name);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (package_reference);
+CREATE INDEX ON agreements_package_content_item (package_reference);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pci_platform_title_instance_id);
+CREATE INDEX ON agreements_package_content_item (pci_platform_title_instance_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pti_platform_id);
+CREATE INDEX ON agreements_package_content_item (pti_platform_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pt_platform_name);
+CREATE INDEX ON agreements_package_content_item (pt_platform_name);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pti_title_instance_id);
+CREATE INDEX ON agreements_package_content_item (pti_title_instance_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (pti_url);
+CREATE INDEX ON agreements_package_content_item (pti_url);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_id);
+CREATE INDEX ON agreements_package_content_item (ti_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_work_id);
+CREATE INDEX ON agreements_package_content_item (ti_work_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_date_monograph_published);
+CREATE INDEX ON agreements_package_content_item (ti_date_monograph_published);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_first_author);
+CREATE INDEX ON agreements_package_content_item (ti_first_author);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_monograph_edition);
+CREATE INDEX ON agreements_package_content_item (ti_monograph_edition);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_monograph_volume);
+CREATE INDEX ON agreements_package_content_item (ti_monograph_volume);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (ti_first_editor);
+CREATE INDEX ON agreements_package_content_item (ti_first_editor);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (identifier_id);
+CREATE INDEX ON agreements_package_content_item (identifier_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (identifier_value);
+CREATE INDEX ON agreements_package_content_item (identifier_value);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (identifier_namespace_id);
+CREATE INDEX ON agreements_package_content_item (identifier_namespace_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (identifiernamespace_name);
+CREATE INDEX ON agreements_package_content_item (identifiernamespace_name);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (entitlement_id);
+CREATE INDEX ON agreements_package_content_item (entitlement_id);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_name);
+CREATE INDEX ON agreements_package_content_item (res_name);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_fk);
+CREATE INDEX ON agreements_package_content_item (res_sub_type_fk);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_value);
+CREATE INDEX ON agreements_package_content_item (res_sub_type_value);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_label);
+CREATE INDEX ON agreements_package_content_item (res_sub_type_label);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_sub_type_category);
+CREATE INDEX ON agreements_package_content_item (res_sub_type_category);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_fk);
+CREATE INDEX ON agreements_package_content_item (res_type_fk);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_value);
+CREATE INDEX ON agreements_package_content_item (res_type_value);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_label);
+CREATE INDEX ON agreements_package_content_item (res_type_label);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_type_category);
+CREATE INDEX ON agreements_package_content_item (res_type_category);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_fk);
+CREATE INDEX ON agreements_package_content_item (res_publication_type_fk);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_value);
+CREATE INDEX ON agreements_package_content_item (res_publication_type_value);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_label);
+CREATE INDEX ON agreements_package_content_item (res_publication_type_label);
 
-CREATE INDEX ON folio_derived.agreements_package_content_item (res_publication_type_category);
+CREATE INDEX ON agreements_package_content_item (res_publication_type_category);
 
+VACUUM ANALYZE agreements_package_content_item;

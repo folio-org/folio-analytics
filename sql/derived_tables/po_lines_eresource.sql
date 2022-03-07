@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS folio_reporting.po_lines_eresource;
+DROP TABLE IF EXISTS po_lines_eresource;
 
 -- Create a local table for Purchase Order Line Eresource data.
-CREATE TABLE folio_reporting.po_lines_eresource AS
+CREATE TABLE po_lines_eresource AS
 WITH temp_eresource AS (
     SELECT
         pol.id AS pol_id,
@@ -43,35 +43,37 @@ FROM
     LEFT JOIN inventory_locations AS il ON il.id = te.pol_location_id
     LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_id);
+CREATE INDEX ON po_lines_eresource (pol_id);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_location_id);
+CREATE INDEX ON po_lines_eresource (pol_location_id);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (location_name);
+CREATE INDEX ON po_lines_eresource (location_name);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_access_provider);
+CREATE INDEX ON po_lines_eresource (pol_access_provider);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (provider_org_name);
+CREATE INDEX ON po_lines_eresource (provider_org_name);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_activated);
+CREATE INDEX ON po_lines_eresource (pol_activated);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_activation_due);
+CREATE INDEX ON po_lines_eresource (pol_activation_due);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_create_inventory);
+CREATE INDEX ON po_lines_eresource (pol_create_inventory);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_expected_activation);
+CREATE INDEX ON po_lines_eresource (pol_expected_activation);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_license);
+CREATE INDEX ON po_lines_eresource (pol_license);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_license_desc);
+CREATE INDEX ON po_lines_eresource (pol_license_desc);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_material_type);
+CREATE INDEX ON po_lines_eresource (pol_material_type);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_er_mat_type_name);
+CREATE INDEX ON po_lines_eresource (pol_er_mat_type_name);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_trial);
+CREATE INDEX ON po_lines_eresource (pol_trial);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_user_limit);
+CREATE INDEX ON po_lines_eresource (pol_user_limit);
 
-CREATE INDEX ON folio_reporting.po_lines_eresource (pol_resource_url);
+CREATE INDEX ON po_lines_eresource (pol_resource_url);
 
+
+VACUUM ANALYZE  po_lines_eresource;

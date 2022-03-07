@@ -36,7 +36,7 @@ WITH parameters AS (
      invoice_detail AS (
          SELECT
              inv.id AS "invoice_id",
-             json_extract_path_text(inv.jsonb, 'paymentDate')::date AS "invoice_payment_date"
+             jsonb_extract_path_text(inv.jsonb, 'paymentDate')::date AS "invoice_payment_date"
          FROM
              folio_invoice.invoices AS inv
      )
@@ -50,20 +50,20 @@ SELECT
 	erm_resource.res_type_fk_label AS erm_resource_type,
 	erm_resource.res_sub_type_fk_label AS erm_resource_sub_type,
 	erm_resource.res_publication_type_fk_label AS erm_resource_publication_type,
-    json_extract_path_text(pol.jsonb, 'paymentStatus') AS "po_line_payment_status",
-    json_extract_path_text(pol.jsonb, 'isPackage') AS "po_line_is_package",	
-    json_extract_path_text(pol.jsonb, 'orderFormat') AS "po_line_order_format",   
-    json_extract_path_text(invl.jsonb, 'invoiceLineStatus') AS "invl_status",
+    jsonb_extract_path_text(pol.jsonb, 'paymentStatus') AS "po_line_payment_status",
+    jsonb_extract_path_text(pol.jsonb, 'isPackage') AS "po_line_is_package",	
+    jsonb_extract_path_text(pol.jsonb, 'orderFormat') AS "po_line_order_format",   
+    jsonb_extract_path_text(invl.jsonb, 'invoiceLineStatus') AS "invl_status",
     inv.invoice_payment_date AS "invoice_payment_date",
-    json_extract_path_text(invl.jsonb, 'subTotal') AS "invl_sub_total", -- this are costs by invoice_line in invoice currency
-    json_extract_path_text(invl.jsonb, 'total') AS "invl_total", -- this are costs by invoice_line in invoice currency
-    cast(fintrainvl.transaction_amount AS money) AS "transactions_invl_total"  
+    jsonb_extract_path_text(invl.jsonb, 'subTotal') AS "invl_sub_total", -- this are costs by invoice_line in invoice currency
+    jsonb_extract_path_text(invl.jsonb, 'total') AS "invl_total", -- this are costs by invoice_line in invoice currency
+    cast(fintrainvl.transaction_amount AS numeric(19,4)) AS "transactions_invl_total"  
 FROM
 	folio_derived.agreements_subscription_agreement_entitlement AS sa_ent_dt
 		LEFT JOIN folio_derived.agreements_erm_resource AS erm_resource ON erm_resource.res_id = sa_ent_dt.entitlement_resource_fk
 		LEFT JOIN folio_orders.po_line AS pol ON pol.id = sa_ent_dt.po_line_id
-		LEFT JOIN folio_invoice.invoice_lines AS invl ON json_extract_path_text(invl.jsonb, 'poLineId') = pol.id
-        LEFT JOIN invoice_detail AS inv ON json_extract_path_text(invl.jsonb, 'invoiceId') = inv.invoice_id
+		LEFT JOIN folio_invoice.invoice_lines AS invl ON jsonb_extract_path_text(invl.jsonb, 'poLineId') = pol.id
+        LEFT JOIN invoice_detail AS inv ON jsonb_extract_path_text(invl.jsonb, 'invoiceId') = inv.invoice_id
         LEFT JOIN folio_derived.finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id = invl.id
 WHERE	
 	((sa_ent_dt.subscription_agreement_status_label = (SELECT agreement_status FROM parameters)) OR 
@@ -78,10 +78,10 @@ WHERE
 	((erm_resource.res_publication_type_fk_label = (SELECT resource_publication_type FROM parameters)) OR 
 		((SELECT resource_publication_type FROM parameters) = ''))
 	AND 	
-	((json_extract_path_text(invl.jsonb, 'invoiceLineStatus') = (SELECT invoice_line_status FROM parameters)) OR 
+	((jsonb_extract_path_text(invl.jsonb, 'invoiceLineStatus') = (SELECT invoice_line_status FROM parameters)) OR 
 		((SELECT invoice_line_status FROM parameters) = ''))
 	AND 	
-	((json_extract_path_text(pol.jsonb, 'orderFormat') = (SELECT po_line_order_format FROM parameters)) OR 
+	((jsonb_extract_path_text(pol.jsonb, 'orderFormat') = (SELECT po_line_order_format FROM parameters)) OR 
 		((SELECT po_line_order_format FROM parameters) = ''))
 	AND
     ((inv.invoice_payment_date >= (SELECT start_date FROM parameters) AND
@@ -99,11 +99,11 @@ GROUP BY
 	erm_resource.res_type_fk_label,
 	erm_resource.res_sub_type_fk_label,
 	erm_resource.res_publication_type_fk_label,
-	json_extract_path_text(pol.jsonb, 'paymentStatus'),
-	json_extract_path_text(pol.jsonb, 'orderFormat'),
-	json_extract_path_text(invl.jsonb, 'invoiceLineStatus'),
-	json_extract_path_text(pol.jsonb, 'isPackage'),
+	jsonb_extract_path_text(pol.jsonb, 'paymentStatus'),
+	jsonb_extract_path_text(pol.jsonb, 'orderFormat'),
+	jsonb_extract_path_text(invl.jsonb, 'invoiceLineStatus'),
+	jsonb_extract_path_text(pol.jsonb, 'isPackage'),
 	inv.invoice_payment_date,
-    json_extract_path_text(invl.jsonb, 'subTotal'),
-    json_extract_path_text(invl.jsonb, 'total'),
+    jsonb_extract_path_text(invl.jsonb, 'subTotal'),
+    jsonb_extract_path_text(invl.jsonb, 'total'),
 	fintrainvl.transaction_amount;

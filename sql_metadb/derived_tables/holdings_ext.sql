@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS folio_derived.holdings_ext;
+DROP TABLE IF EXISTS holdings_ext;
 
 -- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy, 
 -- permanent location, and temporary location.
 -- Holdings notes are in a separate derived table.
-CREATE TABLE folio_derived.holdings_ext AS
+CREATE TABLE holdings_ext AS
 WITH holdings AS (
     SELECT
         h__t.id,
@@ -22,10 +22,10 @@ WITH holdings AS (
         h__t.retention_policy,
         h__t.shelving_title,
         h__t.discovery_suppress,
-        json_extract_path_text(h.jsonb, 'metadata', 'createdDate') AS created_date,
-        json_extract_path_text(h.jsonb, 'metadata', 'createdByUserId') AS updated_by_user_id,
-        json_extract_path_text(h.jsonb, 'metadata', 'updatedDate') AS updated_date,
-        json_extract_path_text(h.jsonb, 'temporaryLocationId') AS temporary_location_id
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'createdDate') AS created_date,
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'createdByUserId') AS updated_by_user_id,
+        jsonb_extract_path_text(h.jsonb, 'metadata', 'updatedDate') AS updated_date,
+        jsonb_extract_path_text(h.jsonb, 'temporaryLocationId') AS temporary_location_id
     FROM
         folio_inventory.holdings_record AS h
         LEFT JOIN folio_inventory.holdings_record__t AS h__t ON h.id = h__t.id
@@ -58,59 +58,60 @@ SELECT
     holdings.updated_date
 FROM
     holdings
-    LEFT JOIN folio_inventory.holdings_type__t AS holdings_type ON holdings.holdings_type_id = holdings_type.id
-    LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id = holdings_ill_policy.id
-    LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
-    LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id = holdings_permanent_location.id
-    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id = holdings_temporary_location.id;
+    LEFT JOIN folio_inventory.holdings_type__t AS holdings_type ON holdings.holdings_type_id::uuid = holdings_type.id
+    LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id::uuid = holdings_ill_policy.id
+    LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id::uuid = holdings_call_number_type.id
+    LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id::uuid = holdings_permanent_location.id
+    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id;
 
-CREATE INDEX ON folio_derived.holdings_ext (holdings_id);
+CREATE INDEX ON holdings_ext (holdings_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (holdings_hrid);
+CREATE INDEX ON holdings_ext (holdings_hrid);
 
-CREATE INDEX ON folio_derived.holdings_ext (acquisition_method);
+CREATE INDEX ON holdings_ext (acquisition_method);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number);
+CREATE INDEX ON holdings_ext (call_number);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_prefix);
+CREATE INDEX ON holdings_ext (call_number_prefix);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_suffix);
+CREATE INDEX ON holdings_ext (call_number_suffix);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_type_id);
+CREATE INDEX ON holdings_ext (call_number_type_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (call_number_type_name);
+CREATE INDEX ON holdings_ext (call_number_type_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (copy_number);
+CREATE INDEX ON holdings_ext (copy_number);
 
-CREATE INDEX ON folio_derived.holdings_ext (type_id);
+CREATE INDEX ON holdings_ext (type_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (type_name);
+CREATE INDEX ON holdings_ext (type_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (ill_policy_id);
+CREATE INDEX ON holdings_ext (ill_policy_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (ill_policy_name);
+CREATE INDEX ON holdings_ext (ill_policy_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (instance_id);
+CREATE INDEX ON holdings_ext (instance_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (permanent_location_id);
+CREATE INDEX ON holdings_ext (permanent_location_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (permanent_location_name);
+CREATE INDEX ON holdings_ext (permanent_location_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (temporary_location_id);
+CREATE INDEX ON holdings_ext (temporary_location_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (temporary_location_name);
+CREATE INDEX ON holdings_ext (temporary_location_name);
 
-CREATE INDEX ON folio_derived.holdings_ext (receipt_status);
+CREATE INDEX ON holdings_ext (receipt_status);
 
-CREATE INDEX ON folio_derived.holdings_ext (retention_policy);
+CREATE INDEX ON holdings_ext (retention_policy);
 
-CREATE INDEX ON folio_derived.holdings_ext (shelving_title);
+CREATE INDEX ON holdings_ext (shelving_title);
 
-CREATE INDEX ON folio_derived.holdings_ext (discovery_suppress);
+CREATE INDEX ON holdings_ext (discovery_suppress);
 
-CREATE INDEX ON folio_derived.holdings_ext (created_date);
+CREATE INDEX ON holdings_ext (created_date);
 
-CREATE INDEX ON folio_derived.holdings_ext (updated_by_user_id);
+CREATE INDEX ON holdings_ext (updated_by_user_id);
 
-CREATE INDEX ON folio_derived.holdings_ext (updated_date);
+CREATE INDEX ON holdings_ext (updated_date);
 
+VACUUM ANALYZE holdings_ext;

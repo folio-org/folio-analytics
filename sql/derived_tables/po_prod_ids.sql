@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS folio_reporting.po_prod_ids;
+DROP TABLE IF EXISTS po_prod_ids;
 
-CREATE TABLE folio_reporting.po_prod_ids AS
+CREATE TABLE po_prod_ids AS
 WITH po_prod_id AS (
     SELECT
         pl.id AS pol_id,
@@ -20,9 +20,11 @@ FROM
     LEFT JOIN po_purchase_orders AS ppo ON po_prod_id.pol_id = ppo.id
     LEFT JOIN inventory_identifier_types ON po_prod_id.prod_id_type = inventory_identifier_types.id;
 
-CREATE INDEX ON folio_reporting.po_prod_ids (pol_number);
+CREATE INDEX ON po_prod_ids (pol_number);
 
-CREATE INDEX ON folio_reporting.po_prod_ids (prod_id);
+CREATE INDEX ON po_prod_ids (prod_id);
 
-CREATE INDEX ON folio_reporting.po_prod_ids (prod_id_type_name);
+CREATE INDEX ON po_prod_ids (prod_id_type_name);
 
+
+VACUUM ANALYZE  po_prod_ids;
