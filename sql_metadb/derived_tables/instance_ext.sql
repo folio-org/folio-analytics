@@ -71,10 +71,6 @@ CREATE INDEX ON instance_ext (instance_type_id);
 
 CREATE INDEX ON instance_ext (instance_type_name);
 
-CREATE INDEX ON instance_ext (title);
-
-CREATE INDEX ON instance_ext (index_title);
-
 CREATE INDEX ON instance_ext (mode_of_issuance_id);
 
 CREATE INDEX ON instance_ext (mode_of_issuance_name);

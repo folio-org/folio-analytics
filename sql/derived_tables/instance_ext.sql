@@ -36,10 +36,6 @@ CREATE INDEX ON instance_ext (instance_hrid);
 
 CREATE INDEX ON instance_ext (cataloged_date);
 
-CREATE INDEX ON instance_ext (title);
-
-CREATE INDEX ON instance_ext (index_title);
-
 CREATE INDEX ON instance_ext (type_id);
 
 CREATE INDEX ON instance_ext (type_name);
