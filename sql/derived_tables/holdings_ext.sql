@@ -4,31 +4,6 @@ DROP TABLE IF EXISTS holdings_ext;
 -- permanent location, and temporary location.
 -- Holdings notes are in a separate derived table.
 CREATE TABLE holdings_ext AS
-WITH holdings AS (
-    SELECT
-        id,
-        hrid,
-        json_extract_path_text(data, 'acquisitionMethod') AS acquisition_method,
-        call_number,
-        json_extract_path_text(data, 'callNumberPrefix') AS call_number_prefix,
-        json_extract_path_text(data, 'callNumberSuffix') AS call_number_suffix,
-        call_number_type_id,
-        json_extract_path_text(data, 'copyNumber') AS copy_number,
-        json_extract_path_text(data, 'holdingsTypeId') AS holdings_type_id,
-        json_extract_path_text(data, 'illPolicyId') AS ill_policy_id,
-        instance_id,
-        permanent_location_id,
-        json_extract_path_text(data, 'receiptStatus') AS receipt_status,
-        json_extract_path_text(data, 'retentionPolicy') AS retention_policy,
-        json_extract_path_text(data, 'shelvingTitle') AS shelving_title,
-        json_extract_path_text(data, 'discoverySuppress')::boolean AS discovery_suppress,
-        json_extract_path_text(data, 'metadata', 'createdDate') AS created_date,
-        json_extract_path_text(data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-        json_extract_path_text(data, 'metadata', 'updatedDate') AS updated_date,
-        json_extract_path_text(data, 'temporaryLocationId') AS temporary_location_id
-    FROM
-        inventory_holdings
-)
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
@@ -42,7 +17,7 @@ SELECT
     holdings.holdings_type_id AS type_id,
     holdings_type.name AS type_name,
     holdings.ill_policy_id,
-    json_extract_path_text(holdings_ill_policy.data, 'name') AS ill_policy_name,
+    holdings_ill_policy.name AS ill_policy_name,
     holdings.instance_id,
     holdings.permanent_location_id,
     holdings_permanent_location.name AS permanent_location_name,
@@ -52,11 +27,11 @@ SELECT
     holdings.retention_policy,
     holdings.shelving_title,
     holdings.discovery_suppress,
-    holdings.created_date,
-    holdings.updated_by_user_id,
-    holdings.updated_date
+    json_extract_path_text(holdings.data, 'metadata', 'createdDate') AS created_date,
+    json_extract_path_text(holdings.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
+    json_extract_path_text(holdings.data, 'metadata', 'updatedDate') AS updated_date
 FROM
-    holdings
+    inventory_holdings AS holdings
     LEFT JOIN inventory_holdings_types AS holdings_type ON holdings.holdings_type_id = holdings_type.id
     LEFT JOIN inventory_ill_policies AS holdings_ill_policy ON holdings.ill_policy_id = holdings_ill_policy.id
     LEFT JOIN inventory_call_number_types AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
