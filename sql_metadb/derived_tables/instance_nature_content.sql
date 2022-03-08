@@ -1,4 +1,5 @@
---Create derived table for instance nature of content with uuid and name.
+-- Create derived table for instance nature of content with uuid and name.
+
 DROP TABLE IF EXISTS instance_nature_content;
 
 CREATE TABLE instance_nature_content AS
@@ -18,7 +19,7 @@ SELECT
     nc.nature_of_content_term_id::uuid,
     noctt.name AS nature_of_content_term_name,
     noctt.source AS nature_of_content_term_source,
-    nc.nature_of_content_ordinality 
+    nc.nature_of_content_ordinality
 FROM
     nature_content AS nc
     LEFT JOIN folio_inventory.nature_of_content_term__t AS noctt ON nc.nature_of_content_term_id::uuid = noctt.id::uuid;
