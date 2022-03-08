@@ -10,7 +10,7 @@ WITH instances AS (
         instance_format_ids.jsonb #>> '{}' AS instance_format_id,
         instance_format_ids.ordinality AS instance_format_ordinality
     FROM
-        folio_inventory.instance i
+        folio_inventory.instance AS i
         CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'instanceFormatIds')) WITH ORDINALITY AS instance_format_ids (jsonb)
 )
 SELECT
