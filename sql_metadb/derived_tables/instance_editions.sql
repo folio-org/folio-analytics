@@ -1,4 +1,5 @@
 -- Create derived table for instance edition statements
+
 DROP TABLE IF EXISTS instance_editions;
 
 CREATE TABLE instance_editions AS
@@ -8,7 +9,7 @@ SELECT
     editions.jsonb #>> '{}' AS edition,
     editions.ordinality AS edition_ordinality
 FROM
-    folio_inventory.instance  AS instances
+    folio_inventory.instance AS instances
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instances.jsonb, 'editions')) WITH ORDINALITY AS editions (jsonb);
 
 CREATE INDEX ON instance_editions (instance_id);
