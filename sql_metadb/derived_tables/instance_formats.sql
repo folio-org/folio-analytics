@@ -1,5 +1,6 @@
--- Create derived table for instance formats bringing together the identifier and name 
+-- Create derived table for instance formats bringing together the identifier and name
 -- Note: Because of inaccurate data in FOLIO, instance_format_id is a varchar and the ift.id has to be cast as a varchar.
+
 DROP TABLE IF EXISTS instance_formats;
 
 CREATE TABLE instance_formats AS
@@ -22,8 +23,8 @@ SELECT
     ift.name AS instance_format_name,
     ift.source AS instance_format_source
 FROM
-    instances AS it  
-    LEFT JOIN folio_inventory.instance_format__t AS ift ON it.instance_format_id = ift.id::varchar ;
+    instances AS it
+    LEFT JOIN folio_inventory.instance_format__t AS ift ON it.instance_format_id = ift.id::varchar;
 
 CREATE INDEX ON instance_formats (instance_id);
 
@@ -40,3 +41,4 @@ CREATE INDEX ON instance_formats (instance_format_name);
 CREATE INDEX ON instance_formats (instance_format_source);
 
 VACUUM ANALYZE instance_formats;
+
