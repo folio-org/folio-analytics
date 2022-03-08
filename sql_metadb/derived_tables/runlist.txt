@@ -20,6 +20,7 @@ instance_statistical_codes.sql
 instance_formats.sql
 instance_editions.sql
 instance_languages.sql
+instance_nature_content.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
 invoice_voucher_lines_fund_distributions.sql
