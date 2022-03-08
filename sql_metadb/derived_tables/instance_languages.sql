@@ -1,4 +1,5 @@
 -- Create derived table for Instance languages
+
 DROP TABLE IF EXISTS instance_languages;
 
 CREATE TABLE instance_languages AS
