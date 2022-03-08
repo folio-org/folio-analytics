@@ -18,6 +18,7 @@ instance_alternative_titles.sql
 instance_electronic_access.sql
 instance_statistical_codes.sql
 instance_formats.sql
+instance_editions.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
 invoice_voucher_lines_fund_distributions.sql
