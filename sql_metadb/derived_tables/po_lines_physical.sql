@@ -23,7 +23,7 @@ SELECT
     tp.pol_id,
     tp.pol_phys_create_inventory,
     tp.pol_phys_mat_type_id,
-    imt.name AS pol_er_mat_type_name,
+    imt.name AS pol_phys_mat_type_name,
     tp.pol_phys_mat_supplier_id,
     oo.name AS supplier_org_name,
     tp.pol_phys_expected_receipt_date,
@@ -42,7 +42,7 @@ CREATE INDEX ON po_lines_physical (pol_phys_create_inventory);
 
 CREATE INDEX ON po_lines_physical (pol_phys_mat_type_id);
 
-CREATE INDEX ON po_lines_physical (pol_er_mat_type_name);
+CREATE INDEX ON po_lines_physical (pol_phys_mat_type_name);
 
 CREATE INDEX ON po_lines_physical (pol_phys_mat_supplier_id);
 
