@@ -12,6 +12,7 @@ instance_ext.sql
 holdings_statements_supplements.sql
 holdings_statements.sql
 holdings_statements_indexes.sql
+holdings_electronic_access.sql
 instance_relationships_ext.sql
 instance_contributors.sql
 instance_alternative_titles.sql
