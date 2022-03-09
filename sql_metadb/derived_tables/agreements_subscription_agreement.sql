@@ -1,11 +1,12 @@
-DROP TABLE IF EXISTS agreements_subscription_agreement;
-
--- Creates a derived table on agreements_subscription_agreement and 
+-- Creates a derived table on agreements_subscription_agreement and
 -- resolves values and labels from erm_agreements_refdata_value for:
 --    sa_renewal_priority
 --    sa_is_perpetual
 --    sa_agreement_status
 --    sa_reason_for_closure
+
+DROP TABLE IF EXISTS agreements_subscription_agreement;
+
 CREATE TABLE agreements_subscription_agreement AS
 SELECT
     sa_id,
@@ -70,3 +71,4 @@ CREATE INDEX ON agreements_subscription_agreement (sa_reason_for_closure_label);
 CREATE INDEX ON agreements_subscription_agreement (sa_custom_properties_id);
 
 VACUUM ANALYZE agreements_subscription_agreement;
+
