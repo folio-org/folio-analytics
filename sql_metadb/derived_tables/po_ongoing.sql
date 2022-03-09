@@ -25,4 +25,5 @@ CREATE INDEX ON po_ongoing (po_ongoing_renewal_date);
 
 CREATE INDEX ON po_ongoing (po_ongoing_review_period);
 
-VACUUM ANALYZE  po_ongoing;
+VACUUM ANALYZE po_ongoing;
+
