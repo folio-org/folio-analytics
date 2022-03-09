@@ -16,8 +16,7 @@ WITH temp_phys AS (
         jsonb_extract_path_text(jsonb, 'physical', 'volumes', 'description') AS pol_phys_volumes_description
     FROM
         folio_orders.po_line AS pol
-        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'physical', 'volumes'))
-        WITH ORDINALITY AS physical_volumes (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'physical', 'volumes')) WITH ORDINALITY AS physical_volumes (data)
 )
 SELECT
     tp.pol_id,
@@ -58,5 +57,5 @@ CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
 
 CREATE INDEX ON po_lines_physical (pol_phys_volumes_description);
 
+VACUUM ANALYZE po_lines_physical;
 
-VACUUM ANALYZE  po_lines_physical;
