@@ -22,8 +22,8 @@ SELECT
     jsonb_extract_path_text(i.jsonb, 'modeOfIssuanceId')::uuid AS mode_of_issuance_id,
     moit.name AS mode_of_issuance_name,
     jsonb_extract_path_text(i.jsonb, 'catalogedDate')::date AS cataloged_date,
-    jsonb_extract_path_text(i.jsonb, 'metadata', 'createdDate')::date AS created_date,
-    jsonb_extract_path_text(i.jsonb, 'metadata', 'updatedDate')::date AS updated_date
+    jsonb_extract_path_text(i.jsonb, 'metadata', 'createdDate')::timestamptz AS created_date,
+    jsonb_extract_path_text(i.jsonb, 'metadata', 'updatedDate')::timestamptz AS updated_date
 FROM
     folio_inventory.instance AS i
     LEFT JOIN folio_inventory.mode_of_issuance__t AS moit ON jsonb_extract_path_text(i.jsonb, 'modeOfIssuanceId')::uuid = moit.id
