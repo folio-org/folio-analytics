@@ -16,33 +16,33 @@ CREATE TABLE items_holdings_instances AS
 SELECT
     ii.id AS item_id,
     ii.barcode,
-    json_extract_path_text(ii.data, 'chronology') AS chronology,
-    json_extract_path_text(ii.data, 'copyNumber') AS item_copy_number,
-    json_extract_path_text(ii.data, 'enumeration') AS enumeration,
+    ii.chronology,
+    ii.copy_number,
+    ii.enumeration,
     ii.holdings_record_id,
     ii.hrid,
-    json_extract_path_text(ii.data, 'itemIdentifier') AS item_identifier,
-    json_extract_path_text(ii.data, 'itemLevelCallNumber') AS item_level_call_number,
+    ii.item_identifier,
+    ii.item_level_call_number,
     ih.call_number_type_id,
     icnt.name AS call_number_type_name,
     ii.material_type_id,
     imt.name AS material_type_name,
-    json_extract_path_text(ii.data, 'numberOfPieces') AS number_of_pieces,
+    ii.number_of_pieces,
     ih.id AS holdings_id,
     ih.call_number,
-    json_extract_path_text(ih.data, 'acquisitionMethod') AS acquisition_method,
-    json_extract_path_text(ih.data, 'copyNumber') AS holdings_copy_number,
-    json_extract_path_text(ih.data, 'holdingsTypeId') AS holdings_type_id,
+    ih.acquisition_method,
+    ih.copy_number,
+    ih.holdings_type_id,
     iht.name AS holdings_type_name,
     ih.instance_id,
-    json_extract_path_text(ih.data, 'shelvingTitle') AS shelving_title,
-    json_extract_path_text(ii2.data, 'catalogedDate') AS cataloged_date,
+    ih.shelving_title,
+    ii2.cataloged_date,
     ii2.index_title,
     ii2.title,
     ilt.id AS loan_type_id,
     ilt.name AS loan_type_name
 FROM
-    inventory_items ii
+    inventory_items AS ii
     LEFT JOIN inventory_holdings AS ih ON ii.holdings_record_id = ih.id
     LEFT JOIN inventory_instances AS ii2 ON ih.instance_id = ii2.id
     LEFT JOIN inventory_loan_types AS ilt ON ii.permanent_loan_type_id = ilt.id
