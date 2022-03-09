@@ -4,15 +4,15 @@ DROP TABLE IF EXISTS agreements_subscription_agreement_org_ext;
 -- resolves values and labels from erm_agreements_refdata_value for sao_role
 CREATE TABLE agreements_subscription_agreement_org_ext AS
 SELECT
-    sao_id,
-    sao_owner_fk AS subscription_agreement_id,
-    sao_org_fk AS sao_org_id,
+    sao.sao_id,
+    sao.sao_owner_fk AS subscription_agreement_id,
+    sao.sao_org_fk AS sao_org_id,
     org.org_name AS sao_org_name,
-    sao_role AS sao_role_id,
+    sao.sao_role AS sao_role_id,
     saor.rdv_value AS sao_role_value,
     saor.rdv_label AS sao_role_label,
-    sao_note,
-    org_orgs_uuid
+    sao.sao_note,
+    org.org_orgs_uuid::uuid
 FROM
     folio_agreements.subscription_agreement_org AS sao
     LEFT JOIN folio_agreements.refdata_value AS saor ON sao.sao_role = saor.rdv_id
