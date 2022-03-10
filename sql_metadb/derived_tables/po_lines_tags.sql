@@ -9,11 +9,13 @@ SELECT
     tags.ordinality AS pol_tag_ordinality
 FROM
     folio_orders.po_line AS pol
-    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'tags', 'tagList'))
-    WITH ORDINALITY AS tags (data);
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags (data);
 
 CREATE INDEX ON po_lines_tags (pol_id);
+
 CREATE INDEX ON po_lines_tags (pol_tag);
+
 CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
 
-VACUUM ANALYZE  po_lines_tags;
+VACUUM ANALYZE po_lines_tags;
+
