@@ -20,7 +20,7 @@ SELECT
     ent.ent_resource_fk AS entitlement_resource_fk,
     ent.ent_authority AS entitlement_authority,
     ent.ent_reference AS entitlement_reference,
-    ol.pol_orders_fk AS po_line_id
+    ol.pol_orders_fk::uuid AS po_line_id
 FROM
     folio_agreements.subscription_agreement AS sa
     LEFT JOIN folio_agreements.entitlement AS ent ON sa.sa_id = ent.ent_owner_fk
