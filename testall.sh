@@ -12,6 +12,24 @@
 #     $ PGHOST=glintcore.net PGDATABASE=folio_juniper PGUSER=nrn ../../testall.sh
 #
 set -e
+usage() {
+    echo ''
+    echo 'Usage:  PGHOST=<database-host> PGDATABASE=<database_name> PGUSER=<database_user> testall.sh [<flags>]'
+    echo ''
+    echo 'Flags:'
+    echo '-h  Help'
+    echo '-t  Print running time at the beginning of each output line'
+}
+fmttime='false'
+while getopts 'JTcfhtvX' flag; do
+    case "${flag}" in
+        h) usage
+            exit 1 ;;
+        t) fmttime='true' ;;
+        *) usage
+            exit 1 ;;
+    esac
+done
 # Check that the runlist exists.
 if [[ ! -f runlist.txt ]]; then
     echo "testall.sh: runlist.txt not found" 1>&2
@@ -33,9 +51,18 @@ case "$(uname -s)" in
 esac
 # Run all queries.
 trap 'rm -f -- "$tmpfile"' EXIT
+if $fmttime; then
+    gtimefmt='%e'
+else
+    gtimefmt='%es'
+fi
 for f in $( cat runlist.txt ); do
-    if ! PGOPTIONS='--client-min-messages=warning' $gnutime -o $tmpfile -f '%es' psql -c '\set ON_ERROR_STOP on' -f $f -Xq ; then
+    if ! PGOPTIONS='--client-min-messages=warning' $gnutime -o $tmpfile -f $gtimefmt psql -c '\set ON_ERROR_STOP on' -f $f -Xq ; then
         exit 1
     fi
-    printf 'ok\t%-50s\t%s\n' $f `cat $tmpfile` 1>&2
+    if $fmttime; then
+        printf '%s\t%-50s\n' `cat $tmpfile` $f
+    else
+        printf 'ok\t%-50s\t%s\n' $f `cat $tmpfile`
+    fi
 done || exit 1
