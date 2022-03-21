@@ -12,6 +12,7 @@ instance_ext.sql
 holdings_statements_supplements.sql
 holdings_statements.sql
 holdings_statements_indexes.sql
+holdings_electronic_access.sql
 instance_relationships_ext.sql
 instance_contributors.sql
 instance_alternative_titles.sql
@@ -32,6 +33,9 @@ po_lines_details_subscription.sql
 po_lines_er_mat_type.sql
 po_lines_eresource.sql
 po_lines_phys_mat_type.sql
+po_lines_physical.sql
+po_ongoing.sql
 item_ext.sql
 loans_items.sql
 loans_renewal_count.sql
+po_lines_tags.sql
