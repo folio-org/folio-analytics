@@ -36,6 +36,7 @@ po_lines_phys_mat_type.sql
 po_lines_physical.sql
 po_ongoing.sql
 item_ext.sql
+item_electronic_access.sql
 loans_items.sql
 loans_renewal_count.sql
 po_lines_tags.sql
