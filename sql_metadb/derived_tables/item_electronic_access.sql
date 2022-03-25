@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS item_electronic_access;
 
--- Create table for electronic access points for item records. This includes the name of the relationship and the id.
+-- Creates a table for electronic access points for item records. This includes the name of the relationship, id, and uri.
 CREATE TABLE item_electronic_access AS
 SELECT
     i__t.id AS item_id,
