@@ -1,4 +1,5 @@
 -- MetaDB version of item_notes
+-- This derived table extracts the nested array item notes
 DROP TABLE IF EXISTS item_notes;
 
 CREATE TABLE item_notes AS
