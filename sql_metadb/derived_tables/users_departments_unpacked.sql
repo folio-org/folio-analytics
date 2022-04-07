@@ -17,11 +17,11 @@ SELECT
     departments_array.user_id,
     departments_array.department_id::uuid,
     departments_array.department_ordinality,
-    jsonb_extract_path_text(jsonb, 'name') AS department_name,
-    jsonb_extract_path_text(jsonb, 'code') AS department_code
+    ud.name AS department_name,
+    ud.code AS department_code
 FROM
     departments_array
-LEFT JOIN folio_users.departments AS ud
+LEFT JOIN folio_users.departments__t AS ud
     ON departments_array.department_id::uuid = ud.id
 ;
 
