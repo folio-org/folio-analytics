@@ -15,10 +15,10 @@ WITH items_statistical_codes AS (
 SELECT
     items_statistical_codes.item_id,
     items_statistical_codes.item_hrid,
-    items_statistical_codes.statistical_code_id,
+    items_statistical_codes.statistical_code_id::uuid,
     sc__t.code AS statistical_code,
     sc__t.name AS statistical_code_name,
-    sc__t.statistical_code_type_id,
+    sc__t.statistical_code_type_id::uuid,
     sct__t.name AS statistical_code_type_name
 FROM
     items_statistical_codes
