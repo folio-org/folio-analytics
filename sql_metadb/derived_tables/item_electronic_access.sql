@@ -8,7 +8,7 @@ SELECT
     jsonb_extract_path_text(electronic_access.data, 'linkText') AS link_text,
     jsonb_extract_path_text(electronic_access.data, 'materialsSpecification') AS materials_specification,
     jsonb_extract_path_text(electronic_access.data, 'publicNote') AS public_note,
-    jsonb_extract_path_text(electronic_access.data, 'relationshipId') AS relationship_id,
+    jsonb_extract_path_text(electronic_access.data, 'relationshipId')::uuid AS relationship_id,
     ear__t.name AS relationship_name,
     jsonb_extract_path_text(electronic_access.data, 'uri') AS uri
 FROM
