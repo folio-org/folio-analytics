@@ -39,3 +39,4 @@ item_ext.sql
 loans_items.sql
 loans_renewal_count.sql
 po_lines_tags.sql
+users_groups.sql
