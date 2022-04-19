@@ -32,6 +32,7 @@ po_line_fund_distribution_transactions.sql
 po_lines_details_subscription.sql
 po_lines_er_mat_type.sql
 po_lines_eresource.sql
+po_lines_location.sql
 po_lines_phys_mat_type.sql
 po_lines_physical.sql
 po_ongoing.sql
