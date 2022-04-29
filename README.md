@@ -66,4 +66,9 @@ There are two primary types of branches:
   `main`.  They are managed as stable branches; i.e. they may receive
   bug fixes but generally no new features.
 
+Each release is intended to be used with a specific FOLIO release:
 
+* 1.3: Lotus
+* 1.4: Morning glory
+* 1.5: Nolana
+* 1.6: Orchid
