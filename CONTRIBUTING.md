@@ -14,7 +14,8 @@ when preparing a pull request.
 5\. [Testing](#5-testing)  
 6\. [Derived tables](#6-derived-tables)  
 7\. [Formatting SQL](#7-formatting-sql)  
-8\. [Naming things](#8-naming-things)
+8\. [Naming things](#8-naming-things)  
+9\. [Checklist](#9-checklist)
 
 
 1\. New contributors
@@ -69,6 +70,8 @@ If a review suggests expanding the scope of the changes to include
 additional functionality, those changes do not have to be addressed in
 the current pull request but may be handled in a separate, new pull
 request.
+
+See below for a suggested checklist for code reviews.
 
 
 4\. Documentation
@@ -141,4 +144,37 @@ data.  Overall, it is helpful to think about how to describe the
 derived table concisely.
 
 
+9\. Checklist
+-------------
 
+The following checklist can be used to guide your review of a pull
+request.  A copy of the checklist may be added to a comment attached
+to a review.  Check off the items that have been confirmed in your
+review by adding an `x` between the square brackets `[]` on each line.
+
+```
+All queries:
+- [] Pull request has a complete description
+- [] Query runs without errors
+- [] Query output is correct
+- [] Query logic is clear and well documented
+- [] Query is readable and properly indented
+- [] Table and column names are in all-lowercase
+- [] Quotation marks are used only where necessary
+
+Report queries:
+- Query has complete user documentation
+  [] Purpose of report
+  [] Sample output
+  [] Query instructions
+
+Derived tables:
+- [] Query begins with user documentation in comment lines
+- [] File name is listed in `runlist.txt` after dependencies
+- [] All columns have indexes
+- [] Table is vacuumed and analyzed
+```
+
+If any items remain unchecked or you have further questions, you can
+indicate that in the comment as well and select "Request changes" as
+the review response.
