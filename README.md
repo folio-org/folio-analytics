@@ -56,6 +56,14 @@ reports.
 
 ## Releases and branches
 
+Each release of folio-analytics is intended to be used with a specific
+FOLIO release:
+
+* folio-analytics 1.3 => FOLIO Lotus
+* folio-analytics 1.4 => FOLIO Morning glory
+* folio-analytics 1.5 => FOLIO Nolana
+* folio-analytics 1.6 => FOLIO Orchid
+
 There are two primary types of branches:
 
 * The main branch (`main`).  This is a development branch where new
@@ -64,6 +72,5 @@ There are two primary types of branches:
 
 * Release branches (`release-*`).  These are releases made from
   `main`.  They are managed as stable branches; i.e. they may receive
-  bug fixes but generally no new features.
-
-
+  bug fixes but generally no new features.  Production deployments
+  should install release tags, not branches.
