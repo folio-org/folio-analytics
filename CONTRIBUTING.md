@@ -1,10 +1,12 @@
 Contributing
 ============
 
-Thank you for your interest in contributing to FOLIO reporting.  We
-appreciate submissions of SQL code for new report queries and derived
-table queries, as well as bug fixes.  Please follow these guidelines
-when preparing a pull request.
+We appreciate submissions of SQL code for new report queries and
+derived table queries, as well as bug fixes.  All submissions will be
+considered as time allows.  We ask your patience; it may require
+considerable time to decide whether a pull request will be accepted.
+
+Please follow these guidelines when preparing a pull request.
 
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
@@ -21,15 +23,16 @@ when preparing a pull request.
 1\. New contributors
 --------------------
 
-Before working on a contribution, it is usually a good idea to ask the
+Before beginning work on a contribution, we recommend that you ask the
 community in advance about the work you propose to do.  They may have
 feedback that would save you time.
 
-For general questions, please use the
-[Discussions](https://github.com/folio-org/folio-analytics/discussions)
-area.
+At present most contributors use the #reporting-lab channel in the
+FOLIO Slack organization.
 
-For bugs or specific technical proposals, please use
+Alternatively, for general questions, feel free to use the
+[Discussions](https://github.com/folio-org/folio-analytics/discussions)
+area.  For bugs or specific technical proposals, use
 [Issues](https://github.com/folio-org/folio-analytics/issues).
 
 
