@@ -1,9 +1,9 @@
 WITH permissions_users AS (
     SELECT
-        jsonb_array_elements_text(permissions_users.jsonb -> 'permissions') AS user_permissions,
-        jsonb_extract_path_text(permissions_users.jsonb, 'userId')::uuid AS user_id
+        jsonb_array_elements_text(jsonb->'permissions') AS user_permissions,
+        jsonb_extract_path_text(jsonb, 'userId')::uuid AS user_id
     FROM
-        folio_permissions.permissions_users AS permissions_users
+        folio_permissions.permissions_users
 )
 SELECT
     permissions.id AS permission_id,
@@ -14,10 +14,8 @@ SELECT
     jsonb_extract_path_text(users.jsonb, 'personal', 'firstName') AS user_firstname,
     jsonb_extract_path_text(users.jsonb, 'barcode') AS user_barcode,
     jsonb_extract_path_text(users.jsonb, 'username') AS user_username,
-    CASE WHEN jsonb_extract_path_text(users.jsonb, 'active') = 'true' THEN
-        'active'
-    ELSE
-        'inactive'
+    CASE WHEN jsonb_extract_path_text(users.jsonb, 'active')::boolean THEN 'active'
+        ELSE 'inactive'
     END AS user_status,
     jsonb_extract_path_text(user_groups.jsonb, 'group') AS user_patron_group,
     jsonb_extract_path_text(users.jsonb, 'expirationDate') AS user_expiration_date
@@ -29,4 +27,4 @@ FROM
 ORDER BY
     permission_name,
     permission_description,
-    user_lastname
+    user_lastname;
