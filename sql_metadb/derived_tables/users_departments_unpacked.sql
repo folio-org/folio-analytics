@@ -6,12 +6,12 @@ CREATE TABLE users_departments_unpacked AS
 WITH departments_array AS (
     SELECT
         uu.id AS user_id,
-        departments.jsonb #>> '{}'AS department_id,
+        departments.jsonb #>> '{}' AS department_id,
         departments.ordinality AS department_ordinality
     FROM
         folio_users.users AS uu
         CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'departments'))
-        WITH ORDINALITY AS departments (jsonb)
+            WITH ORDINALITY AS departments (jsonb)
 )
 SELECT
     departments_array.user_id,
@@ -21,15 +21,17 @@ SELECT
     ud.code AS department_code
 FROM
     departments_array
-LEFT JOIN folio_users.departments__t AS ud
-    ON departments_array.department_id::uuid = ud.id
-;
+    LEFT JOIN folio_users.departments__t AS ud
+        ON departments_array.department_id::uuid = ud.id;
 
 CREATE INDEX ON users_departments_unpacked (user_id);
 
 CREATE INDEX ON users_departments_unpacked (department_id);
 
-CREATE INDEX ON users_departments_unpacked (department_ordinality); --if a user has more than one department, ordinality should show a sequence of numbers indicating the order of the departments in the original list
+-- If a user has more than one department, ordinality should show a
+-- sequence of numbers indicating the order of the departments in the
+-- original list
+CREATE INDEX ON users_departments_unpacked (department_ordinality);
 
 CREATE INDEX ON users_departments_unpacked (department_name);
 
@@ -45,6 +47,4 @@ COMMENT ON COLUMN users_departments_unpacked.department_name IS 'The display nam
 
 COMMENT ON COLUMN users_departments_unpacked.department_code IS 'The (user-supplied) code for the department';
 
-VACUUM ANALYZE  users_departments_unpacked;
-
-
+VACUUM ANALYZE users_departments_unpacked;
