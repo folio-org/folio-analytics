@@ -12,11 +12,16 @@ COMMENT ON COLUMN public.circulation_loans.item_status IS 'Last item status used
 COMMENT ON COLUMN public.circulation_loans.loan_date IS 'Date time when the loan began (typically represented according to rfc3339 section-5.6. Has not had the date-time format validation applied as was not supported at point of introduction and would now be a breaking change)';
 COMMENT ON COLUMN public.circulation_loans.loan_policy_id IS 'ID (generated UUID) of last policy used in relation to this loan';
 COMMENT ON COLUMN public.circulation_loans.lost_item_policy_id IS 'ID (generated UUID) of lost item policy which determines when the item ages to lost and the associated fees or the associated fees if the patron declares the item lost.';
+COMMENT ON COLUMN public.circulation_loans.metadata_created_by_user IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.circulation_loans.metdata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_loans.metadata_updated_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.circulation_loans.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_loans.overdue_fine_policy_id IS 'ID (generated UUID) of overdue fines policy at the time the item is check-in or renewed';
 COMMENT ON COLUMN public.circulation_loans.patron_group_id_at_checkout IS 'Patron Group (generated UUID) at checkout';
 COMMENT ON COLUMN public.circulation_loans.proxy_user_id IS 'ID (generated UUID) of the user representing a proxy for the patron';
 COMMENT ON COLUMN public.circulation_loans.renewal_count IS 'Count of how many times a loan has been renewed (incremented by the client)';
 COMMENT ON COLUMN public.circulation_loans.return_date IS 'Date time when the item is returned and the loan ends (typically represented according to rfc3339 section-5.6. Has not had the date-time format validation applied as was not supported at point of introduction and would now be a breaking change)';
+COMMENT ON COLUMN public.circulation_loans.status_name IS 'Name of the status (currently can be any value, values commonly used are Open and Closed)';
 COMMENT ON COLUMN public.circulation_loans.system_return_date IS 'Date time when the returned item is actually processed';
 COMMENT ON COLUMN public.circulation_loans.user_id IS 'ID (generated UUID) of the patron the item was lent to. Required for open loans, not required for closed loans (for anonymization).';
 COMMENT ON COLUMN public.circulation_loans."data" IS 'JSON representation of the record';
@@ -24,6 +29,7 @@ COMMENT ON COLUMN public.circulation_loans.claimed_returned_date IS 'Date and ti
 
 --public.circulation_requests
 COMMENT ON COLUMN public.circulation_requests.id IS 'ID (generated UUID) of the request';
+COMMENT ON COLUMN public.circulation_requests.awaiting_pickup_request_closed_date IS 'The date when the request with awaiting pickup status was closed';
 COMMENT ON COLUMN public.circulation_requests.cancellation_additional_information IS 'Potential relevant information regarding a cancellation';
 COMMENT ON COLUMN public.circulation_requests.cancellation_reason_id IS 'ID (generated UUID) of the request cancellation reason';
 COMMENT ON COLUMN public.circulation_requests.cancelled_by_user_id IS 'ID (generated UUID) of the user that cancelled the request';
@@ -31,8 +37,14 @@ COMMENT ON COLUMN public.circulation_requests.cancelled_date IS 'Date the reques
 COMMENT ON COLUMN public.circulation_requests.fulfilment_preference IS 'How should the request be fulfilled (whether the item should be kept on the hold shelf for collection or delivered to the requester)';
 COMMENT ON COLUMN public.circulation_requests.hold_shelf_expiration_date IS 'Date when an item on the hold shelf expires';
 COMMENT ON COLUMN public.circulation_requests.holdings_record_id IS 'ID (generated UUID) of the holdings record being requested';
+COMMENT ON COLUMN public.circulation_requests.instance_title IS 'Title of the item being requested';
 COMMENT ON COLUMN public.circulation_requests.instance_id IS 'ID (generated UUID) of the instance being requested';
+COMMENT ON COLUMN public.circulation_requests.item_barcode IS 'Barcode of the item being requested';
 COMMENT ON COLUMN public.circulation_requests.item_id IS 'ID (generated UUID) of the item being requested';
+COMMENT ON COLUMN public.circulation_metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.circulation_metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_metadata_updated_by_user_id IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.circulation_metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_requests.patron_comments IS 'Comments made by the patron';
 COMMENT ON COLUMN public.circulation_requests.pickup_service_point_id IS 'ID (generated UUID) of the Service Point where this request can be picked up';
 COMMENT ON COLUMN public.circulation_requests."position" IS 'Position of the request in the unified request queue';
@@ -40,6 +52,10 @@ COMMENT ON COLUMN public.circulation_requests.request_date IS 'Date the request 
 COMMENT ON COLUMN public.circulation_requests.request_expiration_date IS 'Date when the request expires';
 COMMENT ON COLUMN public.circulation_requests.request_level IS 'Level of the request - Item or Title';
 COMMENT ON COLUMN public.circulation_requests.request_type IS 'Whether the item should be held upon return, recalled or paged for';
+COMMENT ON COLUMN public.circulation_requests.requester_barcode IS 'Barcode of the requesting patron';
+COMMENT ON COLUMN public.circulation_requests.requester_first_name IS 'First name of the requesting patron';
+COMMENT ON COLUMN public.circulation_requests.requester_last_name IS 'Last name of the requesting patron';
+COMMENT ON COLUMN public.circulation_requests.requester_id IS 'ID (generated UUID) of the requesting patron (user)';
 COMMENT ON COLUMN public.circulation_requests.status IS 'Status of the request';
 COMMENT ON COLUMN public.circulation_requests."data" IS 'JSON representation of the record';
 
@@ -89,3 +105,30 @@ COMMENT ON COLUMN public.circulation_scheduled_notices.recipient_user_id IS 'ID 
 COMMENT ON COLUMN public.circulation_scheduled_notices.request_id IS 'ID (generated UUID) of related request for request notices';
 COMMENT ON COLUMN public.circulation_scheduled_notices.triggering_event IS 'Scheduled notice triggering event';
 COMMENT ON COLUMN public.circulation_scheduled_notices."data" IS 'JSON representation of the record';
+
+--public.user_users
+COMMENT ON COLUMN public.user_users.id IS 'ID (generated UUID) for the user';
+COMMENT ON COLUMN public.user_users.active IS 'A flag to determine if a user can log in, take out loans, etc.';
+COMMENT ON COLUMN public.user_users.barcode IS 'The unique library barcode for this user';
+COMMENT ON COLUMN public.user_users.created_date IS 'Deprecated';
+COMMENT ON COLUMN public.user_users.enrollment_date IS 'The date when the user joined the organization';
+COMMENT ON COLUMN public.user_users.expiration_date IS 'The date when the user becomes inactive';
+COMMENT ON COLUMN public.user_users.metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.user_users.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.user_users.metadata_updated_by_user_ID IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.user_users.metadata_updated_date IS 'Date and time when the record was last updated';
+COMMENT ON COLUMN public.user_users.patron_group IS 'ID (generated UUID) corresponding to the group the user belongs to';
+COMMENT ON COLUMN public.user_users.personal_date_of_birth IS 'The users birth date';
+COMMENT ON COLUMN public.user_users.personal_email IS 'The users email address';
+COMMENT ON COLUMN public.user_users.personal_first_name IS 'The users given name';
+COMMENT ON COLUMN public.user_users.personal_last_name IS 'The users surname';
+COMMENT ON COLUMN public.user_users.personal_middle_name IS 'The users middle name (if any)';
+COMMENT ON COLUMN public.user_users.personal_mobile_phone IS 'The users mobile phone number';
+COMMENT ON COLUMN public.user_users.personal_phone IS 'The users primary phone number';
+COMMENT ON COLUMN public.user_users.personal_preferred_contact_type_id IS 'ID of users preferred contact type like Email, Mail or Text Message';
+COMMENT ON COLUMN public.user_users.personal_preferred_first_name IS 'The users preferred name';
+COMMENT ON COLUMN public.user_users.type IS 'The class of user like staff or patron, this is different from patronGroup';
+COMMENT ON COLUMN public.user_users.updated_date IS 'Deprecated'; 
+COMMENT ON COLUMN public.user_users.username IS 'A unique name belonging to a user. Typically used for login';
+COMMENT ON COLUMN public.user_users."data" IS 'JSON representation of the record';
+
