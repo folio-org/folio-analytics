@@ -39,9 +39,7 @@ SELECT
     ut.type AS user_type,
     -- Top-level updated_date field is marked deprecated, extracting from metadata object in case top-level field is removed
     jsonb_extract_path_text(uu.jsonb, 'metadata', 'updatedDate')::timestamptz AS updated_date,
-    ut.username,
-    jsonb_extract_path_text(uu.jsonb, 'tags') AS user_tags,
-    jsonb_extract_path_text(uu.jsonb, 'customFields') AS user_custom_fields
+    ut.username
 FROM
     folio_users.users AS uu
     LEFT JOIN folio_users.users__t AS ut ON uu.id = ut.id  
@@ -94,10 +92,6 @@ CREATE INDEX ON users_groups (updated_date);
 
 CREATE INDEX ON users_groups (username);
 
-CREATE INDEX ON users_groups (user_tags);
-
-CREATE INDEX ON users_groups (user_custom_fields);
-
 COMMENT ON COLUMN users_groups.user_id IS 'A globally unique (UUID) identifier for the user';
 
 COMMENT ON COLUMN users_groups.active IS 'A flag to determine if the users account is effective and not expired. The tenant configuration can require the user to be active for login. Active is different from the loan patron block';
@@ -143,9 +137,5 @@ COMMENT ON COLUMN users_groups.user_type IS 'The class of the user, like staff o
 COMMENT ON COLUMN users_groups.updated_date IS 'Date and time when the user record was last updated';
 
 COMMENT ON COLUMN users_groups.username IS 'A unique name belonging to a user. Typically used for login';
-
-COMMENT ON COLUMN users_groups.user_tags IS 'Tags associated with the user record';
-
-COMMENT ON COLUMN users_groups.user_custom_fields IS 'Custom fields associated with the user record';
 
 VACUUM ANALYZE  users_groups;
