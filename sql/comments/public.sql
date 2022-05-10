@@ -62,6 +62,26 @@ COMMENT ON COLUMN public.circulation_requests."data" IS 'JSON representation of 
 --public.circulation_loan_history
 COMMENT ON COLUMN public.circulation_loan_history.id IS 'ID (generated UUID) of the snapshot of the loan record';
 COMMENT ON COLUMN public.circulation_loan_history.created_date IS 'When this snapshot was created';
+COMMENT ON COLUMN public.circulation_loan_history.loan_action IS 'Last action performed on a loan (currently can be any value, values commonly used are checkedout and checkedin)';
+COMMENT ON COLUMN public.circulation_loan_history.loan_action_comment IS 'Comment to last action performed on a loan';
+COMMENT ON COLUMN public.circulation_loan_history.loan_checkin_service_point_id IS 'ID (generated UUID) of the service point where the last checkin occured';
+COMMENT ON COLUMN public.circulation_loan_history.loan_checkout_service_point_id IS 'ID (generated UUID) of the service point where the last checkout occured';
+COMMENT ON COLUMN public.circulation_loan_history.loan_declared_lost_date IS 'Date and time the item was declared lost during this loan';
+COMMENT ON COLUMN public.circulation_loan_history.loan_due_date IS 'Date and time when the item is due to be returned';
+COMMENT ON COLUMN public.circulation_loan_history.loan_id IS 'ID (generated UUID) of the loan';
+COMMENT ON COLUMN public.circulation_loan_history.loan_item_effective_location_id_at_check_out IS 'The effective location, at the time of checkout, of the item loaned to the patron';
+COMMENT ON COLUMN public.circulation_loan_history.item_id IS 'ID (generated UUID) of the item lent to the patron';
+COMMENT ON COLUMN public.circulation_loan_history.item_status IS 'Last item status used in relation to this loan (currently can be any value, values commonly used are Checked out and Available)';
+COMMENT ON COLUMN public.circulation_loan_history.loan_loan_date IS 'Date and time when the loan began';
+COMMENT ON COLUMN public.circulation_loan_history.loan_loan_policy_id IS 'ID (generated UUID) of last policy used in relation to this loan';
+COMMENT ON COLUMN public.circulation_loan_history.loan_lost_item_policy_id IS 'ID (generated UUID) of lost item policy which determines when the item ages to lost and the associated fees or the associated fees if the patron declares the item lost';
+COMMENT ON COLUMN public.circulation_loan_history.loan_overdue_fine_policy_id IS 'ID (generated UUID) of overdue fines policy at the time the item is check-in or renewed';
+COMMENT ON COLUMN public.circulation_loan_history.loan_patron_group_id_at_checkout IS 'Patron group ID (generated UUID) at checkout';
+COMMENT ON COLUMN public.circulation_loan_history.loan_proxy_user_id IS 'ID (generated UUID) of the user representing a proxy for the patron';
+COMMENT ON COLUMN public.circulation_loan_history.loan_renewal_count IS 'Count of how many times a loan has been renewed (incremented by the client)';
+COMMENT ON COLUMN public.circulation_loan_history.loan_return_date IS 'Date and time when the item is returned and the loan ends';
+COMMENT ON COLUMN public.circulation_loan_history.loan_system_return_date IS 'Date and time when the returned item is actually processed';
+COMMENT ON COLUMN public.circulation_loan_history.loan_user_id IS 'ID (generated UUID) of the patron the item was lent to. Required for open loans, not required for closed loans (for anonymization)';
 COMMENT ON COLUMN public.circulation_loan_history.operation IS 'Type of change that triggered this loan record snapshot: I for insert, U for update, D for delete';
 COMMENT ON COLUMN public.circulation_loan_history."data" IS 'JSON representation of the record';
 
@@ -70,12 +90,18 @@ COMMENT ON COLUMN public.circulation_request_preference.id IS 'ID (generated UUI
 COMMENT ON COLUMN public.circulation_request_preference.delivery IS 'Whether Delivery option is available to the user.';
 COMMENT ON COLUMN public.circulation_request_preference.fulfillment IS 'Preferred fulfillment type. Possible values are Delivery or Hold Shelf';
 COMMENT ON COLUMN public.circulation_request_preference.hold_shelf IS 'Whether Hold Shelf option is available to the user.';
+COMMENT ON COLUMN public.circulation_request_preference.metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.circulation_request_preference.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_request_preference.metadata_updated_by_user_id IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.circulation_request_preference.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_request_preference.user_id IS 'ID (generated UUID) of user associated with this request preference';
 COMMENT ON COLUMN public.circulation_request_preference."data" IS 'JSON representation of the record';
 
 --public.circulation_request_policies
 COMMENT ON COLUMN public.circulation_request_policies.id IS 'ID (generated UUID) of the request policy';
 COMMENT ON COLUMN public.circulation_request_policies.description IS 'Description of request policy';
+COMMENT ON COLUMN public.circulation_request_policies.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_request_policies.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_request_policies.name IS 'Unique request policy name, required';
 COMMENT ON COLUMN public.circulation_request_policies."data" IS 'JSON representation of the record';
 
@@ -83,6 +109,8 @@ COMMENT ON COLUMN public.circulation_request_policies."data" IS 'JSON representa
 COMMENT ON COLUMN public.circulation_patron_notice_policies.id IS 'ID (generated UUID) of the patron notice policy';
 COMMENT ON COLUMN public.circulation_patron_notice_policies.active IS 'A flag to determine if a patron notice policy is active';
 COMMENT ON COLUMN public.circulation_patron_notice_policies.description IS 'Patron notice policy description';
+COMMENT ON COLUMN public.circulation_patron_notice_policies.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_patron_notice_policies.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_patron_notice_policies.name IS 'Patron notice policy name';
 COMMENT ON COLUMN public.circulation_patron_notice_policies."data" IS 'JSON representation of the record';
 
@@ -100,7 +128,15 @@ COMMENT ON COLUMN public.circulation_check_ins."data" IS 'JSON representation of
 --public.circulation_scheduled_notices
 COMMENT ON COLUMN public.circulation_scheduled_notices.id IS 'ID (generated UUID) of the scheduled task';
 COMMENT ON COLUMN public.circulation_scheduled_notices.loan_id IS 'ID (generated UUID) of the related loan';
+COMMENT ON COLUMN public.circulation_scheduled_notices.metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.circulation_scheduled_notices.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_scheduled_notices.metadata_updated_by_user_id IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.circulation_scheduled_notices.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_scheduled_notices.next_run_time IS 'Next run time';
+COMMENT ON COLUMN public.circulation_scheduled_notices.notice_config_format IS 'Notice format (email, SMS, print)';
+COMMENT ON COLUMN public.circulation_scheduled_notices.notice_config_send_in_real_time IS 'Real time notice flag';
+COMMENT ON COLUMN public.circulation_scheduled_notices.notice_config_template_id IS 'ID (Generated UUID) of related template';
+COMMENT ON COLUMN public.circulation_scheduled_notices.notice_config_timing IS 'Timing represents when we need to send notice, before, at or after loan due date';
 COMMENT ON COLUMN public.circulation_scheduled_notices.recipient_user_id IS 'ID (generated UUID) of the user to whom this notice should be sent to';
 COMMENT ON COLUMN public.circulation_scheduled_notices.request_id IS 'ID (generated UUID) of related request for request notices';
 COMMENT ON COLUMN public.circulation_scheduled_notices.triggering_event IS 'Scheduled notice triggering event';
