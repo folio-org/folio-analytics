@@ -80,10 +80,7 @@ FROM
     invoice
     LEFT JOIN finance AS finance_invoice ON finance_invoice.fund_id = invoice.invoice_line_fund_id
     LEFT JOIN transactions AS transactions_invoice ON transactions_invoice.sourceInvoiceLineId = invoice.invoice_line_id
-        AND transactions_invoice.fromFundId = invoice.invoice_line_fund_id
-    ORDER BY
-        invoice_id,
-        invoice_line_id;
+        AND transactions_invoice.fromFundId = invoice.invoice_line_fund_id;
 
 CREATE INDEX ON finance_invoice_transactions (invoice_id);
 
