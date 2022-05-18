@@ -11,7 +11,6 @@ SELECT
     ii.chronology,
     ii.enumeration,
     ii.volume,
-    ii.holdings_record_id,
     ii.hrid AS item_hrid,
     ii.item_identifier,
     ii.item_level_call_number,
@@ -53,8 +52,6 @@ CREATE INDEX ON items_holdings_instances (chronology);
 CREATE INDEX ON items_holdings_instances (volume);
 
 CREATE INDEX ON items_holdings_instances (enumeration);
-
-CREATE INDEX ON items_holdings_instances (holdings_record_id);
 
 CREATE INDEX ON items_holdings_instances (item_hrid);
 
