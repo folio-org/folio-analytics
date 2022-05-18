@@ -7,7 +7,7 @@ SELECT
     i__t.id AS item_id,
     i__t.hrid AS item_hrid,
     i__t.holdings_record_id AS holdings_record_id,
-    jsonb_extract_path_text(notes.data, 'itemNoteTypeId') AS note_type_id,
+    jsonb_extract_path_text(notes.data, 'itemNoteTypeId')::uuid AS note_type_id,
     int__t.name AS note_type_name,
     jsonb_extract_path_text(notes.data, 'note') AS note,
     jsonb_extract_path_text(notes.data, 'staffOnly')::boolean AS staff_only,
