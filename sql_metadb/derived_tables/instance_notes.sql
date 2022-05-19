@@ -12,7 +12,7 @@ SELECT
 	instnotes.ordinality AS instance_notes_ordinality
 FROM 
 	folio_inventory.instance__t AS it
-	LEFT JOIN folio_inventory.INSTANCE AS inst ON inst.id::uuid = it.id::uuid
+	LEFT JOIN folio_inventory.instance AS inst ON inst.id::uuid = it.id::uuid
 	CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'notes')) WITH ORDINALITY AS instnotes (jsonb)
 	LEFT JOIN folio_inventory.instance_note_type__t AS intt ON jsonb_extract_path_text(instnotes.jsonb, 'instanceNoteTypeId')::uuid = intt.id::uuid ;
 	
