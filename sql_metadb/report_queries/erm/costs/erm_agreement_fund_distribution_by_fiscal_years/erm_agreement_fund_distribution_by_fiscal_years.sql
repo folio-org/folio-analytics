@@ -1,5 +1,5 @@
 -- The report shows the fund distribution by fiscal years. 
--- Amounts are calculated from invoice lines in system currency and are paid. At the same time, the invoice lines must be connected to an agreement line.
+-- Amounts are calculated from invoice lines in system currency and invoice status is paid. At the same time, the invoice lines must be connected to an agreement line.
 WITH parameters AS (
     SELECT
         --specify interval for fiscal years in YYYY-MM-DD format
