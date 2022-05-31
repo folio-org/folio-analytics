@@ -1,0 +1,41 @@
+-- These derived table extracts cost information on the purchase order line.
+
+DROP TABLE IF EXISTS po_lines_cost;
+
+CREATE TABLE po_lines_cost AS
+SELECT
+    pol.id AS pol_id,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'listUnitPrice') AS po_lines_list_unit_price_phys,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'quantityPhysical') AS po_lines_quant_phys,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'listUnitPriceElectronic') AS po_lines_list_unit_price_elec,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'quantityElectronic') AS po_lines_quant_elec,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'additionalCost') AS po_lines_additional_cost,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'currency') AS po_lines_currency,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'discount') AS po_lines_discount,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'discountType') AS po_lines_discount_type,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'poLineEstimatedPrice') AS po_lines_estimated_price
+FROM
+    folio_orders.po_line AS pol;
+
+CREATE INDEX ON po_lines_cost (pol_id);
+
+CREATE INDEX ON po_lines_cost (po_lines_list_unit_price_phys);
+
+CREATE INDEX ON po_lines_cost (po_lines_quant_phys);
+
+CREATE INDEX ON po_lines_cost (po_lines_list_unit_price_elec);
+
+CREATE INDEX ON po_lines_cost (po_lines_quant_elec);
+
+CREATE INDEX ON po_lines_cost (po_lines_additional_cost);
+
+CREATE INDEX ON po_lines_cost (po_lines_currency);
+
+CREATE INDEX ON po_lines_cost (po_lines_discount);
+
+CREATE INDEX ON po_lines_cost (po_lines_discount_type);
+
+CREATE INDEX ON po_lines_cost (po_lines_estimated_price);
+
+
+VACUUM ANALYZE  po_lines_cost;
