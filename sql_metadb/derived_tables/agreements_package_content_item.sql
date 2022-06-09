@@ -92,7 +92,7 @@ FROM (
         folio_agreements.package_content_item AS pci
         INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk
         LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
-        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk = org.org_id
+        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
         LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
         LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
         LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
@@ -154,7 +154,7 @@ UNION
         folio_agreements.package_content_item AS pci
         LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
         INNER JOIN folio_agreements.entitlement AS ent ON ent.ent_resource_fk = pack.id
-        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk = org.org_id
+        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
         LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
         LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
         LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
