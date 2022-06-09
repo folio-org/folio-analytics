@@ -41,10 +41,10 @@ COMMENT ON COLUMN public.circulation_requests.instance_title IS 'Title of the it
 COMMENT ON COLUMN public.circulation_requests.instance_id IS 'ID (generated UUID) of the instance being requested';
 COMMENT ON COLUMN public.circulation_requests.item_barcode IS 'Barcode of the item being requested';
 COMMENT ON COLUMN public.circulation_requests.item_id IS 'ID (generated UUID) of the item being requested';
-COMMENT ON COLUMN public.circulation_metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
-COMMENT ON COLUMN public.circulation_metadata_created_date IS 'Date and time when the record was created';
-COMMENT ON COLUMN public.circulation_metadata_updated_by_user_id IS 'ID (generated UUID) of the user who last updated the record (when available)';
-COMMENT ON COLUMN public.circulation_metadata_updated_date IS 'Date and time when the record was last updated';
+COMMENT ON COLUMN public.circulation_requests.metadata_created_by_user_id IS 'ID (generated UUID) of the user who created the record (when available)';
+COMMENT ON COLUMN public.circulation_requests.metadata_created_date IS 'Date and time when the record was created';
+COMMENT ON COLUMN public.circulation_requests.metadata_updated_by_user_id IS 'ID (generated UUID) of the user who last updated the record (when available)';
+COMMENT ON COLUMN public.circulation_requests.metadata_updated_date IS 'Date and time when the record was last updated';
 COMMENT ON COLUMN public.circulation_requests.patron_comments IS 'Comments made by the patron';
 COMMENT ON COLUMN public.circulation_requests.pickup_service_point_id IS 'ID (generated UUID) of the Service Point where this request can be picked up';
 COMMENT ON COLUMN public.circulation_requests."position" IS 'Position of the request in the unified request queue';
