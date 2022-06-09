@@ -1,9 +1,10 @@
+-- Create a derived table that takes the users table and joins in the
+-- group information.  Does not include addresses - see additional
+-- derived tables for addresses in different arrangements.  Query also
+-- depends on separate derived table users_departments_unpacked.
+
 DROP TABLE IF EXISTS users_groups;
 
--- Create a derived table that takes the users table and joins in
--- the group information.  Does not include addresses - see additional
--- derived tables for addresses in different arrangements.  Query also
--- depends on separate derived table users_departments_unpacked 
 CREATE TABLE users_groups AS
 WITH user_departments AS (
     SELECT
@@ -15,36 +16,36 @@ WITH user_departments AS (
         user_id
 )
 SELECT
-    uu.id AS user_id,
-    ut.active,
-    ut.barcode,
+    users.id AS user_id,
+    u.active,
+    u.barcode,
     -- Top-level created_date field is marked deprecated, extracting from metadata object in case top-level field is removed
-    jsonb_extract_path_text(uu.jsonb, 'metadata', 'createdDate')::timestamptz AS created_date,
-    ut.enrollment_date,
-    ut.expiration_date,
-    ut.external_system_id,
-    ut.patron_group,
-    ug.desc AS group_description,
-    ug.group AS group_name,
-    ud.departments AS departments,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'lastName') AS user_last_name,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'firstName') AS user_first_name,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'middleName') AS user_middle_name,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'preferredFirstName') AS user_preferred_first_name,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'email') AS user_email,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'phone') AS user_phone,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'mobilePhone') AS user_mobile_phone,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'dateOfBirth')::date AS user_date_of_birth,
-    jsonb_extract_path_text(uu.jsonb, 'personal', 'preferredContactTypeId') AS user_preferred_contact_type_id,
-    ut.type AS user_type,
+    jsonb_extract_path_text(users.jsonb, 'metadata', 'createdDate')::timestamptz AS created_date,
+    u.enrollment_date,
+    u.expiration_date,
+    u.external_system_id,
+    u.patron_group,
+    g.desc AS group_description,
+    g.group AS group_name,
+    user_departments.departments AS departments,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'lastName') AS user_last_name,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'firstName') AS user_first_name,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'middleName') AS user_middle_name,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'preferredFirstName') AS user_preferred_first_name,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'email') AS user_email,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'phone') AS user_phone,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'mobilePhone') AS user_mobile_phone,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'dateOfBirth')::date AS user_date_of_birth,
+    jsonb_extract_path_text(users.jsonb, 'personal', 'preferredContactTypeId') AS user_preferred_contact_type_id,
+    u.type AS user_type,
     -- Top-level updated_date field is marked deprecated, extracting from metadata object in case top-level field is removed
-    jsonb_extract_path_text(uu.jsonb, 'metadata', 'updatedDate')::timestamptz AS updated_date,
-    ut.username
+    jsonb_extract_path_text(users.jsonb, 'metadata', 'updatedDate')::timestamptz AS updated_date,
+    u.username
 FROM
-    folio_users.users AS uu
-    LEFT JOIN folio_users.users__t AS ut ON uu.id = ut.id  
-    LEFT JOIN folio_users.groups__t AS ug ON ut.patron_group = ug.id
-    LEFT JOIN user_departments AS ud ON uu.id = ud.user_id;
+    folio_users.users
+    LEFT JOIN folio_users.users__t AS u ON users.id = u.id  
+    LEFT JOIN folio_users.groups__t AS g ON u.patron_group = g.id
+    LEFT JOIN user_departments ON users.id = user_departments.user_id;
 
 CREATE INDEX ON users_groups (user_id);
 
