@@ -40,6 +40,7 @@ item_ext.sql
 item_electronic_access.sql
 item_notes.sql
 item_statistical_codes.sql
+items_holdings_instances.sql
 loans_items.sql
 loans_renewal_count.sql
 po_lines_tags.sql
