@@ -6,7 +6,7 @@ CREATE TABLE instance_identifiers AS
 SELECT
     instances.id AS instance_id,
     jsonb_extract_path_text(instances.jsonb, 'hrid') AS instance_hrid,
-    jsonb_extract_path_text(idents.jsonb, 'identifierTypeId') AS identifier_type_id,
+    jsonb_extract_path_text(idents.jsonb, 'identifierTypeId')::uuid AS identifier_type_id,
     itt.name AS identifier_type_name,
     jsonb_extract_path_text(idents.jsonb, 'value') AS identifier,
     idents.ordinality AS identifier_ordinality
@@ -28,6 +28,6 @@ CREATE INDEX ON instance_identifiers (identifier_type_name);
 
 CREATE INDEX ON instance_identifiers (identifier);
 
-CREATE INDEX ON instance_identifiers (identifier_ordinaliry);
+CREATE INDEX ON instance_identifiers (identifier_ordinality);
 
 VACUUM ANALYZE instance_identifiers;
