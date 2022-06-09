@@ -1,7 +1,10 @@
+-- Create a derived table of fund distribution in invoices.
+-- The derived table contains the information on the fund distribution
+-- from the invoices app as well as from the transactions system
+-- table.
+
 DROP TABLE IF EXISTS finance_invoice_transactions;
 
--- Create a derived table of fund distribution in invoices.
--- The derived table contains the information on the fund distribution from the invoices app as well as from the transactions system table.
 CREATE TABLE finance_invoice_transactions AS
 WITH invoice AS (
     SELECT
@@ -10,19 +13,19 @@ WITH invoice AS (
         jsonb_extract_path_text(invoices.jsonb, 'vendorInvoiceNo') AS vendor_invoice_number,
         jsonb_extract_path_text(invoices.jsonb, 'invoiceDate')::timestamptz AS invoice_date,
         jsonb_extract_path_text(invoices.jsonb, 'currency') AS invoice_currency,
-        jsonb_extract_path_text(invoices.jsonb, 'exchangeRate')::numeric(19, 14) AS invoice_exchange_rate,
+        jsonb_extract_path_text(invoices.jsonb, 'exchangeRate')::numeric(19,14) AS invoice_exchange_rate,
         jsonb_extract_path_text(invoices.jsonb, 'status') AS invoice_status,
         invoice_lines.id AS invoice_line_id,
-        jsonb_extract_path_text(invoice_lines.jsonb, 'total')::numeric(19, 4) AS invoice_line_total,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb -> 'fundDistributions'), 'fundId')::uuid AS invoice_line_fund_id,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb -> 'fundDistributions'), 'value')::numeric(19, 4) AS invoice_line_distribution_value,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb -> 'fundDistributions'), 'distributionType') AS invoice_line_distribution_type,
+        jsonb_extract_path_text(invoice_lines.jsonb, 'total')::numeric(19,4) AS invoice_line_total,
+        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'fundId')::uuid AS invoice_line_fund_id,
+        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'value')::numeric(19,4) AS invoice_line_distribution_value,
+        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'distributionType') AS invoice_line_distribution_type,
         organizations.id AS vendor_id,
         jsonb_extract_path_text(organizations.jsonb, 'name') AS vendor_name
     FROM
-        folio_invoice.invoice_lines AS invoice_lines
-        LEFT JOIN folio_invoice.invoices AS invoices ON invoices.id = invoice_lines.invoiceid
-        LEFT JOIN folio_organizations.organizations AS organizations ON jsonb_extract_path_text(invoices.jsonb, 'vendorId')::uuid = organizations.id
+        folio_invoice.invoice_lines
+        LEFT JOIN folio_invoice.invoices ON invoices.id = invoice_lines.invoiceid
+        LEFT JOIN folio_organizations.organizations ON jsonb_extract_path_text(invoices.jsonb, 'vendorId')::uuid = organizations.id
 ),
 finance AS (
     SELECT
@@ -35,21 +38,20 @@ finance AS (
         fund.id AS fund_id,
         jsonb_extract_path_text(fund.jsonb, 'code') AS fund_code
     FROM
-        folio_finance.fiscal_year AS fiscal_year
-        LEFT JOIN folio_finance.ledger AS ledger ON ledger.fiscalyearoneid = fiscal_year.id
-        LEFT JOIN folio_finance.fund AS fund ON fund.ledgerid = ledger.id
-        LEFT JOIN folio_finance.budget AS budget ON budget.fundid = fund.id
-            AND budget.fiscalyearid = fiscal_year.id
+        folio_finance.fiscal_year
+        LEFT JOIN folio_finance.ledger ON ledger.fiscalyearoneid = fiscal_year.id
+        LEFT JOIN folio_finance.fund ON fund.ledgerid = ledger.id
+        LEFT JOIN folio_finance.budget ON budget.fundid = fund.id AND budget.fiscalyearid = fiscal_year.id
 ),
 transactions AS (
     SELECT
         transaction.id AS transaction_id,
-        jsonb_extract_path_text(transaction.jsonb, 'fromFundId')::uuid AS fromFundId,
-        jsonb_extract_path_text(transaction.jsonb, 'amount')::numeric(19, 4) AS transaction_amount,
+        jsonb_extract_path_text(transaction.jsonb, 'fromFundId')::uuid AS from_fund_id,
+        jsonb_extract_path_text(transaction.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
         jsonb_extract_path_text(transaction.jsonb, 'currency') AS transaction_currency,
-        jsonb_extract_path_text(transaction.jsonb, 'sourceInvoiceLineId')::uuid AS sourceInvoiceLineId
+        jsonb_extract_path_text(transaction.jsonb, 'sourceInvoiceLineId')::uuid AS source_invoice_line_id
     FROM
-        folio_finance.transaction AS transaction
+        folio_finance.transaction
 )
 SELECT
     invoice.invoice_id,
@@ -79,8 +81,8 @@ SELECT
 FROM
     invoice
     LEFT JOIN finance AS finance_invoice ON finance_invoice.fund_id = invoice.invoice_line_fund_id
-    LEFT JOIN transactions AS transactions_invoice ON transactions_invoice.sourceInvoiceLineId = invoice.invoice_line_id
-        AND transactions_invoice.fromFundId = invoice.invoice_line_fund_id;
+    LEFT JOIN transactions AS transactions_invoice ON transactions_invoice.source_invoice_line_id = invoice.invoice_line_id
+        AND transactions_invoice.from_fund_id = invoice.invoice_line_fund_id;
 
 CREATE INDEX ON finance_invoice_transactions (invoice_id);
 
