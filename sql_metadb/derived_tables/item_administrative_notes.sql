@@ -6,11 +6,11 @@ SELECT
     it.id AS item_id,
     it.hrid AS item_hrid,
     it.holdings_record_id AS holdings_record_id,
-    adminNotes.jsonb #>> '{}' AS administrative_note,
-    adminNotes.ordinality AS administrative_note_ordinality
+    admin_notes.jsonb #>> '{}' AS administrative_note,
+    admin_notes.ordinality AS administrative_note_ordinality
 FROM
     folio_inventory.item AS i
-    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'administrativeNotes')) WITH ORDINALITY AS adminNotes (jsonb)
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'administrativeNotes')) WITH ORDINALITY AS admin_notes (jsonb)
     LEFT JOIN folio_inventory.item__t AS it ON i.id = it.id;
 
 CREATE INDEX ON item_administrative_notes (item_id);
