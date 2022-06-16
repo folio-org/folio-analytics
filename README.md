@@ -59,10 +59,11 @@ reports.
 Each release of folio-analytics is intended to be used with a specific
 FOLIO release:
 
-* folio-analytics 1.3 => FOLIO Lotus
-* folio-analytics 1.4 => FOLIO Morning glory
-* folio-analytics 1.5 => FOLIO Nolana
-* folio-analytics 1.6 => FOLIO Orchid
+| FOLIO         | folio-analytics  |
+| ------------- | :--------------: |
+| Lotus         |      v1.3.0      |
+| Kiwi          |      v1.2.0      |
+| Juniper       |      v1.2.0      |
 
 There are two primary types of branches:
 
