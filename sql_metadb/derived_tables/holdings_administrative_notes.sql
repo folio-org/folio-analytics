@@ -19,7 +19,7 @@ CREATE INDEX ON holdings_administrative_notes (holdings_id);
 
 CREATE INDEX ON holdings_administrative_notes (holdings_hrid);
 
-CREATE INDEX ON holdings_administrative_notes (administrative_notes);
+CREATE INDEX ON holdings_administrative_notes (administrative_note);
 
 CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
 
