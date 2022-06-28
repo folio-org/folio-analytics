@@ -7,7 +7,7 @@ SELECT
     hd.id AS holdings_id,
     hd.hrid AS holdings_hrid,
     adminNotes.jsonb #>> '{}' AS administrative_notes,
-    adminNotes.ordinality AS administrative_notes_ordinality
+    admin_notes.ordinality AS administrative_note_ordinality
 FROM 
     folio_inventory.holdings_record__t AS hd
     LEFT JOIN folio_inventory.holdings_record AS hld ON hd.id = hld.id 
