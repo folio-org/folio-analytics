@@ -11,7 +11,7 @@ SELECT
 FROM 
     folio_inventory.holdings_record__t AS hd
     LEFT JOIN folio_inventory.holdings_record AS hld ON hd.id = hld.id 
-    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(hld.jsonb, 'administrativeNotes')) WITH ORDINALITY AS adminNotes (jsonb);
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(hld.jsonb, 'administrativeNotes')) WITH ORDINALITY AS admin_notes (jsonb);
     
 CREATE INDEX ON holdings_administrative_notes (instance_id);
 
