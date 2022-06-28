@@ -21,6 +21,6 @@ CREATE INDEX ON holdings_administrative_notes (holdings_hrid);
 
 CREATE INDEX ON holdings_administrative_notes (administrative_notes);
 
-CREATE INDEX ON holdings_administrative_notes (administrative_notes_ordinality);
+CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
 
 VACUUM ANALYZE holdings_administrative_notes;
