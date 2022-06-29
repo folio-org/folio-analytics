@@ -4,10 +4,10 @@ DROP TABLE IF EXISTS holdings_tags;
 CREATE TABLE holdings_tags AS 
 SELECT 
     hd.instance_id,
-    hd.id AS holdings_id,
-    hd.hrid AS holdings_hrid,
-    hldtags.jsonb #>> '{}' AS holdings_tags,
-    hldtags.ordinality AS holdings_tags_ordinality
+    hd.id AS holding_id,
+    hd.hrid AS holding_hrid,
+    hldtags.jsonb #>> '{}' AS holding_tags,
+    hldtags.ordinality AS holding_tags_ordinality
 FROM 
     folio_inventory.holdings_record__t AS hd
     LEFT JOIN folio_inventory.holdings_record AS hdr ON hdr.id = hd.id
@@ -16,12 +16,12 @@ FROM
     
 CREATE INDEX ON holdings_tags (instance_id);
 
-CREATE INDEX ON holdings_tags (holdings_id);
+CREATE INDEX ON holdings_tags (holdins_id);
 
-CREATE INDEX ON holdings_tags (holdings_hrid);
+CREATE INDEX ON holdings_tags (holding_hrid);
 
-CREATE INDEX ON holdings_tags (holdings_tags);
+CREATE INDEX ON holdings_tags (holding_tags);
 
-CREATE INDEX ON holdings_tags (holdings_tags_ordinality);
+CREATE INDEX ON holdings_tags (holding_tags_ordinality);
 
 VACUUM ANALYZE holdings_tags;
