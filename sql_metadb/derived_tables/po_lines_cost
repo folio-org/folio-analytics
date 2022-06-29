@@ -6,7 +6,7 @@ CREATE TABLE po_lines_cost AS
 SELECT
     pol.id AS pol_id,
     jsonb_extract_path_text(pol.jsonb, 'cost', 'listUnitPrice')::numeric(19,4) AS po_line_list_unit_price_phys,
-    jsonb_extract_path_text(pol.jsonb, 'cost', 'quantityPhysical') AS po_lines_quant_phys,
+    jsonb_extract_path_text(pol.jsonb, 'cost', 'quantityPhysical') AS po_line_quant_phys,
     jsonb_extract_path_text(pol.jsonb, 'cost', 'listUnitPriceElectronic')::numeric(19,4) AS po_line_list_unit_price_elec,
     jsonb_extract_path_text(pol.jsonb, 'cost', 'quantityElectronic') AS po_line_quant_elec,
     jsonb_extract_path_text(pol.jsonb, 'cost', 'additionalCost')::numeric(19,4) AS po_line_additional_cost,
