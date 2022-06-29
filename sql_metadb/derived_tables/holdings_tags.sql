@@ -6,8 +6,8 @@ SELECT
     hd.instance_id,
     hd.id AS holding_id,
     hd.hrid AS holding_hrid,
-    hldtags.jsonb #>> '{}' AS holding_tags,
-    hldtags.ordinality AS holding_tags_ordinality
+    hldtags.jsonb #>> '{}' AS holding_tag,
+    hldtags.ordinality AS holding_tag_ordinality
 FROM 
     folio_inventory.holdings_record__t AS hd
     LEFT JOIN folio_inventory.holdings_record AS hdr ON hdr.id = hd.id
@@ -20,8 +20,8 @@ CREATE INDEX ON holdings_tags (holdins_id);
 
 CREATE INDEX ON holdings_tags (holding_hrid);
 
-CREATE INDEX ON holdings_tags (holding_tags);
+CREATE INDEX ON holdings_tags (holding_tag);
 
-CREATE INDEX ON holdings_tags (holding_tags_ordinality);
+CREATE INDEX ON holdings_tags (holding_tag_ordinality);
 
 VACUUM ANALYZE holdings_tags;
