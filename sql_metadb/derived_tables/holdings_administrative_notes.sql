@@ -4,8 +4,8 @@ DROP TABLE IF EXISTS holdings_administrative_notes;
 CREATE TABLE holdings_administrative_notes AS 
 SELECT 
     hd.instance_id,
-    hd.id AS holding_id,
-    hd.hrid AS holding_hrid,
+    hd.id AS holdings_id,
+    hd.hrid AS holdings_hrid,
     admin_notes.jsonb #>> '{}' AS administrative_note,
     admin_notes.ordinality AS administrative_note_ordinality
 FROM 
@@ -15,9 +15,9 @@ FROM
     
 CREATE INDEX ON holdings_administrative_notes (instance_id);
 
-CREATE INDEX ON holdings_administrative_notes (holding_id);
+CREATE INDEX ON holdings_administrative_notes (holdings_id);
 
-CREATE INDEX ON holdings_administrative_notes (holding_hrid);
+CREATE INDEX ON holdings_administrative_notes (holdinsg_hrid);
 
 CREATE INDEX ON holdings_administrative_notes (administrative_note);
 
