@@ -5,7 +5,7 @@ CREATE TABLE po_acq_unit_ids AS
     SELECT
         po.id AS po_id,
         po.po_number AS po_number,
-        acq_unit_ids.jsonb #>> '{}' AS po_acquisition_unit_id,
+        CAST(acq_unit_ids.jsonb #>> '{}' AS uuid) AS po_acquisition_unit_id,
         au.name AS po_acquisition_unit_name
     FROM
         folio_orders.purchase_order__t AS po
