@@ -1,22 +1,19 @@
--- create derived table to extract instance identifiers and value 
+-- Create derived table to extract instance identifiers and value
 
 DROP TABLE IF EXISTS instance_identifiers;
 
 CREATE TABLE instance_identifiers AS
 SELECT
-    instances.id AS instance_id,
-    jsonb_extract_path_text(instances.jsonb, 'hrid') AS instance_hrid,
-    jsonb_extract_path_text(idents.jsonb, 'identifierTypeId')::uuid AS identifier_type_id,
-    itt.name AS identifier_type_name,
-    jsonb_extract_path_text(idents.jsonb, 'value') AS identifier,
-    idents.ordinality AS identifier_ordinality
+    inst.id AS instance_id,
+    jsonb_extract_path_text(inst.jsonb, 'hrid') AS instance_hrid,
+    jsonb_extract_path_text(ident.jsonb, 'identifierTypeId')::uuid AS identifier_type_id,
+    idtype.name AS identifier_type_name,
+    jsonb_extract_path_text(ident.jsonb, 'value') AS identifier,
+    ident.ordinality AS identifier_ordinality
 FROM
-    folio_inventory.instance AS instances
-    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instances.jsonb, 'identifiers'))
-    WITH ORDINALITY AS idents(jsonb)
-    LEFT JOIN folio_inventory.identifier_type__t AS itt 
-    ON jsonb_extract_path_text(idents.jsonb, 'identifierTypeId')::uuid = itt.id
-    ;
+    folio_inventory.instance AS inst
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'identifiers')) WITH ORDINALITY AS ident (jsonb)
+    LEFT JOIN folio_inventory.identifier_type__t AS idtype ON jsonb_extract_path_text(ident.jsonb, 'identifierTypeId')::uuid = idtype.id;
     
 CREATE INDEX ON instance_identifiers (instance_id);
 
