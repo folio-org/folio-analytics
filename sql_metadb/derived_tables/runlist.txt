@@ -21,6 +21,7 @@ instance_contributors.sql
 instance_alternative_titles.sql
 instance_electronic_access.sql
 instance_publication.sql
+instance_identifiers.sql
 instance_statistical_codes.sql
 instance_formats.sql
 instance_editions.sql
