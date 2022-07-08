@@ -32,6 +32,7 @@ instance_physical_descriptions.sql
 instance_notes.sql
 instance_series.sql
 instance_subjects.sql
+instance_tags.sql
 invoice_adjustments_in_addition_to.sql
 invoice_adjustments_ext.sql
 invoice_voucher_lines_fund_distributions.sql
