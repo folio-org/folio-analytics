@@ -27,6 +27,7 @@ instance_formats.sql
 instance_editions.sql
 instance_languages.sql
 instance_nature_content.sql
+instance_physical_descriptions.sql
 instance_notes.sql
 instance_series.sql
 instance_subjects.sql
