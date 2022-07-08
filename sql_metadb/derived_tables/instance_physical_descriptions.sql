@@ -1,17 +1,19 @@
--- This derived Metadb table extracts information in the physical description including extent, illustrations, size.
+-- This derived Metadb table extracts information in the physical
+-- description including extent, illustrations, size.
+
 DROP TABLE IF EXISTS instance_physical_descriptions;
 
 CREATE TABLE instance_physical_descriptions AS
-SELECT 
-	it.id AS instance_id,
-	it.hrid AS instance_hrid,
-	instPhyDesc.jsonb #>> '{}' AS physical_description,
-	instPhyDesc.ordinality AS physical_description_ordinality
-FROM 
-	folio_inventory.instance__t it 
-	LEFT JOIN folio_inventory.instance AS inst ON inst.id = it.id 
-	CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'physicalDescriptions')) WITH ORDINALITY AS instPhyDesc (jsonb);
-	
+SELECT
+    i.id AS instance_id,
+    i.hrid AS instance_hrid,
+    physdesc.jsonb #>> '{}' AS physical_description,
+    physdesc.ordinality AS physical_description_ordinality
+FROM
+    folio_inventory.instance__t AS i
+    LEFT JOIN folio_inventory.instance AS inst ON inst.id = i.id
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'physicalDescriptions')) WITH ORDINALITY AS physdesc (jsonb);
+
 CREATE INDEX ON instance_physical_descriptions (instance_id);
 
 CREATE INDEX ON instance_physical_descriptions (instance_hrid);
