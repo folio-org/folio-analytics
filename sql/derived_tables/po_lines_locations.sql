@@ -1,4 +1,4 @@
-/* This query creates a local table for purchase order line locations including location quantity and type.
+/* This query creates a derived table for purchase order line locations including location quantity and type.
 It uses conditional statements to search for location ID and location name in the 
 purchase order line location and holdings location fields, displays whichever is not null,
 and indicates the source of the resulting location data (purchase order location or purchase
@@ -16,7 +16,8 @@ SELECT
     CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL
     	THEN json_extract_path_text(locations.data, 'locationId') 
 		ELSE ih.permanent_location_id END AS pol_location_id,	
-	CASE WHEN (il.name) IS NOT NULL THEN il.name
+	CASE WHEN il.name IS NOT NULL
+	    THEN il.name
 		ELSE il2.name END AS pol_location_name,
 	CASE WHEN il.name IS NOT NULL
          THEN 'pol_location'
