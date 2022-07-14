@@ -21,7 +21,7 @@ WITH temp_eresource AS (
         json_extract_path_text(locations.data, 'holdingId') AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
         CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL
-		    THEN json_extract_path_text(locations.data, 'locationId') 
+		    THEN json_extract_path_text(locations.data, 'locationId')
 			ELSE ih.permanent_location_id END AS pol_location_id,
 		CASE WHEN il.name IS NOT NULL
 		    THEN il.name
@@ -30,14 +30,15 @@ WITH temp_eresource AS (
 	         THEN 'pol_location'
 	         WHEN il2.name IS NOT NULL
 	         THEN 'pol_holding'
-	         ELSE 'no_source' END AS pol_location_source 
+	         ELSE 'no_source' END AS pol_location_source
     FROM
         po_lines AS pol
 	    CROSS JOIN json_array_elements(json_extract_path(pol.data, 'locations')) AS locations (data)
 		LEFT JOIN inventory_locations AS il ON json_extract_path_text(locations.data, 'locationId') = il.id
 		LEFT JOIN inventory_holdings AS ih ON json_extract_path_text(locations.data, 'holdingId') = ih.id
 		LEFT JOIN inventory_locations AS il2 ON il2.id = ih.permanent_location_id
-	WHERE json_extract_path(pol.data, 'eresource') IS NOT NULL			
+	WHERE
+	    json_extract_path(pol.data, 'eresource') IS NOT NULL
 )
 SELECT
     te.pol_id,
@@ -45,7 +46,7 @@ SELECT
     te.pol_holding_hrid AS pol_holding_hrid,
     te.pol_location_id,
 	te.location_name,
-	te.pol_location_source,    
+	te.pol_location_source,
     te.access_provider AS pol_access_provider,
     oo.name AS provider_org_name,
     te.pol_activated,
@@ -62,7 +63,6 @@ SELECT
     te.pol_resource_url
 FROM
     temp_eresource AS te
-    LEFT JOIN po_lines AS pol ON te.pol_id = pol.id
     LEFT JOIN inventory_material_types AS imt ON imt.id = te.pol_material_type
     LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
 
