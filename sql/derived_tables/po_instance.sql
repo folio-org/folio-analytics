@@ -2,10 +2,10 @@
 --then "no source' is present in pol_location_source.
 --Pol_location depends on how the po is created.
 
-DROP TABLE IF EXISTS folio_reporting.po_instance;
+DROP TABLE IF EXISTS po_instance;
 
 
-CREATE TABLE folio_reporting.po_instance AS
+CREATE TABLE po_instance AS
 SELECT
     json_extract_path_text(po_purchase_orders.data, 'poNumber') AS po_number,
     po_lines.po_line_number AS po_line_number,
@@ -22,7 +22,7 @@ SELECT
          ELSE ih.permanent_location_id END AS pol_location_id,
     CASE WHEN (il.name) IS NOT NULL
          THEN il.name
-         ELSE il2.name END AS pol_location_name,
+         ELSE il2.name END AS location_name,
     CASE WHEN il.name IS NOT NULL
          THEN 'pol_location'
          WHEN il2.name IS NOT NULL
