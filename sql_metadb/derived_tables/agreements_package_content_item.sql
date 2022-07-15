@@ -1,9 +1,7 @@
--- Creates a derived table on all needed data of package_content_items
--- that either are linked directly to an entitlement or have a package
--- linked that is linked to an entitlement
-
 DROP TABLE IF EXISTS agreements_package_content_item;
 
+-- Creates a derived table on all needed data of package_content_items that either
+-- are linked directly to an entitlement or have an package linked that is linked to an entitlement
 CREATE TABLE agreements_package_content_item AS
 SELECT
     pci_list.pci_id,
@@ -58,7 +56,7 @@ FROM (
         pack.pkg_reference AS package_reference,
         pack.pkg_remote_kb AS package_remote_kb_id,
         pack.pkg_source AS package_source,
-        pack.pkg_vendor_fk::uuid AS package_vendor_id,
+        pack.pkg_vendor_fk AS package_vendor_id,
         pci.id AS pci_id,
         pci.pci_access_start,
         pci.pci_access_end,
@@ -94,7 +92,7 @@ FROM (
         folio_agreements.package_content_item AS pci
         INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk
         LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
-        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
+        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk = org.org_id
         LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
         LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
         LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
@@ -120,7 +118,7 @@ UNION
         pack.pkg_reference AS package_reference,
         pack.pkg_remote_kb AS package_remote_kb_id,
         pack.pkg_source AS package_source,
-        pack.pkg_vendor_fk::uuid AS package_vendor_id,
+        pack.pkg_vendor_fk AS package_vendor_id,
         pci.id AS pci_id,
         pci.pci_access_start,
         pci.pci_access_end,
@@ -156,7 +154,7 @@ UNION
         folio_agreements.package_content_item AS pci
         LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
         INNER JOIN folio_agreements.entitlement AS ent ON ent.ent_resource_fk = pack.id
-        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
+        LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk = org.org_id
         LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
         LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
         LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
