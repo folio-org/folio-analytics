@@ -1,7 +1,9 @@
+-- Creates a derived table on all needed data of package_content_items
+-- that either are linked directly to an entitlement or have a package
+-- linked that is linked to an entitlement
+
 DROP TABLE IF EXISTS agreements_package_content_item;
 
--- Creates a derived table on all needed data of package_content_items that either
--- are linked directly to an entitlement or have an package linked that is linked to an entitlement
 CREATE TABLE agreements_package_content_item AS
 SELECT
     pci_list.pci_id,
