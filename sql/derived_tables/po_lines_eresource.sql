@@ -20,17 +20,16 @@ WITH temp_eresource AS (
         json_extract_path_text(pol.data, 'eresource', 'resourceUrl') AS pol_resource_url,
         json_extract_path_text(locations.data, 'holdingId') AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
-        CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL
-            THEN json_extract_path_text(locations.data, 'locationId')
-            ELSE ih.permanent_location_id END AS pol_location_id,
-        CASE WHEN il.name IS NOT NULL
-            THEN il.name
-            ELSE il2.name END AS location_name,
-        CASE WHEN il.name IS NOT NULL
-            THEN 'pol_location'
-            WHEN il2.name IS NOT NULL
-            THEN 'pol_holding'
-            ELSE 'no_source' END AS pol_location_source
+        CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL THEN json_extract_path_text(locations.data, 'locationId')
+             ELSE ih.permanent_location_id
+        END AS pol_location_id,
+        CASE WHEN il.name IS NOT NULL THEN il.name
+             ELSE il2.name
+        END AS location_name,
+        CASE WHEN il.name IS NOT NULL THEN 'pol_location'
+             WHEN il2.name IS NOT NULL THEN 'pol_holding'
+             ELSE 'no_source'
+        END AS pol_location_source
     FROM
         po_lines AS pol
         CROSS JOIN json_array_elements(json_extract_path(pol.data, 'locations')) AS locations (data)
@@ -106,4 +105,4 @@ CREATE INDEX ON po_lines_eresource (pol_user_limit);
 
 CREATE INDEX ON po_lines_eresource (pol_resource_url);
 
-VACUUM ANALYZE  po_lines_eresource;
+VACUUM ANALYZE po_lines_eresource;
