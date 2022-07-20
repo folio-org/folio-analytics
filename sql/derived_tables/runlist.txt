@@ -48,6 +48,7 @@ po_lines_locations.sql
 po_lines_physical.sql
 po_lines_phys_mat_type.sql
 po_lines_tags.sql
+po_lines_vendor_reference_numbers.sql
 po_ongoing.sql
 po_organization.sql
 requests_items.sql
