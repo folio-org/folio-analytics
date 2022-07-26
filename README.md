@@ -54,7 +54,7 @@ README.md files in the query folders to explain how to run the
 reports.
 
 
-## Releases and branches
+## Releases
 
 Each release of folio-analytics is intended to be used with a specific
 FOLIO release:
@@ -65,6 +65,9 @@ FOLIO release:
 | Lotus         |        1.3       |
 | Kiwi          |        1.2       |
 | Juniper       |        1.2       |
+
+
+## Branches
 
 There are two primary types of branches:
 
