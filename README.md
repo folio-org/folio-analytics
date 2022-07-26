@@ -61,9 +61,10 @@ FOLIO release:
 
 | FOLIO         | folio-analytics  |
 | ------------- | :--------------: |
-| Lotus         |      v1.3.0      |
-| Kiwi          |      v1.2.0      |
-| Juniper       |      v1.2.0      |
+| Morning Glory |        1.4       |
+| Lotus         |        1.3       |
+| Kiwi          |        1.2       |
+| Juniper       |        1.2       |
 
 There are two primary types of branches:
 
