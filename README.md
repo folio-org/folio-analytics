@@ -79,4 +79,3 @@ There are two primary types of branches:
   `main`.  They are managed as stable branches; i.e. they may receive
   bug fixes but generally no new features.  Production deployments
   should install release tags, not branches.
-
