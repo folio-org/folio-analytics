@@ -161,7 +161,7 @@ All queries:
 - [ ] Query runs without errors
 - [ ] Query output is correct
 - [ ] Query logic is clear and well documented
-- [ ] Query is readable and properly indented
+- [ ] Query is readable and properly indented with spaces (not tabs)
 - [ ] Table and column names are in all-lowercase
 - [ ] Quotation marks are used only where necessary
 
