@@ -11,7 +11,7 @@ SELECT
     admin_note.ordinality AS administrative_note_ordinality
 FROM
     inventory_instances AS i
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'administrativeNotes'))
+    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'administrativenotes'))
     WITH ORDINALITY AS admin_note (data);
 
 CREATE INDEX ON instance_administrative_notes (instance_id);
