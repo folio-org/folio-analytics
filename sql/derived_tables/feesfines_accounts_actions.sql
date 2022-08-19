@@ -16,7 +16,7 @@ SELECT
     json_extract_path_text(fa.data, 'materialTypeId') AS material_type_id,
     json_extract_path_text(fa.data, 'materialType') AS material_type,
     json_extract_path_text(fa.data, 'payment_status') AS payment_status,
-    json_extract_path_text(fa.data, 'status') AS fine_status, -- open or closed
+    json_extract_path_text(fa.data, 'status', 'name') AS fine_status, -- open or closed
     json_extract_path_text(fa.data, 'userId') AS account_user_id,
     ff.id AS transaction_id,
     json_extract_path_text(ff.data, 'accountId') AS account_id,
