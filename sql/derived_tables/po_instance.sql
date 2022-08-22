@@ -22,7 +22,7 @@ SELECT
          ELSE ih.permanent_location_id END AS pol_location_id,
     CASE WHEN (il.name) IS NOT NULL
          THEN il.name
-         ELSE il2.name END AS location_name,
+         ELSE il2.name END AS pol_location_name,
     CASE WHEN il.name IS NOT NULL
          THEN 'pol_location'
          WHEN il2.name IS NOT NULL
