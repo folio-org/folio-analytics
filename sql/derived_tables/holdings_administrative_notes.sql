@@ -1,4 +1,4 @@
--- This derived table extracts administrative notes from the instance
+-- This derived table extracts administrative notes from the holdings
 -- record.
 
 DROP TABLE IF EXISTS holdings_administrative_notes;
