@@ -1,8 +1,8 @@
 -- This derived table extracts refeence numbers from po_lines vendor details.
 
-DROP TABLE IF EXISTS po_lines_vendor_reference_number;
+DROP TABLE IF EXISTS po_line_vendor_reference_number;
 
-CREATE TABLE po_lines_vendor_reference_number AS 
+CREATE TABLE po_line_vendor_reference_number AS 
 SELECT
         pl.id AS po_line_id,
         plt.po_line_number AS po_line_number,
@@ -14,14 +14,14 @@ FROM folio_orders.po_line AS pl
                 AS numbers (jsonb)
             LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
 
-CREATE INDEX ON po_lines_vendor_reference_number (po_line_id);
+CREATE INDEX ON po_line_vendor_reference_number (po_line_id);
 
-CREATE INDEX ON po_lines_vendor_reference_number (po_line_number);
+CREATE INDEX ON po_line_vendor_reference_number (po_line_number);
 
-CREATE INDEX ON po_lines_vendor_reference_number (vendor_reference_number);
+CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number);
 
-CREATE INDEX ON po_lines_vendor_reference_number (vendor_reference_number_type);
+CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number_type);
 
-CREATE INDEX ON po_lines_vendor_reference_number (vendor_instructions);
+CREATE INDEX ON po_line_vendor_reference_number (vendor_instructions);
 
-VACUUM ANALYZE  po_lines_vendor_reference_number;
+VACUUM ANALYZE  po_line_vendor_reference_number;
