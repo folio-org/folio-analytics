@@ -11,7 +11,7 @@ SELECT
     po_lines.po_line_number AS po_line_number,
     organization_organizations.code AS vendor_code,
     user_users.username AS created_by,
-    po_purchase_orders.workflow_status AS po_wf_status,
+    po_purchase_orders.workflow_status AS po_workflow_status,
     json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
     json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::date AS created_date,  
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
@@ -54,7 +54,7 @@ CREATE INDEX ON po_instance (vendor_code);
 
 CREATE INDEX ON po_instance (created_by);
 
-CREATE INDEX ON po_instance (po_wf_status);
+CREATE INDEX ON po_instance (po_workflow_status);
 
 CREATE INDEX ON po_instance (status_approved);
 
