@@ -1,4 +1,4 @@
--- This derived table extracts refeence numbers from po_lines vendor details.
+-- This derived table extracts reference numbers from po_lines vendor details.
 
 DROP TABLE IF EXISTS po_line_vendor_reference_number;
 
