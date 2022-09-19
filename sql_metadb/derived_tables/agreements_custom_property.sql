@@ -1,6 +1,5 @@
-/*
- * Creates a derived table on agreements custom properties
- */
+--Creates a derived table on agreements custom properties.
+
 DROP TABLE IF EXISTS agreements_custom_property;
 
 CREATE TABLE agreements_custom_property AS
@@ -50,5 +49,31 @@ CREATE INDEX ON agreements_custom_property (custom_property_integer_value);
 CREATE INDEX ON agreements_custom_property (custom_property_text_id);
 
 CREATE INDEX ON agreements_custom_property (custom_property_text_value);
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_container_id IS 'Container ID of the custom property. The ID can be linked to the custom_properties_id attribute in the folio_agreements.subscription_agreement table';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_id IS 'ID of the custom property';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_note IS 'Internal note to the custom property, that displays internally to FOLIO users';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_public_note IS 'Public note to the custom property, that displays externally to the public';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_definition_uuid IS 'ID of the custom property definition';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_definition_pd_name IS 'Name of the custom property definition';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_definition_pd_type IS 'Type of the custom property definition';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_definition_pd_description IS 'Further explanation of the property';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_definition_pd_label IS 'The property name that appears when displaying the property to users in FOLIO';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_integer_id IS 'ID of the integer value';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_integer_value IS 'Value of the integer, that was entered';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_text_id IS 'ID of the text value';
+
+COMMENT ON COLUMN agreements_custom_property.custom_property_text_value IS 'Value of the text value, that was entered';
 
 VACUUM ANALYZE agreements_custom_property;
