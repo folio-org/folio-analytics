@@ -50,12 +50,12 @@ readable.  Hyperlinks or other references such as "Fixes #" may be
 included in the long description, but not in the title and not as a
 substitute for a complete description of the changes.
 
-### Pull request description
+### CHANGES.md
 
-The pull request description, entered in the large "Leave a comment"
-text field, should contain a complete description of the changes.
-This should be text rather than a hyperlink, so that it can be added
-to the merge commit as a self-contained summary of the changes.
+The CHANGES.md file should be updated with release notes describing
+the changes made in the pull request.  This should be a
+self-contained, textual summary of the changes, rather than a
+hyperlink to an issue.
 
 ### Branches
 
@@ -157,7 +157,7 @@ review by adding an `x` between the square brackets `[]` on each line.
 
 ```
 All queries:
-- [ ] Pull request has a complete description
+- [ ] Release notes added or updated in CHANGES.md
 - [ ] Query runs without errors
 - [ ] Query output is correct
 - [ ] Query logic is clear and well documented
