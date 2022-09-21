@@ -1,7 +1,8 @@
-DROP TABLE IF EXISTS finance_po_inv_transactions;
-
 -- Create a derived table that contains information about the fund distribution in po lines and invoice lines
 -- including information on the transaction and budget.
+
+DROP TABLE IF EXISTS finance_po_inv_transactions;
+
 CREATE TABLE finance_po_inv_transactions AS
 WITH orders_invoice AS (
     SELECT
@@ -257,5 +258,115 @@ CREATE INDEX ON finance_po_inv_transactions (invoice_line_transaction_id);
 CREATE INDEX ON finance_po_inv_transactions (invoice_line_transaction_amount);
 
 CREATE INDEX ON finance_po_inv_transactions (invoice_line_transaction_currency);
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_id IS 'UUID of this purchase order';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_number IS 'A human readable ID assigned to this purchase order';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_number IS 'A human readable number assigned to this PO line';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_title_or_package IS 'Title of the material';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_fyro_adjustment_amount IS 'Adjustment amount if rollover was happen';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_list_unit_price IS 'The per-item list price for physical or resources of Other order format';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_quantity_physical IS 'Quantity of physical items or resources of Other order format in this purchase order line';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_list_unit_price_electronic IS 'The e-resource per-item list price';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_quantity_electronic IS 'Quantity of electronic items in this purchase order line';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_additional_cost IS 'Lump sum that is added to the total estimated price - not affected by discount';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_discount IS 'Percentage (0 to 100) or amount (positive number) that is subtracted from the list price time quantities calculation before additional cost';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_discount_type IS 'Percentage or amount discount type';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_distribution_value IS 'The value of the cost to be applied to this fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_distribution_type IS 'Percentage or amount type of the value property';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_currency IS 'An ISO currency code';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_fiscal_year_id IS 'UUID of the fiscal year record';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_fiscal_year IS 'The code of the fiscal year';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_ledger_id IS 'UUID of this ledger';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_ledger_name IS 'The name of the ledger';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_budget_id IS 'UUID of this budget';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_budget_name IS 'The name of the budget';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_fund_id IS 'UUID of this fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_fund_code IS 'A unique code associated with the fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_workflow_status IS 'The workflow status for this purchase order';
+
+COMMENT ON COLUMN finance_po_inv_transactions.po_line_transaction_id IS 'UUID of this transaction';
+
+COMMENT ON COLUMN finance_po_inv_transactions.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Should not change once create';
+
+COMMENT ON COLUMN finance_po_inv_transactions.transaction_encumbrance_amount_expended IS 'The amount currently expended by this encumbrance';
+
+COMMENT ON COLUMN finance_po_inv_transactions.transaction_encumbrance_order_type IS 'Taken from the purchase order';
+
+COMMENT ON COLUMN finance_po_inv_transactions.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_id IS 'UUID of this invoice';
+
+COMMENT ON COLUMN finance_po_inv_transactions.folio_invoice_number IS 'Invoice number in folio system';
+
+COMMENT ON COLUMN finance_po_inv_transactions.vendor_invoice_number IS 'This is the number from the vendors invoice, which is different from the folioInvoiceNo';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_date IS 'Invoice date';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_id IS 'UUID of this invoice line';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_distribution_value IS 'The value of the cost to be applied to this fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_distribution_type IS 'Percentage or amount type of the value property';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_total IS 'Invoice line total amount which is sum of subTotal and adjustmentsTotal. This amount is always calculated by system.';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_currency IS 'Ideally this is the ISO code and not something the user defines';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_fiscal_year_id IS 'UUID of the fiscal year record';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_fiscal_year IS 'The code of the fiscal year';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_ledger_id IS 'UUID of this ledger';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_ledger_name IS 'The name of the ledger';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_budget_id IS 'UUID of this budget';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_budget_name IS 'The name of the budget';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_fund_id IS 'UUID of this fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_fund_code IS 'A unique code associated with the fund';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_vendor_id IS 'The unique UUID for this organization (vendor)';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_vendor_name IS 'The name of this organization (vendor)';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_status IS 'Open: Record has been created, Reviewed: details have been verified, Approved: Funds are release, Paid: confirmation that funds have been exchanged and check number has been returned amounts are frozen, cancelled.Note: invoices are never partially paid.';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_exchange_rate IS 'Exchange rate';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_transaction_id IS 'UUID of this transaction';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
+
+COMMENT ON COLUMN finance_po_inv_transactions.invoice_line_transaction_currency IS 'Currency code for this transaction - from the system currency';
 
 VACUUM ANALYZE finance_po_inv_transactions;
