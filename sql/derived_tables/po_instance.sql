@@ -1,9 +1,9 @@
--- Create a local table for purchase order line instance. Every po line may have location ID or holding ID or both can be 'null', if both are 'null'
---then "no source' is present in pol_location_source.
---Pol_location depends on how the po is created.
+-- Create a local table for purchase order line instance.  Every po
+-- line may have location ID or holding ID or both can be null, if
+-- both are null then "no source' is present in pol_location_source.
+-- pol_location depends on how the po is created.
 
 DROP TABLE IF EXISTS po_instance;
-
 
 CREATE TABLE po_instance AS
 SELECT
@@ -13,12 +13,12 @@ SELECT
     user_users.username AS created_by,
     po_purchase_orders.workflow_status AS po_workflow_status,
     json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
-    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::date AS created_date,  
+    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::date AS created_date,
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
     json_extract_path_text(po_lines.data, 'instanceId') AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
     CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL
-         THEN json_extract_path_text(locations.data, 'locationId') 
+         THEN json_extract_path_text(locations.data, 'locationId')
          ELSE ih.permanent_location_id END AS pol_location_id,
     CASE WHEN (il.name) IS NOT NULL
          THEN il.name
@@ -40,12 +40,12 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(po_lines.data, 'locations')) AS locations (data)
     LEFT JOIN inventory_locations AS il ON json_extract_path_text(locations.data, 'locationId') = il.id
     LEFT JOIN inventory_holdings AS ih ON json_extract_path_text(locations.data, 'holdingId') = ih.id
-    LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id 
+    LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id
     LEFT JOIN inventory_instances ON json_extract_path_text(po_lines.data, 'instanceId') = inventory_instances.id
     LEFT JOIN organization_organizations ON json_extract_path_text(po_purchase_orders.data, 'vendor') = organization_organizations.id
     LEFT JOIN configuration_entries ON json_extract_path_text(po_purchase_orders.data, 'billTo') = configuration_entries.id
-    LEFT JOIN user_users ON json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') = user_users.id
-;
+    LEFT JOIN user_users ON json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') = user_users.id;
+
 CREATE INDEX ON po_instance (po_number);
 
 CREATE INDEX ON po_instance (po_line_number);
@@ -84,6 +84,5 @@ CREATE INDEX ON po_instance (rush);
 
 CREATE INDEX ON po_instance (selector);
 
-
-VACUUM ANALYZE  po_instance;
+VACUUM ANALYZE po_instance;
 
