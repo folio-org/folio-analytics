@@ -1,16 +1,4 @@
-/*
- * description:
- * -------------
- * The report shows e-resources that are covered by an agreement.
- * All identifiers for a title are aggregated and output in the identifier attribute.
- * 
- * tables: 
- * -------------
- * folio_derived.agreements_package_content_item
- * folio_derived.agreements_subscription_agreement_entitlement
- * folio_agreements.work
- * folio_agreements.erm_resource
- */
+-- The report shows e-resource titles that are covered by an agreement.
 SELECT
     erm_pci_titles.w_title AS title,
     erm_agreements.subscription_agreement_name AS agreement,
@@ -25,7 +13,18 @@ SELECT
     erm_pci_list.ti_monograph_edition,
     erm_pci_list.ti_monograph_volume,
     erm_pci_list.ti_first_editor,
-    string_agg(erm_pci_list.identifiernamespace_name || ': ' || erm_pci_list.identifier_value, ', ' ORDER BY erm_pci_list.identifiernamespace_name, erm_pci_list.identifier_value) AS identifier
+    string_agg(
+        -- expression
+        erm_pci_list.identifiernamespace_name || 
+        ': ' || 
+        erm_pci_list.identifier_value,
+        -- separator
+        ', '
+        -- order_by_clause
+        ORDER BY 
+            erm_pci_list.identifiernamespace_name, 
+            erm_pci_list.identifier_value
+    ) AS identifier
 FROM
     folio_derived.agreements_package_content_item AS erm_pci_list
     JOIN folio_agreements.work AS erm_pci_titles ON erm_pci_titles.w_id = erm_pci_list.ti_work_id
@@ -35,9 +34,9 @@ WHERE
     -- Don't use removed titles from packages
     erm_pci_list.pci_removed_ts IS NULL 
 GROUP BY
-    title,
-    agreement,
-    res_name,
+    erm_pci_titles.w_title,
+    erm_agreements.subscription_agreement_name,
+    erm_erm_resource.res_name,
     erm_pci_list.package_source,
     erm_pci_list.org_vendor_name,
     erm_pci_list.remotekb_remote_kb_name,
@@ -49,6 +48,6 @@ GROUP BY
     erm_pci_list.ti_monograph_volume,
     erm_pci_list.ti_first_editor
 ORDER BY
-    title,
-    agreement,
-    res_name;
+    erm_pci_titles.w_title,
+    erm_agreements.subscription_agreement_name,
+    erm_erm_resource.res_name;
