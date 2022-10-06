@@ -39,6 +39,14 @@ area.  For bugs or specific technical proposals, use
 2\. Commits and pull requests
 -----------------------------
 
+### Making changes
+
+All commits should be made in a "forked" repository, not in this
+repository.
+
+It is recommended to create a new branch based on the `main` branch,
+rather than committing directly to `main`.
+
 ### Commit description
 
 Quoting roughly from the Git Reference Manual, Git commits are
@@ -56,11 +64,6 @@ The CHANGES.md file should be updated with release notes describing
 the changes made in the pull request.  This should be a
 self-contained, textual summary of the changes, rather than a
 hyperlink to an issue.
-
-### Branches
-
-All pull requests should be based on the `main` branch.  Some bug 
-fixes will be backported to recent release branches.
 
 
 3\. Code review
