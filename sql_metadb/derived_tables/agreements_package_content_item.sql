@@ -214,7 +214,7 @@ CREATE INDEX ON agreements_package_content_item (res_publication_type_category);
 
 COMMENT ON COLUMN agreements_package_content_item.pci_id IS 'ID of the package content item';
 
-COMMENT ON COLUMN agreements_package_content_item.pci_access_start IS 'The date on which a package_content_item was first accessible in a package';
+COMMENT ON COLUMN agreements_package_content_item.pci_access_start IS 'The date on which a package content item was first accessible in a package';
 
 COMMENT ON COLUMN agreements_package_content_item.pci_access_end IS 'The date on which a package content item was last accessible in a package';
 
