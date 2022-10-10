@@ -216,7 +216,7 @@ COMMENT ON COLUMN agreements_package_content_item.pci_id IS 'ID of the package c
 
 COMMENT ON COLUMN agreements_package_content_item.pci_access_start IS 'The date on which a package_content_item was first accessible in a package';
 
-COMMENT ON COLUMN agreements_package_content_item.pci_access_end IS 'The date on which a package_content_item was last accessible in a package';
+COMMENT ON COLUMN agreements_package_content_item.pci_access_end IS 'The date on which a package content item was last accessible in a package';
 
 COMMENT ON COLUMN agreements_package_content_item.pci_package_id IS 'ID of package';
 
@@ -234,21 +234,21 @@ COMMENT ON COLUMN agreements_package_content_item.remotekb_remote_kb_name IS 'Na
 
 COMMENT ON COLUMN agreements_package_content_item.package_reference IS 'ID or reference for the package in an external system';
 
-COMMENT ON COLUMN agreements_package_content_item.pci_platform_title_instance_id IS 'ID of the platform_title_instance';
+COMMENT ON COLUMN agreements_package_content_item.pci_platform_title_instance_id IS 'ID of the platform title instance';
 
 COMMENT ON COLUMN agreements_package_content_item.pti_platform_id IS 'UUID of Platform';
 
 COMMENT ON COLUMN agreements_package_content_item.pt_platform_name IS 'Name/label of the platform';
 
-COMMENT ON COLUMN agreements_package_content_item.pti_title_instance_id IS 'ID of the platform_title_instance';
+COMMENT ON COLUMN agreements_package_content_item.pti_title_instance_id IS 'ID of the platform title instance';
 
-COMMENT ON COLUMN agreements_package_content_item.pti_url IS 'The URL of the platform_title_instance';
+COMMENT ON COLUMN agreements_package_content_item.pti_url IS 'The URL of the platform title instance';
 
 COMMENT ON COLUMN agreements_package_content_item.ti_id IS 'ID of the title_instance';
 
-COMMENT ON COLUMN agreements_package_content_item.ti_work_id IS 'The ID of the work to which the title_instance is linked';
+COMMENT ON COLUMN agreements_package_content_item.ti_work_id IS 'The ID of the work to which the title instance is linked';
 
-COMMENT ON COLUMN agreements_package_content_item.ti_date_monograph_published IS 'For monographs (books), the date the monograph was first published in the media specified by the linked erm_resource subtype (typically “print” or “electronic”)';
+COMMENT ON COLUMN agreements_package_content_item.ti_date_monograph_published IS 'For monographs (books), the date the monograph was first published in the media specified by the linked erm resource subtype (typically “print” or “electronic”)';
 
 COMMENT ON COLUMN agreements_package_content_item.ti_first_author IS 'For monographs (books), the last name of the book’s first author';
 
@@ -272,26 +272,26 @@ COMMENT ON COLUMN agreements_package_content_item.res_name IS 'Name of the resou
 
 COMMENT ON COLUMN agreements_package_content_item.res_sub_type_fk IS 'ID of reference data value for the subtype of resource';
 
-COMMENT ON COLUMN agreements_package_content_item.res_sub_type_value IS 'A string value which is used to identify the refdata value';
+COMMENT ON COLUMN agreements_package_content_item.res_sub_type_value IS 'A string value which is used to identify the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_sub_type_label IS 'A string label for the rdv_value';
+COMMENT ON COLUMN agreements_package_content_item.res_sub_type_label IS 'A string label for the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_sub_type_category IS 'Text string identifying the refdata category';
+COMMENT ON COLUMN agreements_package_content_item.res_sub_type_category IS 'Text string identifying the reference data category';
 
 COMMENT ON COLUMN agreements_package_content_item.res_type_fk IS 'ID of reference data value for the type of resource';
 
-COMMENT ON COLUMN agreements_package_content_item.res_type_value IS 'A string value which is used to identify the refdata value';
+COMMENT ON COLUMN agreements_package_content_item.res_type_value IS 'A string value which is used to identify the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_type_label IS 'A string label for the rdv_value';
+COMMENT ON COLUMN agreements_package_content_item.res_type_label IS 'A string label for the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_type_category IS 'Text string identifying the refdata category';
+COMMENT ON COLUMN agreements_package_content_item.res_type_category IS 'Text string identifying the reference data category';
 
 COMMENT ON COLUMN agreements_package_content_item.res_publication_type_fk IS 'ID of the publication type';
 
-COMMENT ON COLUMN agreements_package_content_item.res_publication_type_value IS 'A string value which is used to identify the refdata value';
+COMMENT ON COLUMN agreements_package_content_item.res_publication_type_value IS 'A string value which is used to identify the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_publication_type_label IS 'A string label for the rdv_value';
+COMMENT ON COLUMN agreements_package_content_item.res_publication_type_label IS 'A string label for the reference data value';
 
-COMMENT ON COLUMN agreements_package_content_item.res_publication_type_category IS 'Text string identifying the refdata category';
+COMMENT ON COLUMN agreements_package_content_item.res_publication_type_category IS 'Text string identifying the reference data category';
 
 VACUUM ANALYZE agreements_package_content_item;
