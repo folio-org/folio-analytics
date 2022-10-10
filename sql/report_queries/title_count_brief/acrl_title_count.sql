@@ -17,12 +17,12 @@ WITH instance_format_extract AS (
         inventory_instances AS ins
 )
 SELECT
-    inst.name AS "institution location name",
-    cmp.name AS "campus location name",
-    lib.name AS "library location name",
-    insttyp.name AS "instance type name",
-    instfmt.name AS "instance format name", 
-    COUNT(ins.id) AS "title count"
+    inst.name AS institution_location_name,
+    cmp.name AS campus_location_name,
+    lib.name AS library_location_name,
+    insttyp.name AS instance_type_name,
+    instfmt.name AS instance_format_name,
+    COUNT(ins.id) AS title_count
 FROM inventory_instances AS ins
 LEFT JOIN inventory_instance_types AS insttyp
 	ON ins.instance_type_id = insttyp.id

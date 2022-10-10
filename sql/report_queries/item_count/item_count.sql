@@ -108,8 +108,8 @@ SELECT
     super_relation.relationship_type_name AS instance_super_relation_relationship_type_name,
     sub_relation.relationship_type_id AS instance_sub_relation_relationship_type_id,
     sub_relation.relationship_type_name AS instance_sub_relation_relationship_type_name,
-    SUM(item.number_of_pieces::INT) "no_of_pieces_sum",
-    COUNT(DISTINCT item.item_id) AS "item count"
+    SUM(item.number_of_pieces::INT) no_of_pieces_sum,
+    COUNT(DISTINCT item.item_id) AS item_count
 FROM
     folio_reporting.item_ext AS item
     LEFT JOIN folio_reporting.item_statistical_codes AS itsc ON item.item_id = itsc.item_id
