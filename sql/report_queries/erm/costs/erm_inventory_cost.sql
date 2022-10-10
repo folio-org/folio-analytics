@@ -42,11 +42,11 @@ WITH parameters AS (
 ),
      instance_detail AS (
          SELECT
-             inst.instance_id AS "instance_id",
-             inst.mode_of_issuance_name AS "instance_mode_of_issuance_name",
-             inst_formats.format_name AS "instance_format_name",
-             inst_subjects.subject AS "instance_subject",
-             loc.library_name AS "instance_library_name"
+             inst.instance_id AS instance_id,
+             inst.mode_of_issuance_name AS instance_mode_of_issuance_name,
+             inst_formats.format_name AS instance_format_name,
+             inst_subjects.subject AS instance_subject,
+             loc.library_name AS instance_library_name
          FROM
              folio_reporting.instance_ext AS inst
                  LEFT JOIN folio_reporting.instance_formats AS inst_formats ON inst.instance_id = inst_formats.instance_id
@@ -57,8 +57,8 @@ WITH parameters AS (
 -- bringing in no of subjects per instance for further calculations
      instance_subs AS (
          SELECT
-             subs.instance_id AS "instance_id",
-             count(DISTINCT subs.subject)::int AS "no_instance_subjects"
+             subs.instance_id AS instance_id,
+             count(DISTINCT subs.subject)::int AS no_instance_subjects
          FROM
              folio_reporting.instance_subjects AS subs
          GROUP BY
@@ -67,8 +67,8 @@ WITH parameters AS (
 -- bringing in no of formats per instance for further calculations
      instance_formats AS (
          SELECT
-             forms.instance_id AS "instance_id",
-             count(DISTINCT forms.format_name)::int AS "no_instance_formats"
+             forms.instance_id AS instance_id,
+             count(DISTINCT forms.format_name)::int AS no_instance_formats
          FROM
              folio_reporting.instance_formats AS forms
          GROUP BY
@@ -76,46 +76,46 @@ WITH parameters AS (
      ),
      invoice_detail AS (
          SELECT
-             inv.id AS "invoice_id",
-             inv.payment_date AS "invoice_payment_date"
+             inv.id AS invoice_id,
+             inv.payment_date AS invoice_payment_date
          FROM
              invoice_invoices AS inv
      )
 SELECT
     invl.po_line_id,
-    invl.id AS "invl_id",
-    invl.invoice_line_status AS "invl_status",
-    pol.payment_status AS "po_line_payment_status",
-    pol.is_package AS "po_line_is_package",
-    inv.invoice_payment_date AS "invoice_payment_date",
-    pol.order_format AS "po_line_order_format",
-    pol_phys_type.pol_mat_type_name AS "po_line_phys_mat_type",
-    pol_er_type.pol_er_mat_type_name AS "po_line_er_mat_type",
+    invl.id AS invl_id,
+    invl.invoice_line_status AS invl_status,
+    pol.payment_status AS po_line_payment_status,
+    pol.is_package AS po_line_is_package,
+    inv.invoice_payment_date AS invoice_payment_date,
+    pol.order_format AS po_line_order_format,
+    pol_phys_type.pol_mat_type_name AS po_line_phys_mat_type,
+    pol_er_type.pol_er_mat_type_name AS po_line_er_mat_type,
     inst.instance_mode_of_issuance_name,
-    invl_adjustments.adjustment_description AS "invl_adjustment_description",
-    invl_adjustments.adjustment_prorate AS "invl_adjustment_prorate",
-    invl_adjustments.adjustment_relationtototal AS "invl_adjustment_relationtototal",
-    invl_adjustments.adjustment_value AS "invl_adjustment_value",
-    invl_adjustments.adjustment_type AS "invl_adjustment_type",
-    invl.sub_total AS "invl_sub_total",
-    invl.total AS "invl_total", -- this are costs by invoice_line in invoice currency
+    invl_adjustments.adjustment_description AS invl_adjustment_description,
+    invl_adjustments.adjustment_prorate AS invl_adjustment_prorate,
+    invl_adjustments.adjustment_relationtototal AS invl_adjustment_relationtototal,
+    invl_adjustments.adjustment_value AS invl_adjustment_value,
+    invl_adjustments.adjustment_type AS invl_adjustment_type,
+    invl.sub_total AS invl_sub_total,
+    invl.total AS invl_total, -- this are costs by invoice_line in invoice currency
     inv_adj.inv_adj_prorate,
     inv_adj.inv_adj_relationtototal,
     cast(inv_adj.transactions_inv_adj_total AS money), -- this are adjustments in system currency on invoice level 
-    cast(fintrainvl.transaction_amount AS money) AS "transactions_invl_total",
-    cast(inv_adj.transactions_inv_adj_total + fintrainvl.transaction_amount AS money) AS "invl_total_incl_adj", -- this are costs in system currency by invoice_line including adjustments on invoice level
+    cast(fintrainvl.transaction_amount AS money) AS transactions_invl_total,
+    cast(inv_adj.transactions_inv_adj_total + fintrainvl.transaction_amount AS money) AS invl_total_incl_adj, -- this are costs in system currency by invoice_line including adjustments on invoice level
     inst.instance_format_name,
     CASE WHEN instform.no_instance_formats = 0 THEN
              NULL
          ELSE
              cast((fintrainvl.transaction_amount + coalesce(inv_adj.transactions_inv_adj_total, 0)) / instform.no_instance_formats AS money)
-        END AS "total_by_format", -- this are costs by invoice_line prorated to the number of given formats including adjustments on invoice level
+        END AS total_by_format, -- this are costs by invoice_line prorated to the number of given formats including adjustments on invoice level
     inst.instance_subject,
     CASE WHEN instsub.no_instance_subjects = 0 THEN
              NULL
          ELSE
              cast((fintrainvl.transaction_amount + coalesce(inv_adj.transactions_inv_adj_total, 0)) / instsub.no_instance_subjects AS money)
-        END AS "total_by_subject" -- this are costs by invoice_line prorated to the number of given subjects including adjustments on invoice level
+        END AS total_by_subject -- this are costs by invoice_line prorated to the number of given subjects including adjustments on invoice level
 FROM
     invoice_lines AS invl
         LEFT JOIN invoice_detail AS inv ON invl.invoice_id = inv.invoice_id

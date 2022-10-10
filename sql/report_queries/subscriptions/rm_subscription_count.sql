@@ -54,7 +54,7 @@ SELECT
     poong.po_ongoing_review_period AS po_ongoing_review_period,
     pols.pol_subscription_from AS pol_subscription_from,
     pols.pol_subscription_to AS pol_subscription_to,
-    COUNT(DISTINCT pol.po_line_number) AS "Subscription count"
+    COUNT(DISTINCT pol.po_line_number) AS subscription_count
 FROM
     po_lines AS pol
         LEFT JOIN po_purchase_orders AS ppo ON pol.purchase_order_id = ppo.id
