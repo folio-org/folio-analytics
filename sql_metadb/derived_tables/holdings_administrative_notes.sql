@@ -23,4 +23,16 @@ CREATE INDEX ON holdings_administrative_notes (administrative_note);
 
 CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
 
+COMMENT ON COLUMN Instance_id IS 'Inventory instances identifier';
+
+COMMENT ON COLUMN holdings_id IS 'the unique ID of the holdings record; UUID';
+
+COMMENT on COLUMN holdings_hrid is 'the human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Instance ID';
+
+COMMENT on COLUMN administrative_note is 'Administrative notes';
+
+COMMENT ON COLUMN administrative_note_ordinality IS 'Administrative note ordinality';
+
+
+
 VACUUM ANALYZE holdings_administrative_notes;
