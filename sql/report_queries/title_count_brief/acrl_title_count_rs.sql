@@ -157,7 +157,7 @@ SELECT
     lib.name AS "library location name",
     insttyp.name AS "instance type name",
     instance_format_names.instance_format_names AS "instance format name", 
-    COUNT(ins.id) AS "title count"
+    COUNT(ins.id) AS title_count
 FROM inventory_instances AS ins
 LEFT JOIN inventory_instance_types AS insttyp
 	ON ins.instance_type_id = insttyp.id
