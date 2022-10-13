@@ -170,20 +170,20 @@ holding_statisticalcode_names AS (
 )
 ---------- MAIN QUERY ----------
 SELECT
-    instance_types.name AS "instance type",
-    instance_mode_of_issuance.name AS "instance mode of issuance",
-    instance_format_names.instance_format_name AS "instance format",
-    instance_statisticalcode_names.instance_statisticalcode_name AS "instance statistical code",
-    instance_natureofcontentterms_names.instance_natureofcontentterms_name AS "instance nature of content",
-    holding_type.name AS "holding type",
-    call_number_type.name AS "callnumber type",
-    holding_statisticalcode_names.holding_statisticalcode_name  AS "holding statistical code",
-    hold.receipt_status AS "holdings receipt status",
-    locations.name AS "location",
-    inst.previously_held AS "previously held",
-    super_relation_type.name AS "super_instance as",
-    sub_relation_type.name AS "sub_instance as",
-    COUNT(DISTINCT inst.id) AS "title count"
+    instance_types.name AS instance type,
+    instance_mode_of_issuance.name AS instance_mode_of_issuance,
+    instance_format_names.instance_format_name AS instance_format,
+    instance_statisticalcode_names.instance_statisticalcode_name AS instance_statistical_code,
+    instance_natureofcontentterms_names.instance_natureofcontentterms_name AS instance_nature_of_content,
+    holding_type.name AS holding_type,
+    call_number_type.name AS callnumber_type,
+    holding_statisticalcode_names.holding_statisticalcode_name  AS holding_statistical_code,
+    hold.receipt_status AS holdings_receipt_status,
+    locations.name AS location,
+    inst.previously_held AS previously_held,
+    super_relation_type.name AS super_instance,
+    sub_relation_type.name AS sub_instance,
+    COUNT(DISTINCT inst.id) AS title_count
 
 -- pull the instances related data by joining tables
 FROM inventory_instances AS inst

@@ -10,6 +10,7 @@ holdings_statements_indexes.sql
 holdings_statements.sql
 holdings_statements_supplements.sql
 holdings_statistical_codes.sql
+instance_administrative_notes.sql
 instance_alternative_titles.sql
 instance_contributors.sql
 instance_editions.sql
