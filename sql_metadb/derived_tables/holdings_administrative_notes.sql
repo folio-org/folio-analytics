@@ -35,5 +35,4 @@ COMMENT ON COLUMN administrative_note IS 'Administrative notes';
 COMMENT ON COLUMN administrative_note_ordinality IS 'Administrative note ordinality';
 
 
-
 VACUUM ANALYZE holdings_administrative_notes;
