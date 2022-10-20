@@ -1,3 +1,5 @@
+-- Create a derived table that contains information about licenses from the app license
+
 DROP TABLE IF EXISTS licenses_license_ext;
 
 CREATE TABLE licenses_license_ext AS
