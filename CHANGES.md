@@ -4,3 +4,4 @@
   extracts administrative notes from instance records.
 * Additional columns added to `ldp_add_columns.conf`:
   `finance_funds.fund_type_id` and `finance_transactions.description`.
+* Comment on Columns added to licenses_ext from API Documentation
