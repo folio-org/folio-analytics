@@ -24,15 +24,14 @@ CREATE INDEX ON holdings_administrative_notes (administrative_note);
 
 CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
 
-COMMENT ON COLUMN Instance_id IS 'Inventory instances identifier';
+COMMENT ON COLUMN holdings_administrative_notes.instance_id IS 'Inventory instances identifier';
 
-COMMENT ON COLUMN holdings_id IS 'the unique ID of the holdings record; UUID';
+COMMENT ON COLUMN holdings_administrative_notes.holdings_id IS 'the unique ID of the holdings record, UUID'; 
 
-COMMENT ON COLUMN holdings_hrid IS 'the human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Instance ID';
+COMMENT ON COLUMN holdings_administrative_notes.holdings_hrid IS 'the human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Instance ID';
 
-COMMENT ON COLUMN administrative_note IS 'Administrative notes';
+COMMENT ON COLUMN holdings_administrative_notes.administrative_note IS 'Administrative notes';
 
-COMMENT ON COLUMN administrative_note_ordinality IS 'Administrative note ordinality';
-
+COMMENT ON COLUMN holdings_administrative_notes.administrative_note_ordinality IS 'Administrative note ordinality';
 
 VACUUM ANALYZE holdings_administrative_notes;
