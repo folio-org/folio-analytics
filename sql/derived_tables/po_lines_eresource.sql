@@ -105,4 +105,44 @@ CREATE INDEX ON po_lines_eresource (pol_user_limit);
 
 CREATE INDEX ON po_lines_eresource (pol_resource_url);
 
+COMMENT ON COLUMN po_lines_eresource.pol_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN po_lines_eresource.pol_holding_id IS 'Holding UUID associated with order line';
+
+COMMENT ON COLUMN po_lines_eresource.pol_holding_hrid IS 'the human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Holding ID';
+
+COMMENT ON COLUMN po_lines_eresource.pol_location_id IS 'UUID of the (inventory) location record';
+
+COMMENT ON COLUMN po_lines_eresource.location_name IS 'Displayed location name';
+
+COMMENT ON COLUMN po_lines_eresource.pol_location_source IS 'Shows if the displayed location is sourced from the pol_location_id or pol_holding_id';
+
+COMMENT ON COLUMN po_lines_eresource.pol_access_provider IS 'UUID of the access provider';
+
+COMMENT ON COLUMN po_lines_eresource.provider_org_name IS 'Displayed access provider name';
+
+COMMENT ON COLUMN po_lines_eresource.pol_activated IS 'whether or not this resource is activated';
+
+COMMENT ON COLUMN po_lines_eresource.pol_activation_due IS 'number of days until activation, from date of order placement';
+
+COMMENT ON COLUMN po_lines_eresource.pol_create_inventory IS 'Shows what inventory objects need to be created for electronic resource';
+
+COMMENT ON COLUMN po_lines_eresource.pol_expected_activation IS 'expected date the resource will be activated';
+
+COMMENT ON COLUMN po_lines_eresource.pol_license_code IS 'license code';
+
+COMMENT ON COLUMN po_lines_eresource.pol_license_desc IS 'license description';
+
+COMMENT ON COLUMN po_lines_eresource.pol_license_reference IS 'license reference';
+
+COMMENT ON COLUMN po_lines_eresource.pol_material_type IS 'UUID of the material Type';
+
+COMMENT ON COLUMN po_lines_eresource.pol_er_mat_type_name IS 'Material Type name';
+
+COMMENT ON COLUMN po_lines_eresource.pol_trial IS 'whether or not this is a trial';
+
+COMMENT ON COLUMN po_lines_eresource.pol_user_limit IS 'the concurrent user-limit';
+
+COMMENT ON COLUMN po_lines_eresource.pol_resource_url IS 'Electronic resource can be access via this URL';
+
 VACUUM ANALYZE po_lines_eresource;
