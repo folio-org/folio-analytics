@@ -1,5 +1,6 @@
 ## 1.5.0
 
+* Added comments to all columns for po_lines_details_subscription.sql
 * A new derived table for LDP 1.x, `instance_administrative_notes`,
   extracts administrative notes from instance records.
 * Additional columns added to `ldp_add_columns.conf`:
