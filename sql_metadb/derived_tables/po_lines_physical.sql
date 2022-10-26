@@ -57,5 +57,27 @@ CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
 
 CREATE INDEX ON po_lines_physical (pol_phys_volumes_description);
 
+COMMENT ON COLUMN po_lines_physical.pol_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_create_inventory IS 'Shows what inventory objects need to be created for electronic resource';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_mat_type_id IS 'UUID of the material Type';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_mat_type_name IS 'Label for the material type';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_mat_supplier_id IS 'UUID of the material supplier record';
+
+COMMENT ON COLUMN po_lines_physical.supplier_org_name IS 'UUID of this purchase order';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_expected_receipt_date IS 'Vendor agreed date prior to the Receipt Due date item is expected to be received by';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_receipt_due IS 'Date item should be received by';
+
+COMMENT ON COLUMN po_lines_physical.pol_volumes IS 'List of volumes included to the physical material';
+
+COMMENT ON COLUMN po_lines_physical.pol_volumes_ordinality IS 'Volumes ordinality';
+
+COMMENT ON COLUMN po_lines_physical.pol_phys_volumes_description IS 'The identifier of volume';
+
 VACUUM ANALYZE po_lines_physical;
 
