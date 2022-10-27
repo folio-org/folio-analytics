@@ -170,15 +170,15 @@ COMMENT ON COLUMN po_line_fund_distribution_transactions.po_number IS 'A human r
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.po_workflowStatus IS 'the workflow status for this purchase order';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_id IS 'UUID identifying this purchase order line';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_number IS 'A human readable number assigned to this PO line';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_title_or_package IS 'title of the material';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPrice IS 'The per-item list price for physical or resources of \'Other\' order format';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPrice IS 'The per-item list price for physical or resources of Other order format';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityPhysical IS 'Quantity of physical items or resources of \'Other\' order format in this purchase order line';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityPhysical IS 'Quantity of physical items or resources of Other order format in this purchase order line';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPriceElectronic IS 'The e-resource per-item list price';
 
@@ -218,14 +218,12 @@ COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_currency IS
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Shouldn\'t change once create';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Should not change once create';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_amount_expended IS 'The amount currently expended by this encumbrance';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_order_type IS 'Taken from the purchase order';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
-
-
 
 VACUUM ANALYZE po_line_fund_distribution_transactions;
