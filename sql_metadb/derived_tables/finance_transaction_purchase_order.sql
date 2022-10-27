@@ -113,7 +113,7 @@ COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_amo
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_amount_expended IS 'The amount currently expended by this encumbrance';
 
-COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Shouldn\'t change once create';
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Should not change once create';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_order_type IS 'Taken from the purchase order';
 
