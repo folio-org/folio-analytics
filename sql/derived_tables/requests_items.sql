@@ -53,8 +53,7 @@ FROM
     LEFT JOIN inventory_locations AS itl ON ii.temporary_location_id = itl.id
     LEFT JOIN inventory_loan_types AS iplt ON ii.permanent_loan_type_id = iplt.id
     LEFT JOIN inventory_loan_types AS itlt ON ii.temporary_loan_type_id = itlt.id
-    LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id
-  ;
+    LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id;
 
 CREATE INDEX ON requests_items (request_id);
 
@@ -128,5 +127,4 @@ CREATE INDEX ON requests_items (item_temporary_loan_type_id);
 
 CREATE INDEX ON requests_items (item_temporary_loan_type_name);
 
-
-VACUUM ANALYZE  requests_items;
+VACUUM ANALYZE requests_items;
