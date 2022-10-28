@@ -11,3 +11,6 @@
 
 * Added comments to derived table `agreements_custom_property`.
 
+* Fixed error "Column reference `res_name` is ambiguous" in report
+  `erm_agreement_package_content_item_list`.
+
