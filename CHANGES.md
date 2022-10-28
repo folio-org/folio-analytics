@@ -9,3 +9,5 @@
 * LDP1 derived table `requests_items` updated to replace obsolete uses
   of `json_extract_path_text()`
 
+* Added comments to derived table `agreements_custom_property`.
+
