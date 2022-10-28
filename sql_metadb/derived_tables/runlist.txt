@@ -44,6 +44,7 @@ locations_libraries.sql
 po_acq_unit_ids.sql
 po_lines_cost.sql
 po_line_fund_distribution_transactions.sql
+po_line_vendor_reference_number.sql
 po_lines_details_subscription.sql
 po_lines_er_mat_type.sql
 po_lines_eresource.sql
