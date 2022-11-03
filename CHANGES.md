@@ -13,4 +13,6 @@
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
+  
+* Ported invoice_lines_adjustments from LDP1 to metadb.
 
