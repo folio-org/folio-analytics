@@ -3,6 +3,7 @@
 -- This table includes the extracted adjustments data on the invoice
 -- line level.  The field description can be locally defined by the
 -- institutions.  Examples are "shipping", "VAT" (MwSt), "Service Charge".
+-- The adjustment fund distribution is extracted from the invoice_lines table.
 
 DROP TABLE IF EXISTS invoice_lines_adjustments;
 
@@ -11,6 +12,8 @@ WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
         jsonb_extract_path_text(adjustments.data, 'description') AS adjustment_description,
+--the fund distributions data for adjustments will be extracted in a derived table called 
+--invoice_lines_adjustments_fund_distributions in a future release
         jsonb_extract_path_text(adjustments.data, 'fundDistributions') AS adjustment_fund_distributions,
         jsonb_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
         jsonb_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
