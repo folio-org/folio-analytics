@@ -14,12 +14,12 @@
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
   
-* Added comments to derived table 'agreements_subscription_agreement_org_ext'
+* Added comments to derived table `agreements_subscription_agreement_org_ext`
 
-* Added comments to derived table 'finance_transaction_invoices'
+* Added comments to derived table `finance_transaction_invoices`
 
-* Added comments to derived table 'invoice_adjustments_ext'
+* Added comments to derived table `invoice_adjustments_ext`
 
-* Added comments to derived table 'invoice_adjustments_in_addition_to'
+* Added comments to derived table `invoice_adjustments_in_addition_to`
 
-* Added comments to derived table 'po_lines_cost'
+* Added comments to derived table `po_lines_cost`
