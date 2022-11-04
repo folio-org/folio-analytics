@@ -1,9 +1,10 @@
 --invoice_lines_adjustments
 
 -- This table includes the extracted adjustments data on the invoice
--- line level.  The field description can be locally defined by the
+-- line level.  The field description can be locally defined by 
 -- institutions.  Examples are "shipping", "VAT" (MwSt), "Service Charge".
--- The adjustment fund distribution is extracted from the invoice_lines table.
+-- The adjustment fund distribution data array will be extracted from the invoice_lines table
+-- in a separate derived table called invoice_lines_adjustments_fund_distributions in a future release.
 
 DROP TABLE IF EXISTS invoice_lines_adjustments;
 
@@ -12,9 +13,7 @@ WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
         jsonb_extract_path_text(adjustments.data, 'description') AS adjustment_description,
---the fund distributions data for adjustments will be extracted in a derived table called 
---invoice_lines_adjustments_fund_distributions in a future release
-        jsonb_extract_path_text(adjustments.data, 'fundDistributions') AS adjustment_fund_distributions,
+--jsonb_extract_path_text(adjustments.data, 'fundDistributions') AS adjustment_fund_distributions,
         jsonb_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
         jsonb_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
         jsonb_extract_path_text(adjustments.data, 'type') AS adjustment_type,
@@ -28,7 +27,7 @@ WITH adjustments AS (
 SELECT
     invoice_line_id,
     adjustment_description,
-    adjustment_fund_distributions,
+    --adjustment_fund_distributions,
     adjustment_prorate,
     adjustment_relationToTotal,
     adjustment_type,
@@ -44,7 +43,7 @@ WHERE
 
 CREATE INDEX ON invoice_lines_adjustments (invoice_line_id);
 CREATE INDEX ON invoice_lines_adjustments (adjustment_description);
-CREATE INDEX ON invoice_lines_adjustments (adjustment_fund_distributions);
+--CREATE INDEX ON invoice_lines_adjustments (adjustment_fund_distributions);
 CREATE INDEX ON invoice_lines_adjustments (adjustment_prorate);
 CREATE INDEX ON invoice_lines_adjustments (adjustment_relationToTotal);
 CREATE INDEX ON invoice_lines_adjustments (adjustment_type);
