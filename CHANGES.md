@@ -9,8 +9,8 @@
 * LDP1 derived table `requests_items` updated to replace obsolete uses
   of `json_extract_path_text()`
 
-* Added comments to derived tables `agreements_custom_property` and
-  `licenses_license_ext.`.
+* Added comments to derived tables: `agreements_custom_property`,
+  `licenses_license_ext.`, `finance_transaction_purchase_order`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
