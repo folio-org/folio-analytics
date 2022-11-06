@@ -13,7 +13,8 @@
   `licenses_license_ext`, `finance_transaction_purchase_order`,
   `po_line_fund_distribution_transactions`,
   `agreements_subscription_agreement`,
-  `agreements_subscription_agreement_entitlement`.
+  `agreements_subscription_agreement_entitlement`,
+  `po_lines_eresource`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
@@ -28,4 +29,7 @@
 
 * Fixed data type of column `created_date` in derived table
   `po_instance`.
+
+* Added column `holding_id` and related locations at PO line level for
+  derived table `po_lines_eresource`.
 
