@@ -17,3 +17,5 @@
 * Updated report query `erm_agreement_cancellation_dates` with
   improvements and to support schema changes in the source data.
 
+* Deleted derived table `finance_po_inv_transactions`.
+
