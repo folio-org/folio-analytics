@@ -15,7 +15,9 @@
   `agreements_subscription_agreement`,
   `agreements_subscription_agreement_entitlement`,
   `po_lines_eresource`, `po_lines_details_subscription`, `po_ongoing`,
-  `po_lines_er_mat_type`.
+  `po_lines_er_mat_type`, `agreements_subscription_agreement_org_ext`,
+  `finance_transaction_invoices`, `invoice_adjustments_ext`,
+  `invoice_adjustments_in_addition_to`, `po_lines_cost`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
