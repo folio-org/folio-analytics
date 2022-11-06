@@ -1,15 +1,11 @@
+-- Create a derived table that joins invoice and invoice_lines fields
+-- to transactions for expenditure reports in system currency
+--
+-- NOTE: effective_fund_id, effective_fund_name, effective_fund_code
+-- were derived from the set from_fund or to_fund as a convenient way
+-- to get the effective fund
+
 DROP TABLE IF EXISTS finance_transaction_invoices;
--- Create a derived table that joins invoice and invoice_lines fields to transactions for expenditure reports in system currency
---
--- NOTE: effective_fund_id, effective_fund_name, effective_fund_code were derived from the set from_fund or to_fund as a convenient 
--- 		 way to get the effective fund
---
--- Tables included:
---   folio_finance.transaction
---   folio_invoice.invoices
---   folio_invoice.invoice_lines
---   folio_finance.fund
---   folio_finance.budget
 
 CREATE TABLE finance_transaction_invoices AS
 SELECT
@@ -51,7 +47,6 @@ FROM
     LEFT JOIN folio_finance.fund AS tf ON ft.tofundid = tf.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
     LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(ii.jsonb, 'vendorId')::uuid = oo.id
-    
 WHERE (jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Credit');
