@@ -14,7 +14,7 @@
   `po_line_fund_distribution_transactions`,
   `agreements_subscription_agreement`,
   `agreements_subscription_agreement_entitlement`,
-  `po_lines_eresource`.
+  `po_lines_eresource`, `po_lines_details_subscription`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
