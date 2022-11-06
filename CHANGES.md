@@ -24,3 +24,6 @@
 * Additional columns added to `ldp_add_columns.conf`:
   `finance_funds.fund_type_id` and `finance_transactions.description`.
 
+* Fixed data type of column `created_date` in derived table
+  `po_instance`.
+
