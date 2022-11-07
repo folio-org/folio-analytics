@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS po_lines_physical;
-
 -- Creates a derived table for physical resources data in purchase order lines.
+
+DROP TABLE IF EXISTS po_lines_physical;
 
 CREATE TABLE po_lines_physical AS
 WITH temp_phys AS (
