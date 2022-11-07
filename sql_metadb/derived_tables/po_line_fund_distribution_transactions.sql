@@ -164,4 +164,66 @@ CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_
 
 CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_subscription);
 
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_id IS 'UUID identifying this entity';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_number IS 'A human readable ID assigned to this purchase order';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_workflowStatus IS 'the workflow status for this purchase order';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_number IS 'A human readable number assigned to this PO line';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_title_or_package IS 'title of the material';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPrice IS 'The per-item list price for physical or resources of Other order format';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityPhysical IS 'Quantity of physical items or resources of Other order format in this purchase order line';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPriceElectronic IS 'The e-resource per-item list price';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityElectronic IS 'Quantity of electronic items in this purchase order line';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_currency IS 'An ISO currency code';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_discount IS 'Percentage (0 to 100) or amount (positive number) that is subtracted from the list price time quantities calculation before additional cost';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_discountType IS 'Percentage or amount discount type';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_additionalCost IS 'Lump sum that is added to the total estimated price - not affected by discount';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_fyroAdjustmentAmount IS 'Adjustment amount if rollover was happen';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fund_distribution_value IS 'The value of the cost to be applied to this fund';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fund_distribution_type IS 'Percentage or amount type of the value property';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.budget_id IS 'UUID of the budget record';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.budget_name IS 'The name of the budget';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fund_id IS 'UUID of the fund associated with this fund distribution';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fund_code IS 'the fund code';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fiscal_year_id IS 'UUID of the fiscal year record';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.fiscal_year IS 'The fiscal year';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_id IS 'UUID of this transaction';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_currency IS 'Currency code for this transaction - from the system currency';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Should not change once create';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_amount_expended IS 'The amount currently expended by this encumbrance';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_order_type IS 'Taken from the purchase order';
+
+COMMENT ON COLUMN po_line_fund_distribution_transactions.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
+
 VACUUM ANALYZE po_line_fund_distribution_transactions;

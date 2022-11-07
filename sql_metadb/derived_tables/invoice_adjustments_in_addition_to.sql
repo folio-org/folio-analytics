@@ -39,4 +39,16 @@ CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_type);
 
 CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_value);
 
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.invoice_id IS 'UUID of this invoice';
+
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_description IS 'List of invoice level adjustments. The adjustments can be pro-rated which are defined at the invoice level, but are applied to the invoice lines. A generic example is a shipping fee which should be spread out across all of the invoice lines so that all funds involved pay some portion of the fee.';
+
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_prorate IS 'Displayed in invoice line per adjustment in toggled on in settings';
+
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_relationToTotal IS 'Relationship of this adjustment to the total;In addition to: added to subtotal;Included in: reported as subtotal portion;Separate from:calculated from subtotal';
+
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_type IS 'Adjustment type';
+
+COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_value IS 'Adjustment value';
+
 VACUUM ANALYZE invoice_adjustments_in_addition_to;

@@ -37,5 +37,24 @@ CREATE INDEX ON po_lines_cost (po_line_discount_type);
 
 CREATE INDEX ON po_lines_cost (po_line_estimated_price);
 
+COMMENT ON COLUMN po_lines_cost.pol_id IS 'purchaseOrders';
+
+COMMENT ON COLUMN po_lines_cost.po_line_list_unit_price_phys IS 'The per-item list price for physical or resources of Other order format';
+
+COMMENT ON COLUMN po_lines_cost.po_line_quant_phys IS 'Quantity of physical items or resources of Other order format in this purchase order line';
+
+COMMENT ON COLUMN po_lines_cost.po_line_list_unit_price_elec IS 'The e-resource per-item list price';
+
+COMMENT ON COLUMN po_lines_cost.po_line_quant_elec IS 'Quantity of electronic items in this purchase order line';
+
+COMMENT ON COLUMN po_lines_cost.po_line_additional_cost IS 'Lump sum that is added to the total estimated price - not affected by discount';
+
+COMMENT ON COLUMN po_lines_cost.po_line_currency IS 'An ISO currency code';
+
+COMMENT ON COLUMN po_lines_cost.po_line_discount IS 'Percentage (0 to 100) or amount (positive number) that is subtracted from the list price time quantities calculation before additional cost';
+
+COMMENT ON COLUMN po_lines_cost.po_line_discount_type IS 'Percentage or amount discount type';
+
+COMMENT ON COLUMN po_lines_cost.po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
 
 VACUUM ANALYZE  po_lines_cost;

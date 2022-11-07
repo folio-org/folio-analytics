@@ -89,4 +89,50 @@ CREATE INDEX ON finance_transaction_purchase_order (po_vendor_id);
 
 CREATE INDEX ON finance_transaction_purchase_order (po_vendor_name);
 
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_id IS 'UUID of this transaction';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_currency IS 'Currency code for this transaction - from the system currency';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_expense_class_id IS 'UUID of the associated expense class';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_fiscal_year_id IS 'UUID of the fiscal year that the transaction is taking place in';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_from_fund_id IS 'UUID of the fund money is moving from';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_from_fund_name IS 'The name of this fund';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_from_fund_code IS 'A unique code associated with the fund';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_from_budget_id IS 'UUID of this budget';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_from_budget_name IS 'The name of the budget';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_amount_awaiting_payment IS 'Deprecated! Going to be removed in next release. The amount of awaiting for payment';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_amount_expended IS 'The amount currently expended by this encumbrance';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_initial_amount IS 'The initial amount of this encumbrance. Should not change once create';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_order_type IS 'Taken from the purchase order';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.po_line_id IS 'UUID referencing the poLine that represents the package that this POLs title belongs to';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.po_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.pol_number IS 'A human readable number assigned to this PO line';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.pol_description IS 'purchase order line description';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.pol_acquisition_method IS 'UUID of the acquisition method for this purchase order line';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.po_order_type IS 'the purchase order type';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of the vendor record';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
+
 VACUUM ANALYZE finance_transaction_purchase_order;
