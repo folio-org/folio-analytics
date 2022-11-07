@@ -27,8 +27,7 @@ SELECT
     tp.pol_phys_expected_receipt_date,
     tp.pol_phys_receipt_due,
     tp.pol_volumes,
-    tp.pol_volumes_ordinality,
-    tp.pol_phys_volumes_description
+    tp.pol_volumes_ordinality
 FROM
     temp_phys AS tp
     LEFT JOIN folio_inventory.material_type__t AS imt ON imt.id = tp.pol_phys_mat_type_id
