@@ -39,4 +39,22 @@ CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_note);
 
 CREATE INDEX ON agreements_subscription_agreement_org_ext (org_orgs_uuid);
 
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_id IS 'UUID for subscription and organization pairing';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.subscription_agreement_id IS 'UUId for the subscritpion and agreement pairing';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_org_id IS 'The unique UUID for an organization';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_org_name IS 'The name of an organization';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_role_id IS 'ID of the type of provider role';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_role_value IS 'Name of the type of provider role';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_role_label IS 'Public name of the type of provider role';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_note IS 'Notes attached';
+
+COMMENT ON COLUMN agreements_subscription_agreement_org_ext.org_orgs_uuid IS 'UUID of organization attached to the agreement';
+
 VACUUM ANALYZE agreements_subscription_agreement_org_ext;
