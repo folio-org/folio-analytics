@@ -1,5 +1,9 @@
 ## 1.5.0
 
+* Additional columns added for po_lines_locations:
+  pol_location_name and pol_location source to accomodate data structure change with adding holding_id field for po lines,
+  Added comments to all columns for po_lines_locations.sql.
+
 * New derived table for LDP1, `instance_administrative_notes`,
   extracts administrative notes from instance records.
 
