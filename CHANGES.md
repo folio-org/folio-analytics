@@ -1,5 +1,7 @@
 ## 1.5.0
 
+* Added comments to hodings_administrative_notes.sql.
+
 * New derived table for LDP1, `instance_administrative_notes`,
   extracts administrative notes from instance records.
 
