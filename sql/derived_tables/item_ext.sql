@@ -45,13 +45,13 @@ SELECT
     items.effective_location_id,
     item_effective_location.name AS effective_location_name,
     json_extract_path_text(items.data, 'circulationNotes', 'descriptionOfPieces') AS description_of_pieces,
-    json_extract_path_text(items.data, 'status', 'date') AS status_date,
+    json_extract_path_text(items.data, 'status', 'date')::timestamptz AS status_date,
     json_extract_path_text(items.data, 'status', 'name') AS status_name,
     items.holdings_record_id,
     items.discovery_suppress,
-    json_extract_path_text(items.data, 'metadata', 'createdDate') AS created_date,
+    json_extract_path_text(items.data, 'metadata', 'createdDate')::timestamp AS created_date,
     json_extract_path_text(items.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(items.data, 'metadata', 'updatedDate') AS updated_date
+    json_extract_path_text(items.data, 'metadata', 'updatedDate')::timestamptz AS updated_date
 FROM
     inventory_items AS items
     LEFT JOIN inventory_service_points AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id

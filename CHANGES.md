@@ -39,3 +39,5 @@
 * Added column `holding_id` and related locations at PO line level for
   derived table `po_lines_eresource`.
 
+* Fixed timestamp data types in derived table `item_ext`.
+
