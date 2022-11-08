@@ -61,13 +61,12 @@ FOLIO release:
 
 | FOLIO         | folio-analytics  |
 | ------------- | :--------------: |
-| Poppy         |        1.7       |
-| Orchid        |        1.6       |
-| Nolana        |        1.5       |
-| Morning Glory |        1.4       |
-| Lotus         |        1.3       |
 | Kiwi          |        1.2       |
-| Juniper       |        1.2       |
+| Lotus         |        1.3       |
+| Morning Glory |        1.4       |
+| Nolana        |        1.5       |
+| Orchid        |        1.6       |
+| Poppy         |        1.7       |
 
 
 ## Branches
