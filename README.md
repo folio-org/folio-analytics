@@ -61,6 +61,9 @@ FOLIO release:
 
 | FOLIO         | folio-analytics  |
 | ------------- | :--------------: |
+| Poppy         |        1.7       |
+| Orchid        |        1.6       |
+| Nolana        |        1.5       |
 | Morning Glory |        1.4       |
 | Lotus         |        1.3       |
 | Kiwi          |        1.2       |
