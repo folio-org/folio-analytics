@@ -1,7 +1,5 @@
 ## 1.5.0
 
-* Added comments to hodings_administrative_notes.sql.
-
 * New derived table for LDP1, `instance_administrative_notes`,
   extracts administrative notes from instance records.
 
@@ -20,7 +18,7 @@
   `po_lines_er_mat_type`, `agreements_subscription_agreement_org_ext`,
   `finance_transaction_invoices`, `invoice_adjustments_ext`,
   `invoice_adjustments_in_addition_to`, `po_lines_cost`,
-  `agreements_package_content_item`.
+  `agreements_package_content_item`, `holdings_administrative_notes`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
