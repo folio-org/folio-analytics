@@ -3,6 +3,8 @@
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
+* Ported derived table `locations_service_points` from LDP1.
+
 
 ## 1.5.0
 
