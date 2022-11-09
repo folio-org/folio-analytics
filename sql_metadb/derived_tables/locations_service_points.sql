@@ -1,3 +1,7 @@
+-- Creates a derived table that extracts the service points array from 
+-- locations and creates a direct connection between the locations and
+-- all of their service points.
+ 
 DROP TABLE IF EXISTS locations_service_points;
 
 CREATE TABLE locations_service_points AS
