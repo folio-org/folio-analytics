@@ -28,7 +28,7 @@
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
-  
+
 * Ported derived table `invoice_lines_adjustments` from LDP1.
 
 * Updated report query `erm_agreement_cancellation_dates` with
@@ -47,3 +47,5 @@
 
 * Fixed timestamp data types in derived table `item_ext`.
 
+* Fixed missing descriptive comments in Metadb derived tables `po_lines_tags` and
+  `invoice_lines_fund_distributions`
