@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS po_lines_phys_mat_type;
-
 -- Create a derived table that extract physical resource material types from purchase order lines
+
+DROP TABLE IF EXISTS po_lines_phys_mat_type;
 
 CREATE TABLE po_lines_phys_mat_type AS
 /* Subquery to extract nested JSON data */
