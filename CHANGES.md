@@ -3,6 +3,9 @@
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
+## 1.5.1
+
+* Add missing encumbrance status to derived table `finance_transaction_purchase_order` for LDP1 and Metadb
 
 ## 1.5.0
 
