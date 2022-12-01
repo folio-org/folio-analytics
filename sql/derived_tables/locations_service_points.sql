@@ -8,7 +8,7 @@ CREATE TABLE locations_service_points AS
     SELECT 
         service_points.data #>> '{}' AS service_point_id,  
         isp.discovery_display_name AS service_point_discovery_display_name,
-        isp."name" AS service_point_name,
+        isp.name AS service_point_name,
         ll.location_id,
         ll.discovery_display_name AS location_discovery_display_name,
         ll.location_name,
