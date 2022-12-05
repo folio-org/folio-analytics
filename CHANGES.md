@@ -9,6 +9,9 @@
 * LDP1 derived table `requests_items` updated to replace obsolete uses
   of `json_extract_path_text()`
 
+* Added encumbrance status to LDP1 derived table
+  `finance_transaction_purchase_order`.
+
 * Added comments to derived tables: `agreements_custom_property`,
   `licenses_license_ext`, `finance_transaction_purchase_order`,
   `po_line_fund_distribution_transactions`,
