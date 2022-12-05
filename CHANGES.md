@@ -24,7 +24,8 @@
   `po_lines_er_mat_type`, `agreements_subscription_agreement_org_ext`,
   `finance_transaction_invoices`, `invoice_adjustments_ext`,
   `invoice_adjustments_in_addition_to`, `po_lines_cost`,
-  `agreements_package_content_item`, `holdings_administrative_notes`.
+  `agreements_package_content_item`, `holdings_administrative_notes`,
+  `po_lines_physical`.
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
@@ -46,4 +47,7 @@
   derived table `po_lines_eresource`.
 
 * Fixed timestamp data types in derived table `item_ext`.
+
+* Removed field `pol_phys_volumes_description` from derived table
+  `po_lines_physical`.
 
