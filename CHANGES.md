@@ -3,13 +3,6 @@
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
-## 1.5.1
-
-* Add missing encumbrance status and removed not required documentation 
-  in query to derived table `finance_transaction_purchase_order` for LDP1 
-  and Metadb
-* Added /updated comments to derived tables: `finance_transaction_purchase_order`
-
 ## 1.5.0
 
 * New derived table for LDP1, `instance_administrative_notes`,
@@ -20,6 +13,9 @@
 
 * LDP1 derived table `requests_items` updated to replace obsolete uses
   of `json_extract_path_text()`
+
+* Added encumbrance status to LDP1 derived table
+  `finance_transaction_purchase_order`.
 
 * Added comments to derived tables: `agreements_custom_property`,
   `licenses_license_ext`, `finance_transaction_purchase_order`,
