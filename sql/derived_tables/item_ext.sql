@@ -49,7 +49,7 @@ SELECT
     json_extract_path_text(items.data, 'status', 'name') AS status_name,
     items.holdings_record_id,
     items.discovery_suppress,
-    json_extract_path_text(items.data, 'metadata', 'createdDate')::timestamptz AS created_date,
+    json_extract_path_text(items.data, 'metadata', 'createdDate')::timestamp AS created_date,
     json_extract_path_text(items.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
     json_extract_path_text(items.data, 'metadata', 'updatedDate')::timestamptz AS updated_date
 FROM

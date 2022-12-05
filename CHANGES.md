@@ -1,9 +1,3 @@
-## 1.6.0
-
-* Use `timestamptz` columns for data extracted from metadata
-  `createdDate` fields.
-
-
 ## 1.5.0
 
 * New derived table for LDP1, `instance_administrative_notes`,
