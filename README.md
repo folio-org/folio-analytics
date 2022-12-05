@@ -59,15 +59,14 @@ reports.
 Each release of folio-analytics is tested with a specific FOLIO
 release:
 
-| FOLIO         | folio-analytics  | folio-analytics  |
-|               |     for LDP1     |    for Metadb    |
-| ------------- | :--------------: | :--------------: |
-| Kiwi          |        1.2       |                  |
-| Lotus         |        1.3       |        1.5       |
-| Morning Glory |        1.4       |                  |
-| Nolana        |        1.5       |                  |
-| Orchid        |        1.6       |                  |
-| Poppy         |        1.7       |                  |
+| FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
+| ------------- | :----------------------: | :------------------------: |
+| Kiwi          |            1.2           |                            |
+| Lotus         |            1.3           |            1.5             |
+| Morning Glory |            1.4           |                            |
+| Nolana        |            1.5           |                            |
+| Orchid        |            1.6           |                            |
+| Poppy         |            1.7           |                            |
 
 It is not required to match the versions precisely, but doing so will
 usually offer the highest degree of compatibility.
