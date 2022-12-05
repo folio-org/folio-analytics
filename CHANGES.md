@@ -6,6 +6,7 @@
 ## 1.5.1
 
 * Add missing encumbrance status to derived table `finance_transaction_purchase_order` for LDP1 and Metadb
+* Added /updated comments to derived tables: `finance_transaction_purchase_order`
 
 ## 1.5.0
 
