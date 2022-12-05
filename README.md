@@ -56,8 +56,8 @@ reports.
 
 ## Releases
 
-Each release of folio-analytics is tested with a specific FOLIO
-release:
+Each release of folio-analytics is tested with specific FOLIO
+releases:
 
 | FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
 | ------------- | :----------------------: | :------------------------: |
@@ -68,8 +68,8 @@ release:
 | Orchid        |            1.6           |                            |
 | Poppy         |            1.7           |                            |
 
-It is not required to match the versions precisely, but doing so will
-usually offer the highest degree of compatibility.
+It may not be necessary to match the versions precisely, but doing so
+when possible will usually offer the highest degree of compatibility.
 
 
 ## Branches
