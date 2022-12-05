@@ -23,7 +23,7 @@
 
 * Fixed error "Column reference `res_name` is ambiguous" in report
   `erm_agreement_package_content_item_list`.
-  
+
 * Ported derived table `invoice_lines_adjustments` from LDP1.
 
 * Updated report query `erm_agreement_cancellation_dates` with
@@ -44,4 +44,7 @@
 
 * Removed field `pol_phys_volumes_description` from derived table
   `po_lines_physical`.
+
+* Removed duplicate column `holdings_record_id` from derived table
+  `items_holdings_instances`.
 
