@@ -1,11 +1,4 @@
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
---
--- Tables included:
---    finance_transactions
---    finance_funds
---    finance_budget
---    po_lines
---    po_purchase_orders
 
 DROP TABLE IF EXISTS finance_transaction_purchase_order;
 
