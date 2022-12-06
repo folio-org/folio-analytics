@@ -89,10 +89,6 @@ CREATE INDEX ON items_holdings_instances (shelving_title);
 
 CREATE INDEX ON items_holdings_instances (cataloged_date);
 
-CREATE INDEX ON items_holdings_instances (index_title);
-
-CREATE INDEX ON items_holdings_instances (title);
-
 CREATE INDEX ON items_holdings_instances (loan_type_id);
 
 CREATE INDEX ON items_holdings_instances (loan_type_name);
