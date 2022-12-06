@@ -63,8 +63,6 @@ CREATE INDEX ON invoice_invoices (invoice_date);
 
 CREATE INDEX ON invoice_invoices (manual_payment);
 
-CREATE INDEX ON invoice_invoices (note);
-
 CREATE INDEX ON invoice_invoices (payment_date);
 
 CREATE INDEX ON invoice_invoices (payment_method);
