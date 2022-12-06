@@ -72,8 +72,6 @@ CREATE INDEX ON po_instance (pol_location_name);
 
 CREATE INDEX ON po_instance (pol_location_source);
 
-CREATE INDEX ON po_instance (title);
-
 CREATE INDEX ON po_instance (publication_date);
 
 CREATE INDEX ON po_instance (publisher);

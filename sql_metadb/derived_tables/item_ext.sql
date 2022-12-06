@@ -190,8 +190,6 @@ CREATE INDEX ON item_ext (effective_location_id);
 
 CREATE INDEX ON item_ext (effective_location_name);
 
-CREATE INDEX ON item_ext (description_of_pieces);
-
 CREATE INDEX ON item_ext (status_date);
 
 CREATE INDEX ON item_ext (status_name);
