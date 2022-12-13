@@ -32,12 +32,12 @@ WITH parameters AS (
         --'2022-01-01' :: DATE AS pci_end_date -- end date day is NOT included in interval -> enter next day
 )
 SELECT
-    sa_ent.subscription_agreement_name AS "Agreements",
-    agrestat.rdv_label AS "Status",
-    pci_list.res_type_value AS "Resource Type",
-    pci_list.res_sub_type_value AS "Resource Subtype",
-    pci_list.res_publication_type_value AS "Resource Publicationtype",
-    count(DISTINCT pci_list.pci_id) AS "Count"
+    sa_ent.subscription_agreement_name AS agreements,
+    agrestat.rdv_label AS status,
+    pci_list.res_type_value AS resource_type,
+    pci_list.res_sub_type_value AS resource_subtype,
+    pci_list.res_publication_type_value AS resource_publication_type,
+    count(DISTINCT pci_list.pci_id) AS count
 FROM
     folio_derived.agreements_package_content_item AS pci_list
     LEFT JOIN folio_derived.agreements_subscription_agreement_entitlement AS sa_ent ON pci_list.entitlement_id = sa_ent.entitlement_id

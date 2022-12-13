@@ -22,9 +22,6 @@ CREATE INDEX ON instance_notes (note_type_id);
 
 CREATE INDEX ON instance_notes (note_type_name);
 
--- This field is not indexed by default; the values may be too large.
--- CREATE INDEX ON instance_notes (note);
-
 CREATE INDEX ON instance_notes (staff_only);
 
 VACUUM ANALYZE instance_notes;

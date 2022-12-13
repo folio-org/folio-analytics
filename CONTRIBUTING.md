@@ -1,10 +1,12 @@
 Contributing
 ============
 
-Thank you for your interest in contributing to FOLIO reporting.  We
-appreciate submissions of SQL code for new report queries and derived
-table queries, as well as bug fixes.  Please follow these guidelines
-when preparing a pull request.
+We appreciate submissions of SQL code for new report queries and
+derived table queries, as well as bug fixes.  All submissions will be
+considered as time allows.  We ask your patience; it may require
+considerable time to decide whether a pull request will be accepted.
+
+Please follow these guidelines when preparing a pull request.
 
 ##### Contents  
 1\. [New contributors](#1-new-contributors)  
@@ -14,26 +16,46 @@ when preparing a pull request.
 5\. [Testing](#5-testing)  
 6\. [Derived tables](#6-derived-tables)  
 7\. [Formatting SQL](#7-formatting-sql)  
-8\. [Naming things](#8-naming-things)
+8\. [Naming things](#8-naming-things)  
+9\. [Checklist](#9-checklist)
 
 
 1\. New contributors
 --------------------
 
-Before working on a contribution, it is usually a good idea to ask the
+Before beginning work on a contribution, we recommend that you ask the
 community in advance about the work you propose to do.  They may have
 feedback that would save you time.
 
-For general questions, please use the
-[Discussions](https://github.com/folio-org/folio-analytics/discussions)
-area.
+At present most contributors use the #reporting-lab channel in the
+FOLIO Slack organization.
 
-For bugs or specific technical proposals, please use
+Alternatively, for general questions, feel free to use the
+[Discussions](https://github.com/folio-org/folio-analytics/discussions)
+area.  For bugs or specific technical proposals, use
 [Issues](https://github.com/folio-org/folio-analytics/issues).
 
 
 2\. Commits and pull requests
 -----------------------------
+
+### Making changes
+
+All commits should be made in a "forked" repository, not in this
+repository.
+
+It is **strongly recommended** to create a new branch based on the
+`main` branch, rather than committing directly to `main`.
+
+**Pull requests will be "squash merged," and so the pull request
+branch should be discarded or not reused after being merged, in order
+to avoid confusion.**  If the `main` branch is used for a pull
+request, it is a good idea to re-fork the repository after the merge.
+
+Since the entire pull request will be squashed into a single commit,
+it is recommended to keep the scope of the pull request relatively
+narrow, preferrably addressing only a single issue.
+
 
 ### Commit description
 
@@ -46,17 +68,12 @@ readable.  Hyperlinks or other references such as "Fixes #" may be
 included in the long description, but not in the title and not as a
 substitute for a complete description of the changes.
 
-### Pull request description
+### CHANGES.md
 
-The pull request description, entered in the large "Leave a comment"
-text field, should contain a complete description of the changes.
-This should be text rather than a hyperlink, so that it can be added
-to the merge commit as a self-contained summary of the changes.
-
-### Branches
-
-All pull requests should be based on the `main` branch.  Some bug 
-fixes will be backported to recent release branches.
+The CHANGES.md file should be updated with release notes describing
+the changes made in the pull request.  This should be a
+self-contained, textual summary of the changes, rather than a
+hyperlink to an issue.
 
 
 3\. Code review
@@ -69,6 +86,8 @@ If a review suggests expanding the scope of the changes to include
 additional functionality, those changes do not have to be addressed in
 the current pull request but may be handled in a separate, new pull
 request.
+
+See below for a suggested checklist for code reviews.
 
 
 4\. Documentation
@@ -141,4 +160,15 @@ data.  Overall, it is helpful to think about how to describe the
 derived table concisely.
 
 
+9\. Checklist
+-------------
 
+[This checklist](pull_request_template.md) can be used to guide your
+review of a pull request.  A copy of the checklist may be added to a
+comment attached to a review.  Check off the items that have been
+confirmed in your review by adding an `x` between the square brackets
+`[]` on each line.
+
+If any items remain unchecked or you have further questions, you can
+indicate that in the comment as well and select "Request changes" as
+the review response.

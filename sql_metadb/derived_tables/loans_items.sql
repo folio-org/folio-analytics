@@ -28,7 +28,7 @@ SELECT
     jsonb_extract_path_text(clj.jsonb, 'status', 'name') AS loan_status,
     clt.loan_date::timestamptz,
     clt.due_date::timestamptz AS loan_due_date,
-    clt.return_date::timestamptz AS loan_return_date,
+    jsonb_extract_path_text(clj.jsonb, 'returnDate')::timestamptz AS loan_return_date,
     jsonb_extract_path_text(clj.jsonb, 'systemReturnDate')::timestamptz AS system_return_date,
     jsonb_extract_path_text(clj.jsonb, 'checkinServicePointId')::uuid AS checkin_service_point_id,
     ispi.discovery_display_name AS checkin_service_point_name,

@@ -1,13 +1,13 @@
 
-LDP 1.2 supports adding table columns in the `public` schema that are
-required by queries but are missing because they contain no data in
-the FOLIO instance.  This allows queries that reference the columns to
-run without error.
+LDP 1.2 and later support adding table columns in the `public` schema
+that are required by queries but are missing because they contain no
+data in the FOLIO instance.  This allows queries that reference the
+columns to run without error.
 
-The configuration file `ldp_add_column.conf` contains a suggested list
-of columns to be added, compiled by the FOLIO reporting community, in
-a format that can be read by LDP.  See "Optional columns" in the [LDP
-Administrator
+The configuration file `ldp_add_column.conf` contains a recommended
+list of columns to be added, compiled by the FOLIO reporting
+community, in a format that can be read by LDP.  See "Optional
+columns" in the [LDP Administrator
 Guide](https://github.com/library-data-platform/ldp/blob/main/doc/Admin_Guide.md)
 for details.
 

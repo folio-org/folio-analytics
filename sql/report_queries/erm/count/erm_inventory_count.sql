@@ -89,7 +89,7 @@ SELECT
     super_relation.relationship_type_name AS instance_super_relation_relationship_type_name,
     sub_relation.relationship_type_id AS instance_sub_relation_relationship_type_id,
     sub_relation.relationship_type_name AS instance_sub_relation_relationship_type_name,
-    COUNT(DISTINCT inst.instance_id) AS "title count"
+    COUNT(DISTINCT inst.instance_id) AS title_count
 FROM
     folio_reporting.instance_ext AS inst
         LEFT JOIN folio_reporting.instance_statistical_codes AS insc ON inst.instance_id = insc.instance_id

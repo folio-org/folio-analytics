@@ -40,8 +40,6 @@ CREATE INDEX ON inventory_items (chronology);
 
 CREATE INDEX ON inventory_items (copy_number);
 
-CREATE INDEX ON inventory_items (description_of_pieces);
-
 CREATE INDEX ON inventory_items (discovery_suppress);
 
 CREATE INDEX ON inventory_items (effective_location_id);

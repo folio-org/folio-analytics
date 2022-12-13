@@ -2,6 +2,7 @@ feesfines_accounts_actions.sql
 finance_transaction_invoices.sql
 invoice_transactions.sql
 finance_transaction_purchase_order.sql
+holdings_administrative_notes.sql
 holdings_electronic_access.sql
 holdings_ext.sql
 holdings_notes.sql
@@ -9,6 +10,7 @@ holdings_statements_indexes.sql
 holdings_statements.sql
 holdings_statements_supplements.sql
 holdings_statistical_codes.sql
+instance_administrative_notes.sql
 instance_alternative_titles.sql
 instance_contributors.sql
 instance_editions.sql
@@ -48,6 +50,7 @@ po_lines_locations.sql
 po_lines_physical.sql
 po_lines_phys_mat_type.sql
 po_lines_tags.sql
+po_lines_vendor_reference_numbers.sql
 po_ongoing.sql
 po_organization.sql
 requests_items.sql

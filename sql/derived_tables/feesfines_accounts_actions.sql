@@ -18,13 +18,13 @@ SELECT
     json_extract_path_text(fa.data, 'status') AS fine_status, -- remove full object, leave name?
     json_extract_path_text(fa.data, 'status', 'name') AS fine_status_name, -- open or closed
     json_extract_path_text(fa.data, 'payment_status') AS payment_status,
-    json_extract_path_text(fa.data, 'payment_status', 'name') AS payment_status_name, -- open or closed
+    json_extract_path_text(fa.data, 'status', 'name') AS fine_status, -- open or closed
     json_extract_path_text(fa.data, 'userId') AS account_user_id,
     ff.id AS transaction_id,
     json_extract_path_text(ff.data, 'accountId') AS account_id,
     json_extract_path_text(ff.data, 'amountAction')::numeric(12,2) AS transaction_amount,
-    CASE WHEN 
-        json_extract_path_text(ff.data, 'typeAction') IN 
+    CASE WHEN
+        json_extract_path_text(ff.data, 'typeAction') IN
         ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
         THEN json_extract_path_text(ff.data, 'amountAction')::numeric(12,2) * -1
         ELSE json_extract_path_text(ff.data, 'amountAction')::numeric(12,2)
@@ -102,4 +102,3 @@ CREATE INDEX ON feesfines_accounts_actions (patron_group_id);
 CREATE INDEX ON feesfines_accounts_actions (patron_group_name);
 
 VACUUM ANALYZE feesfines_accounts_actions;
-

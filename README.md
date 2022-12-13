@@ -1,6 +1,6 @@
 # folio-analytics
 
-Copyright (C) 2018-2021 The Open Library Foundation
+Copyright (C) 2018-2022 The Open Library Foundation
 
 This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
@@ -54,7 +54,25 @@ README.md files in the query folders to explain how to run the
 reports.
 
 
-## Releases and branches
+## Releases
+
+Each release of folio-analytics is tested with specific FOLIO
+releases:
+
+| FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
+| ------------- | :----------------------: | :------------------------: |
+| Kiwi          |            1.2           |                            |
+| Lotus         |            1.3           |            1.5             |
+| Morning Glory |            1.4           |                            |
+| Nolana        |            1.5           |                            |
+| Orchid        |            1.6           |                            |
+| Poppy         |            1.7           |                            |
+
+It may not be necessary to match the versions precisely, but doing so
+when possible will usually offer the highest degree of compatibility.
+
+
+## Branches
 
 There are two primary types of branches:
 
@@ -64,6 +82,5 @@ There are two primary types of branches:
 
 * Release branches (`release-*`).  These are releases made from
   `main`.  They are managed as stable branches; i.e. they may receive
-  bug fixes but generally no new features.
-
-
+  bug fixes but generally no new features.  Production deployments
+  should install release tags, not branches.

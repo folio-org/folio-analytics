@@ -14,7 +14,7 @@ SELECT
     lib.name AS "library location name",
     itpl.name AS "item location name",
     mt.name AS "material type name",
-    COUNT(i.id) AS "item count"
+    COUNT(i.id) AS item_count
 FROM
     inventory_instances AS ins 
     LEFT JOIN inventory_holdings AS h 

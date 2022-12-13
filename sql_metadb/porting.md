@@ -2,33 +2,12 @@ Notes on migrating FOLIO queries from LDP 1.x to Metadb
 =======================================================
 
 ##### Contents  
-1\. [Metadb version](#1-show-metadb-version)  
-2\. [Table and column names](#2-table-and-column-names)  
-3\. [Data types](#3-data-types)  
-4\. [JSON queries](#4-json-queries)
+1\. [Table and column names](#2-table-and-column-names)  
+2\. [Data types](#3-data-types)  
+3\. [JSON queries](#4-json-queries)
 
 
-1\. Metadb version
-------------------
-
-Beginning with Metadb v0.12.0, it will be possible to query the Metadb
-version with:
-
-```sql
-SELECT version FROM metadb.init;
-```
-```
-    version     
-----------------
- Metadb v0.12.0
-```
-
-Prior to Metadb v0.12.0, this will return an error: `permission denied
-for schema metadb`.  LDP 1.x does not have an equivalent function for
-users.
-
-
-2\. Table and column names
+1\. Table and column names
 --------------------------
 
 Table names have changed to match FOLIO names more closely.  These
@@ -40,7 +19,7 @@ In Metadb this column appears as `jsonb` or in some cases `content`,
 again to match FOLIO names.
 
 
-3\. Data types
+2\. Data types
 --------------
 
 In Metadb, UUIDs are generally stored using the `uuid` data type.  In
@@ -49,7 +28,7 @@ queries, UUIDs extracted as text should be converted with `::uuid`.
 The `json` data type in LDP 1.x has changed to `jsonb` in Metadb.
 
 
-4\. JSON queries
+3\. JSON queries
 ----------------
 
 ### JSON source data

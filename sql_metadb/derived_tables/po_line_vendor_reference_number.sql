@@ -1,0 +1,28 @@
+-- This derived table extracts reference numbers from po_lines vendor
+-- details.
+
+DROP TABLE IF EXISTS po_line_vendor_reference_number;
+
+CREATE TABLE po_line_vendor_reference_number AS 
+SELECT
+    pl.id AS po_line_id,
+    plt.po_line_number AS po_line_number,
+    jsonb_extract_path_text(numbers.jsonb, 'refNumber') AS vendor_reference_number,
+    jsonb_extract_path_text(numbers.jsonb, 'refNumberType') AS vendor_reference_number_type,
+    jsonb_extract_path_text(pl.jsonb, 'vendorDetail', 'instructions') AS vendor_instructions
+FROM folio_orders.po_line AS pl
+    CROSS JOIN jsonb_array_elements(jsonb_extract_path(pl.jsonb, 'vendorDetail', 'referenceNumbers'))
+        AS numbers (jsonb)
+    LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
+
+CREATE INDEX ON po_line_vendor_reference_number (po_line_id);
+
+CREATE INDEX ON po_line_vendor_reference_number (po_line_number);
+
+CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number);
+
+CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number_type);
+
+CREATE INDEX ON po_line_vendor_reference_number (vendor_instructions);
+
+VACUUM ANALYZE po_line_vendor_reference_number;
