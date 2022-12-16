@@ -7,7 +7,7 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
   
-* A new derived table `finance_funds` to show financial data.
+* A new derived table `finance_funds` for metadb to show financial data.
 
 
 ## 1.5.0
