@@ -42,6 +42,7 @@ invoice_voucher_lines_fund_distributions.sql
 licenses_license_ext.sql
 loans_renewal_dates.sql
 locations_libraries.sql
+locations_service_points.sql
 po_acq_unit_ids.sql
 po_lines_cost.sql
 po_line_fund_distribution_transactions.sql

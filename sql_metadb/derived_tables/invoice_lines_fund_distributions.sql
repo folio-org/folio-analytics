@@ -1,3 +1,6 @@
+-- Create a derived table to extract fund_distributions from invoice_lines 
+-- and joining funds related tables.
+
 DROP TABLE IF EXISTS invoice_lines_fund_distributions;
 
 CREATE TABLE invoice_lines_fund_distributions AS

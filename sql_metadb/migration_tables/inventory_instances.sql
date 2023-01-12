@@ -30,8 +30,6 @@ CREATE INDEX ON inventory_instances (discovery_suppress);
 
 CREATE INDEX ON inventory_instances (hrid);
 
-CREATE INDEX ON inventory_instances (index_title);
-
 CREATE INDEX ON inventory_instances (instance_type_id);
 
 CREATE INDEX ON inventory_instances (mode_of_issuance_id);
@@ -45,7 +43,5 @@ CREATE INDEX ON inventory_instances (staff_suppress);
 CREATE INDEX ON inventory_instances (status_id);
 
 CREATE INDEX ON inventory_instances (status_updated_date);
-
-CREATE INDEX ON inventory_instances (title);
 
 VACUUM ANALYZE inventory_instances;
