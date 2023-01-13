@@ -3,6 +3,7 @@ agreements_package_content_item.sql
 agreements_subscription_agreement.sql
 agreements_subscription_agreement_entitlement.sql
 agreements_subscription_agreement_org_ext.sql
+feesfines_accounts_actions.sql
 finance_invoice_transactions.sql
 finance_po_inv_transactions.sql
 finance_transaction_invoices.sql
