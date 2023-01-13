@@ -70,7 +70,7 @@ CREATE INDEX ON feesfines_accounts_actions (transaction_id);
 
 CREATE INDEX ON feesfines_accounts_actions (account_id);
 
-CREATE INDEX ON feesfines_accounts_actions (transaction_id);
+CREATE INDEX ON feesfines_accounts_actions (transaction_amount);
 
 CREATE INDEX ON feesfines_accounts_actions (account_balance);
 
