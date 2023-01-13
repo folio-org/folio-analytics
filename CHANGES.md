@@ -7,6 +7,8 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
 
+* Ported derived table `feesfines_accounts_actions` from LDP1.
+
 
 ## 1.5.0
 
@@ -62,4 +64,3 @@
 
 * Removed duplicate column `holdings_record_id` from derived table
   `items_holdings_instances`.
-
