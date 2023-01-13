@@ -15,20 +15,12 @@ SELECT
     json_extract_path_text(fa.data, 'feeFineType') AS fee_fine_type,
     json_extract_path_text(fa.data, 'materialTypeId') AS material_type_id,
     json_extract_path_text(fa.data, 'materialType') AS material_type,
-    json_extract_path_text(fa.data, 'status') AS fine_status, -- remove full object, leave name?
-    json_extract_path_text(fa.data, 'status', 'name') AS fine_status_name, -- open or closed
     json_extract_path_text(fa.data, 'payment_status') AS payment_status,
     json_extract_path_text(fa.data, 'status', 'name') AS fine_status, -- open or closed
     json_extract_path_text(fa.data, 'userId') AS account_user_id,
     ff.id AS transaction_id,
     json_extract_path_text(ff.data, 'accountId') AS account_id,
     json_extract_path_text(ff.data, 'amountAction')::numeric(12,2) AS transaction_amount,
-    CASE WHEN
-        json_extract_path_text(ff.data, 'typeAction') IN
-        ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
-        THEN json_extract_path_text(ff.data, 'amountAction')::numeric(12,2) * -1
-        ELSE json_extract_path_text(ff.data, 'amountAction')::numeric(12,2)
-       END AS signed_transaction_amount,
     json_extract_path_text(ff.data, 'balance')::numeric(12,2) AS account_balance,
     json_extract_path_text(ff.data, 'typeAction') AS type_action,
     json_extract_path_text(ff.data, 'dateAction') AS transaction_date,
@@ -44,8 +36,7 @@ FROM
     feesfines_accounts AS fa
     LEFT JOIN feesfines_feefineactions AS ff ON fa.id = json_extract_path_text(ff.data, 'accountId')
     LEFT JOIN user_users AS uu ON json_extract_path_text(fa.data, 'userId') = uu.id
-    LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id
-ORDER BY fine_account_id, transaction_date;
+    LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id;
 
 CREATE INDEX ON feesfines_accounts_actions (fine_account_id);
 
@@ -102,3 +93,4 @@ CREATE INDEX ON feesfines_accounts_actions (patron_group_id);
 CREATE INDEX ON feesfines_accounts_actions (patron_group_name);
 
 VACUUM ANALYZE feesfines_accounts_actions;
+
