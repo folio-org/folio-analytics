@@ -16,23 +16,15 @@ SELECT
     jsonb_extract_path_text(fa.jsonb, 'feeFineType') AS fee_fine_type,
     jsonb_extract_path_text(fa.jsonb, 'materialTypeId')::uuid AS material_type_id,
     jsonb_extract_path_text(fa.jsonb, 'materialType') AS material_type,
-    jsonb_extract_path_text(fa.jsonb, 'status') AS fine_status, -- remove full object, leave name?
-    jsonb_extract_path_text(fa.jsonb, 'status', 'name') AS fine_status_name, -- open or closed
     jsonb_extract_path_text(fa.jsonb, 'payment_status') AS payment_status,
     jsonb_extract_path_text(fa.jsonb, 'status', 'name') AS fine_status, -- open or closed
     jsonb_extract_path_text(fa.jsonb, 'userId')::uuid AS account_user_id,
     ff.id AS transaction_id,
     jsonb_extract_path_text(ff.jsonb, 'accountId')::uuid AS account_id,
     jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) AS transaction_amount,
-    CASE WHEN
-        jsonb_extract_path_text(ff.jsonb, 'typeAction') IN
-        ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
-        THEN jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) * -1
-        ELSE jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2)
-       END AS signed_transaction_amount,
     jsonb_extract_path_text(ff.jsonb, 'balance')::numeric(12,2) AS account_balance,
     jsonb_extract_path_text(ff.jsonb, 'typeAction') AS type_action,
-    jsonb_extract_path_text(ff.jsonb, 'dateAction') AS transaction_date,
+    jsonb_extract_path_text(ff.jsonb, 'dateAction')::timestamptz AS transaction_date,
     jsonb_extract_path_text(ff.jsonb, 'createdAt')::uuid AS transaction_location,
     jsonb_extract_path_text(ff.jsonb, 'transactionInformation') AS transaction_information,
     jsonb_extract_path_text(ff.jsonb, 'source') AS operator_id, --should rename because not an ID
