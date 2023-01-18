@@ -1,3 +1,5 @@
+* Added comments to public.sql for public_po_lines table
+
 ## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
