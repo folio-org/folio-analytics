@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS items_holdings_instances;
-
 -- Create an extended items table that includes holdings and instances
 -- information such as call number, material type, title, etc.
 --
@@ -12,6 +10,8 @@ DROP TABLE IF EXISTS items_holdings_instances;
 --     inventory_holdings_types
 --     inventory_call_number_types
 --
+DROP TABLE IF EXISTS items_holdings_instances;
+
 CREATE TABLE items_holdings_instances AS
 SELECT
     ii.id AS item_id,
@@ -19,7 +19,6 @@ SELECT
     ii.chronology,
     ii.copy_number AS item_copy_number,
     ii.enumeration,
-    ii.holdings_record_id,
     ii.hrid,
     ii.item_identifier,
     ii.item_level_call_number,
@@ -60,8 +59,6 @@ CREATE INDEX ON items_holdings_instances (item_copy_number);
 
 CREATE INDEX ON items_holdings_instances (enumeration);
 
-CREATE INDEX ON items_holdings_instances (holdings_record_id);
-
 CREATE INDEX ON items_holdings_instances (hrid);
 
 CREATE INDEX ON items_holdings_instances (item_identifier);
@@ -95,10 +92,6 @@ CREATE INDEX ON items_holdings_instances (instance_id);
 CREATE INDEX ON items_holdings_instances (shelving_title);
 
 CREATE INDEX ON items_holdings_instances (cataloged_date);
-
-CREATE INDEX ON items_holdings_instances (index_title);
-
-CREATE INDEX ON items_holdings_instances (title);
 
 CREATE INDEX ON items_holdings_instances (loan_type_id);
 

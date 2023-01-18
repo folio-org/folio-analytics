@@ -40,8 +40,6 @@ CREATE INDEX ON holdings_notes (holding_id);
 
 CREATE INDEX ON holdings_notes (holding_hrid);
 
-CREATE INDEX ON holdings_notes (note);
-
 CREATE INDEX ON holdings_notes (note_type_name);
 
 CREATE INDEX ON holdings_notes (note_type_id);

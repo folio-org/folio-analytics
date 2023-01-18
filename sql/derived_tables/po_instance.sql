@@ -13,7 +13,7 @@ SELECT
     user_users.username AS created_by,
     po_purchase_orders.workflow_status AS po_workflow_status,
     json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
-    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::timestamp AS created_date,
+    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::timestamptz AS created_date,
     json_extract_path_text(configuration_entries.value::json, 'name') AS created_location,
     json_extract_path_text(po_lines.data, 'instanceId') AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
@@ -71,8 +71,6 @@ CREATE INDEX ON po_instance (pol_location_id);
 CREATE INDEX ON po_instance (pol_location_name);
 
 CREATE INDEX ON po_instance (pol_location_source);
-
-CREATE INDEX ON po_instance (title);
 
 CREATE INDEX ON po_instance (publication_date);
 

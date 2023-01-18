@@ -44,8 +44,18 @@ area.  For bugs or specific technical proposals, use
 All commits should be made in a "forked" repository, not in this
 repository.
 
-It is recommended to create a new branch based on the `main` branch,
-rather than committing directly to `main`.
+It is **strongly recommended** to create a new branch based on the
+`main` branch, rather than committing directly to `main`.
+
+**Pull requests will be "squash merged," and so the pull request
+branch should be discarded or not reused after being merged, in order
+to avoid confusion.**  If the `main` branch is used for a pull
+request, it is a good idea to re-fork the repository after the merge.
+
+Since the entire pull request will be squashed into a single commit,
+it is recommended to keep the scope of the pull request relatively
+narrow, preferrably addressing only a single issue.
+
 
 ### Commit description
 
