@@ -1,3 +1,5 @@
+* added comments for public.po_order_invoice_relns
+
 ## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
