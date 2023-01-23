@@ -24,9 +24,7 @@ missing from the previous result.  To solve this problem, we can get a
 list of all of the items (from `folio_inventory.item__t`) and join the
 items to the results from our previous query as a CTE `loan_count`.
 (We have left the date range out of the CTE to make the query more
-general.)
-
-Note that the `coalesce()` function is used here to set 0 as a default
+general.)  The `coalesce()` function is used to set 0 as a default
 count for items that have no loan data.
 
 ```sql
