@@ -13,10 +13,10 @@ SELECT id,
     WHERE id = ANY (SELECT bill_to FROM folio_orders.purchase_order__t);
 ```
 
-If we put this query into a CTE, we can then use the columns
-`approval_date` and `bill_to_name` to select approved purchased orders
-billed to a specific entity, and sort them by approval date with the
-most recent listed first:
+If we put this query into a CTE, we can then use the column
+`bill_to_name` (and `approval_date`) to select approved purchased
+orders billed to a specific entity, and sort them by approval date
+with the most recent listed first:
 
 ```sql
 WITH bill_to_values AS MATERIALIZED (
