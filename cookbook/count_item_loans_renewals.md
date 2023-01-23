@@ -20,10 +20,11 @@ SELECT item_id,
 
 Since some items may never have been loaned at all, those items would
 not be included in `folio_circulation.loan__t` and therefore would be
-missing from the previous result.  We can get a list of all of the
-items (from `folio_inventory.item__t`) and join the items to the
-results from our previous query as a CTE `loan_count`.  (We have left
-the date range out of the CTE to make the query more general.)
+missing from the previous result.  To solve this problem, we can get a
+list of all of the items (from `folio_inventory.item__t`) and join the
+items to the results from our previous query as a CTE `loan_count`.
+(We have left the date range out of the CTE to make the query more
+general.)
 
 Note that the coalesce() function is used here to set 0 as a default
 count for items that have no loan data.
