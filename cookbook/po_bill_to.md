@@ -15,8 +15,8 @@ SELECT id,
 
 If we put this query into a CTE, we can then use the column
 `bill_to_name` (and `approval_date`) to select approved purchased
-orders billed to a specific entity, and sort them by approval date
-with the most recent listed first:
+orders billed to a specific entity (in this case, `Acquisitions`), and
+sort them by approval date with the most recent listed first:
 
 ```sql
 WITH bill_to_values AS MATERIALIZED (
