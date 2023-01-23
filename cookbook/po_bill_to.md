@@ -38,8 +38,14 @@ Note the CTE keyword `MATERIALIZED`.  This is needed here because
 `folio_configuration.config_data__t` contains an assortment of JSON
 objects, some of which do not contain the field `name`.  Normally the
 database system will try to optimize the query by filtering on
-`Acquisitions` at the same time as extracting the `name` field, which
-generates an error for JSON objects that do not have `name`.  The
-`MATERIALIZED` keyword tells the database system to evaluate the CTE
-completely before proceeding to the main query.
+`b.bill_to_name = 'Acquisitions'` at the same time as extracting the
+`name` field, which generates an error for JSON objects that do not
+have `name`.  The `MATERIALIZED` keyword tells the database system to
+evaluate the CTE completely before proceeding to the main query where
+the filtering on `name` takes place.
 
+## Authors
+
+Jean Pajerek
+
+Nassib Nassar
