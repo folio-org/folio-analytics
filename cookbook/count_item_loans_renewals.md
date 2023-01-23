@@ -26,7 +26,7 @@ items to the results from our previous query as a CTE `loan_count`.
 (We have left the date range out of the CTE to make the query more
 general.)
 
-Note that the coalesce() function is used here to set 0 as a default
+Note that the `coalesce()` function is used here to set 0 as a default
 count for items that have no loan data.
 
 ```sql
