@@ -43,9 +43,3 @@ database system will try to optimize the query by filtering on
 have `name`.  The `MATERIALIZED` keyword tells the database system to
 evaluate the CTE completely before proceeding to the main query where
 the filtering on `name` takes place.
-
-## Authors
-
-Jean Pajerek
-
-Nassib Nassar
