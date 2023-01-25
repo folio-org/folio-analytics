@@ -18,8 +18,8 @@ releases:
 | Morning Glory |            1.4           |                            |
 | Nolana        |            1.5           |            1.6             |
 | Orchid        |            1.6           |                            |
-| Poppy         |                          |                            |
-| Quesnelia     |                          |                            |
+| Poppy         |            1.7           |                            |
+| Quesnelia     |            1.8           |                            |
 
 It may not be necessary to match the versions precisely, but doing so
 when possible will usually offer the highest degree of compatibility.
