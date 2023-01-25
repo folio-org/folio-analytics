@@ -16,9 +16,10 @@ releases:
 | Kiwi          |            1.2           |                            |
 | Lotus         |            1.3           |            1.5             |
 | Morning Glory |            1.4           |                            |
-| Nolana        |            1.5           |                            |
+| Nolana        |            1.5           |            1.6             |
 | Orchid        |            1.6           |                            |
-| Poppy         |            1.7           |                            |
+| Poppy         |                          |                            |
+| Quesnelia     |                          |                            |
 
 It may not be necessary to match the versions precisely, but doing so
 when possible will usually offer the highest degree of compatibility.
