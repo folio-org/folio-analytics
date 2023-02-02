@@ -1,3 +1,5 @@
+--metadb:table locations_libraries
+
 DROP TABLE IF EXISTS locations_libraries;
 
 CREATE TABLE locations_libraries AS

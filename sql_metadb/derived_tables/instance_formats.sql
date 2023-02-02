@@ -1,3 +1,5 @@
+--metadb:table instance_formats
+
 -- Create derived table for instance formats bringing together the identifier and name
 -- Note: Because of inaccurate data in FOLIO, instance_format_id is a varchar and the ift.id has to be cast as a varchar.
 

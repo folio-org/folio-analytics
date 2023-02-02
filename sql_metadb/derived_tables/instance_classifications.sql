@@ -1,3 +1,5 @@
+--metadb:table instance_classifications
+
 -- This derived table extracts classification values, ids, and names
 -- from the instance.
 

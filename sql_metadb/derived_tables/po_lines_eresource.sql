@@ -1,3 +1,5 @@
+--metadb:table po_lines_eresource
+
 -- Creates a derived table for eresource data in purchase order lines
 
 DROP TABLE IF EXISTS po_lines_eresource;

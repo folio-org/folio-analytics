@@ -1,3 +1,5 @@
+--metadb:table instance_relationships_ext
+
 DROP TABLE IF EXISTS instance_relationships_ext;
 
 -- Create a local table that includes the name and id for the relationship type

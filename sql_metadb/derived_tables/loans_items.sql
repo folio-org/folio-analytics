@@ -1,3 +1,5 @@
+--metadb:table loans_items
+
 -- this query depends on locations_libraries, so that
 -- should be run before this one
 DROP TABLE IF EXISTS loans_items;

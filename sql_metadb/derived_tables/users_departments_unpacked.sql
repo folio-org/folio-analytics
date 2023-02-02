@@ -1,3 +1,5 @@
+--metadb:table users_departments_unpacked
+
 DROP TABLE IF EXISTS users_departments_unpacked;
 
 -- Create a derived table that takes the users table and joins

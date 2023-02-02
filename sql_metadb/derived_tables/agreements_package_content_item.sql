@@ -1,3 +1,5 @@
+--metadb:table agreements_package_content_item
+
 /* Creates a derived table on all needed data of package_content_items
  * that either are linked directly to an entitlement or have a package
  * linked that is linked to an entitlement.

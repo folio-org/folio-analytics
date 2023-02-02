@@ -1,3 +1,5 @@
+--metadb:table loans_renewal_count
+
 DROP TABLE IF EXISTS loans_renewal_count;
 
 -- Create a derived table that contains all items from inventory_items

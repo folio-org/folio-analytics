@@ -1,3 +1,5 @@
+--metadb:table instance_notes
+
 -- This derived table extracts note information from the FOLIO
 -- instance record
 

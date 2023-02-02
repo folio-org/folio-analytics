@@ -1,3 +1,5 @@
+--metadb:table invoice_voucher_lines_fund_distributions
+
 -- Create a derived table to extract fund_distributions from invoice_voucher_lines and joining funds related tables
 
 DROP TABLE IF EXISTS invoice_voucher_lines_fund_distributions;

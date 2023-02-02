@@ -1,3 +1,5 @@
+--metadb:table instance_tags
+
 -- This derived table extracts tags from the instance record.
 
 DROP TABLE IF EXISTS instance_tags;

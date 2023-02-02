@@ -1,3 +1,5 @@
+--metadb:table loans_renewal_dates
+
 /* This derived table pulls renewals from the folio_circulation.loan table by 
  * filtering on the loan's "action" column. Additional columns allow users to 
  * join renewals with dates to other tables, to filter down to specific renewals, 

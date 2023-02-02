@@ -1,3 +1,5 @@
+--metadb:table invoice_adjustments_ext
+
 DROP TABLE IF EXISTS invoice_adjustments_ext;
 
 -- This table includes the ratio of the invoice lines amount in relation to the invoice_line total to calculate the invoice adjustment by row
