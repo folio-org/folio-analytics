@@ -1,3 +1,5 @@
+--metadb:table finance_funds
+
 /*
  * This derived table shows data of the funds from the finance app, 
  * including associated data from budgets, ledgers and fiscal years.
