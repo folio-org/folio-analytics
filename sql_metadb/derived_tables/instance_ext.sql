@@ -1,5 +1,3 @@
---metadb:table instance_ext
-
 -- Create an extended version of the instance table where the names for identifiers are included
 -- This derived table doesn't include all the properties extracted from the json objects
 -- For example, electronic access, notes, publication, series, or edition statements have their own

@@ -1,5 +1,3 @@
---metadb:table item_ext
-
 DROP TABLE IF EXISTS item_ext;
 
 /*
