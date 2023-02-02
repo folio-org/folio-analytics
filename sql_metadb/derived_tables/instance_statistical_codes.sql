@@ -1,3 +1,5 @@
+--metadb:table instance_statistical_codes
+
 --This derived table extracts data for the instance statistical codes. 
 --It includes the instance uuid, hrid, the statistical code uuid, name, associated code, type id and name.
 --Ordinality has been included.

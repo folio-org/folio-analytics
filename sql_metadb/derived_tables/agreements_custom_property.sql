@@ -1,3 +1,5 @@
+--metadb:table agreements_custom_property
+
 --Creates a derived table on agreements custom properties.
 
 DROP TABLE IF EXISTS agreements_custom_property;

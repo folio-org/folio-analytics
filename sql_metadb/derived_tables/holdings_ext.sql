@@ -1,3 +1,5 @@
+--metadb:table holdings_ext
+
 DROP TABLE IF EXISTS holdings_ext;
 
 -- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy, 

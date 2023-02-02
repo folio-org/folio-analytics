@@ -1,3 +1,5 @@
+--metadb:table items_holdings_instances
+
 -- Create an extended items table that includes holdings and instances
 -- information such as call number, material type, title, etc.
 

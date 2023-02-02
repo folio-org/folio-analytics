@@ -1,3 +1,5 @@
+--metadb:table users_groups
+
 -- Create a derived table that takes the users table and joins in the
 -- group information.  Does not include addresses - see additional
 -- derived tables for addresses in different arrangements.  Query also

@@ -1,3 +1,5 @@
+--metadb:table instance_nature_content
+
 -- Create derived table for instance nature of content with uuid and name.
 
 DROP TABLE IF EXISTS instance_nature_content;

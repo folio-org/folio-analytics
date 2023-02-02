@@ -1,3 +1,5 @@
+--metadb:table po_acq_unit_ids
+
 -- These derived table extracts aquisition unit ids from purchase
 -- order table.
 

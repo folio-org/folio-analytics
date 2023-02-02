@@ -1,3 +1,5 @@
+--metadb:table instance_alternative_titles
+
 --This derived table extracts data for the instance alternative titles.
 --It includes the instance uuid, hrid, the alternative title, type, uuid, and the name associated with that type uuid.
 --Ordinality has been included.
