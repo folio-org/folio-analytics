@@ -24,8 +24,6 @@ CREATE INDEX ON instance_notes (instance_id);
 
 CREATE INDEX ON instance_notes (instance_hrid);
 
-CREATE INDEX ON instance_notes (instance_note);
-
 CREATE INDEX ON instance_notes (staff_only_note);
 
 CREATE INDEX ON instance_notes (instance_note_type_id);

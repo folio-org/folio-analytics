@@ -41,8 +41,6 @@ CREATE INDEX ON holdings_statements (holdings_id);
 
 CREATE INDEX ON holdings_statements (holdings_hrid);
 
-CREATE INDEX ON holdings_statements (holdings_statement);
-
 CREATE INDEX ON holdings_statements (public_note);
 
 CREATE INDEX ON holdings_statements (staff_note);
