@@ -1,6 +1,0 @@
-# schema.table.column type
-folio_inventory.holdings_record_j.call_number_prefix varchar
-folio_inventory.holdings_record_j.call_number_suffix varchar
-folio_inventory.holdings_record_j.discovery_suppress boolean
-folio_inventory.holdings_record_j.temporary_location_id varchar
-
