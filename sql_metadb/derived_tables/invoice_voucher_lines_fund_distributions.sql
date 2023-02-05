@@ -1,4 +1,5 @@
 --metadb:table invoice_voucher_lines_fund_distributions
+--metadb:require folio_finance.fund__t.fund_type_id uuid
 
 -- Create a derived table to extract fund_distributions from invoice_voucher_lines and joining funds related tables
 
