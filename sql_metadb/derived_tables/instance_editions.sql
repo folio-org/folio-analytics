@@ -1,3 +1,5 @@
+--metadb:table instance_editions
+
 -- Create derived table for instance edition statements
 
 DROP TABLE IF EXISTS instance_editions;

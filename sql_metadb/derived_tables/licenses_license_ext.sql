@@ -1,3 +1,5 @@
+--metadb:table licenses_license_ext
+
 -- Create a derived table that contains information about licenses from the app license
 
 DROP TABLE IF EXISTS licenses_license_ext;

@@ -1,3 +1,5 @@
+--metadb:table po_lines_cost
+
 -- These derived table extracts cost information on the purchase order line.
 
 DROP TABLE IF EXISTS po_lines_cost;

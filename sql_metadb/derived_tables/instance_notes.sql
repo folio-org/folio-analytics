@@ -1,3 +1,5 @@
+--metadb:table instance_notes
+
 -- This derived table extracts note information from the FOLIO
 -- instance record
 
@@ -21,8 +23,6 @@ FROM
 CREATE INDEX ON instance_notes (instance_id);
 
 CREATE INDEX ON instance_notes (instance_hrid);
-
-CREATE INDEX ON instance_notes (instance_note);
 
 CREATE INDEX ON instance_notes (staff_only_note);
 

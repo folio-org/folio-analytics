@@ -1,3 +1,5 @@
+--metadb:table holdings_tags
+
 -- This derived table extracts tags from the holdings record.
 
 DROP TABLE IF EXISTS holdings_tags;

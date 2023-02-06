@@ -1,3 +1,5 @@
+--metadb:table instance_identifiers
+
 -- Create derived table to extract instance identifiers and value
 
 DROP TABLE IF EXISTS instance_identifiers;
