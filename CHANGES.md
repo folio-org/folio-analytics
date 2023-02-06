@@ -1,3 +1,6 @@
+
+* added comments to po_lines_vendor_reference_numbers.sql
+* 
 ## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
