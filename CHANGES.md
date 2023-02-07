@@ -1,3 +1,5 @@
+* Added --metadb:table_ <po_organization.sql> to new metadb derived table po_organization.sql.
+
 * Added new metadb deived table: po_organization with expanded column names:
   organization_id, organization_name, organization_code, ogranization_descriprtion
   from previously used org_id, org_code, org_name, org_description in LDP1.
