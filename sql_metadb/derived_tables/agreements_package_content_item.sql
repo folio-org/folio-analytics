@@ -1,4 +1,5 @@
 --metadb:table agreements_package_content_item
+--metadb:require folio_agreements.identifier_occurrence.io_ti_fk uuid
 --metadb:require folio_agreements.package_content_item.id uuid
 --metadb:require folio_agreements.package_content_item.pci_access_end date
 --metadb:require folio_agreements.package_content_item.pci_access_start date
