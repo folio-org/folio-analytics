@@ -16,9 +16,9 @@ SELECT
     oc.first_name AS contact_first_name,
     oc.last_name AS contact_last_name
 FROM
-    folio_orders.purchase_order__t__ AS ppo
-    LEFT JOIN folio_organizations.organizations__t__ AS oo ON ppo.vendor = oo.id
-    LEFT JOIN folio_organizations.contacts__t__ AS oc ON oo.id = oc.id;
+    folio_orders.purchase_order__t AS ppo
+    LEFT JOIN folio_organizations.organizations__t AS oo ON ppo.vendor = oo.id
+    LEFT JOIN folio_organizations.contacts__t AS oc ON oo.id = oc.id;
 
 CREATE INDEX ON po_organization (po_number);
 
