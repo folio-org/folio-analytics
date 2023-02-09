@@ -1,3 +1,5 @@
+--metadb:table holdings_administrative_notes
+
 -- This derived table extracts administrative notes from the holdings record.
 
 DROP TABLE IF EXISTS holdings_administrative_notes;

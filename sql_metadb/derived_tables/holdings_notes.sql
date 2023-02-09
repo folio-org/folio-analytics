@@ -1,3 +1,5 @@
+--metadb:table holdings_notes
+
 DROP TABLE IF EXISTS holdings_notes;
 
 CREATE TABLE holdings_notes AS

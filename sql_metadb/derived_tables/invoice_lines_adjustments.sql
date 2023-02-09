@@ -1,3 +1,5 @@
+--metadb:table invoice_lines_adjustments
+
 -- This table includes the extracted adjustments data on the invoice
 -- line level.  The field description can be locally defined by
 -- institutions.  Examples are "shipping", "VAT" (MwSt), "Service

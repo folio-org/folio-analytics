@@ -1,3 +1,5 @@
+--metadb:table po_lines_er_mat_type
+
 -- Create a derived table that extract electronic resource material types from purchase order lines
 
 DROP TABLE IF EXISTS po_lines_er_mat_type;

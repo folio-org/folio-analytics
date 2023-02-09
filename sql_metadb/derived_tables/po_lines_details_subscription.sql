@@ -1,3 +1,5 @@
+--metadb:table po_lines_details_subscription
+
 -- Create a local table for subscription details in po_lines.
 
 DROP TABLE IF EXISTS po_lines_details_subscription;

@@ -1,3 +1,5 @@
+--metadb:table po_line_vendor_reference_number
+
 -- This derived table extracts reference numbers from po_lines vendor
 -- details.
 

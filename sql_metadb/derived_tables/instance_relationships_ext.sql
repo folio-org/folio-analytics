@@ -1,3 +1,9 @@
+--metadb:table instance_relationships_ext
+--metadb:require folio_inventory.instance_relationship.id uuid
+--metadb:require folio_inventory.instance_relationship.instancerelationshiptypeid uuid
+--metadb:require folio_inventory.instance_relationship.subinstanceid uuid
+--metadb:require folio_inventory.instance_relationship.superinstanceid uuid
+
 DROP TABLE IF EXISTS instance_relationships_ext;
 
 -- Create a local table that includes the name and id for the relationship type

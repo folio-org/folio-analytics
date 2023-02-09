@@ -1,3 +1,5 @@
+--metadb:table instance_publication
+
 -- This derived table extracts publication information from the FOLIO
 -- instance record
 
