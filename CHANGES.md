@@ -1,3 +1,6 @@
+
+* Updated table names from "__t__" to "__t" in po_organization.sql.
+
 * Added --metadb:table_ <po_organization.sql> to new metadb derived table po_organization.sql.
 
 * Added new metadb deived table: po_organization with expanded column names:
