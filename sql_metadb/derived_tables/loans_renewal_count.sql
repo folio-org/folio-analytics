@@ -1,4 +1,5 @@
 --metadb:table loans_renewal_count
+--metadb:require folio_circulation.loan__t.renewal_count numeric
 
 DROP TABLE IF EXISTS loans_renewal_count;
 
@@ -20,8 +21,8 @@ WITH loan_count AS (
 SELECT
     CURRENT_DATE AS current_as_of_date,
     it.id::uuid AS item_id,
-    COALESCE(lc.num_loans, 0) AS num_loans,
-    COALESCE(lc.num_renewals, 0) AS num_renewals
+    coalesce(lc.num_loans, 0) AS num_loans,
+    coalesce(lc.num_renewals, 0) AS num_renewals
 FROM
     folio_inventory.item AS it
     LEFT JOIN loan_count AS lc ON it.id::uuid = lc.item_id;

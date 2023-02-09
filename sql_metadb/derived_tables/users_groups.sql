@@ -1,4 +1,6 @@
 --metadb:table users_groups
+--metadb:require folio_users.users__t.enrollment_date timestamptz
+--metadb:require folio_users.users__t.external_system_id varchar
 
 -- Create a derived table that takes the users table and joins in the
 -- group information.  Does not include addresses - see additional
