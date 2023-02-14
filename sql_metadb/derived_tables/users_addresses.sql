@@ -8,21 +8,21 @@ DROP TABLE IF EXISTS users_addresses;
 CREATE TABLE users_addresses AS
 SELECT
     uu.id AS user_id,
-    json_extract_path_text(addresses.data, 'id') AS address_id,
-    json_extract_path_text(addresses.data, 'countryId') AS address_country_id,
-    json_extract_path_text(addresses.data, 'addressLine1') AS address_line_1,
-    json_extract_path_text(addresses.data, 'addressLine2') AS address_line_2,
-    json_extract_path_text(addresses.data, 'city') AS address_city,
-    json_extract_path_text(addresses.data, 'region') AS address_region,
-    json_extract_path_text(addresses.data, 'postalCode') AS address_postal_code,
-    json_extract_path_text(addresses.data, 'addressTypeId') AS address_type_id,
+    jsonb_extract_path_text(addresses.jsonb, 'id') AS address_id,
+    jsonb_extract_path_text(addresses.jsonb, 'countryId') AS address_country_id,
+    jsonb_extract_path_text(addresses.jsonb, 'addressLine1') AS address_line_1,
+    jsonb_extract_path_text(addresses.jsonb, 'addressLine2') AS address_line_2,
+    jsonb_extract_path_text(addresses.jsonb, 'city') AS address_city,
+    jsonb_extract_path_text(addresses.jsonb, 'region') AS address_region,
+    jsonb_extract_path_text(addresses.jsonb, 'postalCode') AS address_postal_code,
+    jsonb_extract_path_text(addresses.jsonb, 'addressTypeId') AS address_type_id,
     ua.address_type AS address_type_name,
     ua.desc AS address_type_description,
-    json_extract_path_text(addresses.data, 'primaryAddress')::boolean AS is_primary_address
+    jsonb_extract_path_text(addresses.jsonb, 'primaryAddress')::boolean AS is_primary_address
 FROM
-    user_users AS uu
-    CROSS JOIN json_array_elements(json_extract_path(data, 'personal', 'addresses')) AS addresses (data)
-    LEFT JOIN user_addresstypes AS ua ON json_extract_path_text(addresses.data, 'addressTypeId') = ua.id;
+    folio_users.users AS uu
+    CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'personal', 'addresses')) AS addresses (jsonb)
+    LEFT JOIN folio_users.addresstype__t AS ua ON jsonb_extract_path_text(addresses.jsonb, 'addressTypeId')::uuid = ua.id;
 
 CREATE INDEX ON users_addresses (user_id);
 
