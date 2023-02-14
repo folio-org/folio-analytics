@@ -7,6 +7,8 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
 
+* Ported derived table `users_addresses` from LDP1.
+
 
 ## 1.5.0
 
