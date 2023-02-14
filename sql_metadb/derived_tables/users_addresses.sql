@@ -8,14 +8,14 @@ DROP TABLE IF EXISTS users_addresses;
 CREATE TABLE users_addresses AS
 SELECT
     uu.id AS user_id,
-    jsonb_extract_path_text(addresses.jsonb, 'id') AS address_id,
+    jsonb_extract_path_text(addresses.jsonb, 'id') AS address_id, --no data created by FOLIO for this field, leaving as text
     jsonb_extract_path_text(addresses.jsonb, 'countryId') AS address_country_id,
     jsonb_extract_path_text(addresses.jsonb, 'addressLine1') AS address_line_1,
     jsonb_extract_path_text(addresses.jsonb, 'addressLine2') AS address_line_2,
     jsonb_extract_path_text(addresses.jsonb, 'city') AS address_city,
     jsonb_extract_path_text(addresses.jsonb, 'region') AS address_region,
     jsonb_extract_path_text(addresses.jsonb, 'postalCode') AS address_postal_code,
-    jsonb_extract_path_text(addresses.jsonb, 'addressTypeId') AS address_type_id,
+    jsonb_extract_path_text(addresses.jsonb, 'addressTypeId')::uuid AS address_type_id,
     ua.address_type AS address_type_name,
     ua.desc AS address_type_description,
     jsonb_extract_path_text(addresses.jsonb, 'primaryAddress')::boolean AS is_primary_address
