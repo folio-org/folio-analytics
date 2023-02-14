@@ -1,3 +1,5 @@
+--metadb:table agreements_subscription_agreement_entitlement
+
 -- Creates a derived table on subscription_agreement with entitlement and
 -- order_line to add po_line_id
 

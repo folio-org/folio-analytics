@@ -1,3 +1,5 @@
+--metadb:table holdings_electronic_access
+
 -- Create table for electronic access points for holdings records
 
 DROP TABLE IF EXISTS holdings_electronic_access;

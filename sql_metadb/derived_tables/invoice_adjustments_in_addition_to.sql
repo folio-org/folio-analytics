@@ -1,3 +1,5 @@
+--metadb:table invoice_adjustments_in_addition_to
+
 DROP TABLE IF EXISTS invoice_adjustments_in_addition_to;
 
 -- This query will return the invoice adjustments when they are "Not Prorated" and "In addition To"

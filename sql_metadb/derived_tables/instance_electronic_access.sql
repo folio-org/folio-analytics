@@ -1,3 +1,5 @@
+--metadb:table instance_electronic_access
+
 --This derived table extracts data for the instance electronic access. 
 --It includes the instance uuid, hrid, the electronic access uri, link text, materials specification, public note
 --relationship id and relationship name.

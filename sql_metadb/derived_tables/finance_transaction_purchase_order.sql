@@ -1,3 +1,5 @@
+--metadb:table finance_transaction_purchase_order
+
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
 
 DROP TABLE IF EXISTS finance_transaction_purchase_order;
