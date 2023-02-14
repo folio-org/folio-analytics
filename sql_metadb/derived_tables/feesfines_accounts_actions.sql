@@ -1,3 +1,5 @@
+--metadb:table feesfines_accounts_actions	
+
 -- Create a derived table that takes feesfines_accounts as the main table
 -- join all transaction data from the feesfines_actions table
 -- add patron group information from user_group table
@@ -8,8 +10,8 @@ CREATE TABLE feesfines_accounts_actions AS
 SELECT
     fa.id AS fine_account_id,
     jsonb_extract_path_text(fa.jsonb, 'amount')::numeric(12,2) AS fine_account_amount,
-    jsonb_extract_path_text(fa.jsonb, 'dateCreated') AS fine_date,
-    jsonb_extract_path_text(fa.jsonb, 'dateUpdated') AS fine_updated_date,
+    jsonb_extract_path_text(fa.jsonb, 'dateCreated')::timestamptz AS fine_date, 
+    jsonb_extract_path_text(fa.jsonb, 'dateUpdated')::timestamptz AS fine_updated_date,
     jsonb_extract_path_text(fa.jsonb, 'feeFineId')::uuid AS fee_fine_id,
     jsonb_extract_path_text(fa.jsonb, 'ownerId')::uuid AS owner_id,
     jsonb_extract_path_text(fa.jsonb, 'feeFineOwner') AS fee_fine_owner,
@@ -27,7 +29,7 @@ SELECT
     jsonb_extract_path_text(ff.jsonb, 'dateAction')::timestamptz AS transaction_date,
     jsonb_extract_path_text(ff.jsonb, 'createdAt')::uuid AS transaction_location,
     jsonb_extract_path_text(ff.jsonb, 'transactionInformation') AS transaction_information,
-    jsonb_extract_path_text(ff.jsonb, 'source') AS operator_id, --should rename because not an ID
+    jsonb_extract_path_text(ff.jsonb, 'source') AS operator_id,
     jsonb_extract_path_text(ff.jsonb, 'paymentMethod') AS payment_method,
     uu.id AS user_id,
     uu.patron_group AS user_patron_group_id,
