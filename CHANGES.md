@@ -6,6 +6,8 @@
 * Updated LDP1 derived table `locations_service_points` to add
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
+  
+* Created report loans_and_renewals_counts_by_year.sql for metadb
 
 
 ## 1.5.0
