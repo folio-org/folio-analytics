@@ -1,3 +1,5 @@
+* Ported new Metadb derived table "po_prod_ids" with comments.
+
 ## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
