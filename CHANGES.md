@@ -1,3 +1,10 @@
+* Submitted changes for items_holdings_instances table:
+  renamed: hrid to item_hrid, cal_number to holdings_call_number;
+  added: holdings_hrid, instance_hrid, item_effective_call_number, 
+         item_effective_call_number_prefix, item _effective_call_number_suffix
+  created comments at the end.
+  
+
 ## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
