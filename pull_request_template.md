@@ -23,4 +23,5 @@ Derived tables:
 - [ ] File name is listed in `runlist.txt` after dependencies
 - [ ] All columns have indexes
 - [ ] Table is vacuumed and analyzed
+- [ ] If derived table is for Metadb, query begins with Metadb directive in first line (e.g., --metadb:table feesfines_accounts_actions)
 ```
