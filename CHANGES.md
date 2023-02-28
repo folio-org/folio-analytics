@@ -9,6 +9,9 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Add Metadb derived table directives to PR checklist and contribution
+  guidelines.
+
 
 ## 1.5.0
 
