@@ -1,5 +1,7 @@
 ## 1.6.0
 
+* changed array json type extract for subjects and ordinality.
+
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
