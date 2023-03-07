@@ -1,3 +1,4 @@
+## 1.6.0
 
 * Updated table names from "__t__" to "__t" in po_organization.sql.
 
@@ -7,8 +8,6 @@
   organization_id, organization_name, organization_code, ogranization_descriprtion
   from previously used org_id, org_code, org_name, org_description in LDP1.
   Added new field "is_vendor" to indicate if organization is a vendor.
-
-## 1.6.0
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
