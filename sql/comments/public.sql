@@ -29,9 +29,9 @@ COMMENT ON COLUMN public.po_lines.eresource_activation_due IS 'Number of days un
 COMMENT ON COLUMN public.po_lines.eresource_create_inventory IS 'Shows what inventory objects need to be created for electronic resource';
 COMMENT ON COLUMN public.po_lines.eresource_expected_activation IS 'Expected date the resource will be activated';
 COMMENT ON COLUMN public.po_lines.eresource_material_type IS 'UUID of the material type';
-COMMENT ON COLUMN public.po_lines.eresource_resource_url IS 'Electronic resource can be access via this UR';
+COMMENT ON COLUMN public.po_lines.eresource_resource_url IS 'Electronic resource can be access via this URL';
 COMMENT ON COLUMN public.po_lines.eresource_trial IS 'Whether or not this is a trial';
-COMMENT ON COLUMN public.po_lines.eresource_user_limit IS 'The current user limit';
+COMMENT ON COLUMN public.po_lines.eresource_user_limit IS 'The concurrent user limit';
 COMMENT ON COLUMN public.po_lines.instance_id IS 'UUID of the instance record this purchase order line is related to';
 COMMENT ON COLUMN public.po_lines.is_package IS 'Indicates that this POL is for a package';
 COMMENT ON COLUMN public.po_lines.metadata_created_by_user_id IS 'ID of the user who created the record (when available)';
@@ -44,7 +44,7 @@ COMMENT ON COLUMN public.po_lines.physical_create_inventory IS 'Shows what inven
 COMMENT ON COLUMN public.po_lines.physical_expected_receipt_date IS 'Vendor agreed date prior to the Receipt Due date item is expected to be received by';
 COMMENT ON COLUMN public.po_lines.physical_material_supplier IS 'UUID of the material supplier record';
 COMMENT ON COLUMN public.po_lines.physical_material_type IS 'UUID of the material type';
-COMMENT ON COLUMN public.po_lines.physical_recept_due IS 'Date item should be received by';
+COMMENT ON COLUMN public.po_lines.physical_receipt_due IS 'Date item should be received by';
 COMMENT ON COLUMN public.po_lines.po_line_description IS 'Purchase order line description';
 COMMENT ON COLUMN public.po_lines.po_line_number IS 'A human readable number assigned to this PO line';
 COMMENT ON COLUMN public.po_lines.publication_date IS 'Date (year) of the material''s publication';
@@ -59,7 +59,7 @@ COMMENT ON COLUMN public.po_lines.source IS 'The source of this purchase order l
 COMMENT ON COLUMN public.po_lines.title_or_package IS 'Title of the material';
 COMMENT ON COLUMN public.po_lines.vendor_detail_instructions IS 'Details related to the vendor of this purchase order line';
 COMMENT ON COLUMN public.po_lines.vendor_detail_note_from_vendor IS 'Free-form notes from the vendor';
-COMMENT ON COLUMN public.po_lines.vendor_detail_vendor_account IS 'The accound number on the vendor''s end associated with this purchase order line';
+COMMENT ON COLUMN public.po_lines.vendor_detail_vendor_account IS 'The account number on the vendor''s end associated with this purchase order line';
 COMMENT ON COLUMN public.po_lines.data IS 'JSON representation of the record';
 
 -- public.circulation_loans
