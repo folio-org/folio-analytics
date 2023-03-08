@@ -25,7 +25,7 @@ VACUUM ANALYZE instance_subjects;
 
 COMMENT ON COLUMN instance_subjects.instance_id IS 'UUID of the instance record';
 
-COMMENT ON COLUMN instance_subjects.instance_ihrd IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
+COMMENT ON COLUMN instance_subjects.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
 
 COMMENT ON COLUMN instance_subjects.subject IS 'Subject heading value';
 
