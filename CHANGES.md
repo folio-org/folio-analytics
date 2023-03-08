@@ -1,5 +1,7 @@
 ## 1.6.0
 
+* Changed json extract for series data type change in instance_series derived table. Added comments.
+
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
