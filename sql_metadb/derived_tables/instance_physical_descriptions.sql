@@ -1,3 +1,5 @@
+--metadb:table instance_physical_descriptions
+
 -- This derived Metadb table extracts information in the physical
 -- description including extent, illustrations, size.
 

@@ -1,3 +1,5 @@
+--metadb:table po_lines_location
+
 -- Create a local table for Purchase Order Line Locations including
 -- location quantity and type.
 

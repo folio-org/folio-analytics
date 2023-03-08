@@ -1,3 +1,5 @@
+--metadb:table holdings_statements_supplements
+
 -- This table contains holdings statements for supplements with their
 -- associated public/staff only notes; regular holdings statements and
 -- holdings statements for indexes are in separate tables. Here note is a public note.

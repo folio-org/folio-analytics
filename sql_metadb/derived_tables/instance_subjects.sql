@@ -1,3 +1,5 @@
+--metadb:table instance_subjects
+
 -- This derived table extracts subjects from the FOLIO Instance record
 
 DROP TABLE IF EXISTS instance_subjects;

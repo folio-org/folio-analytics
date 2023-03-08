@@ -1,3 +1,5 @@
+--metadb:table invoice_lines_fund_distributions
+
 -- Create a derived table to extract fund_distributions from invoice_lines 
 -- and joining funds related tables.
 

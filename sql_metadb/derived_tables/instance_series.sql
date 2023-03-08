@@ -1,3 +1,5 @@
+--metadb:table instance_series
+
 -- This derived table extracts series statements from the FOLIO
 -- Instance record
 
