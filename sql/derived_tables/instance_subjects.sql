@@ -1,24 +1,35 @@
-DROP TABLE IF EXISTS instance_subjects;
 
--- Create a local table for subjects in the instance record.
-CREATE TABLE instance_subjects AS
+-- Create a local table for series in the instance record.
+
+DROP TABLE IF EXISTS instance_series;
+
+CREATE TABLE instance_series AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    subjects.data #>> '{}' AS subject,
-    subjects.ordinality AS subject_ordinality
+    json_extract_path_text(series.data, 'value') AS series,
+    series.ordinality AS series_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'subjects'))
-    WITH ORDINALITY AS subjects (data);
+   CROSS JOIN json_array_elements(json_extract_path(instances.data, 'series'))
+   WITH ORDINALITY AS series (data);
+   
+CREATE INDEX ON instance_series (instance_id);
 
-CREATE INDEX ON instance_subjects (instance_id);
+CREATE INDEX ON instance_series (instance_hrid);
 
-CREATE INDEX ON instance_subjects (instance_hrid);
+CREATE INDEX ON instance_series (series);
 
-CREATE INDEX ON instance_subjects (subject);
+CREATE INDEX ON instance_series (series_ordinality);
 
-CREATE INDEX ON instance_subjects (subject_ordinality);
+VACUUM ANALYZE instance_series;
 
-VACUUM ANALYZE instance_subjects;
+COMMENT ON COLUMN instance_series.instance_id IS 'UUID of the instance record';
+
+COMMENT ON COLUMN instance_series.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
+
+COMMENT ON COLUMN instance_series.series IS 'Series title value';
+
+COMMENT ON COLUMN instance_series.series_ordinality IS 'Series title value ordinality';
+
 
