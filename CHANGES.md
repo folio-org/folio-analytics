@@ -1,9 +1,10 @@
 ## 1.6.0
 
-* __Breacking changes:__ created_location is renamed to bill_to,
+* __Breaking changes:__ created_location is renamed to bill_to,
   po_wf_status renamed to po_workflow_status,
   created_by renamed to created_by_user_name.
-  __New fields added:__ manual, po_number_id, po_line_id, ship_to, pol_holdings_id, pol_location_source
+  __New fields added:__ manual, po_number_id, po_line_id, ship_to, pol_holdings_id, pol_location_source.
+  Comments added.
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
