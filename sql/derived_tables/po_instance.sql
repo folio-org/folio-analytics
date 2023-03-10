@@ -18,13 +18,13 @@ SELECT
     organization_organizations.code AS vendor_code,
     user_users.username AS created_by_username,
     po_purchase_orders.workflow_status AS po_workflow_status,
-    json_extract_path_text(po_purchase_orders.data, 'approved')::boolean AS status_approved,
-    json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdDate')::timestamptz AS created_date,
+    po_purchase_orders.approved AS status_approved,
+    po_purchase_orders.metadata__created_date AS created_date,
     json_extract_path_text(ce.value::json, 'name') AS bill_to,
     json_extract_path_text(ce.value::json, 'name') AS ship_to,
     json_extract_path_text(po_lines.data, 'instanceId') AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
-    json_extract_path_text(locations.data, 'holdingId') AS pol_holdings_id,
+    json_extract_path_text(locations.data, 'holdingId') AS pol_holding_id,
     CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL
          THEN json_extract_path_text(locations.data, 'locationId')
          ELSE ih.permanent_location_id END AS pol_location_id,
@@ -87,7 +87,7 @@ CREATE INDEX ON po_instance (pol_instance_id);
 
 CREATE INDEX ON po_instance (pol_instance_hrid);
 
-CREATE INDEX ON po_instance (pol_holdings_id);
+CREATE INDEX ON po_instance (pol_holding_id);
 
 CREATE INDEX ON po_instance (pol_location_id);
 
@@ -138,7 +138,7 @@ COMMENT ON COLUMN po_instance.pol_instance_id IS 'UUID of the instance record th
 
 COMMENT ON COLUMN po_instance.pol_instance_hrid IS 'A human readable number of the instance record this purchase order line is related to';
 
-COMMENT ON COLUMN po_instance.pol_holdings_id IS 'UUID of the holdings this purchase order line is related to';
+COMMENT ON COLUMN po_instance.pol_holding_id IS 'UUID of the holdings this purchase order line is related to';
 
 COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created for this purchase order line';
 
