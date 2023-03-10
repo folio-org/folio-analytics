@@ -64,7 +64,7 @@ CREATE INDEX ON items_holdings_instances (item_copy_number);
 
 CREATE INDEX ON items_holdings_instances (enumeration);
 
-CREATE INDEX ON items_holdings_instances (hrid);
+CREATE INDEX ON items_holdings_instances (item_hrid);
 
 CREATE INDEX ON items_holdings_instances (item_identifier);
 
