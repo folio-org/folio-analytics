@@ -145,9 +145,9 @@ COMMENT ON COLUMN items_holdings_instances.material_type_name IS 'Item''s materi
 
 COMMENT ON COLUMN items_holdings_instances.number_of_pieces IS 'Number of pieces on the item record';
 
-COMMENT ON COLUMN items_holdings_instances.holdings_id IS 'UUID of the holdings record assosiated with the item record';
+COMMENT ON COLUMN items_holdings_instances.holdings_id IS 'UUID of the holdings record associated with the item record';
 
-COMMENT ON COLUMN items_holdings_instances.holdings_hrid IS 'Human readable ID of the holdings record assosiated with the item record';
+COMMENT ON COLUMN items_holdings_instances.holdings_hrid IS 'Human readable ID of the holdings record associated with the item record';
 
 COMMENT ON COLUMN items_holdings_instances.holdings_call_number IS 'Call Number on the holding record, is an identifier assigned to an item, usually printed on a label attached to the item';
 
@@ -171,7 +171,7 @@ COMMENT ON COLUMN items_holdings_instances.instance_hrid IS 'Inventory instances
 
 COMMENT ON COLUMN items_holdings_instances.shelving_title IS 'Indicates the shelving form of title';
 
-COMMENT ON COLUMN items_holdings_instances.cataloged_date IS 'Date or timestamp on an instance for when is was considered cataloged';
+COMMENT ON COLUMN items_holdings_instances.cataloged_date IS 'Date or timestamp on an instance for when it was considered cataloged';
 
 COMMENT ON COLUMN items_holdings_instances.index_title IS 'Title normalized for browsing and searching; based on the title with articles removed';
 
