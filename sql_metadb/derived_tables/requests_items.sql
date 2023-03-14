@@ -42,7 +42,7 @@ SELECT
     iit.material_type_id,
     imt.name AS material_type_name,
     --iit.number_of_pieces,
-    jsonb_extract_path_text(iij.jsonb, 'numberOfPieces')::uuid AS number_of_pieces,
+    jsonb_extract_path_text(iij.jsonb, 'numberOfPieces') AS number_of_pieces,
     iit.permanent_loan_type_id AS item_permanent_loan_type_id,
     iplt.name AS item_permanent_loan_type_name,
     --iit.temporary_loan_type_id AS item_temporary_loan_type_id,
