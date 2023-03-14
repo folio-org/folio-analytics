@@ -9,6 +9,8 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Port LDP1 derived table `requests_items` to Metadb
+
 
 ## 1.5.0
 
