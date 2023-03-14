@@ -1,3 +1,5 @@
+--metadb:table requests_items
+
 -- Create a derived table that contains all items from requests and adds
 -- item and patron-related information
 
