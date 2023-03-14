@@ -1,5 +1,7 @@
 --metadb:table_ <po_prod_ids>
 
+--This table pulles product id and identifies type of product id from a Purchase order line.
+
 DROP TABLE IF EXISTS po_prod_ids;
 
 CREATE TABLE po_prod_ids AS
