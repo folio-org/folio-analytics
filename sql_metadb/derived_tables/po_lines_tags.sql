@@ -19,5 +19,11 @@ CREATE INDEX ON po_lines_tags (pol_tag);
 
 CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
 
+COMMENT ON COLUMN po_lines_tags.pol_id IS 'description';
+
+COMMENT ON COLUMN po_lines_tags.pol_tag IS 'description';
+
+COMMENT ON COLUMN po_lines_tags.pol_tag_ordinality IS 'description';
+
 VACUUM ANALYZE po_lines_tags;
 
