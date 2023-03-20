@@ -1,7 +1,7 @@
---metadb:table_ <po_instance>
+--metadb:table po_instance
 
 -- Create a local_core table for purchase order line instance. Every po line may have location ID or holding ID or both can be 'null', if both are 'null'
---then "no source' is present in pol_location_source.
+--then 'no source' is present in pol_location_source.
 --Pol_location depends on how the po is created.
 
 DROP TABLE IF EXISTS po_instance;
@@ -21,8 +21,8 @@ SELECT
     pot.workflow_status AS po_workflow_status,
     pot.approved::boolean AS status_approved,
     jsonb_extract_path_text(po.jsonb, 'metadata', 'createdDate')::timestamptz AS created_date,  
-    pot.bill_to AS bill_to,
-    pot.ship_to AS ship_to,
+    json_extract_path_text(cdt.value::json, 'name') AS bill_to,
+    json_extract_path_text(cdt2.value::json, 'name') AS ship_to,
     poltt.instance_id AS pol_instance_id,
     it.hrid AS pol_instance_hrid,
     jsonb_extract_path_text(pol.jsonb, 'holdingId')::uuid AS pol_holding_id,
@@ -44,16 +44,16 @@ SELECT
     folio_orders.purchase_order__t AS pot
     LEFT JOIN folio_orders.po_line__t AS poltt ON pot.id = poltt.purchase_order_id
     LEFT JOIN folio_orders.po_line AS pol ON pot.id=pol.purchaseorderid 
-    LEFT JOIN folio_inventory.location AS il ON jsonb_extract_path_text(pol.jsonb, 'locations', 'locationId')::uuid= il.id::uuid
-    LEFT JOIN folio_inventory.location__t AS lot ON il.id=lot.id
-    LEFT JOIN folio_inventory.holdings_record AS ih ON jsonb_extract_path_text(pol.jsonb, 'locations', 'holdingId') ::uuid= ih.id
+    LEFT JOIN folio_inventory.location AS il ON jsonb_extract_path_text(pol.jsonb, 'locations', 'locationId')::uuid = il.id::uuid
+    LEFT JOIN folio_inventory.location__t AS lot ON il.id = lot.id
+    LEFT JOIN folio_inventory.holdings_record AS ih ON jsonb_extract_path_text(pol.jsonb, 'locations', 'holdingId')::uuid = ih.id
     LEFT JOIN folio_inventory.location__t AS lot2 ON ih.permanentlocationid = lot2.id 
     LEFT JOIN folio_inventory.instance__t AS it ON poltt.instance_id = it.id
     LEFT JOIN folio_organizations.organizations__t AS ot ON pot.vendor = ot.id
-    LEFT JOIN folio_orders.purchase_order AS po ON pot.id=po.id
-    LEFT JOIN folio_configuration.config_data cc ON jsonb_extract_path_text(po.jsonb, 'billTo')::uuid= cc.id
-    LEFT JOIN folio_configuration.config_data cc2 ON jsonb_extract_path_text(po.jsonb, 'billTo')::uuid= cc2.id
-    LEFT JOIN folio_users.users__t AS ut ON jsonb_extract_path_text(po.jsonb, 'metadata', 'createdByUserId') ::uuid= ut.id
+    LEFT JOIN folio_orders.purchase_order AS po ON pot.id = po.id
+    LEFT JOIN folio_configuration.config_data__t cdt ON jsonb_extract_path_text(po.jsonb, 'billTo')::uuid = cdt.id
+    LEFT JOIN folio_configuration.config_data__t cdt2 ON jsonb_extract_path_text(po.jsonb, 'shipTo')::uuid = cdt2.id
+    LEFT JOIN folio_users.users__t AS ut ON jsonb_extract_path_text(po.jsonb, 'metadata', 'createdByUserId')::uuid = ut.id
 ;
 CREATE INDEX ON po_instance (po_number);
 
@@ -136,7 +136,7 @@ COMMENT ON COLUMN po_instance.pol_holding_id IS 'UUID of the holdings this purch
 
 COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created for this purcase order line';
 
-COMMENT ON COLUMN po_instance.pol_location_name IS 'Name od the purchase order line location';
+COMMENT ON COLUMN po_instance.pol_location_name IS 'Name of the purchase order line location';
 
 COMMENT ON COLUMN po_instance.pol_location_source IS 'Weather location is a holdings location or permanent location of the purchase order line';
 
