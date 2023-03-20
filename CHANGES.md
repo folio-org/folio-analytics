@@ -1,5 +1,7 @@
 ## 1.6.0
 
+* Fixed the errors from PR review.
+
 * Porting po_instance derived table to metadb.
 
 * Use `timestamptz` columns for data extracted from metadata
