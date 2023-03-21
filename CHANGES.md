@@ -1,5 +1,6 @@
 ## 1.6.0
 
+* Made corrections according to PR review.
 * Added description for the derived table "po_prod_ids".
 
 * Ported new Metadb derived table "po_prod_ids" with comments.
