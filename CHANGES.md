@@ -1,5 +1,6 @@
 ## 1.6.0
 
+* Fixed errors one more time from PR review.
 * Fixed the errors from PR review.
 
 * Porting po_instance derived table to metadb.
