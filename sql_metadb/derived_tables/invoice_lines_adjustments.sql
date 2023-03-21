@@ -52,4 +52,18 @@ CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
 
 CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
 
+COMMENT ON COLUMN invoice_lines_adjustments.invoice_line_id IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_description IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_prorate IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_relation_to_total IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_type IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_value IS 'description';
+
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_adjustments_total IS 'description';
+
 VACUUM ANALYZE invoice_lines_adjustments;
