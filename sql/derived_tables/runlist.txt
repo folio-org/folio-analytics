@@ -1,6 +1,7 @@
 feesfines_accounts_actions.sql
 finance_transaction_invoices.sql
 invoice_transactions.sql
+finance_funds.sql
 finance_transaction_purchase_order.sql
 holdings_administrative_notes.sql
 holdings_electronic_access.sql
