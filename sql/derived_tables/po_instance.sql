@@ -126,7 +126,7 @@ COMMENT ON COLUMN po_instance.created_by_username IS 'Username of the user who c
 
 COMMENT ON COLUMN po_instance.po_workflow_status IS 'Workflow status of purchase order';
 
-COMMENT ON COLUMN po_instance.status_approved IS 'Weather purchase order is approved or not';
+COMMENT ON COLUMN po_instance.status_approved IS 'Wether purchase order is approved or not';
 
 COMMENT ON COLUMN po_instance.created_date IS 'Date when the purchase order was created';
 
@@ -144,7 +144,7 @@ COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created f
 
 COMMENT ON COLUMN po_instance.pol_location_name IS 'Name of the purchase order line location';
 
-COMMENT ON COLUMN po_instance.pol_location_source IS 'Weather location of the material is a location or permanent location of the purchase order line in inventory';
+COMMENT ON COLUMN po_instance.pol_location_source IS 'Wether location of the material is a location or permanent location of the purchase order line in inventory';
 
 COMMENT ON COLUMN po_instance.title IS 'Title of the material';
 
