@@ -53,16 +53,16 @@ CREATE INDEX ON po_lines_locations (pol_location_source);
 
 COMMENT ON COLUMN po_lines_locations.pol_id IS 'UUID identifying this purchase order line';
 
-COMMENT ON COLUMN po_lines_locations.pol_loc_qty IS 'combined/total quanitity of physical and electronic items';
+COMMENT ON COLUMN po_lines_locations.pol_loc_qty IS 'Combined/total quanitity of physical and electronic items';
 
 COMMENT ON COLUMN po_lines_locations.pol_loc_qty_elec IS 'Quantity of electronic items in this purchase order line';
 
 COMMENT ON COLUMN po_lines_locations.pol_loc_qty_phys IS 'Quantity of physical items or resources of "Other" order format in this purchase order line';
 
-COMMENT ON COLUMN po_lines_locations.pol_location_id IS 'UUID of the (inventory) location record or Holding UUID assosiated with order line';
+COMMENT ON COLUMN po_lines_locations.pol_location_id IS 'UUID of the (inventory) location record or Holding UUID associated with order line';
 
-COMMENT ON COLUMN po_lines_locations.pol_location_name IS 'Name of the location assosiated with pol_location_id';
+COMMENT ON COLUMN po_lines_locations.pol_location_name IS 'Name of the location associated with pol_location_id';
 
-COMMENT ON COLUMN po_lines_locations.pol_location_source IS 'Source of the location assosiated with pol_location_id';
+COMMENT ON COLUMN po_lines_locations.pol_location_source IS 'Source of the location associated with pol_location_id';
 
 VACUUM ANALYZE po_lines_locations;
