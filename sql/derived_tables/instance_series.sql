@@ -1,4 +1,4 @@
--- Create a local table for series statemnts in the instance records.
+-- Create a derived table for series statements in the instance records.
 
 DROP TABLE IF EXISTS instance_series;
 
