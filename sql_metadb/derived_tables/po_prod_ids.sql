@@ -1,4 +1,4 @@
-"--metadb:table po_prod_ids
+--metadb:table po_prod_ids
 
 --This table pulls product id and identifies type of product id from a Purchase order line.
 
