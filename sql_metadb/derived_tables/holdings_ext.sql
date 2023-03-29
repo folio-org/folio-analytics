@@ -1,6 +1,6 @@
 --metadb:table holdings_ext
 --metadb:require folio_inventory.ill_policy__t.id uuid
---metadb:require folio_inventory.ill_policy__t.name varchar
+--metadb:require folio_inventory.ill_policy__t.name text
 
 DROP TABLE IF EXISTS holdings_ext;
 
