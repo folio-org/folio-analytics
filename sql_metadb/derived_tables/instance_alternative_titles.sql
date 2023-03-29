@@ -23,8 +23,6 @@ CREATE INDEX ON instance_alternative_titles (instance_id);
 
 CREATE INDEX ON instance_alternative_titles (instance_hrid);
 
-CREATE INDEX ON instance_alternative_titles (alternative_title);
-
 CREATE INDEX ON instance_alternative_titles (alternative_title_type_id);
 
 CREATE INDEX ON instance_alternative_titles (alternative_title_ordinality);

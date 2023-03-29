@@ -1,6 +1,6 @@
 --metadb:table po_acq_unit_ids
 --metadb:require folio_orders.acquisitions_unit__t.id uuid
---metadb:require folio_orders.acquisitions_unit__t.name varchar
+--metadb:require folio_orders.acquisitions_unit__t.name text
 
 -- These derived table extracts aquisition unit ids from purchase
 -- order table.
