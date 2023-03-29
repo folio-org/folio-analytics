@@ -1,12 +1,13 @@
 -- public.po_lines
 COMMENT ON COLUMN public.po_lines.id IS 'UUID identifying this purchase order line';
 COMMENT ON COLUMN public.po_lines.acquisition_method IS 'UUID of the acquisition method for this purchase order line';
+COMMENT ON COLUMN public.po_lines.agreement_id IS 'UUID of the agreement this purchase order line is related to';
 COMMENT ON COLUMN public.po_lines.automatic_export IS 'If true then line will be marked as available to export in the EDIFACT format or other format';
 COMMENT ON COLUMN public.po_lines.cancellation_restriction IS 'Whether or not there are cancellation restrictions for this purchase order line';
 COMMENT ON COLUMN public.po_lines.cancellation_restriction_note IS 'Free-form notes related to cancellation restrictions';
 COMMENT ON COLUMN public.po_lines.check_in_items IS 'If true this will toggle the Check-in workflow for details associated with this PO line';
 COMMENT ON COLUMN public.po_lines.collection IS 'Whether or not this purchase order line is for a collection';
-COMMENT ON COLUMN public.po_lines.cost_additional_cost IS 'Lump sum that is added to the total estimated price - not affected by discount';
+COMMENT ON COLUMN public.po_lines.cost__additional_cost IS 'Lump sum that is added to the total estimated price - not affected by discount';
 COMMENT ON COLUMN public.po_lines.cost_currency IS 'An ISO currency code'
 COMMENT ON COLUMN public.po_lines.cost_discount IS 'Percentage (0 to 100) or amount (positive number) that is subtracted from the list price time quantities calculation before additional cost';
 COMMENT ON COLUMN public.po_lines.cost_discount_type IS 'Percentage or amount discount type';
@@ -15,8 +16,9 @@ COMMENT ON COLUMN public.po_lines.cost_list_unit_price IS 'The per-item list pri
 COMMENT ON COLUMN public.po_lines.cost_list_unit_price_electronic IS 'The e-resource per-item list price';
 COMMENT ON COLUMN public.po_lines.cost_po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
 COMMENT ON COLUMN public.po_lines.cost_quantity_electronic IS 'Quantity of electronic items in this purchase order line';
-COMMENT ON COLUMN public.po_lines.cost_quantity_physical IS 'Quantity of physical items or resources of 'Other' order format in this purchase order line';
+COMMENT ON COLUMN public.po_lines.cost_quantity_physical IS 'Quantity of physical items or resources of ''Other'' order format in this purchase order line';
 COMMENT ON COLUMN public.po_lines.description IS 'Description of the material';
+COMMENT ON COLUMN public.po_lines.details__is_acknowledged IS 'Flag for acknowledge receiving note';
 COMMENT ON COLUMN public.po_lines.details_receiving_note IS 'Notes regarding receiving instructions';
 COMMENT ON COLUMN public.po_lines.details_subscription_from IS 'The start date of the subscription';
 COMMENT ON COLUMN public.po_lines.details_subscription_interval IS 'The subscription interval in days';
