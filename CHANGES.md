@@ -1,5 +1,8 @@
 ## 1.6.0
 
+* Due to a data structure change for series into 'array' that has changed how the data field "series" 
+  needs to be extracted from the json data. 
+
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
