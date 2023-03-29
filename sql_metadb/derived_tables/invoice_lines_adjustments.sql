@@ -52,18 +52,18 @@ CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
 
 CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
 
-COMMENT ON COLUMN invoice_lines_adjustments.invoice_line_id IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.invoice_line_id IS 'UUID of this invoice line id';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_description IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_description IS 'List of invoice level adjustments. The adjustments can be pro-rated which are defined at the invoice level, but are applied to the invoice lines. A generic example is a shipping fee which should be spread out across all of the invoice lines so that all funds involved pay some portion of the fee.';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_prorate IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_prorate IS 'Displayed in invoice line per adjustment in toggled on in settings';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_relation_to_total IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_relation_to_total IS 'Relationship of this adjustment to the total';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_type IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_type IS 'Adjustment type';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_value IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_value IS 'Adjustment value';
 
-COMMENT ON COLUMN invoice_lines_adjustments.adjustment_adjustments_total IS 'description';
+COMMENT ON COLUMN invoice_lines_adjustments.adjustment_adjustments_total IS 'Total amount which is sum of all invoice line adjustments and all non-prorated invoice level adjustments. This amount is always calculated by system.';
 
 VACUUM ANALYZE invoice_lines_adjustments;
