@@ -1,4 +1,4 @@
--- Create a derive table for subjects in the instance record.
+-- Create a derived table for subjects in the instance record.
 
 DROP TABLE IF EXISTS instance_subjects;
 
