@@ -9,6 +9,9 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Added comments to derived tables: `invoice_lines_adjustments`,
+  `po_lines_tags`
+
 
 ## 1.5.0
 
