@@ -1,4 +1,4 @@
---metadb:table_ <po_organization.sql>
+--metadb:table po_organization
 
 --Create a local table for contact information for organization or vendor used in PO.
 
