@@ -1,6 +1,6 @@
 ## 1.6.0
 
-* changed array json type extract for subjects and ordinality.
+* Due to a data structure change for sunjects into 'array' that has changed how the data field "subject" needs to be extracted from the json data.
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
