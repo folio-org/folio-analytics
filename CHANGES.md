@@ -7,7 +7,9 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
   
-* A new derived table `finance_funds` for LDP1 and Metadb to show financial data.
+* A new derived table for LDP1 and Metadb to show financial data.
+    * `finance_fund_ext` for LDP1
+    * `finance_funds` for Metadb
 
 
 ## 1.5.0
