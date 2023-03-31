@@ -1,7 +1,7 @@
 --metadb:table invoice_lines_fund_distributions
 
--- Create a derived table to extract fund_distributions from invoice_lines 
--- and joining funds related tables.
+-- Creates a derived table to extract fund_distributions from invoice_lines 
+-- and join fund-related tables.
 
 DROP TABLE IF EXISTS invoice_lines_fund_distributions;
 
@@ -57,5 +57,27 @@ CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_type);
 CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_sub_total);
 
 CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_total);
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_id IS 'UUID of the invoice line associated with this fund distribution';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_distribution_id IS 'UUID of the fund distribution';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_status IS 'The current status of this fund';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_code IS 'The code of the fund associated with this fund distribution';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_name IS 'The name of the fund associated with this fund distribution';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_type_id IS 'UUID of the fund type associated with this fund';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_type_name IS 'The name of this fund type';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_distribution_value IS 'The percentage of the cost to be applied to this fund';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.fund_distribution_type IS 'Percentage or amount type of the value property';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_sub_total IS 'Invoice line amount before adjustments are applied';
+
+COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_total IS 'Invoice line total amount which is sum of subTotal and adjustmentsTotal. This amount is always calculated by system.';
 
 VACUUM ANALYZE invoice_lines_fund_distributions;
