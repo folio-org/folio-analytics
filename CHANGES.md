@@ -9,7 +9,7 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
-* Added comments to derived tables: `po_lines_tags`
+* Added comments to derived tables: `po_lines_tags`, 'invoice_lines_fund_distributions'
 
 
 ## 1.5.0
