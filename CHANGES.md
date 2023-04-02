@@ -1,7 +1,5 @@
 ## 1.6.0
 
-* Added comments to public.sql for public_po_lines table
-
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
 
@@ -14,6 +12,12 @@
 * Ported derived table `feesfines_accounts_actions` from LDP1.
 
 * Added comments for public.po_order_invoice_relns
+
+* Corrected table names in comments
+
+* Added comments to po_lines_vendor_reference_numbers.sql
+
+* Added comments to public.sql for public_po_lines table
 
 
 ## 1.5.0
