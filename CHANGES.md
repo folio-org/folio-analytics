@@ -26,6 +26,8 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Ported LDP1 derived table `requests_items` to Metadb
+
 * Ported derived table `feesfines_accounts_actions` from LDP1.
 
 * Added comments for public.po_order_invoice_relns
