@@ -19,6 +19,8 @@
 
 * Added comments to public.sql for public_po_lines table
 
+* Ported derived table `users_addresses` from LDP1.
+
 
 ## 1.5.0
 

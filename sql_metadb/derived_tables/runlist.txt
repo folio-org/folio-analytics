@@ -66,6 +66,7 @@ item_tags.sql
 loans_items.sql
 loans_renewal_count.sql
 po_lines_tags.sql
+users_addresses.sql
 users_departments_unpacked.sql
 users_groups.sql
 invoice_lines_fund_distributions.sql
