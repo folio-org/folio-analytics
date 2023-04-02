@@ -1,3 +1,5 @@
+--metadb:table agreements_subscription_agreement_org_ext
+
 -- Creates a derived table on subscription_agreement_org joins related
 -- values from org and resolves values and labels from
 -- erm_agreements_refdata_value for sao_role

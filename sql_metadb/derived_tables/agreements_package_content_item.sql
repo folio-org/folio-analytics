@@ -1,3 +1,14 @@
+--metadb:table agreements_package_content_item
+--metadb:require folio_agreements.entitlement.ent_id uuid
+--metadb:require folio_agreements.entitlement.ent_resource_fk uuid
+--metadb:require folio_agreements.identifier_occurrence.io_ti_fk uuid
+--metadb:require folio_agreements.package_content_item.id uuid
+--metadb:require folio_agreements.package_content_item.pci_access_end date
+--metadb:require folio_agreements.package_content_item.pci_access_start date
+--metadb:require folio_agreements.package_content_item.pci_pkg_fk uuid
+--metadb:require folio_agreements.package_content_item.pci_pti_fk uuid
+--metadb:require folio_agreements.package_content_item.pci_removed_ts bigint
+
 /* Creates a derived table on all needed data of package_content_items
  * that either are linked directly to an entitlement or have a package
  * linked that is linked to an entitlement.
@@ -50,7 +61,7 @@ SELECT
     rpubc.rdc_description AS res_publication_type_category
 FROM
     folio_agreements.package_content_item AS pci
-    INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk
+    INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk::uuid
     LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
     LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
     LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
@@ -113,7 +124,7 @@ SELECT
 FROM
     folio_agreements.package_content_item AS pci
     LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
-    INNER JOIN folio_agreements.entitlement AS ent ON ent.ent_resource_fk = pack.id
+    INNER JOIN folio_agreements.entitlement AS ent ON ent.ent_resource_fk::uuid = pack.id
     LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
     LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
     LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id

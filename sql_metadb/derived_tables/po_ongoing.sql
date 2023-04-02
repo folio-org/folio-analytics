@@ -1,3 +1,5 @@
+--metadb:table po_ongoing
+
 -- Create a derived table for ongoing details in purchase orders.
 
 DROP TABLE IF EXISTS po_ongoing;

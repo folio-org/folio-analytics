@@ -1,3 +1,5 @@
+--metadb:table item_electronic_access
+
 DROP TABLE IF EXISTS item_electronic_access;
 
 -- Creates a table for electronic access points for item records. This includes the name of the relationship, id, and uri.

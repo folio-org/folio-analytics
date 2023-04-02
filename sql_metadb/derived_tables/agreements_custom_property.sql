@@ -1,3 +1,9 @@
+--metadb:table agreements_custom_property
+--metadb:require folio_agreements.custom_property_integer.id bigint
+--metadb:require folio_agreements.custom_property_integer.value integer
+--metadb:require folio_agreements.custom_property_text.id bigint
+--metadb:require folio_agreements.custom_property_text.value text
+
 --Creates a derived table on agreements custom properties.
 
 DROP TABLE IF EXISTS agreements_custom_property;

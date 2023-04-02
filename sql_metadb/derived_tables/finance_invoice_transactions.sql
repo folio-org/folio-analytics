@@ -1,3 +1,5 @@
+--metadb:table finance_invoice_transactions
+
 -- Create a derived table of fund distribution in invoices.
 -- The derived table contains the information on the fund distribution
 -- from the invoices app as well as from the transactions system

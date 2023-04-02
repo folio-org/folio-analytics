@@ -1,3 +1,5 @@
+--metadb:table holdings_statistical_codes
+
 -- Create a local holdings table with the id and name for the code and type.
 
 DROP TABLE IF EXISTS holdings_statistical_codes;

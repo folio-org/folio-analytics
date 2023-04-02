@@ -1,3 +1,5 @@
+--metadb:table item_statistical_codes
+
 -- Create a local table for item statistics with the id and name of
 -- the code and type.
 

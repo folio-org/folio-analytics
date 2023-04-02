@@ -1,3 +1,5 @@
+--metadb:table agreements_subscription_agreement
+
 -- Creates a derived table on agreements_subscription_agreement and
 -- resolves values and labels from erm_agreements_refdata_value for:
 --    sa_renewal_priority

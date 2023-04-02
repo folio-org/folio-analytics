@@ -1,3 +1,8 @@
+--metadb:table users_departments_unpacked
+--metadb:require folio_users.departments__t.id uuid
+--metadb:require folio_users.departments__t.code text
+--metadb:require folio_users.departments__t.name text
+
 DROP TABLE IF EXISTS users_departments_unpacked;
 
 -- Create a derived table that takes the users table and joins
