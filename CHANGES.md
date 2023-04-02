@@ -7,6 +7,9 @@
   Comments added;
   Updated to replace obsolete uses of json_extract_path_text().
 
+* Added item effective call number components (call number, suffix, prefix) in loans_items derived table.
+  Comments added as well.
+
 * Porting po_instance derived table to Metadb.
 
 * corrected "hrid" to "item_hrid" for index
