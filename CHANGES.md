@@ -7,6 +7,9 @@
   Comments added;
   Updated to replace obsolete uses of json_extract_path_text().
 
+* Due to a data structure change for series into 'array' that has changed how the data field "series" 
+  needs to be extracted from the json data. 
+
 * Added item effective call number components (call number, suffix, prefix) in loans_items derived table.
   Comments added as well.
 
