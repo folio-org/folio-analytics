@@ -1,6 +1,6 @@
-* added comments for public.po_order_invoice_relns
-
 ## 1.6.0
+
+* Added comments to public.sql for public_po_lines table
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
@@ -12,6 +12,8 @@
 * A new derived table `finance_funds` for Metadb to show financial data.
 
 * Ported derived table `feesfines_accounts_actions` from LDP1.
+
+* Added comments for public.po_order_invoice_relns
 
 
 ## 1.5.0
