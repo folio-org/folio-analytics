@@ -1,3 +1,8 @@
+-- public.po_order_invoice_relns
+COMMENT ON COLUMN public.po_order_invoice_relns.id IS 'UUID of po and invoice relationship record';
+COMMENT ON COLUMN public.po_order_invoice_relns.invoice_id IS 'Invoice UUID';  
+COMMENT ON COLUMN public.po_order_invoice_relns.purchase_order_id IS 'Purchase order UUID';
+
 -- public.circulation_loans
 COMMENT ON COLUMN public.circulation_loans.id IS 'Unique ID (generated UUID) of the loan';
 COMMENT ON COLUMN public.circulation_loans.action IS 'Last action performed on a loan (currently can be any value, values commonly used are checkedout and checkedin)';
