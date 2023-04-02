@@ -1,6 +1,6 @@
 # folio-analytics
 
-Copyright (C) 2018-2022 The Open Library Foundation
+Copyright (C) 2018-2023 The Open Library Foundation
 
 This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
@@ -8,21 +8,16 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 ## Releases
 
-Each release of folio-analytics is tested with specific FOLIO
-releases:
+Each release of folio-analytics up to 1.6.0 is tested with specific
+FOLIO releases:
 
 | FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
 | ------------- | :----------------------: | :------------------------: |
-| Kiwi          |            1.2           |                            |
+| Kiwi          |            1.2           |            N/A             |
 | Lotus         |            1.3           |            1.5             |
-| Morning Glory |            1.4           |                            |
+| Morning Glory |            1.4           |            N/A             |
 | Nolana        |            1.5           |            1.6             |
-| Orchid        |            1.6           |                            |
-| Poppy         |            1.7           |                            |
-| Quesnelia     |            1.8           |                            |
-
-It may not be necessary to match the versions precisely, but doing so
-when possible will usually offer the highest degree of compatibility.
+| Orchid        |            1.6           |            N/A             |
 
 
 ## Overview
