@@ -11,6 +11,8 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Ported derived table `feesfines_accounts_actions` from LDP1.
+
 
 ## 1.5.0
 
@@ -70,4 +72,3 @@
 
 * Removed duplicate column `holdings_record_id` from derived table
   `items_holdings_instances`.
-
