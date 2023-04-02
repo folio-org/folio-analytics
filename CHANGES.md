@@ -1,7 +1,27 @@
 ## 1.6.0
 
+* __Breaking changes:__ created_location is renamed to bill_to,
+  po_wf_status renamed to po_workflow_status,
+  created_by renamed to created_by_user_name;
+  __New fields added:__ manual, po_number_id, po_line_id, ship_to, pol_holdings_id, pol_location_source;
+  Comments added;
+  Updated to replace obsolete uses of json_extract_path_text().
+
 * Due to a data structure change for series into 'array' that has changed how the data field "series" 
   needs to be extracted from the json data. 
+
+* Added item effective call number components (call number, suffix, prefix) in loans_items derived table.
+  Comments added as well.
+
+* Porting po_instance derived table to Metadb.
+
+* corrected "hrid" to "item_hrid" for index
+
+* Submitted changes for items_holdings_instances table:
+  renamed: hrid to item_hrid, cal_number to holdings_call_number;
+  added: holdings_hrid, instance_hrid, item_effective_call_number, 
+         item_effective_call_number_prefix, item _effective_call_number_suffix
+  created comments at the end.
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
@@ -10,10 +30,30 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
   
-* A new derived table `finance_funds` for Metadb to show financial data.
+* A new derived table for LDP1 and Metadb to show financial data.
+    * `finance_funds_ext` for LDP1
+    * `finance_funds` for Metadb
+
+* Ported LDP1 derived table `requests_items` to Metadb
+
+* Ported derived table `feesfines_accounts_actions` from LDP1.
+
+* Added comments for public.po_order_invoice_relns
+
+* Corrected table names in comments
+
+* Added comments to po_lines_vendor_reference_numbers.sql
+
+* Added comments to public.sql for public_po_lines table
+
+* Ported derived table `users_addresses` from LDP1.
 
 
 ## 1.5.0
+
+* Additional columns added for po_lines_locations:
+  pol_location_name and pol_location source to accomodate data structure change with adding holding_id field for po lines,
+  Added comments to all columns for po_lines_locations.sql.
 
 * New derived table for LDP1, `instance_administrative_notes`,
   extracts administrative notes from instance records.
@@ -67,4 +107,3 @@
 
 * Removed duplicate column `holdings_record_id` from derived table
   `items_holdings_instances`.
-
