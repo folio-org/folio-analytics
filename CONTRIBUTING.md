@@ -163,10 +163,10 @@ derived table concisely.
 9\. Checklist
 -------------
 
-The checklist below can be used to guide your review of a pull
-request.  A copy of the checklist may be added to a comment attached
-to a review.  Check off the items that have been confirmed in your
-review by adding an `x` between the square brackets `[]` on each line.
+The checklist below can be used to guide your review of a pull request
+(PR).  A copy of the checklist may be added to a comment attached to a
+review.  Check off the items that have been confirmed in your review
+by adding an `x` between the square brackets `[]` on each line.
 
 If any items remain unchecked or you have further questions, you can
 indicate that in the comment as well and select "Request changes" as
@@ -174,9 +174,9 @@ the review response.
 
 ```
 All queries:
-- [ ] Pull request is based on a new branch (not main)
-- [ ] Pull request scope is not overly broad
-- [ ] Release notes have been added or updated in CHANGES.md
+- [ ] PR Title and Description are accurate and thorough
+- [ ] PR is based on a new branch (not main)
+- [ ] PR scope is not overly broad
 - [ ] Query runs without errors
 - [ ] Query output is correct
 - [ ] Query logic is clear and well documented
