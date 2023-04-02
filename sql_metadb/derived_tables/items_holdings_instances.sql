@@ -1,3 +1,5 @@
+--metadb:table items_holdings_instances
+
 -- Create an extended items table that includes holdings and instances
 -- information such as call number, material type, title, etc.
 
@@ -88,10 +90,6 @@ CREATE INDEX ON items_holdings_instances (instance_id);
 CREATE INDEX ON items_holdings_instances (shelving_title);
 
 CREATE INDEX ON items_holdings_instances (cataloged_date);
-
-CREATE INDEX ON items_holdings_instances (index_title);
-
-CREATE INDEX ON items_holdings_instances (title);
 
 CREATE INDEX ON items_holdings_instances (loan_type_id);
 

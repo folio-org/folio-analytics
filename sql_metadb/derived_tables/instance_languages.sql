@@ -1,3 +1,5 @@
+--metadb:table instance_languages
+
 -- Create derived table for Instance languages
 
 DROP TABLE IF EXISTS instance_languages;

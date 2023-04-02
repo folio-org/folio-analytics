@@ -1,3 +1,5 @@
+--metadb:table item_tags
+
 -- This table creates a listing of items and their tag(s).
 
 DROP TABLE IF EXISTS item_tags;

@@ -1,3 +1,5 @@
+--metadb:table instance_contributors
+
 --This derived table extracts data for the instance contributors.
 --It includes the instance uuid, hrid, the contributor's name, if it is primary, type id, type name, type text, name type id and name type.
 --Ordinality has been included.

@@ -1,3 +1,5 @@
+--metadb:table po_line_fund_distribution_transactions
+
 DROP TABLE IF EXISTS po_line_fund_distribution_transactions;
 
 -- Create a derived table that contains information about the fund distribution in the po lines

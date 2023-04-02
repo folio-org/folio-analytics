@@ -1,3 +1,5 @@
+--metadb:table item_administrative_notes
+
 -- This derived table extracts administrative notes from the item
 -- record.
 

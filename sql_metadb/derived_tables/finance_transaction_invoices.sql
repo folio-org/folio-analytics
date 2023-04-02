@@ -1,3 +1,5 @@
+--metadb:table finance_transaction_invoices
+
 -- Create a derived table that joins invoice and invoice_lines fields
 -- to transactions for expenditure reports in system currency
 --

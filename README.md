@@ -6,7 +6,21 @@ This software is distributed under the terms of the Apache License,
 Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 
-## Introduction
+## Releases
+
+Each release of folio-analytics up to 1.6.0 is tested with specific
+FOLIO releases:
+
+| FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
+| ------------- | :----------------------: | :------------------------: |
+| Kiwi          |            1.2           |            N/A             |
+| Lotus         |            1.3           |            1.5             |
+| Morning Glory |            1.4           |            N/A             |
+| Nolana        |            1.5           |            1.6             |
+| Orchid        |            1.6           |            N/A             |
+
+
+## Overview
 
 This repository contains reports and other analytics developed for
 FOLIO and designed to run on the [Library Data
@@ -52,19 +66,6 @@ Consult the README.md file in the [report queries](sql/report_queries)
 folder for a query table of contents, and look for additional
 README.md files in the query folders to explain how to run the
 reports.
-
-
-## Releases
-
-Each release of folio-analytics is intended to be used with a specific
-FOLIO release:
-
-| FOLIO         | folio-analytics  |
-| ------------- | :--------------: |
-| Morning Glory |        1.4       |
-| Lotus         |        1.3       |
-| Kiwi          |        1.2       |
-| Juniper       |        1.2       |
 
 
 ## Branches

@@ -1,3 +1,7 @@
+--metadb:table po_acq_unit_ids
+--metadb:require folio_orders.acquisitions_unit__t.id uuid
+--metadb:require folio_orders.acquisitions_unit__t.name text
+
 -- These derived table extracts aquisition unit ids from purchase
 -- order table.
 
@@ -22,5 +26,13 @@ CREATE INDEX ON po_acq_unit_ids (po_number);
 CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_id);
 
 CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_name);
+
+COMMENT ON COLUMN po_acq_unit_ids.po_id IS 'UUID of this purchase order';
+
+COMMENT ON COLUMN po_acq_unit_ids.po_number IS 'human readable ID assigned to this purchase order';
+
+COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_id IS 'UUID of this acquisitions unit record';
+
+COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_name IS 'Name for this acquisitions unit';
 
 VACUUM ANALYZE po_acq_unit_ids;

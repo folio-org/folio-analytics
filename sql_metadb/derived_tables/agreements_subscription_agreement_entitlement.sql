@@ -1,3 +1,14 @@
+--metadb:table agreements_subscription_agreement_entitlement
+--metadb:require folio_agreements.entitlement.ent_id uuid
+--metadb:require folio_agreements.entitlement.ent_active_to date
+--metadb:require folio_agreements.entitlement.ent_active_from date
+--metadb:require folio_agreements.entitlement.ent_owner_fk uuid
+--metadb:require folio_agreements.entitlement.ent_resource_fk uuid
+--metadb:require folio_agreements.entitlement.ent_authority text
+--metadb:require folio_agreements.entitlement.ent_reference text
+--metadb:require folio_agreements.order_line.pol_owner_fk uuid
+--metadb:require folio_agreements.order_line.pol_orders_fk uuid
+
 -- Creates a derived table on subscription_agreement with entitlement and
 -- order_line to add po_line_id
 

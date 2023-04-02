@@ -1,13 +1,9 @@
-DROP TABLE IF EXISTS finance_transaction_purchase_order;
+--metadb:table finance_transaction_purchase_order
 
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
---
--- Tables included:
---    finance_transactions
---    finance_funds
---    finance_budget
---    po_lines
---    po_purchase_orders
+
+DROP TABLE IF EXISTS finance_transaction_purchase_order;
+
 CREATE TABLE finance_transaction_purchase_order AS
 SELECT
     ft.id AS transaction_id,
@@ -25,6 +21,7 @@ SELECT
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'initialAmountEncumbered')::numeric(19,4) AS transaction_encumbrance_initial_amount,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'orderType') AS transaction_encumbrance_order_type,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'subscription') AS transaction_encumbrance_subscription,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'status') AS transaction_encumbrance_status,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid AS po_line_id,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId')::uuid AS po_id,
     jsonb_extract_path_text(pol.jsonb, 'poLineNumber') AS pol_number,
@@ -73,6 +70,8 @@ CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_orde
 
 CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_subscription);
 
+CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_status);
+
 CREATE INDEX ON finance_transaction_purchase_order (po_line_id);
 
 CREATE INDEX ON finance_transaction_purchase_order (po_id);
@@ -118,6 +117,8 @@ COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_ini
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_order_type IS 'Taken from the purchase order';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_status IS 'The status of this encumbrance';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_line_id IS 'UUID referencing the poLine that represents the package that this POLs title belongs to';
 

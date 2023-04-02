@@ -1,3 +1,5 @@
+--metadb:table instance_administrative_notes
+
 -- This derived table extracts administrative notes from the instance
 -- record.
 

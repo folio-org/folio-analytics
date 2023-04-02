@@ -1,3 +1,5 @@
+--metadb:table instance_ext
+
 -- Create an extended version of the instance table where the names for identifiers are included
 -- This derived table doesn't include all the properties extracted from the json objects
 -- For example, electronic access, notes, publication, series, or edition statements have their own
@@ -22,7 +24,7 @@ SELECT
     jsonb_extract_path_text(i.jsonb, 'modeOfIssuanceId')::uuid AS mode_of_issuance_id,
     moit.name AS mode_of_issuance_name,
     jsonb_extract_path_text(i.jsonb, 'catalogedDate')::date AS cataloged_date,
-    jsonb_extract_path_text(i.jsonb, 'metadata', 'createdDate')::timestamp AS created_date,
+    jsonb_extract_path_text(i.jsonb, 'metadata', 'createdDate')::timestamptz AS created_date,
     jsonb_extract_path_text(i.jsonb, 'metadata', 'updatedDate')::timestamptz AS updated_date
 FROM
     folio_inventory.instance AS i

@@ -1,4 +1,6 @@
---po_lines_tags
+--metadb:table po_lines_tags
+
+-- Creates a derived table for tags in purchase order lines.
 
 DROP TABLE IF EXISTS po_lines_tags;
 

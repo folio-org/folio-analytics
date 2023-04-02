@@ -1,3 +1,5 @@
+--metadb:table po_lines_locations
+
 -- Create a derived table for Purchase Order Line Locations/holdings including
 -- location quantity and type. Purchase order line location can be represented either by location or holding id or it could not have one at all, 
 -- it depends on how PO is created, and it is specified in pol_location_source.

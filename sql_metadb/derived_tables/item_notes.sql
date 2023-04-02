@@ -1,3 +1,5 @@
+--metadb:table item_notes
+
 -- This derived table extracts the nested array item notes
 
 DROP TABLE IF EXISTS item_notes;
@@ -27,8 +29,6 @@ CREATE INDEX ON item_notes (holdings_record_id);
 CREATE INDEX ON item_notes (note_type_id);
 
 CREATE INDEX ON item_notes (note_type_name);
-
-CREATE INDEX ON item_notes (note);
 
 CREATE INDEX ON item_notes (staff_only);
 

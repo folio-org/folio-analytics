@@ -26,8 +26,6 @@ CREATE INDEX ON item_notes (note_type_id);
 
 CREATE INDEX ON item_notes (note_type_name);
 
-CREATE INDEX ON item_notes (note);
-
 CREATE INDEX ON item_notes (staff_only);
 
 CREATE INDEX ON item_notes (note_ordinality);
