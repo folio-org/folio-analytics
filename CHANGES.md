@@ -1,5 +1,3 @@
-
-
 ## 1.6.0
 
 * Added comments to public.sql for public_po_lines table
@@ -13,8 +11,16 @@
   
 * A new derived table `finance_funds` for Metadb to show financial data.
 
+* Ported derived table `feesfines_accounts_actions` from LDP1.
+
+* Added comments for public.po_order_invoice_relns
+
 
 ## 1.5.0
+
+* Additional columns added for po_lines_locations:
+  pol_location_name and pol_location source to accomodate data structure change with adding holding_id field for po lines,
+  Added comments to all columns for po_lines_locations.sql.
 
 * New derived table for LDP1, `instance_administrative_notes`,
   extracts administrative notes from instance records.
@@ -68,4 +74,3 @@
 
 * Removed duplicate column `holdings_record_id` from derived table
   `items_holdings_instances`.
-
