@@ -1,3 +1,5 @@
+* Added comments to metadb derived table po_line_vendor_reference_number.sql.
+
 ## 1.6.0
 
 * __Breaking changes:__ created_location is renamed to bill_to,
