@@ -43,6 +43,8 @@
   documentation and remove unnecessary quotation marks and tabs.  Also
   ported to Metadb.
   
+* Created report loans_and_renewals_counts_by_year.sql for metadb
+
 * A new derived table for LDP1 and Metadb to show financial data.
     * `finance_funds_ext` for LDP1
     * `finance_funds` for Metadb
@@ -59,7 +61,7 @@
 
 * Added comments to public.sql for public_po_lines table
 
-* Ported derived table `users_addresses` from LDP1.
+* Ported derived table users_addresses from LDP1.
 
 
 ## 1.5.0
