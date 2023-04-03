@@ -163,12 +163,37 @@ derived table concisely.
 9\. Checklist
 -------------
 
-[This checklist](pull_request_template.md) can be used to guide your
-review of a pull request.  A copy of the checklist may be added to a
-comment attached to a review.  Check off the items that have been
-confirmed in your review by adding an `x` between the square brackets
-`[]` on each line.
+The checklist below can be used to guide your review of a pull request
+(PR).  A copy of the checklist may be added to a comment attached to a
+review.  Check off the items that have been confirmed in your review
+by adding an `x` between the square brackets `[]` on each line.
 
 If any items remain unchecked or you have further questions, you can
 indicate that in the comment as well and select "Request changes" as
 the review response.
+
+```
+All queries:
+- [ ] PR Title and Description are accurate and thorough
+- [ ] PR is based on a new branch (not main)
+- [ ] PR scope is not overly broad
+- [ ] Query runs without errors
+- [ ] Query output is correct
+- [ ] Query logic is clear and well documented
+- [ ] Query is readable and properly indented with spaces (not tabs)
+- [ ] Table and column names are in all-lowercase
+- [ ] Quotation marks are used only where necessary
+
+Report queries:
+- [ ] Query has complete user documentation
+    - [ ] Purpose of report
+    - [ ] Sample output
+    - [ ] Query instructions
+
+Derived tables:
+- [ ] Query begins with user documentation in comment lines
+- [ ] File name is listed in `runlist.txt` after dependencies
+- [ ] All columns have indexes
+- [ ] Table is vacuumed and analyzed
+```
+
