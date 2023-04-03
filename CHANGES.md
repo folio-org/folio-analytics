@@ -7,6 +7,8 @@
   Comments added;
   Updated to replace obsolete uses of json_extract_path_text().
 
+* Ported new Metadb derived table "po_prod_ids" with comments.
+
 * Fixed table names in po_organization.sql.
 
 * Added new metadb deived table: po_organization with expanded column names:
