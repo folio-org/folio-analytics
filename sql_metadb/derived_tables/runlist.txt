@@ -57,6 +57,7 @@ po_lines_locations.sql
 po_lines_phys_mat_type.sql
 po_lines_physical.sql
 po_ongoing.sql
+po_organization.sql
 item_administrative_notes.sql
 item_ext.sql
 item_electronic_access.sql

@@ -1,5 +1,3 @@
-* Added comments to metadb derived table po_line_vendor_reference_number.sql.
-
 ## 1.6.0
 
 * __Breaking changes:__ created_location is renamed to bill_to,
@@ -8,6 +6,13 @@
   __New fields added:__ manual, po_number_id, po_line_id, ship_to, pol_holdings_id, pol_location_source;
   Comments added;
   Updated to replace obsolete uses of json_extract_path_text().
+
+* Fixed table names in po_organization.sql.
+
+* Added new metadb deived table: po_organization with expanded column names:
+  organization_id, organization_name, organization_code, ogranization_descriprtion
+  from previously used org_id, org_code, org_name, org_description in LDP1.
+  Added new field "is_vendor" to indicate if organization is a vendor.
 
 * Due to a data structure change for series into 'array' that has changed how the data field "series" 
   needs to be extracted from the json data. 
@@ -24,6 +29,8 @@
   added: holdings_hrid, instance_hrid, item_effective_call_number, 
          item_effective_call_number_prefix, item _effective_call_number_suffix
   created comments at the end.
+
+* Added comments to metadb derived table po_line_vendor_reference_number.sql.
 
 * Use `timestamptz` columns for data extracted from metadata
   `createdDate` fields.
