@@ -119,6 +119,13 @@ Additions or changes to derived tables should be accompanied by any
 required additions or changes to the `runlist.txt` and `deps.txt`
 files, together in the same pull request.
 
+Derived table queries for Metadb should also include any relevant
+external SQL directives, in particular:
+
+```
+--metadb:table <table>
+```
+
 
 7\. Formatting SQL
 ------------------
@@ -195,5 +202,6 @@ Derived tables:
 - [ ] File name is listed in `runlist.txt` after dependencies
 - [ ] All columns have indexes
 - [ ] Table is vacuumed and analyzed
+- [ ] First line is "--metadb:table" directive, followed by blank line
 ```
 
