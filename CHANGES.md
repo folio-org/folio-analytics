@@ -19,6 +19,8 @@
 * Due to a data structure change for series into 'array' that has changed how the data field "series" 
   needs to be extracted from the json data. 
 
+* Due to a data structure change for subjects into 'array' that has changed how the data field "subject" needs to be extracted from the json data.
+
 * Added item effective call number components (call number, suffix, prefix) in loans_items derived table.
   Comments added as well.
 
