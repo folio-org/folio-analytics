@@ -17,6 +17,8 @@ jobs:
       run: sudo runuser -l postgres -c 'createuser metadb'
     - name: Create metadb database
       run: createdb metadb -U runner -O runner
+    - name: Create schema in metadb
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d metadb -c "create schema folio_derived;" -U runner
     - name: Download metadb database
       run: curl -sSO https://metadb.dev/pg_dump/metadb_folio.dump
     - name: Load metadb data
