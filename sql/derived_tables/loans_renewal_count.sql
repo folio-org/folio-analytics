@@ -18,6 +18,7 @@ WITH loan_count AS (
 SELECT
     CURRENT_DATE AS current_as_of_date,
     it.id AS item_id,
+    it.hrid AS item_hrid,
     COALESCE(lc.num_loans, 0) AS num_loans,
     COALESCE(lc.num_renewals, 0) AS num_renewals
 FROM
@@ -31,6 +32,16 @@ CREATE INDEX ON loans_renewal_count (item_id);
 CREATE INDEX ON loans_renewal_count (num_loans);
 
 CREATE INDEX ON loans_renewal_count (num_renewals);
+
+COMMENT ON COLUMN loans_renewal_count.current_as_of_date IS 'Current date when report was run';
+
+COMMENT ON COLUMN loans_renewal_count.item_id IS 'Item UUID';
+
+COMMENT ON COLUMN loans_renewal_count.item_hrid IS 'Item HRID';
+
+COMMENT ON COLUMN loans_renewal_count.num_loans IS 'Count of loans associated with the item';
+
+COMMENT ON COLUMN loans_renewal_count.num_renewals IS 'Count of renewals associated with the item';
 
 VACUUM ANALYZE loans_renewal_count;
 
