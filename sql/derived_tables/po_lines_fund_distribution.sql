@@ -6,7 +6,7 @@ CREATE TABLE po_lines_fund_distribution AS
 SELECT
     po_lines.id AS pol_id,
     json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'fundId') AS pol_distr_fund_id,
-    json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'value') AS pol_distr_value,
+    json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'value')::numeric(19, 4) AS pol_distr_value,
     json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'distributionType') AS pol_distr_type,
     json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'code') AS pol_distr_code,
     json_extract_path_text(json_array_elements(po_lines.data->'fundDistribution'), 'encumbrance') AS pol_distr_encumbrance_id,
