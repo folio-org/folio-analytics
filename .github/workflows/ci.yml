@@ -1,0 +1,33 @@
+name: folio-analytics CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Start postgres
+      run: sudo service postgresql start
+    - name: Create user runner
+      run: sudo runuser -l postgres -c 'createuser -s runner'
+    - name: Create user metadb
+      run: sudo runuser -l postgres -c 'createuser metadb'
+    - name: Create metadb database
+      run: createdb metadb -U runner -O runner
+    - name: Create schema in metadb
+      run: psql -bq -c '\set ON_ERROR_STOP on' -d metadb -c "create schema folio_derived;" -U runner
+    - name: Download metadb database
+      run: curl -sSO https://metadb.dev/pg_dump/metadb_folio.dump
+    - name: Load metadb data
+      run: pg_restore -d metadb -U runner metadb_folio.dump
+    - name: Clean up metadb file
+      run: rm -f metadb_folio.dump
+    - name: Vacuum metadb database
+      run: vacuumdb -qz -d metadb -U runner
+    - name: Run derived table queries in metadb database
+      run: .github/workflows/runtests.sh
+    - name: Run again in metadb database to test drop table
+      run: .github/workflows/runtests.sh
