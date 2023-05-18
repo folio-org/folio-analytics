@@ -19,5 +19,11 @@ CREATE INDEX ON po_lines_tags (pol_tag);
 
 CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
 
+COMMENT ON COLUMN po_lines_tags.pol_id IS 'UUID identifying this purchase order line';
+
+COMMENT ON COLUMN po_lines_tags.pol_tag IS 'Arbitrary tags associated with this purchase order line';
+
+COMMENT ON COLUMN po_lines_tags.pol_tag_ordinality IS 'The ordinality of the tag associated with the po line';
+
 VACUUM ANALYZE po_lines_tags;
 
