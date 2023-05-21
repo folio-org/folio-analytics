@@ -32,4 +32,3 @@ CREATE INDEX ON instance_notes (instance_note_type_name);
 
 CREATE INDEX ON instance_notes (instance_notes_ordinality);
 
-VACUUM ANALYZE instance_notes;

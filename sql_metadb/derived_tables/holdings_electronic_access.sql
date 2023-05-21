@@ -45,5 +45,4 @@ CREATE INDEX ON holdings_electronic_access (public_note);
 
 CREATE INDEX ON holdings_electronic_access (eaccess_ordinality);
 
-VACUUM ANALYZE holdings_electronic_access;
 

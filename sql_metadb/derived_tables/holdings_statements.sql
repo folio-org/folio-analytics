@@ -47,5 +47,4 @@ CREATE INDEX ON holdings_statements (staff_note);
 
 CREATE INDEX ON holdings_statements (statement_ordinality);
 
-VACUUM ANALYZE holdings_statements;
 

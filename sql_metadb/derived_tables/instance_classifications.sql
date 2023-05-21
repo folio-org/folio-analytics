@@ -31,4 +31,3 @@ CREATE INDEX ON instance_classifications (classification_ordinality);
 
 CREATE INDEX ON instance_classifications (classification_name);
 
-VACUUM ANALYZE instance_classifications;

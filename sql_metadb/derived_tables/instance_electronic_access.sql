@@ -53,4 +53,3 @@ CREATE INDEX ON instance_electronic_access (relationship_name);
 
 CREATE INDEX ON instance_electronic_access (electronic_access_ordinality);
 
-VACUUM ANALYZE instance_electronic_access; 

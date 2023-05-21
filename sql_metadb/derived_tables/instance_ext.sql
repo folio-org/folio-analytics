@@ -61,5 +61,4 @@ CREATE INDEX ON instance_ext (created_date);
 
 CREATE INDEX ON instance_ext (updated_date);
 
-VACUUM ANALYZE instance_ext;
 

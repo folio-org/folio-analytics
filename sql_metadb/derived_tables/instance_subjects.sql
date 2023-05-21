@@ -23,4 +23,3 @@ CREATE INDEX ON instance_subjects (subjects);
 
 CREATE INDEX ON instance_subjects (subjects_ordinality);
 
-VACUUM ANALYZE instance_subjects;

@@ -39,4 +39,3 @@ COMMENT ON COLUMN po_ongoing.po_ongoing_renewal_date IS 'The date this Ongoing P
 
 COMMENT ON COLUMN po_ongoing.po_ongoing_review_period IS 'Time prior to renewal where changes can be made to subscription';
 
-VACUUM ANALYZE po_ongoing;

@@ -43,4 +43,3 @@ CREATE INDEX ON item_statistical_codes (statistical_code_type_id);
 
 CREATE INDEX ON item_statistical_codes (statistical_code_type_name);
 
-VACUUM ANALYZE item_statistical_codes;

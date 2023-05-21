@@ -136,4 +136,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of th
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
 
-VACUUM ANALYZE finance_transaction_purchase_order;

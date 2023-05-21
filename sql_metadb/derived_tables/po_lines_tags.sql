@@ -25,5 +25,4 @@ COMMENT ON COLUMN po_lines_tags.pol_tag IS 'Arbitrary tags associated with this 
 
 COMMENT ON COLUMN po_lines_tags.pol_tag_ordinality IS 'The ordinality of the tag associated with the po line';
 
-VACUUM ANALYZE po_lines_tags;
 

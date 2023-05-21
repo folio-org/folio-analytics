@@ -26,4 +26,3 @@ CREATE INDEX ON holdings_tags (holdings_tag);
 
 CREATE INDEX ON holdings_tags (holdings_tag_ordinality);
 
-VACUUM ANALYZE holdings_tags;

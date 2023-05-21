@@ -147,5 +147,4 @@ COMMENT ON COLUMN po_lines_eresource.pol_user_limit IS 'the concurrent user-limi
 
 COMMENT ON COLUMN po_lines_eresource.pol_resource_url IS 'Electronic resource can be access via this URL';
 
-VACUUM ANALYZE po_lines_eresource;
 

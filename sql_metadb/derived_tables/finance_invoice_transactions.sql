@@ -134,4 +134,3 @@ CREATE INDEX ON finance_invoice_transactions (invoice_line_transaction_amount);
 
 CREATE INDEX ON finance_invoice_transactions (invoice_line_transaction_currency);
 
-VACUUM ANALYZE finance_invoice_transactions;

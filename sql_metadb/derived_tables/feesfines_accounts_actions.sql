@@ -96,4 +96,3 @@ CREATE INDEX ON feesfines_accounts_actions (patron_group_id);
 
 CREATE INDEX ON feesfines_accounts_actions (patron_group_name);
 
-VACUUM ANALYZE feesfines_accounts_actions;

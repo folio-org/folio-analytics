@@ -23,4 +23,3 @@ CREATE INDEX ON instance_tags (instance_tag);
 
 CREATE INDEX ON instance_tags (instance_tag_ordinality);
 
-VACUUM ANALYZE instance_tags;

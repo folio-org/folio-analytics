@@ -80,4 +80,3 @@ COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_sub_total IS 'In
 
 COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_total IS 'Invoice line total amount which is sum of subTotal and adjustmentsTotal. This amount is always calculated by system.';
 
-VACUUM ANALYZE invoice_lines_fund_distributions;

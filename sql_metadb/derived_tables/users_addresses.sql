@@ -49,4 +49,3 @@ CREATE INDEX ON users_addresses (address_type_description);
 CREATE INDEX ON users_addresses (is_primary_address);
 
 
-VACUUM ANALYZE  users_addresses;

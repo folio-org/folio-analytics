@@ -108,4 +108,3 @@ COMMENT ON COLUMN agreements_subscription_agreement_entitlement.entitlement_refe
 
 COMMENT ON COLUMN agreements_subscription_agreement_entitlement.po_line_id IS 'UUID of purchase order line in Orders app';
 
-VACUUM ANALYZE agreements_subscription_agreement_entitlement;

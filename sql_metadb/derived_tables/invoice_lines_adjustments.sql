@@ -66,5 +66,4 @@ COMMENT ON COLUMN invoice_lines_adjustments.adjustment_value IS 'Adjustment valu
 
 COMMENT ON COLUMN invoice_lines_adjustments.adjustment_adjustments_total IS 'Total amount which is sum of all invoice line adjustments and all non-prorated invoice level adjustments. This amount is always calculated by system.';
 
-VACUUM ANALYZE invoice_lines_adjustments;
 

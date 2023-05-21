@@ -24,4 +24,3 @@ CREATE INDEX ON instance_series (series);
 
 CREATE INDEX ON instance_series (series_ordinality);
 
-VACUUM ANALYZE instance_series;

@@ -173,4 +173,3 @@ COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_id IS 'UUID for ve
 
 COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_name IS 'Name of vendor';
 
-VACUUM ANALYZE finance_transaction_invoices;

@@ -46,5 +46,4 @@ CREATE INDEX ON instance_statistical_codes (statistical_code_name);
 
 CREATE INDEX ON instance_statistical_codes (stat_code_ordinality);
 
-VACUUM ANALYZE instance_statistical_codes; 
 

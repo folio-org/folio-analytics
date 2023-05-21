@@ -113,4 +113,3 @@ COMMENT ON COLUMN invoice_voucher_lines_fund_distributions.fund_type_name IS 'Na
 
 COMMENT ON COLUMN invoice_voucher_lines_fund_distributions.invoice_voucher_lines_external_account_number IS 'All distributions that come from funds with the same account number are grouped by voucher line';
 
-VACUUM ANALYZE invoice_voucher_lines_fund_distributions;

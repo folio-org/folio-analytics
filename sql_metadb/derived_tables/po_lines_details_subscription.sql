@@ -29,5 +29,4 @@ COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_to IS 'the end 
 
 COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_interval IS 'the subscription interval in days';
 
-VACUUM ANALYZE po_lines_details_subscription;
 

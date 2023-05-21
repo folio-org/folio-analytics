@@ -205,5 +205,4 @@ CREATE INDEX ON loans_items (temporary_loan_type_id);
 
 CREATE INDEX ON loans_items (renewal_count);
 
-VACUUM ANALYZE loans_items;
 

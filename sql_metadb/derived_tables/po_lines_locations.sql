@@ -68,4 +68,3 @@ COMMENT ON COLUMN po_lines_locations.pol_location_name IS 'Name of the location 
 
 COMMENT ON COLUMN po_lines_locations.pol_location_source IS 'Source of the location associated with pol_location_id';
 
-VACUUM ANALYZE po_lines_locations;

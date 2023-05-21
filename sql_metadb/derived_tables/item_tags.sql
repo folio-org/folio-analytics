@@ -23,4 +23,3 @@ CREATE INDEX ON item_tags (item_tag);
 
 CREATE INDEX ON item_tags (item_tag_ordinality);
 
-VACUUM ANALYZE item_tags;

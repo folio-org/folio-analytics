@@ -108,5 +108,4 @@ COMMENT ON COLUMN agreements_subscription_agreement.sa_reason_for_closure_label 
 
 COMMENT ON COLUMN agreements_subscription_agreement.sa_custom_properties_id IS 'ID used to link custom_properties';
 
-VACUUM ANALYZE agreements_subscription_agreement;
 

@@ -24,4 +24,3 @@ CREATE INDEX ON instance_administrative_notes (administrative_note);
 
 CREATE INDEX ON instance_administrative_notes (administrative_note_ordinality);
 
-VACUUM ANALYZE instance_administrative_notes;

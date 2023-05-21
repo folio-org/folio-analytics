@@ -34,4 +34,3 @@ COMMENT ON COLUMN po_lines_phys_mat_type.pol_phys_mat_type_id IS 'UUID of the ma
 
 COMMENT ON COLUMN po_lines_phys_mat_type.pol_mat_type_name IS 'Name of the material type';
 
-VACUUM ANALYZE  po_lines_phys_mat_type;

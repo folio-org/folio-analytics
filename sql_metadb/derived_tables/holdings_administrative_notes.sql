@@ -36,4 +36,3 @@ COMMENT ON COLUMN holdings_administrative_notes.administrative_note IS 'Administ
 
 COMMENT ON COLUMN holdings_administrative_notes.administrative_note_ordinality IS 'Administrative note ordinality';
 
-VACUUM ANALYZE holdings_administrative_notes;

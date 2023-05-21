@@ -82,4 +82,3 @@ COMMENT ON COLUMN agreements_custom_property.custom_property_text_id IS 'ID of t
 
 COMMENT ON COLUMN agreements_custom_property.custom_property_text_value IS 'Value of the text value, that was entered';
 
-VACUUM ANALYZE agreements_custom_property;

@@ -29,4 +29,3 @@ CREATE INDEX ON instance_identifiers (identifier);
 
 CREATE INDEX ON instance_identifiers (identifier_ordinality);
 
-VACUUM ANALYZE instance_identifiers;

@@ -39,5 +39,4 @@ COMMENT ON COLUMN po_prod_ids.product_id IS 'The actual product identifier';
 
 COMMENT ON COLUMN po_prod_ids.product_id_type IS 'The type of product identifier';
 
-VACUUM ANALYZE po_prod_ids;
 

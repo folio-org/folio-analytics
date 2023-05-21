@@ -56,4 +56,3 @@ CREATE INDEX ON holdings_notes (note_date_updated);
 
 CREATE INDEX ON holdings_notes (note_updated_by_user_id);
 
-VACUUM ANALYZE holdings_notes;

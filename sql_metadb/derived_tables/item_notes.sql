@@ -34,4 +34,3 @@ CREATE INDEX ON item_notes (staff_only);
 
 CREATE INDEX ON item_notes (note_ordinality);
 
-VACUUM ANALYZE item_notes;

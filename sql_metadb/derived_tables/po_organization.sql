@@ -36,9 +36,6 @@ CREATE INDEX ON po_organization (contact_first_name);
 
 CREATE INDEX ON po_organization (contact_last_name);
 
-
-VACUUM ANALYZE  po_organization;
-
 COMMENT ON COLUMN po_organization.po_number IS 'A human readable number assigned to PO';
 
 COMMENT ON COLUMN po_organization.vendor_id IS 'The unique UUID for the vendor';

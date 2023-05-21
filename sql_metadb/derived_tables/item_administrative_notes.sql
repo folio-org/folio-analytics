@@ -27,4 +27,3 @@ CREATE INDEX ON item_administrative_notes (administrative_note);
 
 CREATE INDEX ON item_administrative_notes (administrative_note_ordinality);
 
-VACUUM ANALYZE item_administrative_notes;

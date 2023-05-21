@@ -24,4 +24,3 @@ CREATE INDEX ON instance_physical_descriptions (physical_description);
 
 CREATE INDEX ON instance_physical_descriptions (physical_description_ordinality);
 
-VACUUM ANALYZE instance_physical_descriptions;

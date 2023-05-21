@@ -75,5 +75,4 @@ COMMENT ON COLUMN po_lines_physical.pol_volumes IS 'List of volumes included to 
 
 COMMENT ON COLUMN po_lines_physical.pol_volumes_ordinality IS 'Volumes ordinality';
 
-VACUUM ANALYZE po_lines_physical;
 

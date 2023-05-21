@@ -35,4 +35,3 @@ COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_id IS 'UUID of this acquis
 
 COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_name IS 'Name for this acquisitions unit';
 
-VACUUM ANALYZE po_acq_unit_ids;

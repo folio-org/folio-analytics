@@ -95,9 +95,6 @@ CREATE INDEX ON po_instance (rush);
 
 CREATE INDEX ON po_instance (selector);
 
-
---VACUUM ANALYZE  po_instance;
-
 COMMENT ON COLUMN po_instance.manual_po IS 'If true, order cannot be sent automatically, e.g. via EDI';
 
 COMMENT ON COLUMN po_instance.rush IS 'Whether or not this is a rush order';

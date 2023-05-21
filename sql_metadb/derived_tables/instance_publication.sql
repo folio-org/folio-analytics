@@ -33,4 +33,3 @@ CREATE INDEX ON instance_publication (date_of_publication);
 
 CREATE INDEX ON instance_publication (publication_ordinality);
 
-VACUUM ANALYZE instance_publication;

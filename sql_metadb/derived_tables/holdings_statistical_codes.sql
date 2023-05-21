@@ -54,5 +54,4 @@ CREATE INDEX ON holdings_statistical_codes (statistical_code_name);
 
 CREATE INDEX ON holdings_statistical_codes (statistical_code_ordinality);
 
-VACUUM ANALYZE holdings_statistical_codes;
 

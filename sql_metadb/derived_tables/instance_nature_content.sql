@@ -38,5 +38,4 @@ CREATE INDEX ON instance_nature_content (nature_of_content_term_source);
 
 CREATE INDEX ON instance_nature_content (nature_of_content_ordinality);
 
-VACUUM ANALYZE instance_nature_content;
 

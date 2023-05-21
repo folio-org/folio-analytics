@@ -53,4 +53,3 @@ COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_type IS 'Adjustm
 
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_value IS 'Adjustment value';
 
-VACUUM ANALYZE invoice_adjustments_in_addition_to;

@@ -107,4 +107,3 @@ COMMENT ON COLUMN invoice_adjustments_ext.transaction_invoice_adj_value IS 'This
 
 COMMENT ON COLUMN invoice_adjustments_ext.transactions_inv_adj_total IS 'This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line. IN SYSTEM CURRENCY';
 
-VACUUM ANALYZE invoice_adjustments_ext;

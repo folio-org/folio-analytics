@@ -36,4 +36,3 @@ CREATE INDEX ON item_electronic_access (relationship_name);
 
 CREATE INDEX ON item_electronic_access (uri);
 
-VACUUM ANALYZE item_electronic_access;

@@ -52,4 +52,3 @@ COMMENT ON COLUMN users_departments_unpacked.department_name IS 'The display nam
 
 COMMENT ON COLUMN users_departments_unpacked.department_code IS 'The (user-supplied) code for the department';
 
-VACUUM ANALYZE users_departments_unpacked;

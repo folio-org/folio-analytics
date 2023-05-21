@@ -305,4 +305,3 @@ COMMENT ON COLUMN agreements_package_content_item.res_publication_type_label IS 
 
 COMMENT ON COLUMN agreements_package_content_item.res_publication_type_category IS 'Text string identifying the reference data category';
 
-VACUUM ANALYZE agreements_package_content_item;

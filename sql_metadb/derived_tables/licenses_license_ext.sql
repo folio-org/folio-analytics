@@ -65,4 +65,3 @@ COMMENT ON COLUMN licenses_license_ext.license_org_role IS 'Reference data value
 
 COMMENT ON COLUMN licenses_license_ext.license_org_uuid IS 'UUID of organization';
 
-VACUUM ANALYZE licenses_license_ext;

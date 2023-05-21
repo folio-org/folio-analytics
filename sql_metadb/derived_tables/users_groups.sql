@@ -144,4 +144,3 @@ COMMENT ON COLUMN users_groups.updated_date IS 'Date and time when the user reco
 
 COMMENT ON COLUMN users_groups.username IS 'A unique name belonging to a user. Typically used for login';
 
-VACUUM ANALYZE  users_groups;

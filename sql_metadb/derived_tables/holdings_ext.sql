@@ -118,4 +118,3 @@ CREATE INDEX ON holdings_ext (updated_by_user_id);
 
 CREATE INDEX ON holdings_ext (updated_date);
 
-VACUUM ANALYZE holdings_ext;
