@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_modes_of_issuance (name);
 
 CREATE INDEX ON inventory_modes_of_issuance (source);
 
-VACUUM ANALYZE inventory_modes_of_issuance;

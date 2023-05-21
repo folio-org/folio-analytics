@@ -30,4 +30,3 @@ CREATE INDEX ON circulation_check_ins (request_queue_size);
 
 CREATE INDEX ON circulation_check_ins (service_point_id);
 
-VACUUM ANALYZE circulation_check_ins;

@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_material_types (name);
 
 CREATE INDEX ON inventory_material_types (source);
 
-VACUUM ANALYZE inventory_material_types;

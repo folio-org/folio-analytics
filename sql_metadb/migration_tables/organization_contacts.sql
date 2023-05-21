@@ -27,4 +27,3 @@ CREATE INDEX ON organization_contacts (notes);
 
 CREATE INDEX ON organization_contacts (prefix);
 
-VACUUM ANALYZE organization_contacts;

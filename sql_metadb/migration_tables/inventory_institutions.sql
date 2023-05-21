@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_institutions (code);
 
 CREATE INDEX ON inventory_institutions (name);
 
-VACUUM ANALYZE inventory_institutions;

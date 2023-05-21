@@ -18,4 +18,3 @@ CREATE INDEX ON inventory_campuses (institution_id);
 
 CREATE INDEX ON inventory_campuses (name);
 
-VACUUM ANALYZE inventory_campuses;

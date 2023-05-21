@@ -76,4 +76,3 @@ CREATE INDEX ON inventory_items (temporary_location_id);
 
 CREATE INDEX ON inventory_items (volume);
 
-VACUUM ANALYZE inventory_items;

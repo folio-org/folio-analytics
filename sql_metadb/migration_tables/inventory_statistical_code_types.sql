@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_statistical_code_types (name);
 
 CREATE INDEX ON inventory_statistical_code_types (source);
 
-VACUUM ANALYZE inventory_statistical_code_types;

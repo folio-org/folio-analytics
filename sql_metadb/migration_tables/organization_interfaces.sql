@@ -36,4 +36,3 @@ CREATE INDEX ON organization_interfaces (statistics_notes);
 
 CREATE INDEX ON organization_interfaces (uri);
 
-VACUUM ANALYZE organization_interfaces;

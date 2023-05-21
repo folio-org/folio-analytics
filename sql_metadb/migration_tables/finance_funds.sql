@@ -30,4 +30,3 @@ CREATE INDEX ON finance_funds (ledger_id);
 
 CREATE INDEX ON finance_funds (name);
 
-VACUUM ANALYZE finance_funds;

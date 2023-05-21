@@ -33,4 +33,3 @@ CREATE INDEX ON finance_ledgers (restrict_encumbrance);
 
 CREATE INDEX ON finance_ledgers (restrict_expenditures);
 
-VACUUM ANALYZE finance_ledgers;

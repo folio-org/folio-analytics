@@ -18,4 +18,3 @@ CREATE INDEX ON inventory_contributor_types (name);
 
 CREATE INDEX ON inventory_contributor_types (source);
 
-VACUUM ANALYZE inventory_contributor_types;

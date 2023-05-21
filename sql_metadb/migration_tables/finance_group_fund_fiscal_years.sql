@@ -21,4 +21,3 @@ CREATE INDEX ON finance_group_fund_fiscal_years (fund_id);
 
 CREATE INDEX ON finance_group_fund_fiscal_years (group_id);
 
-VACUUM ANALYZE finance_group_fund_fiscal_years;

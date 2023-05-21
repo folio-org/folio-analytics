@@ -21,4 +21,3 @@ CREATE INDEX ON circulation_cancellation_reasons (public_description);
 
 CREATE INDEX ON circulation_cancellation_reasons (requires_additional_information);
 
-VACUUM ANALYZE circulation_cancellation_reasons;

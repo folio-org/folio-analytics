@@ -30,4 +30,3 @@ CREATE INDEX ON finance_fiscal_years (period_start);
 
 CREATE INDEX ON finance_fiscal_years (series);
 
-VACUUM ANALYZE finance_fiscal_years;

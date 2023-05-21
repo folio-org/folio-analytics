@@ -33,4 +33,3 @@ CREATE INDEX ON configuration_entries (user_id);
 
 CREATE INDEX ON configuration_entries (value);
 
-VACUUM ANALYZE configuration_entries;

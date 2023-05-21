@@ -18,4 +18,3 @@ CREATE INDEX ON course_reserves (item_id);
 
 CREATE INDEX ON course_reserves (temporary_loan_type_id);
 
-VACUUM ANALYZE course_reserves;

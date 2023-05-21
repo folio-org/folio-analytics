@@ -18,4 +18,3 @@ CREATE INDEX ON feesfines_feefines (fee_fine_type);
 
 CREATE INDEX ON feesfines_feefines (owner_id);
 
-VACUUM ANALYZE feesfines_feefines;

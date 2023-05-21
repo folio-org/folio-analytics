@@ -12,4 +12,3 @@ ALTER TABLE organization_categories ADD PRIMARY KEY (id);
 
 CREATE INDEX ON organization_categories (value);
 
-VACUUM ANALYZE organization_categories;

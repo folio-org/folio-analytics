@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_nature_of_content_terms (name);
 
 CREATE INDEX ON inventory_nature_of_content_terms (source);
 
-VACUUM ANALYZE inventory_nature_of_content_terms;

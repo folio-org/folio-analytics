@@ -30,4 +30,3 @@ CREATE INDEX ON audit_circulation_logs (source);
 
 CREATE INDEX ON audit_circulation_logs (user_barcode);
 
-VACUUM ANALYZE audit_circulation_logs;

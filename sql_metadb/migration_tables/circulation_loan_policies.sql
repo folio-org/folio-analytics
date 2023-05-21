@@ -21,4 +21,3 @@ CREATE INDEX ON circulation_loan_policies (name);
 
 CREATE INDEX ON circulation_loan_policies (renewable);
 
-VACUUM ANALYZE circulation_loan_policies;

@@ -12,4 +12,3 @@ ALTER TABLE feesfines_owners ADD PRIMARY KEY (id);
 
 CREATE INDEX ON feesfines_owners (owner);
 
-VACUUM ANALYZE feesfines_owners;

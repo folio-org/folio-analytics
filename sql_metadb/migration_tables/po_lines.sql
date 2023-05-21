@@ -87,4 +87,3 @@ CREATE INDEX ON po_lines (source);
 
 CREATE INDEX ON po_lines (title_or_package);
 
-VACUUM ANALYZE po_lines;

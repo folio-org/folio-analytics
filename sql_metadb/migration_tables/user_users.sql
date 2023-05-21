@@ -36,4 +36,3 @@ CREATE INDEX ON user_users (updated_date);
 
 CREATE INDEX ON user_users (username);
 
-VACUUM ANALYZE user_users;

@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_call_number_types (name);
 
 CREATE INDEX ON inventory_call_number_types (source);
 
-VACUUM ANALYZE inventory_call_number_types;

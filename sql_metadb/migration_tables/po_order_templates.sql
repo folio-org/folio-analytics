@@ -69,4 +69,3 @@ CREATE INDEX ON po_order_templates (template_name);
 
 CREATE INDEX ON po_order_templates (vendor);
 
-VACUUM ANALYZE po_order_templates;

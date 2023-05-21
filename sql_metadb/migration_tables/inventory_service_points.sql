@@ -24,4 +24,3 @@ CREATE INDEX ON inventory_service_points (pickup_location);
 
 CREATE INDEX ON inventory_service_points (shelving_lag_time);
 
-VACUUM ANALYZE inventory_service_points;

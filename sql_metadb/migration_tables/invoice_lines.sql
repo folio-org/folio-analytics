@@ -51,4 +51,3 @@ CREATE INDEX ON invoice_lines (subscription_start);
 
 CREATE INDEX ON invoice_lines (total);
 
-VACUUM ANALYZE invoice_lines;

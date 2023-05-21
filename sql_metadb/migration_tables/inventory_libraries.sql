@@ -18,4 +18,3 @@ CREATE INDEX ON inventory_libraries (code);
 
 CREATE INDEX ON inventory_libraries (name);
 
-VACUUM ANALYZE inventory_libraries;

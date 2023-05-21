@@ -18,4 +18,3 @@ CREATE INDEX ON user_groups (expiration_offset_in_days);
 
 CREATE INDEX ON user_groups ("group");
 
-VACUUM ANALYZE user_groups;

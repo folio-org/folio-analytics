@@ -24,4 +24,3 @@ CREATE INDEX ON circulation_scheduled_notices (request_id);
 
 CREATE INDEX ON circulation_scheduled_notices (triggering_event);
 
-VACUUM ANALYZE circulation_scheduled_notices;

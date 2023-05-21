@@ -57,4 +57,3 @@ CREATE INDEX ON inventory_holdings (shelving_title);
 
 CREATE INDEX ON inventory_holdings (source_id);
 
-VACUUM ANALYZE inventory_holdings;

@@ -30,4 +30,3 @@ CREATE INDEX ON feesfines_overdue_fines_policies (max_overdue_recall_fine);
 
 CREATE INDEX ON feesfines_overdue_fines_policies (name);
 
-VACUUM ANALYZE feesfines_overdue_fines_policies;

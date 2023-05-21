@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_service_points_users (default_service_point_id);
 
 CREATE INDEX ON inventory_service_points_users (user_id);
 
-VACUUM ANALYZE inventory_service_points_users;

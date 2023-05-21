@@ -39,4 +39,3 @@ CREATE INDEX ON feesfines_lost_item_fees_policies (replacement_processing_fee);
 
 CREATE INDEX ON feesfines_lost_item_fees_policies (returned_lost_item_processing_fee);
 
-VACUUM ANALYZE feesfines_lost_item_fees_policies;

@@ -15,4 +15,3 @@ CREATE INDEX ON course_processingstatuses (description);
 
 CREATE INDEX ON course_processingstatuses (name);
 
-VACUUM ANALYZE course_processingstatuses;

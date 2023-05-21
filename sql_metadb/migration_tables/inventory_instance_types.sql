@@ -18,4 +18,3 @@ CREATE INDEX ON inventory_instance_types (name);
 
 CREATE INDEX ON inventory_instance_types (source);
 
-VACUUM ANALYZE inventory_instance_types;

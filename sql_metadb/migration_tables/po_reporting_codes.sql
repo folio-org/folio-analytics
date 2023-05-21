@@ -12,4 +12,3 @@ ALTER TABLE po_reporting_codes ADD PRIMARY KEY (id);
 
 CREATE INDEX ON po_reporting_codes (code);
 
-VACUUM ANALYZE po_reporting_codes;

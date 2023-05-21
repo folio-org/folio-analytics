@@ -24,4 +24,3 @@ CREATE INDEX ON circulation_request_preference (hold_shelf);
 
 CREATE INDEX ON circulation_request_preference (user_id);
 
-VACUUM ANALYZE circulation_request_preference;

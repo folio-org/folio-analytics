@@ -15,4 +15,3 @@ CREATE INDEX ON circulation_loan_history (created_date);
 
 CREATE INDEX ON circulation_loan_history (operation);
 
-VACUUM ANALYZE circulation_loan_history;

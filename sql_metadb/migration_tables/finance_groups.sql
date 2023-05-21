@@ -21,4 +21,3 @@ CREATE INDEX ON finance_groups (name);
 
 CREATE INDEX ON finance_groups (status);
 
-VACUUM ANALYZE finance_groups;

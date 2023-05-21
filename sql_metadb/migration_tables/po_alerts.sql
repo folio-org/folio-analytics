@@ -12,4 +12,3 @@ ALTER TABLE po_alerts ADD PRIMARY KEY (id);
 
 CREATE INDEX ON po_alerts (alert);
 
-VACUUM ANALYZE po_alerts;

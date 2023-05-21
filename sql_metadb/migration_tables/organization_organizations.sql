@@ -81,4 +81,3 @@ CREATE INDEX ON organization_organizations (tax_id);
 
 CREATE INDEX ON organization_organizations (tax_percentage);
 
-VACUUM ANALYZE organization_organizations;

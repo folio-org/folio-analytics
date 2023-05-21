@@ -15,4 +15,3 @@ CREATE INDEX ON course_coursetypes (description);
 
 CREATE INDEX ON course_coursetypes (name);
 
-VACUUM ANALYZE course_coursetypes;

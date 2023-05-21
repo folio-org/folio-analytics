@@ -79,4 +79,3 @@ CREATE INDEX ON invoice_invoices (vendor_invoice_no);
 
 CREATE INDEX ON invoice_invoices (voucher_number);
 
-VACUUM ANALYZE invoice_invoices;

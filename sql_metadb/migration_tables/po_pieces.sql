@@ -33,4 +33,3 @@ CREATE INDEX ON po_pieces (receiving_status);
 
 CREATE INDEX ON po_pieces (title_id);
 
-VACUUM ANALYZE po_pieces;

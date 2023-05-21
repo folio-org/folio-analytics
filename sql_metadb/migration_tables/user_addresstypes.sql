@@ -15,4 +15,3 @@ CREATE INDEX ON user_addresstypes (address_type);
 
 CREATE INDEX ON user_addresstypes ("desc");
 
-VACUUM ANALYZE user_addresstypes;

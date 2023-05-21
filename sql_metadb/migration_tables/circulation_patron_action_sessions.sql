@@ -9,4 +9,3 @@ FROM
 
 ALTER TABLE circulation_patron_action_sessions ADD PRIMARY KEY (id);
 
-VACUUM ANALYZE circulation_patron_action_sessions;

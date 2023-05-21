@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_alternative_title_types (name);
 
 CREATE INDEX ON inventory_alternative_title_types (source);
 
-VACUUM ANALYZE inventory_alternative_title_types;

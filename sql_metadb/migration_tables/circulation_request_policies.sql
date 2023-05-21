@@ -15,4 +15,3 @@ CREATE INDEX ON circulation_patron_notice_policies (description);
 
 CREATE INDEX ON circulation_patron_notice_policies (name);
 
-VACUUM ANALYZE circulation_request_policies;

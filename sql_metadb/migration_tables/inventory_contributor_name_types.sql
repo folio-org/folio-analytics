@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_contributor_name_types (name);
 
 CREATE INDEX ON inventory_contributor_name_types (ordering);
 
-VACUUM ANALYZE inventory_contributor_name_types;

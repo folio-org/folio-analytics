@@ -44,4 +44,3 @@ CREATE INDEX ON inventory_instances (status_id);
 
 CREATE INDEX ON inventory_instances (status_updated_date);
 
-VACUUM ANALYZE inventory_instances;

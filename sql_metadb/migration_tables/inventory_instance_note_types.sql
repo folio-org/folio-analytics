@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_instance_note_types (name);
 
 CREATE INDEX ON inventory_instance_note_types (source);
 
-VACUUM ANALYZE inventory_instance_note_types;

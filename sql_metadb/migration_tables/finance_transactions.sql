@@ -48,4 +48,3 @@ CREATE INDEX ON finance_transactions (to_fund_id);
 
 CREATE INDEX ON finance_transactions (transaction_type);
 
-VACUUM ANALYZE finance_transactions;

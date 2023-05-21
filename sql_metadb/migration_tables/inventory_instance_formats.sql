@@ -21,4 +21,3 @@ CREATE INDEX ON inventory_instance_formats (read_only);
 
 CREATE INDEX ON inventory_instance_formats (source);
 
-VACUUM ANALYZE inventory_instance_formats;

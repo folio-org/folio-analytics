@@ -60,4 +60,3 @@ CREATE INDEX ON invoice_vouchers (voucher_date);
 
 CREATE INDEX ON invoice_vouchers (voucher_number);
 
-VACUUM ANALYZE invoice_vouchers;

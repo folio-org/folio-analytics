@@ -21,4 +21,3 @@ CREATE INDEX ON circulation_staff_slips (name);
 
 CREATE INDEX ON circulation_staff_slips (template);
 
-VACUUM ANALYZE circulation_staff_slips;

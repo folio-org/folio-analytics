@@ -36,4 +36,3 @@ CREATE INDEX ON inventory_locations (name);
 
 CREATE INDEX ON inventory_locations (primary_service_point);
 
-VACUUM ANALYZE inventory_locations;

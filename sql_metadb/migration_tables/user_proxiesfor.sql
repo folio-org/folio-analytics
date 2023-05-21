@@ -30,4 +30,3 @@ CREATE INDEX ON user_proxiesfor (status);
 
 CREATE INDEX ON user_proxiesfor (user_id);
 
-VACUUM ANALYZE user_proxiesfor;

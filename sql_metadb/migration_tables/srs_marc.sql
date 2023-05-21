@@ -9,4 +9,3 @@ FROM
 
 ALTER TABLE srs_marc ADD PRIMARY KEY (id);
 
-VACUUM ANALYZE srs_marc;

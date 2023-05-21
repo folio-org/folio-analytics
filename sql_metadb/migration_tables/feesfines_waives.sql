@@ -12,4 +12,3 @@ ALTER TABLE feesfines_waives ADD PRIMARY KEY (id);
 
 CREATE INDEX ON feesfines_waives (name_reason);
 
-VACUUM ANALYZE feesfines_waives;

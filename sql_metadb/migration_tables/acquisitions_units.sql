@@ -27,4 +27,3 @@ CREATE INDEX ON acquisitions_units (protect_read);
 
 CREATE INDEX ON acquisitions_units (protect_update);
 
-VACUUM ANALYZE acquisitions_units;

@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_ill_policies (name);
 
 CREATE INDEX ON inventory_ill_policies (source);
 
-VACUUM ANALYZE inventory_ill_policies;

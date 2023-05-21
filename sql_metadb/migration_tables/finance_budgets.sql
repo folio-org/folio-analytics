@@ -69,4 +69,3 @@ CREATE INDEX ON finance_budgets (total_funding);
 
 CREATE INDEX ON finance_budgets (unavailable);
 
-VACUUM ANALYZE finance_budgets;

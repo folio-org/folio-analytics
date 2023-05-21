@@ -21,4 +21,3 @@ CREATE INDEX ON feesfines_comments (transferred_manually);
 
 CREATE INDEX ON feesfines_comments (waived);
 
-VACUUM ANALYZE feesfines_comments;

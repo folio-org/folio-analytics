@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_holdings_sources (name);
 
 CREATE INDEX ON inventory_holdings_sources (source);
 
-VACUUM ANALYZE inventory_holdings_sources;

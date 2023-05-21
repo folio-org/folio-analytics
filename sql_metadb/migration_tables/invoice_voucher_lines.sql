@@ -18,4 +18,3 @@ CREATE INDEX ON invoice_voucher_lines (external_account_number);
 
 CREATE INDEX ON invoice_voucher_lines (voucher_id);
 
-VACUUM ANALYZE invoice_voucher_lines;

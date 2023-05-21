@@ -45,4 +45,3 @@ CREATE INDEX ON po_purchase_orders (vendor);
 
 CREATE INDEX ON po_purchase_orders (workflow_status);
 
-VACUUM ANALYZE po_purchase_orders;

@@ -45,4 +45,3 @@ CREATE INDEX ON feesfines_feefineactions (type_action);
 
 CREATE INDEX ON feesfines_feefineactions (user_id);
 
-VACUUM ANALYZE feesfines_feefineactions;

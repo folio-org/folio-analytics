@@ -27,4 +27,3 @@ CREATE INDEX ON course_courselistings (servicepoint_id);
 
 CREATE INDEX ON course_courselistings (term_id);
 
-VACUUM ANALYZE course_courselistings;

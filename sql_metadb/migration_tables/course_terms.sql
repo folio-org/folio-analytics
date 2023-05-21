@@ -18,4 +18,3 @@ CREATE INDEX ON course_terms (name);
 
 CREATE INDEX ON course_terms (start_date);
 
-VACUUM ANALYZE course_terms;

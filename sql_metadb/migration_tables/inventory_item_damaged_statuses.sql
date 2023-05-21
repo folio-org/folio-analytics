@@ -15,4 +15,3 @@ CREATE INDEX ON inventory_item_damaged_statuses (name);
 
 CREATE INDEX ON inventory_item_damaged_statuses (source);
 
-VACUUM ANALYZE inventory_item_damaged_statuses;

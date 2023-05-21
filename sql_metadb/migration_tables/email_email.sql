@@ -39,4 +39,3 @@ CREATE INDEX ON email_email (status);
 
 CREATE INDEX ON email_email ("to");
 
-VACUUM ANALYZE email_email;

@@ -57,4 +57,3 @@ CREATE INDEX ON srs_records (updated_by_user_id);
 
 CREATE INDEX ON srs_records (updated_date);
 
-VACUUM ANALYZE srs_records;

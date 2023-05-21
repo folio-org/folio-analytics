@@ -67,4 +67,3 @@ CREATE INDEX ON feesfines_accounts (remaining);
 
 CREATE INDEX ON feesfines_accounts (user_id);
 
-VACUUM ANALYZE feesfines_accounts;

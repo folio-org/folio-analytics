@@ -72,4 +72,3 @@ CREATE INDEX ON circulation_loans (system_return_date);
 
 CREATE INDEX ON circulation_loans (user_id);
 
-VACUUM ANALYZE circulation_loans;

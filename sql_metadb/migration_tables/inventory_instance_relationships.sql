@@ -18,4 +18,3 @@ CREATE INDEX ON inventory_instance_relationships (sub_instance_id);
 
 CREATE INDEX ON inventory_instance_relationships (super_instance_id);
 
-VACUUM ANALYZE inventory_instance_relationships;

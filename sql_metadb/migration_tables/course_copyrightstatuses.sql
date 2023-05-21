@@ -15,4 +15,3 @@ CREATE INDEX ON course_copyrightstatuses (description);
 
 CREATE INDEX ON course_copyrightstatuses (name);
 
-VACUUM ANALYZE course_copyrightstatuses;

@@ -12,4 +12,3 @@ ALTER TABLE feesfines_refunds ADD PRIMARY KEY (id);
 
 CREATE INDEX ON feesfines_refunds (name_reason);
 
-VACUUM ANALYZE feesfines_refunds;

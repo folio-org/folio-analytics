@@ -30,4 +30,3 @@ CREATE INDEX ON course_courses (number_of_students);
 
 CREATE INDEX ON course_courses (section_name);
 
-VACUUM ANALYZE course_courses;
