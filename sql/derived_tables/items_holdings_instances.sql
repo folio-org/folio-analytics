@@ -10,9 +10,9 @@
 --     inventory_holdings_types
 --     inventory_call_number_types
 --
-DROP TABLE IF EXISTS folio_reporting.items_holdings_instances;
+DROP TABLE IF EXISTS items_holdings_instances;
 
-CREATE TABLE folio_reporting.items_holdings_instances AS 
+CREATE TABLE items_holdings_instances AS 
 SELECT
     ii.id AS item_id,
     ii.barcode,
