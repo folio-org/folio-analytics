@@ -34,24 +34,4 @@ FROM
     LEFT JOIN folio_inventory.statistical_code__t AS sct ON stc.statistical_code_id::uuid = sct.id::uuid
     LEFT JOIN folio_inventory.statistical_code_type__t AS sctt ON sct.statistical_code_type_id::uuid = sctt.id::uuid;
 
-CREATE INDEX ON holdings_statistical_codes (instance_id);
-
-CREATE INDEX ON holdings_statistical_codes (instance_hrid);
-
-CREATE INDEX ON holdings_statistical_codes (holdings_id);
-
-CREATE INDEX ON holdings_statistical_codes (holdings_hrid);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_ordinality);
-
 

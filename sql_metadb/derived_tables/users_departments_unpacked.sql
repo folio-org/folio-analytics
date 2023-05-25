@@ -29,19 +29,6 @@ FROM
     LEFT JOIN folio_users.departments__t AS ud
         ON departments_array.department_id::uuid = ud.id;
 
-CREATE INDEX ON users_departments_unpacked (user_id);
-
-CREATE INDEX ON users_departments_unpacked (department_id);
-
--- If a user has more than one department, ordinality should show a
--- sequence of numbers indicating the order of the departments in the
--- original list
-CREATE INDEX ON users_departments_unpacked (department_ordinality);
-
-CREATE INDEX ON users_departments_unpacked (department_name);
-
-CREATE INDEX ON users_departments_unpacked (department_code);
-
 COMMENT ON COLUMN users_departments_unpacked.user_id IS 'User ID (Generated UUID) of the user associated with the department(s)';
 
 COMMENT ON COLUMN users_departments_unpacked.department_id IS 'Department ID (Generated UUID) of the department';

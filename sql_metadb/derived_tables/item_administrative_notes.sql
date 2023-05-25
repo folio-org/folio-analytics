@@ -17,13 +17,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'administrativeNotes')) WITH ORDINALITY AS admin_notes (jsonb)
     LEFT JOIN folio_inventory.item__t AS i ON item.id = i.id;
 
-CREATE INDEX ON item_administrative_notes (item_id);
-
-CREATE INDEX ON item_administrative_notes (item_hrid);
-
-CREATE INDEX ON item_administrative_notes (holdings_record_id);
-
-CREATE INDEX ON item_administrative_notes (administrative_note);
-
-CREATE INDEX ON item_administrative_notes (administrative_note_ordinality);
-

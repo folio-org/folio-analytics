@@ -28,18 +28,4 @@ FROM
     instances AS it
     LEFT JOIN folio_inventory.instance_format__t AS ift ON it.instance_format_id = ift.id::varchar;
 
-CREATE INDEX ON instance_formats (instance_id);
-
-CREATE INDEX ON instance_formats (instance_hrid);
-
-CREATE INDEX ON instance_formats (instance_format_id);
-
-CREATE INDEX ON instance_formats (instance_format_ordinality);
-
-CREATE INDEX ON instance_formats (instance_format_code);
-
-CREATE INDEX ON instance_formats (instance_format_name);
-
-CREATE INDEX ON instance_formats (instance_format_source);
-
 

@@ -36,28 +36,6 @@ FROM
     LEFT JOIN folio_finance.fund__t AS f ON f.id = fdist.fund_distribution_id
     LEFT JOIN folio_finance.fund_type__t AS t ON t.id = f.fund_type_id::uuid;
 
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_status);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_code);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_name);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_type_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_type_name);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_value);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_type);
-
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_sub_total);
-
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_total);
-
 COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_id IS 'UUID of the invoice line associated with this fund distribution';
 
 COMMENT ON COLUMN invoice_lines_fund_distributions.fund_distribution_id IS 'UUID of the fund distribution';

@@ -27,20 +27,5 @@ CREATE TABLE loans_renewal_dates AS
         jsonb_extract_path_text(jsonb, 'action') IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
-        loan_action_date
-;
-
---CREATE INDEX ON loans_renewal_dates (loan_history_id);
-
-CREATE INDEX ON loans_renewal_dates (loan_action_date);
-
-CREATE INDEX ON loans_renewal_dates (loan_id);
-
-CREATE INDEX ON loans_renewal_dates (item_id);
-
-CREATE INDEX ON loans_renewal_dates (loan_action);
-
-CREATE INDEX ON loans_renewal_dates (loan_renewal_count);
-
-CREATE INDEX ON loans_renewal_dates (loan_status);
+        loan_action_date;
 

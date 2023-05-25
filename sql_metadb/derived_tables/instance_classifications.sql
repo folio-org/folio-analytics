@@ -19,15 +19,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instance.jsonb, 'classifications')) WITH ORDINALITY AS instclass (jsonb)
     LEFT JOIN folio_inventory.classification_type__t AS classtype ON jsonb_extract_path_text(instclass.jsonb, 'classificationTypeId')::uuid = classtype.id::uuid ;
 
-CREATE INDEX ON instance_classifications (instance_id);
-
-CREATE INDEX ON instance_classifications (instance_hrid);
-
-CREATE INDEX ON instance_classifications (classification_number);
-
-CREATE INDEX ON instance_classifications (classification_type_id);
-
-CREATE INDEX ON instance_classifications (classification_ordinality);
-
-CREATE INDEX ON instance_classifications (classification_name);
-

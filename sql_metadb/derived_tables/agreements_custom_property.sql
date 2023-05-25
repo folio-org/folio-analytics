@@ -30,32 +30,6 @@ FROM
     LEFT JOIN folio_agreements.custom_property_integer AS agreements_custom_property_integer ON agreements_custom_property_integer.id = agreements_custom_property.id
     LEFT JOIN folio_agreements.custom_property_text AS agreements_custom_property_text ON agreements_custom_property_text.id = agreements_custom_property.id;
 
-CREATE INDEX ON agreements_custom_property (custom_property_container_id);
-
-CREATE INDEX ON agreements_custom_property (custom_property_id);
-
-CREATE INDEX ON agreements_custom_property (custom_property_note);
-
-CREATE INDEX ON agreements_custom_property (custom_property_public_note);
-
-CREATE INDEX ON agreements_custom_property (custom_property_definition_uuid);
-
-CREATE INDEX ON agreements_custom_property (custom_property_definition_pd_name);
-
-CREATE INDEX ON agreements_custom_property (custom_property_definition_pd_type);
-
-CREATE INDEX ON agreements_custom_property (custom_property_definition_pd_description);
-
-CREATE INDEX ON agreements_custom_property (custom_property_definition_pd_label);
-
-CREATE INDEX ON agreements_custom_property (custom_property_integer_id);
-
-CREATE INDEX ON agreements_custom_property (custom_property_integer_value);
-
-CREATE INDEX ON agreements_custom_property (custom_property_text_id);
-
-CREATE INDEX ON agreements_custom_property (custom_property_text_value);
-
 COMMENT ON COLUMN agreements_custom_property.custom_property_container_id IS 'Container ID of the custom property. The ID can be linked to the custom_properties_id attribute in the folio_agreements.subscription_agreement table';
 
 COMMENT ON COLUMN agreements_custom_property.custom_property_id IS 'ID of the custom property';

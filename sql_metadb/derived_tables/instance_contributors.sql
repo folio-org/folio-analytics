@@ -37,24 +37,4 @@ FROM
     LEFT JOIN folio_inventory.contributor_type__t AS ctt ON ctbs.contributor_type_id = ctt.id
     LEFT JOIN folio_inventory.contributor_name_type__t AS cntt ON ctbs.contributor_name_type_id = cntt.id;
 
-CREATE INDEX ON instance_contributors (instance_id);
-
-CREATE INDEX ON instance_contributors (instance_hrid);
-
-CREATE INDEX ON instance_contributors (contributor_name);
-
-CREATE INDEX ON instance_contributors (contributor_is_primary);
-
-CREATE INDEX ON instance_contributors (contributor_type_id);
-
-CREATE INDEX ON instance_contributors (contributor_type_name);
-
-CREATE INDEX ON instance_contributors (contributor_type_text);
-
-CREATE INDEX ON instance_contributors (contributor_name_type_id);
-
-CREATE INDEX ON instance_contributors (contributor_name_type_name);
-
-CREATE INDEX ON instance_contributors (contributor_ordinality);
-
 

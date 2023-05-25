@@ -19,17 +19,3 @@ FROM
     LEFT JOIN folio_inventory.instance ON instance.id::uuid  = instance__t.id::uuid 
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instance.jsonb, 'publication')) WITH ORDINALITY AS pub (jsonb);
 
-CREATE INDEX ON instance_publication (instance_id);
-
-CREATE INDEX ON instance_publication (instance_hrid);
-
-CREATE INDEX ON instance_publication (publication_place);
-
-CREATE INDEX ON instance_publication (publisher);
-
-CREATE INDEX ON instance_publication (publication_role);
-
-CREATE INDEX ON instance_publication (date_of_publication);
-
-CREATE INDEX ON instance_publication (publication_ordinality);
-

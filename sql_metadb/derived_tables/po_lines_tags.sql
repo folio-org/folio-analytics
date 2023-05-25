@@ -13,12 +13,6 @@ FROM
     folio_orders.po_line AS pol
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags (data);
 
-CREATE INDEX ON po_lines_tags (pol_id);
-
-CREATE INDEX ON po_lines_tags (pol_tag);
-
-CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
-
 COMMENT ON COLUMN po_lines_tags.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_tags.pol_tag IS 'Arbitrary tags associated with this purchase order line';

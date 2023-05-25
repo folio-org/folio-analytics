@@ -13,14 +13,6 @@ SELECT
 FROM
     folio_orders.po_line AS pol;
 
-CREATE INDEX ON po_lines_details_subscription (pol_id);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_from);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_to);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_interval);
-
 COMMENT ON COLUMN po_lines_details_subscription.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_from IS 'the start date of the subscription';

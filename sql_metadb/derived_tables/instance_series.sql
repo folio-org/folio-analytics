@@ -16,11 +16,3 @@ FROM
     LEFT JOIN folio_inventory.instance ON instance.id::uuid = inst.id::uuid
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instance.jsonb, 'series')) WITH ORDINALITY AS instseries (jsonb);
 
-CREATE INDEX ON instance_series (instance_id);
-
-CREATE INDEX ON instance_series (instance_hrid);
-
-CREATE INDEX ON instance_series (series);
-
-CREATE INDEX ON instance_series (series_ordinality);
-

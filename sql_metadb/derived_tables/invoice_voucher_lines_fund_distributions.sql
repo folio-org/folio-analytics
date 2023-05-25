@@ -49,38 +49,6 @@ FROM
 ORDER BY
     voucher_number;
 
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (invoice_voucher_line_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (voucher_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (voucher_number);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (invoice_voucher_lines_amount);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_type);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_code);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_name);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_invl_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_expense_class_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (expense_class_name);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_distribution_value);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_status);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_type_id);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (fund_type_name);
-
-CREATE INDEX ON invoice_voucher_lines_fund_distributions (invoice_voucher_lines_external_account_number);
-
 COMMENT ON COLUMN invoice_voucher_lines_fund_distributions.invoice_voucher_line_id IS 'UUID of this voucher line';
 
 COMMENT ON COLUMN invoice_voucher_lines_fund_distributions.voucher_id IS 'UUID of this voucher';

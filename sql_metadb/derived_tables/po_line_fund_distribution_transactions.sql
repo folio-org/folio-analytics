@@ -104,68 +104,6 @@ FROM
         po_number,
         poline_number;
 
-CREATE INDEX ON po_line_fund_distribution_transactions (po_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (po_number);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (po_workflowStatus);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (po_line_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_number);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_title_or_package);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_listUnitPrice);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_quantityPhysical);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_listUnitPriceElectronic);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_quantityElectronic);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_currency);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_discount);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_discountType);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_additionalCost);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (poline_estimated_price);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (po_line_fyroAdjustmentAmount);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fund_distribution_value);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fund_distribution_type);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (budget_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (budget_name);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fund_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fund_code);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fiscal_year_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (fiscal_year);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_id);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_currency);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_amount);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_initial_amount);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_amount_expended);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_order_type);
-
-CREATE INDEX ON po_line_fund_distribution_transactions (transaction_encumbrance_subscription);
-
 COMMENT ON COLUMN po_line_fund_distribution_transactions.po_id IS 'UUID identifying this entity';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.po_number IS 'A human readable ID assigned to this purchase order';

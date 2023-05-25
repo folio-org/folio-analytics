@@ -38,20 +38,6 @@ FROM
 WHERE
     adjustment_relation_to_total IN ('In addition to', 'Included', 'Separate from');
 
-CREATE INDEX ON invoice_lines_adjustments (invoice_line_id);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_description);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_prorate);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_relation_to_total);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_type);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
-
 COMMENT ON COLUMN invoice_lines_adjustments.invoice_line_id IS 'UUID of this invoice line id';
 
 COMMENT ON COLUMN invoice_lines_adjustments.adjustment_description IS 'List of invoice level adjustments. The adjustments can be pro-rated which are defined at the invoice level, but are applied to the invoice lines. A generic example is a shipping fee which should be spread out across all of the invoice lines so that all funds involved pay some portion of the fee.';

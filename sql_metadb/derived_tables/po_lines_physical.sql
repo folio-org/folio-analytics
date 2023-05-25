@@ -35,26 +35,6 @@ FROM
     LEFT JOIN folio_inventory.material_type__t AS imt ON imt.id = tp.pol_phys_mat_type_id
     LEFT JOIN folio_organizations.organizations__t AS oo ON oo.id = tp.pol_phys_mat_supplier_id;
 
-CREATE INDEX ON po_lines_physical (pol_id);
-
-CREATE INDEX ON po_lines_physical (pol_phys_create_inventory);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_type_id);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_type_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_supplier_id);
-
-CREATE INDEX ON po_lines_physical (supplier_org_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_expected_receipt_date);
-
-CREATE INDEX ON po_lines_physical (pol_phys_receipt_due);
-
-CREATE INDEX ON po_lines_physical (pol_volumes);
-
-CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
-
 COMMENT ON COLUMN po_lines_physical.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_physical.pol_phys_create_inventory IS 'Shows what inventory objects need to be created for electronic resource';

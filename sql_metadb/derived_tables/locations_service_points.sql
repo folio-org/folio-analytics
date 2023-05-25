@@ -21,31 +21,6 @@ CREATE TABLE locations_service_points AS
     FROM folio_inventory.location AS il
         CROSS JOIN jsonb_array_elements(jsonb_extract_path(il.jsonb, 'servicePointIds')) AS service_points (data)
         LEFT JOIN folio_inventory.service_point__t AS isp ON (service_points.data #>> '{}')::uuid = isp.id 
-        LEFT JOIN locations_libraries AS ll ON il.id=ll.location_id 
-;
-
-CREATE INDEX ON locations_service_points (service_point_id);
-
-CREATE INDEX ON locations_service_points (service_point_discovery_display_name);
-
-CREATE INDEX ON locations_service_points (service_point_name);
-
-CREATE INDEX ON locations_service_points (location_id);
-
-CREATE INDEX ON locations_service_points (location_discovery_display_name);
-
-CREATE INDEX ON locations_service_points (location_name);  
-
-CREATE INDEX ON locations_service_points (library_id);
-
-CREATE INDEX ON locations_service_points (library_name);
-
-CREATE INDEX ON locations_service_points (campus_id);  
-
-CREATE INDEX ON locations_service_points (campus_name);
-
-CREATE INDEX ON locations_service_points (institution_id);  
-
-CREATE INDEX ON locations_service_points (institution_name);
+        LEFT JOIN locations_libraries AS ll ON il.id=ll.location_id;
 
 

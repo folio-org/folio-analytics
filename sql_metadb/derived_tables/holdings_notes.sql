@@ -34,25 +34,3 @@ FROM
     LEFT JOIN folio_inventory.holdings_note_type AS hnt ON n.note_type_id = hnt.id
     LEFT JOIN folio_inventory.holdings_note_type__t AS hntt ON n.note_type_id = hntt.id;
 
-CREATE INDEX ON holdings_notes (instance_id);
-
-CREATE INDEX ON holdings_notes (instance_hrid);
-
-CREATE INDEX ON holdings_notes (holding_id);
-
-CREATE INDEX ON holdings_notes (holding_hrid);
-
-CREATE INDEX ON holdings_notes (note_type_name);
-
-CREATE INDEX ON holdings_notes (note_type_id);
-
-CREATE INDEX ON holdings_notes (note_ordinality);
-
-CREATE INDEX ON holdings_notes (note_date_created);
-
-CREATE INDEX ON holdings_notes (note_created_by_user_id);
-
-CREATE INDEX ON holdings_notes (note_date_updated);
-
-CREATE INDEX ON holdings_notes (note_updated_by_user_id);
-

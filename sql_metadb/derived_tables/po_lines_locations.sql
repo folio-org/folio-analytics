@@ -40,20 +40,6 @@ FROM
     LEFT JOIN folio_inventory.location__t AS pol_location ON pol_location.id = ploc.pol_location_id
     LEFT JOIN folio_inventory.location__t AS holdings_location ON holdings_location.id::uuid = hr.permanent_location_id ;
 
-CREATE INDEX ON po_lines_locations (pol_id);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_elec);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_phys);
-
-CREATE INDEX ON po_lines_locations (pol_location_id);
-
-CREATE INDEX ON po_lines_locations (pol_location_name);
-
-CREATE INDEX ON po_lines_locations (pol_location_source);
-
 COMMENT ON COLUMN po_lines_locations.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_locations.pol_loc_qty IS 'Combined/total quantity of physical and electronic items';

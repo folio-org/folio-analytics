@@ -52,52 +52,6 @@ FROM
     LEFT JOIN folio_users.groups__t AS g ON u.patron_group = g.id
     LEFT JOIN user_departments ON users.id = user_departments.user_id;
 
-CREATE INDEX ON users_groups (user_id);
-
-CREATE INDEX ON users_groups (active);
-
-CREATE INDEX ON users_groups (barcode);
-
-CREATE INDEX ON users_groups (created_date);
-
-CREATE INDEX ON users_groups (enrollment_date);
-
-CREATE INDEX ON users_groups (expiration_date);
-
-CREATE INDEX ON users_groups (external_system_id);
-
-CREATE INDEX ON users_groups (patron_group);
-
-CREATE INDEX ON users_groups (group_description);
-
-CREATE INDEX ON users_groups (group_name);
-
-CREATE INDEX ON users_groups (departments);
-
-CREATE INDEX ON users_groups (user_last_name);
-
-CREATE INDEX ON users_groups (user_first_name);
-
-CREATE INDEX ON users_groups (user_middle_name);
-
-CREATE INDEX ON users_groups (user_preferred_first_name);
-
-CREATE INDEX ON users_groups (user_email);
-
-CREATE INDEX ON users_groups (user_phone);
-
-CREATE INDEX ON users_groups (user_mobile_phone);
-
-CREATE INDEX ON users_groups (user_date_of_birth);
-
-CREATE INDEX ON users_groups (user_preferred_contact_type_id);
-
-CREATE INDEX ON users_groups (user_type);
-
-CREATE INDEX ON users_groups (updated_date);
-
-CREATE INDEX ON users_groups (username);
-
 COMMENT ON COLUMN users_groups.user_id IS 'A globally unique (UUID) identifier for the user';
 
 COMMENT ON COLUMN users_groups.active IS 'A flag to determine if the users account is effective and not expired. The tenant configuration can require the user to be active for login. Active is different from the loan patron block';

@@ -15,11 +15,3 @@ FROM
     LEFT JOIN folio_inventory.instance AS inst ON inst.id = i.id
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'tags', 'tagList')) WITH ORDINALITY AS taglist (jsonb);
 
-CREATE INDEX ON instance_tags (instance_id);
-
-CREATE INDEX ON instance_tags (instance_hrid);
-
-CREATE INDEX ON instance_tags (instance_tag);
-
-CREATE INDEX ON instance_tags (instance_tag_ordinality);
-

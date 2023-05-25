@@ -36,42 +36,6 @@ FROM
     LEFT JOIN folio_agreements.refdata_value AS saas ON sa.sa_agreement_status = saas.rdv_id
     LEFT JOIN folio_agreements.refdata_value AS sarfc ON sa.sa_reason_for_closure = sarfc.rdv_id;
 
-CREATE INDEX ON agreements_subscription_agreement (sa_id);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_renewal_priority);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_renewal_priority_value);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_renewal_priority_label);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_is_perpetual);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_is_perpetual_value);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_is_perpetual_label);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_name);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_local_reference);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_agreement_status);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_agreement_status_value);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_agreement_status_label);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_description);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_license_note);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_reason_for_closure);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_reason_for_closure_value);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_reason_for_closure_label);
-
-CREATE INDEX ON agreements_subscription_agreement (sa_custom_properties_id);
-
 COMMENT ON COLUMN agreements_subscription_agreement.sa_id IS 'UUID of Agreement';
 
 COMMENT ON COLUMN agreements_subscription_agreement.sa_renewal_priority IS 'ID of reference data value for renewal priority';

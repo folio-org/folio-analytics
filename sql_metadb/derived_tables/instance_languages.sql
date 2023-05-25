@@ -14,12 +14,4 @@ FROM
     folio_inventory.instance AS instances
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'languages')) WITH ORDINALITY AS languages (jsonb);
 
-CREATE INDEX ON instance_languages (instance_id);
-
-CREATE INDEX ON instance_languages (instance_hrid);
-
-CREATE INDEX ON instance_languages (instance_language);
-
-CREATE INDEX ON instance_languages (language_ordinality);
-
 

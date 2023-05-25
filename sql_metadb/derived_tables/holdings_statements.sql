@@ -33,18 +33,4 @@ FROM
     holdings AS hs
     LEFT JOIN folio_inventory.instance AS i ON hs.instance_id = i.id;
 
-CREATE INDEX ON holdings_statements (instance_id);
-
-CREATE INDEX ON holdings_statements (instance_hrid);
-
-CREATE INDEX ON holdings_statements (holdings_id);
-
-CREATE INDEX ON holdings_statements (holdings_hrid);
-
-CREATE INDEX ON holdings_statements (public_note);
-
-CREATE INDEX ON holdings_statements (staff_note);
-
-CREATE INDEX ON holdings_statements (statement_ordinality);
-
 

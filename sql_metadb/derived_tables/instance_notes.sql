@@ -20,15 +20,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instance.jsonb, 'notes')) WITH ORDINALITY AS instnotes (jsonb)
     LEFT JOIN folio_inventory.instance_note_type__t AS notetype ON jsonb_extract_path_text(instnotes.jsonb, 'instanceNoteTypeId')::uuid = notetype.id::uuid;
 
-CREATE INDEX ON instance_notes (instance_id);
-
-CREATE INDEX ON instance_notes (instance_hrid);
-
-CREATE INDEX ON instance_notes (staff_only_note);
-
-CREATE INDEX ON instance_notes (instance_note_type_id);
-
-CREATE INDEX ON instance_notes (instance_note_type_name);
-
-CREATE INDEX ON instance_notes (instance_notes_ordinality);
-

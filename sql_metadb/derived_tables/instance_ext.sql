@@ -31,34 +31,4 @@ FROM
     LEFT JOIN folio_inventory.mode_of_issuance__t AS moit ON jsonb_extract_path_text(i.jsonb, 'modeOfIssuanceId')::uuid = moit.id
     LEFT JOIN folio_inventory.instance_type__t AS itt ON jsonb_extract_path_text(i.jsonb, 'instanceTypeId')::uuid = itt.id;
 
-CREATE INDEX ON instance_ext (instance_id);
-
-CREATE INDEX ON instance_ext (instance_hrid);
-
-CREATE INDEX ON instance_ext (match_key);
-
-CREATE INDEX ON instance_ext (record_source);
-
-CREATE INDEX ON instance_ext (discovery_suppress);
-
-CREATE INDEX ON instance_ext (staff_suppress);
-
-CREATE INDEX ON instance_ext (previously_held);
-
-CREATE INDEX ON instance_ext (is_bound_with);
-
-CREATE INDEX ON instance_ext (instance_type_id);
-
-CREATE INDEX ON instance_ext (instance_type_name);
-
-CREATE INDEX ON instance_ext (mode_of_issuance_id);
-
-CREATE INDEX ON instance_ext (mode_of_issuance_name);
-
-CREATE INDEX ON instance_ext (cataloged_date);
-
-CREATE INDEX ON instance_ext (created_date);
-
-CREATE INDEX ON instance_ext (updated_date);
-
 

@@ -34,22 +34,4 @@ SELECT
 FROM 
 	eaccess AS ea
 	LEFT JOIN folio_inventory.electronic_access_relationship__t AS eart ON ea.relationship_id = eart.id ;
-	
-CREATE INDEX ON instance_electronic_access (instance_id);
-
-CREATE INDEX ON instance_electronic_access (instance_hrid);
-
-CREATE INDEX ON instance_electronic_access (uri);
-
-CREATE INDEX ON instance_electronic_access (link_text);
-
-CREATE INDEX ON instance_electronic_access (materials_specification);
-
-CREATE INDEX ON instance_electronic_access (public_note);
-
-CREATE INDEX ON instance_electronic_access (relationship_id);
-
-CREATE INDEX ON instance_electronic_access (relationship_name);
-
-CREATE INDEX ON instance_electronic_access (electronic_access_ordinality);
 

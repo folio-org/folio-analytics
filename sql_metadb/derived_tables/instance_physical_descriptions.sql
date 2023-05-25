@@ -16,11 +16,3 @@ FROM
     LEFT JOIN folio_inventory.instance AS inst ON inst.id = i.id
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'physicalDescriptions')) WITH ORDINALITY AS physdesc (jsonb);
 
-CREATE INDEX ON instance_physical_descriptions (instance_id);
-
-CREATE INDEX ON instance_physical_descriptions (instance_hrid);
-
-CREATE INDEX ON instance_physical_descriptions (physical_description);
-
-CREATE INDEX ON instance_physical_descriptions (physical_description_ordinality);
-

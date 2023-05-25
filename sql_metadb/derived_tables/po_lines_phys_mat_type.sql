@@ -22,12 +22,6 @@ FROM
     temp_pol_phys_mat_type AS tppmt
     LEFT JOIN folio_inventory.material_type__t AS imt ON imt.id = tppmt.pol_phys_mat_type_id;
 
-CREATE INDEX ON po_lines_phys_mat_type (pol_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_phys_mat_type_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_mat_type_name);
-
 COMMENT ON COLUMN po_lines_phys_mat_type.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_phys_mat_type.pol_phys_mat_type_id IS 'UUID of the material Type';
