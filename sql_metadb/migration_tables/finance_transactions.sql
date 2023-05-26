@@ -20,31 +20,3 @@ SELECT
 FROM
     folio_finance.transaction;
 
-ALTER TABLE finance_transactions ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_transactions (amount);
-
-CREATE INDEX ON finance_transactions (currency);
-
-CREATE INDEX ON finance_transactions (description);
-
-CREATE INDEX ON finance_transactions (expense_class_id);
-
-CREATE INDEX ON finance_transactions (fiscal_year_id);
-
-CREATE INDEX ON finance_transactions (from_fund_id);
-
-CREATE INDEX ON finance_transactions (payment_encumbrance_id);
-
-CREATE INDEX ON finance_transactions (source);
-
-CREATE INDEX ON finance_transactions (source_fiscal_year_id);
-
-CREATE INDEX ON finance_transactions (source_invoice_id);
-
-CREATE INDEX ON finance_transactions (source_invoice_line_id);
-
-CREATE INDEX ON finance_transactions (to_fund_id);
-
-CREATE INDEX ON finance_transactions (transaction_type);
-

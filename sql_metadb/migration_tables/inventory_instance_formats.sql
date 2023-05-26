@@ -11,13 +11,3 @@ SELECT
 FROM
     folio_inventory.instance_format;
 
-ALTER TABLE inventory_instance_formats ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instance_formats (code);
-
-CREATE INDEX ON inventory_instance_formats (name);
-
-CREATE INDEX ON inventory_instance_formats (read_only);
-
-CREATE INDEX ON inventory_instance_formats (source);
-

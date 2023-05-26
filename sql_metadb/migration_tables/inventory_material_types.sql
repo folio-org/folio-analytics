@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_inventory.material_type;
 
-ALTER TABLE inventory_material_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_material_types (name);
-
-CREATE INDEX ON inventory_material_types (source);
-

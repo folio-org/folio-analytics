@@ -13,17 +13,3 @@ SELECT
 FROM
     folio_courses.coursereserves_courselistings;
 
-ALTER TABLE course_courselistings ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_courselistings (course_type_id);
-
-CREATE INDEX ON course_courselistings (external_id);
-
-CREATE INDEX ON course_courselistings (location_id);
-
-CREATE INDEX ON course_courselistings (registrar_id);
-
-CREATE INDEX ON course_courselistings (servicepoint_id);
-
-CREATE INDEX ON course_courselistings (term_id);
-

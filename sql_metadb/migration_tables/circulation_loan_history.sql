@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_circulation.audit_loan;
 
-ALTER TABLE circulation_loan_history ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_loan_history (created_date);
-
-CREATE INDEX ON circulation_loan_history (operation);
-

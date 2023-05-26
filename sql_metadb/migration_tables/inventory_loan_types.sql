@@ -8,7 +8,3 @@ SELECT
 FROM
     folio_inventory.loan_type;
 
-ALTER TABLE inventory_loan_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_loan_types (name);
-

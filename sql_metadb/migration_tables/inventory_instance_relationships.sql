@@ -10,11 +10,3 @@ SELECT
 FROM
     folio_inventory.instance_relationship;
 
-ALTER TABLE inventory_instance_relationships ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instance_relationships (instance_relationship_type_id);
-
-CREATE INDEX ON inventory_instance_relationships (sub_instance_id);
-
-CREATE INDEX ON inventory_instance_relationships (super_instance_id);
-

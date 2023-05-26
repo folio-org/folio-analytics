@@ -11,13 +11,3 @@ SELECT
 FROM
     folio_finance.group_fund_fiscal_year;
 
-ALTER TABLE finance_group_fund_fiscal_years ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_group_fund_fiscal_years (budget_id);
-
-CREATE INDEX ON finance_group_fund_fiscal_years (fiscal_year_id);
-
-CREATE INDEX ON finance_group_fund_fiscal_years (fund_id);
-
-CREATE INDEX ON finance_group_fund_fiscal_years (group_id);
-

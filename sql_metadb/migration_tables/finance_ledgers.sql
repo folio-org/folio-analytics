@@ -15,21 +15,3 @@ SELECT
 FROM
     folio_finance.ledger;
 
-ALTER TABLE finance_ledgers ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_ledgers (code);
-
-CREATE INDEX ON finance_ledgers (currency);
-
-CREATE INDEX ON finance_ledgers (description);
-
-CREATE INDEX ON finance_ledgers (fiscal_year_one_id);
-
-CREATE INDEX ON finance_ledgers (ledger_status);
-
-CREATE INDEX ON finance_ledgers (name);
-
-CREATE INDEX ON finance_ledgers (restrict_encumbrance);
-
-CREATE INDEX ON finance_ledgers (restrict_expenditures);
-

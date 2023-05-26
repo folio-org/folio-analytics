@@ -10,11 +10,3 @@ SELECT
 FROM
     folio_inventory.instance_type;
 
-ALTER TABLE inventory_instance_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instance_types (code);
-
-CREATE INDEX ON inventory_instance_types (name);
-
-CREATE INDEX ON inventory_instance_types (source);
-

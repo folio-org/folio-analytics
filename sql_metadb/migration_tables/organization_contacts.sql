@@ -13,17 +13,3 @@ SELECT
 FROM
     folio_organizations.contacts;
 
-ALTER TABLE organization_contacts ADD PRIMARY KEY (id);
-
-CREATE INDEX ON organization_contacts (first_name);
-
-CREATE INDEX ON organization_contacts (inactive);
-
-CREATE INDEX ON organization_contacts (language);
-
-CREATE INDEX ON organization_contacts (last_name);
-
-CREATE INDEX ON organization_contacts (notes);
-
-CREATE INDEX ON organization_contacts (prefix);
-

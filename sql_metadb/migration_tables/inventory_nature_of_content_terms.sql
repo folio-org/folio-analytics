@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_inventory.nature_of_content_term;
 
-ALTER TABLE inventory_nature_of_content_terms ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_nature_of_content_terms (name);
-
-CREATE INDEX ON inventory_nature_of_content_terms (source);
-

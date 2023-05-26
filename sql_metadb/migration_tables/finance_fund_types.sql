@@ -8,7 +8,3 @@ SELECT
 FROM
     folio_finance.fund_type;
 
-ALTER TABLE finance_fund_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_fund_types (name);
-

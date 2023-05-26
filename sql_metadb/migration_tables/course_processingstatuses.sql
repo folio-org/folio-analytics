@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_courses.coursereserves_processingstates;
 
-ALTER TABLE course_processingstatuses ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_processingstatuses (description);
-
-CREATE INDEX ON course_processingstatuses (name);
-

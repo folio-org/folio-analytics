@@ -20,27 +20,3 @@ SELECT
 FROM
     folio_inventory.instance;
 
-ALTER TABLE inventory_instances ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instances (_version);
-
-CREATE INDEX ON inventory_instances (cataloged_date);
-
-CREATE INDEX ON inventory_instances (discovery_suppress);
-
-CREATE INDEX ON inventory_instances (hrid);
-
-CREATE INDEX ON inventory_instances (instance_type_id);
-
-CREATE INDEX ON inventory_instances (mode_of_issuance_id);
-
-CREATE INDEX ON inventory_instances (previously_held);
-
-CREATE INDEX ON inventory_instances (source);
-
-CREATE INDEX ON inventory_instances (staff_suppress);
-
-CREATE INDEX ON inventory_instances (status_id);
-
-CREATE INDEX ON inventory_instances (status_updated_date);
-

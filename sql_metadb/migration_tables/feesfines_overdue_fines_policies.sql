@@ -14,19 +14,3 @@ SELECT
 FROM
     folio_feesfines.overdue_fine_policy;
 
-ALTER TABLE feesfines_overdue_fines_policies ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (count_closed);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (description);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (forgive_overdue_fine);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (grace_period_recall);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (max_overdue_fine);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (max_overdue_recall_fine);
-
-CREATE INDEX ON feesfines_overdue_fines_policies (name);
-

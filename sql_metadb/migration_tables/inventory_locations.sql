@@ -16,23 +16,3 @@ SELECT
 FROM
     folio_inventory.location;
 
-ALTER TABLE inventory_locations ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_locations (campus_id);
-
-CREATE INDEX ON inventory_locations (code);
-
-CREATE INDEX ON inventory_locations (description);
-
-CREATE INDEX ON inventory_locations (discovery_display_name);
-
-CREATE INDEX ON inventory_locations (institution_id);
-
-CREATE INDEX ON inventory_locations (is_active);
-
-CREATE INDEX ON inventory_locations (library_id);
-
-CREATE INDEX ON inventory_locations (name);
-
-CREATE INDEX ON inventory_locations (primary_service_point);
-

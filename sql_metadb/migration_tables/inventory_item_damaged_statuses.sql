@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_inventory.item_damaged_status;
 
-ALTER TABLE inventory_item_damaged_statuses ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_item_damaged_statuses (name);
-
-CREATE INDEX ON inventory_item_damaged_statuses (source);
-

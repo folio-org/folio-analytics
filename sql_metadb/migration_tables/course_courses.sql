@@ -14,19 +14,3 @@ SELECT
 FROM
     folio_courses.coursereserves_courses;
 
-ALTER TABLE course_courses ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_courses (course_listing_id);
-
-CREATE INDEX ON course_courses (course_number);
-
-CREATE INDEX ON course_courses (department_id);
-
-CREATE INDEX ON course_courses (description);
-
-CREATE INDEX ON course_courses (name);
-
-CREATE INDEX ON course_courses (number_of_students);
-
-CREATE INDEX ON course_courses (section_name);
-

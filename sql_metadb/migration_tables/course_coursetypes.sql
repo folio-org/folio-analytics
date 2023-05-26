@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_courses.coursereserves_coursetypes;
 
-ALTER TABLE course_coursetypes ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_coursetypes (description);
-
-CREATE INDEX ON course_coursetypes (name);
-

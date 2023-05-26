@@ -16,23 +16,3 @@ SELECT
 FROM
     folio_users.users;
 
-ALTER TABLE user_users ADD PRIMARY KEY (id);
-
-CREATE INDEX ON user_users (active);
-
-CREATE INDEX ON user_users (barcode);
-
-CREATE INDEX ON user_users (created_date);
-
-CREATE INDEX ON user_users (enrollment_date);
-
-CREATE INDEX ON user_users (expiration_date);
-
-CREATE INDEX ON user_users (patron_group);
-
-CREATE INDEX ON user_users (type);
-
-CREATE INDEX ON user_users (updated_date);
-
-CREATE INDEX ON user_users (username);
-

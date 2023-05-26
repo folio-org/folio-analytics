@@ -12,15 +12,3 @@ SELECT
 FROM
     folio_inventory.service_point;
 
-ALTER TABLE inventory_service_points ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_service_points (code);
-
-CREATE INDEX ON inventory_service_points (discovery_display_name);
-
-CREATE INDEX ON inventory_service_points (name);
-
-CREATE INDEX ON inventory_service_points (pickup_location);
-
-CREATE INDEX ON inventory_service_points (shelving_lag_time);
-

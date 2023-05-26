@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_courses.coursereserves_copyrightstates;
 
-ALTER TABLE course_copyrightstatuses ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_copyrightstatuses (description);
-
-CREATE INDEX ON course_copyrightstatuses (name);
-

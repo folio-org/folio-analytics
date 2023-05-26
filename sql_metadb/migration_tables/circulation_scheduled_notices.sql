@@ -12,15 +12,3 @@ SELECT
 FROM
     folio_circulation.scheduled_notice;
 
-ALTER TABLE circulation_scheduled_notices ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_scheduled_notices (loan_id);
-
-CREATE INDEX ON circulation_scheduled_notices (next_run_time);
-
-CREATE INDEX ON circulation_scheduled_notices (recipient_user_id);
-
-CREATE INDEX ON circulation_scheduled_notices (request_id);
-
-CREATE INDEX ON circulation_scheduled_notices (triggering_event);
-

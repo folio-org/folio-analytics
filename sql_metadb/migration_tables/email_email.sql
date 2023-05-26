@@ -17,25 +17,3 @@ SELECT
 FROM
     folio_email.email_statistics;
 
-ALTER TABLE email_email ADD PRIMARY KEY (id);
-
-CREATE INDEX ON email_email (body);
-
-CREATE INDEX ON email_email (date);
-
-CREATE INDEX ON email_email (delivery_channel);
-
-CREATE INDEX ON email_email ("from");
-
-CREATE INDEX ON email_email (header);
-
-CREATE INDEX ON email_email (message);
-
-CREATE INDEX ON email_email (notification_id);
-
-CREATE INDEX ON email_email (output_format);
-
-CREATE INDEX ON email_email (status);
-
-CREATE INDEX ON email_email ("to");
-

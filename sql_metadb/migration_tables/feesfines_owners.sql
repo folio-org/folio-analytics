@@ -8,7 +8,3 @@ SELECT
 FROM
     folio_feesfines.owners;
 
-ALTER TABLE feesfines_owners ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_owners (owner);
-

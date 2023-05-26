@@ -10,11 +10,3 @@ SELECT
 FROM
     folio_users.groups;
 
-ALTER TABLE user_groups ADD PRIMARY KEY (id);
-
-CREATE INDEX ON user_groups ("desc");
-
-CREATE INDEX ON user_groups (expiration_offset_in_days);
-
-CREATE INDEX ON user_groups ("group");
-

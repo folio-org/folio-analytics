@@ -13,17 +13,3 @@ SELECT
 FROM
     folio_orders.acquisitions_unit;
 
-ALTER TABLE acquisitions_units ADD PRIMARY KEY (id);
-
-CREATE INDEX ON acquisitions_units (is_deleted);
-
-CREATE INDEX ON acquisitions_units (name);
-
-CREATE INDEX ON acquisitions_units (protect_create);
-
-CREATE INDEX ON acquisitions_units (protect_delete);
-
-CREATE INDEX ON acquisitions_units (protect_read);
-
-CREATE INDEX ON acquisitions_units (protect_update);
-

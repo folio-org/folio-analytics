@@ -11,13 +11,3 @@ SELECT
 FROM
     folio_finance.groups;
 
-ALTER TABLE finance_groups ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_groups (code);
-
-CREATE INDEX ON finance_groups (description);
-
-CREATE INDEX ON finance_groups (name);
-
-CREATE INDEX ON finance_groups (status);
-

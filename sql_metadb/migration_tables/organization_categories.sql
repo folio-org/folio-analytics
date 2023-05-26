@@ -8,7 +8,3 @@ SELECT
 FROM
     folio_organizations.categories;
 
-ALTER TABLE organization_categories ADD PRIMARY KEY (id);
-
-CREATE INDEX ON organization_categories (value);
-

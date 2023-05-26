@@ -27,33 +27,3 @@ SELECT
 FROM
     folio_source_record.records_lb;
 
-ALTER TABLE srs_records ADD PRIMARY KEY (id);
-
-CREATE INDEX ON srs_records (created_by_user_id);
-
-CREATE INDEX ON srs_records (created_date);
-
-CREATE INDEX ON srs_records (external_hrid);
-
-CREATE INDEX ON srs_records (external_id);
-
-CREATE INDEX ON srs_records (generation);
-
-CREATE INDEX ON srs_records (leader_record_status);
-
-CREATE INDEX ON srs_records (matched_id);
-
-CREATE INDEX ON srs_records ("order");
-
-CREATE INDEX ON srs_records (record_type);
-
-CREATE INDEX ON srs_records (snapshot_id);
-
-CREATE INDEX ON srs_records (state);
-
-CREATE INDEX ON srs_records (suppress_discovery);
-
-CREATE INDEX ON srs_records (updated_by_user_id);
-
-CREATE INDEX ON srs_records (updated_date);
-

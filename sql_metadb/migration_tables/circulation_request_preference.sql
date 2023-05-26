@@ -12,15 +12,3 @@ SELECT
 FROM
     folio_circulation.user_request_preference;
 
-ALTER TABLE circulation_request_preference ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_request_preference (default_service_point_id);
-
-CREATE INDEX ON circulation_request_preference (delivery);
-
-CREATE INDEX ON circulation_request_preference (fulfillment);
-
-CREATE INDEX ON circulation_request_preference (hold_shelf);
-
-CREATE INDEX ON circulation_request_preference (user_id);
-

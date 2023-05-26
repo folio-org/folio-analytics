@@ -10,11 +10,3 @@ SELECT
 FROM
     folio_courses.coursereserves_terms;
 
-ALTER TABLE course_terms ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_terms (end_date);
-
-CREATE INDEX ON course_terms (name);
-
-CREATE INDEX ON course_terms (start_date);
-

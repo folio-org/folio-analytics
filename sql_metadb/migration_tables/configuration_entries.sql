@@ -15,21 +15,3 @@ SELECT
 FROM
     folio_configuration.config_data;
 
-ALTER TABLE configuration_entries ADD PRIMARY KEY (id);
-
-CREATE INDEX ON configuration_entries (code);
-
-CREATE INDEX ON configuration_entries (config_name);
-
-CREATE INDEX ON configuration_entries ("default");
-
-CREATE INDEX ON configuration_entries (description);
-
-CREATE INDEX ON configuration_entries (enabled);
-
-CREATE INDEX ON configuration_entries (module);
-
-CREATE INDEX ON configuration_entries (user_id);
-
-CREATE INDEX ON configuration_entries (value);
-

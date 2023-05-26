@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_users.addresstype;
 
-ALTER TABLE user_addresstypes ADD PRIMARY KEY (id);
-
-CREATE INDEX ON user_addresstypes (address_type);
-
-CREATE INDEX ON user_addresstypes ("desc");
-

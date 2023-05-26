@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_inventory.ill_policy;
 
-ALTER TABLE inventory_ill_policies ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_ill_policies (name);
-
-CREATE INDEX ON inventory_ill_policies (source);
-

@@ -8,7 +8,3 @@ SELECT
 FROM
     folio_orders.reporting_code;
 
-ALTER TABLE po_reporting_codes ADD PRIMARY KEY (id);
-
-CREATE INDEX ON po_reporting_codes (code);
-

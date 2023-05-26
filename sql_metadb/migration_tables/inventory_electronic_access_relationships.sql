@@ -9,9 +9,3 @@ SELECT
 FROM
     folio_inventory.electronic_access_relationship;
 
-ALTER TABLE inventory_electronic_access_relationships ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_electronic_access_relationships (name);
-
-CREATE INDEX ON inventory_electronic_access_relationships (source);
-

@@ -24,39 +24,3 @@ SELECT
 FROM
     folio_invoice.vouchers;
 
-ALTER TABLE invoice_vouchers ADD PRIMARY KEY (id);
-
-CREATE INDEX ON invoice_vouchers (accounting_code);
-
-CREATE INDEX ON invoice_vouchers (amount);
-
-CREATE INDEX ON invoice_vouchers (batch_group_id);
-
-CREATE INDEX ON invoice_vouchers (disbursement_amount);
-
-CREATE INDEX ON invoice_vouchers (disbursement_date);
-
-CREATE INDEX ON invoice_vouchers (disbursement_number);
-
-CREATE INDEX ON invoice_vouchers (enclosure_needed);
-
-CREATE INDEX ON invoice_vouchers (exchange_rate);
-
-CREATE INDEX ON invoice_vouchers (export_to_accounting);
-
-CREATE INDEX ON invoice_vouchers (invoice_currency);
-
-CREATE INDEX ON invoice_vouchers (invoice_id);
-
-CREATE INDEX ON invoice_vouchers (status);
-
-CREATE INDEX ON invoice_vouchers (system_currency);
-
-CREATE INDEX ON invoice_vouchers (type);
-
-CREATE INDEX ON invoice_vouchers (vendor_id);
-
-CREATE INDEX ON invoice_vouchers (voucher_date);
-
-CREATE INDEX ON invoice_vouchers (voucher_number);
-
