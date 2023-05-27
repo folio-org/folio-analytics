@@ -16,14 +16,14 @@ WITH po_line AS (
         jsonb_extract_path_text(po_line.jsonb, 'poLineNumber') AS poline_number,
         cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'poLineEstimatedPrice') AS numeric(19,4)) AS poline_estimated_price,
         jsonb_extract_path_text(po_line.jsonb, 'cost', 'currency') AS poline_currency,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'listUnitPrice') AS numeric(19,4)) AS poline_listUnitPrice,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'quantityPhysical') AS integer) AS poline_quantityPhysical,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'listUnitPriceElectronic') AS numeric(19,4)) AS poline_listUnitPriceElectronic,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'quantityElectronic') AS integer) AS poline_quantityElectronic,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'additionalCost') AS numeric(19,4)) AS poline_additionalCost,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'listUnitPrice') AS numeric(19,4)) AS poline_listunitprice,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'quantityPhysical') AS integer) AS poline_quantityphysical,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'listUnitPriceElectronic') AS numeric(19,4)) AS poline_listunitpriceelectronic,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'quantityElectronic') AS integer) AS poline_quantityelectronic,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'additionalCost') AS numeric(19,4)) AS poline_additionalcost,
         jsonb_extract_path_text(po_line.jsonb, 'cost', 'discount') AS poline_discount,
-        jsonb_extract_path_text(po_line.jsonb, 'cost', 'discountType') AS poline_discountType,
-        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'fyroAdjustmentAmount') AS numeric(19,4)) AS po_line_fyroAdjustmentAmount,
+        jsonb_extract_path_text(po_line.jsonb, 'cost', 'discountType') AS poline_discounttype,
+        cast(jsonb_extract_path_text(po_line.jsonb, 'cost', 'fyroAdjustmentAmount') AS numeric(19,4)) AS po_line_fyroadjustmentamount,
         jsonb_extract_path_text(po_line.jsonb, 'titleOrPackage') AS poline_title_or_package
     FROM
         folio_orders.po_line AS po_line
@@ -53,9 +53,9 @@ transactions AS (
         cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'amountExpended') AS numeric(19,4)) AS transaction_encumbrance_amount_expended,
         jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'orderType') AS transaction_encumbrance_order_type,
         cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'subscription') AS boolean) AS transaction_encumbrance_subscription,
-        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'sourcePoLineId') AS uuid) AS sourcePoLineId,
-        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'sourcePurchaseOrderId') AS uuid) AS sourcePurchaseOrderId,
-        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'fromFundId') AS uuid) AS fromFundId
+        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'sourcePoLineId') AS uuid) AS sourcepolineid,
+        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'encumbrance', 'sourcePurchaseOrderId') AS uuid) AS sourcepurchaseorderid,
+        cast(jsonb_extract_path_text(finance_transaction.jsonb, 'fromFundId') AS uuid) AS fromfundid
     FROM
         folio_finance.transaction AS finance_transaction
     WHERE
@@ -65,20 +65,20 @@ transactions AS (
 SELECT
     purchase_order.id AS po_id,
     jsonb_extract_path_text(purchase_order.jsonb, 'poNumber') AS po_number,
-    jsonb_extract_path_text(purchase_order.jsonb, 'workflowStatus') AS po_workflowStatus,
+    jsonb_extract_path_text(purchase_order.jsonb, 'workflowStatus') AS po_workflowstatus,
     po_line.po_line_id,
     po_line.poline_number,
     po_line.poline_title_or_package,
-    po_line.poline_listUnitPrice,
-    po_line.poline_quantityPhysical,
-    po_line.poline_listUnitPriceElectronic,
-    po_line.poline_quantityElectronic,
+    po_line.poline_listunitprice,
+    po_line.poline_quantityphysical,
+    po_line.poline_listunitpriceelectronic,
+    po_line.poline_quantityelectronic,
     po_line.poline_currency,
     po_line.poline_discount,
-    po_line.poline_discountType,
-    po_line.poline_additionalCost,
+    po_line.poline_discounttype,
+    po_line.poline_additionalcost,
     po_line.poline_estimated_price,
-    po_line.po_line_fyroAdjustmentAmount,
+    po_line.po_line_fyroadjustmentamount,
     po_line.fund_distribution_value,
     po_line.fund_distribution_type,
     finance.budget_id,
@@ -98,8 +98,8 @@ FROM
     folio_orders.purchase_order AS purchase_order
     LEFT JOIN po_line ON po_line.purchaseorderid = purchase_order.id
     LEFT JOIN finance ON finance.fund_id = po_line.fund_distribution_id
-    LEFT JOIN transactions ON transactions.sourcePoLineId = po_line.po_line_id
-        AND transactions.fromFundId = po_line.fund_distribution_id
+    LEFT JOIN transactions ON transactions.sourcepolineid = po_line.po_line_id
+        AND transactions.fromfundid = po_line.fund_distribution_id
     ORDER BY
         po_number,
         poline_number;
@@ -108,7 +108,7 @@ COMMENT ON COLUMN po_line_fund_distribution_transactions.po_id IS 'UUID identify
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.po_number IS 'A human readable ID assigned to this purchase order';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.po_workflowStatus IS 'the workflow status for this purchase order';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_workflowstatus IS 'the workflow status for this purchase order';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_id IS 'UUID identifying this purchase order line';
 
@@ -116,25 +116,25 @@ COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_number IS 'A hum
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_title_or_package IS 'title of the material';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPrice IS 'The per-item list price for physical or resources of Other order format';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listunitprice IS 'The per-item list price for physical or resources of Other order format';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityPhysical IS 'Quantity of physical items or resources of Other order format in this purchase order line';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityphysical IS 'Quantity of physical items or resources of Other order format in this purchase order line';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listUnitPriceElectronic IS 'The e-resource per-item list price';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_listunitpriceelectronic IS 'The e-resource per-item list price';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityElectronic IS 'Quantity of electronic items in this purchase order line';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_quantityelectronic IS 'Quantity of electronic items in this purchase order line';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_currency IS 'An ISO currency code';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_discount IS 'Percentage (0 to 100) or amount (positive number) that is subtracted from the list price time quantities calculation before additional cost';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_discountType IS 'Percentage or amount discount type';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_discounttype IS 'Percentage or amount discount type';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_additionalCost IS 'Lump sum that is added to the total estimated price - not affected by discount';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_additionalcost IS 'Lump sum that is added to the total estimated price - not affected by discount';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.poline_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
 
-COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_fyroAdjustmentAmount IS 'Adjustment amount if rollover was happen';
+COMMENT ON COLUMN po_line_fund_distribution_transactions.po_line_fyroadjustmentamount IS 'Adjustment amount if rollover was happen';
 
 COMMENT ON COLUMN po_line_fund_distribution_transactions.fund_distribution_value IS 'The value of the cost to be applied to this fund';
 
