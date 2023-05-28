@@ -14,15 +14,3 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(data, 'notes')) AS notes (data)
     LEFT JOIN inventory_instance_note_types AS instance_note_types ON json_extract_path_text(notes.data, 'instanceNoteTypeId') = instance_note_types.id;
 
-CREATE INDEX ON instance_notes (instance_id);
-
-CREATE INDEX ON instance_notes (instance_hrid);
-
-CREATE INDEX ON instance_notes (note_type_id);
-
-CREATE INDEX ON instance_notes (note_type_name);
-
-CREATE INDEX ON instance_notes (staff_only);
-
-VACUUM ANALYZE instance_notes;
-

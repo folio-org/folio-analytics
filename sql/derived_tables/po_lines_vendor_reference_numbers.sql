@@ -12,18 +12,6 @@ SELECT
 FROM po_lines
     CROSS JOIN json_array_elements(json_extract_path(po_lines.data, 'vendorDetail', 'referenceNumbers')) AS numbers (data);
 
-CREATE INDEX ON po_line_vendor_reference_numbers (po_line_id);
-
-CREATE INDEX ON po_line_vendor_reference_numbers (po_line_number);
-
-CREATE INDEX ON po_line_vendor_reference_numbers (vendor_reference_number);
-
-CREATE INDEX ON po_line_vendor_reference_numbers (vendor_reference_number_type);
-
-CREATE INDEX ON po_line_vendor_reference_numbers (vendor_instructions);
-
-VACUUM ANALYZE  po_line_vendor_reference_numbers;
-
 COMMENT ON COLUMN po_line_vendor_reference_numbers.po_line_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_line_vendor_reference_numbers.po_line_number IS 'A human readable number assigned to this PO line';

@@ -13,15 +13,3 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(instance.data, 'alternativeTitles')) AS alternative_titles(data)
     LEFT JOIN inventory_alternative_title_types ON json_extract_path_text(alternative_titles.data, 'alternativeTitleTypeId') = inventory_alternative_title_types.id;
 
-CREATE INDEX ON instance_alternative_titles (instance_id);
-
-CREATE INDEX ON instance_alternative_titles (instance_hrid);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title_type_id);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title_type_name);
-
-VACUUM ANALYZE instance_alternative_titles;
-

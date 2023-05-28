@@ -16,25 +16,3 @@ SELECT
 FROM
     po_lines AS pol;
 
-CREATE INDEX ON po_lines_cost (pol_id);
-
-CREATE INDEX ON po_lines_cost (po_lines_list_unit_price_phys);
-
-CREATE INDEX ON po_lines_cost (po_lines_quant_phys);
-
-CREATE INDEX ON po_lines_cost (po_lines_list_unit_price_elec);
-
-CREATE INDEX ON po_lines_cost (po_lines_quant_elec);
-
-CREATE INDEX ON po_lines_cost (po_lines_additional_cost);
-
-CREATE INDEX ON po_lines_cost (po_lines_currency);
-
-CREATE INDEX ON po_lines_cost (po_lines_discount);
-
-CREATE INDEX ON po_lines_cost (po_lines_discount_type);
-
-CREATE INDEX ON po_lines_cost (po_lines_estimated_price);
-
-
-VACUUM ANALYZE  po_lines_cost;

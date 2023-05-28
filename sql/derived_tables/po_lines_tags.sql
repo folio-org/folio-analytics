@@ -11,11 +11,3 @@ FROM
     CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'tags', 'tagList'))
     WITH ORDINALITY AS tags (data);
 
-CREATE INDEX ON po_lines_tags (pol_id);
-
-CREATE INDEX ON po_lines_tags (pol_tag);
-
-CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
-
-
-VACUUM ANALYZE  po_lines_tags;

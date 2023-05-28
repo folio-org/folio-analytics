@@ -14,12 +14,3 @@ FROM
     CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'administrativeNotes')) WITH ORDINALITY
         AS admin_note (data);
 
-CREATE INDEX ON holdings_administrative_notes (holdings_id);
-
-CREATE INDEX ON holdings_administrative_notes (holdings_hrid);
-
-CREATE INDEX ON holdings_administrative_notes (administrative_note);
-
-CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
-
-VACUUM ANALYZE holdings_administrative_notes;

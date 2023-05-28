@@ -12,15 +12,3 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(data, 'identifiers')) AS identifiers (data)
     LEFT JOIN inventory_identifier_types ON json_extract_path_text(identifiers.data, 'identifierTypeId') = inventory_identifier_types.id;
 
-CREATE INDEX ON instance_identifiers (instance_id);
-
-CREATE INDEX ON instance_identifiers (instance_hrid);
-
-CREATE INDEX ON instance_identifiers (identifier_type_id);
-
-CREATE INDEX ON instance_identifiers (identifier_type_name);
-
-CREATE INDEX ON instance_identifiers (identifier);
-
-VACUUM ANALYZE instance_identifiers;
-

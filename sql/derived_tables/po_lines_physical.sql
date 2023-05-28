@@ -35,27 +35,3 @@ FROM
     LEFT JOIN inventory_material_types AS imt ON imt.id = tp.pol_phys_mat_type
     LEFT JOIN organization_organizations AS oo ON oo.id = tp.pol_phys_mat_supplier;
 
-CREATE INDEX ON po_lines_physical (pol_id);
-
-CREATE INDEX ON po_lines_physical (pol_phys_create_inventory);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_type);
-
-CREATE INDEX ON po_lines_physical (pol_er_mat_type_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_supplier);
-
-CREATE INDEX ON po_lines_physical (supplier_org_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_expected_receipt_date);
-
-CREATE INDEX ON po_lines_physical (pol_phys_receipt_due);
-
-CREATE INDEX ON po_lines_physical (pol_volumes);
-
-CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
-
-CREATE INDEX ON po_lines_physical (pol_phys_volumes_description);
-
-
-VACUUM ANALYZE  po_lines_physical;

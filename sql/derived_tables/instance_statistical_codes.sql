@@ -25,19 +25,3 @@ FROM
     LEFT JOIN inventory_statistical_codes ON instances_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON instance_statistical_codes (instance_id);
-
-CREATE INDEX ON instance_statistical_codes (instance_hrid);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_type_name);
-
-VACUUM ANALYZE instance_statistical_codes;
-

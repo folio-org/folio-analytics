@@ -15,17 +15,3 @@ FROM
     CROSS JOIN json_array_elements(json_extract_path(data, 'notes')) AS notes (data)
     LEFT JOIN inventory_holdings_note_types AS holdings_note_types ON json_extract_path_text(notes.data, 'holdingsNoteTypeId') = holdings_note_types.id;
 
-CREATE INDEX ON holdings_notes (holdings_id);
-
-CREATE INDEX ON holdings_notes (holdings_hrid);
-
-CREATE INDEX ON holdings_notes (instance_id);
-
-CREATE INDEX ON holdings_notes (note_type_id);
-
-CREATE INDEX ON holdings_notes (note_type_name);
-
-CREATE INDEX ON holdings_notes (staff_only);
-
-VACUUM ANALYZE holdings_notes;
-

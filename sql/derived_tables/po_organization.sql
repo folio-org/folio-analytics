@@ -15,21 +15,3 @@ FROM
     LEFT JOIN organization_organizations AS oo ON json_extract_path_text(ppo.data, 'vendor') = oo.id
     LEFT JOIN organization_contacts AS oc ON oo.id = oc.id;
 
-CREATE INDEX ON po_organization (po_number);
-
-CREATE INDEX ON po_organization (vendor_id);
-
-CREATE INDEX ON po_organization (org_id);
-
-CREATE INDEX ON po_organization (org_code);
-
-CREATE INDEX ON po_organization (org_name);
-
-CREATE INDEX ON po_organization (org_description);
-
-CREATE INDEX ON po_organization (contact_first_name);
-
-CREATE INDEX ON po_organization (contact_last_name);
-
-
-VACUUM ANALYZE  po_organization;

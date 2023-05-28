@@ -13,16 +13,6 @@ FROM
    CROSS JOIN json_array_elements(json_extract_path(instances.data, 'subjects'))
    WITH ORDINALITY AS subjects (data);
    
-CREATE INDEX ON instance_subjects (instance_id);
-
-CREATE INDEX ON instance_subjects (instance_hrid);
-
-CREATE INDEX ON instance_subjects (subject);
-
-CREATE INDEX ON instance_subjects (subject_ordinality);
-
-VACUUM ANALYZE instance_subjects;
-
 COMMENT ON COLUMN instance_subjects.instance_id IS 'UUID of the instance record';
 
 COMMENT ON COLUMN instance_subjects.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';

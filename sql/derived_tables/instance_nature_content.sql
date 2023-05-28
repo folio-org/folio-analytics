@@ -20,15 +20,3 @@ FROM
     nature_content
     JOIN inventory_nature_of_content_terms AS nature_content_term ON nature_content_term.id = nature_content.nature_of_content_term_id;
 
-CREATE INDEX ON instance_nature_content (instance_id);
-
-CREATE INDEX ON instance_nature_content (instance_hrid);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_id);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_name);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_source);
-
-VACUUM ANALYZE instance_nature_content;
-

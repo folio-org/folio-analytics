@@ -17,11 +17,3 @@ WITH temp_pol_phys_mat_type AS (
         temp_pol_phys_mat_type AS tppmt
     LEFT JOIN inventory_material_types AS imt ON imt.id = tppmt.pol_phys_mat_type;
 
-CREATE INDEX ON po_lines_phys_mat_type (pol_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_phys_mat_type_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_mat_type_name);
-
-
-VACUUM ANALYZE  po_lines_phys_mat_type;

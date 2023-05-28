@@ -18,23 +18,3 @@ FROM
     LEFT JOIN inventory_contributor_name_types ON json_extract_path_text(contributors.data, 'contributorNameTypeId') = inventory_contributor_name_types.id
     LEFT JOIN inventory_contributor_types ON json_extract_path_text(contributors.data, 'contributorTypeId') = inventory_contributor_types.id;
 
-CREATE INDEX ON instance_contributors (instance_id);
-
-CREATE INDEX ON instance_contributors (instance_hrid);
-
-CREATE INDEX ON instance_contributors (contributor_name_type_id);
-
-CREATE INDEX ON instance_contributors (contributor_name_type);
-
-CREATE INDEX ON instance_contributors (contributor_rdatype_id);
-
-CREATE INDEX ON instance_contributors (contributor_rdatype_name);
-
-CREATE INDEX ON instance_contributors (contributor_type_freetext);
-
-CREATE INDEX ON instance_contributors (contributor_name);
-
-CREATE INDEX ON instance_contributors (contributor_primary);
-
-VACUUM ANALYZE instance_contributors;
-

@@ -13,15 +13,3 @@ FROM
     LEFT JOIN inventory_instance_relationship_types AS types
         ON types.id = json_extract_path_text(relationships.data, 'instanceRelationshipTypeId');
 
-CREATE INDEX ON instance_relationships_ext (relationship_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_name);
-
-CREATE INDEX ON instance_relationships_ext (relationship_sub_instance_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_super_instance_id);
-
-VACUUM ANALYZE instance_relationships_ext;
-

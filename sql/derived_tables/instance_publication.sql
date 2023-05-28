@@ -12,15 +12,3 @@ FROM
     inventory_instances AS instance
     CROSS JOIN json_array_elements(json_extract_path(instance.data, 'publication')) AS publication(data);
 
-CREATE INDEX ON instance_publication (instance_id);
-
-CREATE INDEX ON instance_publication (instance_hrid);
-
-CREATE INDEX ON instance_publication (date_of_publication);
-
-CREATE INDEX ON instance_publication (place);
-
-CREATE INDEX ON instance_publication (publisher);
-
-VACUUM ANALYZE instance_publication;
-

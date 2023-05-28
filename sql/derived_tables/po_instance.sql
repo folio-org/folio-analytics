@@ -50,59 +50,7 @@ FROM
     LEFT JOIN organization_organizations ON json_extract_path_text(po_purchase_orders.data, 'vendor') = organization_organizations.id
     LEFT JOIN configuration_entries AS ce ON json_extract_path_text(po_purchase_orders.data, 'billTo') = ce.id
     LEFT JOIN configuration_entries AS ce2 ON json_extract_path_text(po_purchase_orders.data, 'shipTo') = ce2.id
-    LEFT JOIN user_users ON json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') = user_users.id
-;
-
-CREATE INDEX ON po_instance (manual_po);
-
-CREATE INDEX ON po_instance (rush);
-
-CREATE INDEX ON po_instance (requester);
-
-CREATE INDEX ON po_instance (selector);
-
-CREATE INDEX ON po_instance (po_number);
-
-CREATE INDEX ON po_instance (po_number_id);
-
-CREATE INDEX ON po_instance (po_line_number);
-
-CREATE INDEX ON po_instance (po_line_id);
-
-CREATE INDEX ON po_instance (vendor_code);
-
-CREATE INDEX ON po_instance (created_by_username);
-
-CREATE INDEX ON po_instance (po_workflow_status);
-
-CREATE INDEX ON po_instance (status_approved);
-
-CREATE INDEX ON po_instance (created_date);
-
-CREATE INDEX ON po_instance (bill_to);
-
-CREATE INDEX ON po_instance (ship_to);
-
-CREATE INDEX ON po_instance (pol_instance_id);
-
-CREATE INDEX ON po_instance (pol_instance_hrid);
-
-CREATE INDEX ON po_instance (pol_holding_id);
-
-CREATE INDEX ON po_instance (pol_location_id);
-
-CREATE INDEX ON po_instance (pol_location_name);
-
-CREATE INDEX ON po_instance (pol_location_source);
-
-CREATE INDEX ON po_instance (title);
-
-CREATE INDEX ON po_instance (publication_date);
-
-CREATE INDEX ON po_instance (publisher);
-
-
-VACUUM ANALYZE po_instance;
+    LEFT JOIN user_users ON json_extract_path_text(po_purchase_orders.data, 'metadata', 'createdByUserId') = user_users.id;
 
 COMMENT ON COLUMN po_instance.manual_po IS 'If true, order cannot be sent automatically, e.g. via EDI';
 

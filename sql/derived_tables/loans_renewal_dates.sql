@@ -21,18 +21,3 @@ CREATE TABLE loans_renewal_dates AS
         loan_action_date
 ;
 
-CREATE INDEX ON loans_renewal_dates (loan_history_id);
-
-CREATE INDEX ON loans_renewal_dates (loan_action_date);
-
-CREATE INDEX ON loans_renewal_dates (loan_id);
-
-CREATE INDEX ON loans_renewal_dates (item_id);
-
-CREATE INDEX ON loans_renewal_dates (loan_action);
-
-CREATE INDEX ON loans_renewal_dates (loan_renewal_count);
-
-CREATE INDEX ON loans_renewal_dates (loan_status);
-
-VACUUM ANALYZE  loans_renewal_dates;

@@ -26,17 +26,3 @@ LEFT JOIN user_departments AS ud
     ON departments_array.department_id = ud.id
 ;
 
-CREATE INDEX ON users_departments_unpacked (user_id);
-
-CREATE INDEX ON users_departments_unpacked (department_id);
-
-CREATE INDEX ON users_departments_unpacked (department_ordinality);
-
-CREATE INDEX ON users_departments_unpacked (department_name);
-
-CREATE INDEX ON users_departments_unpacked (department_code);
-
-CREATE INDEX ON users_departments_unpacked (department_usage_number);
-
-
-VACUUM ANALYZE  users_departments_unpacked;

@@ -31,18 +31,3 @@ FROM
     LEFT JOIN inventory_locations AS il ON json_extract_path_text(locations.data, 'locationId') = il.id
     LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id;
 
-CREATE INDEX ON po_lines_locations (pol_id);
-
-CREATE INDEX ON po_lines_locations (pol_location_qty);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_elec);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_phys);
-
-CREATE INDEX ON po_lines_locations (pol_location_id);
-
-CREATE INDEX ON po_lines_locations (pol_location_name);
-
-CREATE INDEX ON po_lines_locations (pol_location_source);
-
-VACUUM ANALYZE po_lines_locations;

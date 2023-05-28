@@ -14,15 +14,3 @@ FROM
     inventory_holdings AS holdings
     CROSS JOIN json_array_elements(json_extract_path(data, 'holdingsStatementsForSupplements')) AS holdings_statements_for_supplements(data);
 
-CREATE INDEX ON holdings_statements_supplements (holdings_id);
-
-CREATE INDEX ON holdings_statements_supplements (holdings_hrid);
-
-CREATE INDEX ON holdings_statements_supplements ("statement");
-
-CREATE INDEX ON holdings_statements_supplements (public_note);
-
-CREATE INDEX ON holdings_statements_supplements (staff_note);
-
-VACUUM ANALYZE holdings_statements_supplements;
-

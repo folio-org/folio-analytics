@@ -27,17 +27,3 @@ WHERE
     adjustment_relationToTotal = 'In addition to'
     AND adjustment_prorate = 'Not prorated';
 
-CREATE INDEX ON invoice_adjustments_in_addition_to (invoice_id);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_description);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_prorate);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_relationToTotal);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_type);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_value);
-
-VACUUM ANALYZE invoice_adjustments_in_addition_to;
-

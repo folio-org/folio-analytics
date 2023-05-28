@@ -23,14 +23,3 @@ FROM
     po_acq_unit
     LEFT JOIN acquisitions_units ON acquisitions_units.id = po_acq_unit.po_acq_unit_id;
 
-CREATE INDEX ON po_acq_unit_ids (po_id);
-
-CREATE INDEX ON po_acq_unit_ids (po_number);
-
-CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_id);
-
-CREATE INDEX ON po_acq_unit_ids (po_acquisition_unit_name);
-
-
-VACUUM ANALYZE  po_acq_unit_ids;
-

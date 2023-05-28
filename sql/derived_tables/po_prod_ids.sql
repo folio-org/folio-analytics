@@ -20,11 +20,3 @@ FROM
     LEFT JOIN po_purchase_orders AS ppo ON po_prod_id.pol_id = ppo.id
     LEFT JOIN inventory_identifier_types ON po_prod_id.prod_id_type = inventory_identifier_types.id;
 
-CREATE INDEX ON po_prod_ids (pol_number);
-
-CREATE INDEX ON po_prod_ids (prod_id);
-
-CREATE INDEX ON po_prod_ids (prod_id_type_name);
-
-
-VACUUM ANALYZE  po_prod_ids;

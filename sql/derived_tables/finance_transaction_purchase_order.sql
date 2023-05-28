@@ -38,54 +38,6 @@ FROM
 WHERE
     ft.transaction_type = 'Encumbrance';
 
-CREATE INDEX ON finance_transaction_purchase_order (transaction_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_amount);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_currency);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_expense_class_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_fiscal_year_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_name);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_code);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_budget_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_budget_name);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_amount_awaiting_payment);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_amount_expended);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_initial_amount);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_order_type);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_subscription);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_status);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_line_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_number);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_description);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_acquisition_method);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_order_type);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_vendor_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_vendor_name);
-
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_id IS 'UUID of this transaction';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
@@ -133,6 +85,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.po_order_type IS 'the purch
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of the vendor record';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
-
-VACUUM ANALYZE finance_transaction_purchase_order;
-

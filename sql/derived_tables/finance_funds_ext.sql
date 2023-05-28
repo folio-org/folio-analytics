@@ -33,48 +33,6 @@ FROM
     LEFT JOIN finance_fund_types AS fund_type ON fund_type.id = fund.fund_type_id
     LEFT JOIN finance_ledgers AS ledger ON ledger.id = fund.ledger_id;
 
-CREATE INDEX ON finance_funds_ext (fiscal_year_id);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_code);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_name);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_period_start);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_period_end);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_description);
-
-CREATE INDEX ON finance_funds_ext (budget_id);
-
-CREATE INDEX ON finance_funds_ext (budget_name);
-
-CREATE INDEX ON finance_funds_ext (budget_status);
-
-CREATE INDEX ON finance_funds_ext (fund_id);
-
-CREATE INDEX ON finance_funds_ext (fund_code);
-
-CREATE INDEX ON finance_funds_ext (fund_name);
-
-CREATE INDEX ON finance_funds_ext (fund_status);
-
-CREATE INDEX ON finance_funds_ext (fund_description);
-
-CREATE INDEX ON finance_funds_ext (fund_type_id);
-
-CREATE INDEX ON finance_funds_ext (fund_type_name);
-
-CREATE INDEX ON finance_funds_ext (ledger_id);
-
-CREATE INDEX ON finance_funds_ext (ledger_code);
-
-CREATE INDEX ON finance_funds_ext (ledger_name);
-
-CREATE INDEX ON finance_funds_ext (ledger_status);
-
-CREATE INDEX ON finance_funds_ext (ledger_description);
-
 COMMENT ON COLUMN finance_funds_ext.fiscal_year_id IS 'UUID of the fiscal year record';
 
 COMMENT ON COLUMN finance_funds_ext.fiscal_year_code IS 'The code of the fiscal year';
@@ -117,4 +75,3 @@ COMMENT ON COLUMN finance_funds_ext.ledger_status IS 'The status of the ledger';
 
 COMMENT ON COLUMN finance_funds_ext.ledger_description IS 'The description of the ledger';
 
-VACUUM ANALYZE finance_funds_ext;

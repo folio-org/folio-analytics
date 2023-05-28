@@ -65,46 +65,6 @@ FROM
     LEFT JOIN inventory_material_types AS imt ON imt.id = te.pol_material_type
     LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
 
-CREATE INDEX ON po_lines_eresource (pol_id);
-
-CREATE INDEX ON po_lines_eresource (pol_holding_id);
-
-CREATE INDEX ON po_lines_eresource (pol_holding_hrid);
-
-CREATE INDEX ON po_lines_eresource (pol_location_id);
-
-CREATE INDEX ON po_lines_eresource (location_name);
-
-CREATE INDEX ON po_lines_eresource (pol_location_source);
-
-CREATE INDEX ON po_lines_eresource (pol_access_provider);
-
-CREATE INDEX ON po_lines_eresource (provider_org_name);
-
-CREATE INDEX ON po_lines_eresource (pol_activated);
-
-CREATE INDEX ON po_lines_eresource (pol_activation_due);
-
-CREATE INDEX ON po_lines_eresource (pol_create_inventory);
-
-CREATE INDEX ON po_lines_eresource (pol_expected_activation);
-
-CREATE INDEX ON po_lines_eresource (pol_license_code);
-
-CREATE INDEX ON po_lines_eresource (pol_license_desc);
-
-CREATE INDEX ON po_lines_eresource (pol_license_reference);
-
-CREATE INDEX ON po_lines_eresource (pol_material_type);
-
-CREATE INDEX ON po_lines_eresource (pol_er_mat_type_name);
-
-CREATE INDEX ON po_lines_eresource (pol_trial);
-
-CREATE INDEX ON po_lines_eresource (pol_user_limit);
-
-CREATE INDEX ON po_lines_eresource (pol_resource_url);
-
 COMMENT ON COLUMN po_lines_eresource.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_lines_eresource.pol_holding_id IS 'Holding UUID associated with order line';
@@ -144,5 +104,3 @@ COMMENT ON COLUMN po_lines_eresource.pol_trial IS 'whether or not this is a tria
 COMMENT ON COLUMN po_lines_eresource.pol_user_limit IS 'the concurrent user-limit';
 
 COMMENT ON COLUMN po_lines_eresource.pol_resource_url IS 'Electronic resource can be access via this URL';
-
-VACUUM ANALYZE po_lines_eresource;

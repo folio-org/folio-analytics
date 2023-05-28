@@ -24,19 +24,3 @@ FROM
     LEFT JOIN inventory_statistical_codes ON holdings_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 
-CREATE INDEX ON holdings_statistical_codes (holdings_id);
-
-CREATE INDEX ON holdings_statistical_codes (holdings_hrid);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
-
-VACUUM ANALYZE holdings_statistical_codes;
-

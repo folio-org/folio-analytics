@@ -10,13 +10,3 @@ SELECT
 FROM
     po_lines AS pol;
 
-CREATE INDEX ON po_lines_details_subscription (pol_id);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_from);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_to);
-
-CREATE INDEX ON po_lines_details_subscription (pol_subscription_interval);
-
-
-VACUUM ANALYZE  po_lines_details_subscription;

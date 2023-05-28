@@ -32,27 +32,3 @@ FROM
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
     LEFT JOIN finance_fund_types AS ft ON ft.id = json_extract_path_text(ff.data, 'fundTypeId');
 
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (finance_fund_status);
-
-CREATE INDEX ON invoice_lines_fund_distributions (finance_fund_code);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_name);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_type_id);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_type_name);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_value);
-
-CREATE INDEX ON invoice_lines_fund_distributions (fund_distribution_type);
-
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_sub_total);
-
-CREATE INDEX ON invoice_lines_fund_distributions (invoice_line_total);
-
-VACUUM ANALYZE invoice_lines_fund_distributions;
-

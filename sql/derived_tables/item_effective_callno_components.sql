@@ -15,19 +15,3 @@ FROM
     inventory_items AS items
     LEFT JOIN inventory_call_number_types ON json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'typeID') = inventory_call_number_types.id;
       
-CREATE INDEX ON item_effective_callno_components (item_id);
-
-CREATE INDEX ON item_effective_callno_components (item_hrid);
-
-CREATE INDEX ON item_effective_callno_components (effective_call_number_prefix);
-
-CREATE INDEX ON item_effective_callno_components (effective_call_number);
-
-CREATE INDEX ON item_effective_callno_components (effective_call_number_suffix);
-
-CREATE INDEX ON item_effective_callno_components (effective_call_number_type_id);
-
-CREATE INDEX ON item_effective_callno_components (effective_call_number_type_name);
-
-VACUUM ANALYZE item_effective_callno_components;
-

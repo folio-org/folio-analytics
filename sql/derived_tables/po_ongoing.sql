@@ -12,17 +12,3 @@ SELECT
 FROM
     po_purchase_orders AS po;
 
-CREATE INDEX ON po_ongoing (po_id);
-
-CREATE INDEX ON po_ongoing (po_ongoing_interval);
-
-CREATE INDEX ON po_ongoing (po_ongoing_is_subscription);
-
-CREATE INDEX ON po_ongoing (po_ongoing_manual_renewal);
-
-CREATE INDEX ON po_ongoing (po_ongoing_renewal_date);
-
-CREATE INDEX ON po_ongoing (po_ongoing_review_period);
-
-
-VACUUM ANALYZE  po_ongoing;

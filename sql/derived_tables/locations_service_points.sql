@@ -24,29 +24,3 @@ CREATE TABLE locations_service_points AS
         LEFT JOIN locations_libraries AS ll ON il.id=ll.location_id 
 ;
 
-CREATE INDEX ON locations_service_points (service_point_id);
-
-CREATE INDEX ON locations_service_points (service_point_discovery_display_name);
-
-CREATE INDEX ON locations_service_points (service_point_name);
-
-CREATE INDEX ON locations_service_points (location_id);
-
-CREATE INDEX ON locations_service_points (location_discovery_display_name);
-
-CREATE INDEX ON locations_service_points (location_name);  
-
-CREATE INDEX ON locations_service_points (library_id);
-
-CREATE INDEX ON locations_service_points (library_name);
-
-CREATE INDEX ON locations_service_points (campus_id);  
-
-CREATE INDEX ON locations_service_points (campus_name);
-
-CREATE INDEX ON locations_service_points (institution_id);  
-
-CREATE INDEX ON locations_service_points (institution_name);
-
-VACUUM ANALYZE  locations_service_points;
-

@@ -36,21 +36,3 @@ WHERE
     OR adjustment_relationToTotal = 'Included'
     OR adjustment_relationToTotal = 'Separate from';
 
-CREATE INDEX ON invoice_lines_adjustments (invoice_line_id);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_description);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_fund_distributions);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_prorate);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_relationToTotal);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_type);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_value);
-
-CREATE INDEX ON invoice_lines_adjustments (adjustment_adjustments_total);
-
-VACUUM ANALYZE invoice_lines_adjustments;
-
