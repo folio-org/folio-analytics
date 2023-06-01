@@ -187,7 +187,7 @@ All queries:
 - [ ] Query runs without errors
 - [ ] Query output is correct
 - [ ] Query logic is clear and well documented
-- [ ] Query is readable and properly indented with spaces (not tabs)
+- [ ] Query is readable and properly indented
 - [ ] Table and column names are in all-lowercase
 - [ ] Quotation marks are used only where necessary
 
@@ -198,10 +198,7 @@ Report queries:
     - [ ] Query instructions
 
 Derived tables:
-- [ ] Query begins with user documentation in comment lines
-- [ ] File name is listed in `runlist.txt` after dependencies
-- [ ] All columns have indexes
-- [ ] Table is vacuumed and analyzed
 - [ ] First line is "--metadb:table" directive, followed by blank line
+- [ ] User documentation in comment lines, followed by blank line
+- [ ] File name is listed in `runlist.txt` after dependencies
 ```
-
