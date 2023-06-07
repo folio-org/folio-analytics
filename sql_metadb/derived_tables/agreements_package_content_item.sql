@@ -1,18 +1,48 @@
 --metadb:table agreements_package_content_item
 --metadb:require folio_agreements.entitlement.ent_id uuid
 --metadb:require folio_agreements.entitlement.ent_resource_fk uuid
+--metadb:require folio_agreements.erm_resource.id uuid
+--metadb:require folio_agreements.erm_resource.res_name text
+--metadb:require folio_agreements.erm_resource.res_publication_type_fk uuid
+--metadb:require folio_agreements.erm_resource.res_sub_type_fk uuid
+--metadb:require folio_agreements.erm_resource.res_type_fk uuid
+--metadb:require folio_agreements.identifier.id_id uuid
+--metadb:require folio_agreements.identifier_namespace.idns_id uuid
+--metadb:require folio_agreements.identifier_namespace.idns_value text
+--metadb:require folio_agreements.identifier_occurrence.io_identifier_fk uuid
 --metadb:require folio_agreements.identifier_occurrence.io_ti_fk uuid
+--metadb:require folio_agreements.package.id uuid
+--metadb:require folio_agreements.package.pkg_reference text
+--metadb:require folio_agreements.package.pkg_remote_kb uuid
+--metadb:require folio_agreements.package.pkg_source text
+--metadb:require folio_agreements.package.pkg_vendor_fk text
 --metadb:require folio_agreements.package_content_item.id uuid
 --metadb:require folio_agreements.package_content_item.pci_access_end date
 --metadb:require folio_agreements.package_content_item.pci_access_start date
 --metadb:require folio_agreements.package_content_item.pci_pkg_fk uuid
 --metadb:require folio_agreements.package_content_item.pci_pti_fk uuid
 --metadb:require folio_agreements.package_content_item.pci_removed_ts bigint
---metadb:require folio_agreements.package.id uuid
---metadb:require folio_agreements.package.pkg_vendor_fk text
---metadb:require folio_agreements.package.pkg_source text
---metadb:require folio_agreements.package.pkg_remote_kb uuid
---metadb:require folio_agreements.package.pkg_reference text
+--metadb:require folio_agreements.platform.pt_id uuid
+--metadb:require folio_agreements.platform.pt_name text
+--metadb:require folio_agreements.platform_title_instance.id uuid
+--metadb:require folio_agreements.platform_title_instance.pti_pt_fk uuid
+--metadb:require folio_agreements.platform_title_instance.pti_ti_fk uuid
+--metadb:require folio_agreements.platform_title_instance.pti_url text
+--metadb:require folio_agreements.refdata_category.rdc_description text
+--metadb:require folio_agreements.refdata_category.rdc_id uuid
+--metadb:require folio_agreements.refdata_value.rdv_id uuid
+--metadb:require folio_agreements.refdata_value.rdv_label uuid
+--metadb:require folio_agreements.refdata_value.rdv_owner uuid
+--metadb:require folio_agreements.refdata_value.rdv_value uuid
+--metadb:require folio_agreements.remotekb.rkb_id uuid
+--metadb:require folio_agreements.remotekb.rkb_name text
+--metadb:require folio_agreements.title_instance.id uuid
+--metadb:require folio_agreements.title_instance.ti_date_monograph_published date
+--metadb:require folio_agreements.title_instance.ti_first_author text
+--metadb:require folio_agreements.title_instance.ti_first_editor text
+--metadb:require folio_agreements.title_instance.ti_monograph_edition text
+--metadb:require folio_agreements.title_instance.ti_monograph_volume text
+--metadb:require folio_agreements.title_instance.ti_work_fk uuid
 
 /* Creates a derived table on all needed data of package_content_items
  * that either are linked directly to an entitlement or have a package
@@ -69,7 +99,7 @@ FROM
     INNER JOIN folio_agreements.entitlement AS ent ON pci.id = ent.ent_resource_fk::uuid
     LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
     LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
-    LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
+    LEFT JOIN folio_agreements.remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
     LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
     LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
     LEFT JOIN folio_agreements.title_instance AS ti ON pti.pti_ti_fk = ti.id
@@ -131,7 +161,7 @@ FROM
     LEFT JOIN folio_agreements.package AS pack ON pci.pci_pkg_fk = pack.id
     INNER JOIN folio_agreements.entitlement AS ent ON ent.ent_resource_fk::uuid = pack.id
     LEFT JOIN folio_agreements.org AS org ON pack.pkg_vendor_fk::uuid = org.org_id
-    LEFT JOIN folio_agreements.remotekb AS remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
+    LEFT JOIN folio_agreements.remotekb ON pack.pkg_remote_kb = remotekb.rkb_id
     LEFT JOIN folio_agreements.platform_title_instance AS pti ON pci.pci_pti_fk = pti.id
     LEFT JOIN folio_agreements.platform AS pt ON pti.pti_pt_fk = pt.pt_id
     LEFT JOIN folio_agreements.title_instance AS ti ON pti.pti_ti_fk = ti.id
