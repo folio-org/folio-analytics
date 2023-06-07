@@ -27,7 +27,7 @@ SELECT
     jsonb_extract_path_text(ff.jsonb, 'balance')::numeric(12,2) AS account_balance,
     jsonb_extract_path_text(ff.jsonb, 'typeAction') AS type_action,
     jsonb_extract_path_text(ff.jsonb, 'dateAction')::timestamptz AS transaction_date,
-    jsonb_extract_path_text(ff.jsonb, 'createdAt')::uuid AS transaction_location,
+    jsonb_extract_path_text(ff.jsonb, 'createdAt') AS transaction_location,
     jsonb_extract_path_text(ff.jsonb, 'transactionInformation') AS transaction_information,
     jsonb_extract_path_text(ff.jsonb, 'source') AS operator_id,
     jsonb_extract_path_text(ff.jsonb, 'paymentMethod') AS payment_method,
