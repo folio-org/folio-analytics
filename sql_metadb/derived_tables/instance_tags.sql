@@ -7,11 +7,10 @@ DROP TABLE IF EXISTS instance_tags;
 CREATE TABLE instance_tags AS
 SELECT
     i.id AS instance_id,
-    i.hrid AS instance_hrid,
+    i.jsonb->>'hrid' AS instance_hrid,
     taglist.jsonb #>> '{}' AS instance_tag,
     taglist.ordinality AS instance_tag_ordinality
 FROM
-    folio_inventory.instance__t AS i
-    LEFT JOIN folio_inventory.instance AS inst ON inst.id = i.id
-    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'tags', 'tagList')) WITH ORDINALITY AS taglist (jsonb);
+    folio_inventory.instance AS i
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'tags', 'tagList')) WITH ORDINALITY AS taglist (jsonb);
 

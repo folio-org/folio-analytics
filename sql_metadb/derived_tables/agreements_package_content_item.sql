@@ -9,6 +9,10 @@
 --metadb:require folio_agreements.package_content_item.pci_pti_fk uuid
 --metadb:require folio_agreements.package_content_item.pci_removed_ts bigint
 --metadb:require folio_agreements.package.id uuid
+--metadb:require folio_agreements.package.pkg_vendor_fk text
+--metadb:require folio_agreements.package.pkg_source text
+--metadb:require folio_agreements.package.pkg_remote_kb uuid
+--metadb:require folio_agreements.package.pkg_reference text
 
 /* Creates a derived table on all needed data of package_content_items
  * that either are linked directly to an entitlement or have a package
