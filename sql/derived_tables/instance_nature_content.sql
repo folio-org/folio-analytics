@@ -8,7 +8,7 @@ WITH nature_content AS (
         nature_of_content_term_ids.data #>> '{}' AS nature_of_content_term_id
     FROM
         inventory_instances
-        CROSS JOIN json_array_elements(json_extract_path(data, 'natureOfContentTermIds')) AS nature_of_content_term_ids (data)
+        CROSS JOIN jsonb_array_elements((data->'natureOfContentTermIds')::jsonb) AS nature_of_content_term_ids (data)
 )
 SELECT
     nature_content.instance_id,

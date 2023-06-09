@@ -5,7 +5,7 @@ CREATE TABLE po_lines_er_mat_type AS
 WITH temp_pol_er_mat_type AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(data, 'eresource', 'materialType') AS pol_er_mat_type
+        data->'eresource'->>'materialType' AS pol_er_mat_type
     FROM
         po_lines AS pol)
     /* Main query */

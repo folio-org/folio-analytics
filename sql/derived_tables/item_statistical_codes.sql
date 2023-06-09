@@ -9,7 +9,7 @@ WITH items_statistical_codes AS (
 	statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_items AS item
-	CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds')) AS statistical_code_ids(data)
+	CROSS JOIN jsonb_array_elements((data->'statisticalCodeIds')::jsonb) AS statistical_code_ids(data)
 )
 SELECT
     items_statistical_codes.item_id,

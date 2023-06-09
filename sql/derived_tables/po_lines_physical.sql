@@ -5,17 +5,17 @@ CREATE TABLE po_lines_physical AS
 WITH temp_phys AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(pol.data, 'physical', 'createInventory') AS pol_phys_create_inventory,
-        json_extract_path_text(pol.data, 'physical', 'materialType') AS pol_phys_mat_type,
-        json_extract_path_text(pol.data, 'physical', 'materialSupplier') AS pol_phys_mat_supplier,
-        json_extract_path_text(pol.data, 'physical', 'expectedReceiptDate') AS pol_phys_expected_receipt_date,
-        json_extract_path_text(pol.data, 'physical', 'receiptDue') AS pol_phys_receipt_due,
+        pol.data->'physical'->>'createInventory' AS pol_phys_create_inventory,
+        pol.data->'physical'->>'materialType' AS pol_phys_mat_type,
+        pol.data->'physical'->>'materialSupplier' AS pol_phys_mat_supplier,
+        pol.data->'physical'->>'expectedReceiptDate' AS pol_phys_expected_receipt_date,
+        pol.data->'physical'->>'receiptDue' AS pol_phys_receipt_due,
         physical_volumes.data #>> '{}' AS pol_volumes,
         physical_volumes.ordinality AS pol_volumes_ordinality,
-        json_extract_path_text(pol.data, 'physical', 'volumes', 'description') AS pol_phys_volumes_description
+        pol.data->'physical'->'volumes'->>'description' AS pol_phys_volumes_description
     FROM
         po_lines AS pol
-        CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'physical', 'volumes'))
+        CROSS JOIN LATERAL jsonb_array_elements((data->'physical'->'volumes')::jsonb)
         WITH ORDINALITY AS physical_volumes (data)
 )
 SELECT
