@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS instance_subjects;
 CREATE TABLE instance_subjects AS 
 SELECT 
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     s.jsonb #>> '{}' AS subjects,
     s.ordinality AS subjects_ordinality
 FROM 

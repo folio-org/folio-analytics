@@ -8,7 +8,7 @@ CREATE TABLE holdings_administrative_notes AS
 SELECT 
     h.instanceid AS instance_id,
     h.id AS holdings_id,
-    h.jsonb->>'hrid' AS holdings_hrid,
+    jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
     admin_notes.jsonb #>> '{}' AS administrative_note,
     admin_notes.ordinality AS administrative_note_ordinality
 FROM 

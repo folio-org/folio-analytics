@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS instance_physical_descriptions;
 CREATE TABLE instance_physical_descriptions AS
 SELECT
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     physdesc.jsonb #>> '{}' AS physical_description,
     physdesc.ordinality AS physical_description_ordinality
 FROM

@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS instance_administrative_notes;
 CREATE TABLE instance_administrative_notes AS
 SELECT
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     admin_note.note #>> '{}' AS administrative_note,
     admin_note.ordinality AS administrative_note_ordinality
 FROM

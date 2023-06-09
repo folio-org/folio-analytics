@@ -10,7 +10,7 @@ WITH stcodes AS (
         h.instanceid AS instance_id,
         i.hrid AS instance_hrid,
         h.id AS holdings_id,
-        h.jsonb->>'hrid' AS holdings_hrid,
+        jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
         (sc.jsonb #>> '{}')::uuid AS statistical_code_id,
         sc.ordinality AS statistical_code_ordinality
     FROM

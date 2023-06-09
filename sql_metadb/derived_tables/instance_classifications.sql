@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS instance_classifications;
 CREATE TABLE instance_classifications AS 
 SELECT
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     jsonb_extract_path_text(instclass.jsonb, 'classificationNumber') AS classification_number,
     jsonb_extract_path_text(instclass.jsonb, 'classificationTypeId')::uuid AS classification_type_id,
     instclass.ordinality AS classification_ordinality,

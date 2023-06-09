@@ -19,9 +19,9 @@ WITH invoice AS (
         jsonb_extract_path_text(invoices.jsonb, 'status') AS invoice_status,
         invoice_lines.id AS invoice_line_id,
         jsonb_extract_path_text(invoice_lines.jsonb, 'total')::numeric(19,4) AS invoice_line_total,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'fundId')::uuid AS invoice_line_fund_id,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'value')::numeric(19,4) AS invoice_line_distribution_value,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'distributionType') AS invoice_line_distribution_type,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'fundId')::uuid AS invoice_line_fund_id,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'value')::numeric(19,4) AS invoice_line_distribution_value,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'distributionType') AS invoice_line_distribution_type,
         organizations.id AS vendor_id,
         jsonb_extract_path_text(organizations.jsonb, 'name') AS vendor_name
     FROM

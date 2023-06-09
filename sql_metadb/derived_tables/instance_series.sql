@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS instance_series;
 CREATE TABLE instance_series AS 
 SELECT 
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     s.jsonb #>> '{}' AS series,
     s.ordinality AS series_ordinality
 FROM 

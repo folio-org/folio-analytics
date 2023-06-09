@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS instance_tags;
 CREATE TABLE instance_tags AS
 SELECT
     i.id AS instance_id,
-    i.jsonb->>'hrid' AS instance_hrid,
+    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
     taglist.jsonb #>> '{}' AS instance_tag,
     taglist.ordinality AS instance_tag_ordinality
 FROM
