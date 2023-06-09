@@ -15,7 +15,7 @@ WITH invl_total AS (
 SELECT
     inv.id AS invoice_id,
     invl.id AS invl_id,
-    coalesce(invl.data->>'total')::numeric(12,2), 0) AS invoice_line_value,
+    coalesce((invl.data->>'total')::numeric(12,2), 0) AS invoice_line_value,
     fintrainvl.transaction_amount AS transaction_invoice_line_value, --This is invoice_line_value in system currency
     coalesce(invadj.adjustment_value, 0) AS inv_adjust_total_value, 
     fintrainv.transaction_amount AS transaction_invoice_adj_value, --This is inv_adjust_total_value in system currency
