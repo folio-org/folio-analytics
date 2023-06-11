@@ -8,6 +8,6 @@ SELECT
     editions.ordinality AS edition_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL jsonb_array_elements((data->'editions')::jsonb)
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{editions}')::jsonb)
     WITH ORDINALITY AS editions (data);
 

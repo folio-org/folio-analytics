@@ -9,7 +9,7 @@ WITH instances AS (
         instance_format_ids.ordinality AS instance_format_ordinality
     FROM
         inventory_instances
-        CROSS JOIN LATERAL jsonb_array_elements((data->'instanceFormatIds')::jsonb)
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{instanceFormatIds}')::jsonb)
         WITH ORDINALITY AS instance_format_ids (data)
 )
 SELECT

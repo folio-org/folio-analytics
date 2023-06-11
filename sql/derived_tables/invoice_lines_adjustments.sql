@@ -8,16 +8,16 @@ CREATE TABLE invoice_lines_adjustments AS
 WITH adjustments AS (
     SELECT
         id AS invoice_line_id,
-        adjustments.data->>'description' AS adjustment_description,
-        adjustments.data->>'fundDistributions' AS adjustment_fund_distributions,
-        adjustments.data->>'prorate' AS adjustment_prorate,
-        adjustments.data->>'relationToTotal' AS adjustment_relationToTotal,
-        adjustments.data->>'type' AS adjustment_type,
-        adjustments.data->>'value' AS adjustment_value,
-        (invoice_lines.data->>'adjustmentsTotal')::numeric(12,2) AS adjustment_adjustments_total
+        adjustments.data #>> '{description}' AS adjustment_description,
+        adjustments.data #>> '{fundDistributions}' AS adjustment_fund_distributions,
+        adjustments.data #>> '{prorate}' AS adjustment_prorate,
+        adjustments.data #>> '{relationToTotal}' AS adjustment_relationToTotal,
+        adjustments.data #>> '{type}' AS adjustment_type,
+        adjustments.data #>> '{value}' AS adjustment_value,
+        (invoice_lines.data #>> '{adjustmentsTotal}')::numeric(12,2) AS adjustment_adjustments_total
     FROM
         invoice_lines
-        CROSS JOIN jsonb_array_elements((data->'adjustments')::jsonb)
+        CROSS JOIN jsonb_array_elements((data #> '{adjustments}')::jsonb)
             AS adjustments(data)
 )
 SELECT

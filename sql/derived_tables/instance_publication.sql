@@ -5,10 +5,10 @@ CREATE TABLE instance_publication AS
 SELECT
     instance.id AS instance_id,
     instance.hrid AS instance_hrid,
-    publication.data->>'dateOfPublication' AS date_of_publication,
-    publication.data->>'place' AS place,
-    publication.data->>'publisher' AS publisher
+    publication.data #>> '{dateOfPublication}' AS date_of_publication,
+    publication.data #>> '{place}' AS place,
+    publication.data #>> '{publisher}' AS publisher
 FROM
     inventory_instances AS instance
-    CROSS JOIN jsonb_array_elements((instance.data->'publication')::jsonb) AS publication(data);
+    CROSS JOIN jsonb_array_elements((instance.data #> '{publication}')::jsonb) AS publication(data);
 

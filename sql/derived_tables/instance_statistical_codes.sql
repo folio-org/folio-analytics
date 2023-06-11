@@ -9,7 +9,7 @@ WITH instances_statistical_codes AS (
         statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         inventory_instances AS instance
-        CROSS JOIN jsonb_array_elements((data->'statisticalCodeIds')::jsonb)
+        CROSS JOIN jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb)
             AS statistical_code_ids(data)
 )
 SELECT

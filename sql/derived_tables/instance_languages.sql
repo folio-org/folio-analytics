@@ -9,5 +9,5 @@ SELECT
     languages.ordinality AS language_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL jsonb_array_elements((data->'languages')::jsonb) WITH ORDINALITY AS languages (data);
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{languages}')::jsonb) WITH ORDINALITY AS languages (data);
 

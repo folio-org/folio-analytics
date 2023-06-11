@@ -7,31 +7,31 @@ SELECT
     ft.id AS transaction_id,
     ft.amount AS transaction_amount,
     ft.currency AS transaction_currency,
-    ft.data->>'expenseClassId' AS transaction_expense_class_id,
+    ft.data #>> '{expenseClassId}' AS transaction_expense_class_id,
     ft.fiscal_year_id AS transaction_fiscal_year_id,
     ft.from_fund_id AS transaction_from_fund_id,
     ff.name AS transaction_from_fund_name,
     ff.code AS transaction_from_fund_code,
     fb.id AS transaction_from_budget_id,
     fb.name AS transaction_from_budget_name,
-    ft.data->'encumbrance'->>'amountAwaitingPayment' AS transaction_encumbrance_amount_awaiting_payment,
-    ft.data->'encumbrance'->>'amountExpended' AS transaction_encumbrance_amount_expended,
-    ft.data->'encumbrance'->>'initialAmountEncumbered' AS transaction_encumbrance_initial_amount,
-    ft.data->'encumbrance'->>'orderType' AS transaction_encumbrance_order_type,
-    ft.data->'encumbrance'->>'subscription' AS transaction_encumbrance_subscription,
-    ft.data->'encumbrance'->>'status' AS transaction_encumbrance_status,
-    ft.data->'encumbrance'->>'sourcePoLineId' AS po_line_id,
-    ft.data->'encumbrance'->>'sourcePurchaseOrderId' AS po_id,
+    ft.data #>> '{encumbrance,amountAwaitingPayment}' AS transaction_encumbrance_amount_awaiting_payment,
+    ft.data #>> '{encumbrance,amountExpended}' AS transaction_encumbrance_amount_expended,
+    ft.data #>> '{encumbrance,initialAmountEncumbered}' AS transaction_encumbrance_initial_amount,
+    ft.data #>> '{encumbrance,orderType}' AS transaction_encumbrance_order_type,
+    ft.data #>> '{encumbrance,subscription}' AS transaction_encumbrance_subscription,
+    ft.data #>> '{encumbrance,status}' AS transaction_encumbrance_status,
+    ft.data #>> '{encumbrance,sourcePoLineId}' AS po_line_id,
+    ft.data #>> '{encumbrance,sourcePurchaseOrderId}' AS po_id,
     pol.po_line_number AS pol_number,
-    pol.data->>'description' AS pol_description,
+    pol.data #>> '{description}' AS pol_description,
     pol.acquisition_method AS pol_acquisition_method,
     po.order_type AS po_order_type,
     po.vendor AS po_vendor_id,
     oo.name AS po_vendor_name
 FROM
     finance_transactions AS ft
-    LEFT JOIN po_lines AS pol ON ft.data->'encumbrance'->>'sourcePoLineId' = pol.id
-    LEFT JOIN po_purchase_orders AS po ON ft.data->'encumbrance'->>'sourcePurchaseOrderId' = po.id
+    LEFT JOIN po_lines AS pol ON ft.data #>> '{encumbrance,sourcePoLineId}' = pol.id
+    LEFT JOIN po_purchase_orders AS po ON ft.data #>> '{encumbrance,sourcePurchaseOrderId}' = po.id
     LEFT JOIN finance_funds AS ff ON ft.from_fund_id = ff.id
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id AND ft.fiscal_year_id = fb.fiscal_year_id
     LEFT JOIN organization_organizations AS oo ON po.vendor = oo.id

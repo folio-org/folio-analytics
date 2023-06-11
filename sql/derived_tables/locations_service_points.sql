@@ -19,7 +19,7 @@ CREATE TABLE locations_service_points AS
         ll.institution_id,
         ll.institution_name 
     FROM public.inventory_locations AS il
-        CROSS JOIN jsonb_array_elements((il.data->'servicePointIds')::jsonb) AS service_points (data)
+        CROSS JOIN jsonb_array_elements((il.data #> '{servicePointIds}')::jsonb) AS service_points (data)
         LEFT JOIN public.inventory_service_points AS isp ON service_points.data #>> '{}' = isp.id 
         LEFT JOIN locations_libraries AS ll ON il.id=ll.location_id 
 ;

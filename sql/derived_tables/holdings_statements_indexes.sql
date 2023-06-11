@@ -7,10 +7,10 @@ CREATE TABLE holdings_statements_indexes AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
-    holdings_statements_for_indexes.data->>'statement' AS "statement",
-    holdings_statements_for_indexes.data->>'note' AS public_note,
-    holdings_statements_for_indexes.data->>'staffNote' AS staff_note
+    holdings_statements_for_indexes.data #>> '{statement}' AS "statement",
+    holdings_statements_for_indexes.data #>> '{note}' AS public_note,
+    holdings_statements_for_indexes.data #>> '{staffNote}' AS staff_note
 FROM
     inventory_holdings AS holdings
-    CROSS JOIN jsonb_array_elements((data->'holdingsStatementsForIndexes')::jsonb) AS holdings_statements_for_indexes(data);
+    CROSS JOIN jsonb_array_elements((data #> '{holdingsStatementsForIndexes}')::jsonb) AS holdings_statements_for_indexes(data);
 

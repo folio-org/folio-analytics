@@ -6,11 +6,11 @@ CREATE TABLE instance_subjects AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    subjects.data->>'value' AS subject,
+    subjects.data #>> '{value}' AS subject,
     subjects.ordinality AS subject_ordinality
 FROM
     inventory_instances AS instances
-   CROSS JOIN jsonb_array_elements((instances.data->'subjects')::jsonb)
+   CROSS JOIN jsonb_array_elements((instances.data #> '{subjects}')::jsonb)
    WITH ORDINALITY AS subjects (data);
    
 COMMENT ON COLUMN instance_subjects.instance_id IS 'UUID of the instance record';

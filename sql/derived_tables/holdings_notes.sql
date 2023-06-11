@@ -6,12 +6,12 @@ SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
     instance_id AS instance_id,
-    notes.data->>'holdingsNoteTypeId' AS note_type_id,
+    notes.data #>> '{holdingsNoteTypeId}' AS note_type_id,
     holdings_note_types.name AS note_type_name,
-    notes.data->>'note' AS note,
-    (notes.data->>'staffOnly')::boolean AS staff_only
+    notes.data #>> '{note}' AS note,
+    (notes.data #>> '{staffOnly}')::boolean AS staff_only
 FROM
     inventory_holdings AS holdings
-    CROSS JOIN jsonb_array_elements((data->'notes')::jsonb) AS notes (data)
-    LEFT JOIN inventory_holdings_note_types AS holdings_note_types ON notes.data->>'holdingsNoteTypeId' = holdings_note_types.id;
+    CROSS JOIN jsonb_array_elements((data #> '{notes}')::jsonb) AS notes (data)
+    LEFT JOIN inventory_holdings_note_types AS holdings_note_types ON notes.data #>> '{holdingsNoteTypeId}' = holdings_note_types.id;
 

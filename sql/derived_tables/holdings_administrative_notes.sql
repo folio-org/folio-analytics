@@ -11,6 +11,6 @@ SELECT
     admin_note.ordinality AS administrative_note_ordinality
 FROM
     inventory_holdings AS h
-    CROSS JOIN LATERAL jsonb_array_elements((data->'administrativeNotes')::jsonb) WITH ORDINALITY
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{administrativeNotes}')::jsonb) WITH ORDINALITY
         AS admin_note (data);
 

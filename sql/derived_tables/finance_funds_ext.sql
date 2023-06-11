@@ -6,26 +6,26 @@ DROP TABLE IF EXISTS finance_funds_ext;
 CREATE TABLE finance_funds_ext AS
 SELECT
     fiscal_year.id AS fiscal_year_id,
-    fiscal_year.data->>'code' AS fiscal_year_code,
-    fiscal_year.data->>'name' AS fiscal_year_name,
-    (fiscal_year.data->>'periodStart')::timestamptz AS fiscal_year_period_start,
-    (fiscal_year.data->>'periodEnd')::timestamptz  AS fiscal_year_period_end,
-    fiscal_year.data->>'description' AS fiscal_year_description,
+    fiscal_year.data #>> '{code}' AS fiscal_year_code,
+    fiscal_year.data #>> '{name}' AS fiscal_year_name,
+    (fiscal_year.data #>> '{periodStart}')::timestamptz AS fiscal_year_period_start,
+    (fiscal_year.data #>> '{periodEnd}')::timestamptz  AS fiscal_year_period_end,
+    fiscal_year.data #>> '{description}' AS fiscal_year_description,
     budget.id AS budget_id,
-    budget.data->>'name' AS budget_name,
-    budget.data->>'budgetStatus' AS budget_status,
+    budget.data #>> '{name}' AS budget_name,
+    budget.data #>> '{budgetStatus}' AS budget_status,
     fund.id AS fund_id,
-    fund.data->>'code' AS fund_code,
-    fund.data->>'name' AS fund_name,
-    fund.data->>'fundStatus' AS fund_status,
-    fund.data->>'description' AS fund_description,
-    fund.data->>'fundTypeId' AS fund_type_id,
-    fund_type.data->>'name' AS fund_type_name,
+    fund.data #>> '{code}' AS fund_code,
+    fund.data #>> '{name}' AS fund_name,
+    fund.data #>> '{fundStatus}' AS fund_status,
+    fund.data #>> '{description}' AS fund_description,
+    fund.data #>> '{fundTypeId}' AS fund_type_id,
+    fund_type.data #>> '{name}' AS fund_type_name,
     ledger.id AS ledger_id,
-    ledger.data->>'code' AS ledger_code,
-    ledger.data->>'name' AS ledger_name,
-    ledger.data->>'ledgerStatus' AS ledger_status,
-    ledger.data->>'description' AS ledger_description
+    ledger.data #>> '{code}' AS ledger_code,
+    ledger.data #>> '{name}' AS ledger_name,
+    ledger.data #>> '{ledgerStatus}' AS ledger_status,
+    ledger.data #>> '{description}' AS ledger_description
 FROM
     finance_fiscal_years AS fiscal_year
     LEFT JOIN finance_budgets AS budget ON budget.fiscal_year_id = fiscal_year.id

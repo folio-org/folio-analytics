@@ -8,6 +8,6 @@ SELECT
     tags.ordinality AS pol_tag_ordinality
 FROM
     po_lines AS pol
-    CROSS JOIN LATERAL jsonb_array_elements((data->'tags'->'tagList')::jsonb)
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{tags,tagList}')::jsonb)
     WITH ORDINALITY AS tags (data);
 
