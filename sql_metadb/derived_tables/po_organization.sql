@@ -1,4 +1,7 @@
 --metadb:table po_organization
+--metadb:require folio_organizations.contacts__t.id uuid
+--metadb:require folio_organizations.contacts__t.first_name text
+--metadb:require folio_organizations.contacts__t.last_name text
 
 --Create a local table for contact information for organization or vendor used in PO.
 
