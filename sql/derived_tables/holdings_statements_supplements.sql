@@ -7,10 +7,10 @@ CREATE TABLE holdings_statements_supplements AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
-    json_extract_path_text(holdings_statements_for_supplements.data, 'statement') AS "statement",
-    json_extract_path_text(holdings_statements_for_supplements.data, 'note') AS public_note,
-    json_extract_path_text(holdings_statements_for_supplements.data, 'staffNote') AS staff_note
+    holdings_statements_for_supplements.data #>> '{statement}' AS "statement",
+    holdings_statements_for_supplements.data #>> '{note}' AS public_note,
+    holdings_statements_for_supplements.data #>> '{staffNote}' AS staff_note
 FROM
     inventory_holdings AS holdings
-    CROSS JOIN json_array_elements(json_extract_path(data, 'holdingsStatementsForSupplements')) AS holdings_statements_for_supplements(data);
+    CROSS JOIN jsonb_array_elements((data #> '{holdingsStatementsForSupplements}')::jsonb) AS holdings_statements_for_supplements(data);
 

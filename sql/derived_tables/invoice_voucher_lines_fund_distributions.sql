@@ -5,18 +5,18 @@ CREATE TABLE invoice_voucher_lines_fund_distributions AS
 WITH funds_distr AS (
 	SELECT
     	id AS invoice_voucher_line_id,
-        json_extract_path_text(dist.data, 'code') AS fund_distribution_code,
-        json_extract_path_text(dist.data, 'fundId') AS fund_distribution_id,
-        json_extract_path_text(dist.data, 'invoiceLineId') AS fund_distribution_invl_id,
-        json_extract_path_text(dist.data, 'expenseClassId') AS fund_distribution_expense_class_id,
-        json_extract_path_text(dist.data, 'value') AS fund_distribution_value,
+        dist.data #>> '{code}' AS fund_distribution_code,
+        dist.data #>> '{fundId}' AS fund_distribution_id,
+        dist.data #>> '{invoiceLineId}' AS fund_distribution_invl_id,
+        dist.data #>> '{expenseClassId}' AS fund_distribution_expense_class_id,
+        dist.data #>> '{value}' AS fund_distribution_value,
         amount AS invoice_voucher_lines_amount,
-        json_extract_path_text(dist.data, 'distributionType') AS fund_distribution_type,
+        dist.data #>> '{distributionType}' AS fund_distribution_type,
         external_account_number AS invoice_voucher_lines_external_account_number,
         voucher_id AS voucher_id
     FROM
         invoice_voucher_lines AS invvl
-        CROSS JOIN json_array_elements(json_extract_path(data, 'fundDistributions')) AS dist(data)
+        CROSS JOIN jsonb_array_elements((data #> '{fundDistributions}')::jsonb) AS dist(data)
 )
 SELECT
 	invoice_voucher_line_id AS invoice_voucher_line_id,
@@ -39,7 +39,7 @@ SELECT
 FROM
     funds_distr
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
-    LEFT JOIN finance_fund_types AS ft ON ft.id = json_extract_path_text(ff.data, 'fundTypeId')
+    LEFT JOIN finance_fund_types AS ft ON ft.id = ff.data #>> '{fundTypeId}'
     LEFT JOIN finance_expense_classes AS fec ON fec.id = fund_distribution_expense_class_id
     LEFT JOIN invoice_vouchers AS invv ON invv. id = funds_distr.voucher_id
 ORDER BY voucher_number;

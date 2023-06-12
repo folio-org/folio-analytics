@@ -21,9 +21,9 @@ SELECT
     instance_status.name AS status_name,
     instance.status_updated_date,
     instance.source AS record_source,
-    json_extract_path_text(instance.data, 'metadata', 'createdDate') AS record_created_date,
-    json_extract_path_text(instance.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(instance.data, 'metadata', 'updatedDate') AS updated_date
+    instance.data #>> '{metadata,createdDate}' AS record_created_date,
+    instance.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    instance.data #>> '{metadata,updatedDate}' AS updated_date
 FROM
     inventory_instances AS instance
     LEFT JOIN inventory_instance_types AS instance_type ON instance.instance_type_id = instance_type.id

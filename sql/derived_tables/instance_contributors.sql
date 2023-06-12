@@ -5,16 +5,16 @@ CREATE TABLE instance_contributors AS
 SELECT
     instance.id AS instance_id,
     instance.hrid AS instance_hrid,
-    json_extract_path_text(contributors.data, 'contributorNameTypeId') AS contributor_name_type_id,
+    contributors.data #>> '{contributorNameTypeId}' AS contributor_name_type_id,
     inventory_contributor_name_types.name AS contributor_name_type,
-    json_extract_path_text(contributors.data, 'contributorTypeId') AS contributor_rdatype_id,
+    contributors.data #>> '{contributorTypeId}' AS contributor_rdatype_id,
     inventory_contributor_types.name AS contributor_rdatype_name,
-    json_extract_path_text(contributors.data, 'contributorTypeText') AS contributor_type_freetext,
-    json_extract_path_text(contributors.data, 'name') AS contributor_name,
-    json_extract_path_text(contributors.data, 'primary')::boolean AS contributor_primary
+    contributors.data #>> '{contributorTypeText}' AS contributor_type_freetext,
+    contributors.data #>> '{name}' AS contributor_name,
+    (contributors.data #>> '{primary}')::boolean AS contributor_primary
 FROM
     inventory_instances AS instance
-    CROSS JOIN json_array_elements(json_extract_path(instance.data, 'contributors')) AS contributors(data)
-    LEFT JOIN inventory_contributor_name_types ON json_extract_path_text(contributors.data, 'contributorNameTypeId') = inventory_contributor_name_types.id
-    LEFT JOIN inventory_contributor_types ON json_extract_path_text(contributors.data, 'contributorTypeId') = inventory_contributor_types.id;
+    CROSS JOIN jsonb_array_elements((instance.data #> '{contributors}')::jsonb) AS contributors(data)
+    LEFT JOIN inventory_contributor_name_types ON contributors.data #>> '{contributorNameTypeId}' = inventory_contributor_name_types.id
+    LEFT JOIN inventory_contributor_types ON contributors.data #>> '{contributorTypeId}' = inventory_contributor_types.id;
 

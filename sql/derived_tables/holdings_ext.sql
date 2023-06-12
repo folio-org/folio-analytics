@@ -27,9 +27,9 @@ SELECT
     holdings.retention_policy,
     holdings.shelving_title,
     holdings.discovery_suppress,
-    json_extract_path_text(holdings.data, 'metadata', 'createdDate') AS created_date,
-    json_extract_path_text(holdings.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(holdings.data, 'metadata', 'updatedDate') AS updated_date
+    holdings.data #>> '{metadata,createdDate}' AS created_date,
+    holdings.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    holdings.data #>> '{metadata,updatedDate}' AS updated_date
 FROM
     inventory_holdings AS holdings
     LEFT JOIN inventory_holdings_types AS holdings_type ON holdings.holdings_type_id = holdings_type.id

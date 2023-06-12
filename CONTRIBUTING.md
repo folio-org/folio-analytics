@@ -190,6 +190,9 @@ All queries:
 - [ ] Query is readable and properly indented
 - [ ] Table and column names are in all-lowercase
 - [ ] Quotation marks are used only where necessary
+- [ ] JSON extraction is in standard form, for example:
+      LDP:     t #>> '{f1,f2,f3}'    [for compatibility across LDP 1 & 2]
+      Metadb:  jsonb_extract_path_text(t, f1, f2, f3)
 
 Report queries:
 - [ ] Query has complete user documentation

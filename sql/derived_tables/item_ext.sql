@@ -23,10 +23,10 @@ SELECT
     items.item_level_call_number AS call_number,
     items.item_level_call_number_type_id AS call_number_type_id,
     item_call_number_type.name AS call_number_type_name,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'prefix') AS effective_call_number_prefix,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'callNumber') AS effective_call_number,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'suffix') AS effective_call_number_suffix,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'typeID') AS effective_call_number_type_id,
+    items.data #>> '{effectiveCallNumberComponents,prefix}' AS effective_call_number_prefix,
+    items.data #>> '{effectiveCallNumberComponents,callNumber}' AS effective_call_number,
+    items.data #>> '{effectiveCallNumberComponents,suffix}' AS effective_call_number_suffix,
+    items.data #>> '{effectiveCallNumberComponents,typeID}' AS effective_call_number_type_id,
     effective_call_number_type.name AS effective_call_number_type_name,
     items.item_damaged_status_id AS damaged_status_id,
     item_damaged_status.name AS damaged_status_name,
@@ -44,14 +44,14 @@ SELECT
     item_temporary_location.name AS temporary_location_name,
     items.effective_location_id,
     item_effective_location.name AS effective_location_name,
-    json_extract_path_text(items.data, 'circulationNotes', 'descriptionOfPieces') AS description_of_pieces,
-    json_extract_path_text(items.data, 'status', 'date')::timestamptz AS status_date,
-    json_extract_path_text(items.data, 'status', 'name') AS status_name,
+    items.data #>> '{circulationNotes,descriptionOfPieces}' AS description_of_pieces,
+    (items.data #>> '{status,date}')::timestamptz AS status_date,
+    items.data #>> '{status,name}' AS status_name,
     items.holdings_record_id,
     items.discovery_suppress,
-    json_extract_path_text(items.data, 'metadata', 'createdDate')::timestamptz AS created_date,
-    json_extract_path_text(items.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(items.data, 'metadata', 'updatedDate')::timestamptz AS updated_date
+    (items.data #>> '{metadata,createdDate}')::timestamptz AS created_date,
+    items.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    (items.data #>> '{metadata,updatedDate}')::timestamptz AS updated_date
 FROM
     inventory_items AS items
     LEFT JOIN inventory_service_points AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
@@ -63,5 +63,5 @@ FROM
     LEFT JOIN inventory_locations AS item_effective_location ON items.effective_location_id = item_effective_location.id
     LEFT JOIN inventory_item_damaged_statuses AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
     LEFT JOIN inventory_call_number_types AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
-    LEFT JOIN inventory_call_number_types AS effective_call_number_type ON json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'typeID') = effective_call_number_type.id;
+    LEFT JOIN inventory_call_number_types AS effective_call_number_type ON items.data #>> '{effectiveCallNumberComponents,typeID}' = effective_call_number_type.id;
 

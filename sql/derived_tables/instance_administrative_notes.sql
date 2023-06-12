@@ -11,6 +11,6 @@ SELECT
     admin_note.ordinality AS administrative_note_ordinality
 FROM
     inventory_instances AS i
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'administrativeNotes'))
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{administrativeNotes}')::jsonb)
     WITH ORDINALITY AS admin_note (data);
 

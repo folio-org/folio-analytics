@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS po_lines_details_subscription;
 CREATE TABLE po_lines_details_subscription AS
 SELECT
     pol.id AS pol_id,
-    json_extract_path_text(data, 'details', 'subscriptionFrom')::date AS pol_subscription_from,
-    json_extract_path_text(data, 'details', 'subscriptionTo')::date AS pol_subscription_to,
-    json_extract_path_text(data, 'details', 'subscriptionInterval') AS pol_subscription_interval
+    (data #>> '{details,subscriptionFrom}')::date AS pol_subscription_from,
+    (data #>> '{details,subscriptionTo}')::date AS pol_subscription_to,
+    data #>> '{details,subscriptionInterval}' AS pol_subscription_interval
 FROM
     po_lines AS pol;
 

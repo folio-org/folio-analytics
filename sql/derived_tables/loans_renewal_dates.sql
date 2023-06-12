@@ -8,14 +8,14 @@ CREATE TABLE loans_renewal_dates AS
     SELECT
         id AS loan_history_id,
         created_date AS loan_action_date,
-        json_extract_path_text(data, 'loan', 'id') AS loan_id,
-        json_extract_path_text(data, 'loan', 'itemId') AS item_id,
-        json_extract_path_text(data, 'loan', 'action') AS loan_action,
-        json_extract_path_text(data, 'loan', 'renewalCount') AS loan_renewal_count,
-        json_extract_path_text(data, 'loan', 'status', 'name') AS loan_status
+        data #>> '{loan,id}' AS loan_id,
+        data #>> '{loan,itemId}' AS item_id,
+        data #>> '{loan,action}' AS loan_action,
+        data #>> '{loan,renewalCount}' AS loan_renewal_count,
+        data #>> '{loan,status,name}' AS loan_status
     FROM public.circulation_loan_history
     WHERE
-        json_extract_path_text(data, 'loan', 'action') IN ('renewed', 'renewedThroughOverride')
+        data #>> '{loan,action}' IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
         loan_action_date
