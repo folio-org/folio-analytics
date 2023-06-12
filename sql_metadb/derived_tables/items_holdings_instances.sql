@@ -1,5 +1,6 @@
 --metadb:table items_holdings_instances
 --metadb:require folio_inventory.holdings_record__t.acquisition_method text
+--metadb:require folio_inventory.item__t.item_identifier text
 
 -- Create an extended items table that includes holdings and instances
 -- information such as call number, material type, title, etc.
