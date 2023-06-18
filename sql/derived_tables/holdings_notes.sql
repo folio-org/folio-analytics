@@ -13,5 +13,5 @@ SELECT
 FROM
     inventory_holdings AS holdings
     CROSS JOIN jsonb_array_elements((data #> '{notes}')::jsonb) AS notes (data)
-    LEFT JOIN inventory_holdings_note_types AS holdings_note_types ON notes.data #>> '{holdingsNoteTypeId}' = holdings_note_types.id;
+    LEFT JOIN inventory_holdings_note_types AS holdings_note_types ON (notes.data #>> '{holdingsNoteTypeId}')::uuid = holdings_note_types.id;
 

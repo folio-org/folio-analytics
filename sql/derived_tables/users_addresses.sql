@@ -19,5 +19,5 @@ SELECT
 FROM
     user_users AS uu
     CROSS JOIN jsonb_array_elements((data #> '{personal,addresses}')::jsonb) AS addresses (data)
-    LEFT JOIN user_addresstypes AS ua ON addresses.data #>> '{addressTypeId}' = ua.id;
+    LEFT JOIN user_addresstypes AS ua ON (addresses.data #>> '{addressTypeId}')::uuid = ua.id;
 

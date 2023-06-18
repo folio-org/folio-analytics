@@ -33,8 +33,8 @@ WITH temp_eresource AS (
     FROM
         po_lines AS pol
         CROSS JOIN jsonb_array_elements((pol.data #> '{locations}')::jsonb) AS locations (data)
-        LEFT JOIN inventory_locations AS il ON locations.data #>> '{locationId}' = il.id
-        LEFT JOIN inventory_holdings AS ih ON locations.data #>> '{holdingId}' = ih.id
+        LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id
+        LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id
         LEFT JOIN inventory_locations AS il2 ON il2.id = ih.permanent_location_id
     WHERE
         pol.data #> '{eresource}' IS NOT NULL

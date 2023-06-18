@@ -30,8 +30,8 @@ SELECT
     oo.name AS po_vendor_name
 FROM
     finance_transactions AS ft
-    LEFT JOIN po_lines AS pol ON ft.data #>> '{encumbrance,sourcePoLineId}' = pol.id
-    LEFT JOIN po_purchase_orders AS po ON ft.data #>> '{encumbrance,sourcePurchaseOrderId}' = po.id
+    LEFT JOIN po_lines AS pol ON (ft.data #>> '{encumbrance,sourcePoLineId}')::uuid = pol.id
+    LEFT JOIN po_purchase_orders AS po ON (ft.data #>> '{encumbrance,sourcePurchaseOrderId}')::uuid = po.id
     LEFT JOIN finance_funds AS ff ON ft.from_fund_id = ff.id
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id AND ft.fiscal_year_id = fb.fiscal_year_id
     LEFT JOIN organization_organizations AS oo ON po.vendor = oo.id

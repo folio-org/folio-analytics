@@ -82,20 +82,20 @@ FROM
     circulation_loans AS cl
     LEFT JOIN inventory_items AS ii ON cl.item_id = ii.id
     LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id
-    LEFT JOIN circulation_loan_policies AS clp ON cl.data #>> '{loanPolicyId}' = clp.id
-    LEFT JOIN user_groups AS ug ON cl.data #>> '{patronGroupIdAtCheckout}' = ug.id
+    LEFT JOIN circulation_loan_policies AS clp ON (cl.data #>> '{loanPolicyId}')::uuid = clp.id
+    LEFT JOIN user_groups AS ug ON (cl.data #>> '{patronGroupIdAtCheckout}')::uuid = ug.id
     LEFT JOIN inventory_locations AS iel ON ii.effective_location_id = iel.id
-    LEFT JOIN inventory_locations AS ipl ON ii.data #>> '{permanentLocationId}' = ipl.id
+    LEFT JOIN inventory_locations AS ipl ON (ii.data #>> '{permanentLocationId}')::uuid = ipl.id
     LEFT JOIN locations_libraries AS ll ON ipl.id = ll.location_id
-    LEFT JOIN inventory_locations AS itl ON ii.data #>> '{temporaryLocationId}' = itl.id
-    LEFT JOIN inventory_locations AS icl ON cl.data #>> '{itemEffectiveLocationIdAtCheckOut}' = icl.id
-    LEFT JOIN inventory_service_points AS ispi ON cl.data #>> '{checkinServicePointId}' = ispi.id
-    LEFT JOIN inventory_service_points AS ispo ON cl.data #>> '{checkoutServicePointId}' = ispo.id
-    LEFT JOIN inventory_service_points AS ispt ON ii.data #>> '{inTransitDestinationServicePointId}' = ispt.id
-    LEFT JOIN inventory_loan_types AS iltp ON ii.data #>> '{temporaryLoanTypeId}' = iltp.id
+    LEFT JOIN inventory_locations AS itl ON (ii.data #>> '{temporaryLocationId}')::uuid = itl.id
+    LEFT JOIN inventory_locations AS icl ON (cl.data #>> '{itemEffectiveLocationIdAtCheckOut}')::uuid = icl.id
+    LEFT JOIN inventory_service_points AS ispi ON (cl.data #>> '{checkinServicePointId}')::uuid = ispi.id
+    LEFT JOIN inventory_service_points AS ispo ON (cl.data #>> '{checkoutServicePointId}')::uuid = ispo.id
+    LEFT JOIN inventory_service_points AS ispt ON (ii.data #>> '{inTransitDestinationServicePointId}')::uuid = ispt.id
+    LEFT JOIN inventory_loan_types AS iltp ON (ii.data #>> '{temporaryLoanTypeId}')::uuid = iltp.id
     LEFT JOIN inventory_loan_types AS iltt ON ii.permanent_loan_type_id = iltt.id
-    LEFT JOIN feesfines_overdue_fines_policies AS ffo ON cl.data #>> '{overdueFinePolicyId}' = ffo.id
-    LEFT JOIN feesfines_lost_item_fees_policies AS ffl ON cl.data #>> '{lostItemPolicyId}' = ffl.id;
+    LEFT JOIN feesfines_overdue_fines_policies AS ffo ON (cl.data #>> '{overdueFinePolicyId}')::uuid = ffo.id
+    LEFT JOIN feesfines_lost_item_fees_policies AS ffl ON (cl.data #>> '{lostItemPolicyId}')::uuid = ffl.id;
 
 COMMENT ON COLUMN loans_items.loan_id IS 'UUID of the loan';
 

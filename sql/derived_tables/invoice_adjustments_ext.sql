@@ -8,7 +8,7 @@ WITH invl_total AS (
         sum((invl.data #>> '{total}')::numeric(12,2)) AS invl_total
     FROM
         invoice_invoices AS inv
-        LEFT JOIN invoice_lines AS invl ON inv.id = invl.data #>> '{invoiceId}'
+        LEFT JOIN invoice_lines AS invl ON inv.id = (invl.data #>> '{invoiceId}')::uuid
     GROUP BY
         inv_id
 )
@@ -47,7 +47,7 @@ SELECT
     --Above:  This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line. IN SYSTEM CURRENCY.
 FROM
     invoice_invoices AS inv
-    LEFT JOIN invoice_lines AS invl ON invl.data #>> '{invoiceId}' = inv.id
+    LEFT JOIN invoice_lines AS invl ON (invl.data #>> '{invoiceId}')::uuid = inv.id
     LEFT JOIN invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
     LEFT JOIN finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id AND fintrainv.invoice_line_id IS NULL
