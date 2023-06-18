@@ -14,7 +14,7 @@ WITH temp_eresource AS (
         pol.data #>> '{eresource,license,code}' AS pol_license_code,
         pol.data #>> '{eresource,license,description}' AS pol_license_desc,
         pol.data #>> '{eresource,license,reference}' AS pol_license_reference,
-        pol.data #>> '{eresource,materialType}' AS pol_material_type,
+        (pol.data #>> '{eresource,materialType}')::uuid AS pol_material_type,
         pol.data #>> '{eresource,trial}' AS pol_trial,
         pol.data #>> '{eresource,userLimit}' AS pol_user_limit,
         pol.data #>> '{eresource,resourceUrl}' AS pol_resource_url,
