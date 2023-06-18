@@ -14,7 +14,7 @@ SELECT
     locations.data #>> '{quantity}' AS pol_location_qty,
     locations.data #>> '{quantityElectronic}' AS pol_loc_qty_elec,
     locations.data #>> '{quantityPhysical}' AS pol_loc_qty_phys,      
-    CASE WHEN locations.data #>> '{locationId}' IS NOT NULL THEN locations.data #>> '{locationId}'
+    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
          ELSE ih.permanent_location_id
     END AS pol_location_id,	
     CASE WHEN il.name IS NOT NULL THEN il.name
