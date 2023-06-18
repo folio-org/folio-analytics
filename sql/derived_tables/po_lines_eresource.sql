@@ -6,8 +6,8 @@ CREATE TABLE po_lines_eresource AS
 WITH temp_eresource AS (
     SELECT
         pol.id AS pol_id,
-        pol.data #>> '{eresource,accessProvider}' AS access_provider,
-        pol.data #>> '{eresource,activated}' AS pol_activated,
+        (pol.data #>> '{eresource,accessProvider}')::uuid AS access_provider,
+        (pol.data #>> '{eresource,activated}')::boolean AS pol_activated,
         pol.data #>> '{eresource,activationDue}' AS pol_activation_due,
         pol.data #>> '{eresource,createInventory}' AS pol_create_inventory,
         pol.data #>> '{eresource,expectedActivation}' AS pol_expected_activation,
