@@ -8,16 +8,15 @@ CREATE TABLE loans_renewal_dates AS
     SELECT
         id AS loan_history_id,
         created_date AS loan_action_date,
-        data #>> '{loan,id}' AS loan_id,
-        data #>> '{loan,itemId}' AS item_id,
+        (data #>> '{loan,id}')::uuid AS loan_id,
+        (data #>> '{loan,itemId}')::uuid AS item_id,
         data #>> '{loan,action}' AS loan_action,
         data #>> '{loan,renewalCount}' AS loan_renewal_count,
         data #>> '{loan,status,name}' AS loan_status
     FROM public.circulation_loan_history
     WHERE
-        data #>> '{loan,action}' IN ('renewed', 'renewedThroughOverride')
+        (data #>> '{loan,action}') IN ('renewed', 'renewedThroughOverride')
     ORDER BY
         loan_id,
-        loan_action_date
-;
+        loan_action_date;
 

@@ -5,7 +5,7 @@ CREATE TABLE po_lines_phys_mat_type AS
 WITH temp_pol_phys_mat_type AS (
     SELECT
         pol.id AS pol_id,
-        data #>> '{physical,materialType}' AS pol_phys_mat_type
+        (data #>> '{physical,materialType}')::uuid AS pol_phys_mat_type
     FROM
         po_lines AS pol)
     /* Main query */

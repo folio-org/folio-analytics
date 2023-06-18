@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS po_organization;
 CREATE TABLE po_organization AS
 SELECT
     ppo.data #>> '{poNumber}' AS po_number,
-    ppo.data #>> '{vendor}' AS vendor_id,
+    (ppo.data #>> '{vendor}')::uuid AS vendor_id,
     oo.id AS org_id,
     oo.code AS org_code,
     oo.name AS org_name,

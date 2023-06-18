@@ -22,7 +22,5 @@ SELECT
     data #>> '{usageNumber}' AS department_usage_number
 FROM
     departments_array
-LEFT JOIN user_departments AS ud
-    ON departments_array.department_id = ud.id
-;
+    LEFT JOIN user_departments AS ud ON departments_array.department_id = ud.id;
 

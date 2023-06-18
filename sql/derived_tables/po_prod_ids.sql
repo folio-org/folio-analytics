@@ -5,7 +5,7 @@ WITH po_prod_id AS (
     SELECT
         pl.id AS pol_id,
         pl.po_line_number AS pol_number,
-        product_ids.data #>> '{productId}' AS prod_id,
+        (product_ids.data #>> '{productId}')::uuid AS prod_id,
         product_ids.data #>> '{productIdType}' AS prod_id_type
     FROM
         po_lines AS pl
