@@ -6,9 +6,9 @@ WITH funds_distr AS (
 	SELECT
     	id AS invoice_voucher_line_id,
         dist.data #>> '{code}' AS fund_distribution_code,
-        dist.data #>> '{fundId}' AS fund_distribution_id,
-        dist.data #>> '{invoiceLineId}' AS fund_distribution_invl_id,
-        dist.data #>> '{expenseClassId}' AS fund_distribution_expense_class_id,
+        (dist.data #>> '{fundId}')::uuid AS fund_distribution_id,
+        (dist.data #>> '{invoiceLineId}')::uuid AS fund_distribution_invl_id,
+        (dist.data #>> '{expenseClassId}')::uuid AS fund_distribution_expense_class_id,
         dist.data #>> '{value}' AS fund_distribution_value,
         amount AS invoice_voucher_lines_amount,
         dist.data #>> '{distributionType}' AS fund_distribution_type,
