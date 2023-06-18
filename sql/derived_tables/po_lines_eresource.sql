@@ -18,9 +18,9 @@ WITH temp_eresource AS (
         pol.data #>> '{eresource,trial}' AS pol_trial,
         pol.data #>> '{eresource,userLimit}' AS pol_user_limit,
         pol.data #>> '{eresource,resourceUrl}' AS pol_resource_url,
-        locations.data #>> '{holdingId}' AS pol_holding_id,
+        (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
-        CASE WHEN locations.data #>> '{locationId}' IS NOT NULL THEN locations.data #>> '{locationId}'
+        CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
              ELSE ih.permanent_location_id
         END AS pol_location_id,
         CASE WHEN il.name IS NOT NULL THEN il.name
