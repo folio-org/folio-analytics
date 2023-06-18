@@ -9,7 +9,7 @@ WITH user_departments AS (
     SELECT
         user_id,
         --string_agg(DISTINCT department_name, '|'::text) AS departments
-        string_agg(DISTINCT department_id, '|'::text) AS departments
+        string_agg(DISTINCT (department_id::text), '|'::text) AS departments
     FROM
         users_departments_unpacked
     GROUP BY
