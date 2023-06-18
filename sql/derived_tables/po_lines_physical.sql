@@ -6,8 +6,8 @@ WITH temp_phys AS (
     SELECT
         pol.id AS pol_id,
         pol.data #>> '{physical,createInventory}' AS pol_phys_create_inventory,
-        pol.data #>> '{physical,materialType}' AS pol_phys_mat_type,
-        pol.data #>> '{physical,materialSupplier}' AS pol_phys_mat_supplier,
+        (pol.data #>> '{physical,materialType}')::uuid AS pol_phys_mat_type,
+        (pol.data #>> '{physical,materialSupplier}')::uuid AS pol_phys_mat_supplier,
         pol.data #>> '{physical,expectedReceiptDate}' AS pol_phys_expected_receipt_date,
         pol.data #>> '{physical,receiptDue}' AS pol_phys_receipt_due,
         physical_volumes.data #>> '{}' AS pol_volumes,
