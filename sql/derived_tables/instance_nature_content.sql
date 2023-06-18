@@ -5,7 +5,7 @@ WITH nature_content AS (
     SELECT
         id AS instance_id,
         hrid AS instance_hrid,
-        nature_of_content_term_ids.data #>> '{}' AS nature_of_content_term_id
+        (nature_of_content_term_ids.data #>> '{}')::uuid AS nature_of_content_term_id
     FROM
         inventory_instances
         CROSS JOIN jsonb_array_elements((data #> '{natureOfContentTermIds}')::jsonb) AS nature_of_content_term_ids (data)

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS locations_service_points;
 
 CREATE TABLE locations_service_points AS
     SELECT 
-        service_points.data #>> '{}' AS service_point_id,  
+        (service_points.data #>> '{}')::uuid AS service_point_id,  
         isp.discovery_display_name AS service_point_discovery_display_name,
         isp.name AS service_point_name,
         ll.location_id,

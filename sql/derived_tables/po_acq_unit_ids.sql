@@ -6,7 +6,7 @@ WITH po_acq_unit AS (
     SELECT
         id AS po_id,
         po_purchase_orders.data #>> '{poNumber}' AS po_number,
-	acq_unit_ids.data #>> '{}' AS po_acq_unit_id
+	(acq_unit_ids.data #>> '{}')::uuid AS po_acq_unit_id
     FROM
         po_purchase_orders
         CROSS JOIN jsonb_array_elements((data #> '{acqUnitIds}')::jsonb) AS acq_unit_ids (data)

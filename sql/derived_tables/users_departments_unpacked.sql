@@ -6,7 +6,7 @@ CREATE TABLE users_departments_unpacked AS
 WITH departments_array AS (
     SELECT
         uu.id AS user_id,
-        departments.data #>> '{}' AS department_id,
+        (departments.data #>> '{}')::uuid AS department_id,
         departments.ordinality AS department_ordinality
     FROM
         user_users AS uu

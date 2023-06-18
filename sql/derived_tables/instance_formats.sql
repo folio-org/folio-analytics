@@ -5,7 +5,7 @@ WITH instances AS (
     SELECT
         id,
         hrid,
-        instance_format_ids.data #>> '{}' AS instance_format_id,
+        (instance_format_ids.data #>> '{}')::uuid AS instance_format_id,
         instance_format_ids.ordinality AS instance_format_ordinality
     FROM
         inventory_instances
