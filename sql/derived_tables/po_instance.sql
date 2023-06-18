@@ -22,20 +22,23 @@ SELECT
     po_purchase_orders.metadata__created_date AS created_date,
     ce.value::json #>> '{name}' AS bill_to,
     ce.value::json #>> '{name}' AS ship_to,
-    po_lines.data #>> '{instanceId}' AS pol_instance_id,
+    (po_lines.data #>> '{instanceId}')::uuid AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
-    locations.data #>> '{holdingId}' AS pol_holding_id,
-    CASE WHEN locations.data #>> '{locationId}' IS NOT NULL
-         THEN locations.data #>> '{locationId}'
-         ELSE ih.permanent_location_id END AS pol_location_id,
+    (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
+    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL
+         THEN (locations.data #>> '{locationId}')::uuid
+         ELSE ih.permanent_location_id
+    END AS pol_location_id,
     CASE WHEN (il.name) IS NOT NULL
          THEN il.name
-         ELSE il2.name END AS pol_location_name,
+         ELSE il2.name
+    END AS pol_location_name,
     CASE WHEN il.name IS NOT NULL
          THEN 'pol_location'
          WHEN il2.name IS NOT NULL
          THEN 'pol_holding'
-         ELSE 'no_source' END AS pol_location_source,
+         ELSE 'no_source'
+    END AS pol_location_source,
     inventory_instances.title AS title,
     po_lines.data #>> '{publicationDate}' AS publication_date,
     po_lines.data #>> '{publisher}' AS publisher
