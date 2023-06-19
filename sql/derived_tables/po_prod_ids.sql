@@ -5,12 +5,13 @@ WITH po_prod_id AS (
     SELECT
         pl.id AS pol_id,
         pl.po_line_number AS pol_number,
-        (product_ids.data #>> '{productId}')::uuid AS prod_id,
+        (product_ids.data #>> '{productId}') AS prod_id,
         (product_ids.data #>> '{productIdType}')::uuid AS prod_id_type
     FROM
         po_lines AS pl
         CROSS JOIN jsonb_extract_path(pl.data::jsonb, 'details') AS details (data)
-        CROSS JOIN jsonb_array_elements((details.data #> '{productIds}')::jsonb) AS product_ids (data))
+        CROSS JOIN jsonb_array_elements((details.data #> '{productIds}')::jsonb) AS product_ids (data)
+)
 SELECT
     pol_number,
     prod_id,
