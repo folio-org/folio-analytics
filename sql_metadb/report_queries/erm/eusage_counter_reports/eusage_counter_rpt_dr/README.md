@@ -9,7 +9,7 @@ This report shows activity across all metrics for entire databases or fixed coll
 | attribute | description | sample output |
 | --- | --- | --- |
 | id | UUID of the report | e034f768-5a29-4751-9212-3702ebddf4c5 |
-| report_name | Name of the report | Platform Master Report |
+| report_name | Name of the report | Database Master Report |
 | report_id | Identifier of the report | DR |
 | release | The version of COUNTER | 5 |
 | institution_name | Name of the institution to which usage is attributed | WIB1234 - Library XY |
