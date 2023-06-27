@@ -9,7 +9,7 @@ This report is a A Standard View of COUNTER Item Master Reports and shows activi
 | attribute | description | sample output |
 | --- | --- | --- |
 | id | UUID of the report | e034f768-5a29-4751-9212-3702ebddf4c5 |
-| report_name | Name of the report | Platform Master Report |
+| report_name | Name of the report | Item Master Report |
 | report_id | Identifier of the report | IR |
 | release | The version of COUNTER | 5 |
 | institution_name | Name of the institution to which usage is attributed | WIB1234 - Library XY |
