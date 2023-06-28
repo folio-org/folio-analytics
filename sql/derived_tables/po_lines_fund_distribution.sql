@@ -1,3 +1,6 @@
+-- po_lines_fund_distribution extracts arrays of fund distributions
+-- from the public.po_lines table.
+
 DROP TABLE IF EXISTS po_lines_fund_distribution;
 
 CREATE TABLE po_lines_fund_distribution AS
