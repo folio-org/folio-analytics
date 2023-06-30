@@ -10,9 +10,9 @@
 --     inventory_holdings_types
 --     inventory_call_number_types
 --
-DROP TABLE IF EXISTS folio_reporting.items_holdings_instances;
+DROP TABLE IF EXISTS items_holdings_instances;
 
-CREATE TABLE folio_reporting.items_holdings_instances AS 
+CREATE TABLE items_holdings_instances AS 
 SELECT
     ii.id AS item_id,
     ii.barcode,
@@ -53,71 +53,6 @@ FROM
     LEFT JOIN inventory_material_types AS imt ON ii.material_type_id = imt.id
     LEFT JOIN inventory_holdings_types AS iht ON ih.holdings_type_id = iht.id
     LEFT JOIN inventory_call_number_types AS icnt ON ih.call_number_type_id = icnt.id;
-
-CREATE INDEX ON items_holdings_instances (item_id);
-
-CREATE INDEX ON items_holdings_instances (barcode);
-
-CREATE INDEX ON items_holdings_instances (chronology);
-
-CREATE INDEX ON items_holdings_instances (item_copy_number);
-
-CREATE INDEX ON items_holdings_instances (enumeration);
-
-CREATE INDEX ON items_holdings_instances (item_hrid);
-
-CREATE INDEX ON items_holdings_instances (item_identifier);
-
-CREATE INDEX ON items_holdings_instances (item_level_call_number);
-
-CREATE INDEX ON items_holdings_instances (call_number_type_id);
-
-CREATE INDEX ON items_holdings_instances (call_number_type_name);
-
-CREATE INDEX ON items_holdings_instances (material_type_id);
-
-CREATE INDEX ON items_holdings_instances (material_type_name);
-
-CREATE INDEX ON items_holdings_instances (number_of_pieces);
-
-CREATE INDEX ON items_holdings_instances (holdings_id);
-
-CREATE INDEX ON items_holdings_instances (holdings_hrid);
-
-CREATE INDEX ON items_holdings_instances (holdings_call_number);
-
-CREATE INDEX ON items_holdings_instances (item_effective_call_number);
-
-CREATE INDEX ON items_holdings_instances (item_effective_call_number_prefix);
-
-CREATE INDEX ON items_holdings_instances (item_effective_call_number_suffix);
-
-CREATE INDEX ON items_holdings_instances (acquisition_method);
-
-CREATE INDEX ON items_holdings_instances (holdings_copy_number);
-
-CREATE INDEX ON items_holdings_instances (holdings_type_id);
-
-CREATE INDEX ON items_holdings_instances (holdings_type_name);
-
-CREATE INDEX ON items_holdings_instances (instance_id);
-
-CREATE INDEX ON items_holdings_instances (instance_hrid);
-
-CREATE INDEX ON items_holdings_instances (shelving_title);
-
-CREATE INDEX ON items_holdings_instances (cataloged_date);
-
-CREATE INDEX ON items_holdings_instances (index_title);
-
-CREATE INDEX ON items_holdings_instances (title);
-
-CREATE INDEX ON items_holdings_instances (loan_type_id);
-
-CREATE INDEX ON items_holdings_instances (loan_type_name);
-
-
-VACUUM ANALYZE items_holdings_instances;
 
 COMMENT ON COLUMN items_holdings_instances.item_id IS 'UUID of the item record';
 

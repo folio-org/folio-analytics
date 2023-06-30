@@ -19,30 +19,3 @@ SELECT
 FROM
     folio_feesfines.feefineactions;
 
-ALTER TABLE feesfines_feefineactions ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_feefineactions (account_id);
-
-CREATE INDEX ON feesfines_feefineactions (amount_action);
-
-CREATE INDEX ON feesfines_feefineactions (balance);
-
-CREATE INDEX ON feesfines_feefineactions (comments);
-
-CREATE INDEX ON feesfines_feefineactions (created_at);
-
-CREATE INDEX ON feesfines_feefineactions (date_action);
-
-CREATE INDEX ON feesfines_feefineactions (notify);
-
-CREATE INDEX ON feesfines_feefineactions (payment_method);
-
-CREATE INDEX ON feesfines_feefineactions (source);
-
-CREATE INDEX ON feesfines_feefineactions (transaction_information);
-
-CREATE INDEX ON feesfines_feefineactions (type_action);
-
-CREATE INDEX ON feesfines_feefineactions (user_id);
-
-VACUUM ANALYZE feesfines_feefineactions;

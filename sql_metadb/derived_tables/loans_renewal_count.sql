@@ -27,12 +27,3 @@ FROM
     folio_inventory.item AS it
     LEFT JOIN loan_count AS lc ON it.id::uuid = lc.item_id;
 
-CREATE INDEX ON loans_renewal_count (current_as_of_date);
-
-CREATE INDEX ON loans_renewal_count (item_id);
-
-CREATE INDEX ON loans_renewal_count (num_loans);
-
-CREATE INDEX ON loans_renewal_count (num_renewals);
-
-VACUUM ANALYZE loans_renewal_count;

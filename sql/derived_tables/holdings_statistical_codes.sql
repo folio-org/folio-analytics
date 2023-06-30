@@ -6,10 +6,10 @@ WITH holdings_statistical_codes AS (
     SELECT
         holdings.id AS holdings_id,
         holdings.hrid AS holdings_hrid,
-        statistical_code_ids.data #>> '{}' AS statistical_code_id
+        (statistical_code_ids.data #>> '{}')::uuid AS statistical_code_id
     FROM
         inventory_holdings AS holdings
-        CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds')) AS statistical_code_ids (data)
+        CROSS JOIN jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb) AS statistical_code_ids (data)
 )
 SELECT
     holdings_statistical_codes.holdings_id,
@@ -23,20 +23,4 @@ FROM
     holdings_statistical_codes
     LEFT JOIN inventory_statistical_codes ON holdings_statistical_codes.statistical_code_id = inventory_statistical_codes.id
     LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
-
-CREATE INDEX ON holdings_statistical_codes (holdings_id);
-
-CREATE INDEX ON holdings_statistical_codes (holdings_hrid);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON holdings_statistical_codes (statistical_code_type_name);
-
-VACUUM ANALYZE holdings_statistical_codes;
 

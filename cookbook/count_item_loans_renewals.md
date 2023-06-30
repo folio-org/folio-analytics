@@ -14,7 +14,7 @@ SELECT item_id,
        coalesce(count(id), 0) AS loan_count,
        coalesce(sum(renewal_count), 0) AS renewal_count
     FROM folio_circulation.loan__t
-    WHERE loan_date >= '2022-01-01' AND loan_date < '2023-01-01'
+    WHERE '2022-01-01' <= loan_date AND loan_date < '2023-01-01'
     GROUP BY item_id;
 ```
 

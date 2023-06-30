@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_courses.coursereserves_departments;
 
-ALTER TABLE course_departments ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_departments (description);
-
-CREATE INDEX ON course_departments (name);
-
-VACUUM ANALYZE course_departments;

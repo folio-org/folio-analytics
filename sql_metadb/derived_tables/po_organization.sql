@@ -1,4 +1,7 @@
 --metadb:table po_organization
+--metadb:require folio_organizations.contacts__t.id uuid
+--metadb:require folio_organizations.contacts__t.first_name text
+--metadb:require folio_organizations.contacts__t.last_name text
 
 --Create a local table for contact information for organization or vendor used in PO.
 
@@ -19,25 +22,6 @@ FROM
     folio_orders.purchase_order__t AS ppo
     LEFT JOIN folio_organizations.organizations__t AS oo ON ppo.vendor = oo.id
     LEFT JOIN folio_organizations.contacts__t AS oc ON oo.id = oc.id;
-
-CREATE INDEX ON po_organization (po_number);
-
-CREATE INDEX ON po_organization (vendor_id);
-
-CREATE INDEX ON po_organization (organization_id);
-
-CREATE INDEX ON po_organization (organization_code);
-
-CREATE INDEX ON po_organization (organization_name);
-
-CREATE INDEX ON po_organization (organization_description);
-
-CREATE INDEX ON po_organization (contact_first_name);
-
-CREATE INDEX ON po_organization (contact_last_name);
-
-
-VACUUM ANALYZE  po_organization;
 
 COMMENT ON COLUMN po_organization.po_number IS 'A human readable number assigned to PO';
 

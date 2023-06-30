@@ -17,26 +17,3 @@ SELECT
 FROM
     folio_feesfines.lost_item_fee_policy;
 
-ALTER TABLE feesfines_lost_item_fees_policies ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (charge_amount_item_patron);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (charge_amount_item_system);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (description);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (lost_item_processing_fee);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (lost_item_returned);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (name);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (replaced_lost_item_processing_fee);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (replacement_allowed);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (replacement_processing_fee);
-
-CREATE INDEX ON feesfines_lost_item_fees_policies (returned_lost_item_processing_fee);
-
-VACUUM ANALYZE feesfines_lost_item_fees_policies;

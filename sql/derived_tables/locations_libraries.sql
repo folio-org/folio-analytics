@@ -17,24 +17,3 @@ FROM
     JOIN inventory_institutions ON inventory_locations.institution_id = inventory_institutions.id
     JOIN inventory_libraries ON inventory_locations.library_id = inventory_libraries.id;
 
-CREATE INDEX ON locations_libraries (campus_id);
-
-CREATE INDEX ON locations_libraries (campus_name);
-
-CREATE INDEX ON locations_libraries (location_id);
-
-CREATE INDEX ON locations_libraries (location_name);
-
-CREATE INDEX ON locations_libraries (discovery_display_name);
-
-CREATE INDEX ON locations_libraries (library_id);
-
-CREATE INDEX ON locations_libraries (library_name);
-
-CREATE INDEX ON locations_libraries (institution_id);
-
-CREATE INDEX ON locations_libraries (institution_name);
-
-
-VACUUM ANALYZE  locations_libraries;
-

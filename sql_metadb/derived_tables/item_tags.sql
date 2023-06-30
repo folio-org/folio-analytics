@@ -15,12 +15,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags(data)
     LEFT JOIN folio_inventory.item__t AS i ON item.id = i.id;
 
-CREATE INDEX ON item_tags (item_id);
-
-CREATE INDEX ON item_tags (item_hrid);
-
-CREATE INDEX ON item_tags (item_tag);
-
-CREATE INDEX ON item_tags (item_tag_ordinality);
-
-VACUUM ANALYZE item_tags;

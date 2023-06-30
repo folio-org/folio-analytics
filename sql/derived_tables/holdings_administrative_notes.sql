@@ -11,15 +11,6 @@ SELECT
     admin_note.ordinality AS administrative_note_ordinality
 FROM
     inventory_holdings AS h
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'administrativeNotes')) WITH ORDINALITY
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{administrativeNotes}')::jsonb) WITH ORDINALITY
         AS admin_note (data);
 
-CREATE INDEX ON holdings_administrative_notes (holdings_id);
-
-CREATE INDEX ON holdings_administrative_notes (holdings_hrid);
-
-CREATE INDEX ON holdings_administrative_notes (administrative_note);
-
-CREATE INDEX ON holdings_administrative_notes (administrative_note_ordinality);
-
-VACUUM ANALYZE holdings_administrative_notes;

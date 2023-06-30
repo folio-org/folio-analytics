@@ -14,20 +14,3 @@ SELECT
 FROM
     folio_finance.fund;
 
-ALTER TABLE finance_funds ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_funds (code);
-
-CREATE INDEX ON finance_funds (description);
-
-CREATE INDEX ON finance_funds (external_account_no);
-
-CREATE INDEX ON finance_funds (fund_status);
-
-CREATE INDEX ON finance_funds (fund_type_id);
-
-CREATE INDEX ON finance_funds (ledger_id);
-
-CREATE INDEX ON finance_funds (name);
-
-VACUUM ANALYZE finance_funds;

@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.statistical_code_type;
 
-ALTER TABLE inventory_statistical_code_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_statistical_code_types (name);
-
-CREATE INDEX ON inventory_statistical_code_types (source);
-
-VACUUM ANALYZE inventory_statistical_code_types;

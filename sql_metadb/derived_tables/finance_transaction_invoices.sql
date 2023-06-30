@@ -53,66 +53,6 @@ WHERE (jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Payment'
     OR jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Credit');
 
-CREATE INDEX ON finance_transaction_invoices (transaction_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_amount);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_currency);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_created_date);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_updated_date);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_description);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_expense_class_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_fiscal_year_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_name);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_from_fund_code);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_name);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_to_fund_code);
-
-CREATE INDEX ON finance_transaction_invoices (effective_fund_id);
-
-CREATE INDEX ON finance_transaction_invoices (effective_fund_name);
-
-CREATE INDEX ON finance_transaction_invoices (effective_fund_code);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_from_budget_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_from_budget_name);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_id);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_line_id);
-
-CREATE INDEX ON finance_transaction_invoices (transaction_type);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_date);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_payment_date);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_exchange_rate);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_line_total);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_currency);
-
-CREATE INDEX ON finance_transaction_invoices (po_line_id);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_vendor_id);
-
-CREATE INDEX ON finance_transaction_invoices (invoice_vendor_name);
-
 COMMENT ON COLUMN finance_transaction_invoices.transaction_id IS 'UUID of this transaction';
 
 COMMENT ON COLUMN finance_transaction_invoices.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
@@ -173,4 +113,3 @@ COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_id IS 'UUID for ve
 
 COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_name IS 'Name of vendor';
 
-VACUUM ANALYZE finance_transaction_invoices;

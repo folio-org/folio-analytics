@@ -19,22 +19,3 @@ FROM
     LEFT JOIN folio_inventory.locinstitution__t AS inst ON loc.institution_id::uuid = inst.id
     LEFT JOIN folio_inventory.loclibrary__t AS lib ON loc.library_id::uuid = lib.id;
 
-CREATE INDEX ON locations_libraries (campus_id);
-
-CREATE INDEX ON locations_libraries (campus_name);
-
-CREATE INDEX ON locations_libraries (location_id);
-
-CREATE INDEX ON locations_libraries (location_name);
-
-CREATE INDEX ON locations_libraries (discovery_display_name);
-
-CREATE INDEX ON locations_libraries (library_id);
-
-CREATE INDEX ON locations_libraries (library_name);
-
-CREATE INDEX ON locations_libraries (institution_id);
-
-CREATE INDEX ON locations_libraries (institution_name);
-
-VACUUM ANALYZE locations_libraries;

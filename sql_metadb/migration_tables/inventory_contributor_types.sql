@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_inventory.contributor_type;
 
-ALTER TABLE inventory_contributor_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_contributor_types (code);
-
-CREATE INDEX ON inventory_contributor_types (name);
-
-CREATE INDEX ON inventory_contributor_types (source);
-
-VACUUM ANALYZE inventory_contributor_types;
