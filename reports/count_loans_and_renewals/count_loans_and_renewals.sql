@@ -51,7 +51,7 @@ SELECT start_date || ' to ' || end_date AS date_range,
        current_item_permanent_location_library_name AS permanent_location_library_name,
        current_item_permanent_location_campus_name AS permanent_location_campus_name,
        current_item_permanent_location_institution_name AS permanent_location_institution_name
-    FROM folio_reporting.loans_items
+    FROM folio_derived.loans_items
     WHERE start_date <= loan_date AND loan_date < end_date AND
           items_permanent_location_filter IN (current_item_permanent_location_name, '') AND
           items_temporary_location_filter IN (current_item_temporary_location_name, '') AND
