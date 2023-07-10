@@ -7,22 +7,10 @@ CREATE TABLE holdings_statements_indexes AS
 SELECT
     holdings.id AS holdings_id,
     holdings.hrid AS holdings_hrid,
-    json_extract_path_text(holdings_statements_for_indexes.data, 'statement') AS "statement",
-    json_extract_path_text(holdings_statements_for_indexes.data, 'note') AS public_note,
-    json_extract_path_text(holdings_statements_for_indexes.data, 'staffNote') AS staff_note
+    holdings_statements_for_indexes.data #>> '{statement}' AS "statement",
+    holdings_statements_for_indexes.data #>> '{note}' AS public_note,
+    holdings_statements_for_indexes.data #>> '{staffNote}' AS staff_note
 FROM
     inventory_holdings AS holdings
-    CROSS JOIN json_array_elements(json_extract_path(data, 'holdingsStatementsForIndexes')) AS holdings_statements_for_indexes(data);
-
-CREATE INDEX ON holdings_statements_indexes (holdings_id);
-
-CREATE INDEX ON holdings_statements_indexes (holdings_hrid);
-
-CREATE INDEX ON holdings_statements_indexes ("statement");
-
-CREATE INDEX ON holdings_statements_indexes (public_note);
-
-CREATE INDEX ON holdings_statements_indexes (staff_note);
-
-VACUUM ANALYZE holdings_statements_indexes;
+    CROSS JOIN jsonb_array_elements((data #> '{holdingsStatementsForIndexes}')::jsonb) AS holdings_statements_for_indexes(data);
 

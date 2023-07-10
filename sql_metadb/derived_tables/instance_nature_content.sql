@@ -1,3 +1,5 @@
+--metadb:table instance_nature_content
+
 -- Create derived table for instance nature of content with uuid and name.
 
 DROP TABLE IF EXISTS instance_nature_content;
@@ -24,17 +26,4 @@ FROM
     nature_content AS nc
     LEFT JOIN folio_inventory.nature_of_content_term__t AS noctt ON nc.nature_of_content_term_id::uuid = noctt.id::uuid;
 
-CREATE INDEX ON instance_nature_content (instance_id);
-
-CREATE INDEX ON instance_nature_content (instance_hrid);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_id);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_name);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_source);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_ordinality);
-
-VACUUM ANALYZE instance_nature_content;
 

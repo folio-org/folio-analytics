@@ -1,3 +1,5 @@
+--metadb:table item_notes
+
 -- This derived table extracts the nested array item notes
 
 DROP TABLE IF EXISTS item_notes;
@@ -18,20 +20,3 @@ FROM
     LEFT JOIN folio_inventory.item__t AS i ON item.id = i.id
     LEFT JOIN folio_inventory.item_note_type__t AS nt ON jsonb_extract_path_text(notes.data, 'itemNoteTypeId')::uuid = nt.id;
 
-CREATE INDEX ON item_notes (item_id);
-
-CREATE INDEX ON item_notes (item_hrid);
-
-CREATE INDEX ON item_notes (holdings_record_id);
-
-CREATE INDEX ON item_notes (note_type_id);
-
-CREATE INDEX ON item_notes (note_type_name);
-
-CREATE INDEX ON item_notes (note);
-
-CREATE INDEX ON item_notes (staff_only);
-
-CREATE INDEX ON item_notes (note_ordinality);
-
-VACUUM ANALYZE item_notes;

@@ -5,10 +5,10 @@ WITH nature_content AS (
     SELECT
         id AS instance_id,
         hrid AS instance_hrid,
-        nature_of_content_term_ids.data #>> '{}' AS nature_of_content_term_id
+        (nature_of_content_term_ids.data #>> '{}')::uuid AS nature_of_content_term_id
     FROM
         inventory_instances
-        CROSS JOIN json_array_elements(json_extract_path(data, 'natureOfContentTermIds')) AS nature_of_content_term_ids (data)
+        CROSS JOIN jsonb_array_elements((data #> '{natureOfContentTermIds}')::jsonb) AS nature_of_content_term_ids (data)
 )
 SELECT
     nature_content.instance_id,
@@ -19,16 +19,4 @@ SELECT
 FROM
     nature_content
     JOIN inventory_nature_of_content_terms AS nature_content_term ON nature_content_term.id = nature_content.nature_of_content_term_id;
-
-CREATE INDEX ON instance_nature_content (instance_id);
-
-CREATE INDEX ON instance_nature_content (instance_hrid);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_id);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_name);
-
-CREATE INDEX ON instance_nature_content (nature_of_content_term_source);
-
-VACUUM ANALYZE instance_nature_content;
 

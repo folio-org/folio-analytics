@@ -14,20 +14,3 @@ SELECT
 FROM
     folio_audit.circulation_logs;
 
-ALTER TABLE audit_circulation_logs ADD PRIMARY KEY (id);
-
-CREATE INDEX ON audit_circulation_logs (action);
-
-CREATE INDEX ON audit_circulation_logs (date);
-
-CREATE INDEX ON audit_circulation_logs (description);
-
-CREATE INDEX ON audit_circulation_logs (object);
-
-CREATE INDEX ON audit_circulation_logs (service_point_id);
-
-CREATE INDEX ON audit_circulation_logs (source);
-
-CREATE INDEX ON audit_circulation_logs (user_barcode);
-
-VACUUM ANALYZE audit_circulation_logs;

@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.locinstitution;
 
-ALTER TABLE inventory_institutions ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_institutions (code);
-
-CREATE INDEX ON inventory_institutions (name);
-
-VACUUM ANALYZE inventory_institutions;

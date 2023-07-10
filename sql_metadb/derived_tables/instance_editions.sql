@@ -1,3 +1,5 @@
+--metadb:table instance_editions
+
 -- Create derived table for instance edition statements
 
 DROP TABLE IF EXISTS instance_editions;
@@ -12,13 +14,4 @@ FROM
     folio_inventory.instance AS instances
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instances.jsonb, 'editions')) WITH ORDINALITY AS editions (jsonb);
 
-CREATE INDEX ON instance_editions (instance_id);
-
-CREATE INDEX ON instance_editions (instance_hrid);
-
-CREATE INDEX ON instance_editions (edition);
-
-CREATE INDEX ON instance_editions (edition_ordinality);
-
-VACUUM ANALYZE instance_editions;
 

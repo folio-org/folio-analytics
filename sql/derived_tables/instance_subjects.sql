@@ -1,24 +1,22 @@
+-- Create a derived table for subjects in the instance record.
+
 DROP TABLE IF EXISTS instance_subjects;
 
--- Create a local table for subjects in the instance record.
 CREATE TABLE instance_subjects AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    subjects.data #>> '{}' AS subject,
+    subjects.data #>> '{value}' AS subject,
     subjects.ordinality AS subject_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'subjects'))
-    WITH ORDINALITY AS subjects (data);
+   CROSS JOIN jsonb_array_elements((instances.data #> '{subjects}')::jsonb)
+   WITH ORDINALITY AS subjects (data);
+   
+COMMENT ON COLUMN instance_subjects.instance_id IS 'UUID of the instance record';
 
-CREATE INDEX ON instance_subjects (instance_id);
+COMMENT ON COLUMN instance_subjects.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
 
-CREATE INDEX ON instance_subjects (instance_hrid);
+COMMENT ON COLUMN instance_subjects.subject IS 'Subject heading value';
 
-CREATE INDEX ON instance_subjects (subject);
-
-CREATE INDEX ON instance_subjects (subject_ordinality);
-
-VACUUM ANALYZE instance_subjects;
-
+COMMENT ON COLUMN instance_subjects.subject_ordinality IS 'Subject heading value ordinality';

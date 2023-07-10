@@ -15,22 +15,3 @@ SELECT
 FROM
     folio_orders.pieces;
 
-ALTER TABLE po_pieces ADD PRIMARY KEY (id);
-
-CREATE INDEX ON po_pieces (display_on_holding);
-
-CREATE INDEX ON po_pieces (format);
-
-CREATE INDEX ON po_pieces (item_id);
-
-CREATE INDEX ON po_pieces (location_id);
-
-CREATE INDEX ON po_pieces (po_line_id);
-
-CREATE INDEX ON po_pieces (received_date);
-
-CREATE INDEX ON po_pieces (receiving_status);
-
-CREATE INDEX ON po_pieces (title_id);
-
-VACUUM ANALYZE po_pieces;

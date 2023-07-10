@@ -1,3 +1,5 @@
+--metadb:table licenses_license_ext
+
 -- Create a derived table that contains information about licenses from the app license
 
 DROP TABLE IF EXISTS licenses_license_ext;
@@ -23,26 +25,6 @@ FROM
     LEFT JOIN folio_licenses.license_org_role ON license_org_role.lior_owner_fk = license_org.sao_id
     LEFT JOIN folio_licenses.refdata_value AS license_org_role_value ON license_org_role_value.rdv_id = license_org_role.lior_role_fk;
 
-CREATE INDEX ON licenses_license_ext (license_id);
-
-CREATE INDEX ON licenses_license_ext (license_name);
-
-CREATE INDEX ON licenses_license_ext (license_description);
-
-CREATE INDEX ON licenses_license_ext (license_start);
-
-CREATE INDEX ON licenses_license_ext (license_end);
-
-CREATE INDEX ON licenses_license_ext (license_type);
-
-CREATE INDEX ON licenses_license_ext (license_status);
-
-CREATE INDEX ON licenses_license_ext (license_org);
-
-CREATE INDEX ON licenses_license_ext (license_org_role);
-
-CREATE INDEX ON licenses_license_ext (license_org_uuid);
-
 COMMENT ON COLUMN licenses_license_ext.license_id IS 'The UUID of the license';
 
 COMMENT ON COLUMN licenses_license_ext.license_name IS 'Name of license';
@@ -63,4 +45,3 @@ COMMENT ON COLUMN licenses_license_ext.license_org_role IS 'Reference data value
 
 COMMENT ON COLUMN licenses_license_ext.license_org_uuid IS 'UUID of organization';
 
-VACUUM ANALYZE licenses_license_ext;

@@ -1,3 +1,5 @@
+--metadb:table po_lines_cost
+
 -- These derived table extracts cost information on the purchase order line.
 
 DROP TABLE IF EXISTS po_lines_cost;
@@ -16,26 +18,6 @@ SELECT
     jsonb_extract_path_text(pol.jsonb, 'cost', 'poLineEstimatedPrice')::numeric(19,4) AS po_line_estimated_price
 FROM
     folio_orders.po_line AS pol;
-
-CREATE INDEX ON po_lines_cost (pol_id);
-
-CREATE INDEX ON po_lines_cost (po_line_list_unit_price_phys);
-
-CREATE INDEX ON po_lines_cost (po_line_quant_phys);
-
-CREATE INDEX ON po_lines_cost (po_line_list_unit_price_elec);
-
-CREATE INDEX ON po_lines_cost (po_line_quant_elec);
-
-CREATE INDEX ON po_lines_cost (po_line_additional_cost);
-
-CREATE INDEX ON po_lines_cost (po_line_currency);
-
-CREATE INDEX ON po_lines_cost (po_line_discount);
-
-CREATE INDEX ON po_lines_cost (po_line_discount_type);
-
-CREATE INDEX ON po_lines_cost (po_line_estimated_price);
 
 COMMENT ON COLUMN po_lines_cost.pol_id IS 'purchaseOrders';
 
@@ -57,4 +39,3 @@ COMMENT ON COLUMN po_lines_cost.po_line_discount_type IS 'Percentage or amount d
 
 COMMENT ON COLUMN po_lines_cost.po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
 
-VACUUM ANALYZE  po_lines_cost;

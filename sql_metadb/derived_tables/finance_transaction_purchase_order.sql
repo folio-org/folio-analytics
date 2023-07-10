@@ -1,13 +1,9 @@
-DROP TABLE IF EXISTS finance_transaction_purchase_order;
+--metadb:table finance_transaction_purchase_order
 
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
---
--- Tables included:
---    finance_transactions
---    finance_funds
---    finance_budget
---    po_lines
---    po_purchase_orders
+
+DROP TABLE IF EXISTS finance_transaction_purchase_order;
+
 CREATE TABLE finance_transaction_purchase_order AS
 SELECT
     ft.id AS transaction_id,
@@ -25,6 +21,7 @@ SELECT
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'initialAmountEncumbered')::numeric(19,4) AS transaction_encumbrance_initial_amount,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'orderType') AS transaction_encumbrance_order_type,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'subscription') AS transaction_encumbrance_subscription,
+    jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'status') AS transaction_encumbrance_status,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid AS po_line_id,
     jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId')::uuid AS po_id,
     jsonb_extract_path_text(pol.jsonb, 'poLineNumber') AS pol_number,
@@ -42,52 +39,6 @@ FROM
     LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor')::uuid = oo.id
 WHERE
     jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Encumbrance';
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_amount);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_currency);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_expense_class_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_fiscal_year_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_name);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_fund_code);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_budget_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_from_budget_name);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_amount_awaiting_payment);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_amount_expended);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_initial_amount);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_order_type);
-
-CREATE INDEX ON finance_transaction_purchase_order (transaction_encumbrance_subscription);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_line_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_number);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_description);
-
-CREATE INDEX ON finance_transaction_purchase_order (pol_acquisition_method);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_order_type);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_vendor_id);
-
-CREATE INDEX ON finance_transaction_purchase_order (po_vendor_name);
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_id IS 'UUID of this transaction';
 
@@ -119,6 +70,8 @@ COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_ord
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
 
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_encumbrance_status IS 'The status of this encumbrance';
+
 COMMENT ON COLUMN finance_transaction_purchase_order.po_line_id IS 'UUID referencing the poLine that represents the package that this POLs title belongs to';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_id IS 'UUID identifying this purchase order line';
@@ -135,4 +88,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of th
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
 
-VACUUM ANALYZE finance_transaction_purchase_order;

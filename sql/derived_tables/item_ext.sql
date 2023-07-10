@@ -23,10 +23,10 @@ SELECT
     items.item_level_call_number AS call_number,
     items.item_level_call_number_type_id AS call_number_type_id,
     item_call_number_type.name AS call_number_type_name,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'prefix') AS effective_call_number_prefix,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'callNumber') AS effective_call_number,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'suffix') AS effective_call_number_suffix,
-    json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'typeID') AS effective_call_number_type_id,
+    items.data #>> '{effectiveCallNumberComponents,prefix}' AS effective_call_number_prefix,
+    items.data #>> '{effectiveCallNumberComponents,callNumber}' AS effective_call_number,
+    items.data #>> '{effectiveCallNumberComponents,suffix}' AS effective_call_number_suffix,
+    items.data #>> '{effectiveCallNumberComponents,typeID}' AS effective_call_number_type_id,
     effective_call_number_type.name AS effective_call_number_type_name,
     items.item_damaged_status_id AS damaged_status_id,
     item_damaged_status.name AS damaged_status_name,
@@ -44,14 +44,14 @@ SELECT
     item_temporary_location.name AS temporary_location_name,
     items.effective_location_id,
     item_effective_location.name AS effective_location_name,
-    json_extract_path_text(items.data, 'circulationNotes', 'descriptionOfPieces') AS description_of_pieces,
-    json_extract_path_text(items.data, 'status', 'date') AS status_date,
-    json_extract_path_text(items.data, 'status', 'name') AS status_name,
+    items.data #>> '{circulationNotes,descriptionOfPieces}' AS description_of_pieces,
+    (items.data #>> '{status,date}')::timestamptz AS status_date,
+    items.data #>> '{status,name}' AS status_name,
     items.holdings_record_id,
     items.discovery_suppress,
-    json_extract_path_text(items.data, 'metadata', 'createdDate') AS created_date,
-    json_extract_path_text(items.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(items.data, 'metadata', 'updatedDate') AS updated_date
+    (items.data #>> '{metadata,createdDate}')::timestamptz AS created_date,
+    items.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    (items.data #>> '{metadata,updatedDate}')::timestamptz AS updated_date
 FROM
     inventory_items AS items
     LEFT JOIN inventory_service_points AS item_in_transit_destination_service_point ON items.in_transit_destination_service_point_id = item_in_transit_destination_service_point.id
@@ -63,93 +63,5 @@ FROM
     LEFT JOIN inventory_locations AS item_effective_location ON items.effective_location_id = item_effective_location.id
     LEFT JOIN inventory_item_damaged_statuses AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
     LEFT JOIN inventory_call_number_types AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
-    LEFT JOIN inventory_call_number_types AS effective_call_number_type ON json_extract_path_text(items.data, 'effectiveCallNumberComponents', 'typeID') = effective_call_number_type.id;
-
-CREATE INDEX ON item_ext (item_id);
-
-CREATE INDEX ON item_ext (item_hrid);
-
-CREATE INDEX ON item_ext (accession_number);
-
-CREATE INDEX ON item_ext (barcode);
-
-CREATE INDEX ON item_ext (chronology);
-
-CREATE INDEX ON item_ext (copy_number);
-
-CREATE INDEX ON item_ext (enumeration);
-
-CREATE INDEX ON item_ext (volume);
-
-CREATE INDEX ON item_ext (in_transit_destination_service_point_id);
-
-CREATE INDEX ON item_ext (in_transit_destination_service_point_name);
-
-CREATE INDEX ON item_ext (identifier);
-
-CREATE INDEX ON item_ext (call_number);
-
-CREATE INDEX ON item_ext (call_number_type_id);
-
-CREATE INDEX ON item_ext (call_number_type_name);
-
-CREATE INDEX ON item_ext (effective_call_number_prefix);
-
-CREATE INDEX ON item_ext (effective_call_number);
-
-CREATE INDEX ON item_ext (effective_call_number_suffix);
-
-CREATE INDEX ON item_ext (effective_call_number_type_id);
-
-CREATE INDEX ON item_ext (effective_call_number_type_name);
-
-CREATE INDEX ON item_ext (damaged_status_id);
-
-CREATE INDEX ON item_ext (damaged_status_name);
-
-CREATE INDEX ON item_ext (material_type_id);
-
-CREATE INDEX ON item_ext (material_type_name);
-
-CREATE INDEX ON item_ext (number_of_pieces);
-
-CREATE INDEX ON item_ext (number_of_missing_pieces);
-
-CREATE INDEX ON item_ext (permanent_loan_type_id);
-
-CREATE INDEX ON item_ext (permanent_loan_type_name);
-
-CREATE INDEX ON item_ext (temporary_loan_type_id);
-
-CREATE INDEX ON item_ext (temporary_loan_type_name);
-
-CREATE INDEX ON item_ext (permanent_location_id);
-
-CREATE INDEX ON item_ext (permanent_location_name);
-
-CREATE INDEX ON item_ext (temporary_location_id);
-
-CREATE INDEX ON item_ext (temporary_location_name);
-
-CREATE INDEX ON item_ext (effective_location_id);
-
-CREATE INDEX ON item_ext (effective_location_name);
-
-CREATE INDEX ON item_ext (description_of_pieces);
-
-CREATE INDEX ON item_ext (status_date);
-
-CREATE INDEX ON item_ext (status_name);
-
-CREATE INDEX ON item_ext (holdings_record_id);
-
-CREATE INDEX ON item_ext (discovery_suppress);
-
-CREATE INDEX ON item_ext (created_date);
-
-CREATE INDEX ON item_ext (updated_by_user_id);
-
-CREATE INDEX ON item_ext (updated_date);
-
-VACUUM ANALYZE item_ext;
+    LEFT JOIN inventory_call_number_types AS effective_call_number_type ON (items.data #>> '{effectiveCallNumberComponents,typeID}')::uuid = effective_call_number_type.id;
 

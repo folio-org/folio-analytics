@@ -14,20 +14,3 @@ SELECT
 FROM
     folio_users.proxyfor;
 
-ALTER TABLE user_proxiesfor ADD PRIMARY KEY (id);
-
-CREATE INDEX ON user_proxiesfor (accrue_to);
-
-CREATE INDEX ON user_proxiesfor (expiration_date);
-
-CREATE INDEX ON user_proxiesfor (notifications_to);
-
-CREATE INDEX ON user_proxiesfor (proxy_user_id);
-
-CREATE INDEX ON user_proxiesfor (request_for_sponsor);
-
-CREATE INDEX ON user_proxiesfor (status);
-
-CREATE INDEX ON user_proxiesfor (user_id);
-
-VACUUM ANALYZE user_proxiesfor;

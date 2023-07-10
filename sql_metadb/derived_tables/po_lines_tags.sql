@@ -1,4 +1,6 @@
---po_lines_tags
+--metadb:table po_lines_tags
+
+-- Creates a derived table for tags in purchase order lines.
 
 DROP TABLE IF EXISTS po_lines_tags;
 
@@ -11,11 +13,10 @@ FROM
     folio_orders.po_line AS pol
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags (data);
 
-CREATE INDEX ON po_lines_tags (pol_id);
+COMMENT ON COLUMN po_lines_tags.pol_id IS 'UUID identifying this purchase order line';
 
-CREATE INDEX ON po_lines_tags (pol_tag);
+COMMENT ON COLUMN po_lines_tags.pol_tag IS 'Arbitrary tags associated with this purchase order line';
 
-CREATE INDEX ON po_lines_tags (pol_tag_ordinality);
+COMMENT ON COLUMN po_lines_tags.pol_tag_ordinality IS 'The ordinality of the tag associated with the po line';
 
-VACUUM ANALYZE po_lines_tags;
 

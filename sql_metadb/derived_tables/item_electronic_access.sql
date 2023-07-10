@@ -1,3 +1,5 @@
+--metadb:table item_electronic_access
+
 DROP TABLE IF EXISTS item_electronic_access;
 
 -- Creates a table for electronic access points for item records. This includes the name of the relationship, id, and uri.
@@ -15,23 +17,5 @@ FROM
     folio_inventory.item AS i
     CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'electronicAccess')) AS electronic_access(data)
     LEFT JOIN folio_inventory.item__t AS i__t ON i.id = i__t.id
-    LEFT JOIN folio_inventory.electronic_access_relationship__t AS ear__t ON jsonb_extract_path_text(electronic_access.data, 'relationshipId')::uuid = ear__t.id
-;
+    LEFT JOIN folio_inventory.electronic_access_relationship__t AS ear__t ON jsonb_extract_path_text(electronic_access.data, 'relationshipId')::uuid = ear__t.id;
 
-CREATE INDEX ON item_electronic_access (item_id);
-
-CREATE INDEX ON item_electronic_access (item_hrid);
-
-CREATE INDEX ON item_electronic_access (link_text);
-
-CREATE INDEX ON item_electronic_access (materials_specification);
-
-CREATE INDEX ON item_electronic_access (public_note);
-
-CREATE INDEX ON item_electronic_access (relationship_id);
-
-CREATE INDEX ON item_electronic_access (relationship_name);
-
-CREATE INDEX ON item_electronic_access (uri);
-
-VACUUM ANALYZE item_electronic_access;

@@ -1,3 +1,5 @@
+--metadb:table holdings_statements
+
 -- This table contains holdings statements with their associated
 -- public/staff only notes and ordinality; holdings statements for supplements and
 -- indexes are in separate tables. Here note is a public note.
@@ -31,21 +33,4 @@ FROM
     holdings AS hs
     LEFT JOIN folio_inventory.instance AS i ON hs.instance_id = i.id;
 
-CREATE INDEX ON holdings_statements (instance_id);
-
-CREATE INDEX ON holdings_statements (instance_hrid);
-
-CREATE INDEX ON holdings_statements (holdings_id);
-
-CREATE INDEX ON holdings_statements (holdings_hrid);
-
-CREATE INDEX ON holdings_statements (holdings_statement);
-
-CREATE INDEX ON holdings_statements (public_note);
-
-CREATE INDEX ON holdings_statements (staff_note);
-
-CREATE INDEX ON holdings_statements (statement_ordinality);
-
-VACUUM ANALYZE holdings_statements;
 

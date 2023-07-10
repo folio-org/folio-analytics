@@ -1,3 +1,8 @@
+--metadb:table users_groups
+--metadb:require folio_users.users__t.enrollment_date timestamptz
+--metadb:require folio_users.users__t.external_system_id text
+--metadb:require folio_users.users__t.type text
+
 -- Create a derived table that takes the users table and joins in the
 -- group information.  Does not include addresses - see additional
 -- derived tables for addresses in different arrangements.  Query also
@@ -9,7 +14,7 @@ CREATE TABLE users_groups AS
 WITH user_departments AS (
     SELECT
         user_id,
-        string_agg(DISTINCT department_id::varchar(36), '|'::text) AS departments
+        string_agg(DISTINCT department_id::text, '|') AS departments
     FROM
         users_departments_unpacked
     GROUP BY
@@ -46,52 +51,6 @@ FROM
     LEFT JOIN folio_users.users__t AS u ON users.id = u.id  
     LEFT JOIN folio_users.groups__t AS g ON u.patron_group = g.id
     LEFT JOIN user_departments ON users.id = user_departments.user_id;
-
-CREATE INDEX ON users_groups (user_id);
-
-CREATE INDEX ON users_groups (active);
-
-CREATE INDEX ON users_groups (barcode);
-
-CREATE INDEX ON users_groups (created_date);
-
-CREATE INDEX ON users_groups (enrollment_date);
-
-CREATE INDEX ON users_groups (expiration_date);
-
-CREATE INDEX ON users_groups (external_system_id);
-
-CREATE INDEX ON users_groups (patron_group);
-
-CREATE INDEX ON users_groups (group_description);
-
-CREATE INDEX ON users_groups (group_name);
-
-CREATE INDEX ON users_groups (departments);
-
-CREATE INDEX ON users_groups (user_last_name);
-
-CREATE INDEX ON users_groups (user_first_name);
-
-CREATE INDEX ON users_groups (user_middle_name);
-
-CREATE INDEX ON users_groups (user_preferred_first_name);
-
-CREATE INDEX ON users_groups (user_email);
-
-CREATE INDEX ON users_groups (user_phone);
-
-CREATE INDEX ON users_groups (user_mobile_phone);
-
-CREATE INDEX ON users_groups (user_date_of_birth);
-
-CREATE INDEX ON users_groups (user_preferred_contact_type_id);
-
-CREATE INDEX ON users_groups (user_type);
-
-CREATE INDEX ON users_groups (updated_date);
-
-CREATE INDEX ON users_groups (username);
 
 COMMENT ON COLUMN users_groups.user_id IS 'A globally unique (UUID) identifier for the user';
 
@@ -139,4 +98,3 @@ COMMENT ON COLUMN users_groups.updated_date IS 'Date and time when the user reco
 
 COMMENT ON COLUMN users_groups.username IS 'A unique name belonging to a user. Typically used for login';
 
-VACUUM ANALYZE  users_groups;

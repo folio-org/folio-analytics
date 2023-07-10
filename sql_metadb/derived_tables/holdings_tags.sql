@@ -1,3 +1,5 @@
+--metadb:table holdings_tags
+
 -- This derived table extracts tags from the holdings record.
 
 DROP TABLE IF EXISTS holdings_tags;
@@ -14,14 +16,3 @@ FROM
     LEFT JOIN folio_inventory.holdings_record ON holdings_record.id = h.id
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(holdings_record.jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags (jsonb);
     
-CREATE INDEX ON holdings_tags (instance_id);
-
-CREATE INDEX ON holdings_tags (holdings_id);
-
-CREATE INDEX ON holdings_tags (holdings_hrid);
-
-CREATE INDEX ON holdings_tags (holdings_tag);
-
-CREATE INDEX ON holdings_tags (holdings_tag_ordinality);
-
-VACUUM ANALYZE holdings_tags;
