@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_invoice.voucher_lines;
 
-ALTER TABLE invoice_voucher_lines ADD PRIMARY KEY (id);
-
-CREATE INDEX ON invoice_voucher_lines (amount);
-
-CREATE INDEX ON invoice_voucher_lines (external_account_number);
-
-CREATE INDEX ON invoice_voucher_lines (voucher_id);
-
-VACUUM ANALYZE invoice_voucher_lines;

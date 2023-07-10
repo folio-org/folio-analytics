@@ -5,11 +5,11 @@ WITH instances AS (
     SELECT
         id,
         hrid,
-        instance_format_ids.data #>> '{}' AS instance_format_id,
+        (instance_format_ids.data #>> '{}')::uuid AS instance_format_id,
         instance_format_ids.ordinality AS instance_format_ordinality
     FROM
         inventory_instances
-        CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'instanceFormatIds'))
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{instanceFormatIds}')::jsonb)
         WITH ORDINALITY AS instance_format_ids (data)
 )
 SELECT
@@ -23,20 +23,4 @@ SELECT
 FROM
     instances
     LEFT JOIN inventory_instance_formats AS formats ON instances.instance_format_id = formats.id;
-
-CREATE INDEX ON instance_formats (instance_id);
-
-CREATE INDEX ON instance_formats (instance_hrid);
-
-CREATE INDEX ON instance_formats (format_id);
-
-CREATE INDEX ON instance_formats (format_ordinality);
-
-CREATE INDEX ON instance_formats (format_code);
-
-CREATE INDEX ON instance_formats (format_name);
-
-CREATE INDEX ON instance_formats (format_source);
-
-VACUUM ANALYZE instance_formats;
 

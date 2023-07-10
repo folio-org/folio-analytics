@@ -19,26 +19,6 @@ SELECT
 FROM
     folio_orders.po_line AS pol;
 
-CREATE INDEX ON po_lines_cost (pol_id);
-
-CREATE INDEX ON po_lines_cost (po_line_list_unit_price_phys);
-
-CREATE INDEX ON po_lines_cost (po_line_quant_phys);
-
-CREATE INDEX ON po_lines_cost (po_line_list_unit_price_elec);
-
-CREATE INDEX ON po_lines_cost (po_line_quant_elec);
-
-CREATE INDEX ON po_lines_cost (po_line_additional_cost);
-
-CREATE INDEX ON po_lines_cost (po_line_currency);
-
-CREATE INDEX ON po_lines_cost (po_line_discount);
-
-CREATE INDEX ON po_lines_cost (po_line_discount_type);
-
-CREATE INDEX ON po_lines_cost (po_line_estimated_price);
-
 COMMENT ON COLUMN po_lines_cost.pol_id IS 'purchaseOrders';
 
 COMMENT ON COLUMN po_lines_cost.po_line_list_unit_price_phys IS 'The per-item list price for physical or resources of Other order format';
@@ -59,4 +39,3 @@ COMMENT ON COLUMN po_lines_cost.po_line_discount_type IS 'Percentage or amount d
 
 COMMENT ON COLUMN po_lines_cost.po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
 
-VACUUM ANALYZE  po_lines_cost;

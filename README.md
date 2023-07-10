@@ -8,16 +8,9 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 ## Releases
 
-Each release of folio-analytics up to 1.6.0 is tested with specific
-FOLIO releases:
-
-| FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
-| ------------- | :----------------------: | :------------------------: |
-| Kiwi          |            1.2           |            N/A             |
-| Lotus         |            1.3           |            1.5             |
-| Morning Glory |            1.4           |            N/A             |
-| Nolana        |            1.5           |            1.6             |
-| Orchid        |            1.6           |            N/A             |
+Since April 11, 2023, this repository no longer has point releases but
+uses tags that are [snapshots of the main
+branch](https://github.com/folio-org/folio-analytics/tags).
 
 
 ## Overview

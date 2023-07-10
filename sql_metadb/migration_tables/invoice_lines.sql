@@ -21,34 +21,3 @@ SELECT
 FROM
     folio_invoice.invoice_lines;
 
-ALTER TABLE invoice_lines ADD PRIMARY KEY (id);
-
-CREATE INDEX ON invoice_lines (accounting_code);
-
-CREATE INDEX ON invoice_lines (comment);
-
-CREATE INDEX ON invoice_lines (description);
-
-CREATE INDEX ON invoice_lines (invoice_id);
-
-CREATE INDEX ON invoice_lines (invoice_line_number);
-
-CREATE INDEX ON invoice_lines (invoice_line_status);
-
-CREATE INDEX ON invoice_lines (po_line_id);
-
-CREATE INDEX ON invoice_lines (quantity);
-
-CREATE INDEX ON invoice_lines (release_encumbrance);
-
-CREATE INDEX ON invoice_lines (sub_total);
-
-CREATE INDEX ON invoice_lines (subscription_end);
-
-CREATE INDEX ON invoice_lines (subscription_info);
-
-CREATE INDEX ON invoice_lines (subscription_start);
-
-CREATE INDEX ON invoice_lines (total);
-
-VACUUM ANALYZE invoice_lines;

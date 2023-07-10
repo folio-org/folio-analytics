@@ -19,30 +19,3 @@ SELECT
 FROM
     folio_orders.purchase_order;
 
-ALTER TABLE po_purchase_orders ADD PRIMARY KEY (id);
-
-CREATE INDEX ON po_purchase_orders (approval_date);
-
-CREATE INDEX ON po_purchase_orders (approved);
-
-CREATE INDEX ON po_purchase_orders (approved_by_id);
-
-CREATE INDEX ON po_purchase_orders (bill_to);
-
-CREATE INDEX ON po_purchase_orders (date_ordered);
-
-CREATE INDEX ON po_purchase_orders (manual_po);
-
-CREATE INDEX ON po_purchase_orders (order_type);
-
-CREATE INDEX ON po_purchase_orders (po_number);
-
-CREATE INDEX ON po_purchase_orders (re_encumber);
-
-CREATE INDEX ON po_purchase_orders (ship_to);
-
-CREATE INDEX ON po_purchase_orders (vendor);
-
-CREATE INDEX ON po_purchase_orders (workflow_status);
-
-VACUUM ANALYZE po_purchase_orders;

@@ -5,22 +5,10 @@ CREATE TABLE instance_publication AS
 SELECT
     instance.id AS instance_id,
     instance.hrid AS instance_hrid,
-    json_extract_path_text(publication.data, 'dateOfPublication') AS date_of_publication,
-    json_extract_path_text(publication.data, 'place') AS place,
-    json_extract_path_text(publication.data, 'publisher') AS publisher
+    publication.data #>> '{dateOfPublication}' AS date_of_publication,
+    publication.data #>> '{place}' AS place,
+    publication.data #>> '{publisher}' AS publisher
 FROM
     inventory_instances AS instance
-    CROSS JOIN json_array_elements(json_extract_path(instance.data, 'publication')) AS publication(data);
-
-CREATE INDEX ON instance_publication (instance_id);
-
-CREATE INDEX ON instance_publication (instance_hrid);
-
-CREATE INDEX ON instance_publication (date_of_publication);
-
-CREATE INDEX ON instance_publication (place);
-
-CREATE INDEX ON instance_publication (publisher);
-
-VACUUM ANALYZE instance_publication;
+    CROSS JOIN jsonb_array_elements((instance.data #> '{publication}')::jsonb) AS publication(data);
 

@@ -6,74 +6,32 @@ DROP TABLE IF EXISTS finance_funds_ext;
 CREATE TABLE finance_funds_ext AS
 SELECT
     fiscal_year.id AS fiscal_year_id,
-    json_extract_path_text(fiscal_year.data, 'code') AS fiscal_year_code,
-    json_extract_path_text(fiscal_year.data, 'name') AS fiscal_year_name,
-    json_extract_path_text(fiscal_year.data, 'periodStart')::timestamptz AS fiscal_year_period_start,
-    json_extract_path_text(fiscal_year.data, 'periodEnd')::timestamptz  AS fiscal_year_period_end,
-    json_extract_path_text(fiscal_year.data, 'description') AS fiscal_year_description,
+    fiscal_year.data #>> '{code}' AS fiscal_year_code,
+    fiscal_year.data #>> '{name}' AS fiscal_year_name,
+    (fiscal_year.data #>> '{periodStart}')::timestamptz AS fiscal_year_period_start,
+    (fiscal_year.data #>> '{periodEnd}')::timestamptz  AS fiscal_year_period_end,
+    fiscal_year.data #>> '{description}' AS fiscal_year_description,
     budget.id AS budget_id,
-    json_extract_path_text(budget.data, 'name') AS budget_name,
-    json_extract_path_text(budget.data, 'budgetStatus') AS budget_status,
+    budget.data #>> '{name}' AS budget_name,
+    budget.data #>> '{budgetStatus}' AS budget_status,
     fund.id AS fund_id,
-    json_extract_path_text(fund.data, 'code') AS fund_code,
-    json_extract_path_text(fund.data, 'name') AS fund_name,
-    json_extract_path_text(fund.data, 'fundStatus') AS fund_status,
-    json_extract_path_text(fund.data, 'description') AS fund_description,
-    json_extract_path_text(fund.data, 'fundTypeId') AS fund_type_id,
-    json_extract_path_text(fund_type.data, 'name') AS fund_type_name,
+    fund.data #>> '{code}' AS fund_code,
+    fund.data #>> '{name}' AS fund_name,
+    fund.data #>> '{fundStatus}' AS fund_status,
+    fund.data #>> '{description}' AS fund_description,
+    fund.data #>> '{fundTypeId}' AS fund_type_id,
+    fund_type.data #>> '{name}' AS fund_type_name,
     ledger.id AS ledger_id,
-    json_extract_path_text(ledger.data, 'code') AS ledger_code,
-    json_extract_path_text(ledger.data, 'name') AS ledger_name,
-    json_extract_path_text(ledger.data, 'ledgerStatus') AS ledger_status,
-    json_extract_path_text(ledger.data, 'description') AS ledger_description
+    ledger.data #>> '{code}' AS ledger_code,
+    ledger.data #>> '{name}' AS ledger_name,
+    ledger.data #>> '{ledgerStatus}' AS ledger_status,
+    ledger.data #>> '{description}' AS ledger_description
 FROM
     finance_fiscal_years AS fiscal_year
     LEFT JOIN finance_budgets AS budget ON budget.fiscal_year_id = fiscal_year.id
     LEFT JOIN finance_funds AS fund ON fund.id = budget.fund_id
     LEFT JOIN finance_fund_types AS fund_type ON fund_type.id = fund.fund_type_id
     LEFT JOIN finance_ledgers AS ledger ON ledger.id = fund.ledger_id;
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_id);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_code);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_name);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_period_start);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_period_end);
-
-CREATE INDEX ON finance_funds_ext (fiscal_year_description);
-
-CREATE INDEX ON finance_funds_ext (budget_id);
-
-CREATE INDEX ON finance_funds_ext (budget_name);
-
-CREATE INDEX ON finance_funds_ext (budget_status);
-
-CREATE INDEX ON finance_funds_ext (fund_id);
-
-CREATE INDEX ON finance_funds_ext (fund_code);
-
-CREATE INDEX ON finance_funds_ext (fund_name);
-
-CREATE INDEX ON finance_funds_ext (fund_status);
-
-CREATE INDEX ON finance_funds_ext (fund_description);
-
-CREATE INDEX ON finance_funds_ext (fund_type_id);
-
-CREATE INDEX ON finance_funds_ext (fund_type_name);
-
-CREATE INDEX ON finance_funds_ext (ledger_id);
-
-CREATE INDEX ON finance_funds_ext (ledger_code);
-
-CREATE INDEX ON finance_funds_ext (ledger_name);
-
-CREATE INDEX ON finance_funds_ext (ledger_status);
-
-CREATE INDEX ON finance_funds_ext (ledger_description);
 
 COMMENT ON COLUMN finance_funds_ext.fiscal_year_id IS 'UUID of the fiscal year record';
 
@@ -117,4 +75,3 @@ COMMENT ON COLUMN finance_funds_ext.ledger_status IS 'The status of the ledger';
 
 COMMENT ON COLUMN finance_funds_ext.ledger_description IS 'The description of the ledger';
 
-VACUUM ANALYZE finance_funds_ext;

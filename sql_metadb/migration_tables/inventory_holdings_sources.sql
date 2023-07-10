@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.holdings_records_source;
 
-ALTER TABLE inventory_holdings_sources ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_holdings_sources (name);
-
-CREATE INDEX ON inventory_holdings_sources (source);
-
-VACUUM ANALYZE inventory_holdings_sources;

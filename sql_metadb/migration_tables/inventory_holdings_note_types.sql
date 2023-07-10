@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.holdings_note_type;
 
-ALTER TABLE inventory_holdings_note_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_holdings_note_types (name);
-
-CREATE INDEX ON inventory_holdings_note_types (source);
-
-VACUUM ANALYZE inventory_holdings_note_types;
