@@ -14,20 +14,3 @@ SELECT
 FROM
     folio_finance.fiscal_year;
 
-ALTER TABLE finance_fiscal_years ADD PRIMARY KEY (id);
-
-CREATE INDEX ON finance_fiscal_years (code);
-
-CREATE INDEX ON finance_fiscal_years (currency);
-
-CREATE INDEX ON finance_fiscal_years (description);
-
-CREATE INDEX ON finance_fiscal_years (name);
-
-CREATE INDEX ON finance_fiscal_years (period_end);
-
-CREATE INDEX ON finance_fiscal_years (period_start);
-
-CREATE INDEX ON finance_fiscal_years (series);
-
-VACUUM ANALYZE finance_fiscal_years;

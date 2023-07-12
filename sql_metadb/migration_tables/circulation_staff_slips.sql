@@ -11,14 +11,3 @@ SELECT
 FROM
     folio_circulation.staff_slips;
 
-ALTER TABLE circulation_staff_slips ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_staff_slips (active);
-
-CREATE INDEX ON circulation_staff_slips (description);
-
-CREATE INDEX ON circulation_staff_slips (name);
-
-CREATE INDEX ON circulation_staff_slips (template);
-
-VACUUM ANALYZE circulation_staff_slips;

@@ -8,16 +8,6 @@ SELECT
     editions.ordinality AS edition_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'editions'))
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{editions}')::jsonb)
     WITH ORDINALITY AS editions (data);
-
-CREATE INDEX ON instance_editions (instance_id);
-
-CREATE INDEX ON instance_editions (instance_hrid);
-
-CREATE INDEX ON instance_editions (edition);
-
-CREATE INDEX ON instance_editions (edition_ordinality);
-
-VACUUM ANALYZE instance_editions;
 

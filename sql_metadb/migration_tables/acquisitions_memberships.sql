@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_orders.acquisitions_unit_membership;
 
-ALTER TABLE acquisitions_memberships ADD PRIMARY KEY (id);
-
-CREATE INDEX ON acquisitions_memberships (acquisitions_unit_id);
-
-CREATE INDEX ON acquisitions_memberships (user_id);
-
-VACUUM ANALYZE acquisitions_memberships;

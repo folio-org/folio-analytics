@@ -4,24 +4,12 @@ DROP TABLE IF EXISTS instance_relationships_ext;
 CREATE TABLE instance_relationships_ext AS
 SELECT
     relationships.id AS relationship_id,
-    json_extract_path_text(relationships.data, 'instanceRelationshipTypeId') AS relationship_type_id,
-    json_extract_path_text(types.data, 'name') AS relationship_type_name,
-    json_extract_path_text(relationships.data, 'subInstanceId') AS relationship_sub_instance_id,
-    json_extract_path_text(relationships.data, 'superInstanceId') AS relationship_super_instance_id
+    relationships.data #>> '{instanceRelationshipTypeId}' AS relationship_type_id,
+    types.data #>> '{name}' AS relationship_type_name,
+    relationships.data #>> '{subInstanceId}' AS relationship_sub_instance_id,
+    relationships.data #>> '{superInstanceId}' AS relationship_super_instance_id
 FROM
     inventory_instance_relationships AS relationships
     LEFT JOIN inventory_instance_relationship_types AS types
-        ON types.id = json_extract_path_text(relationships.data, 'instanceRelationshipTypeId');
-
-CREATE INDEX ON instance_relationships_ext (relationship_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_name);
-
-CREATE INDEX ON instance_relationships_ext (relationship_sub_instance_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_super_instance_id);
-
-VACUUM ANALYZE instance_relationships_ext;
+        ON types.id = (relationships.data #>> '{instanceRelationshipTypeId}')::uuid;
 

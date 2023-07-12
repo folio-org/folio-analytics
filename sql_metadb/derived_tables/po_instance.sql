@@ -53,50 +53,7 @@ SELECT
     LEFT JOIN folio_orders.purchase_order AS po ON pot.id = po.id
     LEFT JOIN folio_configuration.config_data__t cdt ON jsonb_extract_path_text(po.jsonb, 'billTo')::uuid = cdt.id
     LEFT JOIN folio_configuration.config_data__t cdt2 ON jsonb_extract_path_text(po.jsonb, 'shipTo')::uuid = cdt2.id
-    LEFT JOIN folio_users.users__t AS ut ON jsonb_extract_path_text(po.jsonb, 'metadata', 'createdByUserId')::uuid = ut.id
-;
-CREATE INDEX ON po_instance (po_number);
-
-CREATE INDEX ON po_instance (po_line_number);
-
-CREATE INDEX ON po_instance (vendor_code);
-
-CREATE INDEX ON po_instance (created_by_username);
-
-CREATE INDEX ON po_instance (po_workflow_status);
-
-CREATE INDEX ON po_instance (status_approved);
-
-CREATE INDEX ON po_instance (created_date);
-
-CREATE INDEX ON po_instance (bill_to);
-
-CREATE INDEX ON po_instance (ship_to);
-
-CREATE INDEX ON po_instance (pol_instance_id);
-
-CREATE INDEX ON po_instance (pol_instance_hrid);
-
-CREATE INDEX ON po_instance (pol_location_id);
-
-CREATE INDEX ON po_instance (pol_location_name);
-
-CREATE INDEX ON po_instance (pol_location_source);
-
-CREATE INDEX ON po_instance (title);
-
-CREATE INDEX ON po_instance (publication_date);
-
-CREATE INDEX ON po_instance (publisher);
-
-CREATE INDEX ON po_instance (requester);
-
-CREATE INDEX ON po_instance (rush);
-
-CREATE INDEX ON po_instance (selector);
-
-
---VACUUM ANALYZE  po_instance;
+    LEFT JOIN folio_users.users__t AS ut ON jsonb_extract_path_text(po.jsonb, 'metadata', 'createdByUserId')::uuid = ut.id;
 
 COMMENT ON COLUMN po_instance.manual_po IS 'If true, order cannot be sent automatically, e.g. via EDI';
 

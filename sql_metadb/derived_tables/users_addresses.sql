@@ -24,29 +24,4 @@ FROM
     CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'personal', 'addresses')) AS addresses (jsonb)
     LEFT JOIN folio_users.addresstype__t AS ua ON jsonb_extract_path_text(addresses.jsonb, 'addressTypeId')::uuid = ua.id;
 
-CREATE INDEX ON users_addresses (user_id);
 
-CREATE INDEX ON users_addresses (address_id);
-
-CREATE INDEX ON users_addresses (address_country_id);
-
-CREATE INDEX ON users_addresses (address_line_1);
-
-CREATE INDEX ON users_addresses (address_line_2);
-
-CREATE INDEX ON users_addresses (address_city);
-
-CREATE INDEX ON users_addresses (address_region);
-
-CREATE INDEX ON users_addresses (address_postal_code);
-
-CREATE INDEX ON users_addresses (address_type_id);
-
-CREATE INDEX ON users_addresses (address_type_name);
-
-CREATE INDEX ON users_addresses (address_type_description);
-
-CREATE INDEX ON users_addresses (is_primary_address);
-
-
-VACUUM ANALYZE  users_addresses;

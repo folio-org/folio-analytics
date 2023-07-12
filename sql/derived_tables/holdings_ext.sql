@@ -27,9 +27,9 @@ SELECT
     holdings.retention_policy,
     holdings.shelving_title,
     holdings.discovery_suppress,
-    json_extract_path_text(holdings.data, 'metadata', 'createdDate') AS created_date,
-    json_extract_path_text(holdings.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(holdings.data, 'metadata', 'updatedDate') AS updated_date
+    holdings.data #>> '{metadata,createdDate}' AS created_date,
+    holdings.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    holdings.data #>> '{metadata,updatedDate}' AS updated_date
 FROM
     inventory_holdings AS holdings
     LEFT JOIN inventory_holdings_types AS holdings_type ON holdings.holdings_type_id = holdings_type.id
@@ -37,56 +37,4 @@ FROM
     LEFT JOIN inventory_call_number_types AS holdings_call_number_type ON holdings.call_number_type_id = holdings_call_number_type.id
     LEFT JOIN inventory_locations AS holdings_permanent_location ON holdings.permanent_location_id = holdings_permanent_location.id
     LEFT JOIN inventory_locations AS holdings_temporary_location ON holdings.temporary_location_id = holdings_temporary_location.id;
-
-CREATE INDEX ON holdings_ext (holdings_id);
-
-CREATE INDEX ON holdings_ext (holdings_hrid);
-
-CREATE INDEX ON holdings_ext (acquisition_method);
-
-CREATE INDEX ON holdings_ext (call_number);
-
-CREATE INDEX ON holdings_ext (call_number_prefix);
-
-CREATE INDEX ON holdings_ext (call_number_suffix);
-
-CREATE INDEX ON holdings_ext (call_number_type_id);
-
-CREATE INDEX ON holdings_ext (call_number_type_name);
-
-CREATE INDEX ON holdings_ext (copy_number);
-
-CREATE INDEX ON holdings_ext (type_id);
-
-CREATE INDEX ON holdings_ext (type_name);
-
-CREATE INDEX ON holdings_ext (ill_policy_id);
-
-CREATE INDEX ON holdings_ext (ill_policy_name);
-
-CREATE INDEX ON holdings_ext (instance_id);
-
-CREATE INDEX ON holdings_ext (permanent_location_id);
-
-CREATE INDEX ON holdings_ext (permanent_location_name);
-
-CREATE INDEX ON holdings_ext (temporary_location_id);
-
-CREATE INDEX ON holdings_ext (temporary_location_name);
-
-CREATE INDEX ON holdings_ext (receipt_status);
-
-CREATE INDEX ON holdings_ext (retention_policy);
-
-CREATE INDEX ON holdings_ext (shelving_title);
-
-CREATE INDEX ON holdings_ext (discovery_suppress);
-
-CREATE INDEX ON holdings_ext (created_date);
-
-CREATE INDEX ON holdings_ext (updated_by_user_id);
-
-CREATE INDEX ON holdings_ext (updated_date);
-
-VACUUM ANALYZE holdings_ext;
 

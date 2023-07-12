@@ -23,14 +23,6 @@ SELECT
     FROM po_prod_id AS ppi
         LEFT JOIN folio_inventory.identifier_type__t itt ON ppi.product_id_type = itt.id;
 
-CREATE INDEX ON po_prod_ids (pol_id);
-
-CREATE INDEX ON po_prod_ids (pol_number);
-
-CREATE INDEX ON po_prod_ids (product_id);
-
-CREATE INDEX ON po_prod_ids (product_id_type);
-
 COMMENT ON COLUMN po_prod_ids.pol_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_prod_ids.pol_number IS 'A human readable ID assigned to this purchase order line';
@@ -39,5 +31,4 @@ COMMENT ON COLUMN po_prod_ids.product_id IS 'The actual product identifier';
 
 COMMENT ON COLUMN po_prod_ids.product_id_type IS 'The type of product identifier';
 
-VACUUM ANALYZE po_prod_ids;
 

@@ -19,9 +19,9 @@ WITH invoice AS (
         jsonb_extract_path_text(invoices.jsonb, 'status') AS invoice_status,
         invoice_lines.id AS invoice_line_id,
         jsonb_extract_path_text(invoice_lines.jsonb, 'total')::numeric(19,4) AS invoice_line_total,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'fundId')::uuid AS invoice_line_fund_id,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'value')::numeric(19,4) AS invoice_line_distribution_value,
-        jsonb_extract_path_text(jsonb_array_elements(invoice_lines.jsonb->'fundDistributions'), 'distributionType') AS invoice_line_distribution_type,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'fundId')::uuid AS invoice_line_fund_id,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'value')::numeric(19,4) AS invoice_line_distribution_value,
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'distributionType') AS invoice_line_distribution_type,
         organizations.id AS vendor_id,
         jsonb_extract_path_text(organizations.jsonb, 'name') AS vendor_name
     FROM
@@ -86,52 +86,3 @@ FROM
     LEFT JOIN transactions AS transactions_invoice ON transactions_invoice.source_invoice_line_id = invoice.invoice_line_id
         AND transactions_invoice.from_fund_id = invoice.invoice_line_fund_id;
 
-CREATE INDEX ON finance_invoice_transactions (invoice_id);
-
-CREATE INDEX ON finance_invoice_transactions (folio_invoice_number);
-
-CREATE INDEX ON finance_invoice_transactions (vendor_id);
-
-CREATE INDEX ON finance_invoice_transactions (vendor_name);
-
-CREATE INDEX ON finance_invoice_transactions (vendor_invoice_number);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_date);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_status);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_total);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_currency);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_distribution_value);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_distribution_type);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_fiscal_year_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_fiscal_year);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_ledger_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_ledger_name);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_budget_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_budget_name);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_fund_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_fund_code);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_exchange_rate);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_transaction_id);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_transaction_amount);
-
-CREATE INDEX ON finance_invoice_transactions (invoice_line_transaction_currency);
-
-VACUUM ANALYZE finance_invoice_transactions;

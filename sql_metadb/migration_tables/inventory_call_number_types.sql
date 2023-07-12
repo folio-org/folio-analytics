@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.call_number_type;
 
-ALTER TABLE inventory_call_number_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_call_number_types (name);
-
-CREATE INDEX ON inventory_call_number_types (source);
-
-VACUUM ANALYZE inventory_call_number_types;

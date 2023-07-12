@@ -11,14 +11,3 @@ SELECT
 FROM
     folio_inventory.statistical_code;
 
-ALTER TABLE inventory_statistical_codes ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_statistical_codes (code);
-
-CREATE INDEX ON inventory_statistical_codes (name);
-
-CREATE INDEX ON inventory_statistical_codes (source);
-
-CREATE INDEX ON inventory_statistical_codes (statistical_code_type_id);
-
-VACUUM ANALYZE inventory_statistical_codes;

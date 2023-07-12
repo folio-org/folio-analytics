@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_inventory.instance_status;
 
-ALTER TABLE inventory_instance_statuses ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instance_statuses (code);
-
-CREATE INDEX ON inventory_instance_statuses (name);
-
-CREATE INDEX ON inventory_instance_statuses (source);
-
-VACUUM ANALYZE inventory_instance_statuses;

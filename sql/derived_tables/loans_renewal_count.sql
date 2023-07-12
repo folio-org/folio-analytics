@@ -10,7 +10,7 @@ WITH loan_count AS (
     SELECT
         item_id,
         count(DISTINCT id) AS num_loans,
-        sum(json_extract_path_text(data, 'renewalCount')::bigint) AS num_renewals
+        sum((data #>> '{renewalCount}')::bigint) AS num_renewals
     FROM
         circulation_loans
     GROUP BY
@@ -35,6 +35,3 @@ COMMENT ON COLUMN loans_renewal_count.item_hrid IS 'Item HRID';
 COMMENT ON COLUMN loans_renewal_count.num_loans IS 'Count of loans associated with the item';
 
 COMMENT ON COLUMN loans_renewal_count.num_renewals IS 'Count of renewals associated with the item';
-
-
-
