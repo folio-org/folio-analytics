@@ -1,6 +1,8 @@
 -- Report produces a list of individual loans which can then be
 -- grouped and summed to create loans and renewals counts.
 
+DROP FUNCTION IF EXISTS count_loans_and_renewals;
+
 CREATE FUNCTION count_loans_and_renewals(
     /* Choose a start and end date for the loans period */
     start_date date DEFAULT '2000-01-01',
