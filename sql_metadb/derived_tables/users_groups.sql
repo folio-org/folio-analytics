@@ -14,7 +14,7 @@ CREATE TABLE users_groups AS
 WITH user_departments AS (
     SELECT
         user_id,
-        string_agg(DISTINCT department_id::varchar(36), '|'::text) AS departments
+        string_agg(DISTINCT department_id::text, '|') AS departments
     FROM
         users_departments_unpacked
     GROUP BY
