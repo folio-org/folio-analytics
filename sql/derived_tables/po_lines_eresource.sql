@@ -6,21 +6,21 @@ CREATE TABLE po_lines_eresource AS
 WITH temp_eresource AS (
     SELECT
         pol.id AS pol_id,
-        pol.data #>> '{eresource,accessProvider}' AS access_provider,
-        pol.data #>> '{eresource,activated}' AS pol_activated,
+        (pol.data #>> '{eresource,accessProvider}')::uuid AS access_provider,
+        (pol.data #>> '{eresource,activated}')::boolean AS pol_activated,
         pol.data #>> '{eresource,activationDue}' AS pol_activation_due,
         pol.data #>> '{eresource,createInventory}' AS pol_create_inventory,
         pol.data #>> '{eresource,expectedActivation}' AS pol_expected_activation,
         pol.data #>> '{eresource,license,code}' AS pol_license_code,
         pol.data #>> '{eresource,license,description}' AS pol_license_desc,
         pol.data #>> '{eresource,license,reference}' AS pol_license_reference,
-        pol.data #>> '{eresource,materialType}' AS pol_material_type,
+        (pol.data #>> '{eresource,materialType}')::uuid AS pol_material_type,
         pol.data #>> '{eresource,trial}' AS pol_trial,
         pol.data #>> '{eresource,userLimit}' AS pol_user_limit,
         pol.data #>> '{eresource,resourceUrl}' AS pol_resource_url,
-        locations.data #>> '{holdingId}' AS pol_holding_id,
+        (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
-        CASE WHEN locations.data #>> '{locationId}' IS NOT NULL THEN locations.data #>> '{locationId}'
+        CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
              ELSE ih.permanent_location_id
         END AS pol_location_id,
         CASE WHEN il.name IS NOT NULL THEN il.name
@@ -33,8 +33,8 @@ WITH temp_eresource AS (
     FROM
         po_lines AS pol
         CROSS JOIN jsonb_array_elements((pol.data #> '{locations}')::jsonb) AS locations (data)
-        LEFT JOIN inventory_locations AS il ON locations.data #>> '{locationId}' = il.id
-        LEFT JOIN inventory_holdings AS ih ON locations.data #>> '{holdingId}' = ih.id
+        LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id
+        LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id
         LEFT JOIN inventory_locations AS il2 ON il2.id = ih.permanent_location_id
     WHERE
         pol.data #> '{eresource}' IS NOT NULL

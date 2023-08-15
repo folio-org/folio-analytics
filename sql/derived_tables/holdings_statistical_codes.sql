@@ -6,7 +6,7 @@ WITH holdings_statistical_codes AS (
     SELECT
         holdings.id AS holdings_id,
         holdings.hrid AS holdings_hrid,
-        statistical_code_ids.data #>> '{}' AS statistical_code_id
+        (statistical_code_ids.data #>> '{}')::uuid AS statistical_code_id
     FROM
         inventory_holdings AS holdings
         CROSS JOIN jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb) AS statistical_code_ids (data)

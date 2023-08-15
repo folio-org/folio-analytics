@@ -14,7 +14,7 @@ SELECT
     locations.data #>> '{quantity}' AS pol_location_qty,
     locations.data #>> '{quantityElectronic}' AS pol_loc_qty_elec,
     locations.data #>> '{quantityPhysical}' AS pol_loc_qty_phys,      
-    CASE WHEN locations.data #>> '{locationId}' IS NOT NULL THEN locations.data #>> '{locationId}'
+    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
          ELSE ih.permanent_location_id
     END AS pol_location_id,	
     CASE WHEN il.name IS NOT NULL THEN il.name
@@ -27,7 +27,7 @@ SELECT
 FROM
     po_lines AS pol
     CROSS JOIN jsonb_array_elements((data #> '{locations}')::jsonb) AS locations (data)
-    LEFT JOIN inventory_holdings AS ih ON locations.data #>> '{holdingId}' = ih.id
-    LEFT JOIN inventory_locations AS il ON locations.data #>> '{locationId}' = il.id
+    LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id
+    LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id
     LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id;
 

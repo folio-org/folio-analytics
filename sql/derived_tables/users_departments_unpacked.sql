@@ -6,7 +6,7 @@ CREATE TABLE users_departments_unpacked AS
 WITH departments_array AS (
     SELECT
         uu.id AS user_id,
-        departments.data #>> '{}' AS department_id,
+        (departments.data #>> '{}')::uuid AS department_id,
         departments.ordinality AS department_ordinality
     FROM
         user_users AS uu
@@ -22,7 +22,5 @@ SELECT
     data #>> '{usageNumber}' AS department_usage_number
 FROM
     departments_array
-LEFT JOIN user_departments AS ud
-    ON departments_array.department_id = ud.id
-;
+    LEFT JOIN user_departments AS ud ON departments_array.department_id = ud.id;
 

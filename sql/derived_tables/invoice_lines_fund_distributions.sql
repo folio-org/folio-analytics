@@ -6,7 +6,7 @@ WITH funds_distr AS (
     SELECT
         id AS invoice_line_id,
         dist.data #>> '{code}' AS fund_distribution_code,
-        dist.data #>> '{fundId}' AS fund_distribution_id,
+        (dist.data #>> '{fundId}')::uuid AS fund_distribution_id,
         dist.data #>> '{distributionType}' AS fund_distribution_type,
         (dist.data #>> '{value}')::numeric AS fund_distribution_value,
         (lines.data #>> '{subTotal}')::numeric(12,2) AS invoice_line_sub_total,
@@ -30,5 +30,5 @@ SELECT
 FROM
     funds_distr
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
-    LEFT JOIN finance_fund_types AS ft ON ft.id = ff.data #>> '{fundTypeId}';
+    LEFT JOIN finance_fund_types AS ft ON ft.id = (ff.data #>> '{fundTypeId}')::uuid;
 

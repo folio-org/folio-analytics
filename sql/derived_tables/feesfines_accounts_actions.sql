@@ -34,7 +34,7 @@ SELECT
     ug.group AS patron_group_name
 FROM
     feesfines_accounts AS fa
-    LEFT JOIN feesfines_feefineactions AS ff ON fa.id = ff.data #>> '{accountId}'
-    LEFT JOIN user_users AS uu ON fa.data #>> '{userId}' = uu.id
+    LEFT JOIN feesfines_feefineactions AS ff ON fa.id = (ff.data #>> '{accountId}')::uuid
+    LEFT JOIN user_users AS uu ON (fa.data #>> '{userId}')::uuid = uu.id
     LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id;
 

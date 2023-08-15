@@ -11,5 +11,5 @@ SELECT
 FROM
     inventory_instance_relationships AS relationships
     LEFT JOIN inventory_instance_relationship_types AS types
-        ON types.id = relationships.data #>> '{instanceRelationshipTypeId}';
+        ON types.id = (relationships.data #>> '{instanceRelationshipTypeId}')::uuid;
 

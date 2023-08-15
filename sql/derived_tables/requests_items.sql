@@ -13,7 +13,7 @@ SELECT
     cr.pickup_service_point_id,   
     psp.name AS pickup_service_point_name,
     psp.discovery_display_name AS pickup_service_point_disc_disp_name,
-    ii.data #>> '{inTransitDestinationServicePointId}' AS in_transit_dest_serv_point_id,
+    (ii.data #>> '{inTransitDestinationServicePointId}')::uuid AS in_transit_dest_serv_point_id,
     isp.name AS in_transit_dest_serv_point_name,
     isp.discovery_display_name AS in_transit_dest_serv_point_disc_disp_name,
     cr.requester_id, 

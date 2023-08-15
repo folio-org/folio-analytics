@@ -6,9 +6,9 @@ WITH funds_distr AS (
 	SELECT
     	id AS invoice_voucher_line_id,
         dist.data #>> '{code}' AS fund_distribution_code,
-        dist.data #>> '{fundId}' AS fund_distribution_id,
-        dist.data #>> '{invoiceLineId}' AS fund_distribution_invl_id,
-        dist.data #>> '{expenseClassId}' AS fund_distribution_expense_class_id,
+        (dist.data #>> '{fundId}')::uuid AS fund_distribution_id,
+        (dist.data #>> '{invoiceLineId}')::uuid AS fund_distribution_invl_id,
+        (dist.data #>> '{expenseClassId}')::uuid AS fund_distribution_expense_class_id,
         dist.data #>> '{value}' AS fund_distribution_value,
         amount AS invoice_voucher_lines_amount,
         dist.data #>> '{distributionType}' AS fund_distribution_type,
@@ -39,7 +39,7 @@ SELECT
 FROM
     funds_distr
     LEFT JOIN finance_funds AS ff ON ff.id = funds_distr.fund_distribution_id
-    LEFT JOIN finance_fund_types AS ft ON ft.id = ff.data #>> '{fundTypeId}'
+    LEFT JOIN finance_fund_types AS ft ON ft.id = (ff.data #>> '{fundTypeId}')::uuid
     LEFT JOIN finance_expense_classes AS fec ON fec.id = fund_distribution_expense_class_id
     LEFT JOIN invoice_vouchers AS invv ON invv. id = funds_distr.voucher_id
 ORDER BY voucher_number;

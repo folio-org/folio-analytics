@@ -22,35 +22,39 @@ SELECT
     po_purchase_orders.metadata__created_date AS created_date,
     ce.value::json #>> '{name}' AS bill_to,
     ce.value::json #>> '{name}' AS ship_to,
-    po_lines.data #>> '{instanceId}' AS pol_instance_id,
+    (po_lines.data #>> '{instanceId}')::uuid AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
-    locations.data #>> '{holdingId}' AS pol_holding_id,
-    CASE WHEN locations.data #>> '{locationId}' IS NOT NULL
-         THEN locations.data #>> '{locationId}'
-         ELSE ih.permanent_location_id END AS pol_location_id,
+    (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
+    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL
+         THEN (locations.data #>> '{locationId}')::uuid
+         ELSE ih.permanent_location_id
+    END AS pol_location_id,
     CASE WHEN (il.name) IS NOT NULL
          THEN il.name
-         ELSE il2.name END AS pol_location_name,
+         ELSE il2.name
+    END AS pol_location_name,
     CASE WHEN il.name IS NOT NULL
          THEN 'pol_location'
          WHEN il2.name IS NOT NULL
          THEN 'pol_holding'
-         ELSE 'no_source' END AS pol_location_source,
+         ELSE 'no_source'
+    END AS pol_location_source,
     inventory_instances.title AS title,
     po_lines.data #>> '{publicationDate}' AS publication_date,
     po_lines.data #>> '{publisher}' AS publisher
 FROM
     po_purchase_orders
-    LEFT JOIN po_lines ON po_purchase_orders.id = po_lines.data #>> '{purchaseOrderId}'
+    LEFT JOIN po_lines ON po_purchase_orders.id = (po_lines.data #>> '{purchaseOrderId}')::uuid
     CROSS JOIN jsonb_array_elements((po_lines.data #> '{locations}')::jsonb) AS locations (data)
-    LEFT JOIN inventory_locations AS il ON locations.data #>> '{locationId}' = il.id
-    LEFT JOIN inventory_holdings AS ih ON locations.data #>> '{holdingId}' = ih.id
-    LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id
-    LEFT JOIN inventory_instances ON po_lines.data #>> '{instanceId}' = inventory_instances.id
-    LEFT JOIN organization_organizations ON po_purchase_orders.data #>> '{vendor}' = organization_organizations.id
-    LEFT JOIN configuration_entries AS ce ON po_purchase_orders.data #>> '{billTo}' = ce.id
-    LEFT JOIN configuration_entries AS ce2 ON po_purchase_orders.data #>> '{shipTo}' = ce2.id
-    LEFT JOIN user_users ON po_purchase_orders.data #>> '{metadata,createdByUserId}' = user_users.id;
+
+    LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id
+    LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id
+    LEFT JOIN inventory_locations AS il2 ON (ih.permanent_location_id)::uuid = il2.id
+    LEFT JOIN inventory_instances ON (po_lines.data #>> '{instanceId}')::uuid = inventory_instances.id
+    LEFT JOIN organization_organizations ON (po_purchase_orders.data #>> '{vendor}')::uuid = organization_organizations.id
+    LEFT JOIN configuration_entries AS ce ON (po_purchase_orders.data #>> '{billTo}')::uuid = ce.id
+    LEFT JOIN configuration_entries AS ce2 ON (po_purchase_orders.data #>> '{shipTo}')::uuid = ce2.id
+    LEFT JOIN user_users ON (po_purchase_orders.data #>> '{metadata,createdByUserId}')::uuid = user_users.id;
 
 COMMENT ON COLUMN po_instance.manual_po IS 'If true, order cannot be sent automatically, e.g. via EDI';
 

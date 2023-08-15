@@ -9,7 +9,7 @@ WITH user_departments AS (
     SELECT
         user_id,
         --string_agg(DISTINCT department_name, '|'::text) AS departments
-        string_agg(DISTINCT department_id, '|'::text) AS departments
+        string_agg(DISTINCT (department_id::text), '|'::text) AS departments
     FROM
         users_departments_unpacked
     GROUP BY
@@ -19,7 +19,7 @@ SELECT
     uu.id AS user_id,
     uu.active,
     uu.barcode,
-    uu.data #>> '{metadata,createdDate}' AS created_date,
+    (uu.data #>> '{metadata,createdDate}')::timestamptz AS created_date,
     uu.enrollment_date,
     uu.expiration_date,
     uu.data #>> '{externalSystemId}' AS external_system_id,
@@ -34,10 +34,10 @@ SELECT
     uu.data #>> '{personal,email}' AS user_email,
     uu.data #>> '{personal,phone}' AS user_phone,
     uu.data #>> '{personal,mobilePhone}' AS user_mobile_phone,
-    uu.data #>> '{personal,dateOfBirth}' AS user_date_of_birth,
+    (uu.data #>> '{personal,dateOfBirth}')::timestamptz AS user_date_of_birth,
     uu.data #>> '{personal,preferredContactTypeId}' AS user_preferred_contact_type_id,
     uu.data #>> '{type}' AS user_type,
-    uu.data #>> '{metadata,updatedDate}' AS updated_date,
+    (uu.data #>> '{metadata,updatedDate}')::timestamptz AS updated_date,
     uu.username,
     uu.data #>> '{tags}' AS user_tags,
     uu.data #>> '{customFields}' AS user_custom_fields
