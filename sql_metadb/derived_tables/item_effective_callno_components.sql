@@ -14,8 +14,8 @@ SELECT
     jsonb_extract_path_text(items.jsonb,'effectiveCallNumberComponents','typeId')::uuid AS item_effective_call_number_type_id,
     jsonb_extract_path_text(cnt.jsonb, 'name') AS item_effective_call_number_type_name
 FROM
-    folio_inventory.item__ AS items
-    LEFT JOIN folio_inventory.call_number_type__ AS cnt ON 
+    folio_inventory.item AS items
+    LEFT JOIN folio_inventory.call_number_type AS cnt ON
     (jsonb_extract_path_text(items.jsonb, 'effectiveCallNumberComponents', 'typeId'))::uuid 
             = cnt.id;
       
