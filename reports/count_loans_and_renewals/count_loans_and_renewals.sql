@@ -62,4 +62,6 @@ SELECT start_date || ' to ' || end_date AS date_range,
           campus_filter IN (current_item_permanent_location_campus_name, '') AND
           institution_filter IN (current_item_permanent_location_institution_name, '')
 $$
-LANGUAGE SQL;
+LANGUAGE SQL
+STABLE
+PARALLEL SAFE;
