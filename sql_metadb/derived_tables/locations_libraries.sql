@@ -1,5 +1,7 @@
 --metadb:table locations_libraries
 
+-- Create derived table that combines institution, campus, library, and location information
+
 DROP TABLE IF EXISTS locations_libraries;
 
 CREATE TABLE locations_libraries AS
