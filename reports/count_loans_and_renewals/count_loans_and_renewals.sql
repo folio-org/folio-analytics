@@ -1,4 +1,4 @@
---metadb:report count_loans_and_renewals
+--metadb:function count_loans_and_renewals
 
 -- Report produces a list of individual loans which can then be
 -- grouped and summed to create loans and renewals counts.
