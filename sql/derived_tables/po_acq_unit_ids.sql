@@ -18,5 +18,5 @@ SELECT
     acquisitions_units.data #>> '{name}' AS po_acquisition_unit_name
 FROM
     po_acq_unit
-    LEFT JOIN acquisitions_units ON acquisitions_units.id = po_acq_unit.po_acq_unit_id;
+    LEFT JOIN acquisitions_units ON acquisitions_units.id::uuid = po_acq_unit.po_acq_unit_id;
 

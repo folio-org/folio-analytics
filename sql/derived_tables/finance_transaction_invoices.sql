@@ -45,14 +45,13 @@ SELECT
     oo.name AS invoice_vendor_name
 FROM
     finance_transactions AS ft
-    LEFT JOIN invoice_invoices AS ii ON (ft.data #>> '{sourceInvoiceId}')::uuid = ii.id
-    LEFT JOIN invoice_lines AS il ON (ft.data #>> '{sourceInvoiceLineId}')::uuid = il.id
+    LEFT JOIN invoice_invoices AS ii ON (ft.data #>> '{sourceInvoiceId}')::uuid = ii.id::uuid
+    LEFT JOIN invoice_lines AS il ON (ft.data #>> '{sourceInvoiceLineId}')::uuid = il.id::uuid
     LEFT JOIN finance_funds AS ff ON ft.from_fund_id = ff.id
     LEFT JOIN finance_funds AS tf ON ft.to_fund_id = tf.id
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id AND ft.fiscal_year_id = fb.fiscal_year_id
-    LEFT JOIN organization_organizations AS oo ON (ii.data #>> '{vendorId}')::uuid = oo.id
+    LEFT JOIN organization_organizations AS oo ON (ii.data #>> '{vendorId}')::uuid = oo.id::uuid
 WHERE
     transaction_type = 'Pending payment'
     OR transaction_type = 'Payment'
     OR transaction_type = 'Credit';
-

@@ -11,5 +11,5 @@ SELECT
 FROM
     inventory_instances AS instance
     CROSS JOIN jsonb_array_elements((instance.data #> '{alternativeTitles}')::jsonb) AS alternative_titles(data)
-    LEFT JOIN inventory_alternative_title_types ON (alternative_titles.data #>> '{alternativeTitleTypeId}')::uuid = inventory_alternative_title_types.id;
-
+    LEFT JOIN inventory_alternative_title_types
+        ON (alternative_titles.data #>> '{alternativeTitleTypeId}')::uuid = inventory_alternative_title_types.id::uuid;
