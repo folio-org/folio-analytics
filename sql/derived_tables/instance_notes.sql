@@ -12,5 +12,6 @@ SELECT
 FROM
     inventory_instances AS instances
     CROSS JOIN jsonb_array_elements((data #> '{notes}')::jsonb) AS notes (data)
-    LEFT JOIN inventory_instance_note_types AS instance_note_types ON (notes.data #>> '{instanceNoteTypeId}')::uuid = instance_note_types.id;
+    LEFT JOIN inventory_instance_note_types AS instance_note_types
+        ON (notes.data #>> '{instanceNoteTypeId}')::uuid = instance_note_types.id::uuid;
 

@@ -1,6 +1,7 @@
+-- Create a local table that includes the name and id for the relationship type
+
 DROP TABLE IF EXISTS instance_relationships_ext;
 
--- Create a local table that includes the name and id for the relationship type
 CREATE TABLE instance_relationships_ext AS
 SELECT
     relationships.id AS relationship_id,
@@ -11,5 +12,4 @@ SELECT
 FROM
     inventory_instance_relationships AS relationships
     LEFT JOIN inventory_instance_relationship_types AS types
-        ON types.id = (relationships.data #>> '{instanceRelationshipTypeId}')::uuid;
-
+        ON types.id::uuid = (relationships.data #>> '{instanceRelationshipTypeId}')::uuid;
