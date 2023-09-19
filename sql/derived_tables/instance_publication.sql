@@ -7,8 +7,24 @@ SELECT
     instance.hrid AS instance_hrid,
     publication.data #>> '{dateOfPublication}' AS date_of_publication,
     publication.data #>> '{place}' AS place,
-    publication.data #>> '{publisher}' AS publisher
+    publication.data #>> '{publisher}' AS publisher,
+    publication.data #>> '{role}' AS publication_role,
+    publication.ordinality AS publication_ordinality,
 FROM
     inventory_instances AS instance
-    CROSS JOIN jsonb_array_elements((instance.data #> '{publication}')::jsonb) AS publication(data);
+    CROSS JOIN jsonb_array_elements((instance.data #> '{publication}')::jsonb) WITH ORDINALITY AS publication(data);
+
+COMMENT ON COLUMN instance_publication.instance_id IS 'UUID of the instance record';
+
+COMMENT ON COLUMN instance_publication.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
+
+COMMENT ON COLUMN instance_publication.date_of_publication IS 'Date (year YYYY) of publication, distribution, etc.';
+
+COMMENT ON COLUMN instance_publication.place IS 'Place of publication, distribution, etc.';
+
+COMMENT ON COLUMN instance_publication.publisher IS 'Name of publisher, distributor, etc.';
+
+COMMENT ON COLUMN instance_publication.role IS 'The role of the publisher, distributor, etc.';
+
+COMMENT ON COLUMN instance_publication.ordinality IS 'Publication value ordinality';
 
