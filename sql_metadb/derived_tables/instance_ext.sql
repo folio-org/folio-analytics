@@ -42,7 +42,7 @@ COMMENT ON COLUMN instance_ext.instance_id IS 'The unique ID of the instance rec
 
 COMMENT ON COLUMN instance_ext.instance_hrid IS 'The human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Instance ID.';
 
-COMMENT ON COLUMN instance_ext.cataloged_date IS 'Date or timestamp on an instance for when is was considered cataloged.';
+COMMENT ON COLUMN instance_ext.cataloged_date IS 'Date or timestamp on an instance for when it was considered cataloged.';
 
 COMMENT ON COLUMN instance_ext.title IS 'The primary title (or label) associated with the resource.';
 
@@ -58,7 +58,7 @@ COMMENT ON COLUMN instance_ext.mode_of_issuance_name IS 'Label for the mode of i
 
 COMMENT ON COLUMN instance_ext.previously_held IS 'Records the fact that the resource was previously held by the library for things like Hathi access, etc.';
 
-COMMENT ON COLUMN instance_ext.instance_source IS 'The metadata source and its format of the underlying record to the instance record. (e.g. FOLIO if it is a record created in Inventory;  MARC if it is a MARC record created in MARCcat or EPKB if it is a record coming from eHoldings).';
+COMMENT ON COLUMN instance_ext.instance_source IS 'The metadata source and the format of the underlying record to the instance record. (e.g. FOLIO if it is a record created in Inventory;  MARC if it is a MARC record created in MARCcat or EPKB if it is a record coming from eHoldings).';
 
 COMMENT ON COLUMN instance_ext.discovery_suppress IS 'Records the fact that the record should not be displayed in a discovery system.';
 
@@ -70,7 +70,7 @@ COMMENT ON COLUMN instance_ext.status_name IS 'Label for the instance status.';
 
 COMMENT ON COLUMN instance_ext.status_updated_date IS 'Date [or timestamp] for when the instance status was updated.';
 
-COMMENT ON COLUMN instance_ext.record_source IS 'The metadata source and its format of the underlying record to the instance record. (e.g. FOLIO if it is a record created in Inventory;  MARC if it is a MARC record created in MARCcat or EPKB if it is a record coming from eHoldings).';
+COMMENT ON COLUMN instance_ext.record_source IS 'The metadata source and the format of the underlying record to the instance record. (e.g. FOLIO if it is a record created in Inventory;  MARC if it is a MARC record created in MARCcat or EPKB if it is a record coming from eHoldings).';
 
 COMMENT ON COLUMN instance_ext.record_created_date IS 'Date and time when the record was created.';
 
