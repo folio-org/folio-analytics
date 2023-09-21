@@ -12,6 +12,6 @@ SELECT
     oc.data #>> '{lastName}' AS contact_last_name
 FROM
     po_purchase_orders AS ppo
-    LEFT JOIN organization_organizations AS oo ON (ppo.data #>> '{vendor}')::uuid = oo.id
+    LEFT JOIN organization_organizations AS oo ON (ppo.data #>> '{vendor}')::uuid = oo.id::uuid
     LEFT JOIN organization_contacts AS oc ON oo.id = oc.id;
 

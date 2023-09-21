@@ -15,5 +15,5 @@ WITH temp_pol_phys_mat_type AS (
         imt.name AS pol_mat_type_name
     FROM
         temp_pol_phys_mat_type AS tppmt
-    LEFT JOIN inventory_material_types AS imt ON imt.id = tppmt.pol_phys_mat_type;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = tppmt.pol_phys_mat_type;
 
