@@ -62,4 +62,4 @@ COMMENT ON COLUMN openaccess_checklists.cli_status_value IS 'Refdata value for c
 
 COMMENT ON COLUMN openaccess_checklists.cli_status_label IS 'Refdata label for checklist item status';
 
-COMMENT ON COLUMN openaccess_checklists.publication_request_id IS 'UUID reference to a record of the publication request'
+COMMENT ON COLUMN openaccess_checklists.publication_request_id IS 'UUID reference to a record of the publication request';
