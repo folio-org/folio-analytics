@@ -13,5 +13,6 @@ SELECT
     inventory_call_number_types.name AS effective_call_number_type_name
 FROM
     inventory_items AS items
-    LEFT JOIN inventory_call_number_types ON (items.data #>> '{effectiveCallNumberComponents,typeID}')::uuid = inventory_call_number_types.id;
+    LEFT JOIN inventory_call_number_types
+        ON (items.data #>> '{effectiveCallNumberComponents,typeID}')::uuid = inventory_call_number_types.id::uuid;
       
