@@ -1,0 +1,31 @@
+--MetaDB: Table po_notes
+--Creates a derived table for purchase order notes
+
+DROP TABLE IF EXISTS po_notes;
+
+CREATE TABLE po_notes AS
+
+SELECT
+po.id AS po_id,
+po.jsonb -> 'metadata' ->> 'createdDate' AS creation_date,
+po.jsonb ->> 'poNumber' AS poNumber,
+po.jsonb ->> 'workflowStatus' AS workflow_status,
+po_notes.jsonb #>> '{}' AS note,
+po_notes.ORDINALITY AS note_ordinality
+FROM folio_orders.purchase_order AS po
+CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(po.jsonb, 'notes')) WITH ORDINALITY AS po_notes (jsonb);
+;
+
+COMMENT ON COLUMN po_notes.po_id IS 'UUID of purchase order'
+
+COMMENT ON COLUMN po_notes.creation_date IS 'Purchase Order creation date and time'
+
+COMMENT ON COLUMN po_notes.poNumber IS 'Purchase order number'
+
+COMMENT ON COLUMN po_notes.workflow_status IS 'workflow status of the purchase order'
+
+COMMENT ON COLUMN po_notes.po_note IS 'Purchase order note'
+
+COMMENT ON COLUMN po_notes.po_note_ordinality IS 'The ordinality of the note'
+
+SELECT * FROM folio_orders.purchase_order
