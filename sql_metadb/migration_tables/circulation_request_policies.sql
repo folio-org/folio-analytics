@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_circulation.request_policy;
 
-ALTER TABLE circulation_request_policies ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_patron_notice_policies (description);
-
-CREATE INDEX ON circulation_patron_notice_policies (name);
-
-VACUUM ANALYZE circulation_request_policies;

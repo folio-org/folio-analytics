@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.alternative_title_type;
 
-ALTER TABLE inventory_alternative_title_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_alternative_title_types (name);
-
-CREATE INDEX ON inventory_alternative_title_types (source);
-
-VACUUM ANALYZE inventory_alternative_title_types;

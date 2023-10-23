@@ -1,3 +1,5 @@
+--metadb:table instance_statistical_codes
+
 --This derived table extracts data for the instance statistical codes. 
 --It includes the instance uuid, hrid, the statistical code uuid, name, associated code, type id and name.
 --Ordinality has been included.
@@ -27,22 +29,5 @@ FROM
 	stcodes AS stc
 	LEFT JOIN folio_inventory.statistical_code__t AS sct ON stc.statistical_code_id::uuid = sct.id::uuid 
 	LEFT JOIN folio_inventory.statistical_code_type__t AS sctt ON sct.statistical_code_type_id::uuid = sctt.id::uuid;
-	
-CREATE INDEX ON instance_statistical_codes (instance_id);
 
-CREATE INDEX ON instance_statistical_codes (instance_hrid);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_type_name);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code);
-
-CREATE INDEX ON instance_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON instance_statistical_codes (stat_code_ordinality);
-
-VACUUM ANALYZE instance_statistical_codes; 
 

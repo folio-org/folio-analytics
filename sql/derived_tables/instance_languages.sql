@@ -9,15 +9,5 @@ SELECT
     languages.ordinality AS language_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'languages')) WITH ORDINALITY AS languages (data);
-
-CREATE INDEX ON instance_languages (instance_id);
-
-CREATE INDEX ON instance_languages (instance_hrid);
-
-CREATE INDEX ON instance_languages ("language");
-
-CREATE INDEX ON instance_languages (language_ordinality);
-
-VACUUM ANALYZE instance_languages;
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{languages}')::jsonb) WITH ORDINALITY AS languages (data);
 

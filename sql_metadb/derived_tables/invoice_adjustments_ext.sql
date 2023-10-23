@@ -1,3 +1,5 @@
+--metadb:table invoice_adjustments_ext
+
 DROP TABLE IF EXISTS invoice_adjustments_ext;
 
 -- This table includes the ratio of the invoice lines amount in relation to the invoice_line total to calculate the invoice adjustment by row
@@ -63,24 +65,6 @@ GROUP BY
     transaction_invoice_line_value,
     transaction_invoice_adj_value;
 
-CREATE INDEX ON invoice_adjustments_ext (invoice_id);
-
-CREATE INDEX ON invoice_adjustments_ext (invl_id);
-
-CREATE INDEX ON invoice_adjustments_ext (invoice_line_value);
-
-CREATE INDEX ON invoice_adjustments_ext (inv_adjust_total_value);
-
-CREATE INDEX ON invoice_adjustments_ext (invls_total);
-
-CREATE INDEX ON invoice_adjustments_ext (inv_adj_prorate);
-
-CREATE INDEX ON invoice_adjustments_ext (inv_adj_relationToTotal);
-
-CREATE INDEX ON invoice_adjustments_ext (ratio_of_inv_adj_per_invoice_line);
-
-CREATE INDEX ON invoice_adjustments_ext (inv_adj_total); 
-
 COMMENT ON COLUMN invoice_adjustments_ext.invoice_id IS 'UUID of this invoice';
 
 COMMENT ON COLUMN invoice_adjustments_ext.invl_id IS 'UUID of the invoice line associated with this fund distribution';
@@ -105,4 +89,3 @@ COMMENT ON COLUMN invoice_adjustments_ext.transaction_invoice_adj_value IS 'This
 
 COMMENT ON COLUMN invoice_adjustments_ext.transactions_inv_adj_total IS 'This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line. IN SYSTEM CURRENCY';
 
-VACUUM ANALYZE invoice_adjustments_ext;

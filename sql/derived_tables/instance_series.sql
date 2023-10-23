@@ -1,4 +1,4 @@
--- Create a local table for series statemnts in the instance records.
+-- Create a derived table for series statements in the instance records.
 
 DROP TABLE IF EXISTS instance_series;
 
@@ -6,19 +6,17 @@ CREATE TABLE instance_series AS
 SELECT
     instances.id AS instance_id,
     instances.hrid AS instance_hrid,
-    series.data #>> '{}' AS series,
+    series.data #>> '{value}' AS series,
     series.ordinality AS series_ordinality
 FROM
     inventory_instances AS instances
-    CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'series')) WITH ORDINALITY AS series (data);
+   CROSS JOIN jsonb_array_elements((instances.data #> '{series}')::jsonb)
+   WITH ORDINALITY AS series (data);
+   
+COMMENT ON COLUMN instance_series.instance_id IS 'UUID of the instance record';
 
-CREATE INDEX ON instance_series (instance_id);
+COMMENT ON COLUMN instance_series.instance_hrid IS 'A human readable system-assigned sequential ID which maps to the Instance ID';
 
-CREATE INDEX ON instance_series (instance_hrid);
+COMMENT ON COLUMN instance_series.series IS 'Series title value';
 
-CREATE INDEX ON instance_series (series);
-
-CREATE INDEX ON instance_series (series_ordinality);
-
-VACUUM ANALYZE instance_series;
-
+COMMENT ON COLUMN instance_series.series_ordinality IS 'Series title value ordinality';

@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_feesfines.payments;
 
-ALTER TABLE feesfines_payments ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_payments (allowed_refund_method);
-
-CREATE INDEX ON feesfines_payments (name_method);
-
-CREATE INDEX ON feesfines_payments (owner_id);
-
-VACUUM ANALYZE feesfines_payments;

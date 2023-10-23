@@ -11,11 +11,11 @@ DROP TABLE IF EXISTS po_lines_locations;
 CREATE TABLE po_lines_locations AS
 SELECT
     pol.id AS pol_id,
-    json_extract_path_text(locations.data, 'quantity') AS pol_location_qty,
-    json_extract_path_text(locations.data, 'quantityElectronic') AS pol_loc_qty_elec,
-    json_extract_path_text(locations.data, 'quantityPhysical') AS pol_loc_qty_phys,      
-    CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL THEN json_extract_path_text(locations.data, 'locationId') 
-         ELSE ih.permanent_location_id
+    locations.data #>> '{quantity}' AS pol_location_qty,
+    locations.data #>> '{quantityElectronic}' AS pol_loc_qty_elec,
+    locations.data #>> '{quantityPhysical}' AS pol_loc_qty_phys,      
+    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
+         ELSE ih.permanent_location_id::uuid
     END AS pol_location_id,	
     CASE WHEN il.name IS NOT NULL THEN il.name
          ELSE il2.name
@@ -26,23 +26,8 @@ SELECT
     END AS pol_location_source
 FROM
     po_lines AS pol
-    CROSS JOIN json_array_elements(json_extract_path(data, 'locations')) AS locations (data)
-    LEFT JOIN inventory_holdings AS ih ON json_extract_path_text(locations.data, 'holdingId') = ih.id
-    LEFT JOIN inventory_locations AS il ON json_extract_path_text(locations.data, 'locationId') = il.id
+    CROSS JOIN jsonb_array_elements((data #> '{locations}')::jsonb) AS locations (data)
+    LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid
+    LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
     LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id;
 
-CREATE INDEX ON po_lines_locations (pol_id);
-
-CREATE INDEX ON po_lines_locations (pol_location_qty);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_elec);
-
-CREATE INDEX ON po_lines_locations (pol_loc_qty_phys);
-
-CREATE INDEX ON po_lines_locations (pol_location_id);
-
-CREATE INDEX ON po_lines_locations (pol_location_name);
-
-CREATE INDEX ON po_lines_locations (pol_location_source);
-
-VACUUM ANALYZE po_lines_locations;

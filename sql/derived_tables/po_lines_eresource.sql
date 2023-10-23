@@ -6,22 +6,22 @@ CREATE TABLE po_lines_eresource AS
 WITH temp_eresource AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(pol.data, 'eresource', 'accessProvider') AS access_provider,
-        json_extract_path_text(pol.data, 'eresource', 'activated') AS pol_activated,
-        json_extract_path_text(pol.data, 'eresource', 'activationDue') AS pol_activation_due,
-        json_extract_path_text(pol.data, 'eresource', 'createInventory') AS pol_create_inventory,
-        json_extract_path_text(pol.data, 'eresource', 'expectedActivation') AS pol_expected_activation,
-        json_extract_path_text(pol.data, 'eresource', 'license', 'code') AS pol_license_code,
-        json_extract_path_text(pol.data, 'eresource', 'license', 'description') AS pol_license_desc,
-        json_extract_path_text(pol.data, 'eresource', 'license', 'reference') AS pol_license_reference,
-        json_extract_path_text(pol.data, 'eresource', 'materialType') AS pol_material_type,
-        json_extract_path_text(pol.data, 'eresource', 'trial') AS pol_trial,
-        json_extract_path_text(pol.data, 'eresource', 'userLimit') AS pol_user_limit,
-        json_extract_path_text(pol.data, 'eresource', 'resourceUrl') AS pol_resource_url,
-        json_extract_path_text(locations.data, 'holdingId') AS pol_holding_id,
+        (pol.data #>> '{eresource,accessProvider}')::uuid AS access_provider,
+        (pol.data #>> '{eresource,activated}')::boolean AS pol_activated,
+        pol.data #>> '{eresource,activationDue}' AS pol_activation_due,
+        pol.data #>> '{eresource,createInventory}' AS pol_create_inventory,
+        pol.data #>> '{eresource,expectedActivation}' AS pol_expected_activation,
+        pol.data #>> '{eresource,license,code}' AS pol_license_code,
+        pol.data #>> '{eresource,license,description}' AS pol_license_desc,
+        pol.data #>> '{eresource,license,reference}' AS pol_license_reference,
+        (pol.data #>> '{eresource,materialType}')::uuid AS pol_material_type,
+        pol.data #>> '{eresource,trial}' AS pol_trial,
+        pol.data #>> '{eresource,userLimit}' AS pol_user_limit,
+        pol.data #>> '{eresource,resourceUrl}' AS pol_resource_url,
+        (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
-        CASE WHEN json_extract_path_text(locations.data, 'locationId') IS NOT NULL THEN json_extract_path_text(locations.data, 'locationId')
-             ELSE ih.permanent_location_id
+        CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
+             ELSE ih.permanent_location_id::uuid
         END AS pol_location_id,
         CASE WHEN il.name IS NOT NULL THEN il.name
              ELSE il2.name
@@ -32,12 +32,12 @@ WITH temp_eresource AS (
         END AS pol_location_source
     FROM
         po_lines AS pol
-        CROSS JOIN json_array_elements(json_extract_path(pol.data, 'locations')) AS locations (data)
-        LEFT JOIN inventory_locations AS il ON json_extract_path_text(locations.data, 'locationId') = il.id
-        LEFT JOIN inventory_holdings AS ih ON json_extract_path_text(locations.data, 'holdingId') = ih.id
+        CROSS JOIN jsonb_array_elements((pol.data #> '{locations}')::jsonb) AS locations (data)
+        LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
+        LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid
         LEFT JOIN inventory_locations AS il2 ON il2.id = ih.permanent_location_id
     WHERE
-        json_extract_path(pol.data, 'eresource') IS NOT NULL
+        pol.data #> '{eresource}' IS NOT NULL
 )
 SELECT
     te.pol_id,
@@ -62,47 +62,45 @@ SELECT
     te.pol_resource_url
 FROM
     temp_eresource AS te
-    LEFT JOIN inventory_material_types AS imt ON imt.id = te.pol_material_type
-    LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = te.pol_material_type
+    LEFT JOIN organization_organizations AS oo ON oo.id::uuid = te.access_provider;
 
-CREATE INDEX ON po_lines_eresource (pol_id);
+COMMENT ON COLUMN po_lines_eresource.pol_id IS 'UUID identifying this purchase order line';
 
-CREATE INDEX ON po_lines_eresource (pol_holding_id);
+COMMENT ON COLUMN po_lines_eresource.pol_holding_id IS 'Holding UUID associated with order line';
 
-CREATE INDEX ON po_lines_eresource (pol_holding_hrid);
+COMMENT ON COLUMN po_lines_eresource.pol_holding_hrid IS 'the human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Holding ID';
 
-CREATE INDEX ON po_lines_eresource (pol_location_id);
+COMMENT ON COLUMN po_lines_eresource.pol_location_id IS 'UUID of the (inventory) location record';
 
-CREATE INDEX ON po_lines_eresource (location_name);
+COMMENT ON COLUMN po_lines_eresource.location_name IS 'Displayed location name';
 
-CREATE INDEX ON po_lines_eresource (pol_location_source);
+COMMENT ON COLUMN po_lines_eresource.pol_location_source IS 'Shows if the displayed location is sourced from the pol_location_id or pol_holding_id';
 
-CREATE INDEX ON po_lines_eresource (pol_access_provider);
+COMMENT ON COLUMN po_lines_eresource.pol_access_provider IS 'UUID of the access provider';
 
-CREATE INDEX ON po_lines_eresource (provider_org_name);
+COMMENT ON COLUMN po_lines_eresource.provider_org_name IS 'Displayed access provider name';
 
-CREATE INDEX ON po_lines_eresource (pol_activated);
+COMMENT ON COLUMN po_lines_eresource.pol_activated IS 'whether or not this resource is activated';
 
-CREATE INDEX ON po_lines_eresource (pol_activation_due);
+COMMENT ON COLUMN po_lines_eresource.pol_activation_due IS 'number of days until activation, from date of order placement';
 
-CREATE INDEX ON po_lines_eresource (pol_create_inventory);
+COMMENT ON COLUMN po_lines_eresource.pol_create_inventory IS 'Shows what inventory objects need to be created for electronic resource';
 
-CREATE INDEX ON po_lines_eresource (pol_expected_activation);
+COMMENT ON COLUMN po_lines_eresource.pol_expected_activation IS 'expected date the resource will be activated';
 
-CREATE INDEX ON po_lines_eresource (pol_license_code);
+COMMENT ON COLUMN po_lines_eresource.pol_license_code IS 'license code';
 
-CREATE INDEX ON po_lines_eresource (pol_license_desc);
+COMMENT ON COLUMN po_lines_eresource.pol_license_desc IS 'license description';
 
-CREATE INDEX ON po_lines_eresource (pol_license_reference);
+COMMENT ON COLUMN po_lines_eresource.pol_license_reference IS 'license reference';
 
-CREATE INDEX ON po_lines_eresource (pol_material_type);
+COMMENT ON COLUMN po_lines_eresource.pol_material_type IS 'UUID of the material Type';
 
-CREATE INDEX ON po_lines_eresource (pol_er_mat_type_name);
+COMMENT ON COLUMN po_lines_eresource.pol_er_mat_type_name IS 'Material Type name';
 
-CREATE INDEX ON po_lines_eresource (pol_trial);
+COMMENT ON COLUMN po_lines_eresource.pol_trial IS 'whether or not this is a trial';
 
-CREATE INDEX ON po_lines_eresource (pol_user_limit);
+COMMENT ON COLUMN po_lines_eresource.pol_user_limit IS 'the concurrent user-limit';
 
-CREATE INDEX ON po_lines_eresource (pol_resource_url);
-
-VACUUM ANALYZE po_lines_eresource;
+COMMENT ON COLUMN po_lines_eresource.pol_resource_url IS 'Electronic resource can be access via this URL';

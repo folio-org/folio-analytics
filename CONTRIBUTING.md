@@ -44,8 +44,18 @@ area.  For bugs or specific technical proposals, use
 All commits should be made in a "forked" repository, not in this
 repository.
 
-It is recommended to create a new branch based on the `main` branch,
-rather than committing directly to `main`.
+It is **strongly recommended** to create a new branch based on the
+`main` branch, rather than committing directly to `main`.
+
+**Pull requests will be "squash merged," and so the pull request
+branch should be discarded or not reused after being merged, in order
+to avoid confusion.**  If the `main` branch is used for a pull
+request, it is a good idea to re-fork the repository after the merge.
+
+Since the entire pull request will be squashed into a single commit,
+it is recommended to keep the scope of the pull request relatively
+narrow, preferrably addressing only a single issue.
+
 
 ### Commit description
 
@@ -109,6 +119,13 @@ Additions or changes to derived tables should be accompanied by any
 required additions or changes to the `runlist.txt` and `deps.txt`
 files, together in the same pull request.
 
+Derived table queries for Metadb should also include any relevant
+external SQL directives, in particular:
+
+```
+--metadb:table <table>
+```
+
 
 7\. Formatting SQL
 ------------------
@@ -153,12 +170,38 @@ derived table concisely.
 9\. Checklist
 -------------
 
-[This checklist](pull_request_template.md) can be used to guide your
-review of a pull request.  A copy of the checklist may be added to a
-comment attached to a review.  Check off the items that have been
-confirmed in your review by adding an `x` between the square brackets
-`[]` on each line.
+The checklist below can be used to guide your review of a pull request
+(PR).  A copy of the checklist may be added to a comment attached to a
+review.  Check off the items that have been confirmed in your review
+by adding an `x` between the square brackets `[]` on each line.
 
 If any items remain unchecked or you have further questions, you can
 indicate that in the comment as well and select "Request changes" as
 the review response.
+
+```
+All queries:
+- [ ] PR Title and Description are accurate and thorough
+- [ ] PR is based on a new branch (not main)
+- [ ] PR scope is not overly broad
+- [ ] Query runs without errors
+- [ ] Query output is correct
+- [ ] Query logic is clear and well documented
+- [ ] Query is readable and properly indented
+- [ ] Table and column names are in all-lowercase
+- [ ] Quotation marks are used only where necessary
+- [ ] JSON extraction is in standard form, for example:
+      LDP:     t #>> '{f1,f2,f3}'    [for compatibility across LDP 1 & 2]
+      Metadb:  jsonb_extract_path_text(t, f1, f2, f3)
+
+Report queries:
+- [ ] Query has complete user documentation
+    - [ ] Purpose of report
+    - [ ] Sample output
+    - [ ] Query instructions
+
+Derived tables:
+- [ ] First line is "--metadb:table" directive, followed by blank line
+- [ ] User documentation in comment lines, followed by blank line
+- [ ] File name is listed in `runlist.txt` after dependencies
+```

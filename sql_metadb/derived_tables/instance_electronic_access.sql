@@ -1,3 +1,5 @@
+--metadb:table instance_electronic_access
+
 --This derived table extracts data for the instance electronic access. 
 --It includes the instance uuid, hrid, the electronic access uri, link text, materials specification, public note
 --relationship id and relationship name.
@@ -32,23 +34,4 @@ SELECT
 FROM 
 	eaccess AS ea
 	LEFT JOIN folio_inventory.electronic_access_relationship__t AS eart ON ea.relationship_id = eart.id ;
-	
-CREATE INDEX ON instance_electronic_access (instance_id);
 
-CREATE INDEX ON instance_electronic_access (instance_hrid);
-
-CREATE INDEX ON instance_electronic_access (uri);
-
-CREATE INDEX ON instance_electronic_access (link_text);
-
-CREATE INDEX ON instance_electronic_access (materials_specification);
-
-CREATE INDEX ON instance_electronic_access (public_note);
-
-CREATE INDEX ON instance_electronic_access (relationship_id);
-
-CREATE INDEX ON instance_electronic_access (relationship_name);
-
-CREATE INDEX ON instance_electronic_access (electronic_access_ordinality);
-
-VACUUM ANALYZE instance_electronic_access; 

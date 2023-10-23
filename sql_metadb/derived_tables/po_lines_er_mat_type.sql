@@ -1,5 +1,8 @@
-DROP TABLE IF EXISTS po_lines_er_mat_type;
+--metadb:table po_lines_er_mat_type
+
 -- Create a derived table that extract electronic resource material types from purchase order lines
+
+DROP TABLE IF EXISTS po_lines_er_mat_type;
 
 CREATE TABLE po_lines_er_mat_type AS
 /* Subquery to extract nested JSON data */
@@ -19,10 +22,9 @@ FROM
     temp_pol_er_mat_type AS tpemt
     LEFT JOIN folio_inventory.material_type__t AS imt ON imt.id = tpemt.pol_er_mat_type_id;
 
-CREATE INDEX ON po_lines_er_mat_type (pol_id);
+COMMENT ON COLUMN po_lines_er_mat_type.pol_id IS 'UUID identifying this purchase order line';
 
-CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_id);
+COMMENT ON COLUMN po_lines_er_mat_type.pol_er_mat_type_id IS 'UUID of the material type';
 
-CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_name);
+COMMENT ON COLUMN po_lines_er_mat_type.pol_er_mat_type_name IS 'Name of the material type';
 
-VACUUM ANALYZE  po_lines_er_mat_type;

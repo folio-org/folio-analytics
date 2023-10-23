@@ -1,3 +1,5 @@
+--metadb:table item_statistical_codes
+
 -- Create a local table for item statistics with the id and name of
 -- the code and type.
 
@@ -27,18 +29,3 @@ FROM
     LEFT JOIN folio_inventory.statistical_code__t AS sc ON items_statistical_codes.statistical_code_id::uuid = sc.id
     LEFT JOIN folio_inventory.statistical_code_type__t AS sct ON sc.statistical_code_type_id::uuid = sct.id;
 
-CREATE INDEX ON item_statistical_codes (item_id);
-
-CREATE INDEX ON item_statistical_codes (item_hrid);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON item_statistical_codes (statistical_code);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_type_name);
-
-VACUUM ANALYZE item_statistical_codes;

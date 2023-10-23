@@ -5,14 +5,14 @@ CREATE TABLE invoice_adjustments_in_addition_to AS
 WITH adjustments AS (
     SELECT
         id AS invoice_id,
-        json_extract_path_text(adjustments.data, 'description') AS adjustment_description,
-        json_extract_path_text(adjustments.data, 'prorate') AS adjustment_prorate,
-        json_extract_path_text(adjustments.data, 'relationToTotal') AS adjustment_relationToTotal,
-        json_extract_path_text(adjustments.data, 'type') AS adjustment_type,
-        json_extract_path_text(adjustments.data, 'value') ::numeric(12,2) AS adjustment_value
+        adjustments.data #>> '{description}' AS adjustment_description,
+        adjustments.data #>> '{prorate}' AS adjustment_prorate,
+        adjustments.data #>> '{relationToTotal}' AS adjustment_relationToTotal,
+        adjustments.data #>> '{type}' AS adjustment_type,
+        (adjustments.data #>> '{value}')::numeric(12,2) AS adjustment_value
     FROM
         invoice_invoices AS inv
-        CROSS JOIN json_array_elements(json_extract_path(data, 'adjustments')) AS adjustments (data)
+        CROSS JOIN jsonb_array_elements((data #> '{adjustments}')::jsonb) AS adjustments (data)
 )
 SELECT
     invoice_id,
@@ -26,18 +26,4 @@ FROM
 WHERE
     adjustment_relationToTotal = 'In addition to'
     AND adjustment_prorate = 'Not prorated';
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (invoice_id);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_description);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_prorate);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_relationToTotal);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_type);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_value);
-
-VACUUM ANALYZE invoice_adjustments_in_addition_to;
 

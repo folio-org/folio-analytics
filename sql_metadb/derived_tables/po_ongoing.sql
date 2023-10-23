@@ -1,6 +1,8 @@
-DROP TABLE IF EXISTS po_ongoing;
+--metadb:table po_ongoing
 
 -- Create a derived table for ongoing details in purchase orders.
+
+DROP TABLE IF EXISTS po_ongoing;
 
 CREATE TABLE po_ongoing AS
 SELECT
@@ -13,17 +15,15 @@ SELECT
 FROM
     folio_orders.purchase_order AS po;
 
-CREATE INDEX ON po_ongoing (po_id);
+COMMENT ON COLUMN po_ongoing.po_id IS 'UUID of this purchase order';
 
-CREATE INDEX ON po_ongoing (po_ongoing_interval);
+COMMENT ON COLUMN po_ongoing.po_ongoing_interval IS 'The subscription interval in days';
 
-CREATE INDEX ON po_ongoing (po_ongoing_is_subscription);
+COMMENT ON COLUMN po_ongoing.po_ongoing_is_subscription IS 'Whether or not this is a subscription';
 
-CREATE INDEX ON po_ongoing (po_ongoing_manual_renewal);
+COMMENT ON COLUMN po_ongoing.po_ongoing_manual_renewal IS 'Whether or not this is a manual renewal';
 
-CREATE INDEX ON po_ongoing (po_ongoing_renewal_date);
+COMMENT ON COLUMN po_ongoing.po_ongoing_renewal_date IS 'The date this Ongoing PO''s order lines were renewed';
 
-CREATE INDEX ON po_ongoing (po_ongoing_review_period);
-
-VACUUM ANALYZE po_ongoing;
+COMMENT ON COLUMN po_ongoing.po_ongoing_review_period IS 'Time prior to renewal where changes can be made to subscription';
 

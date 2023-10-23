@@ -1,3 +1,5 @@
+--metadb:table invoice_adjustments_in_addition_to
+
 DROP TABLE IF EXISTS invoice_adjustments_in_addition_to;
 
 -- This query will return the invoice adjustments when they are "Not Prorated" and "In addition To"
@@ -27,18 +29,6 @@ WHERE
     adjustment_relationToTotal = 'In addition to'
     AND adjustment_prorate = 'Not prorated';
 
-CREATE INDEX ON invoice_adjustments_in_addition_to (invoice_id);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_description);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_prorate);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_relationToTotal);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_type);
-
-CREATE INDEX ON invoice_adjustments_in_addition_to (adjustment_value);
-
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.invoice_id IS 'UUID of this invoice';
 
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_description IS 'List of invoice level adjustments. The adjustments can be pro-rated which are defined at the invoice level, but are applied to the invoice lines. A generic example is a shipping fee which should be spread out across all of the invoice lines so that all funds involved pay some portion of the fee.';
@@ -51,4 +41,3 @@ COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_type IS 'Adjustm
 
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_value IS 'Adjustment value';
 
-VACUUM ANALYZE invoice_adjustments_in_addition_to;

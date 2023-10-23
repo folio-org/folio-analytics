@@ -1,3 +1,5 @@
+--metadb:table agreements_subscription_agreement_org_ext
+
 -- Creates a derived table on subscription_agreement_org joins related
 -- values from org and resolves values and labels from
 -- erm_agreements_refdata_value for sao_role
@@ -21,24 +23,6 @@ FROM
     LEFT JOIN folio_agreements.refdata_value AS saorv ON saorv.rdv_id = saor.saor_role_fk
     LEFT JOIN folio_agreements.org AS org ON org.org_id = sao.sao_org_fk;
 
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_id);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (subscription_agreement_id);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_org_id);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_org_name);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_role_id);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_role_value);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_role_label);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (sao_note);
-
-CREATE INDEX ON agreements_subscription_agreement_org_ext (org_orgs_uuid);
-
 COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_id IS 'UUID for subscription and organization pairing';
 
 COMMENT ON COLUMN agreements_subscription_agreement_org_ext.subscription_agreement_id IS 'UUId for the subscritpion and agreement pairing';
@@ -57,4 +41,3 @@ COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_note IS 'Notes a
 
 COMMENT ON COLUMN agreements_subscription_agreement_org_ext.org_orgs_uuid IS 'UUID of organization attached to the agreement';
 
-VACUUM ANALYZE agreements_subscription_agreement_org_ext;

@@ -5,7 +5,7 @@ CREATE TABLE po_lines_phys_mat_type AS
 WITH temp_pol_phys_mat_type AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(data, 'physical', 'materialType') AS pol_phys_mat_type
+        (data #>> '{physical,materialType}')::uuid AS pol_phys_mat_type
     FROM
         po_lines AS pol)
     /* Main query */
@@ -15,13 +15,5 @@ WITH temp_pol_phys_mat_type AS (
         imt.name AS pol_mat_type_name
     FROM
         temp_pol_phys_mat_type AS tppmt
-    LEFT JOIN inventory_material_types AS imt ON imt.id = tppmt.pol_phys_mat_type;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = tppmt.pol_phys_mat_type;
 
-CREATE INDEX ON po_lines_phys_mat_type (pol_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_phys_mat_type_id);
-
-CREATE INDEX ON po_lines_phys_mat_type (pol_mat_type_name);
-
-
-VACUUM ANALYZE  po_lines_phys_mat_type;

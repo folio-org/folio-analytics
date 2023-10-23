@@ -1,3 +1,5 @@
+--metadb:table instance_alternative_titles
+
 --This derived table extracts data for the instance alternative titles.
 --It includes the instance uuid, hrid, the alternative title, type, uuid, and the name associated with that type uuid.
 --Ordinality has been included.
@@ -17,17 +19,4 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'alternativeTitles')) WITH ORDINALITY AS titles (jsonb)
     LEFT JOIN folio_inventory.alternative_title_type AS att ON jsonb_extract_path_text(titles.jsonb, 'alternativeTitleTypeId')::uuid = att.id;
 
-CREATE INDEX ON instance_alternative_titles (instance_id);
-
-CREATE INDEX ON instance_alternative_titles (instance_hrid);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title_type_id);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title_ordinality);
-
-CREATE INDEX ON instance_alternative_titles (alternative_title_type_name);
-
-VACUUM ANALYZE instance_alternative_titles;
 

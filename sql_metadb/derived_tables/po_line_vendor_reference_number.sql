@@ -1,3 +1,5 @@
+--metadb:table po_line_vendor_reference_number
+
 -- This derived table extracts reference numbers from po_lines vendor
 -- details.
 
@@ -15,14 +17,13 @@ FROM folio_orders.po_line AS pl
         AS numbers (jsonb)
     LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
 
-CREATE INDEX ON po_line_vendor_reference_number (po_line_id);
+COMMENT ON COLUMN po_line_vendor_reference_number.po_line_id IS 'UUID identifying this purchase order line';
 
-CREATE INDEX ON po_line_vendor_reference_number (po_line_number);
+COMMENT ON COLUMN po_line_vendor_reference_number.po_line_number IS 'A human readable number assigned to this PO line';
 
-CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number);
+COMMENT ON COLUMN po_line_vendor_reference_number.vendor_reference_number IS 'A reference number for this purchase order line';
 
-CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number_type);
+COMMENT ON COLUMN po_line_vendor_reference_number.vendor_reference_number_type IS 'The reference number type';
 
-CREATE INDEX ON po_line_vendor_reference_number (vendor_instructions);
+COMMENT ON COLUMN po_line_vendor_reference_number.vendor_instructions IS 'Special instructions for the vendor';
 
-VACUUM ANALYZE po_line_vendor_reference_number;

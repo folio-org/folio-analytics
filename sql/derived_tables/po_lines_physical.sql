@@ -5,17 +5,17 @@ CREATE TABLE po_lines_physical AS
 WITH temp_phys AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(pol.data, 'physical', 'createInventory') AS pol_phys_create_inventory,
-        json_extract_path_text(pol.data, 'physical', 'materialType') AS pol_phys_mat_type,
-        json_extract_path_text(pol.data, 'physical', 'materialSupplier') AS pol_phys_mat_supplier,
-        json_extract_path_text(pol.data, 'physical', 'expectedReceiptDate') AS pol_phys_expected_receipt_date,
-        json_extract_path_text(pol.data, 'physical', 'receiptDue') AS pol_phys_receipt_due,
+        pol.data #>> '{physical,createInventory}' AS pol_phys_create_inventory,
+        (pol.data #>> '{physical,materialType}')::uuid AS pol_phys_mat_type,
+        (pol.data #>> '{physical,materialSupplier}')::uuid AS pol_phys_mat_supplier,
+        pol.data #>> '{physical,expectedReceiptDate}' AS pol_phys_expected_receipt_date,
+        pol.data #>> '{physical,receiptDue}' AS pol_phys_receipt_due,
         physical_volumes.data #>> '{}' AS pol_volumes,
         physical_volumes.ordinality AS pol_volumes_ordinality,
-        json_extract_path_text(pol.data, 'physical', 'volumes', 'description') AS pol_phys_volumes_description
+        pol.data #>> '{physical,volumes,description}' AS pol_phys_volumes_description
     FROM
         po_lines AS pol
-        CROSS JOIN LATERAL json_array_elements(json_extract_path(data, 'physical', 'volumes'))
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{physical,volumes}')::jsonb)
         WITH ORDINALITY AS physical_volumes (data)
 )
 SELECT
@@ -32,30 +32,6 @@ SELECT
     tp.pol_phys_volumes_description
 FROM
     temp_phys AS tp
-    LEFT JOIN inventory_material_types AS imt ON imt.id = tp.pol_phys_mat_type
-    LEFT JOIN organization_organizations AS oo ON oo.id = tp.pol_phys_mat_supplier;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = tp.pol_phys_mat_type
+    LEFT JOIN organization_organizations AS oo ON oo.id::uuid = tp.pol_phys_mat_supplier;
 
-CREATE INDEX ON po_lines_physical (pol_id);
-
-CREATE INDEX ON po_lines_physical (pol_phys_create_inventory);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_type);
-
-CREATE INDEX ON po_lines_physical (pol_er_mat_type_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_mat_supplier);
-
-CREATE INDEX ON po_lines_physical (supplier_org_name);
-
-CREATE INDEX ON po_lines_physical (pol_phys_expected_receipt_date);
-
-CREATE INDEX ON po_lines_physical (pol_phys_receipt_due);
-
-CREATE INDEX ON po_lines_physical (pol_volumes);
-
-CREATE INDEX ON po_lines_physical (pol_volumes_ordinality);
-
-CREATE INDEX ON po_lines_physical (pol_phys_volumes_description);
-
-
-VACUUM ANALYZE  po_lines_physical;

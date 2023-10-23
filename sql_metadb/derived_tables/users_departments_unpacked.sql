@@ -1,3 +1,8 @@
+--metadb:table users_departments_unpacked
+--metadb:require folio_users.departments__t.id uuid
+--metadb:require folio_users.departments__t.code text
+--metadb:require folio_users.departments__t.name text
+
 DROP TABLE IF EXISTS users_departments_unpacked;
 
 -- Create a derived table that takes the users table and joins
@@ -24,19 +29,6 @@ FROM
     LEFT JOIN folio_users.departments__t AS ud
         ON departments_array.department_id::uuid = ud.id;
 
-CREATE INDEX ON users_departments_unpacked (user_id);
-
-CREATE INDEX ON users_departments_unpacked (department_id);
-
--- If a user has more than one department, ordinality should show a
--- sequence of numbers indicating the order of the departments in the
--- original list
-CREATE INDEX ON users_departments_unpacked (department_ordinality);
-
-CREATE INDEX ON users_departments_unpacked (department_name);
-
-CREATE INDEX ON users_departments_unpacked (department_code);
-
 COMMENT ON COLUMN users_departments_unpacked.user_id IS 'User ID (Generated UUID) of the user associated with the department(s)';
 
 COMMENT ON COLUMN users_departments_unpacked.department_id IS 'Department ID (Generated UUID) of the department';
@@ -47,4 +39,3 @@ COMMENT ON COLUMN users_departments_unpacked.department_name IS 'The display nam
 
 COMMENT ON COLUMN users_departments_unpacked.department_code IS 'The (user-supplied) code for the department';
 
-VACUUM ANALYZE users_departments_unpacked;

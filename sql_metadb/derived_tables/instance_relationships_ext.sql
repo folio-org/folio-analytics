@@ -1,3 +1,9 @@
+--metadb:table instance_relationships_ext
+--metadb:require folio_inventory.instance_relationship.id uuid
+--metadb:require folio_inventory.instance_relationship.instancerelationshiptypeid uuid
+--metadb:require folio_inventory.instance_relationship.subinstanceid uuid
+--metadb:require folio_inventory.instance_relationship.superinstanceid uuid
+
 DROP TABLE IF EXISTS instance_relationships_ext;
 
 -- Create a local table that includes the name and id for the relationship type
@@ -13,14 +19,3 @@ FROM
     LEFT JOIN folio_inventory.instance_relationship_type__t AS t
         ON t.id = r.instancerelationshiptypeid;
 
-CREATE INDEX ON instance_relationships_ext (relationship_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_type_name);
-
-CREATE INDEX ON instance_relationships_ext (relationship_sub_instance_id);
-
-CREATE INDEX ON instance_relationships_ext (relationship_super_instance_id);
-
-VACUUM ANALYZE instance_relationships_ext;
