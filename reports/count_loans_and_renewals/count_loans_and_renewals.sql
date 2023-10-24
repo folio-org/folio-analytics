@@ -1,3 +1,5 @@
+--metadb:function count_loans_and_renewals
+
 -- Report produces a list of individual loans which can then be
 -- grouped and summed to create loans and renewals counts.
 
@@ -33,8 +35,8 @@ RETURNS TABLE(
     effective_location_name text,
     permanent_location_library_name text,
     permanent_location_campus_name text,
-    permanent_location_institution_name text) AS
-$$
+    permanent_location_institution_name text)
+AS $$
 SELECT start_date || ' to ' || end_date AS date_range,
        loan_date::date,
        loan_due_date AS loan_due_date,
@@ -62,4 +64,6 @@ SELECT start_date || ' to ' || end_date AS date_range,
           campus_filter IN (current_item_permanent_location_campus_name, '') AND
           institution_filter IN (current_item_permanent_location_institution_name, '')
 $$
-LANGUAGE SQL;
+LANGUAGE SQL
+STABLE
+PARALLEL SAFE;

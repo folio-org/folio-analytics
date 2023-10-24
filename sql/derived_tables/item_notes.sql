@@ -14,5 +14,5 @@ SELECT
 FROM
     inventory_items AS items
     CROSS JOIN LATERAL jsonb_array_elements((data #> '{notes}')::jsonb) WITH ORDINALITY AS notes (data)
-    LEFT JOIN inventory_item_note_types AS item_note_types ON (notes.data #>> '{itemNoteTypeId}')::uuid = item_note_types.id;
-
+    LEFT JOIN inventory_item_note_types AS item_note_types
+        ON (notes.data #>> '{itemNoteTypeId}')::uuid = item_note_types.id::uuid;

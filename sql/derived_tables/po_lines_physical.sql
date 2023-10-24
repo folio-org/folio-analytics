@@ -32,6 +32,6 @@ SELECT
     tp.pol_phys_volumes_description
 FROM
     temp_phys AS tp
-    LEFT JOIN inventory_material_types AS imt ON imt.id = tp.pol_phys_mat_type
-    LEFT JOIN organization_organizations AS oo ON oo.id = tp.pol_phys_mat_supplier;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = tp.pol_phys_mat_type
+    LEFT JOIN organization_organizations AS oo ON oo.id::uuid = tp.pol_phys_mat_supplier;
 

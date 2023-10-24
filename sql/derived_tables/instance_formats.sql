@@ -22,5 +22,4 @@ SELECT
     formats.source AS format_source
 FROM
     instances
-    LEFT JOIN inventory_instance_formats AS formats ON instances.instance_format_id = formats.id;
-
+    LEFT JOIN inventory_instance_formats AS formats ON instances.instance_format_id = formats.id::uuid;
