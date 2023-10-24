@@ -18,5 +18,6 @@ SELECT
     nature_content_term.source AS nature_of_content_term_source
 FROM
     nature_content
-    JOIN inventory_nature_of_content_terms AS nature_content_term ON nature_content_term.id = nature_content.nature_of_content_term_id;
+    JOIN inventory_nature_of_content_terms AS nature_content_term
+        ON nature_content_term.id::uuid = nature_content.nature_of_content_term_id;
 

@@ -21,6 +21,7 @@ SELECT
     inventory_statistical_code_types.name AS statistical_code_type_name
 FROM
     holdings_statistical_codes
-    LEFT JOIN inventory_statistical_codes ON holdings_statistical_codes.statistical_code_id = inventory_statistical_codes.id
-    LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
-
+    LEFT JOIN inventory_statistical_codes
+        ON holdings_statistical_codes.statistical_code_id = inventory_statistical_codes.id::uuid
+    LEFT JOIN inventory_statistical_code_types
+        ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;

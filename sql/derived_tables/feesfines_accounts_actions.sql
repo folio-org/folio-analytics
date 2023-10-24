@@ -1,8 +1,9 @@
-DROP TABLE IF EXISTS feesfines_accounts_actions;
-
 -- Create a derived table that takes feesfines_accounts as the main table
 -- join all transaction data from the feesfines_actions table
 -- add patron group information from user_group table
+
+DROP TABLE IF EXISTS feesfines_accounts_actions;
+
 CREATE TABLE feesfines_accounts_actions AS
 SELECT
     fa.id AS fine_account_id,
@@ -34,7 +35,6 @@ SELECT
     ug.group AS patron_group_name
 FROM
     feesfines_accounts AS fa
-    LEFT JOIN feesfines_feefineactions AS ff ON fa.id = (ff.data #>> '{accountId}')::uuid
-    LEFT JOIN user_users AS uu ON (fa.data #>> '{userId}')::uuid = uu.id
+    LEFT JOIN feesfines_feefineactions AS ff ON fa.id::uuid = (ff.data #>> '{accountId}')::uuid
+    LEFT JOIN user_users AS uu ON (fa.data #>> '{userId}')::uuid = uu.id::uuid
     LEFT JOIN user_groups AS ug ON uu.patron_group = ug.id;
-
