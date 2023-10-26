@@ -10,7 +10,7 @@ SELECT
     jsonb_extract_path_text(ft.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
     jsonb_extract_path_text(ft.jsonb, 'currency') AS transaction_currency,
     ft.expenseclassid AS transaction_expense_class_id,
-	ec.code AS transaction_expense_class_code,
+    ec.code AS transaction_expense_class_code,
     ec.name AS transaction_expense_class_name,
     ec.external_account_number_ext,    
     ft.fiscalyearid AS transaction_fiscal_year_id,
