@@ -101,7 +101,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of th
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
 
 
-
-COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of the vendor record';
-
-COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
