@@ -1,9 +1,5 @@
 --metadb:table feesfines_accounts_actions	
 
--- Create a derived table that takes feesfines_accounts as the main table
--- join all transaction data from the feesfines_actions table
--- add patron group information from user_group table
-
 DROP TABLE IF EXISTS feesfines_accounts_actions;
 
 CREATE TABLE feesfines_accounts_actions AS
