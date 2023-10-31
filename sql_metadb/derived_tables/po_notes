@@ -1,5 +1,4 @@
---MetaDB: Table po_notes
---Creates a derived table for purchase order notes
+--metadb:table po_notes
 
 DROP TABLE IF EXISTS po_notes;
 
