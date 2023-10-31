@@ -1,4 +1,5 @@
 --metadb:table finance_transaction_purchase_order
+--metadb:require folio_finance.expense_class__t.id uuid
 
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
 
@@ -33,7 +34,6 @@ SELECT
     jsonb_extract_path_text(po.jsonb, 'order_type') AS po_order_type,
     jsonb_extract_path_text(po.jsonb, 'vendor')::uuid AS po_vendor_id,
     jsonb_extract_path_text(oo.jsonb, 'name') AS po_vendor_name
-
 FROM
     folio_finance.transaction AS ft
     LEFT JOIN folio_orders.po_line AS pol ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePoLineId')::uuid = pol.id
@@ -42,7 +42,6 @@ FROM
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
     LEFT JOIN folio_organizations.organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor')::uuid = oo.id
     LEFT JOIN folio_finance.expense_class__t AS ec ON ec.id = ft.expenseclassid
-
 WHERE
     jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Encumbrance';
 
