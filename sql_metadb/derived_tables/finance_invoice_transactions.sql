@@ -1,4 +1,5 @@
 --metadb:table finance_invoice_transactions
+--metadb:require folio_finance.expense_class__t.id uuid
 
 -- Create a derived table of fund distribution in invoices.
 -- The derived table contains the information on the fund distribution
