@@ -185,7 +185,7 @@ COMMENT ON COLUMN finance_invoice_transactions.invoice_currency IS 'Ideally this
 
 COMMENT ON COLUMN finance_invoice_transactions.invoice_line_distribution_value IS 'The percentage of the cost to be applied to this fund';
 
-COMMENT ON COLUMN finance_invoice_transactions.invoice_line_distribution_type IS 'Percentage or amount type of the value property';
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_distribution_type IS 'Type of value (percentage or amount)';
 
 COMMENT ON COLUMN finance_invoice_transactions.invoice_line_fund_id IS 'UUID of the fund associated with this fund distribution';
 
