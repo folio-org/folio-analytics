@@ -1,4 +1,5 @@
--- folio_circulation.loan__t
+--metadb:comment folio_circulation.loan__t
+
 COMMENT ON COLUMN folio_circulation.loan__t.id IS 'Unique ID (generated UUID) of the loan';
 COMMENT ON COLUMN folio_circulation.loan__t.user_id IS 'ID of the patron the item was lent to. Required for open loans, not required for closed loans (for anonymization).';
 COMMENT ON COLUMN folio_circulation.loan__t.item_id IS 'ID of the item lent to the patron';
