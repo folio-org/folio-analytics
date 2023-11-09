@@ -1,4 +1,5 @@
 --metadb:table po_notes
+--Creates a dervied table to show all notes attached to purchase orders. 
 
 DROP TABLE IF EXISTS po_notes;
 
@@ -15,16 +16,14 @@ FROM folio_orders.purchase_order AS po
 CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(po.jsonb, 'notes')) WITH ORDINALITY AS po_notes (jsonb);
 ;
 
-COMMENT ON COLUMN po_notes.po_id IS 'UUID of purchase order'
+COMMENT ON COLUMN po_notes.po_id IS 'UUID of purchase order';
 
-COMMENT ON COLUMN po_notes.creation_date IS 'Purchase Order creation date and time'
+COMMENT ON COLUMN po_notes.creation_date IS 'Purchase Order creation date and time';
 
-COMMENT ON COLUMN po_notes.poNumber IS 'Purchase order number'
+COMMENT ON COLUMN po_notes.poNumber IS 'Purchase order number';
 
-COMMENT ON COLUMN po_notes.workflow_status IS 'workflow status of the purchase order'
+COMMENT ON COLUMN po_notes.workflow_status IS 'workflow status of the purchase order';
 
-COMMENT ON COLUMN po_notes.po_note IS 'Purchase order note'
+COMMENT ON COLUMN po_notes.note IS 'Purchase order note';
 
-COMMENT ON COLUMN po_notes.po_note_ordinality IS 'The ordinality of the note'
-
-SELECT * FROM folio_orders.purchase_order
+COMMENT ON COLUMN po_notes.note_ordinality IS 'The ordinality of the note';
