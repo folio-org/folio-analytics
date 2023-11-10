@@ -6,10 +6,10 @@ WITH items_statistical_codes AS (
     SELECT
         item.id AS item_id,
         item.hrid AS item_hrid,
-	statistical_code_ids.data #>> '{}' AS statistical_code_id
+	(statistical_code_ids.data #>> '{}')::uuid AS statistical_code_id
     FROM
         inventory_items AS item
-	CROSS JOIN json_array_elements(json_extract_path(data, 'statisticalCodeIds')) AS statistical_code_ids(data)
+	CROSS JOIN jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb) AS statistical_code_ids(data)
 )
 SELECT
     items_statistical_codes.item_id,
@@ -21,22 +21,7 @@ SELECT
     inventory_statistical_code_types.name AS statistical_code_type_name
 FROM
     items_statistical_codes
-    LEFT JOIN inventory_statistical_codes ON items_statistical_codes.statistical_code_id = inventory_statistical_codes.id
-    LEFT JOIN inventory_statistical_code_types ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
-
-CREATE INDEX ON item_statistical_codes (item_id);
-
-CREATE INDEX ON item_statistical_codes (item_hrid);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_id);
-
-CREATE INDEX ON item_statistical_codes (statistical_code);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_name);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_type_id);
-
-CREATE INDEX ON item_statistical_codes (statistical_code_type_name);
-
-VACUUM ANALYZE item_statistical_codes;
+    LEFT JOIN inventory_statistical_codes ON items_statistical_codes.statistical_code_id = inventory_statistical_codes.id::uuid
+    LEFT JOIN inventory_statistical_code_types
+        ON inventory_statistical_codes.statistical_code_type_id = inventory_statistical_code_types.id;
 

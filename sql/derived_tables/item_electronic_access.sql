@@ -5,32 +5,15 @@ CREATE TABLE item_electronic_access AS
 SELECT
     item.id AS item_id,
     item.hrid AS item_hrid,
-    json_extract_path_text(electronic_access.data, 'linkText') AS link_text,
-    json_extract_path_text(electronic_access.data, 'materialsSpecification') AS materials_specification,
-    json_extract_path_text(electronic_access.data, 'publicNote') AS public_note,
-    json_extract_path_text(electronic_access.data, 'relationshipId') AS relationship_id,
+    electronic_access.data #>> '{linkText}' AS link_text,
+    electronic_access.data #>> '{materialsSpecification}' AS materials_specification,
+    electronic_access.data #>> '{publicNote}' AS public_note,
+    electronic_access.data #>> '{relationshipId}' AS relationship_id,
     inventory_electronic_access_relationships.name AS relationship_name,
-    json_extract_path_text(electronic_access.data, 'uri') AS uri
+    electronic_access.data #>> '{uri}' AS uri
 FROM
     inventory_items AS item
-    CROSS JOIN json_array_elements(json_extract_path(data, 'electronicAccess')) AS electronic_access(data)
-    LEFT JOIN inventory_electronic_access_relationships ON json_extract_path_text(electronic_access.data, 'relationshipId') = inventory_electronic_access_relationships.id;
-
-CREATE INDEX ON item_electronic_access (item_id);
-
-CREATE INDEX ON item_electronic_access (item_hrid);
-
-CREATE INDEX ON item_electronic_access (link_text);
-
-CREATE INDEX ON item_electronic_access (materials_specification);
-
-CREATE INDEX ON item_electronic_access (public_note);
-
-CREATE INDEX ON item_electronic_access (relationship_id);
-
-CREATE INDEX ON item_electronic_access (relationship_name);
-
-CREATE INDEX ON item_electronic_access (uri);
-
-VACUUM ANALYZE item_electronic_access;
+    CROSS JOIN jsonb_array_elements((data #> '{electronicAccess}')::jsonb) AS electronic_access(data)
+    LEFT JOIN inventory_electronic_access_relationships
+        ON (electronic_access.data #>> '{relationshipId}')::uuid = inventory_electronic_access_relationships.id::uuid;
 

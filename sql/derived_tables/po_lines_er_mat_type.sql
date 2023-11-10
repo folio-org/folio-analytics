@@ -5,7 +5,7 @@ CREATE TABLE po_lines_er_mat_type AS
 WITH temp_pol_er_mat_type AS (
     SELECT
         pol.id AS pol_id,
-        json_extract_path_text(data, 'eresource', 'materialType') AS pol_er_mat_type
+        (data #>> '{eresource,materialType}')::uuid AS pol_er_mat_type
     FROM
         po_lines AS pol)
     /* Main query */
@@ -15,13 +15,5 @@ WITH temp_pol_er_mat_type AS (
         imt.name AS pol_er_mat_type_name
     FROM
         temp_pol_er_mat_type AS tpemt
-    LEFT JOIN inventory_material_types AS imt ON imt.id = tpemt.pol_er_mat_type;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = tpemt.pol_er_mat_type;
 
-CREATE INDEX ON po_lines_er_mat_type (pol_id);
-
-CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_id);
-
-CREATE INDEX ON po_lines_er_mat_type (pol_er_mat_type_name);
-
-
-VACUUM ANALYZE  po_lines_er_mat_type;

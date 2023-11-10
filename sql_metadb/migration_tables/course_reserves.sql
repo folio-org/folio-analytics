@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_courses.coursereserves_reserves;
 
-ALTER TABLE course_reserves ADD PRIMARY KEY (id);
-
-CREATE INDEX ON course_reserves (course_listing_id);
-
-CREATE INDEX ON course_reserves (item_id);
-
-CREATE INDEX ON course_reserves (temporary_loan_type_id);
-
-VACUUM ANALYZE course_reserves;

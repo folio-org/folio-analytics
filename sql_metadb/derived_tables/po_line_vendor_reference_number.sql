@@ -17,18 +17,6 @@ FROM folio_orders.po_line AS pl
         AS numbers (jsonb)
     LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
 
-CREATE INDEX ON po_line_vendor_reference_number (po_line_id);
-
-CREATE INDEX ON po_line_vendor_reference_number (po_line_number);
-
-CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number);
-
-CREATE INDEX ON po_line_vendor_reference_number (vendor_reference_number_type);
-
-CREATE INDEX ON po_line_vendor_reference_number (vendor_instructions);
-
-VACUUM ANALYZE po_line_vendor_reference_number;
-
 COMMENT ON COLUMN po_line_vendor_reference_number.po_line_id IS 'UUID identifying this purchase order line';
 
 COMMENT ON COLUMN po_line_vendor_reference_number.po_line_number IS 'A human readable number assigned to this PO line';

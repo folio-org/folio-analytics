@@ -10,12 +10,3 @@ SELECT
 FROM
     folio_feesfines.feefines;
 
-ALTER TABLE feesfines_feefines ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_feefines (automatic);
-
-CREATE INDEX ON feesfines_feefines (fee_fine_type);
-
-CREATE INDEX ON feesfines_feefines (owner_id);
-
-VACUUM ANALYZE feesfines_feefines;

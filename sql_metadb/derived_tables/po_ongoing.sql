@@ -15,18 +15,6 @@ SELECT
 FROM
     folio_orders.purchase_order AS po;
 
-CREATE INDEX ON po_ongoing (po_id);
-
-CREATE INDEX ON po_ongoing (po_ongoing_interval);
-
-CREATE INDEX ON po_ongoing (po_ongoing_is_subscription);
-
-CREATE INDEX ON po_ongoing (po_ongoing_manual_renewal);
-
-CREATE INDEX ON po_ongoing (po_ongoing_renewal_date);
-
-CREATE INDEX ON po_ongoing (po_ongoing_review_period);
-
 COMMENT ON COLUMN po_ongoing.po_id IS 'UUID of this purchase order';
 
 COMMENT ON COLUMN po_ongoing.po_ongoing_interval IS 'The subscription interval in days';
@@ -39,4 +27,3 @@ COMMENT ON COLUMN po_ongoing.po_ongoing_renewal_date IS 'The date this Ongoing P
 
 COMMENT ON COLUMN po_ongoing.po_ongoing_review_period IS 'Time prior to renewal where changes can be made to subscription';
 
-VACUUM ANALYZE po_ongoing;

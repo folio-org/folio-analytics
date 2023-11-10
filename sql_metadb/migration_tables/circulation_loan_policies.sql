@@ -11,14 +11,3 @@ SELECT
 FROM
     folio_circulation.loan_policy;
 
-ALTER TABLE circulation_loan_policies ADD PRIMARY KEY (id);
-
-CREATE INDEX ON circulation_loan_policies (description);
-
-CREATE INDEX ON circulation_loan_policies (loanable);
-
-CREATE INDEX ON circulation_loan_policies (name);
-
-CREATE INDEX ON circulation_loan_policies (renewable);
-
-VACUUM ANALYZE circulation_loan_policies;

@@ -8,8 +8,3 @@ SELECT
 FROM
     folio_source_record.error_records_lb;
 
-ALTER TABLE srs_error ADD PRIMARY KEY (id);
-
-CREATE INDEX ON srs_error (description);
-
-VACUUM ANALYZE srs_error;

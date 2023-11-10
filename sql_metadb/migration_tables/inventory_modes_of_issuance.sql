@@ -9,10 +9,3 @@ SELECT
 FROM
     folio_inventory.mode_of_issuance;
 
-ALTER TABLE inventory_modes_of_issuance ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_modes_of_issuance (name);
-
-CREATE INDEX ON inventory_modes_of_issuance (source);
-
-VACUUM ANALYZE inventory_modes_of_issuance;

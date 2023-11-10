@@ -27,7 +27,7 @@ SELECT
     jsonb_extract_path_text(ff.jsonb, 'balance')::numeric(12,2) AS account_balance,
     jsonb_extract_path_text(ff.jsonb, 'typeAction') AS type_action,
     jsonb_extract_path_text(ff.jsonb, 'dateAction')::timestamptz AS transaction_date,
-    jsonb_extract_path_text(ff.jsonb, 'createdAt')::uuid AS transaction_location,
+    jsonb_extract_path_text(ff.jsonb, 'createdAt') AS transaction_location,
     jsonb_extract_path_text(ff.jsonb, 'transactionInformation') AS transaction_information,
     jsonb_extract_path_text(ff.jsonb, 'source') AS operator_id,
     jsonb_extract_path_text(ff.jsonb, 'paymentMethod') AS payment_method,
@@ -42,58 +42,3 @@ FROM
     LEFT JOIN folio_users.groups__t AS ug ON uu.patron_group = ug.id
 ORDER BY fine_account_id, transaction_date;
 
-CREATE INDEX ON feesfines_accounts_actions (fine_account_id);
-
-CREATE INDEX ON feesfines_accounts_actions (fine_account_amount);
-
-CREATE INDEX ON feesfines_accounts_actions (fine_date);
-
-CREATE INDEX ON feesfines_accounts_actions (fine_updated_date);
-
-CREATE INDEX ON feesfines_accounts_actions (fee_fine_id);
-
-CREATE INDEX ON feesfines_accounts_actions (owner_id);
-
-CREATE INDEX ON feesfines_accounts_actions (fee_fine_owner);
-
-CREATE INDEX ON feesfines_accounts_actions (fee_fine_type);
-
-CREATE INDEX ON feesfines_accounts_actions (material_type_id);
-
-CREATE INDEX ON feesfines_accounts_actions (material_type);
-
-CREATE INDEX ON feesfines_accounts_actions (payment_status);
-
-CREATE INDEX ON feesfines_accounts_actions (fine_status);
-
-CREATE INDEX ON feesfines_accounts_actions (account_user_id);
-
-CREATE INDEX ON feesfines_accounts_actions (transaction_id);
-
-CREATE INDEX ON feesfines_accounts_actions (account_id);
-
-CREATE INDEX ON feesfines_accounts_actions (transaction_amount);
-
-CREATE INDEX ON feesfines_accounts_actions (account_balance);
-
-CREATE INDEX ON feesfines_accounts_actions (type_action);
-
-CREATE INDEX ON feesfines_accounts_actions (transaction_date);
-
-CREATE INDEX ON feesfines_accounts_actions (transaction_location);
-
-CREATE INDEX ON feesfines_accounts_actions (transaction_information);
-
-CREATE INDEX ON feesfines_accounts_actions (operator_id);
-
-CREATE INDEX ON feesfines_accounts_actions (payment_method);
-
-CREATE INDEX ON feesfines_accounts_actions (user_id);
-
-CREATE INDEX ON feesfines_accounts_actions (user_patron_group_id);
-
-CREATE INDEX ON feesfines_accounts_actions (patron_group_id);
-
-CREATE INDEX ON feesfines_accounts_actions (patron_group_name);
-
-VACUUM ANALYZE feesfines_accounts_actions;

@@ -8,8 +8,3 @@ SELECT
 FROM
     folio_inventory.instance_relationship_type;
 
-ALTER TABLE inventory_instance_relationship_types ADD PRIMARY KEY (id);
-
-CREATE INDEX ON inventory_instance_relationship_types (name);
-
-VACUUM ANALYZE inventory_instance_relationship_types;

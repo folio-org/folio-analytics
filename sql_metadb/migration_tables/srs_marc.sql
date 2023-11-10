@@ -7,6 +7,3 @@ SELECT
 FROM
     folio_source_record.marc_records_lb;
 
-ALTER TABLE srs_marc ADD PRIMARY KEY (id);
-
-VACUUM ANALYZE srs_marc;

@@ -21,50 +21,12 @@ SELECT
     instance_status.name AS status_name,
     instance.status_updated_date,
     instance.source AS record_source,
-    json_extract_path_text(instance.data, 'metadata', 'createdDate') AS record_created_date,
-    json_extract_path_text(instance.data, 'metadata', 'updatedByUserId') AS updated_by_user_id,
-    json_extract_path_text(instance.data, 'metadata', 'updatedDate') AS updated_date
+    instance.data #>> '{metadata,createdDate}' AS record_created_date,
+    instance.data #>> '{metadata,updatedByUserId}' AS updated_by_user_id,
+    instance.data #>> '{metadata,updatedDate}' AS updated_date
 FROM
     inventory_instances AS instance
     LEFT JOIN inventory_instance_types AS instance_type ON instance.instance_type_id = instance_type.id
     LEFT JOIN inventory_modes_of_issuance AS mode_of_issuance ON instance.mode_of_issuance_id = mode_of_issuance.id
     LEFT JOIN inventory_instance_statuses AS instance_status ON instance.status_id = instance_status.id;
-
-CREATE INDEX ON instance_ext (instance_id);
-
-CREATE INDEX ON instance_ext (instance_hrid);
-
-CREATE INDEX ON instance_ext (cataloged_date);
-
-CREATE INDEX ON instance_ext (type_id);
-
-CREATE INDEX ON instance_ext (type_name);
-
-CREATE INDEX ON instance_ext (mode_of_issuance_id);
-
-CREATE INDEX ON instance_ext (mode_of_issuance_name);
-
-CREATE INDEX ON instance_ext (previously_held);
-
-CREATE INDEX ON instance_ext (instance_source);
-
-CREATE INDEX ON instance_ext (discovery_suppress);
-
-CREATE INDEX ON instance_ext (staff_suppress);
-
-CREATE INDEX ON instance_ext (status_id);
-
-CREATE INDEX ON instance_ext (status_name);
-
-CREATE INDEX ON instance_ext (status_updated_date);
-
-CREATE INDEX ON instance_ext (record_source);
-
-CREATE INDEX ON instance_ext (record_created_date);
-
-CREATE INDEX ON instance_ext (updated_by_user_id);
-
-CREATE INDEX ON instance_ext (updated_date);
-
-VACUUM ANALYZE instance_ext;
 

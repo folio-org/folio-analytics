@@ -11,14 +11,3 @@ SELECT
 FROM
     folio_feesfines.comments;
 
-ALTER TABLE feesfines_comments ADD PRIMARY KEY (id);
-
-CREATE INDEX ON feesfines_comments (paid);
-
-CREATE INDEX ON feesfines_comments (refunded);
-
-CREATE INDEX ON feesfines_comments (transferred_manually);
-
-CREATE INDEX ON feesfines_comments (waived);
-
-VACUUM ANALYZE feesfines_comments;
