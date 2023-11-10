@@ -68,6 +68,7 @@ item_tags.sql
 loans_items.sql
 loans_renewal_count.sql
 openaccess_checklists.sql
+openaccess_publication_request.sql
 po_lines_tags.sql
 requests_items.sql
 users_addresses.sql
