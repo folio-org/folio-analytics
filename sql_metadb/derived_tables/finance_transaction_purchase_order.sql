@@ -1,4 +1,5 @@
 --metadb:table finance_transaction_purchase_order
+--metadb:require folio_finance.expense_class__t.id uuid
 
 -- Create a derived table that joins purchase orders and po_lines fields to transactions for encumbranced cost reports in system currency
 
@@ -10,6 +11,9 @@ SELECT
     jsonb_extract_path_text(ft.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
     jsonb_extract_path_text(ft.jsonb, 'currency') AS transaction_currency,
     ft.expenseclassid AS transaction_expense_class_id,
+    ec.code AS transaction_expense_class_code,
+    ec.name AS transaction_expense_class_name,
+    ec.external_account_number_ext,    
     ft.fiscalyearid AS transaction_fiscal_year_id,
     ft.fromfundid AS transaction_from_fund_id,
     jsonb_extract_path_text(ff.jsonb, 'name') AS transaction_from_fund_name,
@@ -36,7 +40,8 @@ FROM
     LEFT JOIN folio_orders.purchase_order AS po ON jsonb_extract_path_text(ft.jsonb, 'encumbrance', 'sourcePurchaseOrderId')::uuid = po.id
     LEFT JOIN folio_finance.fund AS ff ON ft.fromfundid = ff.id
     LEFT JOIN folio_finance.budget AS fb ON ft.fromfundid = fb.fundid AND ft.fiscalyearid = fb.fiscalyearid
-    LEFT JOIN folio_organizations. organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor')::uuid = oo.id
+    LEFT JOIN folio_organizations.organizations AS oo ON jsonb_extract_path_text(po.jsonb, 'vendor')::uuid = oo.id
+    LEFT JOIN folio_finance.expense_class__t AS ec ON ec.id = ft.expenseclassid
 WHERE
     jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Encumbrance';
 
@@ -47,6 +52,12 @@ COMMENT ON COLUMN finance_transaction_purchase_order.transaction_amount IS 'The 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_currency IS 'Currency code for this transaction - from the system currency';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_expense_class_id IS 'UUID of the associated expense class';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_expense_class_code IS 'Code for the associated expense class';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.transaction_expense_class_name IS 'Name for the associated expense class';
+
+COMMENT ON COLUMN finance_transaction_purchase_order.external_account_number_ext IS 'An external account number extension';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.transaction_fiscal_year_id IS 'UUID of the fiscal year that the transaction is taking place in';
 
