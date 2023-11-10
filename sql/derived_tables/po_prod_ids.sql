@@ -19,5 +19,5 @@ SELECT
 FROM
     po_prod_id
     LEFT JOIN po_purchase_orders AS ppo ON po_prod_id.pol_id = ppo.id
-    LEFT JOIN inventory_identifier_types ON po_prod_id.prod_id_type = inventory_identifier_types.id;
+    LEFT JOIN inventory_identifier_types ON po_prod_id.prod_id_type = inventory_identifier_types.id::uuid;
 

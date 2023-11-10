@@ -21,7 +21,7 @@ WITH temp_eresource AS (
         (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
         ih.hrid AS pol_holding_hrid,
         CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL THEN (locations.data #>> '{locationId}')::uuid
-             ELSE ih.permanent_location_id
+             ELSE ih.permanent_location_id::uuid
         END AS pol_location_id,
         CASE WHEN il.name IS NOT NULL THEN il.name
              ELSE il2.name
@@ -33,8 +33,8 @@ WITH temp_eresource AS (
     FROM
         po_lines AS pol
         CROSS JOIN jsonb_array_elements((pol.data #> '{locations}')::jsonb) AS locations (data)
-        LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id
-        LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id
+        LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
+        LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid
         LEFT JOIN inventory_locations AS il2 ON il2.id = ih.permanent_location_id
     WHERE
         pol.data #> '{eresource}' IS NOT NULL
@@ -62,8 +62,8 @@ SELECT
     te.pol_resource_url
 FROM
     temp_eresource AS te
-    LEFT JOIN inventory_material_types AS imt ON imt.id = te.pol_material_type
-    LEFT JOIN organization_organizations AS oo ON oo.id = te.access_provider;
+    LEFT JOIN inventory_material_types AS imt ON imt.id::uuid = te.pol_material_type
+    LEFT JOIN organization_organizations AS oo ON oo.id::uuid = te.access_provider;
 
 COMMENT ON COLUMN po_lines_eresource.pol_id IS 'UUID identifying this purchase order line';
 
