@@ -10,8 +10,8 @@ SELECT
     ft.amount AS transaction_amount,
     ft.currency AS transaction_currency,
     ft.data #>> '{expenseClassId}' AS transaction_expense_class_id,
-    ec.data #>> '{code}'AS transaction_expense_class_code,
-    ec.data #>> '{name}'AS transaction_expense_class_name,
+    ec.data #>> '{code}' AS transaction_expense_class_code,
+    ec.data #>> '{name}' AS transaction_expense_class_name,
     ff.data #>> '{externalAccountNo}' AS external_account_number,
     ft.fiscal_year_id AS transaction_fiscal_year_id,
     ft.from_fund_id AS transaction_from_fund_id,
@@ -33,7 +33,6 @@ SELECT
     po.order_type AS po_order_type,
     po.vendor AS po_vendor_id,
     oo.name AS po_vendor_name
-    
 FROM
     finance_transactions AS ft
     LEFT JOIN po_lines AS pol ON (ft.data #>> '{encumbrance,sourcePoLineId}')::uuid = pol.id::uuid
@@ -42,7 +41,6 @@ FROM
     LEFT JOIN finance_budgets AS fb ON ft.from_fund_id = fb.fund_id AND ft.fiscal_year_id = fb.fiscal_year_id
     LEFT JOIN organization_organizations AS oo ON po.vendor = oo.id
     LEFT JOIN finance_expense_classes AS ec ON ec.id = ft.expense_class_id 
-    
 WHERE
     ft.transaction_type = 'Encumbrance';
 
@@ -99,5 +97,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.po_order_type IS 'the purch
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_id IS 'UUID of the vendor record';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_vendor_name IS 'The name of vendor';
-
-
