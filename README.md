@@ -8,16 +8,20 @@ Version 2.0. See the file "[LICENSE](LICENSE)" for more information.
 
 ## Releases
 
-Each release of folio-analytics up to 1.6.0 is tested with specific
-FOLIO releases:
+Each release of folio-analytics is tested with a specific FOLIO
+release, but it may also work with other FOLIO releases.
 
-| FOLIO         | folio-analytics for LDP1 | folio-analytics for Metadb |
+| FOLIO         | folio-analytics for LDP  | folio-analytics for Metadb |
 | ------------- | :----------------------: | :------------------------: |
-| Kiwi          |            1.2           |            N/A             |
-| Lotus         |            1.3           |            1.5             |
-| Morning Glory |            1.4           |            N/A             |
-| Nolana        |            1.5           |            1.6             |
-| Orchid        |            1.6           |            N/A             |
+| Kiwi          |           1.2            |                            |
+| Lotus         |           1.3            |            1.5             |
+| Morning Glory |           1.4            |                            |
+| Nolana        |           1.5            |            1.7             |
+| Orchid        |           1.6            |                            |
+| Poppy         |           1.7            |                            |
+| Quesnelia     |           1.8            |                            |
+| Ramsons       |           1.9            |                            |
+| Sunflower     |           1.10           |                            |
 
 
 ## Overview
