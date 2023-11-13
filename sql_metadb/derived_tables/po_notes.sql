@@ -2,9 +2,7 @@
 --Creates a derived table to show all notes attached to purchase orders, including general notes, renewal notes, and notes when purchase order is closed. 
 
 DROP TABLE IF EXISTS po_notes;
-
 CREATE TABLE po_notes AS
-
 SELECT
 po.id AS po_id,
 (po.jsonb -> 'metadata' ->> 'createdDate')::timestamptz AS created_date,
@@ -15,7 +13,7 @@ po_notes.ORDINALITY AS po_note_ordinality,
 po.jsonb -> 'closeReason' ->> 'note' AS po_closeReason_note,
 po.jsonb -> 'ongoing' ->> 'renewalNote' AS po_renewal_note
 FROM folio_orders.purchase_order AS po
-CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(po.jsonb, 'notes')) WITH ORDINALITY AS po_notes (jsonb);
+CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(po.jsonb, 'notes')) WITH ORDINALITY AS po_notes (jsonb)
 ;
 
 COMMENT ON COLUMN po_notes.po_id IS 'UUID of purchase order';
