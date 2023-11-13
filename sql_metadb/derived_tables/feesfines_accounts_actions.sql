@@ -3,9 +3,7 @@
 --Payments and credits are shown in as a negative balance for accounting purposes
 
 DROP TABLE IF EXISTS feesfines_accounts_actions;
-
 CREATE TABLE feesfines_accounts_actions AS
-
 SELECT
     fa.id AS fine_account_id,
     jsonb_extract_path_text(fa.jsonb, 'amount')::numeric(12,2) AS fine_account_amount,
@@ -32,18 +30,17 @@ SELECT
     uu.id AS user_id,
     uu.patron_group AS user_patron_group_id,
     ug.group AS patron_group_name,
-CASE WHEN
-    jsonb_extract_path_text(ff.jsonb, 'typeAction') IN
-    ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
-    THEN jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) * -1
-    ELSE jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2)
-    END AS signed_transaction_amount
+    CASE WHEN jsonb_extract_path_text(ff.jsonb, 'typeAction') IN ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
+        THEN jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) * -1
+        ELSE jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2)
+        END AS signed_transaction_amount
 FROM
     folio_feesfines.accounts AS fa
     LEFT JOIN folio_feesfines.feefineactions AS ff ON fa.id = jsonb_extract_path_text(ff.jsonb, 'accountId')::uuid
     LEFT JOIN folio_users.users__t AS uu ON jsonb_extract_path_text(fa.jsonb, 'userId')::uuid = uu.id
     LEFT JOIN folio_users.groups__t AS ug ON uu.patron_group = ug.id
-ORDER BY fine_account_id, transaction_date;
+ORDER BY fine_account_id, transaction_date
+;
 
 COMMENT ON COLUMN feesfines_accounts_actions.fine_account_id IS 'User fine/fee account id, UUID';
 
