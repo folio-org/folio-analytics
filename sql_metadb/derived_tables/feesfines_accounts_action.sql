@@ -30,10 +30,10 @@ SELECT
     uu.id AS user_id,
     uu.patron_group AS user_patron_group_id,
     ug.group AS patron_group_name,
-    CASE WHEN jsonb_extract_path_text(ff.jsonb, 'typeAction') IN ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully')
-        THEN jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) * -1
+    CASE 
+        WHEN jsonb_extract_path_text(ff.jsonb, 'typeAction') IN ('Paid partially','Paid fully','Waived partially','Waived fully','Credited partially','Credited fully') THEN jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2) * -1
         ELSE jsonb_extract_path_text(ff.jsonb, 'amountAction')::numeric(12,2)
-        END AS signed_transaction_amount
+    END AS signed_transaction_amount
 FROM
     folio_feesfines.accounts AS fa
     LEFT JOIN folio_feesfines.feefineactions AS ff ON fa.id = jsonb_extract_path_text(ff.jsonb, 'accountId')::uuid
