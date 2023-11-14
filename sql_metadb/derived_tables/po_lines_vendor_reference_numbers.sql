@@ -3,9 +3,9 @@
 -- This derived table extracts reference numbers from po_lines vendor
 -- details.
 
-DROP TABLE IF EXISTS po_line_vendor_reference_number;
+DROP TABLE IF EXISTS po_lines_vendor_reference_numbers;
 
-CREATE TABLE po_line_vendor_reference_number AS 
+CREATE TABLE po_lines_vendor_reference_numbers AS 
 SELECT
     pl.id AS po_line_id,
     plt.po_line_number AS po_line_number,
@@ -17,13 +17,13 @@ FROM folio_orders.po_line AS pl
         AS numbers (jsonb)
     LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
 
-COMMENT ON COLUMN po_line_vendor_reference_number.po_line_id IS 'UUID identifying this purchase order line';
+COMMENT ON COLUMN po_lines_vendor_reference_numbers.po_line_id IS 'UUID identifying this purchase order line';
 
-COMMENT ON COLUMN po_line_vendor_reference_number.po_line_number IS 'A human readable number assigned to this PO line';
+COMMENT ON COLUMN po_lines_vendor_reference_numbers.po_line_number IS 'A human readable number assigned to this PO line';
 
-COMMENT ON COLUMN po_line_vendor_reference_number.vendor_reference_number IS 'A reference number for this purchase order line';
+COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_reference_number IS 'A reference number for this purchase order line';
 
-COMMENT ON COLUMN po_line_vendor_reference_number.vendor_reference_number_type IS 'The reference number type';
+COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_reference_number_type IS 'The reference number type';
 
-COMMENT ON COLUMN po_line_vendor_reference_number.vendor_instructions IS 'Special instructions for the vendor';
+COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_instructions IS 'Special instructions for the vendor';
 
