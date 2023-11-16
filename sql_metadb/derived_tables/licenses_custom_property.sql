@@ -24,9 +24,9 @@
  * The custom properties can defined in the settings from FOLIO.
  */ 
 
-DROP TABLE IF EXISTS stdombek.licenses_custom_property;
+DROP TABLE IF EXISTS licenses_custom_property;
 
-CREATE TABLE stdombek.licenses_custom_property AS
+CREATE TABLE licenses_custom_property AS
 SELECT 
     license.lic_id AS license_id,
     license.lic_name AS license_name,
@@ -48,20 +48,20 @@ FROM
     LEFT JOIN folio_licenses.custom_property_local_date ON custom_property_local_date.id = custom_property.id
 ;
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.license_id IS 'The UUID of the license';
+COMMENT ON COLUMN licenses_custom_property.license_id IS 'The UUID of the license';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.license_name IS 'The name of the license';
+COMMENT ON COLUMN licenses_custom_property.license_name IS 'The name of the license';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_definition_id IS 'UUID of the custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_definition_id IS 'UUID of the custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_definition_name IS 'Name of the custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_definition_name IS 'Name of the custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_definition_description IS 'Description of the custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_definition_description IS 'Description of the custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_text_value IS 'The value of text based custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_text_value IS 'The value of text based custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_integer_value IS 'The value of integer based custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_integer_value IS 'The value of integer based custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_decimal_value IS 'The value of decimal based custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_decimal_value IS 'The value of decimal based custom property';
 
-COMMENT ON COLUMN stdombek.licenses_custom_property.custom_property_local_date_value IS 'The value of date based custom property';
+COMMENT ON COLUMN licenses_custom_property.custom_property_local_date_value IS 'The value of date based custom property';
