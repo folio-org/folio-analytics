@@ -13,7 +13,8 @@ SELECT
     publication.ordinality AS publication_ordinality
 FROM
     inventory_instances AS instance
-    CROSS JOIN jsonb_array_elements((instance.data #> '{publication}')::jsonb) WITH ORDINALITY AS publication(data);
+    CROSS JOIN LATERAL jsonb_array_elements((instance.data #> '{publication}')::jsonb) WITH ORDINALITY
+        AS publication(data);
 
 COMMENT ON COLUMN instance_publication.instance_id IS 'UUID of the instance record';
 
