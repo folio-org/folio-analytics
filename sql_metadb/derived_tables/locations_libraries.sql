@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS locations_libraries;
 
 CREATE TABLE locations_libraries AS
 SELECT
-    cmp.id AS acampus_id,
+    cmp.id AS campus_id,
     cmp.name AS campus_name,
     cmp.code AS campus_code,
     loc.id AS location_id,
