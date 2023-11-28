@@ -82,6 +82,8 @@ COMMENT ON COLUMN feesfines_accounts_actions.transaction_location IS 'The servic
 
 COMMENT ON COLUMN feesfines_accounts_actions.transaction_information IS 'Number or other transaction id related to payment';
 
+COMMENT ON COLUMN feesfines_accounts_actions.action_created_by IS 'The source of the fee action';
+
 COMMENT ON COLUMN feesfines_accounts_actions.payment_method IS 'Overall status of the action-setting';
 
 COMMENT ON COLUMN feesfines_accounts_actions.user_id IS 'User UUID';
