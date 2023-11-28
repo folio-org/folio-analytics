@@ -10,7 +10,7 @@ po.jsonb ->> 'poNumber' AS po_number,
 po.jsonb ->> 'workflowStatus' AS po_workflow_status,
 po_notes.jsonb #>> '{}' AS po_note,
 po_notes.ORDINALITY AS po_note_ordinality,
-po.jsonb -> 'closeReason' ->> 'note' AS po_closeReason_note,
+po.jsonb -> 'closeReason' ->> 'note' AS po_close_reason_note,
 po.jsonb -> 'ongoing' ->> 'renewalNote' AS po_renewal_note
 FROM folio_orders.purchase_order AS po
 CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(po.jsonb, 'notes')) WITH ORDINALITY AS po_notes (jsonb)
@@ -28,6 +28,6 @@ COMMENT ON COLUMN po_notes.po_note IS 'Purchase order note';
 
 COMMENT ON COLUMN po_notes.po_note_ordinality IS 'The ordinality of the note';
 
-COMMENT ON COLUMN po_closeReason_note IS 'Notes entered when a purchase order is closed';
+COMMENT ON COLUMN po_notes.po_close_reason_note IS 'Notes entered when a purchase order is closed';
 
-COMMENT ON COLUMN po_renewal_note IS 'Notes entered in the ongoing order information';
+COMMENT ON COLUMN po_notes.po_renewal_note IS 'Notes entered in the ongoing order information';
