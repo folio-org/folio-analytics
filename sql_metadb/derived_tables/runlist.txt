@@ -77,3 +77,4 @@ users_addresses.sql
 users_departments_unpacked.sql
 users_groups.sql
 invoice_lines_fund_distributions.sql
+item_circulation_notes.sql
