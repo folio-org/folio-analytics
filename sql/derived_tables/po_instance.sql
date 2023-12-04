@@ -45,7 +45,7 @@ SELECT
 FROM
     po_purchase_orders
     LEFT JOIN po_lines ON po_purchase_orders.id::uuid = (po_lines.data #>> '{purchaseOrderId}')::uuid
-    CROSS JOIN jsonb_array_elements((po_lines.data #> '{locations}')::jsonb) AS locations (data)
+    CROSS JOIN LATERAL jsonb_array_elements((po_lines.data #> '{locations}')::jsonb) AS locations (data)
 
     LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
     LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid

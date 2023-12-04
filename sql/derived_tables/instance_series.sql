@@ -10,7 +10,7 @@ SELECT
     series.ordinality AS series_ordinality
 FROM
     inventory_instances AS instances
-   CROSS JOIN jsonb_array_elements((instances.data #> '{series}')::jsonb)
+   CROSS JOIN LATERAL jsonb_array_elements((instances.data #> '{series}')::jsonb)
    WITH ORDINALITY AS series (data);
    
 COMMENT ON COLUMN instance_series.instance_id IS 'UUID of the instance record';

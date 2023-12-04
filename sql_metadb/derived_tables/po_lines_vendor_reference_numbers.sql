@@ -13,7 +13,7 @@ SELECT
     jsonb_extract_path_text(numbers.jsonb, 'refNumberType') AS vendor_reference_number_type,
     jsonb_extract_path_text(pl.jsonb, 'vendorDetail', 'instructions') AS vendor_instructions
 FROM folio_orders.po_line AS pl
-    CROSS JOIN jsonb_array_elements(jsonb_extract_path(pl.jsonb, 'vendorDetail', 'referenceNumbers'))
+    CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(pl.jsonb, 'vendorDetail', 'referenceNumbers'))
         AS numbers (jsonb)
     LEFT JOIN folio_orders.po_line__t plt ON pl.id = plt.id;
 

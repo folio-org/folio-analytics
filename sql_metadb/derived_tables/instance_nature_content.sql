@@ -13,7 +13,7 @@ WITH nature_content AS (
         nature_of_content_term_ids.ordinality AS nature_of_content_ordinality
     FROM
         folio_inventory.instance AS i
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(i.jsonb, 'natureOfContentTermIds')) WITH ORDINALITY AS nature_of_content_term_ids (jsonb)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'natureOfContentTermIds')) WITH ORDINALITY AS nature_of_content_term_ids (jsonb)
 )
 SELECT
     nc.instance_id,

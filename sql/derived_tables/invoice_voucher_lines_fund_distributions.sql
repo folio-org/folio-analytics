@@ -16,7 +16,7 @@ WITH funds_distr AS (
         voucher_id AS voucher_id
     FROM
         invoice_voucher_lines AS invvl
-        CROSS JOIN jsonb_array_elements((data #> '{fundDistributions}')::jsonb) AS dist(data)
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{fundDistributions}')::jsonb) AS dist(data)
 )
 SELECT
 	invoice_voucher_line_id AS invoice_voucher_line_id,
