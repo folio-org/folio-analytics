@@ -74,8 +74,6 @@ COMMENT ON COLUMN po_instance.pol_instance_id IS 'UUID of the instance record th
 
 COMMENT ON COLUMN po_instance.pol_instance_hrid IS 'A human readable number of the instance record this purchase order line is related to';
 
-COMMENT ON COLUMN po_instance.pol_holding_id IS 'UUID of the holdings this purchase order line is related to';
-
 COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created for this purchase order line';
 
 COMMENT ON COLUMN po_instance.pol_location_name IS 'Name of the purchase order line location';
