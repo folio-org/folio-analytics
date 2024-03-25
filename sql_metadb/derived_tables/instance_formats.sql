@@ -9,7 +9,7 @@ WITH instances AS (
     SELECT
         i.id AS instance_id,
         jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
-        (instance_format_ids.jsonb #>> '{}')::uuid AS instance_format_id,
+        NULLIF(instance_format_ids.jsonb #>> '{}', '')::uuid AS instance_format_id,
         instance_format_ids.ordinality AS instance_format_ordinality
     FROM
         folio_inventory.instance AS i
