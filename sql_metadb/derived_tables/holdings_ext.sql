@@ -1,10 +1,12 @@
 --metadb:table holdings_ext
 --metadb:require folio_inventory.ill_policy__t.id uuid
 --metadb:require folio_inventory.ill_policy__t.name text
+--metadb:require folio_inventory.holdings_record__t.call_number_prefix text
+--metadb:require folio_inventory.holdings_record__t.call_number_suffix text
 
 DROP TABLE IF EXISTS holdings_ext;
 
--- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy, 
+-- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy,
 -- permanent location, and temporary location.
 -- Holdings notes are in a separate derived table.
 CREATE TABLE holdings_ext AS
@@ -67,4 +69,3 @@ FROM
     LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id::uuid = holdings_call_number_type.id
     LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id::uuid = holdings_permanent_location.id
     LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id;
-
