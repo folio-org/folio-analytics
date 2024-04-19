@@ -33,9 +33,9 @@
  * and their linked tables and reference data.
  */ 
 
-DROP TABLE IF EXISTS stdombek.openaccess_works;
+DROP TABLE IF EXISTS openaccess_works;
 
-CREATE TABLE stdombek.openaccess_works AS
+CREATE TABLE openaccess_works AS
 SELECT
     work.w_id :: UUID,
     work.w_version,
@@ -88,76 +88,76 @@ FROM
     LEFT JOIN folio_oa.refdata_value AS io_status ON io_status.rdv_id :: UUID = identifier_occurrence.io_status_fk :: UUID
 ;
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_id IS 'ID of the record in the table work';
+COMMENT ON COLUMN openaccess_works.w_id IS 'ID of the record in the table work';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_version IS 'Version of the record in the table work';
+COMMENT ON COLUMN openaccess_works.w_version IS 'Version of the record in the table work';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_title IS 'Title of the publication';
+COMMENT ON COLUMN openaccess_works.w_title IS 'Title of the publication';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_indexed_in_doaj_fk IS 'ID of reference data value for the status in the directory DOAJ';
+COMMENT ON COLUMN openaccess_works.w_indexed_in_doaj_fk IS 'ID of reference data value for the status in the directory DOAJ';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_indexed_in_doaj_value IS 'Reference data value for the status in the directory DOAJ';
+COMMENT ON COLUMN openaccess_works.w_indexed_in_doaj_value IS 'Reference data value for the status in the directory DOAJ';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_indexed_in_doaj_label IS 'Label of the reference data value for the status in the directory DOAJ';
+COMMENT ON COLUMN openaccess_works.w_indexed_in_doaj_label IS 'Label of the reference data value for the status in the directory DOAJ';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_oa_status_fk IS 'ID of reference data value for the kind of Open Access';
+COMMENT ON COLUMN openaccess_works.w_oa_status_fk IS 'ID of reference data value for the kind of Open Access';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_oa_status_value IS 'Reference data value for the kind of Open Access';
+COMMENT ON COLUMN openaccess_works.w_oa_status_value IS 'Reference data value for the kind of Open Access';
 
-COMMENT ON COLUMN stdombek.openaccess_works.w_oa_status_label IS 'Label of the reference data value for the kind of Open Access';
+COMMENT ON COLUMN openaccess_works.w_oa_status_label IS 'Label of the reference data value for the kind of Open Access';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_id IS 'ID of the record in the table title_instance';
+COMMENT ON COLUMN openaccess_works.ti_id IS 'ID of the record in the table title_instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_version IS 'Version of the record in the table title_instance';
+COMMENT ON COLUMN openaccess_works.ti_version IS 'Version of the record in the table title_instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_work_fk IS 'ID to the related record in the table work';
+COMMENT ON COLUMN openaccess_works.ti_work_fk IS 'ID to the related record in the table work';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_type_fk IS 'ID of reference data value for type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_type_fk IS 'ID of reference data value for type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_type_value IS 'Reference data value for the type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_type_value IS 'Reference data value for the type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_type_label IS 'Label of the reference data value for the type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_type_label IS 'Label of the reference data value for the type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_subtype_fk IS 'ID of reference data value for subtype of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_subtype_fk IS 'ID of reference data value for subtype of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_subtype_value IS 'Reference data value for the subtype of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_subtype_value IS 'Reference data value for the subtype of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_subtype_label IS 'Label of the reference data value for the subtype of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_subtype_label IS 'Label of the reference data value for the subtype of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_publication_type_fk IS 'ID of reference data value for publication type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_publication_type_fk IS 'ID of reference data value for publication type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_publication_type_value IS 'Reference data value for the publication type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_publication_type_value IS 'Reference data value for the publication type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_publication_type_label IS 'Label of the reference data value for the publication type of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_publication_type_label IS 'Label of the reference data value for the publication type of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.ti_title IS 'Title of the title instance';
+COMMENT ON COLUMN openaccess_works.ti_title IS 'Title of the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_id IS 'ID of the identifier occurrence that is related to the title instance';
+COMMENT ON COLUMN openaccess_works.io_id IS 'ID of the identifier occurrence that is related to the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_version IS 'Version of the record for identifier occurrence';
+COMMENT ON COLUMN openaccess_works.io_version IS 'Version of the record for identifier occurrence';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_ti_fk IS 'ID of the record in the table title_instance';
+COMMENT ON COLUMN openaccess_works.io_ti_fk IS 'ID of the record in the table title_instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_status_fk IS 'Status of the record for identifier occurrence';
+COMMENT ON COLUMN openaccess_works.io_status_fk IS 'Status of the record for identifier occurrence';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_status_value IS 'Reference data value for the status of the record for identifier occurrence';
+COMMENT ON COLUMN openaccess_works.io_status_value IS 'Reference data value for the status of the record for identifier occurrence';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_status_label IS 'Label of the reference data value for the status of the record for identifier occurrence';
+COMMENT ON COLUMN openaccess_works.io_status_label IS 'Label of the reference data value for the status of the record for identifier occurrence';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_identifier_fk IS 'ID to the record for the identifier that is related to the title instance';
+COMMENT ON COLUMN openaccess_works.io_identifier_fk IS 'ID to the record for the identifier that is related to the title instance';
 
-COMMENT ON COLUMN stdombek.openaccess_works.io_selected IS '';
+COMMENT ON COLUMN openaccess_works.io_selected IS '';
 
-COMMENT ON COLUMN stdombek.openaccess_works.id_id IS 'ID for the record for the identifier';
+COMMENT ON COLUMN openaccess_works.id_id IS 'ID for the record for the identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.id_version IS 'Version of the record for the identifier';
+COMMENT ON COLUMN openaccess_works.id_version IS 'Version of the record for the identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.id_ns_fk IS 'ID to the record for the type of identifier';
+COMMENT ON COLUMN openaccess_works.id_ns_fk IS 'ID to the record for the type of identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.id_value IS 'Value of the identifier';
+COMMENT ON COLUMN openaccess_works.id_value IS 'Value of the identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.idns_id IS 'ID of the record for the type of identifier';
+COMMENT ON COLUMN openaccess_works.idns_id IS 'ID of the record for the type of identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.idns_version IS 'Version of the record for the type of identifier';
+COMMENT ON COLUMN openaccess_works.idns_version IS 'Version of the record for the type of identifier';
 
-COMMENT ON COLUMN stdombek.openaccess_works.idns_value IS 'Value of the type of identifier';
+COMMENT ON COLUMN openaccess_works.idns_value IS 'Value of the type of identifier';
