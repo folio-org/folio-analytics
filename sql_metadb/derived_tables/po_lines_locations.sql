@@ -17,7 +17,7 @@ WITH ploc AS (
         jsonb_extract_path_text(locations.data, 'quantityPhysical')::int AS pol_loc_qty_phys
     FROM
         folio_orders.po_line AS p
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'locations')) AS locations (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'locations')) AS locations (data)
 )
 SELECT
     ploc.pol_id,

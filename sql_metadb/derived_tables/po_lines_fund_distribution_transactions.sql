@@ -27,7 +27,7 @@ WITH po_line AS (
         jsonb_extract_path_text(po_line.jsonb, 'titleOrPackage') AS poline_title_or_package
     FROM
         folio_orders.po_line AS po_line
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'fundDistribution')) AS dist (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'fundDistribution')) AS dist (data)
 ),
 finance AS (
     SELECT

@@ -20,7 +20,7 @@ WITH funds_distr AS (
         voucherid AS voucher_id
     FROM
         folio_invoice.voucher_lines AS invvl
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(invvl.jsonb, 'fundDistributions')) AS dist (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(invvl.jsonb, 'fundDistributions')) AS dist (data)
 )
 SELECT
     invoice_voucher_line_id AS invoice_voucher_line_id,

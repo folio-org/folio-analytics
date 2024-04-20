@@ -34,7 +34,7 @@ WITH temp_eresource AS (
             END AS pol_location_source
     FROM
         folio_orders.po_line AS pol
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(pol.jsonb, 'locations')) AS locations (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(pol.jsonb, 'locations')) AS locations (data)
         LEFT JOIN folio_inventory.location__t AS il ON jsonb_extract_path_text(locations.data, 'locationId')::uuid = il.id
         LEFT JOIN folio_inventory.holdings_record__t AS ih ON jsonb_extract_path_text(locations.data, 'holdingId')::uuid = ih.id
         LEFT JOIN folio_inventory.location__t AS il2 ON il2.id = ih.permanent_location_id

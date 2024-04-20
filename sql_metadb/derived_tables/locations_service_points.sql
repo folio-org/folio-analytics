@@ -14,13 +14,13 @@ CREATE TABLE locations_service_points AS
         ll.location_name,
         ll.library_id,
         ll.library_name,
-        ll.campus_id, 
+        ll.campus_id,
         ll.campus_name,
         ll.institution_id,
         ll.institution_name 
     FROM folio_inventory.location AS il
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(il.jsonb, 'servicePointIds')) AS service_points (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(il.jsonb, 'servicePointIds')) AS service_points (data)
         LEFT JOIN folio_inventory.service_point__t AS isp ON (service_points.data #>> '{}')::uuid = isp.id 
-        LEFT JOIN locations_libraries AS ll ON il.id=ll.location_id;
+        LEFT JOIN folio_derived.locations_libraries AS ll ON il.id=ll.location_id;
 
 

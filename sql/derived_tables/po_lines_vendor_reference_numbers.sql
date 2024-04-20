@@ -10,7 +10,7 @@ SELECT
     numbers.data #>> '{refNumberType}' AS vendor_reference_number_type,
     po_lines.data #>> '{vendorDetail,instructions}' AS vendor_instructions
 FROM po_lines
-    CROSS JOIN jsonb_array_elements((po_lines.data #> '{vendorDetail,referenceNumbers}')::jsonb) AS numbers (data);
+    CROSS JOIN LATERAL jsonb_array_elements((po_lines.data #> '{vendorDetail,referenceNumbers}')::jsonb) AS numbers (data);
 
 COMMENT ON COLUMN po_lines_vendor_reference_numbers.po_line_id IS 'UUID identifying this purchase order line';
 

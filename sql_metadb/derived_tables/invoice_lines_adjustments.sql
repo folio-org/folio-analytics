@@ -22,7 +22,7 @@ WITH adjustments AS (
         jsonb_extract_path_text(invl.jsonb, 'adjustmentsTotal')::numeric(12,2) AS adjustment_adjustments_total
     FROM
         folio_invoice.invoice_lines AS invl
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(invl.jsonb, 'adjustments'))
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(invl.jsonb, 'adjustments'))
             AS adjustments(data)
 )
 SELECT
