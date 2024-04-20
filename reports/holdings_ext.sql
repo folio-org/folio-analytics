@@ -1,15 +1,35 @@
---metadb:table holdings_ext
---metadb:require folio_inventory.ill_policy__t.id uuid
---metadb:require folio_inventory.ill_policy__t.name text
---metadb:require folio_inventory.holdings_record__t.call_number_prefix text
---metadb:require folio_inventory.holdings_record__t.call_number_suffix text
+--metadb:function holdings_ext
 
-DROP TABLE IF EXISTS holdings_ext;
+DROP FUNCTION IF EXISTS holdings_ext;
 
--- Create an extended holdings table which includes the name for call number type, holdings type, interlibrary loan policy,
--- permanent location, and temporary location.
--- Holdings notes are in a separate derived table.
-CREATE TABLE holdings_ext AS
+CREATE FUNCTION holdings_ext()
+RETURNS TABLE(
+    holdings_id uuid,
+    holdings_hrid text,
+    acquisition_method text,
+    call_number text,
+    call_number_prefix text,
+    call_number_suffix text,
+    call_number_type_id uuid,
+    call_number_type_name text,
+    copy_number text,
+    type_id uuid,
+    type_name text,
+    ill_policy_id text,
+    ill_policy_name text,
+    instance_id uuid,
+    permanent_location_id uuid,
+    permanent_location_name text,
+    temporary_location_id text,
+    temporary_location_name text,
+    receipt_status text,
+    retention_policy text,
+    shelving_title text,
+    discovery_suppress text,
+    created_date text,
+    updated_by_user_id text,
+    updated_date text)
+AS $$
 WITH holdings AS (
     SELECT
         h__t.id,
@@ -68,4 +88,8 @@ FROM
     LEFT JOIN folio_inventory.ill_policy__t AS holdings_ill_policy ON holdings.ill_policy_id::uuid = holdings_ill_policy.id
     LEFT JOIN folio_inventory.call_number_type__t AS holdings_call_number_type ON holdings.call_number_type_id::uuid = holdings_call_number_type.id
     LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON holdings.permanent_location_id::uuid = holdings_permanent_location.id
-    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id;
+    LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON holdings.temporary_location_id::uuid = holdings_temporary_location.id
+$$
+LANGUAGE SQL
+STABLE
+PARALLEL SAFE;

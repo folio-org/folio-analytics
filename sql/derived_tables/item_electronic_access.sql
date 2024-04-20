@@ -12,8 +12,7 @@ SELECT
     inventory_electronic_access_relationships.name AS relationship_name,
     electronic_access.data #>> '{uri}' AS uri
 FROM
-    inventory_items AS item
+    public.inventory_items AS item
     CROSS JOIN LATERAL jsonb_array_elements((data #> '{electronicAccess}')::jsonb) AS electronic_access(data)
-    LEFT JOIN inventory_electronic_access_relationships
-        ON (electronic_access.data #>> '{relationshipId}')::uuid = inventory_electronic_access_relationships.id::uuid;
-
+    LEFT JOIN public.inventory_electronic_access_relationships
+        ON (NULLIF(electronic_access.data #>> '{relationshipId}', ''))::uuid = inventory_electronic_access_relationships.id::uuid;
