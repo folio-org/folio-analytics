@@ -1,1 +1,8 @@
+holdings_ext.sql
+instance_ext.sql
+instance_identifiers.sql
+instance_languages.sql
+instance_physical_descriptions.sql
+instance_publication.sql
 item_circulation_notes.sql
+item_ext.sql
