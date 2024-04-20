@@ -9,8 +9,8 @@ WITH po_prod_id AS (
         (product_ids.data #>> '{productIdType}')::uuid AS prod_id_type
     FROM
         po_lines AS pl
-        CROSS JOIN jsonb_extract_path(pl.data::jsonb, 'details') AS details (data)
-        CROSS JOIN jsonb_array_elements((details.data #> '{productIds}')::jsonb) AS product_ids (data)
+        CROSS JOIN LATERAL jsonb_extract_path(pl.data::jsonb, 'details') AS details (data)
+        CROSS JOIN LATERAL jsonb_array_elements((details.data #> '{productIds}')::jsonb) AS product_ids (data)
 )
 SELECT
     pol_number,

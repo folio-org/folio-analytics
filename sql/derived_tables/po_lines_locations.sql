@@ -26,7 +26,7 @@ SELECT
     END AS pol_location_source
 FROM
     po_lines AS pol
-    CROSS JOIN jsonb_array_elements((data #> '{locations}')::jsonb) AS locations (data)
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{locations}')::jsonb) AS locations (data)
     LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid
     LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
     LEFT JOIN inventory_locations AS il2 ON ih.permanent_location_id = il2.id;

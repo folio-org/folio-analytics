@@ -7,6 +7,8 @@
 --metadb:require folio_agreements.erm_resource.res_sub_type_fk uuid
 --metadb:require folio_agreements.erm_resource.res_type_fk uuid
 --metadb:require folio_agreements.identifier.id_id uuid
+--metadb:require folio_agreements.identifier.id_ns_fk uuid
+--metadb:require folio_agreements.identifier.id_value text
 --metadb:require folio_agreements.identifier_namespace.idns_id uuid
 --metadb:require folio_agreements.identifier_namespace.idns_value text
 --metadb:require folio_agreements.identifier_occurrence.io_identifier_fk uuid
