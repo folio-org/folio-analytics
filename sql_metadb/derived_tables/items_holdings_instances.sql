@@ -5,6 +5,7 @@
 --metadb:require folio_inventory.holdings_record__t.shelving_title text
 --metadb:require folio_inventory.item__t.chronology text
 --metadb:require folio_inventory.item__t.copy_number text
+--metadb:require folio_inventory.item__t.enumeration text
 --metadb:require folio_inventory.item__t.item_identifier text
 --metadb:require folio_inventory.item__t.number_of_pieces text
 --metadb:require folio_inventory.item__t.volume text
@@ -51,4 +52,3 @@ FROM
     LEFT JOIN folio_inventory.material_type__t AS mattype ON i.material_type_id = mattype.id
     LEFT JOIN folio_inventory.holdings_type__t AS holdtype ON holdings.holdings_type_id = holdtype.id
     LEFT JOIN folio_inventory.call_number_type__t AS calltype ON holdings.call_number_type_id = calltype.id;
-
