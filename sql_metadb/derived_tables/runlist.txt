@@ -58,6 +58,7 @@ po_lines_eresource.sql
 po_lines_locations.sql
 po_lines_phys_mat_type.sql
 po_lines_physical.sql
+po_notes.sql
 po_ongoing.sql
 po_prod_ids.sql
 po_organization.sql
