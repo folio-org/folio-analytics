@@ -1,4 +1,8 @@
 --metadb:table finance_invoice_transactions
+--metadb:require folio_finance.expense_class__t.id uuid
+--metadb:require folio_finance.expense_class__t.code text
+--metadb:require folio_finance.expense_class__t.name text
+--metadb:require folio_finance.expense_class__t.external_account_number_ext text
 
 -- Create a derived table of fund distribution in invoices.
 -- The derived table contains the information on the fund distribution
@@ -8,81 +12,221 @@
 DROP TABLE IF EXISTS finance_invoice_transactions;
 
 CREATE TABLE finance_invoice_transactions AS
-WITH invoice AS (
-    SELECT
-        invoices.id AS invoice_id,
-        jsonb_extract_path_text(invoices.jsonb, 'folioInvoiceNo') AS folio_invoice_number,
-        jsonb_extract_path_text(invoices.jsonb, 'vendorInvoiceNo') AS vendor_invoice_number,
-        jsonb_extract_path_text(invoices.jsonb, 'invoiceDate')::timestamptz AS invoice_date,
-        jsonb_extract_path_text(invoices.jsonb, 'currency') AS invoice_currency,
-        jsonb_extract_path_text(invoices.jsonb, 'exchangeRate')::numeric(19,14) AS invoice_exchange_rate,
-        jsonb_extract_path_text(invoices.jsonb, 'status') AS invoice_status,
+WITH invoice_lines_fund_distribution AS (
+    SELECT 
         invoice_lines.id AS invoice_line_id,
         jsonb_extract_path_text(invoice_lines.jsonb, 'total')::numeric(19,4) AS invoice_line_total,
         jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'fundId')::uuid AS invoice_line_fund_id,
         jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'value')::numeric(19,4) AS invoice_line_distribution_value,
         jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'distributionType') AS invoice_line_distribution_type,
-        organizations.id AS vendor_id,
-        jsonb_extract_path_text(organizations.jsonb, 'name') AS vendor_name
-    FROM
+        jsonb_extract_path_text(jsonb_array_elements(jsonb_extract_path(invoice_lines.jsonb, 'fundDistributions')), 'expenseClassId') :: UUID AS invoice_line_distribution_expense_class_id
+    FROM 
         folio_invoice.invoice_lines
-        LEFT JOIN folio_invoice.invoices ON invoices.id = invoice_lines.invoiceid
-        LEFT JOIN folio_organizations.organizations ON jsonb_extract_path_text(invoices.jsonb, 'vendorId')::uuid = organizations.id
+),
+invoice_vendors AS (
+    SELECT
+        invoices__t.id AS invoice_id,
+        organizations__t.name AS invoice_vendor_name
+    FROM 
+        folio_invoice.invoices__t
+        INNER JOIN folio_organizations.organizations__t ON organizations__t.id = invoices__t.vendor_id 
 ),
 finance AS (
     SELECT
-        fiscal_year.id AS fiscal_year_id,
-        jsonb_extract_path_text(fiscal_year.jsonb, 'code') AS fiscal_year,
-        ledger.id AS ledger_id,
-        jsonb_extract_path_text(ledger.jsonb, 'name') AS ledger_name,
-        budget.id AS budget_id,
-        jsonb_extract_path_text(budget.jsonb, 'name') AS budget_name,
-        fund.id AS fund_id,
-        jsonb_extract_path_text(fund.jsonb, 'code') AS fund_code
-    FROM
-        folio_finance.fiscal_year
-        LEFT JOIN folio_finance.ledger ON ledger.fiscalyearoneid = fiscal_year.id
-        LEFT JOIN folio_finance.fund ON fund.ledgerid = ledger.id
-        LEFT JOIN folio_finance.budget ON budget.fundid = fund.id AND budget.fiscalyearid = fiscal_year.id
+        fiscal_year__t.id AS fiscal_year_id,
+        fiscal_year__t.code AS fiscal_year,
+        ledger__t.id AS ledger_id,
+        ledger__t.name AS ledger_name,
+        budget__t.id AS budget_id,
+        budget__t.name AS budget_name,
+        fund__t.id AS fund_id,
+        fund__t.code AS fund_code
+    FROM            
+        folio_finance.fiscal_year__t
+        LEFT JOIN folio_finance.budget__t ON budget__t.fiscal_year_id = fiscal_year__t.id
+        LEFT JOIN folio_finance.fund__t ON fund__t.id = budget__t.fund_id
+        LEFT JOIN folio_finance.ledger__t ON ledger__t.id = fund__t.ledger_id
 ),
 transactions AS (
     SELECT
-        transaction.id AS transaction_id,
-        jsonb_extract_path_text(transaction.jsonb, 'fromFundId')::uuid AS from_fund_id,
-        jsonb_extract_path_text(transaction.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
-        jsonb_extract_path_text(transaction.jsonb, 'currency') AS transaction_currency,
-        jsonb_extract_path_text(transaction.jsonb, 'sourceInvoiceLineId')::uuid AS source_invoice_line_id
+        transaction__t.id AS transaction_id,
+        transaction__t.from_fund_id AS from_fund_id,
+        transaction__t.amount AS transaction_amount,
+        transaction__t.currency AS transaction_currency,
+        transaction__t.fiscal_year_id,
+        transaction__t.source_invoice_line_id AS source_invoice_line_id,
+        transaction__t.expense_class_id AS transaction_expense_class_id,
+        expense_class__t.code AS expense_class_code,
+        expense_class__t.name AS expense_class_name,
+        expense_class__t.external_account_number_ext
     FROM
-        folio_finance.transaction
+        folio_finance.transaction__t
+        LEFT JOIN folio_finance.expense_class__t ON expense_class__t.id = transaction__t.expense_class_id
 )
 SELECT
-    invoice.invoice_id,
-    invoice.folio_invoice_number,
-    invoice.vendor_id,
-    invoice.vendor_name,
-    invoice.vendor_invoice_number,
-    invoice.invoice_date,
-    invoice.invoice_status,
-    invoice.invoice_line_id,
-    invoice.invoice_line_total,
-    invoice.invoice_currency,
-    invoice.invoice_line_distribution_value,
-    invoice.invoice_line_distribution_type,
-    finance_invoice.fiscal_year_id AS invoice_line_fiscal_year_id,
-    finance_invoice.fiscal_year AS invoice_line_fiscal_year,
-    finance_invoice.ledger_id AS invoice_line_ledger_id,
-    finance_invoice.ledger_name AS invoice_line_ledger_name,
-    finance_invoice.budget_id AS invoice_line_budget_id,
-    finance_invoice.budget_name AS invoice_line_budget_name,
-    finance_invoice.fund_id AS invoice_line_fund_id,
-    finance_invoice.fund_code AS invoice_line_fund_code,
-    invoice.invoice_exchange_rate,
-    transactions_invoice.transaction_id AS invoice_line_transaction_id,
-    transactions_invoice.transaction_amount AS invoice_line_transaction_amount,
-    transactions_invoice.transaction_currency AS invoice_line_transaction_currency
+    invoices__t.id AS invoice_id,
+    invoices__t.status AS invoice_status,
+    invoices__t.folio_invoice_no AS folio_invoice_number,
+    invoices__t.vendor_id,
+    invoice_vendors.invoice_vendor_name AS vendor_name,
+    invoices__t.vendor_invoice_no AS vendor_invoice_number,
+    invoices__t.invoice_date,
+    invoice_lines__t.id AS invoice_line_id,
+    invoice_lines__t.total AS invoice_line_total,
+    invoices__t.currency AS invoice_currency,
+    invoice_lines_fund_distribution.invoice_line_distribution_value,
+    invoice_lines_fund_distribution.invoice_line_distribution_type,
+    invoice_lines_fund_distribution.invoice_line_fund_id,
+    inv_line_fund.code AS invoice_line_fund_code,
+    inv_line_expense_class.id AS invoice_line_expense_class_id,
+    inv_line_expense_class.code AS invoice_line_expense_class_code,
+    inv_line_expense_class.name AS invoice_line_expense_class_name,
+    inv_line_expense_class.external_account_number_ext,
+    invoices__t.exchange_rate,
+    transactions.transaction_id,
+    transactions.transaction_amount,
+    transactions.transaction_currency,
+    finance.fund_id AS transaction_fund_id,
+    finance.fund_code AS transaction_fund_code,
+    finance.fiscal_year_id,
+    finance.fiscal_year,
+    finance.ledger_id,
+    finance.ledger_name,
+    finance.budget_id,
+    finance.budget_name,        
+    transactions.transaction_expense_class_id,
+    transactions.expense_class_code AS transactions_expense_class_code,
+    transactions.expense_class_name AS transactions_expense_class_name,
+    transactions.external_account_number_ext AS transactions_external_account_number_ext
 FROM
-    invoice
-    LEFT JOIN finance AS finance_invoice ON finance_invoice.fund_id = invoice.invoice_line_fund_id
-    LEFT JOIN transactions AS transactions_invoice ON transactions_invoice.source_invoice_line_id = invoice.invoice_line_id
-        AND transactions_invoice.from_fund_id = invoice.invoice_line_fund_id;
+    folio_invoice.invoices__t
+    LEFT JOIN folio_invoice.invoice_lines__t ON invoice_lines__t.invoice_id = invoices__t.id
+    LEFT JOIN invoice_lines_fund_distribution ON invoice_lines_fund_distribution.invoice_line_id = invoice_lines__t.id
+    LEFT JOIN folio_finance.expense_class__t AS inv_line_expense_class ON inv_line_expense_class.id = invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id
+    LEFT JOIN folio_finance.fund__t AS inv_line_fund ON inv_line_fund.id = invoice_lines_fund_distribution.invoice_line_fund_id
+    LEFT JOIN invoice_vendors ON invoice_vendors.invoice_id = invoices__t.id    
+    LEFT JOIN transactions ON transactions.source_invoice_line_id = invoice_lines__t.id
+        AND transactions.from_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
+    LEFT JOIN finance ON finance.fund_id = transactions.from_fund_id
+        AND finance.fiscal_year_id = transactions.fiscal_year_id
+WHERE 
+    invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NULL
+UNION 
+SELECT
+    invoices__t.id AS invoice_id,
+    invoices__t.status AS invoice_status,
+    invoices__t.folio_invoice_no AS folio_invoice_number,
+    invoices__t.vendor_id,
+    invoice_vendors.invoice_vendor_name AS vendor_name,
+    invoices__t.vendor_invoice_no AS vendor_invoice_number,
+    invoices__t.invoice_date,
+    invoice_lines__t.id AS invoice_line_id,
+    invoice_lines__t.total AS invoice_line_total,
+    invoices__t.currency AS invoice_currency,
+    invoice_lines_fund_distribution.invoice_line_distribution_value,
+    invoice_lines_fund_distribution.invoice_line_distribution_type,
+    invoice_lines_fund_distribution.invoice_line_fund_id,
+    inv_line_fund.code AS invoice_line_fund_code,
+    inv_line_expense_class.id AS invoice_line_expense_class_id,
+    inv_line_expense_class.code AS invoice_line_expense_class_code,
+    inv_line_expense_class.name AS invoice_line_expense_class_name,
+    inv_line_expense_class.external_account_number_ext,
+    invoices__t.exchange_rate,
+    transactions.transaction_id,
+    transactions.transaction_amount,
+    transactions.transaction_currency,
+    finance.fund_id AS transaction_fund_id,
+    finance.fund_code AS transaction_fund_code,
+    finance.fiscal_year_id,
+    finance.fiscal_year,
+    finance.ledger_id,
+    finance.ledger_name,
+    finance.budget_id,
+    finance.budget_name,
+    transactions.transaction_expense_class_id,
+    transactions.expense_class_code AS transactions_expense_class_code,
+    transactions.expense_class_name AS transactions_expense_class_name,
+    transactions.external_account_number_ext AS transactions_external_account_number_ext
+FROM
+    folio_invoice.invoices__t
+    LEFT JOIN folio_invoice.invoice_lines__t ON invoice_lines__t.invoice_id = invoices__t.id
+    LEFT JOIN invoice_lines_fund_distribution ON invoice_lines_fund_distribution.invoice_line_id = invoice_lines__t.id
+    LEFT JOIN folio_finance.expense_class__t AS inv_line_expense_class ON inv_line_expense_class.id = invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id
+    LEFT JOIN folio_finance.fund__t AS inv_line_fund ON inv_line_fund.id = invoice_lines_fund_distribution.invoice_line_fund_id
+    LEFT JOIN invoice_vendors ON invoice_vendors.invoice_id = invoices__t.id    
+    LEFT JOIN transactions ON transactions.source_invoice_line_id = invoice_lines__t.id
+        AND transactions.from_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
+        AND transactions.transaction_expense_class_id = invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id
+    LEFT JOIN finance ON finance.fund_id = transactions.from_fund_id
+        AND finance.fiscal_year_id = transactions.fiscal_year_id
+WHERE 
+    invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NOT NULL    
+;
 
+COMMENT ON COLUMN finance_invoice_transactions.invoice_id IS 'UUID of the invoice';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_status IS 'Workflow status of the invoice';
+
+COMMENT ON COLUMN finance_invoice_transactions.folio_invoice_number IS 'Invoice number in folio system';
+
+COMMENT ON COLUMN finance_invoice_transactions.vendor_id IS 'UUID for vendor';
+
+COMMENT ON COLUMN finance_invoice_transactions.vendor_name IS 'Name of vendor';
+
+COMMENT ON COLUMN finance_invoice_transactions.vendor_invoice_number IS 'This is the number from the vendors invoice, which is different from the folio invoice number';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_date IS 'Invoice date';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_id IS 'UUID of the invoice line';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_total IS 'Total of each separate invoice line';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_currency IS 'Ideally this is the ISO code and not something the user defines';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_distribution_value IS 'The percentage of the cost to be applied to this fund';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_distribution_type IS 'Type of value (percentage or amount)';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_fund_id IS 'UUID of the fund associated with this fund distribution';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_fund_code IS 'Code of the fund';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_expense_class_id IS 'UUID of the expense class from the invoice line';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_expense_class_code IS 'Code of the expense class from the invoice line';
+
+COMMENT ON COLUMN finance_invoice_transactions.invoice_line_expense_class_name IS 'Name of the expense class from the invoice line';
+
+COMMENT ON COLUMN finance_invoice_transactions.external_account_number_ext IS 'An external account number extension';
+
+COMMENT ON COLUMN finance_invoice_transactions.exchange_rate IS 'Exchange rate';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_id IS 'UUID of this transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_amount IS 'The amount of this transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_currency IS 'Currency code for this transaction - from the system currency';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_fund_id IS 'UUID of the fund associated with this transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_fund_code IS 'Code of the fund associated with this transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.fiscal_year_id IS 'UUID of the fiscal year';
+
+COMMENT ON COLUMN finance_invoice_transactions.fiscal_year IS 'Code of the fiscal year';
+
+COMMENT ON COLUMN finance_invoice_transactions.ledger_id IS 'UUID of the ledger';
+
+COMMENT ON COLUMN finance_invoice_transactions.ledger_name IS 'Name of the ledger';
+
+COMMENT ON COLUMN finance_invoice_transactions.budget_id IS 'UUID of the budget';
+
+COMMENT ON COLUMN finance_invoice_transactions.budget_name IS 'Name of the budget';
+
+COMMENT ON COLUMN finance_invoice_transactions.transaction_expense_class_id IS 'UUID of the expense class from the transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transactions_expense_class_code IS 'Code of the expense class from the transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transactions_expense_class_name IS 'Name of the expense class from the transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.transactions_external_account_number_ext IS 'An external account number extension';

@@ -17,7 +17,7 @@ WITH fdist AS (
         jsonb_extract_path_text(lines.jsonb, 'total')::numeric(19,4) AS invoice_line_total
     FROM
         folio_invoice.invoice_lines AS lines
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(lines.jsonb, 'fundDistributions')) AS dist(data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(lines.jsonb, 'fundDistributions')) AS dist(data)
 )
 SELECT
     fdist.invoice_line_id AS invoice_line_id,

@@ -13,7 +13,7 @@ WITH items_statistical_codes AS (
         statistical_code_ids.data #>> '{}' AS statistical_code_id
     FROM
         folio_inventory.item
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(jsonb, 'statisticalCodeIds')) AS statistical_code_ids(data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'statisticalCodeIds')) AS statistical_code_ids(data)
         LEFT JOIN folio_inventory.item__t AS i ON item.id = i.id
 )
 SELECT

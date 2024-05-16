@@ -85,7 +85,7 @@ FROM
     LEFT JOIN folio_inventory.item AS iij ON clt.item_id::uuid = iij.id
     LEFT JOIN folio_inventory.item__t AS iit ON clt.item_id::uuid = iit.id
     LEFT JOIN folio_inventory.location__t AS ipl ON jsonb_extract_path_text(iij.jsonb, 'permanentLocationId')::uuid = ipl.id
-    LEFT JOIN locations_libraries AS ll ON ipl.id = ll.location_id
+    LEFT JOIN folio_derived.locations_libraries AS ll ON ipl.id = ll.location_id
     LEFT JOIN folio_inventory.location__t AS icl ON jsonb_extract_path_text(clj.jsonb, 'itemEffectiveLocationIdAtCheckOut')::uuid = icl.id
     LEFT JOIN folio_inventory.service_point__t AS ispt ON jsonb_extract_path_text(iij.jsonb, 'inTransitDestinationServicePointId')::uuid = ispt.id
     LEFT JOIN folio_inventory.location__t AS iel ON iit.effective_location_id::uuid = iel.id

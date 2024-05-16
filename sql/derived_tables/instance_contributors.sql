@@ -14,7 +14,7 @@ SELECT
     (contributors.data #>> '{primary}')::boolean AS contributor_primary
 FROM
     inventory_instances AS instance
-    CROSS JOIN jsonb_array_elements((instance.data #> '{contributors}')::jsonb) AS contributors(data)
+    CROSS JOIN LATERAL jsonb_array_elements((instance.data #> '{contributors}')::jsonb) AS contributors(data)
     LEFT JOIN inventory_contributor_name_types
         ON (contributors.data #>> '{contributorNameTypeId}')::uuid = inventory_contributor_name_types.id::uuid
     LEFT JOIN inventory_contributor_types

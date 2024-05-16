@@ -9,7 +9,7 @@ WITH holdings_statistical_codes AS (
         (statistical_code_ids.data #>> '{}')::uuid AS statistical_code_id
     FROM
         inventory_holdings AS holdings
-        CROSS JOIN jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb) AS statistical_code_ids (data)
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{statisticalCodeIds}')::jsonb) AS statistical_code_ids (data)
 )
 SELECT
     holdings_statistical_codes.holdings_id,

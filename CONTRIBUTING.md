@@ -116,8 +116,8 @@ currently have a test data set to allow significant automated testing.
 ------------------
 
 Additions or changes to derived tables should be accompanied by any
-required additions or changes to the `runlist.txt` and `deps.txt`
-files, together in the same pull request.
+required additions or changes to the `runlist.txt` file, together in
+the same pull request.
 
 Derived table queries for Metadb should also include any relevant
 external SQL directives, in particular:

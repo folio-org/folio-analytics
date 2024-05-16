@@ -16,7 +16,7 @@ CREATE TABLE po_acq_unit_ids AS
     FROM
         folio_orders.purchase_order__t AS po
         LEFT JOIN folio_orders.purchase_order ON po.id = purchase_order.id
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(purchase_order.jsonb, 'acqUnitIds')) WITH ORDINALITY AS acq_unit_ids (jsonb)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(purchase_order.jsonb, 'acqUnitIds')) WITH ORDINALITY AS acq_unit_ids (jsonb)
         LEFT JOIN folio_orders.acquisitions_unit__t AS au ON (acq_unit_ids.jsonb #>> '{}')::uuid = au.id;
     
 COMMENT ON COLUMN po_acq_unit_ids.po_id IS 'UUID of this purchase order';

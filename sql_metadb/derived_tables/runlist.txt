@@ -1,3 +1,4 @@
+item_effective_callno_components.sql
 agreements_custom_property.sql
 agreements_package_content_item.sql
 agreements_subscription_agreement.sql
@@ -48,7 +49,9 @@ po_acq_unit_ids.sql
 po_instance.sql
 po_lines_cost.sql
 po_line_fund_distribution_transactions.sql
+po_lines_fund_distribution_transactions.sql
 po_line_vendor_reference_number.sql
+po_lines_vendor_reference_numbers.sql
 po_lines_details_subscription.sql
 po_lines_er_mat_type.sql
 po_lines_eresource.sql
@@ -67,9 +70,12 @@ items_holdings_instances.sql
 item_tags.sql
 loans_items.sql
 loans_renewal_count.sql
+openaccess_checklists.sql
+openaccess_publication_request.sql
 po_lines_tags.sql
 requests_items.sql
 users_addresses.sql
 users_departments_unpacked.sql
 users_groups.sql
 invoice_lines_fund_distributions.sql
+item_circulation_notes.sql

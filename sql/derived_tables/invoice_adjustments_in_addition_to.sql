@@ -12,7 +12,7 @@ WITH adjustments AS (
         (adjustments.data #>> '{value}')::numeric(12,2) AS adjustment_value
     FROM
         invoice_invoices AS inv
-        CROSS JOIN jsonb_array_elements((data #> '{adjustments}')::jsonb) AS adjustments (data)
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{adjustments}')::jsonb) AS adjustments (data)
 )
 SELECT
     invoice_id,
