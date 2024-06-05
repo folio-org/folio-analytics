@@ -1,4 +1,4 @@
---metadb:table finance_funds
+--metadb:table finance_budgets
 
 -- This derived table shows the budgets for each fund for all fiscal years
 -- including calculated values.
