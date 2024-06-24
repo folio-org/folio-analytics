@@ -10,7 +10,7 @@ SELECT
     i.hrid AS instance_hrid,
     h.id AS holdings_id,
     jsonb_extract_path_text(h.jsonb, 'hrid') AS holdings_hrid,
-    jsonb_extract_path_text(eaccess.jsonb, 'relationshipId')::uuid AS relationship_id,
+    NULLIF(jsonb_extract_path_text(eaccess.jsonb, 'relationshipId'), '')::uuid AS relationship_id,
     ear.name AS relationship_name,
     jsonb_extract_path_text(eaccess.jsonb, 'uri') AS uri,
     jsonb_extract_path_text(eaccess.jsonb, 'linkText') AS link_text,
@@ -22,4 +22,4 @@ FROM
     LEFT JOIN folio_inventory.instance__t AS i ON h.instanceid = i.id
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(h.jsonb, 'electronicAccess')) WITH ORDINALITY AS eaccess (jsonb)
     LEFT JOIN folio_inventory.electronic_access_relationship__t AS ear
-        ON jsonb_extract_path_text(eaccess.jsonb, 'relationshipId')::uuid = ear.id;
+        ON NULLIF(jsonb_extract_path_text(eaccess.jsonb, 'relationshipId'), '')::uuid = ear.id;

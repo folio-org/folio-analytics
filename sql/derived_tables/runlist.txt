@@ -41,13 +41,13 @@ loans_renewal_count.sql
 locations_libraries.sql
 loans_items.sql
 po_acq_unit_ids.sql
+po_lines_locations.sql
 po_instance.sql
 po_lines_cost.sql
 po_lines_details_subscription.sql
 po_lines_eresource.sql
 po_lines_er_mat_type.sql
 po_lines_fund_distribution.sql
-po_lines_locations.sql
 po_lines_physical.sql
 po_lines_phys_mat_type.sql
 po_lines_tags.sql
