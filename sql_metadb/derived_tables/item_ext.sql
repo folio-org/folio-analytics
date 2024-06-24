@@ -1,4 +1,5 @@
 --metadb:table item_ext
+--metadb:require folio_inventory.item__t.enumeration text
 
 DROP TABLE IF EXISTS item_ext;
 
@@ -10,8 +11,8 @@ DROP TABLE IF EXISTS item_ext;
  * description_of_pieces, status_date, status_name, holdings_id.
  * There is a separate table for effective call number.
  * However, it is also included here.
- * 
- * Item notes, tags, and electronic access are in separate derived 
+ *
+ * Item notes, tags, and electronic access are in separate derived
  * tables.
  *
  * Tables inlcuded:
@@ -120,4 +121,3 @@ FROM
     LEFT JOIN folio_inventory.item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
     LEFT JOIN folio_inventory.call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
     LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id;
-

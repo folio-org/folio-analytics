@@ -13,6 +13,12 @@ CREATE TABLE finance_transaction_invoices AS
 SELECT
     ft.id AS transaction_id,
     jsonb_extract_path_text(ft.jsonb, 'amount')::numeric(19,4) AS transaction_amount,
+    CASE WHEN jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Credit'
+        THEN 
+            jsonb_extract_path_text(ft.jsonb, 'amount') :: NUMERIC(19,4) * -1
+        ELSE 
+            jsonb_extract_path_text(ft.jsonb, 'amount') :: NUMERIC(19,4)
+    END AS effective_transaction_amount,
     jsonb_extract_path_text(ft.jsonb, 'currency') AS transaction_currency,
     jsonb_extract_path_text(ft.jsonb, 'metadata', 'createdDate')::date AS transaction_created_date,
     jsonb_extract_path_text(ft.jsonb, 'metadata', 'updatedDate')::date AS transaction_updated_date,
@@ -56,6 +62,8 @@ WHERE (jsonb_extract_path_text(ft.jsonb, 'transactionType') = 'Pending payment'
 COMMENT ON COLUMN finance_transaction_invoices.transaction_id IS 'UUID of this transaction';
 
 COMMENT ON COLUMN finance_transaction_invoices.transaction_amount IS 'The amount of this transaction. For encumbrances: This is initialAmountEncumbered - (amountAwaitingPayment + amountExpended)';
+
+COMMENT ON COLUMN finance_transaction_invoices.effective_transaction_amount IS 'The amount of this transaction for calculations';
 
 COMMENT ON COLUMN finance_transaction_invoices.transaction_currency IS 'Currency code for this transaction - from the system currency';
 
@@ -112,4 +120,3 @@ COMMENT ON COLUMN finance_transaction_invoices.po_line_id IS 'UUID of encumbranc
 COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_id IS 'UUID for vendor';
 
 COMMENT ON COLUMN finance_transaction_invoices.invoice_vendor_name IS 'Name of vendor';
-
