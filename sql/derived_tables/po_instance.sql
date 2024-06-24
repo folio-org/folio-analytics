@@ -24,32 +24,16 @@ SELECT
     ce.value::json #>> '{name}' AS ship_to,
     (po_lines.data #>> '{instanceId}')::uuid AS pol_instance_id,
     inventory_instances.hrid AS pol_instance_hrid,
-    (locations.data #>> '{holdingId}')::uuid AS pol_holding_id,
-    CASE WHEN (locations.data #>> '{locationId}') IS NOT NULL
-         THEN (locations.data #>> '{locationId}')::uuid
-         ELSE ih.permanent_location_id::uuid
-    END AS pol_location_id,
-    CASE WHEN (il.name) IS NOT NULL
-         THEN il.name
-         ELSE il2.name
-    END AS pol_location_name,
-    CASE WHEN il.name IS NOT NULL
-         THEN 'pol_location'
-         WHEN il2.name IS NOT NULL
-         THEN 'pol_holding'
-         ELSE 'no_source'
-    END AS pol_location_source,
+    locations.pol_location_id,
+    locations.pol_location_name,
+    locations.pol_location_source,
     inventory_instances.title AS title,
     po_lines.data #>> '{publicationDate}' AS publication_date,
     po_lines.data #>> '{publisher}' AS publisher
 FROM
     po_purchase_orders
     LEFT JOIN po_lines ON po_purchase_orders.id::uuid = (po_lines.data #>> '{purchaseOrderId}')::uuid
-    CROSS JOIN LATERAL jsonb_array_elements((po_lines.data #> '{locations}')::jsonb) AS locations (data)
-
-    LEFT JOIN inventory_locations AS il ON (locations.data #>> '{locationId}')::uuid = il.id::uuid
-    LEFT JOIN inventory_holdings AS ih ON (locations.data #>> '{holdingId}')::uuid = ih.id::uuid
-    LEFT JOIN inventory_locations AS il2 ON (ih.permanent_location_id)::uuid = il2.id::uuid
+    LEFT JOIN folio_reporting.po_lines_locations AS locations ON locations.pol_id = po_lines.id
     LEFT JOIN inventory_instances ON (po_lines.data #>> '{instanceId}')::uuid = inventory_instances.id::uuid
     LEFT JOIN organization_organizations ON (po_purchase_orders.data #>> '{vendor}')::uuid = organization_organizations.id::uuid
     LEFT JOIN configuration_entries AS ce ON (po_purchase_orders.data #>> '{billTo}')::uuid = ce.id::uuid
@@ -89,8 +73,6 @@ COMMENT ON COLUMN po_instance.ship_to IS 'Name of the ship_to location of the pu
 COMMENT ON COLUMN po_instance.pol_instance_id IS 'UUID of the instance record this purchase order line is related to';
 
 COMMENT ON COLUMN po_instance.pol_instance_hrid IS 'A human readable number of the instance record this purchase order line is related to';
-
-COMMENT ON COLUMN po_instance.pol_holding_id IS 'UUID of the holdings this purchase order line is related to';
 
 COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created for this purchase order line';
 
