@@ -9,6 +9,6 @@ SELECT
     identifiers.data #>> '{value}' AS identifier
 FROM
     inventory_instances AS instances
-    CROSS JOIN jsonb_array_elements((data #> '{identifiers}')::jsonb) AS identifiers (data)
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{identifiers}')::jsonb) AS identifiers (data)
     LEFT JOIN inventory_identifier_types
         ON (identifiers.data #>> '{identifierTypeId}')::uuid = inventory_identifier_types.id::uuid;

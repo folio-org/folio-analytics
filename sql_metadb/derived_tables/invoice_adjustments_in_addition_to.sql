@@ -14,7 +14,7 @@ WITH adjustments AS (
         jsonb_extract_path_text(adjustments.data, 'value')::numeric(19,4) AS adjustment_value
     FROM
         folio_invoice.invoices AS inv
-        CROSS JOIN jsonb_array_elements(jsonb_extract_path(inv.jsonb, 'adjustments')) AS adjustments (data)
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inv.jsonb, 'adjustments')) AS adjustments (data)
 )
 SELECT
     invoice_id,

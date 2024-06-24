@@ -13,7 +13,7 @@ WITH funds_distr AS (
         (lines.data #>> '{total}')::numeric(12,2) AS invoice_line_total
     FROM
         invoice_lines AS lines
-        CROSS JOIN jsonb_array_elements((data #> '{fundDistributions}')::jsonb) AS dist(data)
+        CROSS JOIN LATERAL jsonb_array_elements((data #> '{fundDistributions}')::jsonb) AS dist(data)
 )
 SELECT
     invoice_line_id AS invoice_line_id,

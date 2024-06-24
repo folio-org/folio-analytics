@@ -12,5 +12,5 @@ SELECT
     holdings_statement.data #>> '{staffNote}' AS staff_note
 FROM
     inventory_holdings AS holdings
-    CROSS JOIN jsonb_array_elements((data #> '{holdingsStatements}')::jsonb) AS holdings_statement(data);
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{holdingsStatements}')::jsonb) AS holdings_statement(data);
 

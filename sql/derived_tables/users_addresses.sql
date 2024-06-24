@@ -18,6 +18,6 @@ SELECT
     (addresses.data #>> '{primaryAddress}')::boolean AS is_primary_address
 FROM
     user_users AS uu
-    CROSS JOIN jsonb_array_elements((data #> '{personal,addresses}')::jsonb) AS addresses (data)
+    CROSS JOIN LATERAL jsonb_array_elements((data #> '{personal,addresses}')::jsonb) AS addresses (data)
     LEFT JOIN user_addresstypes AS ua ON (addresses.data #>> '{addressTypeId}')::uuid = ua.id::uuid;
 
