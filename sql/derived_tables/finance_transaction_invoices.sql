@@ -15,6 +15,12 @@ CREATE TABLE finance_transaction_invoices AS
 SELECT
     ft.id AS transaction_id,
     ft.amount AS transaction_amount,
+    CASE WHEN ft.transaction_type = 'Credit'
+        THEN 
+            ft.amount * -1
+        ELSE 
+            ft.amount
+    END AS effective_transaction_amount,
     ft.currency AS transaction_currency,
     (ft.data #>> '{metadata,createdDate}')::date AS transaction_created_date,
     (ft.data #>> '{metadata,updatedDate}')::date AS transaction_updated_date,
