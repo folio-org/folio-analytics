@@ -38,7 +38,7 @@ SELECT
     ih.holdings_type_id,
     iht.name AS holdings_type_name,
     ih.instance_id,
-    ih.hrid AS instance_hrid,
+    ii2.hrid AS instance_hrid,
     ih.shelving_title,
     ii2.cataloged_date,
     ii2.index_title,
