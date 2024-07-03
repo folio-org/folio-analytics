@@ -8,7 +8,6 @@ DROP TABLE IF EXISTS holdings_ext;
 
 CREATE TABLE holdings_ext AS
 
-WITH holdings AS (
     SELECT
         h__t.id,
         h__t.hrid as holdings_hrid,
@@ -68,7 +67,7 @@ COMMENT ON COLUMN holdings_ext.call_number_type_name IS 'call number type, such 
 COMMENT ON COLUMN holdings_ext.copy_number IS 'Item/Piece ID (usually barcode) for systems that do not use item records. Ability to designate the copy number if institution chooses to use copy numbers.';
 COMMENT ON COLUMN holdings_ext.type_id IS 'unique ID for the type of this holdings record, a UUID';
 COMMENT ON COLUMN holdings_ext.type_name IS 'Name of the type of holdings record, such as monograph, serial, etc.';
-COMMENT ON COLUMN holdings_ext.ill_policy_id IS 'unique ID for an ILL policy, a UUID';
+COMMENT ON COLUMN holdings_ext.ill_policy_id IS 'Unique ID for an ILL policy, a UUID';
 COMMENT ON COLUMN holdings_ext.ill_policy_name IS 'Name of the ILL policy such as limited lending policy, will lend hard copy only, etc.';
 COMMENT ON COLUMN holdings_ext.instance_id IS 'Unique ID for the instance record, a UUID';
 COMMENT ON COLUMN holdings_ext.permanent_location_id IS 'ID of the permanent shelving location in which an item resides';
@@ -78,7 +77,7 @@ COMMENT ON COLUMN holdings_ext.temporary_location_name IS 'Name of the temporary
 COMMENT ON COLUMN holdings_ext.receipt_status IS 'Receipt status (e.g. pending, awaiting receipt, partially received, fully received, receipt not required, and cancelled)';
 COMMENT ON COLUMN holdings_ext.retention_policy IS 'Records information regarding how long we have agreed to keep something';
 COMMENT ON COLUMN holdings_ext.shelving_title IS 'Indicates the shelving form of title';
-COMMENT ON COLUMN holdings_ext.discovery_supress IS 'records the fact that the record should not be displayed in a discovery system';
+COMMENT ON COLUMN holdings_ext.discovery_supress IS 'Records the fact that the record should not be displayed in a discovery system';
 COMMENT ON COLUMN holdings_ext.created_date IS 'Date and time when the record was created';
 COMMENT ON COLUMN holdings_ext.updated_by_user_id IS 'ID of the user who last updated the record (when available)';
 COMMENT ON COLUMN holdings_ext.updated_date IS 'Date and time when the record was last updated';
