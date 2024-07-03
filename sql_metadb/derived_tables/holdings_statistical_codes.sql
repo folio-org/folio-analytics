@@ -32,4 +32,4 @@ SELECT
 FROM
     stcodes AS stc
     LEFT JOIN folio_inventory.statistical_code__t AS sct ON stc.statistical_code_id = sct.id
-    LEFT JOIN folio_inventory.statistical_code_type__t AS sctt ON sct.statistical_code_type_id = sctt.id;
+    LEFT JOIN folio_inventory.statistical_code_type__t AS sctt ON sct.statistical_code_type_id::uuid = sctt.id::uuid;

@@ -50,8 +50,19 @@ finance AS (
 transactions AS (
     SELECT
         transaction__t.id AS transaction_id,
-        transaction__t.from_fund_id AS from_fund_id,
+        CASE WHEN transaction__t.transaction_type = 'Credit'
+            THEN 
+                transaction__t.to_fund_id
+            ELSE
+                transaction__t.from_fund_id
+        END AS effective_fund_id,
         transaction__t.amount AS transaction_amount,
+        CASE WHEN transaction__t.transaction_type = 'Credit'
+            THEN 
+                transaction__t.amount :: NUMERIC(19,2) * -1
+            ELSE 
+                transaction__t.amount :: NUMERIC(19,2)
+        END AS effective_transaction_amount,
         transaction__t.currency AS transaction_currency,
         transaction__t.fiscal_year_id,
         transaction__t.source_invoice_line_id AS source_invoice_line_id,
@@ -85,8 +96,9 @@ SELECT
     invoices__t.exchange_rate,
     transactions.transaction_id,
     transactions.transaction_amount,
+    transactions.effective_transaction_amount,
     transactions.transaction_currency,
-    finance.fund_id AS transaction_fund_id,
+    transactions.effective_fund_id AS transaction_fund_id,
     finance.fund_code AS transaction_fund_code,
     finance.fiscal_year_id,
     finance.fiscal_year,
@@ -106,8 +118,8 @@ FROM
     LEFT JOIN folio_finance.fund__t AS inv_line_fund ON inv_line_fund.id = invoice_lines_fund_distribution.invoice_line_fund_id
     LEFT JOIN invoice_vendors ON invoice_vendors.invoice_id = invoices__t.id    
     LEFT JOIN transactions ON transactions.source_invoice_line_id = invoice_lines__t.id
-        AND transactions.from_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
-    LEFT JOIN finance ON finance.fund_id = transactions.from_fund_id
+        AND transactions.effective_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
+    LEFT JOIN finance ON finance.fund_id = transactions.effective_fund_id
         AND finance.fiscal_year_id = transactions.fiscal_year_id
 WHERE 
     invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NULL
@@ -134,8 +146,9 @@ SELECT
     invoices__t.exchange_rate,
     transactions.transaction_id,
     transactions.transaction_amount,
+    transactions.effective_transaction_amount,
     transactions.transaction_currency,
-    finance.fund_id AS transaction_fund_id,
+    transactions.effective_fund_id AS transaction_fund_id,
     finance.fund_code AS transaction_fund_code,
     finance.fiscal_year_id,
     finance.fiscal_year,
@@ -155,9 +168,9 @@ FROM
     LEFT JOIN folio_finance.fund__t AS inv_line_fund ON inv_line_fund.id = invoice_lines_fund_distribution.invoice_line_fund_id
     LEFT JOIN invoice_vendors ON invoice_vendors.invoice_id = invoices__t.id    
     LEFT JOIN transactions ON transactions.source_invoice_line_id = invoice_lines__t.id
-        AND transactions.from_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
+        AND transactions.effective_fund_id = invoice_lines_fund_distribution.invoice_line_fund_id
         AND transactions.transaction_expense_class_id = invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id
-    LEFT JOIN finance ON finance.fund_id = transactions.from_fund_id
+    LEFT JOIN finance ON finance.fund_id = transactions.effective_fund_id
         AND finance.fiscal_year_id = transactions.fiscal_year_id
 WHERE 
     invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NOT NULL    
@@ -204,6 +217,8 @@ COMMENT ON COLUMN finance_invoice_transactions.exchange_rate IS 'Exchange rate';
 COMMENT ON COLUMN finance_invoice_transactions.transaction_id IS 'UUID of this transaction';
 
 COMMENT ON COLUMN finance_invoice_transactions.transaction_amount IS 'The amount of this transaction';
+
+COMMENT ON COLUMN finance_invoice_transactions.effective_transaction_amount IS 'The amount of this transaction for calculations';
 
 COMMENT ON COLUMN finance_invoice_transactions.transaction_currency IS 'Currency code for this transaction - from the system currency';
 
