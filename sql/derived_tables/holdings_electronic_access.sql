@@ -15,4 +15,4 @@ FROM
     inventory_holdings AS holdings
     CROSS JOIN jsonb_array_elements((data #> '{electronicAccess}')::jsonb) AS electronic_access(data)
     LEFT JOIN inventory_electronic_access_relationships
-        ON NULLIF(electronic_access.data #>> '{relationshipId}'))::uuid = inventory_electronic_access_relationships.id::uuid;
+        ON NULLIF(electronic_access.data #>> '{relationshipId}', '')::uuid = inventory_electronic_access_relationships.id::uuid;
