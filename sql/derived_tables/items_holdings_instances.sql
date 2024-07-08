@@ -10,6 +10,7 @@
 --     inventory_holdings_types
 --     inventory_call_number_types
 --
+
 DROP TABLE IF EXISTS items_holdings_instances;
 
 CREATE TABLE items_holdings_instances AS 
@@ -29,7 +30,7 @@ SELECT
     ii.number_of_pieces,
     ih.id AS holdings_id,
     ih.hrid AS holdings_hrid,
-    ih.call_number as holdings_call_number,
+    ih.call_number AS holdings_call_number,
     ii.effective_call_number_components__call_number AS item_effective_call_number,
     ii.effective_call_number_components__prefix AS item_effective_call_number_prefix,
     ii.effective_call_number_components__suffix AS item_effective_call_number_suffix,
@@ -84,9 +85,9 @@ COMMENT ON COLUMN items_holdings_instances.holdings_id IS 'UUID of the holdings 
 
 COMMENT ON COLUMN items_holdings_instances.holdings_hrid IS 'Human readable ID of the holdings record associated with the item record';
 
-COMMENT ON COLUMN items_holdings_instances.holdings_call_number IS 'Call Number on the holding record, is an identifier assigned to an item, usually printed on a label attached to the item';
+COMMENT ON COLUMN items_holdings_instances.holdings_call_number IS 'Call Number on the holding record is an identifier assigned to an item, usually printed on a label attached to the item';
 
-COMMENT ON COLUMN items_holdings_instances.item_effective_call_number IS 'Effective Call Number of the item record, is an identifier assigned to the item record';
+COMMENT ON COLUMN items_holdings_instances.item_effective_call_number IS 'Effective Call Number of the item record is an identifier assigned to the item record';
 
 COMMENT ON COLUMN items_holdings_instances.item_effective_call_number_prefix IS 'Effective Call Number Prefix is the prefix of the identifier assigned to an item or its holding and associated with the item';
 
