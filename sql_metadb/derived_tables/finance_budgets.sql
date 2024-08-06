@@ -80,7 +80,7 @@ COMMENT ON COLUMN finance_budgets.unavailable IS 'The total amount of open encum
 	
 COMMENT ON COLUMN finance_budgets.cash_balance IS 'The total funding minus expenditures of a fund';
 	
-COMMENT ON COLUMN finance_budgets.available IS 'The total funding minus unavailable funding of a fund';
+COMMENT ON COLUMN finance_budgets.available_balance IS 'The total funding minus unavailable funding of a fund';
 	
 COMMENT ON COLUMN finance_budgets.over_expended IS 'The total funding minus expenditures of a fund';
 	
