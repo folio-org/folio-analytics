@@ -8,7 +8,7 @@ CREATE TABLE instance_subjects AS
 SELECT 
     i.id AS instance_id,
     jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,
-    s.jsonb #>> '{}' AS subjects,
+    s.jsonb #>> '{value}' AS subjects,
     s.ordinality AS subjects_ordinality
 FROM 
     folio_inventory.instance AS i

@@ -15,11 +15,17 @@ CREATE TABLE finance_transaction_invoices AS
 SELECT
     ft.id AS transaction_id,
     ft.amount AS transaction_amount,
+    CASE WHEN ft.transaction_type = 'Credit'
+        THEN 
+            ft.amount * -1
+        ELSE 
+            ft.amount
+    END AS effective_transaction_amount,
     ft.currency AS transaction_currency,
     (ft.data #>> '{metadata,createdDate}')::date AS transaction_created_date,
     (ft.data #>> '{metadata,updatedDate}')::date AS transaction_updated_date,
     ft.description AS transaction_description,
-    (ft.data #>> '{expenseClassId}')::uuid AS transaction_expense_class_id,
+    ft.data #>> '{expenseClassId}' AS transaction_expense_class_id,
     ft.fiscal_year_id AS transaction_fiscal_year_id,
     ft.from_fund_id AS transaction_from_fund_id,
     ff.name AS transaction_from_fund_name,
@@ -32,16 +38,16 @@ SELECT
     CASE WHEN ff.code IS NULL THEN tf.code ELSE ff.code END AS effective_fund_code,
     fb.id AS transaction_from_budget_id,
     fb.name AS transaction_from_budget_name,
-    (ft.data #>> '{sourceInvoiceId}')::uuid AS invoice_id,
-    (ft.data #>> '{sourceInvoiceLineId}')::uuid AS invoice_line_id,
+    ft.data #>> '{sourceInvoiceId}' AS invoice_id,
+    ft.data #>> '{sourceInvoiceLineId}' AS invoice_line_id,
     ft.transaction_type AS transaction_type,
     ii.data #>> '{invoiceDate}' AS invoice_date,
     ii.data #>> '{paymentDate}' AS invoice_payment_date,
     ii.data #>> '{exchangeRate}' AS invoice_exchange_rate,
     il.data #>> '{total}' AS invoice_line_total,
     ii.data #>> '{currency}' AS invoice_currency,
-    (il.data #>> '{poLineId}')::uuid AS po_line_id,
-    (ii.data #>> '{vendorId}')::uuid AS invoice_vendor_id,
+    il.data #>> '{poLineId}' AS po_line_id,
+    ii.data #>> '{vendorId}' AS invoice_vendor_id,
     oo.name AS invoice_vendor_name
 FROM
     finance_transactions AS ft

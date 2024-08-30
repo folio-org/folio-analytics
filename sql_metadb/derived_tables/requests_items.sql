@@ -1,4 +1,5 @@
 --metadb:table requests_items
+--metadb:require folio_inventory.item__t.enumeration text
 
 -- Create a derived table that contains all items from requests and adds
 -- item and patron-related information
@@ -12,13 +13,13 @@ SELECT
     crt.request_date::DATE as request_date,
     crt.request_type,
     crt.status AS request_status,
-    crt.pickup_service_point_id,   
+    crt.pickup_service_point_id,
     psp.name AS pickup_service_point_name,
     psp.discovery_display_name AS pickup_service_point_disc_disp_name,
     jsonb_extract_path_text(iij.jsonb, 'inTransitDestinationServicePointId')::uuid AS in_transit_dest_serv_point_id,
     isp.name AS in_transit_dest_serv_point_name,
     isp.discovery_display_name AS in_transit_dest_serv_point_disc_disp_name,
-    crt.requester_id, 
+    crt.requester_id,
     jsonb_extract_path_text(crj.jsonb, 'fulfilmentPreference') AS fulfillment_preference,
     uut.patron_group AS patron_group_id,
     ugt.desc AS patron_group_name,
@@ -65,4 +66,3 @@ FROM
     --LEFT JOIN folio_inventory.loan_type__t AS itlt ON iit.temporary_loan_type_id = itlt.id
     LEFT JOIN folio_inventory.loan_type__t AS itlt ON jsonb_extract_path_text(iij.jsonb, 'temporaryLoanTypeId')::uuid = itlt.id
     LEFT JOIN folio_inventory.material_type__t AS imt ON iit.material_type_id = imt.id;
-

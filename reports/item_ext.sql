@@ -1,31 +1,60 @@
---metadb:table item_ext
---metadb:require folio_inventory.item__t.enumeration text
+--metadb:function item_ext
 
-DROP TABLE IF EXISTS item_ext;
+DROP FUNCTION IF EXISTS item_ext;
 
-/*
- * Create an extended items table that includes the name for in
- * transit destination service point, item damaged status, material
- * type call number type, permanent loan type, permanent location,
- * temporary loan type, temporary location, created_date,
- * description_of_pieces, status_date, status_name, holdings_id.
- * There is a separate table for effective call number.
- * However, it is also included here.
- *
- * Item notes, tags, and electronic access are in separate derived
- * tables.
- *
- * Tables inlcuded:
- *    folio_inventory.item
- *    folio_inventory.item__t
- *    folio_inventory.service_point__t
- *    folio_inventory.material_type__t
- *    folio_inventory.loan_type__t
- *    folio_inventory.location__t
- *    folio_inventory.item_damaged_status__t
- *    folio_inventory.call_number_type__t
- */
-CREATE TABLE item_ext AS
+-- Create an extended items table that includes the name for in transit
+-- destination service point, item damaged status, material type call
+-- number type, permanent loan type, permanent location, temporary loan
+-- type, temporary location, created_date, description_of_pieces,
+-- status_date, status_name, holdings_id.  There is a separate table for
+-- effective call number.  However, it is also included here.
+
+CREATE FUNCTION item_ext()
+RETURNS TABLE(
+    item_id uuid,
+    item_hrid text,
+    accession_number text,
+    barcode text,
+    chronology text,
+    copy_number text,
+    enumeration text,
+    volume text,
+    in_transit_destination_service_point_id uuid,
+    in_transit_destination_service_point_name text,
+    identifier text,
+    call_number text,
+    call_number_type_id uuid,
+    call_number_type_name text,
+    effective_call_number_prefix text,
+    effective_call_number text,
+    effective_call_number_suffix text,
+    effective_call_number_type_id uuid,
+    effective_call_number_type_name text,
+    damaged_status_id uuid,
+    damaged_status_name text,
+    material_type_id uuid,
+    material_type_name text,
+    number_of_pieces text,
+    number_of_missing_pieces text,
+    permanent_loan_type_id uuid,
+    permanent_loan_type_name text,
+    temporary_loan_type_id uuid,
+    temporary_loan_type_name text,
+    permanent_location_id uuid,
+    permanent_location_name text,
+    temporary_location_id uuid,
+    temporary_location_name text,
+    effective_location_id uuid,
+    effective_location_name text,
+    description_of_pieces text,
+    status_date text,
+    status_name text,
+    holdings_record_id uuid,
+    discovery_suppress boolean,
+    created_date timestamp,
+    updated_by_user_id uuid,
+    updated_date text)
+AS $$
 WITH items AS (
     SELECT
         i.id,
@@ -120,4 +149,8 @@ FROM
     LEFT JOIN folio_inventory.location__t AS item_effective_location ON items.effective_location_id = item_effective_location.id
     LEFT JOIN folio_inventory.item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
     LEFT JOIN folio_inventory.call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
-    LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id;
+    LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id
+$$
+LANGUAGE SQL
+STABLE
+PARALLEL SAFE;
