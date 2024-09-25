@@ -11,14 +11,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_audit.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_authtoken.job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_calendar.actual_opening_hours__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -40,10 +32,6 @@ CREATE DATA MAPPING FOR json
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_calendar.regular_hours__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_calendar.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -91,10 +79,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_circulation.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_circulation.scheduled_notice__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -107,203 +91,11 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_configuration.audit_config_data__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_configuration.config_data__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_configuration.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_copycat.profile__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_copycat.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_courses.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.error_logs__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.file_definitions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_executions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.mapping_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_command__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.default_file_extensions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.file_extensions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.upload_definitions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.action_to_mapping_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_to_action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.job_to_match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.mapping_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.marc_field_protection_settings__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.match_to_action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.match_to_match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.profile_snapshots__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_data.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.action_to_mapping_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.job_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.job_to_action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.job_to_match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.mapping_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.marc_field_protection_settings__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.match_to_action_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.match_to_match_profiles__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_di.profile_snapshots__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_email.email_statistics__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_email.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_email.smtp_configuration__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_erm.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_erm.usage_data_providers__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_erm.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_eusage.job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_event.event_configurations__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_event.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -344,10 +136,6 @@ CREATE DATA MAPPING FOR json
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_feesfines.refunds__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_feesfines.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -415,10 +203,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_finance.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_finance.temporary_invoice_transactions__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -432,10 +216,6 @@ CREATE DATA MAPPING FOR json
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_inventory.alternative_title_type__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_inventory.async_migration_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -571,14 +351,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_inventory.reindex_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_inventory.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_inventory.service_point__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -615,10 +387,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_invoice.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_invoice.voucher_lines__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -636,14 +404,6 @@ CREATE DATA MAPPING FOR json
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_notify.notify_data__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_notify.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_oai.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -675,10 +435,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_orders.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_orders.titles__ COLUMN jsonb PATH '$'
     TO 't';
 
@@ -707,127 +463,11 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_organizations.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.fee_fine_balance_changed_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.item_aged_to_lost_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.item_checked_in_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.item_checked_out_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.item_claimed_returned_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.item_declared_lost_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.loan_closed_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.loan_due_date_changed_event__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.patron_block_conditions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.patron_block_limits__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.synchronization_jobs__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_patron.user_summary__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_permissions.permissions__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_permissions.permissions_users__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_permissions.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_settings.job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_settings.settings__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.job_execution__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.job_execution_progress__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.job_executions__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.job_execution_source_chunks__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.mapping_params_snapshots__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.mapping_rules__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.mapping_rules_snapshots__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_source.source_records_state__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_template.rmb_job__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_template.template__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
@@ -844,10 +484,6 @@ CREATE DATA MAPPING FOR json
 
 CREATE DATA MAPPING FOR json
     FROM TABLE folio_users.proxyfor__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
-    FROM TABLE folio_users.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
 CREATE DATA MAPPING FOR json
