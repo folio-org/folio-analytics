@@ -283,10 +283,6 @@ CREATE DATA MAPPING FOR json
     TO 't';
 
 CREATE DATA MAPPING FOR json
-    FROM TABLE folio_entities.instance_authority_linking_rule__ COLUMN jsonb PATH '$'
-    TO 't';
-
-CREATE DATA MAPPING FOR json
     FROM TABLE folio_erm.rmb_job__ COLUMN jsonb PATH '$'
     TO 't';
 
