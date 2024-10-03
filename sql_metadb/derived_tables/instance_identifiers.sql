@@ -17,3 +17,4 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(inst.jsonb, 'identifiers')) WITH ORDINALITY AS ident (jsonb)
     LEFT JOIN folio_inventory.identifier_type__t AS idtype ON jsonb_extract_path_text(ident.jsonb, 'identifierTypeId')::uuid = idtype.id;
 
+CREATE INDEX ON instance_identifiers (identifier);
