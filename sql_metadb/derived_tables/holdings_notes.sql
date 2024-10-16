@@ -3,34 +3,21 @@
 DROP TABLE IF EXISTS holdings_notes;
 
 CREATE TABLE holdings_notes AS
-WITH notes AS (
-    SELECT 
-        h.instanceid AS instance_id,
-        h.id AS holding_id,
-        jsonb_extract_path_text(h.jsonb, 'hrid') AS holding_hrid,
-        jsonb_extract_path_text(notes.jsonb, 'note') AS note,
-        jsonb_extract_path_text(notes.jsonb, 'holdingsNoteTypeId')::uuid AS note_type_id,
-        notes.ordinality AS note_ordinality
-    FROM 
-        folio_inventory.holdings_record AS h
-        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(h.jsonb, 'notes')) WITH ORDINALITY AS notes (jsonb)
-)
-SELECT
-    n.instance_id,
-    jsonb_extract_path_text(i.jsonb, 'hrid') AS instance_hrid,   
-    n.holding_id,
-    n.holding_hrid,
-    n.note,
-    hntt.name AS note_type_name, 
-    n.note_type_id,
-    n.note_ordinality,
-    hnt.creation_date AS note_date_created,
-    hnt.created_by AS note_created_by_user_id,
-    jsonb_extract_path_text(hnt.jsonb, 'updatedDate') AS note_date_updated,
-    jsonb_extract_path_text(hnt.jsonb, 'updatedByUserId') AS note_updated_by_user_id
-FROM
-    notes AS n
-    LEFT JOIN folio_inventory.instance AS i ON n.instance_id = i.id
-    LEFT JOIN folio_inventory.holdings_note_type AS hnt ON n.note_type_id = hnt.id
-    LEFT JOIN folio_inventory.holdings_note_type__t AS hntt ON n.note_type_id = hntt.id;
-
+SELECT 
+    h.instanceid AS instance_id,
+    instance__t.hrid as instance_hrid,
+    h.id AS holding_id,
+    jsonb_extract_path_text (h.jsonb, 'hrid') AS holding_hrid,
+    jsonb_extract_path_text (notes.jsonb, 'note') AS note,
+    holdings_note_type__t.name as note_type_name,
+    jsonb_extract_path_text(notes.jsonb, 'holdingsNoteTypeId')::uuid AS note_type_id,
+    notes.ordinality AS note_ordinality,
+    jsonb_extract_path_text (h.jsonb,'metadata','createdDate')::timestamptz as note_date_created,
+    jsonb_extract_path_text (h.jsonb,'metadata','createdByUserId') as note_created_by_user_id,
+    jsonb_extract_path_text (h.jsonb,'metadata','updatedDate')::timestamptz as note_date_updated,
+    jsonb_extract_path_text (h.jsonb,'metadata','updatedByUserId') as note_updated_by_user_id
+FROM folio_inventory.holdings_record AS h
+        CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path (h.jsonb, 'notes')) WITH ORDINALITY AS notes (jsonb)
+    LEFT JOIN folio_inventory.instance__t on h.instanceid = instance__t.id
+    LEFT JOIN folio_inventory.holdings_note_type__t ON jsonb_extract_path_text(notes.jsonb, 'holdingsNoteTypeId')::uuid = holdings_note_type__t.id
+;
