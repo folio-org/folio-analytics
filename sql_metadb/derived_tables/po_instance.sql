@@ -25,7 +25,7 @@ SELECT DISTINCT
     jsonb_extract_path_text(locations.jsonb, 'holdingId')::uuid AS pol_holding_id,
     jsonb_extract_path_text(locations.jsonb, 'locationId')::uuid AS pol_location_id,     
     COALESCE(location__t.name, location__t2.name, 'deleted_holding') AS pol_location_name,
-    CASE WHEN (location__t.name IS NULL AND location__t2.name IS NULL) THEN 'no sourse'
+    CASE WHEN (location__t.name IS NULL AND location__t2.name IS NULL) THEN 'no source'
          WHEN (location__t.name IS NULL AND location__t2.name IS NOT NULL) THEN 'pol_holding'
          WHEN (location__t.name IS NOT NULL AND location__t2.name IS NULL) THEN 'pol_location'
          ELSE 'x'
