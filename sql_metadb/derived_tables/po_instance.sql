@@ -40,25 +40,24 @@ SELECT DISTINCT
     location__t2.name AS holdings_location_name
     FROM folio_orders.po_line 
          CROSS JOIN LATERAL jsonb_array_elements((po_line.jsonb #> '{locations}')::jsonb) AS locations (data)
-    LEFT JOIN folio_orders.po_line__t  ON po_line.id = po_line__t.id
-    LEFT JOIN folio_inventory.instance__t ON (jsonb_extract_path_text(po_line.jsonb,'instanceId'))::UUID = instance__t.id
-    LEFT JOIN folio_inventory.location__t ON (jsonb_extract_path_text(locations.jsonb,'locationId'))::uuid = location__t.id
-    LEFT JOIN folio_orders.purchase_order__t ON po_line.purchaseorderid = purchase_order__t.id 
-    LEFT JOIN folio_inventory.holdings_record__t ON jsonb_extract_path_text(locations.jsonb, 'holdingId')::uuid = holdings_record__t.id
+    LEFT JOIN folio_orders.po_line__t  ON po_line.id = po_line__t.id::uuid
+    LEFT JOIN folio_inventory.instance__t ON (jsonb_extract_path_text(po_line.jsonb,'instanceId'))::UUID = instance__t.id::uuid
+    LEFT JOIN folio_inventory.location__t ON (jsonb_extract_path_text(locations.jsonb,'locationId'))::uuid = location__t.id::uuid
+    LEFT JOIN folio_orders.purchase_order__t ON po_line.purchaseorderid = purchase_order__t.id::uuid
+    LEFT JOIN folio_inventory.holdings_record__t ON jsonb_extract_path_text(locations.jsonb, 'holdingId')::uuid = holdings_record__t.id::uuid
     LEFT JOIN folio_inventory.location__t AS location__t2 ON holdings_record__t.permanent_location_id = location__t2.id 
     LEFT JOIN folio_organizations.organizations__t ON purchase_order__t.vendor = organizations__t.id
-    LEFT JOIN folio_orders.purchase_order ON purchase_order__t.id = purchase_order.id
-    LEFT JOIN folio_configuration.config_data__t AS cdt ON jsonb_extract_path_text(purchase_order.jsonb,'billTo')::uuid = cdt.id
-    LEFT JOIN folio_configuration.config_data__t AS cdt2 ON jsonb_extract_path_text(purchase_order.jsonb,'shipTo')::uuid = cdt2.id
-    LEFT JOIN folio_users.users__t ON jsonb_extract_path_text(purchase_order.jsonb,'metadata','createdByUserId')::uuid = users__t.id
-    LEFT JOIN folio_users.users__t AS users__t2 ON jsonb_extract_path_text(purchase_order.jsonb,'metadata','updatedByUserId')::uuid = users__t2.id
-    ;
+    LEFT JOIN folio_orders.purchase_order ON purchase_order__t.id::uuid = purchase_order.id
+    LEFT JOIN folio_configuration.config_data__t AS cdt ON jsonb_extract_path_text(purchase_order.jsonb,'billTo')::uuid = cdt.id::uuid
+    LEFT JOIN folio_configuration.config_data__t AS cdt2 ON jsonb_extract_path_text(purchase_order.jsonb,'shipTo')::uuid = cdt2.id::uuid
+    LEFT JOIN folio_users.users__t ON jsonb_extract_path_text(purchase_order.jsonb,'metadata','createdByUserId')::uuid = users__t.id::uuid
+    LEFT JOIN folio_users.users__t AS users__t2 ON jsonb_extract_path_text(purchase_order.jsonb,'metadata','updatedByUserId')::uuid = users__t2.id::uuid;
     
 COMMENT ON COLUMN po_instance.manual_po IS 'If true, order cannot be sent automatically, e.g. via EDI';
 
 COMMENT ON COLUMN po_instance.rush IS 'Whether or not this is a rush order';
 
-COMMENT ON COLUMN purchase_order__t.order_type IS 'Type of purchase order';
+COMMENT ON COLUMN po_instance.order_type IS 'Type of purchase order';
 
 COMMENT ON COLUMN po_instance.requester IS 'Who requested this material and needs to be notified on arrival';
 
@@ -78,7 +77,7 @@ COMMENT ON COLUMN po_instance.created_by_username IS 'Username of the user who c
 
 COMMENT ON COLUMN po_instance.po_workflow_status IS 'Workflow status of purchase order';
 
-COMMENT ON COLUMN po_instance.status_approved IS 'Wether purchase order is approved or not';
+COMMENT ON COLUMN po_instance.status_approved IS 'Whether purchase order is approved or not';
 
 COMMENT ON COLUMN po_instance.created_date IS 'Date when the purchase order was created';
 
@@ -96,7 +95,7 @@ COMMENT ON COLUMN po_instance.pol_location_id IS 'UUID of the location created f
 
 COMMENT ON COLUMN po_instance.pol_location_name IS 'Name of the purchase order line location';
 
-COMMENT ON COLUMN po_instance.pol_location_source IS 'Wether location is a holdings location or permanent location of the purchase order line';
+COMMENT ON COLUMN po_instance.pol_location_source IS 'Whether location is a holdings location or permanent location of the purchase order line';
 
 COMMENT ON COLUMN po_instance.title IS 'Title of the material';
 
@@ -104,12 +103,13 @@ COMMENT ON COLUMN po_instance.publication_date IS 'Date (year) of the material''
 
 COMMENT ON COLUMN po_instance.publisher IS 'Publisher of the material';
 
-COMMENT ON COLUMN payment_status IS 'The payment status of the order';
+COMMENT ON COLUMN po_instance.payment_status IS 'The payment status of the order';
 
-COMMENT ON COLUMN receipt_status IS 'Teh recete status of the order';
+COMMENT ON COLUMN po_instance.receipt_status IS 'The recete status of the order';
 
-COMMENT ON COLUMN po_updated_by IS 'Name of the user who updated the order';
+COMMENT ON COLUMN po_instance.po_updated_by IS 'Name of the user who updated the order';
 
-COMMENT ON COLUMN po_updated_date IS 'Date when the order was last updated';
+COMMENT ON COLUMN po_instance.po_updated_date IS 'Date when the order was last updated';
 
-COMMENT ON COLUMN holdings_location_name IS 'Location name of the holding on purchase order line';
+COMMENT ON COLUMN po_instance.holdings_location_name IS 'Location name of the holding on purchase order line';
+
