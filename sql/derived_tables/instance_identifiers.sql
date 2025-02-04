@@ -12,3 +12,8 @@ FROM
     CROSS JOIN jsonb_array_elements((data #> '{identifiers}')::jsonb) AS identifiers (data)
     LEFT JOIN inventory_identifier_types
         ON (identifiers.data #>> '{identifierTypeId}')::uuid = inventory_identifier_types.id::uuid;
+
+CREATE INDEX ON instance_identifiers (instance_id);
+
+CREATE INDEX ON instance_identifiers (instance_hrid);
+
