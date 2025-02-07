@@ -38,7 +38,7 @@ SELECT
     CASE WHEN ff.code IS NULL THEN tf.code ELSE ff.code END AS effective_fund_code,
     fb.id AS transaction_from_budget_id,
     fb.name AS transaction_from_budget_name,
-    ft.data #>> '{sourceInvoiceId}' AS invoice_id,
+    (ft.data #>> '{sourceInvoiceId}')::uuid AS invoice_id,
     ft.data #>> '{sourceInvoiceLineId}' AS invoice_line_id,
     ft.transaction_type AS transaction_type,
     ii.data #>> '{invoiceDate}' AS invoice_date,
