@@ -89,7 +89,7 @@ COMMENT ON COLUMN holdings_ext.retention_policy IS 'Records information regardin
 
 COMMENT ON COLUMN holdings_ext.shelving_title IS 'Indicates the shelving form of title';
 
-COMMENT ON COLUMN holdings_ext.discovery_supress IS 'Records the fact that the record should not be displayed in a discovery system';
+COMMENT ON COLUMN holdings_ext.discovery_suppress IS 'Records the fact that the record should not be displayed in a discovery system';
 
 COMMENT ON COLUMN holdings_ext.created_date IS 'Date and time when the record was created';
 
