@@ -56,7 +56,7 @@ FROM
     LEFT JOIN invoice_lines AS invl ON (invl.data #>> '{invoiceId}')::uuid = inv.id::uuid
     LEFT JOIN invoice_adjustments_in_addition_to AS invadj ON invadj.invoice_id = inv.id
     LEFT JOIN invl_total AS invltotal ON inv.id = invltotal.inv_id
-    LEFT JOIN finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id AND fintrainv.invoice_line_id IS NULL
+    LEFT JOIN finance_transaction_invoices AS fintrainv ON fintrainv.invoice_id = inv.id::text AND fintrainv.invoice_line_id IS NULL
     LEFT JOIN finance_transaction_invoices AS fintrainvl ON fintrainvl.invoice_line_id::text = invl.id::text
 GROUP BY
     inv.id,
