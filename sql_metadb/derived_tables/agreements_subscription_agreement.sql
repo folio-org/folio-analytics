@@ -31,10 +31,10 @@ SELECT
     custom_properties_id AS sa_custom_properties_id
 FROM
     folio_agreements.subscription_agreement AS sa
-    LEFT JOIN folio_agreements.refdata_value AS sarp ON sa.sa_renewal_priority = sarp.rdv_id
-    LEFT JOIN folio_agreements.refdata_value AS saip ON sa.sa_is_perpetual = saip.rdv_id
-    LEFT JOIN folio_agreements.refdata_value AS saas ON sa.sa_agreement_status = saas.rdv_id
-    LEFT JOIN folio_agreements.refdata_value AS sarfc ON sa.sa_reason_for_closure = sarfc.rdv_id;
+    LEFT JOIN folio_agreements.refdata_value AS sarp ON sa.sa_renewal_priority::text = sarp.rdv_id::text
+    LEFT JOIN folio_agreements.refdata_value AS saip ON sa.sa_is_perpetual::text = saip.rdv_id::text
+    LEFT JOIN folio_agreements.refdata_value AS saas ON sa.sa_agreement_status::text = saas.rdv_id::text
+    LEFT JOIN folio_agreements.refdata_value AS sarfc ON sa.sa_reason_for_closure::text = sarfc.rdv_id::text;
 
 COMMENT ON COLUMN agreements_subscription_agreement.sa_id IS 'UUID of Agreement';
 
