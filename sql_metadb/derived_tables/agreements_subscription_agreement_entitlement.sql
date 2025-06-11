@@ -35,10 +35,10 @@ SELECT
     ol.pol_orders_fk::uuid AS po_line_id
 FROM
     folio_agreements.subscription_agreement AS sa
-    LEFT JOIN folio_agreements.entitlement AS ent ON sa.sa_id = ent.ent_owner_fk
-    LEFT JOIN folio_agreements.order_line AS ol ON ent.ent_id = ol.pol_owner_fk
-   	LEFT JOIN folio_agreements.refdata_value AS sat ON sa_agreement_type = sat.rdv_id
-    LEFT JOIN folio_agreements.refdata_value AS sas ON sa_agreement_status = sas.rdv_id;
+    LEFT JOIN folio_agreements.entitlement AS ent ON sa.sa_id::text = ent.ent_owner_fk::text
+    LEFT JOIN folio_agreements.order_line AS ol ON ent.ent_id::text = ol.pol_owner_fk::text
+        LEFT JOIN folio_agreements.refdata_value AS sat ON sa_agreement_type::text = sat.rdv_id::text
+    LEFT JOIN folio_agreements.refdata_value AS sas ON sa_agreement_status::text = sas.rdv_id::text;
 
 COMMENT ON COLUMN agreements_subscription_agreement_entitlement.subscription_agreement_id IS 'UUID of Agreement';
 
