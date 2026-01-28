@@ -3,6 +3,7 @@
 --metadb:require folio_inventory.ill_policy__t.name text
 --metadb:require folio_inventory.holdings_record__t.call_number_prefix text
 --metadb:require folio_inventory.holdings_record__t.call_number_suffix text
+--metadb:require folio_inventory.holdings_record__t.retention_policy text
 
 -- Create an extended holdings table which includes the name for call
 -- number type, holdings type, interlibrary loan policy, permanent
