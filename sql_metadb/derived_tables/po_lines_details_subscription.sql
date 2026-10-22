@@ -20,5 +20,3 @@ COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_from IS 'the st
 COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_to IS 'the end date of the subscription';
 
 COMMENT ON COLUMN po_lines_details_subscription.pol_subscription_interval IS 'the subscription interval in days';
-
-

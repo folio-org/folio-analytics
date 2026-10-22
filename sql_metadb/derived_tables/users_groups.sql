@@ -97,4 +97,3 @@ COMMENT ON COLUMN users_groups.user_type IS 'The class of the user, like staff o
 COMMENT ON COLUMN users_groups.updated_date IS 'Date and time when the user record was last updated';
 
 COMMENT ON COLUMN users_groups.username IS 'A unique name belonging to a user. Typically used for login';
-

@@ -22,5 +22,3 @@ CREATE TABLE locations_service_points AS
         CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(il.jsonb, 'servicePointIds')) AS service_points (data)
         LEFT JOIN folio_inventory.service_point__t AS isp ON (service_points.data #>> '{}')::uuid = isp.id 
         LEFT JOIN folio_derived.locations_libraries AS ll ON il.id=ll.location_id;
-
-

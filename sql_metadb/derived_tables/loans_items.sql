@@ -98,4 +98,24 @@ FROM
     LEFT JOIN folio_inventory.loan_type__t AS iltp ON iit.permanent_loan_type_id::uuid = iltp.id
     LEFT JOIN folio_inventory.loan_type__t AS iltt ON jsonb_extract_path_text(iij.jsonb, 'temporaryLoanTypeId')::uuid = iltt.id;
 
+CREATE INDEX ON loans_items (loan_id);
 
+CREATE INDEX ON loans_items (item_id);
+
+CREATE INDEX ON loans_items (loan_date);
+
+CREATE INDEX ON loans_items (item_effective_location_id_at_check_out);
+
+CREATE INDEX ON loans_items (current_item_effective_location_name);
+
+CREATE INDEX ON loans_items (current_item_temporary_location_name);
+
+CREATE INDEX ON loans_items (current_item_permanent_location_name);
+
+CREATE INDEX ON loans_items (barcode);
+
+CREATE INDEX ON loans_items (holdings_record_id);
+
+CREATE INDEX ON loans_items (hrid);
+
+CREATE INDEX ON loans_items (item_level_call_number);

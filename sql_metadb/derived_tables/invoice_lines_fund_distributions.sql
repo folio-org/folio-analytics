@@ -57,4 +57,3 @@ COMMENT ON COLUMN invoice_lines_fund_distributions.fund_distribution_type IS 'Pe
 COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_sub_total IS 'Invoice line amount before adjustments are applied';
 
 COMMENT ON COLUMN invoice_lines_fund_distributions.invoice_line_total IS 'Invoice line total amount which is sum of subTotal and adjustmentsTotal. This amount is always calculated by system.';
-

@@ -37,7 +37,15 @@ FROM
     LEFT JOIN folio_inventory.instance_type__t ON instance_type__t.id = instance__t.instance_type_id
     LEFT JOIN folio_inventory.mode_of_issuance__t ON mode_of_issuance__t.id = instance__t.mode_of_issuance_id
     LEFT JOIN folio_inventory.instance_status__t ON instance_status__t.id = instance__t.status_id;
-    
+
+CREATE INDEX ON instance_ext (instance_id);
+
+CREATE INDEX ON instance_ext (instance_hrid);
+
+CREATE INDEX ON instance_ext (discovery_suppress);
+
+CREATE INDEX ON instance_ext (status_name);
+
 COMMENT ON COLUMN instance_ext.instance_id IS 'The unique ID of the instance record, a UUID.';
 
 COMMENT ON COLUMN instance_ext.instance_hrid IS 'The human readable ID, also called eye readable ID. A system-assigned sequential ID which maps to the Instance ID.';

@@ -52,3 +52,15 @@ FROM
     LEFT JOIN folio_inventory.material_type__t AS mattype ON i.material_type_id = mattype.id
     LEFT JOIN folio_inventory.holdings_type__t AS holdtype ON holdings.holdings_type_id = holdtype.id
     LEFT JOIN folio_inventory.call_number_type__t AS calltype ON holdings.call_number_type_id = calltype.id;
+
+CREATE INDEX ON items_holdings_instances (item_id);
+
+CREATE INDEX ON items_holdings_instances (barcode);
+
+CREATE INDEX ON items_holdings_instances (item_hrid);
+
+CREATE INDEX ON items_holdings_instances (item_level_call_number);
+
+CREATE INDEX ON items_holdings_instances (holdings_id);
+
+CREATE INDEX ON items_holdings_instances (instance_id);

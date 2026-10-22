@@ -18,4 +18,3 @@ FROM
     folio_inventory.instance AS i
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'notes')) WITH ORDINALITY AS n (jsonb)
     LEFT JOIN folio_inventory.instance_note_type__t AS notetype ON jsonb_extract_path_text(n.jsonb, 'instanceNoteTypeId')::uuid = notetype.id;
-

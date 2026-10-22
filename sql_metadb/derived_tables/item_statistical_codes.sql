@@ -28,4 +28,3 @@ FROM
     items_statistical_codes
     LEFT JOIN folio_inventory.statistical_code__t AS sc ON items_statistical_codes.statistical_code_id::uuid = sc.id
     LEFT JOIN folio_inventory.statistical_code_type__t AS sct ON sc.statistical_code_type_id::uuid = sct.id;
-

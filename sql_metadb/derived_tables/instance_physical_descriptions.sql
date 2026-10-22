@@ -14,4 +14,3 @@ SELECT
 FROM
     folio_inventory.instance AS i
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'physicalDescriptions')) WITH ORDINALITY AS physdesc (jsonb);
-

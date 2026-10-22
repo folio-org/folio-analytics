@@ -45,8 +45,7 @@ FROM
     LEFT JOIN folio_licenses.custom_property_text ON custom_property_text.id = custom_property.id
     LEFT JOIN folio_licenses.custom_property_integer ON custom_property_integer.id = custom_property.id
     LEFT JOIN folio_licenses.custom_property_decimal ON custom_property_decimal.id = custom_property.id 
-    LEFT JOIN folio_licenses.custom_property_local_date ON custom_property_local_date.id = custom_property.id
-;
+    LEFT JOIN folio_licenses.custom_property_local_date ON custom_property_local_date.id = custom_property.id;
 
 COMMENT ON COLUMN licenses_custom_property.license_id IS 'The UUID of the license';
 

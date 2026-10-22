@@ -26,4 +26,3 @@ COMMENT ON COLUMN po_ongoing.po_ongoing_manual_renewal IS 'Whether or not this i
 COMMENT ON COLUMN po_ongoing.po_ongoing_renewal_date IS 'The date this Ongoing PO''s order lines were renewed';
 
 COMMENT ON COLUMN po_ongoing.po_ongoing_review_period IS 'Time prior to renewal where changes can be made to subscription';
-

@@ -30,5 +30,3 @@ COMMENT ON COLUMN po_prod_ids.pol_number IS 'A human readable ID assigned to thi
 COMMENT ON COLUMN po_prod_ids.product_id IS 'The actual product identifier';
 
 COMMENT ON COLUMN po_prod_ids.product_id_type IS 'The type of product identifier';
-
-

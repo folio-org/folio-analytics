@@ -88,4 +88,3 @@ COMMENT ON COLUMN invoice_adjustments_ext.transaction_invoice_line_value IS 'Thi
 COMMENT ON COLUMN invoice_adjustments_ext.transaction_invoice_adj_value IS 'This is inv_adjust_total_value in system currency';
 
 COMMENT ON COLUMN invoice_adjustments_ext.transactions_inv_adj_total IS 'This is the adjustment at the invoice line level, taking into consideration the total ratio per invoice line. IN SYSTEM CURRENCY';
-

@@ -51,5 +51,3 @@ COMMENT ON COLUMN invoice_lines_adjustments.adjustment_type IS 'Adjustment type'
 COMMENT ON COLUMN invoice_lines_adjustments.adjustment_value IS 'Adjustment value';
 
 COMMENT ON COLUMN invoice_lines_adjustments.adjustment_adjustments_total IS 'Total amount which is sum of all invoice line adjustments and all non-prorated invoice level adjustments. This amount is always calculated by system.';
-
-

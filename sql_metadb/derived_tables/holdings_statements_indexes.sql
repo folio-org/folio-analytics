@@ -32,5 +32,3 @@ SELECT
 FROM
     holdings AS hs
     LEFT JOIN folio_inventory.instance AS i ON hs.instance_id = i.id;
-
-

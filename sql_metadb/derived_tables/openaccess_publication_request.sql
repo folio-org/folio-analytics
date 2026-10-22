@@ -81,8 +81,7 @@ FROM
     LEFT JOIN folio_oa.party AS party_corresponding_author ON party_corresponding_author.p_id :: UUID = pr_corresponding_author.rp_party_fk :: UUID
     LEFT JOIN folio_oa.party AS party_request_contact ON party_request_contact.p_id :: UUID = pr_request_contact.rp_party_fk :: UUID 
 ORDER BY 
-    publication_request.pr_request_number        
-;
+    publication_request.pr_request_number;
 
 COMMENT ON COLUMN openaccess_publication_request.pr_id IS 'UUID of the publication request';
 

@@ -38,4 +38,3 @@ COMMENT ON COLUMN po_lines_cost.po_line_discount IS 'Percentage (0 to 100) or am
 COMMENT ON COLUMN po_lines_cost.po_line_discount_type IS 'Percentage or amount discount type';
 
 COMMENT ON COLUMN po_lines_cost.po_line_estimated_price IS 'The calculated total estimated price for this purchase order line: list price time quantities minus discount amount plus additional cost';
-

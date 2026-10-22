@@ -40,4 +40,3 @@ COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_role_label IS 'P
 COMMENT ON COLUMN agreements_subscription_agreement_org_ext.sao_note IS 'Notes attached';
 
 COMMENT ON COLUMN agreements_subscription_agreement_org_ext.org_orgs_uuid IS 'UUID of organization attached to the agreement';
-

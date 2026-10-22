@@ -26,4 +26,3 @@ SELECT
 FROM
     folio_inventory.item AS it
     LEFT JOIN loan_count AS lc ON it.id::uuid = lc.item_id;
-

@@ -16,4 +16,3 @@ FROM
     folio_inventory.item
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'administrativeNotes')) WITH ORDINALITY AS admin_notes (jsonb)
     LEFT JOIN folio_inventory.item__t AS i ON item.id = i.id;
-

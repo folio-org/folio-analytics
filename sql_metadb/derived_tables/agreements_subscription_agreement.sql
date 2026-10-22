@@ -71,5 +71,3 @@ COMMENT ON COLUMN agreements_subscription_agreement.sa_reason_for_closure_value 
 COMMENT ON COLUMN agreements_subscription_agreement.sa_reason_for_closure_label IS 'Displayed name of reason for closure';
 
 COMMENT ON COLUMN agreements_subscription_agreement.sa_custom_properties_id IS 'ID used to link custom_properties';
-
-

@@ -121,3 +121,21 @@ FROM
     LEFT JOIN folio_inventory.item_damaged_status__t AS item_damaged_status ON items.item_damaged_status_id = item_damaged_status.id
     LEFT JOIN folio_inventory.call_number_type__t AS item_call_number_type ON items.item_level_call_number_type_id = item_call_number_type.id
     LEFT JOIN folio_inventory.call_number_type__t AS effective_call_number_type ON items.effective_call_number_type_id = effective_call_number_type.id;
+
+CREATE INDEX ON item_ext (item_id);
+
+CREATE INDEX ON item_ext (item_hrid);
+
+CREATE INDEX ON item_ext (barcode);
+
+CREATE INDEX ON item_ext (call_number);
+
+CREATE INDEX ON item_ext (effective_call_number_prefix);
+
+CREATE INDEX ON item_ext (effective_call_number_suffix);
+
+CREATE INDEX ON item_ext (effective_location_name);
+
+CREATE INDEX ON item_ext (permanent_location_name);
+
+CREATE INDEX ON item_ext (temporary_location_name);

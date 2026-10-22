@@ -48,6 +48,30 @@ CREATE TABLE holdings_ext AS
         LEFT JOIN folio_inventory.location__t AS holdings_permanent_location ON h__t.permanent_location_id::uuid = holdings_permanent_location.id
         LEFT JOIN folio_inventory.location__t AS holdings_temporary_location ON h__t.temporary_location_id::uuid = holdings_temporary_location.id;
 
+CREATE INDEX ON holdings_ext (holdings_id);
+
+CREATE INDEX ON holdings_ext (holdings_hrid);
+
+CREATE INDEX ON holdings_ext (call_number);
+
+CREATE INDEX ON holdings_ext (call_number_prefix);
+
+CREATE INDEX ON holdings_ext (call_number_suffix);
+
+CREATE INDEX ON holdings_ext (call_number_type_id);
+
+CREATE INDEX ON holdings_ext (type_id);
+
+CREATE INDEX ON holdings_ext (instance_id);
+
+CREATE INDEX ON holdings_ext (permanent_location_id);
+
+CREATE INDEX ON holdings_ext (permanent_location_name);
+
+CREATE INDEX ON holdings_ext (temporary_location_id);
+
+CREATE INDEX ON holdings_ext (temporary_location_name);
+
 COMMENT ON COLUMN holdings_ext.id IS 'The holdings ID';
 
 COMMENT ON COLUMN holdings_ext.holdings_hrid IS 'The holdings HRID';

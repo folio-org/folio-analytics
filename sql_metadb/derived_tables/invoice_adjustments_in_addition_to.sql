@@ -40,4 +40,3 @@ COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_relationToTotal 
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_type IS 'Adjustment type';
 
 COMMENT ON COLUMN invoice_adjustments_in_addition_to.adjustment_value IS 'Adjustment value';
-

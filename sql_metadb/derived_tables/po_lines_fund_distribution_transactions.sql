@@ -165,4 +165,3 @@ COMMENT ON COLUMN po_lines_fund_distribution_transactions.transaction_encumbranc
 COMMENT ON COLUMN po_lines_fund_distribution_transactions.transaction_encumbrance_order_type IS 'Taken from the purchase order';
 
 COMMENT ON COLUMN po_lines_fund_distribution_transactions.transaction_encumbrance_subscription IS 'Taken from the purchase Order,for fiscal year rollover';
-

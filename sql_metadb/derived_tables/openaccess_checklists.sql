@@ -29,8 +29,7 @@ FROM
     LEFT JOIN folio_oa.checklist_item_definition ON checklist_item_definition.clid_id :: UUID = checklist_item.cli_definition_fk :: UUID
     LEFT JOIN folio_oa.refdata_value AS cli_outcome ON cli_outcome.rdv_id :: UUID = checklist_item.cli_outcome_fk :: UUID
     LEFT JOIN folio_oa.refdata_value AS cli_status ON cli_status.rdv_id :: UUID = checklist_item.cli_status_fk :: UUID
-    LEFT JOIN folio_oa.publication_request ON publication_request.pr_id :: UUID = checklist_item.cli_parent_fk :: UUID
-;
+    LEFT JOIN folio_oa.publication_request ON publication_request.pr_id :: UUID = checklist_item.cli_parent_fk :: UUID;
 
 COMMENT ON COLUMN openaccess_checklists.cli_id IS 'UUID of the checklist item';
 

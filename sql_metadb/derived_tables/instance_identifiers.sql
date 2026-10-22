@@ -19,4 +19,10 @@ FROM
 
 CREATE INDEX ON instance_identifiers (instance_id);
 
+CREATE INDEX ON instance_identifiers (instance_hrid);
+
+CREATE INDEX ON instance_identifiers (identifier_type_id);
+
+CREATE INDEX ON instance_identifiers (identifier_type_name);
+
 CREATE INDEX ON instance_identifiers (identifier);

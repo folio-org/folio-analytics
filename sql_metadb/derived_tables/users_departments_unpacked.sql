@@ -38,4 +38,3 @@ COMMENT ON COLUMN users_departments_unpacked.department_ordinality IS 'The ordin
 COMMENT ON COLUMN users_departments_unpacked.department_name IS 'The display name of the department';
 
 COMMENT ON COLUMN users_departments_unpacked.department_code IS 'The (user-supplied) code for the department';
-

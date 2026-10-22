@@ -85,8 +85,7 @@ FROM
     LEFT JOIN folio_oa.refdata_value AS ti_type ON ti_type.rdv_id :: UUID = title_instance.ti_type_fk :: UUID
     LEFT JOIN folio_oa.refdata_value AS ti_subtype ON ti_subtype.rdv_id :: UUID = title_instance.ti_subtype_fk :: UUID
     LEFT JOIN folio_oa.refdata_value AS ti_publication_type ON ti_publication_type.rdv_id :: UUID = title_instance.ti_publication_type_fk :: UUID
-    LEFT JOIN folio_oa.refdata_value AS io_status ON io_status.rdv_id :: UUID = identifier_occurrence.io_status_fk :: UUID
-;
+    LEFT JOIN folio_oa.refdata_value AS io_status ON io_status.rdv_id :: UUID = identifier_occurrence.io_status_fk :: UUID;
 
 COMMENT ON COLUMN openaccess_works.w_id IS 'ID of the record in the table work';
 

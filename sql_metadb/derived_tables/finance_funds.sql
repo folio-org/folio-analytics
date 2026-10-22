@@ -76,4 +76,3 @@ COMMENT ON COLUMN finance_funds.ledger_name IS 'The name of the ledger';
 COMMENT ON COLUMN finance_funds.ledger_status IS 'The status of the ledger';
 
 COMMENT ON COLUMN finance_funds.ledger_description IS 'The description of the ledger';
-

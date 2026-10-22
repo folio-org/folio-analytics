@@ -13,5 +13,3 @@ SELECT
 FROM
     folio_inventory.instance AS instances
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(instances.jsonb, 'editions')) WITH ORDINALITY AS editions (jsonb);
-
-

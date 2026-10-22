@@ -24,4 +24,3 @@ COMMENT ON COLUMN holdings_administrative_notes.holdings_hrid IS 'the human read
 COMMENT ON COLUMN holdings_administrative_notes.administrative_note IS 'Administrative notes';
 
 COMMENT ON COLUMN holdings_administrative_notes.administrative_note_ordinality IS 'Administrative note ordinality';
-

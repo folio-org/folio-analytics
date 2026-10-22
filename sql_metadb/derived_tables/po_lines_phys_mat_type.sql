@@ -27,4 +27,3 @@ COMMENT ON COLUMN po_lines_phys_mat_type.pol_id IS 'UUID identifying this purcha
 COMMENT ON COLUMN po_lines_phys_mat_type.pol_phys_mat_type_id IS 'UUID of the material Type';
 
 COMMENT ON COLUMN po_lines_phys_mat_type.pol_mat_type_name IS 'Name of the material type';
-

@@ -178,6 +178,8 @@ FROM
     LEFT JOIN folio_agreements.refdata_value AS rpub ON res.res_publication_type_fk = rpub.rdv_id
     LEFT JOIN folio_agreements.refdata_category AS rpubc ON rpub.rdv_owner = rpubc.rdc_id;
 
+CREATE INDEX ON agreements_package_content_item (pci_id);
+
 COMMENT ON COLUMN agreements_package_content_item.pci_id IS 'ID of the package content item';
 
 COMMENT ON COLUMN agreements_package_content_item.pci_access_start IS 'The date on which a package content item was first accessible in a package';

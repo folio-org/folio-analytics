@@ -15,4 +15,3 @@ FROM
     folio_inventory.holdings_record__t AS h
     LEFT JOIN folio_inventory.holdings_record ON holdings_record.id = h.id
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(holdings_record.jsonb, 'tags', 'tagList')) WITH ORDINALITY AS tags (jsonb);
-    

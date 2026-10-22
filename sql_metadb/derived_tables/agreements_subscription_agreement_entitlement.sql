@@ -73,4 +73,3 @@ COMMENT ON COLUMN agreements_subscription_agreement_entitlement.entitlement_auth
 COMMENT ON COLUMN agreements_subscription_agreement_entitlement.entitlement_reference IS 'Where an entitlement gives access to a resource described in a source other than the mod_agreements internal knowledgebase, the ent_reference is the ID for the resource in the source identified by ent_authority ';
 
 COMMENT ON COLUMN agreements_subscription_agreement_entitlement.po_line_id IS 'UUID of purchase order line in Orders app';
-

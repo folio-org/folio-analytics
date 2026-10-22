@@ -44,4 +44,3 @@ COMMENT ON COLUMN licenses_license_ext.license_org IS 'Name of the organization'
 COMMENT ON COLUMN licenses_license_ext.license_org_role IS 'Reference data value for the role of the organization';
 
 COMMENT ON COLUMN licenses_license_ext.license_org_uuid IS 'UUID of organization';
-

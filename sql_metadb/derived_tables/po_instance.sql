@@ -112,4 +112,3 @@ COMMENT ON COLUMN po_instance.po_updated_by IS 'Name of the user who updated the
 COMMENT ON COLUMN po_instance.po_updated_date IS 'Date when the order was last updated';
 
 COMMENT ON COLUMN po_instance.holdings_location_name IS 'Location name of the holding on purchase order line';
-

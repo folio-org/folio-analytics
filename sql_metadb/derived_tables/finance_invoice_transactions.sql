@@ -173,8 +173,7 @@ FROM
     LEFT JOIN finance ON finance.fund_id = transactions.effective_fund_id
         AND finance.fiscal_year_id = transactions.fiscal_year_id
 WHERE 
-    invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NOT NULL    
-;
+    invoice_lines_fund_distribution.invoice_line_distribution_expense_class_id IS NOT NULL;
 
 COMMENT ON COLUMN finance_invoice_transactions.invoice_id IS 'UUID of the invoice';
 

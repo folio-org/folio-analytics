@@ -18,4 +18,3 @@ FROM
     folio_inventory.instance_relationship AS r
     LEFT JOIN folio_inventory.instance_relationship_type__t AS t
         ON t.id = r.instancerelationshiptypeid;
-

@@ -99,4 +99,3 @@ COMMENT ON COLUMN finance_transaction_purchase_order.pol_acquisition_method IS '
 COMMENT ON COLUMN finance_transaction_purchase_order.acquisition_method_name IS 'Name of the acquisition method for this purchase order line';
 
 COMMENT ON COLUMN finance_transaction_purchase_order.po_order_type IS 'the purchase order type';
-

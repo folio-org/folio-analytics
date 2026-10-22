@@ -18,4 +18,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(i.jsonb, 'classifications')) WITH ORDINALITY AS instclass (jsonb)
     LEFT JOIN folio_inventory.classification_type__t AS classtype
         ON jsonb_extract_path_text(instclass.jsonb, 'classificationTypeId')::uuid = classtype.id;
-

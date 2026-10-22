@@ -53,4 +53,3 @@ COMMENT ON COLUMN po_lines_locations.pol_location_id IS 'UUID of the (inventory)
 COMMENT ON COLUMN po_lines_locations.pol_location_name IS 'Name of the location associated with pol_location_id';
 
 COMMENT ON COLUMN po_lines_locations.pol_location_source IS 'Source of the location associated with pol_location_id';
-

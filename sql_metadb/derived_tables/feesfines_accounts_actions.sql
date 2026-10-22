@@ -41,4 +41,3 @@ FROM
     LEFT JOIN folio_users.users__t AS uu ON jsonb_extract_path_text(fa.jsonb, 'userId')::uuid = uu.id
     LEFT JOIN folio_users.groups__t AS ug ON uu.patron_group::uuid = ug.id
 ORDER BY fine_account_id, transaction_date;
-

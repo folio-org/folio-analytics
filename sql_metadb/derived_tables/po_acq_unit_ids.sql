@@ -26,4 +26,3 @@ COMMENT ON COLUMN po_acq_unit_ids.po_number IS 'human readable ID assigned to th
 COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_id IS 'UUID of this acquisitions unit record';
 
 COMMENT ON COLUMN po_acq_unit_ids.po_acquisition_unit_name IS 'Name for this acquisitions unit';
-

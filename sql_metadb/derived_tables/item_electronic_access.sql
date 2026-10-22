@@ -18,4 +18,3 @@ FROM
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'electronicAccess')) AS electronic_access(data)
     LEFT JOIN folio_inventory.item__t AS i__t ON i.id = i__t.id
     LEFT JOIN folio_inventory.electronic_access_relationship__t AS ear__t ON jsonb_extract_path_text(electronic_access.data, 'relationshipId')::uuid = ear__t.id;
-

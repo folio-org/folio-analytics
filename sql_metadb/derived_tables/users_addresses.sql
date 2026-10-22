@@ -23,5 +23,3 @@ FROM
     folio_users.users AS uu
     CROSS JOIN LATERAL jsonb_array_elements(jsonb_extract_path(jsonb, 'personal', 'addresses')) AS addresses (jsonb)
     LEFT JOIN folio_users.addresstype__t AS ua ON jsonb_extract_path_text(addresses.jsonb, 'addressTypeId')::uuid = ua.id;
-
-

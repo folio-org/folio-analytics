@@ -106,5 +106,3 @@ COMMENT ON COLUMN po_lines_eresource.pol_trial IS 'whether or not this is a tria
 COMMENT ON COLUMN po_lines_eresource.pol_user_limit IS 'the concurrent user-limit';
 
 COMMENT ON COLUMN po_lines_eresource.pol_resource_url IS 'Electronic resource can be access via this URL';
-
-

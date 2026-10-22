@@ -26,4 +26,3 @@ COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_reference_number IS '
 COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_reference_number_type IS 'The reference number type';
 
 COMMENT ON COLUMN po_lines_vendor_reference_numbers.vendor_instructions IS 'Special instructions for the vendor';
-

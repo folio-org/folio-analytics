@@ -54,5 +54,3 @@ COMMENT ON COLUMN po_lines_physical.pol_phys_receipt_due IS 'Date item should be
 COMMENT ON COLUMN po_lines_physical.pol_volumes IS 'List of volumes included to the physical material';
 
 COMMENT ON COLUMN po_lines_physical.pol_volumes_ordinality IS 'Volumes ordinality';
-
-
